@@ -1,8 +1,5 @@
-#include <string>
-#include <iostream>
-#include <Interpreter/LogEventType.h>
-
-#include <Interpreter/ILogInterpreter.h>
+#pragma once
+#include <Interpreter/InterpreterCommon.h>
 
 namespace POLDAM {
 

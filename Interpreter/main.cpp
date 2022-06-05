@@ -1,4 +1,5 @@
-#include <Interpreter/LogEventType.h>
+#pragma once 
+#include <Interpreter/InterpreterCommon.h>
 #include <Interpreter/methodEntry.h>
 
 #include <string>
@@ -13,5 +14,5 @@ const std::string s = "EventId=74,EventType=METHOD_ENTRY,ThreadId=0,DataId=464,V
 LogInterpreter<IMethodEntry> p(s);
 
 assert(p.getEventType() == EventType::METHOD_ENTRY);
-
+std::cout << "Test is succed" << std::endl;
 }

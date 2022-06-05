@@ -1,13 +1,16 @@
 DIR = include/Interpreter
 
-Interpreter: main.o methodEntry.o LogEventType.o
-	g++-11 -o Interpreter.out main.o methodEntry.o
+Interpreter: methodEntry.o InterpreterCommon.o main.o 
+	g++-11 -o Interpreter.out main.o InterpreterCommon.o methodEntry.o
+
+test: main.cpp
+	g++-11 -o main.out  -I ./include main.cpp
 
 main.o: main.cpp
-	g++-11 -c main.cpp
+	g++-11 -I ./include -c main.cpp
 
-methodEntry.o: methodEntry.o
-	g++-11 -c $(DIR)/methodEntry.h
+methodEntry.o: methodEntry.o InterpreterCommon.o
+	g++-11 -I ./include -c $(DIR)/methodEntry.h
 
-LogEventType.o: LogEventType.o
-	g++-11 -c $(DIR)/LogEventType.h
+InterpreterCommon.o: InterpreterCommon.o
+	g++-11 -c $(DIR)/InterpreterCommon.h

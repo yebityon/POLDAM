@@ -1,4 +1,3 @@
-#include <Interpreter/InterpreterCommon.h>
 
 namespace POLDAM 
 {
@@ -56,7 +55,7 @@ namespace POLDAM
         DIVIDE,
         
         NUM_EVENT,
-        UNDEFINED
+        UNDEFINED,
     };
 
 }

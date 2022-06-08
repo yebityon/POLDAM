@@ -62,10 +62,9 @@ namespace POLDAM
         UNDEFINED,
     };
 
-        class ILogType {
+    class ILogType {
         public:
-
-
+        
         virtual std::string getLog() = 0;
         virtual EventType getEventType() = 0;
 
@@ -75,18 +74,14 @@ namespace POLDAM
         
         public:
         virtual void parseLog() = 0;
-        virtual EventType getEventType() = 0;
-        virtual std::string getLog() = 0;
     };
 
     template<typename T>
     class LogInterpreter : ILogInterpreter {
 
         public:
-    
         void parseLog() override  {};
-        EventType getEventType() override { return EventType::UNDEFINED; }
-        std::string getLog() override  {return std::string(0);}
+        
     };
 
 }

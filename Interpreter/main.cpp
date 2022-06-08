@@ -13,6 +13,6 @@ const std::string s = "EventId=74,EventType=METHOD_ENTRY,ThreadId=0,DataId=464,V
 
 LogInterpreter<IMethodEntry> p(s);
 
-assert(p.getEventType() == EventType::METHOD_ENTRY);
+assert(p.getLogStruct().getEventType()  == EventType::METHOD_ENTRY);
 std::cout << "Test is succed" << std::endl;
 }

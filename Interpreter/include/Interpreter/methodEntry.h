@@ -1,45 +1,41 @@
 #pragma once
 #include <Interpreter/InterpreterCommon.h>
 
-namespace POLDAM {
+namespace POLDAM
+{
 
-
-    struct METHOD_ENTRY {
+    struct METHOD_ENTRY
+    {
         std::string entryName;
+        EventType eventType = EventType::METHOD_ENTRY;
     };
 
-    class IMethodEntry : public ILogType {
+    class IMethodEntry : public ILogType
+    {
 
     public:
-     
-    METHOD_ENTRY data;
-    IMethodEntry(const std::string log_) : log(log_){};
-    
-    std::string getLog() override { return log; }
-    EventType getEventType() override  { return EventType::METHOD_ENTRY; }
-    
-    private: 
-    const std::string log;
-    const EventType eventType = EventType::METHOD_ENTRY;
+        IMethodEntry(const std::string log_);
+        std::string getLog() override;
+        EventType getEventType() override;
+
+    private:
+            METHOD_ENTRY data;
+        const std::string log;
+        const EventType eventType = EventType::METHOD_ENTRY;
     };
 
-    template<>
-    class LogInterpreter<IMethodEntry> : ILogInterpreter {
-        
-        public:
+    template <>
+    class LogInterpreter<IMethodEntry> : ILogInterpreter
+    {
+
+    public:
         LogInterpreter(const std::string log_) : methodEntry(IMethodEntry(log_)){};
-        
-        METHOD_ENTRY getMethodEntry() {
-            return methodEntry.data;
-        }
 
-        void parseLog () override {};
-        
-        EventType getEventType() override { return methodEntry.getEventType(); }
-        std::string getLog() override { return methodEntry.getLog(); }
+        void parseLog() override{};
 
-        private:
+        IMethodEntry getLogStruct() { return methodEntry; }
+
+    private:
         IMethodEntry methodEntry;
-        
     };
 }

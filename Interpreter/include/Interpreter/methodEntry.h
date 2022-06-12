@@ -10,32 +10,36 @@ namespace POLDAM
         EventType eventType = EventType::METHOD_ENTRY;
     };
 
-    class IMethodEntry : public ILogType
+    class MethodEntry : public ILogType
     {
 
     public:
-        IMethodEntry(const std::string log_);
+        MethodEntry(const std::string log_);
         std::string getLog() override;
         EventType getEventType() override;
 
     private:
-            METHOD_ENTRY data;
+        METHOD_ENTRY data;
         const std::string log;
         const EventType eventType = EventType::METHOD_ENTRY;
     };
 
     template <>
-    class LogInterpreter<IMethodEntry> : ILogInterpreter
+    class LogInterpreter<MethodEntry> : ILogInterpreter
     {
 
     public:
-        LogInterpreter(const std::string log_) : methodEntry(IMethodEntry(log_)){};
+        LogInterpreter(const std::string log_) : methodEntry(MethodEntry(log_)){};
 
-        void parseLog() override{};
+        void parseLog() override;
 
-        IMethodEntry getLogStruct() { return methodEntry; }
+        MethodEntry
+        getLogStruct()
+        {
+            return methodEntry;
+        }
 
     private:
-        IMethodEntry methodEntry;
+        MethodEntry methodEntry;
     };
 }

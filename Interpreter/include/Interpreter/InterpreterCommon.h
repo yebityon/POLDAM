@@ -3,7 +3,7 @@
 #include <string>
 #include <iostream>
 
-namespace POLDAM 
+namespace POLDAM
 {
     enum class EventType
     {
@@ -57,31 +57,28 @@ namespace POLDAM
         LOCAL_INCREMENT,
         RET,
         DIVIDE,
-        
+
         NUM_EVENT,
         UNDEFINED,
     };
 
-    class ILogType {
-        public:
-        
+    class ILogInterpreter
+    {
+
+    public:
+        virtual void parseLog() = 0;
         virtual std::string getLog() = 0;
         virtual EventType getEventType() = 0;
-
     };
 
-    class ILogInterpreter{
-        
-        public:
-        virtual void parseLog() = 0;
-    };
+    template <typename T>
+    class LogInterpreter : ILogInterpreter
+    {
 
-    template<typename T>
-    class LogInterpreter : ILogInterpreter {
-
-        public:
-        void parseLog() override  {};
-        
+    public:
+        void parseLog() override{};
+        std::string getLog() override { return std::string(0); };
+        EventType getEventType() override { return EventType::UNDEFINED; }
     };
 
 }

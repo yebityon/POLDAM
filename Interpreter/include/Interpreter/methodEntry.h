@@ -7,39 +7,39 @@ namespace POLDAM
     struct METHOD_ENTRY
     {
         std::string entryName;
+        unsigned int eventId;
         EventType eventType = EventType::METHOD_ENTRY;
-    };
-
-    class MethodEntry : public ILogType
-    {
-
-    public:
-        MethodEntry(const std::string log_);
-        std::string getLog() override;
-        EventType getEventType() override;
-
-    private:
-        METHOD_ENTRY data;
-        const std::string log;
-        const EventType eventType = EventType::METHOD_ENTRY;
+        std::string eventTypeName = "METHOD_ENTRY";
+        unsigned int threadId;
+        unsigned int dataId;
+        int value;
+        std::string methodAndNum;
+        int lineNum;
+        std::string className;
+        std::string methodName;
+        std::string argType;
+        unsigned int num; // WTF
+        std::string fileName;
+        std::string hashValue;
+        std::string methodNameInFile;
+        std::string other;
     };
 
     template <>
-    class LogInterpreter<MethodEntry> : ILogInterpreter
+    class LogInterpreter<METHOD_ENTRY> : ILogInterpreter
     {
 
     public:
-        LogInterpreter(const std::string log_) : methodEntry(MethodEntry(log_)){};
+        LogInterpreter<METHOD_ENTRY>(const std::string log_) : log(log_){};
 
         void parseLog() override;
-
-        MethodEntry
-        getLogStruct()
-        {
-            return methodEntry;
-        }
+        std::string getLog() override;
+        EventType getEventType() override;
+        METHOD_ENTRY getParserResult();
+        void debug();
 
     private:
-        MethodEntry methodEntry;
+        METHOD_ENTRY methodEntry;
+        std::string log;
     };
 }

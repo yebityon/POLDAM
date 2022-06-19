@@ -19,3 +19,7 @@
 
 ##　頂点情報
 頂点情報でグラフになにを追加するかを考える
+
+## コーディング規約
+
+https://docs.microsoft.com/ja-jp/dotnet/standard/design-guidelines/naming-guidelines

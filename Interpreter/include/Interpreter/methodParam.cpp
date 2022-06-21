@@ -4,7 +4,7 @@
 
 namespace POLDAM
 {
-    void LogInterprter<METHOD_PARAM>::parseLog()
+    void LogInterpreter<METHOD_PARAM>::parseLog()
     {
         const std::vector<std::string> parsedLog = POLDAM_UTIL::parse(log);
         METHOD_PARAM rec = {};
@@ -35,32 +35,7 @@ namespace POLDAM
                 rec.value = std::stoi(POLDAM_UTIL::split(str, '=')[1]);
                 break;
             case 5:
-                // method
-                rec.methodAndNum = str;
-                break;
-            case 6:
-                rec.lineNum = std::stoi(str);
-                break;
-            case 7:
-                rec.className = str;
-                break;
-            case 8:
-                rec.methodName = str;
-                break;
-            case 9:
-                rec.argType = str;
-                break;
-            case 10:
-                rec.num = std::stoi(str);
-                break;
-            case 11:
-                rec.fileName = str;
-                break;
-            case 12:
-                rec.hashValue = str;
-                break;
-            case 13:
-                rec.fileAndClassAndMethod = str;
+                rec.fullMethodName = str;
                 break;
 
             default:

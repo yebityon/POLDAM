@@ -14,13 +14,14 @@ namespace POLDAM
         unsigned int threadId;
         unsigned int dataId;
         int value;
-        std::string methodNameInFile;
+        std::string fullMethodName;
         std::string other;
     };
 
     template <>
     class LogInterpreter<METHOD_PARAM> : ILogInterpreter
     {
+
     public:
         LogInterpreter<METHOD_PARAM>(const std::string log_) : log(log_){};
 

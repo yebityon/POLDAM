@@ -61,7 +61,7 @@ namespace POLDAM
                 rec.hashValue = str;
                 break;
             case 13:
-                rec.methodNameInFile = str;
+                rec.fileAndClassAndMethod = str;
                 break;
 
             default:

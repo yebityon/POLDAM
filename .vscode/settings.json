@@ -1,5 +1,5 @@
 {
-  "C_Cpp.errorSquiggles": "Disabled",
+  "C_Cpp.errorSquiggles": "Enabled",
   "files.associations": {
     "__bit_reference": "cpp",
     "__bits": "cpp",
@@ -75,6 +75,9 @@
     "iterator": "cpp",
     "memory_resource": "cpp",
     "utility": "cpp",
-    "stop_token": "cpp"
-  }
+    "stop_token": "cpp",
+    "__functional_base": "cpp"
+  },
+  "sonarlint.pathToCompileCommands": "/usr/local/bin/g++-11",
+  "C_Cpp.intelliSenseEngineFallback": "Disabled"
 }

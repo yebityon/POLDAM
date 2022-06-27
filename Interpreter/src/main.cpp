@@ -45,6 +45,10 @@ void test_method_param_1()
     std::cout << "test_method_param_1 is success" << std::endl;
 }
 
+void test_method_param_2()
+{
+    return;
+}
 int main()
 {
     test_method_entry_1();

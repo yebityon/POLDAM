@@ -2,6 +2,7 @@
 #include <Interpreter/InterpreterCommon.h>
 #include <Interpreter/methodEntry.h>
 #include <Interpreter/methodParam.h>
+#include <Interpreter/methodNormalExit.h>
 
 #include <string>
 #include <cassert>
@@ -45,12 +46,27 @@ void test_method_param_1()
     std::cout << "test_method_param_1 is success" << std::endl;
 }
 
-void test_method_param_2()
+void test_method_exit_1()
 {
+    const std::string s = "EventId=360,EventType=METHOD_NORMAL_EXIT,ThreadId=0,DataId=252,Value=5,objectType=int[],myLibrary/myMath:apply,myMath.java:35:28";
+
+    LogInterpreter<METHOD_NORMAL_EXIT> p(s);
+    p.parseLog();
+
+    auto res = p.getParserResult();
+    assert(res.eventId == 360);
+    assert(res.eventType == POLDAM::EventType::METHOD_NORMAL_EXIT);
+    assert(res.threadId == 0);
+    assert(res.dataId == 252);
+    assert(res.value == 5);
+    assert(res.fileAndClassAndMethod == "myLibrary/myMath:apply");
+
+    std::cout << "test_method_normal_exit_1 is success" << std::endl;
     return;
 }
 int main()
 {
     test_method_entry_1();
     test_method_param_1();
+    test_method_exit_1();
 }

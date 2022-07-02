@@ -6,11 +6,11 @@
 */
 namespace POLDAM
 {
-    struct METHOD_NORMAL_ENTRY
+    struct METHOD_ENTRY
     {
         std::string entryName;
         unsigned int eventId;
-        EventType eventType = EventType::METHOD_NORMAL_EXIT;
+        EventType eventType = EventType::METHOD_ENTRY;
         std::string eventTypeName = "METHOD_ENTRY";
         unsigned int threadId;
         unsigned int dataId;

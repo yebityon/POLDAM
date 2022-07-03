@@ -1,4 +1,7 @@
+#pragma once
 #include <iostream>
+#include <chrono>
+
 #include <Util/include/src/poldam_util.h>
 #include <Util/include/src/poldam_config.h>
 

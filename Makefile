@@ -21,8 +21,8 @@ methodParam.o: $(INT_INCLUDE_DIR)/methodParam.cpp $(INT_INCLUDE_DIR)/methodParam
 methodExit.o: $(INT_INCLUDE_DIR)/methodNormalExit.cpp $(INT_INCLUDE_DIR)/methodNormalExit.h util.o
 	g++-11 -I$(INT_DIR)/include -I$(UTIL_INCLUDE_DIR) -c $(INT_INCLUDE_DIR)/methodNormalExit.cpp
 
-util.o: $(UTIL_INCLUDE_DIR)/poldam_util.h $(UTIL_INCLUDE_DIR)/poldam_util.cpp
-	g++-11 -o util.o -c  $(UTIL_INCLUDE_DIR)/poldam_util.cpp
+util.o: $(UTIL_INCLUDE_DIR)/poldamUtil.h $(UTIL_INCLUDE_DIR)/poldamUtil.cpp
+	g++-11 -o util.o -c  $(UTIL_INCLUDE_DIR)/poldamUtil.cpp
 
 
 clean: test

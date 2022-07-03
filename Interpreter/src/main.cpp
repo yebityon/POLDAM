@@ -66,7 +66,9 @@ void test_method_exit_1()
 }
 int main()
 {
+    std::cout << "========================= Interpreter TEST is running =========================\n";
     test_method_entry_1();
     test_method_param_1();
     test_method_exit_1();
+    std::cout << "========================= Interpreter TEST is succeed =========================\n";
 }

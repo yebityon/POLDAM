@@ -3,6 +3,8 @@
 #include <string>
 #include <vector>
 #include <filesystem>
+#include <fstream>
+#include <utility>
 
 namespace POLDAM
 {
@@ -12,7 +14,7 @@ namespace POLDAM
     private:
         virtual void readFile() = 0;
         virtual void parseReadlines() = 0;
-        virtual void parserLine() = 0;
+        virtual void parseLine() = 0;
     };
 
 }

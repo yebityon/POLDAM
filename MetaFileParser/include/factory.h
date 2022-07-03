@@ -1,9 +1,6 @@
 #pragma once
-
-#include <iostream>
-#include <string>
-#include <vector>
-#include <filesystem>
+#include "metafileHandlerCommon.h"
+#include "dataids.h"
 
 namespace POLDAM
 {
@@ -11,7 +8,8 @@ namespace POLDAM
     {
     public:
         metafileFactory(std::string dirPath_) : dirPath(dirPath_){};
-        std::vector<std::string> createLogInstance();
+        template <typename T, typename... Args>
+        std::vector<T> createInstance(Args &&...args);
 
     private:
         const std::string dirPath;

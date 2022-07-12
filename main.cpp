@@ -2,8 +2,9 @@
 #include <iostream>
 #include <chrono>
 
-#include <Util/include/src/poldam_util.h>
-#include <Util/include/src/poldam_config.h>
+#include <Util/include/src/poldamUtil.h>
+#include <Util/include/src/poldamConfig.h>
+#include <MetafileParser/include/factory.h>
 
 void printHelp()
 {
@@ -78,4 +79,9 @@ int main(int argc, char *argv[])
     std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "outputDir: {" << config.outputDir << "}\n";
     std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "inputDir: {" << config.inputDir << "}\n";
     std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "targetMethod: {" << config.targetMethodName << "}\n";
+
+    // it should be static
+    POLDAM::metafileFactory factory(config.inputDir);
+
+    auto dataids = factory.createInstance<POLDAM::dataidsParser>(config.inputDir);
 }

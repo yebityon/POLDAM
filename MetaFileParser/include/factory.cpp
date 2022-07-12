@@ -4,16 +4,18 @@ namespace POLDAM
 {
     // TODO: typename T should be base of readFileClass
     template <typename T, typename... Args>
-    std::vector<T> metafileFactory::createInstance(Args &&...args)
+    bool metafileFactory::createInstance(T *&outputPtr, Args &&...args)
     {
         try
         {
-            return T(std::forward<Args>(args)...)
+            outputPtr = T(std::forward<Args>(args)...);
+
+            return true;
         }
-        catch
+        catch (void *err)
         {
             // TODO:  handle the error
         }
-        return
+        return false;
     }
 }

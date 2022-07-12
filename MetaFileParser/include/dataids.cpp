@@ -43,4 +43,16 @@ namespace POLDAM
         return;
     }
 
+    void dataidsParser::dirTraversal(std::string dirName)
+    {
+        for (const std::filesystem::directory_entry &i : std::filesystem::directory_iterator(dirName))
+        {
+            const auto filePath = i.path();
+            if (filePath.filename() == this->fileName)
+            {
+                // TODO: fix here
+                // this->readLines(filePath.fileName);
+            }
+        }
+    };
 }

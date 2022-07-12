@@ -15,6 +15,9 @@ namespace POLDAM
         virtual void readFile() = 0;
         virtual void parseReadlines() = 0;
         virtual void parseLine() = 0;
+        // traverse given directory name and find target file name.
+        // dirTraversal call parseReadLines in directory iteration
+        virtual void dirTraversal(std::string) = 0;
     };
 
 }

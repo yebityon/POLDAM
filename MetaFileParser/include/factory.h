@@ -17,6 +17,11 @@ namespace POLDAM
             return T(std::forward<Args>(args)...);
         }
 
+        std::string getDirPath()
+        {
+            return dirPath;
+        }
+
     private:
         const std::string dirPath;
     };

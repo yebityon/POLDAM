@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <chrono>
+#include <cassert>
 
 #include <Util/include/src/poldamUtil.h>
 #include <Util/include/src/poldamConfig.h>
@@ -17,6 +18,7 @@ int main(int argc, char *argv[])
     if (argc <= 1)
     {
         std::cout << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX << "You need to disignate input directory." << std::endl;
+        exit(1);
     }
 
     for (unsigned int i = 1; i < argc; ++i)
@@ -84,4 +86,7 @@ int main(int argc, char *argv[])
     POLDAM::metafileFactory factory(config.inputDir);
 
     auto dataids = factory.createInstance<POLDAM::dataidsParser>(config.inputDir);
+
+    assert(dataids.getFileName() == config.inputDir);
+    std::cout << "===================== TEST PASSED ====================" << std::endl;
 }

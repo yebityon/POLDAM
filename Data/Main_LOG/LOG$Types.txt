@@ -1,0 +1,17 @@
+0,void,,-1,-1,Loader@0:void
+1,boolean,,-1,-1,Loader@0:boolean
+2,byte,,-1,-1,Loader@0:byte
+3,char,,-1,-1,Loader@0:char
+4,double,,-1,-1,Loader@0:double
+5,float,,-1,-1,Loader@0:float
+6,int,,-1,-1,Loader@0:int
+7,long,,-1,-1,Loader@0:long
+8,short,,-1,-1,Loader@0:short
+9,java.lang.Object,jrt:/java.base/java/lang/Object.class,-1,-1,Loader@0:java/lang/Object
+10,java.lang.String,jrt:/java.base/java/lang/String.class,9,-1,Loader@0:java/lang/String
+11,java.lang.String[],,9,10,Loader@0:[Ljava/lang/String;
+12,myLibrary.myMath,file:/Users/seong/Documents/GitHub/diffanalysis/experiment/myLibrary/myMath.class,9,-1,Loader@73d16e93:myLibrary/myMath
+13,java.io.OutputStream,jrt:/java.base/java/io/OutputStream.class,9,-1,Loader@0:java/io/OutputStream
+14,java.io.FilterOutputStream,jrt:/java.base/java/io/FilterOutputStream.class,13,-1,Loader@0:java/io/FilterOutputStream
+15,java.io.PrintStream,jrt:/java.base/java/io/PrintStream.class,14,-1,Loader@0:java/io/PrintStream
+16,int[],,9,6,Loader@0:[I

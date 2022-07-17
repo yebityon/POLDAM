@@ -87,6 +87,16 @@ int main(int argc, char *argv[])
 
     auto dataids = factory.createInstance<POLDAM::dataidsParser>(config.inputDir);
 
-    assert(dataids.getFileName() == config.inputDir);
-    std::cout << "===================== TEST PASSED ====================" << std::endl;
+    assert(dataids.getDirName() == config.inputDir);
+
+    const auto &dataidsData = dataids.getData();
+
+    assert(dataidsData[0] == "0,0,0,-1,-1,RESERVED,V,Main#<init>#()V#size=6");
+
+    assert(dataidsData.size() == 290);
+    std::cout
+        << dataidsData[2] << std::endl;
+
+    std::cout
+        << "===================== TEST PASSED ====================" << std::endl;
 }

@@ -12,12 +12,22 @@ namespace POLDAM
     class fileReader
     {
     private:
+        /**
+         * @brief open the fileName and read data. this->data has these data
+         * @return void.
+         */
         virtual void readFile() = 0;
+        /**
+         * @brief parse and iterate this -> data.
+         *
+         */
         virtual void parseReadlines() = 0;
-        virtual void parseLine() = 0;
-        // traverse given directory name and find target file name.
-        // dirTraversal call parseReadLines in directory iteration
-        virtual void dirTraversal(std::string) = 0;
+
+        /**
+         * @brief iterate target Directory to look up target file. Please note there may be more than one target file.
+         * @param targetDir
+         */
+        virtual void dirTraversal(std::string targetDir) = 0;
     };
 
 }

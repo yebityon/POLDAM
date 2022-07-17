@@ -4,6 +4,7 @@
 
 namespace POLDAM
 {
+    // metafileFactory should be static class
     class metafileFactory
     {
     public:

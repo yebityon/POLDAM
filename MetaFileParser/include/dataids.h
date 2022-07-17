@@ -14,28 +14,38 @@ namespace POLDAM
     class dataidsParser : fileReader
     {
     public:
-        dataidsParser(std::string fileName_) : fileName(fileName_){};
-        void getParsedData();
-        std::string getFileName()
+        dataidsParser(std::string inputDir_) : dirName(inputDir_){};
+
+        std::vector<std::string> getData()
         {
-            return fileName;
+            this->dirTraversal(this->dirName);
+            this->readFile();
+            this->parseReadlines();
+            return this->data;
+        };
+        std::string getDirName()
+        {
+            return dirName;
         };
 
     private:
         void readFile() override;
         void parseReadlines() override;
-        void parseLine() override;
         void dirTraversal(std::string fileName) override;
 
-        DATAIDS
-        parseLine(const std::string str)
-        {
-            DATAIDS rec{};
-            return rec;
-        }
+        /**
+         * @brief parseLine() return the DATAIDS that is interpreted data of given argument.this function is called in void parseReadLines().
+         * @param std::string line. One of the elem of this -> data.
+         * @return DATAIDS
+         */
+        DATAIDS parseLine(const std::string line);
 
-        const std::string fileName;
-        const std::string dirName;
+        bool isTargetFile(const std::string fileName);
+
+        const std::string fileName = "dataids.txt";
+        std::string filePath;
+        std::string dirName;
+
         std::vector<std::string> data;
         std::vector<DATAIDS> parsedData;
     };

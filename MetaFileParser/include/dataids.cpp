@@ -7,7 +7,7 @@ namespace POLDAM
         std::ifstream fileStream;
         std::vector<std::string> data;
 
-        fileStream.open(this->fileName, std::ios::in);
+        fileStream.open(this->filePath, std::ios::in);
 
         if (!fileStream)
         {
@@ -38,9 +38,10 @@ namespace POLDAM
         this->parsedData = std::move(parsedData);
     }
 
-    void dataidsParser::parseLine()
+    DATAIDS dataidsParser::parseLine(const std::string line)
     {
-        return;
+        DATAIDS rec{};
+        return rec;
     }
 
     void dataidsParser::dirTraversal(std::string dirName)
@@ -50,9 +51,9 @@ namespace POLDAM
             const auto filePath = i.path();
             if (filePath.filename() == this->fileName)
             {
-                // TODO: fix here
-                // this->readLines(filePath.fileName);
+                this->filePath = std::string(i.path().c_str());
             }
         }
     };
+
 }

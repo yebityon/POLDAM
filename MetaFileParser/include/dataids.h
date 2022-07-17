@@ -36,7 +36,7 @@ namespace POLDAM
         bool setTargetFileName(const std::string targetFileName)
         {
             this->targetFileNames.push_back(targetFileName);
-        }
+        };
 
     private:
         void readFile() override;

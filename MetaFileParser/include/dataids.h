@@ -14,7 +14,12 @@ namespace POLDAM
     class dataidsParser : fileReader
     {
     public:
-        dataidsParser(std::string inputDir_) : dirName(inputDir_){};
+        dataidsParser(std::string inputDir_) : dirName(inputDir_),
+                                               filePath(),
+                                               // fileName(),
+                                               data(),
+                                               parsedData(),
+                                               targetFileNames(){};
 
         std::vector<std::string> getData()
         {
@@ -27,6 +32,11 @@ namespace POLDAM
         {
             return dirName;
         };
+
+        bool setTargetFileName(const std::string targetFileName)
+        {
+            this->targetFileNames.push_back(targetFileName);
+        }
 
     private:
         void readFile() override;
@@ -42,6 +52,7 @@ namespace POLDAM
 
         bool isTargetFile(const std::string fileName);
 
+        std::vector<std::string> targetFileNames;
         const std::string fileName = "dataids.txt";
         std::string filePath;
         std::string dirName;

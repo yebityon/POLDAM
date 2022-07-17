@@ -49,6 +49,8 @@ namespace POLDAM
         for (const std::filesystem::directory_entry &i : std::filesystem::directory_iterator(dirName))
         {
             const auto filePath = i.path();
+            //            std::cout << filePath.c_str() << std::endl;
+
             if (filePath.filename() == this->fileName)
             {
                 this->filePath = std::string(i.path().c_str());

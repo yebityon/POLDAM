@@ -2,7 +2,7 @@
 
 #include <string>
 #include <iostream>
-
+#include <Util/include/src/poldamUtil.h>
 namespace POLDAM
 {
     enum class EventType
@@ -79,6 +79,15 @@ namespace POLDAM
         void parseLog() override{};
         std::string getLog() override { return std::string(0); };
         EventType getEventType() override { return EventType::UNDEFINED; }
+    };
+
+    class InterpreterManager
+    {
+    public:
+        static POLDAM::EventType getEventType(const std::string log)
+        {
+            return POLDAM::split(log)[0];
+        }
     };
 
 }

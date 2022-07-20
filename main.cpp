@@ -9,6 +9,7 @@
 
 void printHelp()
 {
+    std::cout << "Check your code" << std::endl;
 }
 
 int main(int argc, char *argv[])
@@ -82,7 +83,7 @@ int main(int argc, char *argv[])
     std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "inputDir: {" << config.inputDir << "}\n";
     std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "targetMethod: {" << config.targetMethodName << "}\n";
 
-    // it should be static
+    // Phase 1. read and parse all metafiles
     POLDAM::metafileFactory factory(config.inputDir);
 
     auto dataids = factory.createInstance<POLDAM::dataidsParser>(config.inputDir);
@@ -96,6 +97,11 @@ int main(int argc, char *argv[])
     assert(dataidsData.size() == 290);
     std::cout
         << dataidsData[2] << std::endl;
+
+    // Phase2. Create Graph.
+
+    // Phase3. Apply algorrithms　and Compare two Graphs.
+    // Phase4. Write Graph Result.
 
     std::cout
         << "===================== TEST PASSED ====================" << std::endl;

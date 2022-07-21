@@ -1,8 +1,8 @@
 #pragma once
-#include <Interpreter/InterpreterCommon.h>
-#include <Interpreter/methodEntry.h>
-#include <Interpreter/methodParam.h>
-#include <Interpreter/methodNormalExit.h>
+#include "../src/InterpreterCommon.h"
+#include "../src/methodEntry.h"
+#include "../src/methodParam.h"
+#include "../src/methodNormalExit.h"
 
 #include <string>
 #include <cassert>

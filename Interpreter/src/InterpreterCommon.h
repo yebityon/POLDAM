@@ -2,7 +2,7 @@
 
 #include <string>
 #include <iostream>
-#include <Util/include/src/poldamUtil.h>
+#include "../../Util/include/src/poldamUtil.h"
 namespace POLDAM
 {
     enum class EventType
@@ -86,7 +86,6 @@ namespace POLDAM
     public:
         static POLDAM::EventType getEventType(const std::string log)
         {
-            return POLDAM::split(log)[0];
         }
     };
 

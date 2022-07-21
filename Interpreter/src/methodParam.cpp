@@ -1,6 +1,5 @@
 #pragma once
 #include "methodParam.h"
-#include <poldamUtil.h>
 
 namespace POLDAM
 {

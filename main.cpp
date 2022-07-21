@@ -3,9 +3,9 @@
 #include <chrono>
 #include <cassert>
 
-#include <Util/include/src/poldamUtil.h>
-#include <Util/include/src/poldamConfig.h>
-#include <MetafileParser/include/factory.h>
+#include "Util/include/src/poldamUtil.h"
+#include "Util/include/src/poldamConfig.h"
+#include "MetafileParser/src/factory.h"
 
 void printHelp()
 {

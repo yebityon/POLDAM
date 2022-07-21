@@ -1,5 +1,5 @@
 #pragma once
-#include <Interpreter/InterpreterCommon.h>
+#include "InterpreterCommon.h"
 
 /*
 "EventId=360,EventType=METHOD_NORMAL_EXIT,ThreadId=0,DataId=252,Value=5,objectType=int[],myLibrary/myMath:apply,myMath.java:35:28";

@@ -1,5 +1,5 @@
 #pragma once
-#include <Interpreter/InterpreterCommon.h>
+#include "InterpreterCommon.h"
 
 /*
     "EventId=47,EventType=METHOD_PARAM,ThreadId=0,DataId=197,Value=2,myLibrary/myMath:multiple,myMath.java:0:0";

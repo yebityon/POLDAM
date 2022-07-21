@@ -1,7 +1,6 @@
 
 #pragma once
 #include "methodNormalExit.h"
-#include <poldamUtil.h>
 
 namespace POLDAM
 {

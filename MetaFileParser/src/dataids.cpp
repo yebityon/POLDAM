@@ -44,6 +44,7 @@ namespace POLDAM
         return rec;
     }
 
+    // TODO: move this fucntion to base class, all you need to do is just desginate fileName in base class.
     void dataidsParser::dirTraversal(std::string dirName)
     {
         for (const std::filesystem::directory_entry &i : std::filesystem::directory_iterator(dirName))

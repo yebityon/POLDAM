@@ -30,6 +30,21 @@ namespace POLDAM
         void parseReadlines() override;
         void dirTraversal(std::string fileName) override;
 
-        const std::string dirName;
-    };
+        /**
+         * @brief parseLine() return the SELOGGER_LOG that is interpreted data of given argument. this function is called in void paserLine()
+         * @param std::string line. One of the elem of this -> data.
+         * @return SELOGGER_LOG
+         */
+
+        SELLOGER_LOG parseLine(const std::string line);
+
+        bool isTargetFile(const std::string fileName);
+
+        const std::string fileName = "log.txt";
+        std::string filePath;
+        std::string dirName;
+
+        std::vector<std::string> data;
+        std::vector<SELLOGER_LOG> parsedData;
+        };
 }

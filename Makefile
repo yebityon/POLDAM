@@ -19,7 +19,7 @@ InterpreterTest: methodCallAndReturn.o util.o
 	rm  InterpreterTest
 
 MetafileParserTest: metafileParser.o util.o
-	g++-11 -o MetafileParserTest -I$(UTIL_INCLUDE_DIR) metafileParser.o util.o
+	g++-11 $(METAFILE_DIR)/test/main.cpp metafileParser.o util.o -o MetaFileParserTest
 	./MetaFileParserTest
 
 methodCallAndReturn.o: $(INT_SRC_DIR)/methodEntry.cpp $(INT_SRC_DIR)/methodEntry.h $(INT_SRC_DIR)/methodParam.cpp $(INT_SRC_DIR)/methodParam.h $(INT_SRC_DIR)/methodNormalExit.cpp $(INT_SRC_DIR)/methodNormalExit.h util.o

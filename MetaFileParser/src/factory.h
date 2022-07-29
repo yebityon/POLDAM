@@ -1,6 +1,7 @@
 #pragma once
 #include "metafileHandlerCommon.h"
 #include "dataids.h"
+#include "seloggerLog.h"
 
 namespace POLDAM
 {

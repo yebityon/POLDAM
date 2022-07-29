@@ -87,17 +87,18 @@ int main(int argc, char *argv[])
     POLDAM::metafileFactory factory(config.inputDir);
 
     auto dataids = factory.createInstance<POLDAM::dataidsParser>(config.inputDir);
+    auto seloggerParser = factory.createInstance<POLDAM::seloggerLogParser>(config.inputDir);
 
     assert(dataids.getDirName() == config.inputDir);
-
     const auto &dataidsData = dataids.getData();
-
     assert(dataidsData[0] == "0,0,0,-1,-1,RESERVED,V,Main#<init>#()V#size=6");
-
     assert(dataidsData.size() == 290);
-    std::cout
-        << dataidsData[2] << std::endl;
+    std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "PARASED DATAIDS" << std::endl;
 
+    assert(seloggerParser.getDirName() == config.inputDir);
+    const auto &seloggerLogData = seloggerParser.getData();
+    assert(seloggerLogData[0] == "EventId=0,EventType=METHOD_ENTRY,ThreadId=0,DataId=13,Value=0,method:0,1,Main,main,([Ljava/lang/String;)V,9,Main.java,fe1fe704c569eaf77bb10120a2a4698035803860,Main:main,Main.java:0:0");
+    std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "PARSED MAIN_LOG" << std::endl;
     // Phase2. Create Graph.
 
     // Phase3. Apply algorrithms　and Compare two Graphs.

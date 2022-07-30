@@ -22,4 +22,20 @@
 
 ## コーディング規約
 
-https://docs.microsoft.com/ja-jp/dotnet/standard/design-guidelines/naming-guidelines
+命名規則
+
+### Class, Struct
+
+PascalClass
+
+### method, function, variable
+
+camelCase
+
+### filename, std
+
+snake_case
+
+### Enum, macro
+
+SNAKE_CASE

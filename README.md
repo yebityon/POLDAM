@@ -39,3 +39,9 @@ snake_case
 ### Enum, macro
 
 SNAKE_CASE
+
+# Limitation
+
+- Multiple Object type parser is not supported
+- The Interprete for the line which has 　 Object Type is not supported
+- Method factory pattern in under development.

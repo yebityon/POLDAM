@@ -1,14 +1,24 @@
 #pragma once
 #include "metafileHandlerCommon.h"
 #include "../../Util/include/src/poldamUtil.h"
+#include "../../Interpreter/src/InterpreterCommon.h"
+#include <map>
 
 // TODO: Interface should be speciallized for each struct type.
 
 namespace POLDAM
 {
-    struct DATAIDS
+    struct DataId
     {
-        std::string hogehogemaru;
+        unsigned int dataidx;
+        unsigned int classid;
+        unsigned int methodid;
+        // -1 is undefined or N/A
+        int linenumber;
+        int ordernumber;
+        std::string eventtype;
+        std::string descriptor;
+        std::map<std::string, std::string> eventinfo;
     };
 
     class dataidsParser : fileReader
@@ -33,6 +43,11 @@ namespace POLDAM
             return dirName;
         };
 
+        std::vector<DataId> getParsedData()
+        {
+            return this->parsedData;
+        }
+
         bool setTargetFileName(const std::string targetFileName)
         {
             this->targetFileNames.push_back(targetFileName);
@@ -44,11 +59,11 @@ namespace POLDAM
         void dirTraversal(std::string fileName) override;
 
         /**
-         * @brief parseLine() return the DATAIDS that is interpreted data of given argument.this function is called in void parseReadLines().
+         * @brief parseLine() return the DataIds that is interpreted data of given argument.this function is called in void parseReadLines().
          * @param std::string line. One of the elem of this -> data.
-         * @return DATAIDS
+         * @return DataId
          */
-        DATAIDS parseLine(const std::string line);
+        DataId parseLine(const std::string line);
 
         bool isTargetFile(const std::string fileName);
 
@@ -58,6 +73,6 @@ namespace POLDAM
         std::string dirName;
 
         std::vector<std::string> data;
-        std::vector<DATAIDS> parsedData;
+        std::vector<DataId> parsedData;
     };
 }

@@ -20,6 +20,8 @@ namespace POLDAM
             std::string buffer;
             std::getline(fileStream, buffer);
 
+            if (buffer.empty())
+                continue;
             // if you want to hold interpreted data, call parseLine()
             // buffer = this.parseLine(buffer);
             data.push_back(buffer);
@@ -30,7 +32,7 @@ namespace POLDAM
 
     void dataidsParser::parseReadlines()
     {
-        std::vector<DATAIDS> parsedData;
+        std::vector<DataId> parsedData;
         for (const auto &str : this->data)
         {
             parsedData.push_back(this->parseLine(str));
@@ -38,10 +40,35 @@ namespace POLDAM
         this->parsedData = std::move(parsedData);
     }
 
-    DATAIDS dataidsParser::parseLine(const std::string line)
+    DataId dataidsParser::parseLine(std::string line)
     {
-        DATAIDS rec{};
-        return rec;
+        DataId dataid;
+
+        const auto &&parsedline = POLDAM_UTIL::parse(line);
+
+        dataid.dataidx = static_cast<unsigned int>(std::stoi(parsedline[0]));
+        dataid.classid = static_cast<unsigned int>(std::stoi(parsedline[1]));
+        dataid.methodid = static_cast<unsigned int>(std::stoi(parsedline[2]));
+        dataid.linenumber = std::stoi(parsedline[3]);
+        dataid.ordernumber = std::stoi(parsedline[4]);
+        dataid.eventtype = parsedline[5];
+        dataid.descriptor = parsedline[6];
+
+        for (int i = 7; i < parsedline.size(); ++i)
+        {
+            if (parsedline[i].find("=") == std::string::npos)
+            {
+                //            9, 0, 0, 2, 6, CATCH_LABEL, I, ExceptionalExit
+                dataid.eventinfo[parsedline[i]] = parsedline[i];
+            }
+            else
+            {
+                const auto &vec = POLDAM_UTIL::split(parsedline[i], '=');
+                dataid.eventinfo[vec[0]] = vec[1];
+            }
+        }
+
+        return dataid;
     }
 
     // TODO: move this fucntion to base class, all you need to do is just desginate fileName in base class.
@@ -50,7 +77,6 @@ namespace POLDAM
         for (const std::filesystem::directory_entry &i : std::filesystem::directory_iterator(dirName))
         {
             const auto filePath = i.path();
-            //            std::cout << filePath.c_str() << std::endl;
 
             if (filePath.filename() == this->fileName)
             {

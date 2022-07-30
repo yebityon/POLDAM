@@ -38,10 +38,10 @@ namespace POLDAM
             this->parsedData.push_back(this->parseLine(buffer));
         }
     }
-
-    SELLOGER_LOG seloggerLogParser::parseLine(const std::string line)
+    SeloggerLog seloggerLogParser::parseLine(const std::string line)
     {
-        SELLOGER_LOG rec{};
+        SeloggerLog rec{};
+        rec.log = line;
         return rec;
     }
     // TODO: move this fucntion to base class, all you need to do is just desginate fileName in base class.

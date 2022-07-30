@@ -4,7 +4,7 @@
 
 namespace POLDAM
 {
-    struct SELLOGER_LOG
+    struct SeloggerLog
     {
         std::string log;
     };
@@ -49,7 +49,7 @@ namespace POLDAM
          * @return SELOGGER_LOG
          */
 
-        SELLOGER_LOG parseLine(const std::string line);
+        SeloggerLog parseLine(const std::string line);
 
         bool isTargetFile(const std::string fileName);
 
@@ -58,6 +58,6 @@ namespace POLDAM
         std::string dirName;
 
         std::vector<std::string> data;
-        std::vector<SELLOGER_LOG> parsedData;
+        std::vector<SeloggerLog> parsedData;
     };
 }

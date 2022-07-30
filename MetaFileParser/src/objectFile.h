@@ -24,25 +24,28 @@ namespace POLDAM
     public:
         ObjectfileParser(std::string inputDir){};
 
-        std::vector<std::string> getData()
-        {
-            return this->objecttypedata;
-        };
-
     private:
-        void readFile() override;
+        void readFile(const std::string filePath, std::vector<std::string> &data) override;
         void parseReadlines() override;
         void dirTraversal(std::string fileName) override;
 
-        void AccumulateObjectFile(){};
+        // void accumulateObjectFile(){};
+        // void readObjectTypeData(){};
 
-        std::string objectfileName;
+        std::pair<int, int> parseObjectData(const std::string line);
 
-        std::string objecttypepath
+        std::string objectFileName;
+        std::string stringFileName;
+        std::string logTypeFileName;
 
-            std::vector<std::string>
-                objecttypedata;
-        std::vector<std::string> stringdata;
-        std::vector<std::string> logtypedata;
+        std::string objectTypeFilePath;
+        std::string stringFilePath;
+        std::string logTypeFilePath;
+
+        std::vector<std::string> objectTypeData;
+        std::vector<std::string> stringData;
+        std::vector<std::string> logtypeData;
+
+        std::vector<std::pair<unsigned int, unsigned int>> parsedObjectData;
     };
 }

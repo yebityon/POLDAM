@@ -3,12 +3,11 @@
 namespace POLDAM
 {
 
-    void seloggerLogParser::readFile()
+    void seloggerLogParser::readFile(const std::string filePath, std::vector<std::string> &data)
     {
         std::ifstream fileStream;
-        std::vector<std::string> data;
 
-        fileStream.open(this->filePath, std::ios::in);
+        fileStream.open(filePath, std::ios::in);
 
         if (!fileStream)
         {
@@ -26,9 +25,7 @@ namespace POLDAM
             //  otherwise, this class hold all data
             data.push_back(buffer);
         }
-
-        // TODO: check whether you need to move this file,
-        this->data = std::move(data);
+        fileStream.close();
     }
 
     void seloggerLogParser::parseReadlines()

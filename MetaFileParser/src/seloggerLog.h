@@ -26,7 +26,7 @@ namespace POLDAM
         std::vector<std::string> getData()
         {
             this->dirTraversal(this->dirName);
-            this->readFile();
+            this->readFile(this->filePath, this->data);
             this->parseReadlines();
             return this->data;
         };
@@ -39,7 +39,7 @@ namespace POLDAM
         std::string readNextStream();
 
     private:
-        void readFile() override;
+        void readFile(const std::string fileName, std::vector<std::string> &data) override;
         void parseReadlines() override;
         void dirTraversal(std::string fileName) override;
 

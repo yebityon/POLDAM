@@ -14,9 +14,11 @@ namespace POLDAM
     private:
         /**
          * @brief open the fileName and read data. this->data has these data
+         * @param std:;stri
          * @return void.
          */
-        virtual void readFile() = 0;
+        virtual void readFile(const std::string fileName, std::vector<std::string> &data) = 0;
+
         /**
          * @brief parse and iterate this -> data.
          *

@@ -2,12 +2,11 @@
 
 namespace POLDAM
 {
-    void dataidsParser::readFile()
+    void dataidsParser::readFile(const std::string filePath, std::vector<std::string> &data)
     {
         std::ifstream fileStream;
-        std::vector<std::string> data;
 
-        fileStream.open(this->filePath, std::ios::in);
+        fileStream.open(filePath, std::ios::in);
 
         if (!fileStream)
         {
@@ -26,8 +25,6 @@ namespace POLDAM
             // buffer = this.parseLine(buffer);
             data.push_back(buffer);
         }
-
-        this->data = std::move(data);
     }
 
     void dataidsParser::parseReadlines()

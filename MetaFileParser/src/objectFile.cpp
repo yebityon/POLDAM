@@ -39,16 +39,46 @@ namespace POLDAM
 
         while (not fileStream.eof())
         {
+            std::string buffer;
+            std::getline(fileStream, buffer);
+
+            data.push_back(buffer);
         }
+
+        fileStream.close();
     };
 
-    // void ObjectfileParser::readObjectTypeData()
-    // {
+    void ObjectfileParser::parseReadlines(const std::vector<std::string> &data)
+    {
+        // TODO: ungly, you need to fix logic here.
 
-    //     for (const auto &line : this->objectTypeData)
-    //     {
-    //     }
-    // };
+        for (const auto &line : data)
+        {
+            if (this->fileType == "objcet")
+            {
+                parseLine(line);
+            }
+            else if (this->fileType == "log")
+            {
+                parseLogLine(line);
+            }
+            else
+            {
+                parseStringLine(line);
+            }
+        }
+    }
 
-    // void ObjectfileParser::accumulateObjectFile(){};
+    void ObjectfileParser::parseLine(const std::string line){};
+
+    void ObjectfileParser::readObjectTypeData()
+    {
+        this->readFile(this->objectTypeFilePath, this->objectTypeData);
+        this->readFile(this->stringFilePath, this->stringData);
+        this->readFile(this->logTypeFilePath, this->logtypeData);
+    };
+
+    void ObjectfileParser::accumulateObjectFile(){
+
+    };
 }

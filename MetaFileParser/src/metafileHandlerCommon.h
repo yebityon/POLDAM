@@ -13,7 +13,7 @@ namespace POLDAM
     {
     private:
         /**
-         * @brief open the fileName and read data. this->data has these data
+         * @brief open the fileName and read data. this->data has these data. Please NOTE: This Strategy might be not efficient, you need to hold raw string data and transforemed data. It consumes 2 * sizeof(filedata).
          * @param std:;stri
          * @return void.
          */
@@ -23,7 +23,12 @@ namespace POLDAM
          * @brief parse and iterate this -> data.
          *
          */
-        virtual void parseReadlines() = 0;
+        virtual void parseReadlines(const std::vector<std::string> &data) = 0;
+
+        /**
+         * @brief delegate function. this fucntion will be called in parseReadlines faucntion, and access to this method.
+         */
+        virtual void parseLine(const std::string line) = 0;
 
         /**
          * @brief iterate target Directory to look up target file. Please note there may be more than one target file.

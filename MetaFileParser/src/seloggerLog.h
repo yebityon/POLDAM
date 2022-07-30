@@ -27,7 +27,7 @@ namespace POLDAM
         {
             this->dirTraversal(this->dirName);
             this->readFile(this->filePath, this->data);
-            this->parseReadlines();
+            this->parseReadlines(this->data);
             return this->data;
         };
 
@@ -40,7 +40,7 @@ namespace POLDAM
 
     private:
         void readFile(const std::string fileName, std::vector<std::string> &data) override;
-        void parseReadlines() override;
+        void parseReadlines(const std::vector<std::string> &data) override;
         void dirTraversal(std::string fileName) override;
 
         /**
@@ -48,8 +48,7 @@ namespace POLDAM
          * @param std::string line. One of the elem of this -> data.
          * @return SELOGGER_LOG
          */
-
-        SeloggerLog parseLine(const std::string line);
+        void parseLine(const std::string line) override;
 
         bool isTargetFile(const std::string fileName);
 

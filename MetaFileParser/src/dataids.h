@@ -36,7 +36,7 @@ namespace POLDAM
             this->dirTraversal(this->dirName);
             this->readFile(this->filePath, this->data);
 
-            this->parseReadlines();
+            this->parseReadlines(this->data);
             return this->data;
         };
         std::string getDirName()
@@ -56,15 +56,16 @@ namespace POLDAM
 
     private:
         void readFile(const std::string filePath, std::vector<std::string> &data) override;
-        void parseReadlines() override;
+        void parseReadlines(const std::vector<std::string> &data) override;
         void dirTraversal(std::string fileName) override;
 
         /**
-         * @brief parseLine() return the DataIds that is interpreted data of given argument.this function is called in void parseReadLines().
-         * @param std::string line. One of the elem of this -> data.
-         * @return DataId
+         * @brief delegate function. this function receive string data and paser it to shape Dataid structuo,
+         * and push_back to dataid vector.
+         *
+         * @param line
          */
-        DataId parseLine(const std::string line);
+        void parseLine(const std::string line) override;
 
         bool isTargetFile(const std::string fileName);
 

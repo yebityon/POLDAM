@@ -28,18 +28,19 @@ namespace POLDAM
         fileStream.close();
     }
 
-    void seloggerLogParser::parseReadlines()
+    void seloggerLogParser::parseReadlines(const std::vector<std::string> &data)
     {
         for (const auto &buffer : this->data)
         {
-            this->parsedData.push_back(this->parseLine(buffer));
+            parseLine(buffer);
         }
     }
-    SeloggerLog seloggerLogParser::parseLine(const std::string line)
+
+    void seloggerLogParser::parseLine(const std::string line)
     {
         SeloggerLog rec{};
         rec.log = line;
-        return rec;
+        this->parsedData.push_back(rec);
     }
     // TODO: move this fucntion to base class, all you need to do is just desginate fileName in base class.
     void seloggerLogParser::dirTraversal(const std::string dirName)

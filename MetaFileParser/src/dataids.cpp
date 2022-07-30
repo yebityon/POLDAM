@@ -27,17 +27,16 @@ namespace POLDAM
         }
     }
 
-    void dataidsParser::parseReadlines()
+    void dataidsParser::parseReadlines(const std::vector<std::string> &data)
     {
         std::vector<DataId> parsedData;
-        for (const auto &str : this->data)
+        for (const auto &str : data)
         {
-            parsedData.push_back(this->parseLine(str));
+            this->parseLine(str);
         }
-        this->parsedData = std::move(parsedData);
     }
 
-    DataId dataidsParser::parseLine(std::string line)
+    void dataidsParser::parseLine(std::string line)
     {
         DataId dataid;
 
@@ -64,8 +63,7 @@ namespace POLDAM
                 dataid.eventinfo[vec[0]] = vec[1];
             }
         }
-
-        return dataid;
+        this->parsedData.push_back(dataid);
     }
 
     // TODO: move this fucntion to base class, all you need to do is just desginate fileName in base class.

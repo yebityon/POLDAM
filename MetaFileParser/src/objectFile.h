@@ -26,13 +26,18 @@ namespace POLDAM
 
     private:
         void readFile(const std::string filePath, std::vector<std::string> &data) override;
-        void parseReadlines() override;
+        void parseReadlines(const std::vector<std::string> &data) override;
         void dirTraversal(std::string fileName) override;
+        void parseLine(const std::string line) override;
+        void parseLogLine(const std::string line);
+        void parseStringLine(const std::string line);
 
-        // void accumulateObjectFile(){};
-        // void readObjectTypeData(){};
+        void accumulateObjectFile();
+        void readObjectTypeData();
 
         std::pair<int, int> parseObjectData(const std::string line);
+
+        std::string fileType = "object";
 
         std::string objectFileName;
         std::string stringFileName;
@@ -46,6 +51,6 @@ namespace POLDAM
         std::vector<std::string> stringData;
         std::vector<std::string> logtypeData;
 
-        std::vector<std::pair<unsigned int, unsigned int>> parsedObjectData;
+        std::vector<unsigned int> parsedObjectData;
     };
 }

@@ -5,6 +5,7 @@
 #include <filesystem>
 #include <fstream>
 #include <utility>
+#include <map>
 
 namespace POLDAM
 {

@@ -15,6 +15,7 @@ namespace POLDAM
         int typenum2;
         std::string loadclasss;
         std::string objecttype;
+        std::string loader;
         //  if type is sstring, concreate value is available
         std::string value;
     };
@@ -29,6 +30,7 @@ namespace POLDAM
         void parseReadlines(const std::vector<std::string> &data) override;
         void dirTraversal(std::string fileName) override;
         void parseLine(const std::string line) override;
+
         void parseLogLine(const std::string line);
         void parseStringLine(const std::string line);
 
@@ -52,5 +54,6 @@ namespace POLDAM
         std::vector<std::string> logtypeData;
 
         std::vector<unsigned int> parsedObjectData;
+        std::vector<std::map<std::string, std::string>> parsedLogTypeData;
     };
 }

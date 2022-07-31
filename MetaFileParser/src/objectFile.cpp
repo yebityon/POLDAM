@@ -50,7 +50,7 @@ namespace POLDAM
 
     void ObjectfileParser::parseReadlines(const std::vector<std::string> &data)
     {
-        // TODO: ungly, you need to fix logic here.
+        // TODO: ungly, need to fix logic.
 
         for (const auto &line : data)
         {
@@ -69,7 +69,62 @@ namespace POLDAM
         }
     }
 
-    void ObjectfileParser::parseLine(const std::string line){};
+    void ObjectfileParser::parseLine(const std::string line)
+    {
+        const std::vector<std::string> d = POLDAM_UTIL::split(line, ',');
+        const std::pair<unsigned int, unsigned int> rec =
+            std::make_pair(static_cast<unsigned int>(std::stoi(d[0])), static_cast<unsigned int>(std::stoi(d[1])));
+
+        parsedObjectData.emplace_back(rec.second);
+    };
+
+    void ObjectfileParser::parseLogLine(const std::string line)
+    {
+        const std::vector<std::string> parsedVec = POLDAM_UTIL::split(line, ',');
+        std::map<std::string, std::string> rec{};
+
+        for (int i = 0; i < parsedVec.size(); ++i)
+        {
+            // dataid
+            if (i == 0)
+            {
+                continue;
+            }
+            // objectType
+            else if (i == 1)
+            {
+                rec["objecttype"] = parsedVec[i];
+            }
+            // loadclass
+            else if (i == 2)
+            {
+                rec["loadlclass"] = parsedVec[i];
+            }
+            // typenum1
+            else if (i == 3)
+            {
+                rec["typenum1"] = parsedVec[i];
+            }
+            // typenum2
+            else if (i == 4)
+            {
+                rec["typenum2"] = parsedVec[i];
+            }
+            // loader
+            else if (i == 5)
+            {
+                rec["loader"] = parsedVeci;
+            }
+            else
+            {
+                assert(false && "Undefined key is recored in LOGTypefile Parser");
+            }
+
+            this->parsedLogTypeData.push_back(rec);
+                }
+
+        return;
+    }
 
     void ObjectfileParser::readObjectTypeData()
     {

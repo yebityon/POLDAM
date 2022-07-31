@@ -6,6 +6,7 @@
 #include <fstream>
 #include <utility>
 #include <map>
+#include <cassert>
 
 namespace POLDAM
 {

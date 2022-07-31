@@ -75,7 +75,7 @@ namespace POLDAM
         const std::pair<unsigned int, unsigned int> rec =
             std::make_pair(static_cast<unsigned int>(std::stoi(d[0])), static_cast<unsigned int>(std::stoi(d[1])));
 
-        parsedObjectData.emplace_back(rec.second);
+        this->parsedObjectData.emplace_back(rec.second);
     };
 
     void ObjectfileParser::parseLogLine(const std::string line)
@@ -113,7 +113,7 @@ namespace POLDAM
             // loader
             else if (i == 5)
             {
-                rec["loader"] = parsedVeci;
+                rec["loader"] = parsedVec[i];
             }
             else
             {
@@ -121,16 +121,35 @@ namespace POLDAM
             }
 
             this->parsedLogTypeData.push_back(rec);
-                }
+        }
 
         return;
     }
 
+    void ObjectfileParser::parseStringLine(const std::string line)
+    {
+        const std::vector<std::string> d = POLDAM_UTIL::split(line, ',');
+        unsigned int dataidIdx = static_cast<unsigned int>(std::stoi(d[0]));
+        // we do not recored length of target string
+        this->parsedStringData[dataidIdx] = d[2];
+    }
+
     void ObjectfileParser::readObjectTypeData()
     {
+        // read object file
         this->readFile(this->objectTypeFilePath, this->objectTypeData);
-        this->readFile(this->stringFilePath, this->stringData);
-        this->readFile(this->logTypeFilePath, this->logtypeData);
+        this->setObjectfileType("object");
+        this->parseReadlines(this->objectTypeData);
+
+        // read string data
+        this->readFile(this->stringFileName, this->stringData);
+        this->setObjectfileType("string");
+        this->parseReadlines(this->stringData);
+
+        // read object data
+        this->readFile(this->logTypeFilePath, this->logTypeData);
+        this->setObjectfileType("log");
+        this->parseReadlines(this->logTypeData);
     };
 
     void ObjectfileParser::accumulateObjectFile(){

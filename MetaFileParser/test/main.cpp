@@ -3,18 +3,13 @@
 #include <iostream>
 #include <cassert>
 
-int main()
+const std::string inputDir = "./Data/Main_LOG";
+
+POLDAM::metafileFactory factory(inputDir);
+
+void test_dataids_1()
 {
-    std::cout << "========================= MetafileParser TEST is running =========================\n";
-
-    const std::string inputDir = "./Data/Main_LOG";
-
-    POLDAM::metafileFactory factory(inputDir);
-
     auto dataids = factory.createInstance<POLDAM::dataidsParser>(inputDir);
-    auto seloggerParser = factory.createInstance<POLDAM::seloggerLogParser>(inputDir);
-
-    std::cout << "===================== DATAID PARSER TEST ====================" << std::endl;
 
     const auto &dataidsData = dataids.getData();
     auto dataidsParsedData = dataids.getParsedData();
@@ -30,15 +25,25 @@ int main()
     assert(dataidsParsedData[0].eventinfo["Main#<init>#()V#size"] == "6");
     assert(dataidsData.size() == dataidsParsedData.size());
 
-    std::cout << "===================== DATAID PARSER TEST PASSED ====================" << std::endl;
+    std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "test_1 passed!" << std::endl;
+}
 
-    std::cout << "===================== SELOGGER PARSER TEST ====================" << std::endl;
+void test_seloggerLogParser_1()
+{
 
+    auto seloggerParser = factory.createInstance<POLDAM::seloggerLogParser>(inputDir);
     assert(seloggerParser.getDirName() == inputDir);
     const auto &seloggerLogData = seloggerParser.getData();
     assert(seloggerLogData[0] == "EventId=0,EventType=METHOD_ENTRY,ThreadId=0,DataId=13,Value=0,method:0,1,Main,main,([Ljava/lang/String;)V,9,Main.java,fe1fe704c569eaf77bb10120a2a4698035803860,Main:main,Main.java:0:0");
+    std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "test_2 passed!" << std::endl;
+}
 
-    std::cout << "===================== SELOGGER PARSER TEST PASSED ====================" << std::endl;
+void test_ObjecetFileParser()
+{
+}
 
-    std::cout << "========================= MetafileParser TEST is succeed =========================\n";
+int main()
+{
+    test_dataids_1();
+    test_seloggerLogParser_1();
 }

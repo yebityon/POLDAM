@@ -25,12 +25,22 @@ namespace POLDAM
     public:
         ObjectfileParser(std::string inputDir){};
 
+        std::vector<ObjectData> getParsedData()
+        {
+            return this->accmulatedData;
+        }
+
     private:
         void readFile(const std::string filePath, std::vector<std::string> &data) override;
         void parseReadlines(const std::vector<std::string> &data) override;
         void dirTraversal(std::string fileName) override;
-        void parseLine(const std::string line) override;
 
+        void setObjectfileType(const std::string fileType)
+        {
+            this->fileType = fileType;
+        };
+
+        void parseLine(const std::string line) override;
         void parseLogLine(const std::string line);
         void parseStringLine(const std::string line);
 
@@ -41,9 +51,9 @@ namespace POLDAM
 
         std::string fileType = "object";
 
-        std::string objectFileName;
-        std::string stringFileName;
-        std::string logTypeFileName;
+        std::string objectFileName{"LOG$ObjectTypes00001.txt"};
+        std::string stringFileName{"LOG$String00001.txt"};
+        std::string logTypeFileName{"LOG$Types.txt"};
 
         std::string objectTypeFilePath;
         std::string stringFilePath;
@@ -51,9 +61,12 @@ namespace POLDAM
 
         std::vector<std::string> objectTypeData;
         std::vector<std::string> stringData;
-        std::vector<std::string> logtypeData;
+        std::vector<std::string> logTypeData;
 
-        std::vector<unsigned int> parsedObjectData;
+        std::vector<unsigned int> parsedObjectTypesData;
         std::vector<std::map<std::string, std::string>> parsedLogTypeData;
+        std::map<unsigned int, std::string> parsedStringData;
+
+        std::vector<ObjectData> accumualtedData;
     };
 }

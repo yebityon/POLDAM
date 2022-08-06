@@ -13,7 +13,6 @@ void test_dataids_1()
 
     const auto &dataidsData = dataids.getData();
     auto dataidsParsedData = dataids.getParsedData();
-
     assert(dataidsData[0] == "0,0,0,-1,-1,RESERVED,V,Main#<init>#()V#size=6");
     assert(dataidsParsedData[0].classid == 0);
     assert(dataidsParsedData[0].dataidx == 0);

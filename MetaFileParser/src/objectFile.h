@@ -27,7 +27,7 @@ namespace POLDAM
 
         std::vector<ObjectData> getParsedData()
         {
-            return this->accmulatedData;
+            return this->accumulatedData;
         }
 
     private:
@@ -67,6 +67,6 @@ namespace POLDAM
         std::vector<std::map<std::string, std::string>> parsedLogTypeData;
         std::map<unsigned int, std::string> parsedStringData;
 
-        std::vector<ObjectData> accumualtedData;
+        std::vector<ObjectData> accumulatedData;
     };
 }

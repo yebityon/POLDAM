@@ -75,7 +75,7 @@ namespace POLDAM
         const std::pair<unsigned int, unsigned int> rec =
             std::make_pair(static_cast<unsigned int>(std::stoi(d[0])), static_cast<unsigned int>(std::stoi(d[1])));
 
-        this->parsedObjectData.emplace_back(rec.second);
+        this->parsedObjectTypesData.emplace_back(rec.second);
     };
 
     void ObjectfileParser::parseLogLine(const std::string line)
@@ -152,7 +152,10 @@ namespace POLDAM
         this->parseReadlines(this->logTypeData);
     };
 
-    void ObjectfileParser::accumulateObjectFile(){
-
+    void ObjectfileParser::accumulateObjectFile()
+    {
+        for (unsigned int dataids = 0; dataids < this->parsedLogTypeData.size(); ++dataids)
+        {
+        }
     };
 }

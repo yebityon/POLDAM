@@ -154,8 +154,14 @@ namespace POLDAM
 
     void ObjectfileParser::accumulateObjectFile()
     {
-        for (unsigned int dataids = 0; dataids < this->parsedLogTypeData.size(); ++dataids)
+        for (unsigned int dataid = 0; dataid < this->parsedLogTypeData.size(); ++dataid)
         {
+            ObjectData obj{};
+            auto &logData = parsedLogTypeData[dataid];
+            obj.dataidx = dataid;
+            obj.objecttype = logData["objecttype"];
+
+            this->accumulatedData.emplace_back(obj);
         }
     };
 }

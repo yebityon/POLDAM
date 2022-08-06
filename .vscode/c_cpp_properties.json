@@ -9,6 +9,16 @@
       "cStandard": "gnu17",
       "cppStandard": "gnu++17",
       "intelliSenseMode": "macos-gcc-x64"
+    },
+    {
+      "name": "WSL",
+      "includePath": ["${workspaceFolder}/**", "/usr/include/c++/11"],
+      "defines": [],
+      "macFrameworkPath": [],
+      "compilerPath": "/usr/bin/g++-11",
+      "cStandard": "gnu17",
+      "cppStandard": "gnu++17",
+      "intelliSenseMode": "gcc-x64"
     }
   ],
   "version": 4

@@ -13,6 +13,7 @@ namespace POLDAM
         // typenum is recored in LOG$Types.txt
         int typenum1;
         int typenum2;
+
         std::string loadclasss;
         std::string objecttype;
         std::string loader;

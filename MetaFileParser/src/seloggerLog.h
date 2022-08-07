@@ -40,7 +40,7 @@ namespace POLDAM
 
     private:
         void readFile(const std::string fileName, std::vector<std::string> &data) override;
-        void parseReadlines(const std::vector<std::string> &data) override;
+        void parseReadlines(std::vector<std::string> &data) override;
         void dirTraversal(std::string fileName) override;
 
         /**

@@ -27,7 +27,7 @@ namespace POLDAM
         }
     }
 
-    void dataidsParser::parseReadlines(const std::vector<std::string> &data)
+    void dataidsParser::parseReadlines(std::vector<std::string> &data)
     {
         std::vector<DataId> parsedData;
         for (const auto &str : data)

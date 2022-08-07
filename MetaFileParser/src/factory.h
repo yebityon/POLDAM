@@ -2,6 +2,7 @@
 #include "metafileHandlerCommon.h"
 #include "dataids.h"
 #include "seloggerLog.h"
+#include "objectFile.h"
 
 namespace POLDAM
 {

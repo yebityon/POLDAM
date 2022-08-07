@@ -28,7 +28,7 @@ namespace POLDAM
         fileStream.close();
     }
 
-    void seloggerLogParser::parseReadlines(const std::vector<std::string> &data)
+    void seloggerLogParser::parseReadlines(std::vector<std::string> &data)
     {
         for (const auto &buffer : this->data)
         {

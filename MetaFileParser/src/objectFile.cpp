@@ -28,12 +28,13 @@ namespace POLDAM
     void ObjectfileParser::readFile(const std::string filePath, std::vector<std::string> &data)
     {
         std::ifstream fileStream;
+        std::cout << filePath << std::endl;
 
-        fileStream.open(this->objectFileName, std::ios::in);
+        fileStream.open(filePath, std::ios::in);
 
         if (!fileStream)
         {
-            std::cout << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX << "objectfile is nott found\n";
+            std::cout << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX << filePath << " is not found\n";
             exit(1);
         }
 
@@ -41,44 +42,28 @@ namespace POLDAM
         {
             std::string buffer;
             std::getline(fileStream, buffer);
+            std::cout << buffer << std::endl;
 
-            data.push_back(buffer);
+            if (buffer.empty())
+                continue;
+
+            data.push_back(std::move(buffer));
         }
 
         fileStream.close();
+        std::cout << "\nfileStream is closed" << std::endl;
     };
 
-    void ObjectfileParser::parseReadlines(const std::vector<std::string> &data)
+    void ObjectfileParser::parseLine(std::string line)
     {
-        // TODO: ungly, need to fix logic.
-
-        for (const auto &line : data)
-        {
-            if (this->fileType == "objcet")
-            {
-                parseLine(line);
-            }
-            else if (this->fileType == "log")
-            {
-                parseLogLine(line);
-            }
-            else
-            {
-                parseStringLine(line);
-            }
-        }
-    }
-
-    void ObjectfileParser::parseLine(const std::string line)
-    {
-        const std::vector<std::string> d = POLDAM_UTIL::split(line, ',');
-        const std::pair<unsigned int, unsigned int> rec =
-            std::make_pair(static_cast<unsigned int>(std::stoi(d[0])), static_cast<unsigned int>(std::stoi(d[1])));
-
-        this->parsedObjectTypesData.emplace_back(rec.second);
+        std::cout << "DEBUG -> " << line << std::endl;
+        std::vector<std::string> d = POLDAM_UTIL::split(line, ',');
+        std::cout << d[0] << " YEBITYON  " << d[1] << std::endl;
+        unsigned int objectTypeId = static_cast<unsigned int>(std::stoi(d[1]));
+        this->parsedObjectTypesData.emplace_back(objectTypeId);
     };
 
-    void ObjectfileParser::parseLogLine(const std::string line)
+    void ObjectfileParser::parseLogLine(std::string line)
     {
         const std::vector<std::string> parsedVec = POLDAM_UTIL::split(line, ',');
         std::map<std::string, std::string> rec{};
@@ -119,30 +104,32 @@ namespace POLDAM
             {
                 assert(false && "Undefined key is recored in LOGTypefile Parser");
             }
-
-            this->parsedLogTypeData.push_back(rec);
         }
-
+        this->parsedLogTypeData.push_back(rec);
         return;
     }
 
-    void ObjectfileParser::parseStringLine(const std::string line)
+    void ObjectfileParser::parseStringLine(std::string line)
     {
-        const std::vector<std::string> d = POLDAM_UTIL::split(line, ',');
+        std::cout << "parseStringLine()" << std::endl;
+        std::cout << "line: " << line << std::endl;
+
+        std::vector<std::string> d = POLDAM_UTIL::split(line, ',');
         unsigned int dataidIdx = static_cast<unsigned int>(std::stoi(d[0]));
         // we do not recored length of target string
-        this->parsedStringData[dataidIdx] = d[2];
+        this->parsedStringData[dataidIdx] = d[1];
     }
 
     void ObjectfileParser::readObjectTypeData()
     {
-        // read object file
+        // read object Types
         this->readFile(this->objectTypeFilePath, this->objectTypeData);
         this->setObjectfileType("object");
+        std::cout << "call parseReadLines" << std::endl;
         this->parseReadlines(this->objectTypeData);
 
         // read string data
-        this->readFile(this->stringFileName, this->stringData);
+        this->readFile(this->stringFilePath, this->stringData);
         this->setObjectfileType("string");
         this->parseReadlines(this->stringData);
 
@@ -152,14 +139,55 @@ namespace POLDAM
         this->parseReadlines(this->logTypeData);
     };
 
+    void ObjectfileParser::parseReadlines(std::vector<std::string> &data)
+    {
+        // TODO: ungly, need to fix logic.
+
+        for (auto line : data)
+        {
+            if (this->fileType == "objcet")
+            {
+                std::cout << "[parse Object] " << line << std::endl;
+                this->parseLine(line);
+            }
+            else if (this->fileType == "string")
+            {
+                std::cout << "[parse String] " << line << std::endl;
+                parseStringLine(line);
+            }
+            else
+            {
+                std::cout << "[parse Log line] " << line << std::endl;
+                parseLogLine(line);
+            }
+        }
+    }
+
     void ObjectfileParser::accumulateObjectFile()
     {
-        for (unsigned int dataid = 0; dataid < this->parsedLogTypeData.size(); ++dataid)
+        for (unsigned int id = 0; id < parsedLogTypeData.size(); ++id)
         {
+            std::cout << id << std::endl;
+            for (const auto [a, b] : parsedLogTypeData[id])
+            {
+                std::cout << "key:" << a << " value: " << b << std::endl;
+            }
             ObjectData obj{};
-            auto &logData = parsedLogTypeData[dataid];
-            obj.dataidx = dataid;
+            // dataids.txt
+            auto &logData = parsedLogTypeData[id];
+            obj.objectId = id + 1;
+            // map dataid to objectid
+            obj.objectTypesId = parsedObjectTypesData[id];
             obj.objecttype = logData["objecttype"];
+            obj.loadclasss = logData["loadclass"];
+
+            obj.typenum1 = std::stoi(logData["typenum1"]);
+            obj.typenum2 = std::stoi(logData["typenum2"]);
+            obj.loader = logData["loader"];
+            if (obj.objecttype == "string")
+            {
+                obj.value = parsedStringData[obj.objectId];
+            }
 
             this->accumulatedData.emplace_back(obj);
         }

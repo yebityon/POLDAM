@@ -32,7 +32,7 @@ util.o: $(UTIL_INCLUDE_DIR)/poldamUtil.h $(UTIL_INCLUDE_DIR)/poldamUtil.cpp
 
 metafileParser.o: $(METAFILE_SRC_DIR)/*.cpp
 	g++-11 -c $(METAFILE_SRC_DIR)/*.cpp
-	ar rvs metafileParser.o dataids.o factory.o seloggerLog.o
+	ar rvs metafileParser.o *.o
 
 clean: *.o
 	rm -f *.o

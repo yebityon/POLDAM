@@ -15,7 +15,7 @@ void test_dataids_1()
     auto dataidsParsedData = dataids.getParsedData();
 
     // FIXME: In the wsl on windows, this test case is failed due to CRLF
-    const std::string base = "0,0,0,-1,-1,RESERVED,V,Main#<init>#()V#size=6\r\n";
+    const std::string base = "0,0,0,-1,-1,RESERVED,V,Main#<init>#()V#size=6";
     assert(dataidsData[0] == base);
     assert(dataidsParsedData[0].classid == 0);
     assert(dataidsParsedData[0].dataidx == 0);
@@ -42,10 +42,16 @@ void test_seloggerLogParser_1()
 
 void test_ObjecetFileParser()
 {
+    auto objParser = factory.createInstance<POLDAM::ObjectfileParser>(inputDir);
+    auto &&data = objParser.getParsedData();
+
+    assert(data.size() == 6);
+    std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "test_ObjectFileParser1 is Passed!" << std::endl;
 }
 
 int main()
 {
     test_dataids_1();
     test_seloggerLogParser_1();
+    test_ObjecetFileParser();
 }

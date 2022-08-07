@@ -8,8 +8,9 @@ namespace POLDAM
     struct ObjectData
     {
         // recored in  LOG$ObjectTypes
-        unsigned int dataidx;
-        unsigned int objectid;
+        unsigned int objectId;
+        // map to LOG$Types file
+        unsigned int objectTypesId;
         // typenum is recored in LOG$Types.txt
         int typenum1;
         int typenum2;
@@ -24,7 +25,12 @@ namespace POLDAM
     class ObjectfileParser : fileReader
     {
     public:
-        ObjectfileParser(std::string inputDir){};
+        ObjectfileParser(std::string inputDir_)
+        {
+            this->dirTraversal(inputDir_);
+            this->readObjectTypeData();
+            this->accumulateObjectFile();
+        };
 
         std::vector<ObjectData> getParsedData()
         {
@@ -33,41 +39,43 @@ namespace POLDAM
 
     private:
         void readFile(const std::string filePath, std::vector<std::string> &data) override;
-        void parseReadlines(const std::vector<std::string> &data) override;
+        void parseReadlines(std::vector<std::string> &data) override;
         void dirTraversal(std::string fileName) override;
 
-        void setObjectfileType(const std::string fileType)
+        void setObjectfileType(std::string fileType)
         {
+            std::cout << "Try to set fileType" << std::endl;
             this->fileType = fileType;
+            std::cout << "succesfully set fileType --->" << this->fileType << std::endl;
         };
 
-        void parseLine(const std::string line) override;
-        void parseLogLine(const std::string line);
-        void parseStringLine(const std::string line);
+        void parseLine(std::string line) override;
+        void parseLogLine(std::string line);
+        void parseStringLine(std::string line);
 
         void accumulateObjectFile();
         void readObjectTypeData();
 
         std::pair<int, int> parseObjectData(const std::string line);
 
-        std::string fileType = "object";
+        std::string fileType{};
 
         std::string objectFileName{"LOG$ObjectTypes00001.txt"};
         std::string stringFileName{"LOG$String00001.txt"};
         std::string logTypeFileName{"LOG$Types.txt"};
 
-        std::string objectTypeFilePath;
-        std::string stringFilePath;
-        std::string logTypeFilePath;
+        std::string objectTypeFilePath{};
+        std::string stringFilePath{};
+        std::string logTypeFilePath{};
 
-        std::vector<std::string> objectTypeData;
-        std::vector<std::string> stringData;
-        std::vector<std::string> logTypeData;
+        std::vector<std::string> objectTypeData{};
+        std::vector<std::string> stringData{};
+        std::vector<std::string> logTypeData{};
 
-        std::vector<unsigned int> parsedObjectTypesData;
-        std::vector<std::map<std::string, std::string>> parsedLogTypeData;
-        std::map<unsigned int, std::string> parsedStringData;
+        std::vector<unsigned int> parsedObjectTypesData{};
+        std::vector<std::map<std::string, std::string>> parsedLogTypeData{};
+        std::map<unsigned int, std::string> parsedStringData{};
 
-        std::vector<ObjectData> accumulatedData;
+        std::vector<ObjectData> accumulatedData{};
     };
 }

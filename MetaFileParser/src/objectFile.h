@@ -34,7 +34,7 @@ namespace POLDAM
 
         std::vector<ObjectData> getParsedData()
         {
-            return this->accumulatedData;
+            return this->objectDatas;
         }
 
     private:
@@ -54,28 +54,32 @@ namespace POLDAM
         void parseStringLine(std::string line);
 
         void accumulateObjectFile();
+        /**
+         * @brief raed Object metafile. (i.e., objectTypesData, StringData and  Types Data)
+         *
+         */
         void readObjectTypeData();
 
         std::pair<int, int> parseObjectData(const std::string line);
 
         std::string fileType{};
 
-        std::string objectFileName{"LOG$ObjectTypes00001.txt"};
+        std::string ojbectTypesFileName{"LOG$ObjectTypes00001.txt"};
         std::string stringFileName{"LOG$String00001.txt"};
-        std::string logTypeFileName{"LOG$Types.txt"};
+        std::string typesFileName{"LOG$Types.txt"};
 
-        std::string objectTypeFilePath{};
+        std::string objectTypesFilePath{};
         std::string stringFilePath{};
-        std::string logTypeFilePath{};
+        std::string typesFilePath{};
 
-        std::vector<std::string> objectTypeData{};
-        std::vector<std::string> stringData{};
-        std::vector<std::string> logTypeData{};
+        std::vector<std::string> objectTypesDatas{};
+        std::vector<std::string> stringDatas{};
+        std::vector<std::string> typesDatas{};
 
-        std::vector<unsigned int> parsedObjectTypesData{};
-        std::vector<std::map<std::string, std::string>> parsedLogTypeData{};
-        std::map<unsigned int, std::string> parsedStringData{};
+        std::vector<unsigned int> parsedObjectTypesDatas{};
+        std::map<unsigned int, std::string> parsedStringDatas{};
+        std::vector<std::map<std::string, std::string>> parsedTypesDatas{};
 
-        std::vector<ObjectData> accumulatedData{};
+        std::vector<ObjectData> objectDatas{};
     };
 }

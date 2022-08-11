@@ -10,17 +10,17 @@ namespace POLDAM
         {
             const auto filePath = i.path();
 
-            if (filePath.filename() == this->objectFileName)
+            if (filePath.filename() == this->ojbectTypesFileName)
             {
-                this->objectTypeFilePath = std::string(i.path().c_str());
+                this->objectTypesFilePath = std::string(i.path().c_str());
             }
             else if (filePath.filename() == this->stringFileName)
             {
                 this->stringFilePath = std::string(filePath.c_str());
             }
-            else if (filePath.filename() == this->logTypeFileName)
+            else if (filePath.filename() == this->typesFileName)
             {
-                this->logTypeFilePath = std::string(filePath.c_str());
+                this->typesFileName = std::string(filePath.c_str());
             }
         }
     };
@@ -56,11 +56,9 @@ namespace POLDAM
 
     void ObjectfileParser::parseLine(std::string line)
     {
-        std::cout << "DEBUG -> " << line << std::endl;
         std::vector<std::string> d = POLDAM_UTIL::split(line, ',');
-        std::cout << d[0] << " YEBITYON  " << d[1] << std::endl;
         unsigned int objectTypeId = static_cast<unsigned int>(std::stoi(d[1]));
-        this->parsedObjectTypesData.emplace_back(objectTypeId);
+        this->parsedObjectTypesDatas.emplace_back(objectTypeId);
     };
 
     void ObjectfileParser::parseLogLine(std::string line)
@@ -105,38 +103,35 @@ namespace POLDAM
                 assert(false && "Undefined key is recored in LOGTypefile Parser");
             }
         }
-        this->parsedLogTypeData.push_back(rec);
+        this->parsedTypesDatas.push_back(rec);
         return;
     }
 
     void ObjectfileParser::parseStringLine(std::string line)
     {
-        std::cout << "parseStringLine()" << std::endl;
-        std::cout << "line: " << line << std::endl;
-
         std::vector<std::string> d = POLDAM_UTIL::split(line, ',');
         unsigned int dataidIdx = static_cast<unsigned int>(std::stoi(d[0]));
         // we do not recored length of target string
-        this->parsedStringData[dataidIdx] = d[1];
+        this->parsedStringDatas[dataidIdx] = d[1];
     }
 
     void ObjectfileParser::readObjectTypeData()
     {
         // read object Types
-        this->readFile(this->objectTypeFilePath, this->objectTypeData);
+        this->readFile(this->objectTypesFilePath, this->objectTypesDatas);
         this->setObjectfileType("object");
         std::cout << "call parseReadLines" << std::endl;
-        this->parseReadlines(this->objectTypeData);
+        this->parseReadlines(this->objectTypesDatas);
 
         // read string data
-        this->readFile(this->stringFilePath, this->stringData);
+        this->readFile(this->stringFilePath, this->stringDatas);
         this->setObjectfileType("string");
-        this->parseReadlines(this->stringData);
+        this->parseReadlines(this->stringDatas);
 
         // read object data
-        this->readFile(this->logTypeFilePath, this->logTypeData);
+        this->readFile(this->typesFilePath, this->typesDatas);
         this->setObjectfileType("log");
-        this->parseReadlines(this->logTypeData);
+        this->parseReadlines(this->typesDatas);
     };
 
     void ObjectfileParser::parseReadlines(std::vector<std::string> &data)
@@ -165,31 +160,28 @@ namespace POLDAM
 
     void ObjectfileParser::accumulateObjectFile()
     {
-        for (unsigned int id = 0; id < parsedLogTypeData.size(); ++id)
+        for (unsigned int id = 0; id < this->parsedObjectTypesDatas.size(); ++id)
         {
             std::cout << id << std::endl;
-            for (const auto [a, b] : parsedLogTypeData[id])
-            {
-                std::cout << "key:" << a << " value: " << b << std::endl;
-            }
+
             ObjectData obj{};
             // dataids.txt
-            auto &logData = parsedLogTypeData[id];
+            auto &logData = parsedObjectTypesDatas[id];
             obj.objectId = id + 1;
             // map dataid to objectid
-            obj.objectTypesId = parsedObjectTypesData[id];
+            obj.objectTypesId = parsedObjectTypesDatas[id];
             obj.objecttype = logData["objecttype"];
             obj.loadclasss = logData["loadclass"];
 
-            obj.typenum1 = std::stoi(logData["typenum1"]);
-            obj.typenum2 = std::stoi(logData["typenum2"]);
+            obj.typenum1 = logData["typenum1"];
+            obj.typenum2 = logData["typenum2"];
             obj.loader = logData["loader"];
             if (obj.objecttype == "string")
             {
-                obj.value = parsedStringData[obj.objectId];
+                obj.value = parsedStringDatas[obj.objectId];
             }
 
-            this->accumulatedData.emplace_back(obj);
+            this->objectDatas.emplace_back(obj);
         }
     };
 }

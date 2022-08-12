@@ -44,9 +44,7 @@ namespace POLDAM
 
         void setObjectfileType(std::string fileType)
         {
-            std::cout << "Try to set fileType" << std::endl;
             this->fileType = fileType;
-            std::cout << "succesfully set fileType --->" << this->fileType << std::endl;
         };
 
         void parseLine(std::string line) override;

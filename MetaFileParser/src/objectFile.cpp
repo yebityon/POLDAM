@@ -20,7 +20,7 @@ namespace POLDAM
             }
             else if (filePath.filename() == this->typesFileName)
             {
-                this->typesFileName = std::string(filePath.c_str());
+                this->typesFilePath = std::string(filePath.c_str());
             }
         }
     };
@@ -28,7 +28,6 @@ namespace POLDAM
     void ObjectfileParser::readFile(const std::string filePath, std::vector<std::string> &data)
     {
         std::ifstream fileStream;
-        std::cout << filePath << std::endl;
 
         fileStream.open(filePath, std::ios::in);
 
@@ -42,7 +41,6 @@ namespace POLDAM
         {
             std::string buffer;
             std::getline(fileStream, buffer);
-            std::cout << buffer << std::endl;
 
             if (buffer.empty())
                 continue;
@@ -51,7 +49,6 @@ namespace POLDAM
         }
 
         fileStream.close();
-        std::cout << "\nfileStream is closed" << std::endl;
     };
 
     void ObjectfileParser::parseLine(std::string line)
@@ -120,7 +117,6 @@ namespace POLDAM
         // read object Types
         this->readFile(this->objectTypesFilePath, this->objectTypesDatas);
         this->setObjectfileType("object");
-        std::cout << "call parseReadLines" << std::endl;
         this->parseReadlines(this->objectTypesDatas);
 
         // read string data
@@ -140,19 +136,16 @@ namespace POLDAM
 
         for (auto line : data)
         {
-            if (this->fileType == "objcet")
+            if (this->fileType == "object")
             {
-                std::cout << "[parse Object] " << line << std::endl;
                 this->parseLine(line);
             }
             else if (this->fileType == "string")
             {
-                std::cout << "[parse String] " << line << std::endl;
                 parseStringLine(line);
             }
             else
             {
-                std::cout << "[parse Log line] " << line << std::endl;
                 parseLogLine(line);
             }
         }
@@ -162,8 +155,6 @@ namespace POLDAM
     {
         for (unsigned int id = 0; id < this->parsedObjectTypesDatas.size(); ++id)
         {
-            std::cout << id << std::endl;
-
             ObjectData obj{};
             // dataids.txt
             auto &logData = parsedObjectTypesDatas[id];

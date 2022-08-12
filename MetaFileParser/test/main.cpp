@@ -45,6 +45,7 @@ void test_ObjecetFileParser()
     auto objParser = factory.createInstance<POLDAM::ObjectfileParser>(inputDir);
     auto &&data = objParser.getParsedData();
 
+    std::cout << data.size() << std::endl;
     assert(data.size() == 6);
     std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "test_ObjectFileParser1 is Passed!" << std::endl;
 }

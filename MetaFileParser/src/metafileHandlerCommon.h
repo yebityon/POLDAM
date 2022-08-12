@@ -36,7 +36,7 @@ namespace POLDAM
          * @brief iterate target Directory to look up target file. Please note there may be more than one target file.
          * @param targetDir
          */
-        virtual void dirTraversal(std::string targetDir) = 0;
+        virtual void dirTraversal(const std::string targetDir) = 0;
     };
 
 }

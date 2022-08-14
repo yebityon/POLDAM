@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stack>
+#include <map>
 
 #include <boost/graph/adjacency_iterator.hpp>
 #include <boost/graph/depth_first_search.hpp>
@@ -57,12 +59,21 @@ namespace POLDAM
     {
     public:
         bool addOmniEdge(GraphVertex u, GraphVertex v);
-        bool createOmniVertex(){};
+        boost::graph_traits<Graph>::vertex_descriptor createOmniVertex(){};
         bool updateVertex(GraphVertex v, const std::string context);
+        bool pushVertex(){};
 
     private:
         Graph g{};
         boost::graph_traits<Graph>::vertex_descriptor root;
-        Graph::vertex_descriptor root{};
+
+        // stack for vertexies
+
+        // {key: thareadId, value:stack<>}
+        std::map<int, std::stack<Graph::vertex_descriptor>> vStack;
+        // {key: threadId, value:stack<>}
+        std::map<int, std::stack<std::map<std::string, std::string>>> callStack;
+        // {key: threadId, value:stack<>}
+        std::map<int, std::stack<std::map<std::string, std::string>>> callInstStack;
     };
 }

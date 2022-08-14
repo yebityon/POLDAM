@@ -5,6 +5,10 @@
 
 #include "Util/include/src/poldamUtil.h"
 #include "Util/include/src/poldamConfig.h"
+
+#include "Interpreter/src/InterpreterCommon.h"
+#include "Interpreter/src/methodEntry.h"
+
 #include "MetafileParser/src/factory.h"
 #include "Metafileparser/src/metafileHandlerCommon.h"
 
@@ -97,10 +101,21 @@ int main(int argc, char *argv[])
 
     const std::vector<std::string> omniLog = seloggerParser.getData();
 
-    OmniGraph targetGraph;
-    for (const std::string &log : omniLog)
+    POLDAM::OmniGraph targetGraph{};
 
+    for (const std::string &log : omniLog)
     {
+        const POLDAM::EventType eventId = POLDAM::getEventType(log);
+
+        if (eventId == POLDAM::EventType::METHOD_ENTRY)
+        {
+            POLDAM::LogInterpreter<POLDAM::METHOD_ENTRY> interpreter(log);
+            interpreter.parseLog();
+
+            POLDAM::METHOD_ENTRY res = interpreter.getParserResult();
+
+            auto vertex = targetGraph.createOmniVertex();
+        }
     }
 
     // Phase3. Apply algorrithms　and Compare two Graphs.

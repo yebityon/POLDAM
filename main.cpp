@@ -6,6 +6,9 @@
 #include "Util/include/src/poldamUtil.h"
 #include "Util/include/src/poldamConfig.h"
 #include "MetafileParser/src/factory.h"
+#include "Metafileparser/src/metafileHandlerCommon.h"
+
+#include "Graph/src/graph.hpp"
 
 void printHelp()
 {
@@ -88,8 +91,17 @@ int main(int argc, char *argv[])
 
     auto dataids = factory.createInstance<POLDAM::dataidsParser>(config.inputDir);
     auto seloggerParser = factory.createInstance<POLDAM::seloggerLogParser>(config.inputDir);
+    auto objectFileParser = factory.createInstance<POLDAM::ObjectfileParser>(config.inputDir);
 
     // Phase2. Create Graph.
+
+    const std::vector<std::string> omniLog = seloggerParser.getData();
+
+    OmniGraph targetGraph;
+    for (const std::string &log : omniLog)
+
+    {
+    }
 
     // Phase3. Apply algorrithms　and Compare two Graphs.
     // Phase4. Write Graph Result.

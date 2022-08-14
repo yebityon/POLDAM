@@ -7,8 +7,13 @@ METAFILE_DIR = MetafileParser
 METAFILE_INCLUDE_DIR = MetafileParser/include
 METAFILE_SRC_DIR = MetaFileParser/src
 
+GRAPH_DIR = Graph
+GRAPH_SRC_DIR = $(GRAPH_DIR)/src
+
 UTIL_DIR = Util
 UTIL_INCLUDE_DIR = $(UTIL_DIR)/include/src
+
+BOOST_PATH = -I/opt/homebrew/Cellar/boost/1.79.0_1/include/
 
 main: main.cpp util.o metafileParser.o 
 	g++-11 -I./ main.cpp util.o metafileParser.o -o main
@@ -33,6 +38,9 @@ util.o: $(UTIL_INCLUDE_DIR)/poldamUtil.h $(UTIL_INCLUDE_DIR)/poldamUtil.cpp
 metafileParser.o: $(METAFILE_SRC_DIR)/*.cpp
 	g++-11 -c $(METAFILE_SRC_DIR)/*.cpp
 	ar rvs metafileParser.o *.o
+
+graph.o: $(GRAPH_SRC_DIR)/*.cpp $(GRAPH_SRC_DIR)/*.h
+	g++-11 $(BOOST_PATH) -c $(GRAPH_SRC_DIR)/*.cpp
 
 clean: *.o
 	rm -f *.o

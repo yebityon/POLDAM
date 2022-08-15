@@ -58,8 +58,10 @@ namespace POLDAM
     class OmniGraph
     {
     public:
-        bool addOmniEdge(GraphVertex u, GraphVertex v);
-        boost::graph_traits<Graph>::vertex_descriptor createOmniVertex(){};
+        bool addOmniEdge(boost::graph_traits<Graph>::edge_descriptor e, GraphVertex u, GraphVertex v, const size_t threadId);
+        bool addOmniEdge(boost::graph_traits<Graph>::edge_descriptor e, boost::graph_traits<Graph>::vertex_descriptor v_, const size_t threadId);
+
+        boost::graph_traits<Graph>::vertex_descriptor createOmniVertex(GraphVertex v, const size_t threadId);
         bool updateVertex(GraphVertex v, const std::string context);
         bool pushVertex(){};
 

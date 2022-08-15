@@ -113,8 +113,11 @@ int main(int argc, char *argv[])
             interpreter.parseLog();
 
             POLDAM::METHOD_ENTRY res = interpreter.getParserResult();
+            POLDAM::GraphVertex v;
+            const size_t threadId = 1;
+            const auto &vertex = targetGraph.createOmniVertex(v, threadId);
 
-            auto vertex = targetGraph.createOmniVertex();
+            bool isInserted = targetGraph.addOmniEdge(vertex);
         }
     }
 

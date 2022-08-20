@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stack>
-#include <map>
+#include <functional>
 
 #include <boost/graph/adjacency_iterator.hpp>
 #include <boost/graph/depth_first_search.hpp>
@@ -58,12 +58,15 @@ namespace POLDAM
     class OmniGraph
     {
     public:
-        bool addOmniEdge(boost::graph_traits<Graph>::edge_descriptor e, GraphVertex u, GraphVertex v, const size_t threadId);
-        bool addOmniEdge(boost::graph_traits<Graph>::edge_descriptor e, boost::graph_traits<Graph>::vertex_descriptor v_, const size_t threadId);
+        bool addOmniEdge(GraphVertex u, GraphVertex v, const size_t threadId);
+        bool addOmniEdge(boost::graph_traits<Graph>::vertex_descriptor v_, const size_t threadId);
 
         boost::graph_traits<Graph>::vertex_descriptor createOmniVertex(GraphVertex v, const size_t threadId);
         bool updateVertex(GraphVertex v, const std::string context);
         bool pushVertex(){};
+        bool updateStackTopVertex(const std::string log, const unsigned int threadId);
+        bool computeFlowHash(const unsigned int threadId);
+        bool computeParamHash(const unsigned int threadId);
 
     private:
         Graph g{};

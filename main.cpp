@@ -114,11 +114,23 @@ int main(int argc, char *argv[])
 
             POLDAM::METHOD_ENTRY res = interpreter.getParserResult();
             POLDAM::GraphVertex v;
+            // update  v infor
             const size_t threadId = 1;
-            const auto &vertex = targetGraph.createOmniVertex(v, threadId);
 
-            bool isInserted = targetGraph.addOmniEdge(vertex);
+            const auto &vertex = targetGraph.createOmniVertex(v, threadId);
+            bool isInserted = targetGraph.addOmniEdge(vertex, threadId);
         }
+        else if (eventId == POLDAM::EventType::METHOD_PARAM)
+        {
+            // POLDAM::LogInterpreter< POLDAM::METHOD_PARAM> interpreter(log);
+            // interpreter.parseLog();
+        }
+        else if (eventId == POLDAM::EventType::METHOD_NORMAL_EXIT)
+        {
+        }
+        else
+        {
+                }
     }
 
     // Phase3. Apply algorrithms　and Compare two Graphs.

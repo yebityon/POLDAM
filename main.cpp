@@ -127,10 +127,17 @@ int main(int argc, char *argv[])
         }
         else if (eventId == POLDAM::EventType::METHOD_NORMAL_EXIT)
         {
+            const unsigned int threadId = 0;
+            // computeFlowHash should consider the control flow hash
+            targetGraph.computeFlowHash(threadId);
+            // same as FlowHash
+            targetGraph.computeParamHash(threadId);
         }
         else
         {
-                }
+            const unsigned int threadId = 0;
+            targetGraph.updateStackTopVertex(log, threadId);
+        }
     }
 
     // Phase3. Apply algorrithms　and Compare two Graphs.

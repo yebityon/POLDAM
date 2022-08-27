@@ -20,7 +20,6 @@ namespace POLDAM
         std::string descriptor;
         std::map<std::string, std::string> eventinfo;
     };
-
     class dataidsParser : fileReader
     {
     public:

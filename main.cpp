@@ -21,34 +21,38 @@ void printHelp()
     std::cout << "Check your code" << std::endl;
 }
 
-class OmniWriter
+namespace POLDAM
 {
-    OmniWriter(POLDAM::OmniGraph &G_) : G(G_){};
-
-    void writeOmniGraph(const std::string outputFileName)
+    class OmniWriter
     {
-        const auto &g = G.getGraphCopy();
+    public:
+        OmniWriter(POLDAM::OmniGraph &G_) : G(G_){};
 
-        try
+        void writeOmniGraph(const std::string outputFileName)
         {
-            std::ofstream outputDotFile(outputFileName);
-            boost::write_graphviz(outputDotFile, g,
-                                  boost::make_label_writer(get(&POLDAM::GraphVertex::outputFormat, g)),
-                                  boost::make_label_writer(get(&POLDAM::GraphEdge::outputFormat, g)));
-        }
-        catch (...)
-        {
-            std::cerr << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX
-                      << "Can not export as graphviz." << std::endl;
+            const auto &g = G.getGraphCopy();
+
+            try
+            {
+                std::ofstream outputDotFile(outputFileName);
+                boost::write_graphviz(outputDotFile, g,
+                                      boost::make_label_writer(get(&POLDAM::GraphVertex::outputFormat, g)),
+                                      boost::make_label_writer(get(&POLDAM::GraphEdge::outputFormat, g)));
+            }
+            catch (...)
+            {
+                std::cerr << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX
+                          << "Can not export as graphviz." << std::endl;
+                return;
+            }
+
             return;
         }
 
-        return;
-    }
-
-private:
-    POLDAM::OmniGraph &G;
-};
+    private:
+        POLDAM::OmniGraph &G;
+    };
+}
 
 int main(int argc, char *argv[])
 {
@@ -100,6 +104,18 @@ int main(int argc, char *argv[])
             config.targetMethodName = targetMethod;
             ++i;
         }
+        else if (arg == "-outputFile")
+        {
+            if (i + 1 > argc)
+            {
+                std::cout << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX << "No outputfile is Given\n";
+                printHelp();
+                exit(1);
+            }
+            const std::string outputFileName = argv[i + 1];
+            config.outputFileName = outputFileName;
+            ++i;
+        }
         else if (arg == "--fastIO")
         {
             std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "Use fast IO\n"
@@ -120,6 +136,7 @@ int main(int argc, char *argv[])
     std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "outputDir: {" << config.outputDir << "}\n";
     std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "inputDir: {" << config.inputDir << "}\n";
     std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "targetMethod: {" << config.targetMethodName << "}\n";
+    std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "outputFileName: {" << config.outputFileName << "}\n";
 
     // Phase 1. read and parse all metafiles
     POLDAM::metafileFactory factory(config.inputDir);
@@ -175,8 +192,9 @@ int main(int argc, char *argv[])
 
     // Phase4. Write Graph Result.
 
-    OmniWriter writer(targetGraph);
-    writer.writeOmniGraph();
+    POLDAM::OmniWriter writer(targetGraph);
+
+    writer.writeOmniGraph(config.outputDir);
 
     std::cout
         << "===================== TEST PASSED ====================" << std::endl;

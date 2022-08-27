@@ -81,14 +81,6 @@ namespace POLDAM
         EventType getEventType() override { return EventType::UNDEFINED; }
     };
 
-    class InterpreterManager
-    {
-    public:
-        static POLDAM::EventType getEventType(const std::string log)
-        {
-        }
-    };
-
     EventType getEventType(const std::string str)
     {
         // assert(str is selogger_type)

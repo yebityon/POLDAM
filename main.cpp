@@ -14,10 +14,41 @@
 
 #include "Graph/src/graph.hpp"
 
+#include <boost/graph/graphviz.hpp>
+
 void printHelp()
 {
     std::cout << "Check your code" << std::endl;
 }
+
+class OmniWriter
+{
+    OmniWriter(POLDAM::OmniGraph &G_) : G(G_){};
+
+    void writeOmniGraph(const std::string outputFileName)
+    {
+        const auto &g = G.getGraphCopy();
+
+        try
+        {
+            std::ofstream outputDotFile(outputFileName);
+            boost::write_graphviz(outputDotFile, g,
+                                  boost::make_label_writer(get(&POLDAM::GraphVertex::outputFormat, g)),
+                                  boost::make_label_writer(get(&POLDAM::GraphEdge::outputFormat, g)));
+        }
+        catch (...)
+        {
+            std::cerr << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX
+                      << "Can not export as graphviz." << std::endl;
+            return;
+        }
+
+        return;
+    }
+
+private:
+    POLDAM::OmniGraph &G;
+};
 
 int main(int argc, char *argv[])
 {
@@ -141,7 +172,11 @@ int main(int argc, char *argv[])
     }
 
     // Phase3. Apply algorrithms　and Compare two Graphs.
+
     // Phase4. Write Graph Result.
+
+    OmniWriter writer(targetGraph);
+    writer.writeOmniGraph();
 
     std::cout
         << "===================== TEST PASSED ====================" << std::endl;

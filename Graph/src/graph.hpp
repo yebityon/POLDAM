@@ -15,6 +15,7 @@ namespace POLDAM
         std::string edgeHash;
         std::string from;
         std::string to;
+        std::string outputFormat;
     };
 
     struct GraphVertex
@@ -67,6 +68,7 @@ namespace POLDAM
         bool updateStackTopVertex(const std::string log, const unsigned int threadId);
         bool computeFlowHash(const unsigned int threadId);
         bool computeParamHash(const unsigned int threadId);
+        Graph getGraphCopy();
 
     private:
         Graph g{};

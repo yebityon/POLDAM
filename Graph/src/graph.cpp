@@ -50,4 +50,9 @@ namespace POLDAM
         this->g[prevVertex].paramHash = std::hash<std::string>()(this->g[prevVertex].paramStr);
         return true;
     }
+    Graph OmniGraph::getGraphCopy()
+    {
+        return this->g;
+    }
+
 }

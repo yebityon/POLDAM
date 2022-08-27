@@ -52,6 +52,34 @@ namespace POLDAM
     private:
         POLDAM::OmniGraph &G;
     };
+
+    EventType getEventType(const std::string str)
+    {
+        // assert(str is selogger_type)
+        const std::string evnetString = POLDAM_UTIL::split(str)[1];
+        const std::string eventType = POLDAM_UTIL::split(evnetString, '=')[1];
+
+        if (eventType == "METHOD_ENTRY")
+        {
+            return EventType::METHOD_ENTRY;
+        }
+        else if (eventType == "METHOD_PARAM")
+        {
+            return EventType::METHOD_PARAM;
+        }
+        else if (eventType == "METHOD_NORMAL_EXIT")
+        {
+            return EventType::METHOD_NORMAL_EXIT;
+        }
+        else if (eventType == "METHOD_EXCEPTIONAL_EXIT")
+        {
+            return EventType::METHOD_EXCEPTIONAL_EXIT;
+        }
+        else
+        {
+            return EventType::UNDEFINED;
+        }
+    }
 }
 
 int main(int argc, char *argv[])

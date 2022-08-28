@@ -203,7 +203,7 @@ int main(int argc, char *argv[])
             v.outputFormat = res.methodName;
 
             const size_t threadId = 0;
-            bool result = targetGraph.createOmniVertex(v, threadId);
+            bool result = targetGraph.addOmniVertex(v, threadId);
         }
         else if (eventId == POLDAM::EventType::METHOD_PARAM)
         {
@@ -214,11 +214,7 @@ int main(int argc, char *argv[])
         {
             const unsigned int threadId = 0;
             // computeFlowHash should consider the control flow hash
-            targetGraph.computeFlowHash(threadId);
-            // same as FlowHash
-            targetGraph.computeParamHash(threadId);
-
-            targetGraph.popVertex(threadId);
+            targetGraph.moveNextVertex(threadId);
         }
         else
         {

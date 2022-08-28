@@ -4,12 +4,8 @@
 
 namespace POLDAM
 {
-    bool OmniGraph::addOmniEdge(GraphVertex u, GraphVertex v, const size_t threadId)
-    {
-        return true;
-    }
 
-    bool OmniGraph::createOmniVertex(GraphVertex v_, const size_t threadId)
+    bool OmniGraph::addOmniVertex(GraphVertex v_, const size_t threadId)
     {
         boost::graph_traits<Graph>::vertex_descriptor v = boost::add_vertex(this->g);
 
@@ -23,6 +19,26 @@ namespace POLDAM
 
         return v;
     }
+    bool OmniGraph::updateStackTopVertex(const std::string log, const unsigned int threadId)
+    {
+        const auto &prevVertex = this->vStack[threadId].top();
+        this->g[prevVertex].flowStr += log;
+        return true;
+    }
+
+    bool OmniGraph::computeHash(const unsigned int threadId)
+    {
+        computeFlowHash(threadId);
+        computeParamHash(threadId);
+
+        return true;
+    }
+
+    bool OmniGraph::moveNextVertex(const unsigned int threadId)
+    {
+        computeHash(threadId);
+        popVertex(threadId);
+    }
 
     bool OmniGraph::addOmniEdge(
         boost::graph_traits<Graph>::vertex_descriptor u_,
@@ -35,27 +51,39 @@ namespace POLDAM
 
         return isInserted;
     }
-    bool OmniGraph::updateStackTopVertex(const std::string log, const unsigned int threadId)
-    {
-        const auto &prevVertex = this->vStack[threadId].top();
-        this->g[prevVertex].flowStr += log;
-        return true;
-    }
     bool OmniGraph::computeFlowHash(const unsigned int threadId)
     {
-        const auto &prevVertex = this->vStack[threadId].top();
-        this->g[prevVertex].flowHash = std::hash<std::string>()(this->g[prevVertex].flowStr);
+        const auto &topVertex = this->vStack[threadId].top();
+        this->g[topVertex].flowHash = std::hash<std::string>()(this->g[topVertex].flowStr);
         return true;
     }
     bool OmniGraph::computeParamHash(const unsigned int threadId)
     {
-        const auto &prevVertex = this->vStack[threadId].top();
-        this->g[prevVertex].paramHash = std::hash<std::string>()(this->g[prevVertex].paramStr);
+        const auto &topVertex = this->vStack[threadId].top();
+        this->g[topVertex].paramHash = std::hash<std::string>()(this->g[topVertex].paramStr);
         return true;
     }
+    /**
+     * @brief the implementation when vertex Stack is popped. the function describe the relationship between caller and callee.
+     *
+     * @param threadId the threadId of target log
+     * @return true implementation has finished without problem
+     * @return false  implementation has finished with problem
+     */
     bool OmniGraph::popVertex(const unsigned int threadId)
     {
+        const auto crtVertex = this->vStack[threadId].top();
         this->vStack[threadId].pop();
+        if (not this->vStack[threadId].empty())
+        {
+            const auto &callerVertex = this->vStack[threadId].top();
+            this->g[callerVertex].controlFlowHash = std::hash<size_t>()(
+                this->g[callerVertex].childFlowHash + g[crtVertex].flowHash);
+            this->g[callerVertex].controlParamHash = std::hash<size_t>()(
+                this->g[callerVertex].childParamHash + g[crtVertex].paramHash);
+        }
+        g[crtVertex].outputFormat += "\nCFH=" + std::to_string(g[crtVertex].controlFlowHash) + "\nCPH=" + std::to_string(g[crtVertex].controlParamHash);
+
         return true;
     }
     Graph OmniGraph::getGraphCopy()

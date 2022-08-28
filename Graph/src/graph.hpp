@@ -35,6 +35,9 @@ namespace POLDAM
 
         // control flow hash is the method-call-chain of the hash
 
+        std::size_t childFlowHash{};
+        std::size_t childParamHash{};
+
         std::string controlFlowStr{};
         std::size_t controlFlowHash{};
 
@@ -59,18 +62,17 @@ namespace POLDAM
     class OmniGraph
     {
     public:
-        bool createOmniVertex(GraphVertex v, const size_t threadId);
-        bool updateVertex(GraphVertex v, const std::string context);
-        bool pushVertex(){};
+        bool addOmniVertex(GraphVertex v, const size_t threadId);
         bool updateStackTopVertex(const std::string log, const unsigned int threadId);
+        bool computeHash(const unsigned int threadId);
+        bool moveNextVertex(const unsigned int threadId);
+        Graph getGraphCopy();
+        OmniGraph computeDiffGraph(const OmniGraph &targetGraph);
+
+    private:
         bool computeFlowHash(const unsigned int threadId);
         bool computeParamHash(const unsigned int threadId);
         bool popVertex(const unsigned int threadId);
-        Graph getGraphCopy();
-
-    private:
-        bool addOmniEdge(GraphVertex u, GraphVertex v, const size_t threadId);
-
         bool addOmniEdge(
             boost::graph_traits<Graph>::vertex_descriptor u_,
             boost::graph_traits<Graph>::vertex_descriptor v_, const size_t threadId);

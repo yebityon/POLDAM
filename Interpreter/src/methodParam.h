@@ -14,6 +14,7 @@ namespace POLDAM
         unsigned int threadId;
         unsigned int dataId;
         int value;
+        std::string objectType = "";
         std::string fullMethodName;
         std::string other;
     };

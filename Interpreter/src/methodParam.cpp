@@ -8,39 +8,48 @@ namespace POLDAM
         const std::vector<std::string> parsedLog = POLDAM_UTIL::parse(log);
         METHOD_PARAM rec = {};
 
-        for (int i = 0; i < parsedLog.size(); ++i)
+        bool hasObjectType = (log.find("objectType") != std::string::npos);
+
+        if (hasObjectType)
         {
-            std::string str = parsedLog[i];
-            switch (i)
+        }
+        else
+        {
+
+            for (int i = 0; i < parsedLog.size(); ++i)
             {
-            case 0:
-                rec.eventId = std::stoul(POLDAM_UTIL::split(str, '=')[1]);
-                break;
-            case 1:
-                // No need to recored. struc has default value
-                break;
-            case 2:
-                // Thread Id
-                rec.threadId = std::stoi(POLDAM_UTIL::split(str, '=')[1]);
-                break;
+                std::string str = parsedLog[i];
+                switch (i)
+                {
+                case 0:
+                    rec.eventId = std::stoul(POLDAM_UTIL::split(str, '=')[1]);
+                    break;
+                case 1:
+                    // No need to recored. struc has default value
+                    break;
+                case 2:
+                    // Thread Id
+                    rec.threadId = std::stoi(POLDAM_UTIL::split(str, '=')[1]);
+                    break;
 
-            case 3:
-                // Data Id
-                rec.dataId = std::stoul(POLDAM_UTIL::split(str, '=')[1]);
-                break;
+                case 3:
+                    // Data Id
+                    rec.dataId = std::stoul(POLDAM_UTIL::split(str, '=')[1]);
+                    break;
 
-            case 4:
-                // Value
-                rec.value = std::stoi(POLDAM_UTIL::split(str, '=')[1]);
-                break;
-            case 5:
-                rec.fullMethodName = str;
-                break;
+                case 4:
+                    // Value
+                    rec.value = std::stoi(POLDAM_UTIL::split(str, '=')[1]);
+                    break;
+                case 5:
+                    rec.fullMethodName = str;
+                    break;
 
-            default:
-                rec.other += str;
-                rec.other += ",";
-                break;
+                default:
+                    rec.other += str;
+                    rec.other += ",";
+                    break;
+                }
             }
         }
 

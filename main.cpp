@@ -6,12 +6,16 @@
 #include "Util/include/src/poldamUtil.h"
 #include "Util/include/src/poldamConfig.h"
 
+// Provoide function for log which is recored in selogger output file.
 #include "Interpreter/src/InterpreterCommon.h"
 #include "Interpreter/src/methodEntry.h"
+#include "Interpreter/src/methodParam.h"
 
+// Provide function for Metafile of SELogger
 #include "MetafileParser/src/factory.h"
 #include "Metafileparser/src/metafileHandlerCommon.h"
 
+// Provide Graph fucntion, Build MarkleTree and Compute Diff Tree of Target Program.
 #include "Graph/src/graph.hpp"
 
 #include <boost/graph/graphviz.hpp>
@@ -207,8 +211,8 @@ int main(int argc, char *argv[])
         }
         else if (eventId == POLDAM::EventType::METHOD_PARAM)
         {
-            // POLDAM::LogInterpreter< POLDAM::METHOD_PARAM> interpreter(log);
-            // interpreter.parseLog();
+            POLDAM::LogInterpreter<POLDAM::METHOD_PARAM> interpreter(log);
+            interpreter.parseLog();
         }
         else if (eventId == POLDAM::EventType::METHOD_NORMAL_EXIT)
         {

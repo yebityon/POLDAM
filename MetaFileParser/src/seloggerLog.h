@@ -52,6 +52,7 @@ namespace POLDAM
 
         bool isTargetFile(const std::string fileName);
 
+        // TODO: string fileName should be disgnated from out of this file.
         const std::string fileName = "main_log.txt";
         std::string filePath;
         std::string dirName;

@@ -3,7 +3,7 @@
 #include "poldamUtil.h"
 namespace POLDAM_UTIL
 {
-
+    // TODO: duplicated functions
     std::vector<std::string> parse(const std::string str, const char terminator)
     {
         return split(str, terminator);
@@ -12,7 +12,7 @@ namespace POLDAM_UTIL
     std::vector<std::string> split(const std::string str, const char terminator)
     {
         std::vector<std::string> rec{};
-        std::string buffer;
+        std::string buffer{};
 
         for (auto c : str)
         {

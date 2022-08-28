@@ -34,6 +34,7 @@ namespace POLDAM
         if (!fileStream)
         {
             std::cout << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX << filePath << " is not found\n";
+            std::cout << "DEBUG: " << filePath << '\n';
             exit(1);
         }
 

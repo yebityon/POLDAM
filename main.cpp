@@ -16,6 +16,8 @@
 
 #include <boost/graph/graphviz.hpp>
 
+bool DEBUG = true;
+
 void printHelp()
 {
     std::cout << "Check your code" << std::endl;
@@ -55,8 +57,7 @@ namespace POLDAM
 
     EventType getEventType(const std::string str)
     {
-        // assert(str is selogger_type)
-        const std::string evnetString = POLDAM_UTIL::split(str)[1];
+        const std::string evnetString = POLDAM_UTIL::split(str, ',')[1];
         const std::string eventType = POLDAM_UTIL::split(evnetString, '=')[1];
 
         if (eventType == "METHOD_ENTRY")
@@ -167,20 +168,28 @@ int main(int argc, char *argv[])
     std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "outputFileName: {" << config.outputFileName << "}\n";
 
     // Phase 1. read and parse all metafiles
+    std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "Reading Metafiles\n";
     POLDAM::metafileFactory factory(config.inputDir);
 
     auto dataids = factory.createInstance<POLDAM::dataidsParser>(config.inputDir);
     auto seloggerParser = factory.createInstance<POLDAM::seloggerLogParser>(config.inputDir);
     auto objectFileParser = factory.createInstance<POLDAM::ObjectfileParser>(config.inputDir);
 
+    std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "Successfully reading Metafiles\n";
     // Phase2. Create Graph.
-
+    std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "Create Graph\n";
     const std::vector<std::string> omniLog = seloggerParser.getData();
 
     POLDAM::OmniGraph targetGraph{};
 
-    for (const std::string &log : omniLog)
+    std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "==================== Iterate Log ====================\n";
+
+    for (const std::string log : omniLog)
     {
+        if (DEBUG)
+        {
+            printf("%s\n", log.c_str());
+        }
         const POLDAM::EventType eventId = POLDAM::getEventType(log);
 
         if (eventId == POLDAM::EventType::METHOD_ENTRY)
@@ -190,9 +199,10 @@ int main(int argc, char *argv[])
 
             POLDAM::METHOD_ENTRY res = interpreter.getParserResult();
             POLDAM::GraphVertex v;
-            // update  v infor
-            const size_t threadId = 1;
 
+            v.outputFormat = res.methodName;
+
+            const size_t threadId = 0;
             const auto &vertex = targetGraph.createOmniVertex(v, threadId);
             bool isInserted = targetGraph.addOmniEdge(vertex, threadId);
         }
@@ -208,6 +218,8 @@ int main(int argc, char *argv[])
             targetGraph.computeFlowHash(threadId);
             // same as FlowHash
             targetGraph.computeParamHash(threadId);
+
+            targetGraph.popVertex(threadId);
         }
         else
         {
@@ -221,9 +233,9 @@ int main(int argc, char *argv[])
     // Phase4. Write Graph Result.
 
     POLDAM::OmniWriter writer(targetGraph);
-
+    std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "writing result..." << std::endl;
     writer.writeOmniGraph(config.outputDir);
 
     std::cout
-        << "===================== TEST PASSED ====================" << std::endl;
+        << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "Successfully Finished...!!" << std::endl;
 }

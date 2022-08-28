@@ -19,7 +19,7 @@ main: main.cpp util.o metafileParser.o graph.o interpreter.o
 	g++-11 -I/$(BOOST_PATH) -I./ main.cpp util.o metafileParser.o graph.o interpreter.o -o main
 
 InterpreterTest: interpreter.o util.o
-	g++-11 $(INT_TEST_DIR)/main.cpp methodCallAndReturn.o util.o -o InterpreterTest
+	g++-11 $(INT_TEST_DIR)/main.cpp interpreter.o util.o -o InterpreterTest
 	./InterpreterTest
 	rm  InterpreterTest
 

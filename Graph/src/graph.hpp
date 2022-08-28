@@ -68,6 +68,7 @@ namespace POLDAM
         bool updateStackTopVertex(const std::string log, const unsigned int threadId);
         bool computeFlowHash(const unsigned int threadId);
         bool computeParamHash(const unsigned int threadId);
+        bool popVertex(const unsigned int threadId);
         Graph getGraphCopy();
 
     private:

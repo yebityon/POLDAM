@@ -15,6 +15,7 @@ namespace POLDAM
         unsigned int threadId;
         unsigned int dataId;
         int value;
+        std::string objectType;
         std::string methodAndNum;
         int lineNum;
         std::string className;

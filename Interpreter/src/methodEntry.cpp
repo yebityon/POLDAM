@@ -9,67 +9,152 @@ namespace POLDAM
         const std::vector<std::string> parsedLog = POLDAM_UTIL::parse(log);
         METHOD_ENTRY rec = {};
 
-        for (int i = 0; i < parsedLog.size(); ++i)
+        // if selogger has objectType, size of indices is different from the one which do not have.
+        bool hasObjectType = (this->log.find("objectType") != std::string::npos);
+
+        // FIXME: There are may be better way.
+        if (hasObjectType)
         {
-            std::string str = parsedLog[i];
-            switch (i)
+            for (unsigned int i = 0; i < parsedLog.size(); ++i)
             {
-            case 0:
-                rec.eventId = std::stoul(POLDAM_UTIL::split(str, '=')[1]);
-                break;
-            case 1:
-                // No need to recored. struc has default value
-                break;
-            case 2:
-                // Thread Id
-                rec.threadId = std::stoi(POLDAM_UTIL::split(str, '=')[1]);
-                break;
+                const std::string str = parsedLog[i];
 
-            case 3:
-                // Data Id
-                rec.dataId = std::stoul(POLDAM_UTIL::split(str, '=')[1]);
-                break;
+                if (i == 0)
+                {
+                    // eventId
+                    rec.eventId = std::stoul(POLDAM_UTIL::split(str, '=')[1]);
+                }
+                else if (i == 1)
+                {
+                    // eventType, No need to recored
+                }
+                else if (i == 2)
+                {
+                    // Thread Id
+                    rec.threadId = std::stoi(POLDAM_UTIL::split(str, '=')[1]);
+                }
+                else if (i == 3)
+                {
+                    // Data Id
+                    rec.dataId = std::stoul(POLDAM_UTIL::split(str, '=')[1]);
+                }
+                else if (i == 4)
+                {
+                    // Value
+                    rec.value = std::stoi(POLDAM_UTIL::split(str, '=')[1]);
+                }
+                else if (i == 5)
+                {
+                    // Object Type
+                    rec.objectType = POLDAM_UTIL::split(str, '=')[1];
+                }
+                else if (i == 6)
+                {
+                    rec.methodAndNum = str;
+                }
+                else if (i == 7)
+                {
 
-            case 4:
-                // Value
-                rec.value = std::stoi(POLDAM_UTIL::split(str, '=')[1]);
-                break;
-            case 5:
-                // method
-                rec.methodAndNum = str;
-                break;
-            case 6:
-                rec.lineNum = std::stoi(str);
-                break;
-            case 7:
-                rec.className = str;
-                break;
-            case 8:
-                rec.methodName = str;
-                break;
-            case 9:
-                rec.argType = str;
-                break;
-            case 10:
-                rec.num = std::stoi(str);
-                break;
-            case 11:
-                rec.fileName = str;
-                break;
-            case 12:
-                rec.hashValue = str;
-                break;
-            case 13:
-                rec.fileAndClassAndMethod = str;
-                break;
-
-            default:
-                rec.other += str;
-                rec.other += ",";
-                break;
+                    rec.lineNum = std::stoi(str);
+                }
+                else if (i == 8)
+                {
+                    rec.className = str;
+                }
+                else if (i == 9)
+                {
+                    rec.methodName = str;
+                }
+                else if (i == 10)
+                {
+                    rec.argType = str;
+                }
+                else if (i == 11)
+                {
+                    rec.num = std::stoi(str);
+                }
+                else if (i == 12)
+                {
+                    rec.fileName = str;
+                }
+                else if (i == 13)
+                {
+                    rec.hashValue = str;
+                }
+                else
+                {
+                    rec.fileAndClassAndMethod = str;
+                }
             }
         }
+        else
+        {
+            for (int i = 0; i < parsedLog.size(); ++i)
+            {
+                const std::string str = parsedLog[i];
+                if (i == 0)
+                {
+                    // eventId
+                    rec.eventId = std::stoul(POLDAM_UTIL::split(str, '=')[1]);
+                }
+                else if (i == 1)
+                {
+                    // eventType, No need to recored
+                }
+                else if (i == 2)
+                {
+                    // Thread Id
+                    rec.threadId = std::stoi(POLDAM_UTIL::split(str, '=')[1]);
+                }
+                else if (i == 3)
+                {
+                    // Data Id
+                    rec.dataId = std::stoul(POLDAM_UTIL::split(str, '=')[1]);
+                }
+                else if (i == 4)
+                {
+                    // Value
+                    rec.value = std::stoi(POLDAM_UTIL::split(str, '=')[1]);
+                }
+                else if (i == 5)
+                {
+                    rec.methodAndNum = str;
+                }
+                else if (i == 6)
+                {
 
+                    rec.lineNum = std::stoi(str);
+                }
+                else if (i == 7)
+                {
+                    rec.className = str;
+                }
+                else if (i == 8)
+                {
+                    rec.methodName = str;
+                }
+                else if (i == 9)
+                {
+                    rec.argType = str;
+                }
+                else if (i == 10)
+                {
+                    rec.num = std::stoi(str);
+                }
+                else if (i == 11)
+                {
+                    rec.fileName = str;
+                }
+                else if (i == 12)
+                {
+                    rec.hashValue = str;
+                }
+                else
+                {
+                    rec.fileAndClassAndMethod = str;
+                }
+            }
+        }
         methodEntry = rec;
     }
 

@@ -1,5 +1,6 @@
 #pragma once
 #include "graph.hpp"
+#include <iostream>
 
 namespace POLDAM
 {
@@ -25,6 +26,10 @@ namespace POLDAM
         {
             return false;
         }
+
+        std::cout << "[DEBUG]: "
+                  << "Createing Edgees" << std::endl;
+
         const auto &prevVertex = vStack[threadId].top();
 
         bool isInserted = false;
@@ -48,6 +53,12 @@ namespace POLDAM
     {
         const auto &prevVertex = this->vStack[threadId].top();
         this->g[prevVertex].paramHash = std::hash<std::string>()(this->g[prevVertex].paramStr);
+        return true;
+    }
+    bool OmniGraph::popVertex(const unsigned int threadId)
+    {
+        this->vStack[threadId].pop();
+
         return true;
     }
     Graph OmniGraph::getGraphCopy()

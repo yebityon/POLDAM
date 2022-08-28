@@ -203,8 +203,7 @@ int main(int argc, char *argv[])
             v.outputFormat = res.methodName;
 
             const size_t threadId = 0;
-            const auto &vertex = targetGraph.createOmniVertex(v, threadId);
-            bool isInserted = targetGraph.addOmniEdge(vertex, threadId);
+            bool result = targetGraph.createOmniVertex(v, threadId);
         }
         else if (eventId == POLDAM::EventType::METHOD_PARAM)
         {
@@ -234,7 +233,7 @@ int main(int argc, char *argv[])
 
     POLDAM::OmniWriter writer(targetGraph);
     std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "writing result..." << std::endl;
-    writer.writeOmniGraph(config.outputDir);
+    writer.writeOmniGraph(config.outputFileName);
 
     std::cout
         << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "Successfully Finished...!!" << std::endl;

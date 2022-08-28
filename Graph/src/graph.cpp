@@ -9,31 +9,29 @@ namespace POLDAM
         return true;
     }
 
-    boost::graph_traits<Graph>::vertex_descriptor OmniGraph::createOmniVertex(GraphVertex v_, const size_t threadId)
+    bool OmniGraph::createOmniVertex(GraphVertex v_, const size_t threadId)
     {
         boost::graph_traits<Graph>::vertex_descriptor v = boost::add_vertex(this->g);
+
         this->g[v] = v_;
+        if (not this->vStack[threadId].empty())
+        {
+            const auto &prev = this->vStack[threadId].top();
+            OmniGraph::addOmniEdge(prev, v, threadId);
+        }
         this->vStack[threadId].push(v);
 
         return v;
     }
 
-    bool OmniGraph::addOmniEdge(boost::graph_traits<Graph>::vertex_descriptor v_, const size_t threadId)
+    bool OmniGraph::addOmniEdge(
+        boost::graph_traits<Graph>::vertex_descriptor u_,
+        boost::graph_traits<Graph>::vertex_descriptor v_, const size_t threadId)
     {
         boost::graph_traits<Graph>::edge_descriptor e;
 
-        if (this->vStack[threadId].empty())
-        {
-            return false;
-        }
-
-        std::cout << "[DEBUG]: "
-                  << "Createing Edgees" << std::endl;
-
-        const auto &prevVertex = vStack[threadId].top();
-
         bool isInserted = false;
-        boost::tie(e, isInserted) = boost::add_edge(prevVertex, v_, this->g);
+        boost::tie(e, isInserted) = boost::add_edge(u_, v_, this->g);
 
         return isInserted;
     }
@@ -58,7 +56,6 @@ namespace POLDAM
     bool OmniGraph::popVertex(const unsigned int threadId)
     {
         this->vStack[threadId].pop();
-
         return true;
     }
     Graph OmniGraph::getGraphCopy()

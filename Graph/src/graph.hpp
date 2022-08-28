@@ -59,10 +59,7 @@ namespace POLDAM
     class OmniGraph
     {
     public:
-        bool addOmniEdge(GraphVertex u, GraphVertex v, const size_t threadId);
-        bool addOmniEdge(boost::graph_traits<Graph>::vertex_descriptor v_, const size_t threadId);
-
-        boost::graph_traits<Graph>::vertex_descriptor createOmniVertex(GraphVertex v, const size_t threadId);
+        bool createOmniVertex(GraphVertex v, const size_t threadId);
         bool updateVertex(GraphVertex v, const std::string context);
         bool pushVertex(){};
         bool updateStackTopVertex(const std::string log, const unsigned int threadId);
@@ -72,9 +69,14 @@ namespace POLDAM
         Graph getGraphCopy();
 
     private:
-        Graph g{};
-        boost::graph_traits<Graph>::vertex_descriptor root;
+        bool addOmniEdge(GraphVertex u, GraphVertex v, const size_t threadId);
 
+        bool addOmniEdge(
+            boost::graph_traits<Graph>::vertex_descriptor u_,
+            boost::graph_traits<Graph>::vertex_descriptor v_, const size_t threadId);
+
+        Graph g{};
+        boost::graph_traits<Graph>::vertex_descriptor root{};
         // stack for vertexies
 
         // {key: thareadId, value:stack<>}

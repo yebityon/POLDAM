@@ -159,7 +159,9 @@ int main(int argc, char *argv[])
         }
         else
         {
+
             std::cout << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX << "Unknown Option\n";
+            std::cout << argv[i] << " is Not  Valid Option\n";
             printHelp();
             exit(1);
         }
@@ -185,8 +187,6 @@ int main(int argc, char *argv[])
     const std::vector<std::string> omniLog = seloggerParser.getData();
 
     POLDAM::OmniGraph targetGraph{};
-
-    std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "==================== Iterate Log ====================\n";
 
     for (const std::string log : omniLog)
     {

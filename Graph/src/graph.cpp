@@ -26,17 +26,11 @@ namespace POLDAM
         return true;
     }
 
-    bool OmniGraph::computeHash(const unsigned int threadId)
+    bool OmniGraph::moveNextVertex(const unsigned int threadId)
     {
         computeFlowHash(threadId);
         computeParamHash(threadId);
 
-        return true;
-    }
-
-    bool OmniGraph::moveNextVertex(const unsigned int threadId)
-    {
-        computeHash(threadId);
         popVertex(threadId);
     }
 
@@ -67,8 +61,8 @@ namespace POLDAM
      * @brief the implementation when vertex Stack is popped. the function describe the relationship between caller and callee.
      *
      * @param threadId the threadId of target log
-     * @return true implementation has finished without problem
-     * @return false  implementation has finished with problem
+     * @return true implementation has succesfully finished.
+     * @return false implementation has not finished succesfully.
      */
     bool OmniGraph::popVertex(const unsigned int threadId)
     {
@@ -82,6 +76,15 @@ namespace POLDAM
             this->g[callerVertex].controlParamHash = std::hash<size_t>()(
                 this->g[callerVertex].childParamHash + g[crtVertex].paramHash);
         }
+
+        this->g[crtVertex].controlFlowHash = std::hash<size_t>()(
+            this->g[crtVertex].childFlowHash +
+            this->g[crtVertex].flowHash);
+
+        this->g[crtVertex].controlParamHash = std::hash<size_t>()(
+            this->g[crtVertex].childParamHash +
+            this->g[crtVertex].paramHash);
+
         g[crtVertex].outputFormat += "\nCFH=" + std::to_string(g[crtVertex].controlFlowHash) + "\nCPH=" + std::to_string(g[crtVertex].controlParamHash);
 
         return true;

@@ -64,28 +64,40 @@ namespace POLDAM
     public:
         bool addOmniVertex(GraphVertex v, const size_t threadId);
         bool updateStackTopVertex(const std::string log, const unsigned int threadId);
+        bool popStackVertex(const unsigned int threadId);
+
         bool computeHash(const unsigned int threadId);
-        bool moveNextVertex(const unsigned int threadId);
         Graph getGraphCopy();
-        OmniGraph computeDiffGraph(const OmniGraph &targetGraph);
+
+        boost::graph_traits<Graph>::vertex_descriptor getStackTopVertex(const unsigned int threadId);
+
+        std::vector<boost::graph_traits<Graph>::vertex_descriptor> copyGraphPath()
+        {
+            return this->path;
+        };
+
+        OmniGraph computeDiffGraph(OmniGraph &targetGraph);
 
     private:
         bool computeFlowHash(const unsigned int threadId);
         bool computeParamHash(const unsigned int threadId);
         bool popVertex(const unsigned int threadId);
+        bool isLeaf(boost::graph_traits<Graph>::vertex_descriptor vDesc);
         bool addOmniEdge(
             boost::graph_traits<Graph>::vertex_descriptor u_,
             boost::graph_traits<Graph>::vertex_descriptor v_, const size_t threadId);
 
         Graph g{};
         boost::graph_traits<Graph>::vertex_descriptor root{};
+
+        std::vector<boost::graph_traits<Graph>::vertex_descriptor> path;
         // stack for vertexies
 
         // {key: thareadId, value:stack<>}
-        std::map<int, std::stack<Graph::vertex_descriptor>> vStack;
+        std::map<unsigned int, std::stack<boost::graph_traits<Graph>::vertex_descriptor>> vStack;
         // {key: threadId, value:stack<>}
-        std::map<int, std::stack<std::map<std::string, std::string>>> callStack;
+        std::map<unsigned int, std::stack<std::map<std::string, std::string>>> callStack;
         // {key: threadId, value:stack<>}
-        std::map<int, std::stack<std::map<std::string, std::string>>> callInstStack;
+        std::map<unsigned int, std::stack<std::map<std::string, std::string>>> callInstStack;
     };
 }

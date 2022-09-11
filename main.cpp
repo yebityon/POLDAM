@@ -217,8 +217,9 @@ int main(int argc, char *argv[])
         else if (eventId == POLDAM::EventType::METHOD_NORMAL_EXIT)
         {
             const unsigned int threadId = 0;
-            // computeFlowHash should consider the control flow hash
-            targetGraph.moveNextVertex(threadId);
+
+            targetGraph.computeHash(threadId);
+            targetGraph.popStackVertex(threadId);
         }
         else
         {

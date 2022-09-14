@@ -1,0 +1,11 @@
+version: '3'
+services:
+  java8:
+    restart: always
+    build: ./dockerfiles/java8/
+    image: 'poldam/java8'
+    container_name: 'poldam_java8'
+    working_dir: '/root/'
+    tty: true
+    volumes:
+      - ./Data/java8:/root/selogger:cached

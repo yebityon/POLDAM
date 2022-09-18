@@ -14,6 +14,7 @@ namespace POLDAM
         std::string outputFileName{};
 
         bool useFastIO = false;
+        bool isDebugMode = false;
     };
 
 }

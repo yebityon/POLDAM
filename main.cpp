@@ -126,6 +126,10 @@ int main(int argc, char *argv[])
             std::ios_base::sync_with_stdio(false);
             config.useFastIO = true;
         }
+        else if (arg == "--debug")
+        {
+            config.isDebugMode = true;
+        }
         else
         {
 
@@ -167,15 +171,19 @@ int main(int argc, char *argv[])
 
     const std::vector<std::string> classesData = classesParser.getData();
     const std::vector<POLDAM::ClassesData> parsedClassesData = classesParser.getParsedData();
+
+    const std::vector<POLDAM::ObjectData> parsedObjectData = objectFileParser.getParsedData();
+
     std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "Successfully Parsed\n";
     POLDAM::OmniGraph targetGraph{};
 
     for (const POLDAM::SeloggerData log : seloggerParser.getParserdData())
     {
 
-        const POLDAM::DataId dataId = parsedDataIds[log.dataid];
+        POLDAM::DataId dataId = parsedDataIds[log.dataid];
         const POLDAM::MethodsData m = parsedMethodsData[dataId.methodid];
         const POLDAM::ClassesData c = parsedClassesData[dataId.classid];
+        const POLDAM::ObjectData o = parsedObjectData[log.value];
 
         if (dataId.eventtype == "METHOD_ENTRY")
         {
@@ -190,12 +198,33 @@ int main(int argc, char *argv[])
         }
         else if (dataId.eventtype == "METHOD_PARAM")
         {
-            // Nothing to do
+            const int argValue = log.value;
         }
         else if (dataId.eventtype == "METHOD_NORMAL_EXIT")
         {
             targetGraph.computeHash(log.threadid);
             targetGraph.popStackVertex(log.threadid);
+        }
+        else if (dataId.eventtype == "CALL_PARAM")
+        {
+            const unsigned int paramIdx = static_cast<unsigned int>(std::stoi(dataId.attr["index"]));
+            const std::string paramType = dataId.attr["type"];
+            std::string paramConcreateValue = "";
+
+            if (paramType.find("String") != std::string::npos)
+            {
+                std::cout << "paramType: " << paramType << " Value: " << o.value << std::endl;
+            }
+            // branch for paramType that paramValue is directly recored in SELogger.
+            else if (paramType.find("Interger") != std::string::npos or
+                     paramType.find("int") != std::string::npos)
+            {
+                std::cout << "paramType: " << paramType << " Value: " << log.value << std::endl;
+            }
+            else
+            {
+                std::cout << "paramType: " << paramType << " Value: " << o.objecttype << std::endl;
+            }
         }
         else
         {

@@ -54,6 +54,7 @@ namespace POLDAM
 
                 if (originVertex.methodHash == targetVertex.methodHash)
                 {
+                    // Based on Diff difinition, there are vertex that it has same method hash, but different flow/param hash.
                     // called same vertices
                     boost::graph_traits<Graph>::vertex_descriptor diffOriginVertexDesc = diffGraph.addOmniVertex(originVertex, defaultThreadId);
                     diffGraph.addOmniEdge(prevVertexDesc, diffOriginVertexDesc, defaultThreadId);

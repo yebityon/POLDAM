@@ -3,6 +3,8 @@
 #include "dataids.h"
 #include "seloggerLog.h"
 #include "objectFile.h"
+#include "methods.h"
+#include "classes.h"
 
 namespace POLDAM
 {

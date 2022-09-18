@@ -6,11 +6,6 @@
 #include "Util/include/src/poldamUtil.h"
 #include "Util/include/src/poldamConfig.h"
 
-// Provoide function for log which is recored in selogger output file.
-#include "Interpreter/src/InterpreterCommon.h"
-#include "Interpreter/src/methodEntry.h"
-#include "Interpreter/src/methodParam.h"
-
 // Provide function for Metafile of SELogger
 #include "MetafileParser/src/factory.h"
 #include "Metafileparser/src/metafileHandlerCommon.h"
@@ -154,8 +149,11 @@ int main(int argc, char *argv[])
     auto dataids = factory.createInstance<POLDAM::dataidsParser>(config.inputDir, "dataids.txt", false);
     auto seloggerParser = factory.createInstance<POLDAM::seloggerLogParser>(config.inputDir, "log-00001.txt");
     auto objectFileParser = factory.createInstance<POLDAM::ObjectfileParser>(config.inputDir);
+    auto methodParser = factory.createInstance<POLDAM::methodDataParser>(config.inputDir);
+    auto classesParser = factory.createInstance<POLDAM::classesDataParser>(config.inputDir);
 
-    std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "Successfully reading Metafiles\n";
+    std::cout
+        << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "Successfully reading Metafiles\n";
     // Phase2. Create Graph.
     std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "Create Graph\n";
 
@@ -164,14 +162,27 @@ int main(int argc, char *argv[])
     const std::vector<std::string> dataidsData = dataids.getData();
     const std::vector<POLDAM::DataId> parsedDataIds = dataids.getParsedData();
 
+    const std::vector<std::string> methodData = methodParser.getData();
+    const std::vector<POLDAM::MethodsData> parsedMethodsData = methodParser.getParsedData();
+
+    const std::vector<std::string> classesData = classesParser.getData();
+    const std::vector<POLDAM::ClassesData> parsedClassesData = classesParser.getParsedData();
+
     POLDAM::OmniGraph targetGraph{};
 
     for (const POLDAM::SeloggerData log : seloggerParser.getParserdData())
     {
         const POLDAM::DataId dataId = parsedDataIds[log.dataid];
+        const POLDAM::MethodsData m = parsedMethodsData[dataId.methodid];
+        const POLDAM::ClassesData c = parsedClassesData[dataId.classid];
 
         if (dataId.eventtype == "METHOD_ENTRY")
         {
+            POLDAM::GraphVertex v;
+            const unsigned int classId = dataId.classid;
+
+            v.methodStr = m.methodName;
+            v.methodHash = m.methodHash;
         }
         else if (dataId.eventtype == "METHOD_PARAM")
         {

@@ -14,21 +14,22 @@ namespace POLDAM
         unsigned int classid;
         unsigned int methodid;
         // -1 is undefined or N/A
-        int linenumber;
-        int ordernumber;
+        int line;
+        int instructionid;
         std::string eventtype;
-        std::string descriptor;
-        std::map<std::string, std::string> eventinfo;
+        std::string valuedesc;
+        std::map<std::string, std::string> attr;
     };
     class dataidsParser : fileReader
     {
     public:
-        dataidsParser(std::string inputDir_) : dirName(inputDir_),
-                                               filePath(),
-                                               // fileName(),
-                                               data(),
-                                               parsedData(),
-                                               targetFileNames(){};
+        dataidsParser(std::string inputDir_, bool hasHeaderData_ = false) : dirName(inputDir_),
+                                                                            filePath(),
+                                                                            // fileName(),
+                                                                            hasHeaderData(hasHeaderData_),
+                                                                            data(),
+                                                                            parsedData(),
+                                                                            targetFileNames(){};
 
         std::vector<std::string> getData()
         {
@@ -67,6 +68,8 @@ namespace POLDAM
         void parseLine(const std::string line) override;
 
         bool isTargetFile(const std::string fileName);
+
+        bool hasHeaderData = false;
 
         std::vector<std::string> targetFileNames;
         const std::string fileName = "dataids.txt";

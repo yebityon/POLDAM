@@ -23,7 +23,12 @@ namespace POLDAM
                 continue;
             // if you want to hold interpreted data, call parseLine()
             // buffer = this.parseLine(buffer);
-            data.push_back(buffer);
+            this->data.push_back(buffer);
+        }
+
+        if (this->hasHeaderData)
+        {
+            this->data.erase(this->data.begin());
         }
     }
 
@@ -45,22 +50,42 @@ namespace POLDAM
         dataid.dataidx = static_cast<unsigned int>(std::stoi(parsedline[0]));
         dataid.classid = static_cast<unsigned int>(std::stoi(parsedline[1]));
         dataid.methodid = static_cast<unsigned int>(std::stoi(parsedline[2]));
-        dataid.linenumber = std::stoi(parsedline[3]);
-        dataid.ordernumber = std::stoi(parsedline[4]);
+        dataid.line = std::stoi(parsedline[3]);
+        dataid.instructionid = std::stoi(parsedline[4]);
         dataid.eventtype = parsedline[5];
-        dataid.descriptor = parsedline[6];
+        dataid.valuedesc = parsedline[6];
 
         for (int i = 7; i < parsedline.size(); ++i)
         {
             if (parsedline[i].find("=") == std::string::npos)
             {
-                //            9, 0, 0, 2, 6, CATCH_LABEL, I, ExceptionalExit
-                dataid.eventinfo[parsedline[i]] = parsedline[i];
+                // if attribute does not contain '='
+                std::string fixedOne = parsedline[i];
+
+                if (fixedOne.front() == '\"')
+                {
+                    fixedOne.erase(fixedOne.begin());
+                }
+                if (fixedOne.back() == '\"')
+                {
+                    fixedOne.pop_back();
+                }
+                dataid.attr[fixedOne] = fixedOne;
             }
             else
             {
-                const auto &vec = POLDAM_UTIL::split(parsedline[i], '=');
-                dataid.eventinfo[vec[0]] = vec[1];
+                std::vector<std::string> vec = POLDAM_UTIL::split(parsedline[i], '=');
+                if (vec[0].front() == '\"')
+                {
+                    vec[0].erase(vec[0].begin());
+                }
+
+                if (vec[1].back() == '\"')
+                {
+                    vec[1].pop_back();
+                }
+
+                dataid.attr[vec[0]] = vec[1];
             }
         }
         this->parsedData.push_back(dataid);

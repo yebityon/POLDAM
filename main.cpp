@@ -62,7 +62,7 @@ int main(int argc, char *argv[])
 
     if (argc <= 1)
     {
-        std::cout << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX << "You need to disignate input directory." << std::endl;
+        std::cout << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX << "You need to designate input directory." << std::endl;
         exit(1);
     }
 
@@ -136,7 +136,7 @@ int main(int argc, char *argv[])
         }
     }
 
-    std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "PODLAM IS WORKING\n";
+    std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "POLDAM IS WORKING\n";
     std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "outputDir: {" << config.outputDir << "}\n";
     std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "inputDir: {" << config.inputDir << "}\n";
     std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "targetMethod: {" << config.targetMethodName << "}\n";
@@ -146,11 +146,11 @@ int main(int argc, char *argv[])
     std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "Reading Metafiles\n";
     POLDAM::metafileFactory factory(config.inputDir);
 
-    auto dataids = factory.createInstance<POLDAM::dataidsParser>(config.inputDir, "dataids.txt", false);
+    auto dataids = factory.createInstance<POLDAM::dataidsParser>(config.inputDir, "dataids.txt", true);
     auto seloggerParser = factory.createInstance<POLDAM::seloggerLogParser>(config.inputDir, "log-00001.txt");
     auto objectFileParser = factory.createInstance<POLDAM::ObjectfileParser>(config.inputDir);
-    auto methodParser = factory.createInstance<POLDAM::methodDataParser>(config.inputDir);
-    auto classesParser = factory.createInstance<POLDAM::classesDataParser>(config.inputDir);
+    auto methodParser = factory.createInstance<POLDAM::methodDataParser>(config.inputDir, "methods.txt", true);
+    auto classesParser = factory.createInstance<POLDAM::classesDataParser>(config.inputDir, "classes.txt", true);
 
     std::cout
         << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "Successfully reading Metafiles\n";
@@ -167,11 +167,12 @@ int main(int argc, char *argv[])
 
     const std::vector<std::string> classesData = classesParser.getData();
     const std::vector<POLDAM::ClassesData> parsedClassesData = classesParser.getParsedData();
-
+    std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "Successfully Parsed\n";
     POLDAM::OmniGraph targetGraph{};
 
     for (const POLDAM::SeloggerData log : seloggerParser.getParserdData())
     {
+
         const POLDAM::DataId dataId = parsedDataIds[log.dataid];
         const POLDAM::MethodsData m = parsedMethodsData[dataId.methodid];
         const POLDAM::ClassesData c = parsedClassesData[dataId.classid];
@@ -183,57 +184,25 @@ int main(int argc, char *argv[])
 
             v.methodStr = m.methodName;
             v.methodHash = m.methodHash;
+            v.outputFormat = m.methodName;
+
+            bool result = targetGraph.addOmniVertex(v, log.threadid);
         }
         else if (dataId.eventtype == "METHOD_PARAM")
         {
+            // Nothing to do
         }
-        else if (dataId.eventtype == "METHOD_END")
+        else if (dataId.eventtype == "METHOD_NORMAL_EXIT")
         {
+            targetGraph.computeHash(log.threadid);
+            targetGraph.popStackVertex(log.threadid);
         }
         else
         {
-            // nothing
+            const std::string logString = dataidsData[log.dataid] + classesData[dataId.classid] + methodData[dataId.methodid];
+            targetGraph.updateStackTopVertex(logString, log.threadid);
         }
     }
-    // for (const std::string log : omniLog)
-    // {
-    //     if (DEBUG)
-    //     {
-    //         printf("%s\n", log.c_str());
-    //     }
-    //     const POLDAM::EventType eventId = POLDAM::getEventType(log);
-
-    //     if (eventId == POLDAM::EventType::METHOD_ENTRY)
-    //     {
-    //         POLDAM::LogInterpreter<POLDAM::METHOD_ENTRY> interpreter(log);
-    //         interpreter.parseLog();
-
-    //         POLDAM::METHOD_ENTRY res = interpreter.getParserResult();
-    //         POLDAM::GraphVertex v;
-
-    //         v.outputFormat = res.methodName;
-
-    //         const size_t threadId = 0;
-    //         bool result = targetGraph.addOmniVertex(v, threadId);
-    //     }
-    //     else if (eventId == POLDAM::EventType::METHOD_PARAM)
-    //     {
-    //         POLDAM::LogInterpreter<POLDAM::METHOD_PARAM> interpreter(log);
-    //         interpreter.parseLog();
-    //     }
-    //     else if (eventId == POLDAM::EventType::METHOD_NORMAL_EXIT)
-    //     {
-    //         const unsigned int threadId = 0;
-
-    //         targetGraph.computeHash(threadId);
-    //         targetGraph.popStackVertex(threadId);
-    //     }
-    //     else
-    //     {
-    //         const unsigned int threadId = 0;
-    //         targetGraph.updateStackTopVertex(log, threadId);
-    //     }
-    //}
 
     // Phase3. Apply algorrithms　and Compare two Graphs.
 

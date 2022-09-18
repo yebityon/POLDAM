@@ -1,0 +1,29 @@
+Weaving configuration: EXEC,CALL,FIELD,ARRAY,SYNC,LABEL,PARAM,LOCAL,OBJECT,LINE
+Excluded by name filter: java/lang/invoke/MethodHandleImpl
+Excluded by name filter: java/lang/invoke/MethodHandleImpl$1
+Excluded by name filter: java/lang/invoke/MethodHandleImpl$2
+Excluded by name filter: java/util/function/Function
+Excluded by name filter: java/lang/invoke/MethodHandleImpl$3
+Excluded by name filter: java/lang/invoke/MethodHandleImpl$4
+Excluded by name filter: java/lang/ClassValue
+Excluded by name filter: java/lang/ClassValue$Entry
+Excluded by name filter: java/lang/ClassValue$Identity
+Excluded by name filter: java/lang/ClassValue$Version
+Excluded by name filter: java/lang/invoke/MemberName$Factory
+Excluded by name filter: java/lang/invoke/MethodHandleStatics
+Excluded by name filter: java/lang/invoke/MethodHandleStatics$1
+Excluded by name filter: sun/launcher/LauncherHelper
+Excluded by name filter: sun/misc/URLClassPath$FileLoader$1
+Weaving executed: Class=Main, LoadedFrom=file:/root/selogger/src/test/origin/, LogLevel=Normal, ClassHash=1ac54224092eff310a9473b4af6d1c798fdb762f, ClassLoaderID=Loader@18b4aac2:Main
+Excluded by name filter: sun/launcher/LauncherHelper$FXHelper
+Excluded by name filter: java/lang/Class$MethodArray
+Excluded by name filter: selogger/logging/util/ThreadId
+Excluded by name filter: selogger/logging/util/ThreadId$1
+Excluded by name filter: selogger/com/fasterxml/jackson/core/io/JsonStringEncoder
+Excluded by name filter: selogger/com/fasterxml/jackson/core/io/CharTypes
+Weaving executed: Class=customClass/myMath, LoadedFrom=file:/root/selogger/src/test/origin/, LogLevel=Normal, ClassHash=cf7cffd1c209718ec03db1df61ada5ec75a29de9, ClassLoaderID=Loader@18b4aac2:customClass/myMath
+Excluded by name filter: java/util/IdentityHashMap$KeySet
+Excluded by name filter: java/util/IdentityHashMap$KeyIterator
+Excluded by name filter: java/util/IdentityHashMap$IdentityHashMapIterator
+Excluded by name filter: java/io/FileOutputStream$1
+Elapsed time: 358ms

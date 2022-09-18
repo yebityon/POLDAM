@@ -13,7 +13,7 @@ public class Main {
         Integer b = 30;
 
         Integer result = calculator.computePow(a,b);
-
+        
         System.out.println(result);
     }   
 }

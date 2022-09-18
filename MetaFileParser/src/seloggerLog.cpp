@@ -2,8 +2,8 @@
 
 namespace POLDAM
 {
-
-    void seloggerLogParser::readFile(const std::string filePath, std::vector<std::string> &data)
+    void
+    seloggerLogParser::readFile(const std::string filePath, std::vector<std::string> &data)
     {
         std::ifstream fileStream;
 
@@ -38,8 +38,16 @@ namespace POLDAM
 
     void seloggerLogParser::parseLine(const std::string line)
     {
-        SeloggerLog rec{};
-        rec.log = line;
+        SeloggerData rec{};
+        const std::vector<std::string> parsedLog = POLDAM_UTIL::parse(line, ',');
+
+        assert(parsedLog.size() == 4);
+
+        rec.eventid = static_cast<unsigned int>(std::stoi(parsedLog[0]));
+        rec.dataid = static_cast<unsigned int>(std::stoi(parsedLog[1]));
+        rec.threadid = static_cast<unsigned int>(std::stoi(parsedLog[2]));
+        rec.value = std::stoi(parsedLog[3]);
+
         this->parsedData.push_back(rec);
     }
     // TODO: move this fucntion to base class, all you need to do is just desginate fileName in base class.

@@ -4,9 +4,13 @@
 
 namespace POLDAM
 {
-    struct SeloggerLog
+
+    struct SeloggerData
     {
-        std::string log;
+        unsigned int eventid;
+        unsigned int dataid;
+        int value;
+        unsigned int threadid;
     };
 
     class seloggerLogParser : fileReader

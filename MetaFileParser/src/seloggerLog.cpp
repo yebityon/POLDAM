@@ -23,6 +23,8 @@ namespace POLDAM
             // if you want to hold interpreted data, call parseLine()
             //  buffer = this.parseLine(buffer);
             //  otherwise, this class hold all data
+            if (buffer.empty())
+                continue;
             data.push_back(buffer);
         }
         fileStream.close();

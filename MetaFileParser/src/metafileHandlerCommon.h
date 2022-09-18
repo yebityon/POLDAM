@@ -28,7 +28,7 @@ namespace POLDAM
         virtual void parseReadlines(std::vector<std::string> &data) = 0;
 
         /**
-         * @brief delegate function. this fucntion will be called in parseReadlines faucntion, and access to this method.
+         * @brief delegate function. this fucntion will be called in parseReadlines function, and access to this method.
          */
         virtual void parseLine(const std::string line) = 0;
 

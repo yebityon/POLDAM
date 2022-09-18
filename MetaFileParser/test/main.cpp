@@ -32,7 +32,7 @@ void test_dataids_2()
 {
     const std::string inputDir = "./Data/java8/src/test/origin/selogger_out";
     POLDAM::metafileFactory factory(inputDir);
-    auto dataids = factory.createInstance<POLDAM::dataidsParser>(inputDir, true);
+    auto dataids = factory.createInstance<POLDAM::dataidsParser>(inputDir, "dataids.txt", true);
 
     const std::string base = "97,1,4,12,0,LABEL,I,\"null\"";
 
@@ -50,8 +50,6 @@ void test_dataids_2()
     assert(d.instructionid == 0);
     assert(d.eventtype == "LABEL");
     assert(d.valuedesc == "I");
-    // std::cout << d.attr["null"] << std::endl;
-    // std::cout << d.attr["\"null\""] << std::endl;
     assert(d.attr["null"] == "null");
 
     const std::string base2 = "82,1,3,7,0,METHOD_ENTRY,Ljava/lang/Object;,\"methodtype=instance,index=0\"";
@@ -84,13 +82,26 @@ void test_dataids_2()
 }
 void test_seloggerLogParser_1()
 {
-    const std::string inputDir = "./Data/Main_LOG";
+    const std::string inputDir = "./Data/java8/src/test/origin/selogger_out";
     POLDAM::metafileFactory factory(inputDir);
-    auto seloggerParser = factory.createInstance<POLDAM::seloggerLogParser>(inputDir);
-    assert(seloggerParser.getDirName() == inputDir);
-    const auto &seloggerLogData = seloggerParser.getData();
-    assert(seloggerLogData[0] == "EventId=0,EventType=METHOD_ENTRY,ThreadId=0,DataId=13,Value=0,method:0,1,Main,main,([Ljava/lang/String;)V,9,Main.java,fe1fe704c569eaf77bb10120a2a4698035803860,Main:main,Main.java:0:0");
-    std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "test_2 passed!" << std::endl;
+    auto seloggerParser = factory.createInstance<POLDAM::seloggerLogParser>(inputDir, "log-00001.txt");
+
+    seloggerParser.getData();
+    std::vector<POLDAM::SeloggerData> parsedData = seloggerParser.getParserdData();
+
+    auto &d = parsedData[0];
+
+    assert(d.eventid == 0);
+    assert(d.dataid == 12);
+    assert(d.threadid == 0 && d.value == 0);
+
+    d = parsedData[817];
+    assert(d.eventid == 817);
+    assert(d.dataid == 101);
+    assert(d.threadid == 0 && d.value == 8388608);
+
+    std::cout
+        << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "test_2 passed!" << std::endl;
 }
 
 void test_ObjecetFileParser()

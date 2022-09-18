@@ -23,13 +23,13 @@ namespace POLDAM
     class dataidsParser : fileReader
     {
     public:
-        dataidsParser(std::string inputDir_, bool hasHeaderData_ = false) : dirName(inputDir_),
-                                                                            filePath(),
-                                                                            // fileName(),
-                                                                            hasHeaderData(hasHeaderData_),
-                                                                            data(),
-                                                                            parsedData(),
-                                                                            targetFileNames(){};
+        dataidsParser(std::string inputDir_, std::string fileName_ = "dataids.txt", bool hasHeaderData_ = false) : dirName(inputDir_),
+                                                                                                                   filePath(),
+                                                                                                                   fileName(fileName_),
+                                                                                                                   hasHeaderData(hasHeaderData_),
+                                                                                                                   data(),
+                                                                                                                   parsedData(),
+                                                                                                                   targetFileNames(){};
 
         std::vector<std::string> getData()
         {
@@ -71,12 +71,11 @@ namespace POLDAM
 
         bool hasHeaderData = false;
 
-        std::vector<std::string> targetFileNames;
-        const std::string fileName = "dataids.txt";
-        std::string filePath;
-        std::string dirName;
-
-        std::vector<std::string> data;
-        std::vector<DataId> parsedData;
+        std::vector<std::string> targetFileNames{};
+        std::string fileName{};
+        std::string filePath{};
+        std::string dirName{};
+        std::vector<std::string> data{};
+        std::vector<DataId> parsedData{};
     };
 }

@@ -8,8 +8,8 @@ namespace POLDAM
     struct poldamConfig
     {
 
-        std::string inputDir{};
-        std::string outputDir{};
+        std::string originDir{};
+        std::string targetDir{};
         std::string targetMethodName{};
         std::string outputFileName{};
 

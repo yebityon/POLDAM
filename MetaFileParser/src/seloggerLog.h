@@ -4,19 +4,23 @@
 
 namespace POLDAM
 {
-    struct SeloggerLog
+
+    struct SeloggerData
     {
-        std::string log;
+        unsigned int eventid;
+        unsigned int dataid;
+        int value;
+        unsigned int threadid;
     };
 
     class seloggerLogParser : fileReader
     {
     public:
-        seloggerLogParser(std::string inputDir_) : dirName(inputDir_),
-                                                   filePath(),
-                                                   // fileName(),
-                                                   data(),
-                                                   parsedData(){};
+        seloggerLogParser(std::string inputDir_, std::string fileName_) : dirName(inputDir_),
+                                                                          filePath(),
+                                                                          fileName(fileName_),
+                                                                          data(),
+                                                                          parsedData(){};
 
         std::string getDirName()
         {
@@ -30,6 +34,11 @@ namespace POLDAM
             this->parseReadlines(this->data);
             return this->data;
         };
+
+        std::vector<SeloggerData> getParserdData()
+        {
+            return this->parsedData;
+        }
 
         /**
          * @brief read next stream and store the data to this -> currentBuffer. Please note seloggerLog might contain large data. You should use this fucntion instead of readFile().
@@ -53,11 +62,10 @@ namespace POLDAM
         bool isTargetFile(const std::string fileName);
 
         // TODO: string fileName should be disgnated from out of this file.
-        const std::string fileName = "main_log.txt";
+        const std::string fileName{};
         std::string filePath;
         std::string dirName;
-
         std::vector<std::string> data;
-        std::vector<SeloggerLog> parsedData;
+        std::vector<SeloggerData> parsedData;
     };
 }

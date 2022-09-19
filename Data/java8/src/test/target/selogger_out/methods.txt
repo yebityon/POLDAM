@@ -1,0 +1,9 @@
+ClassID,MethodID,ClassName,MethodName,MethodDesc,Access,SourceFileName,MethodHash
+0,0,Main,<init>,()V,1,Main.java,204b3c4dea2bb90b4b56dff35c6c2a032351043c
+0,1,Main,main,([Ljava/lang/String;)V,9,Main.java,5c867db2a28dfa710bf95e34f16b9d960f0d8ad6
+1,2,customClass/myMath,<init>,()V,1,myMath.java,204b3c4dea2bb90b4b56dff35c6c2a032351043c
+1,3,customClass/myMath,computeMultiple,(II)I,1,myMath.java,24d76062c47d08d5bd154003ae553e876b983e08
+1,4,customClass/myMath,computeMultiple,(Ljava/lang/Integer;Ljava/lang/Integer;)Ljava/lang/Integer;,1,myMath.java,79a9d97e7bd0fef196fec4358da77575378900dd
+1,5,customClass/myMath,computePow,(Ljava/lang/Integer;Ljava/lang/Integer;)Ljava/lang/Integer;,1,myMath.java,f2a2c1d946e566e7f761f349188095e30f4a7cdf
+1,6,customClass/myMath,addTwoValue,(II)I,1,myMath.java,d89a3e01ff22c6dec5c6f87c014925b3846c476d
+1,7,customClass/myMath,isPrime,(I)Ljava/lang/Boolean;,1,myMath.java,d21086c6fc697515ed9d82e85cf27ef7cc1f13e5

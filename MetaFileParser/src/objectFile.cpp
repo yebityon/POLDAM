@@ -1,6 +1,6 @@
 #pragma once
 #include "objectFile.h"
-
+#include <cassert>
 namespace POLDAM
 {
 
@@ -59,7 +59,7 @@ namespace POLDAM
         this->parsedObjectTypesDatas.emplace_back(objectTypeId);
     };
 
-    void ObjectfileParser::parseLogLine(std::string line)
+    void ObjectfileParser::parseLogTypesLine(std::string line)
     {
         const std::vector<std::string> parsedVec = POLDAM_UTIL::split(line, ',');
         std::map<std::string, std::string> rec{};
@@ -74,27 +74,26 @@ namespace POLDAM
             // objectType
             else if (i == 1)
             {
-                rec["objecttype"] = parsedVec[i];
+                rec["objectType"] = parsedVec[1];
             }
-            // loadclass
             else if (i == 2)
             {
-                rec["loadlclass"] = parsedVec[i];
+                rec["jarFile"] = parsedVec[2];
             }
             // typenum1
             else if (i == 3)
             {
-                rec["typenum1"] = parsedVec[i];
+                rec["typenum1"] = parsedVec[3];
             }
             // typenum2
             else if (i == 4)
             {
-                rec["typenum2"] = parsedVec[i];
+                rec["typenum2"] = parsedVec[4];
             }
             // loader
             else if (i == 5)
             {
-                rec["loader"] = parsedVec[i];
+                rec["loadFrom"] = parsedVec[5];
             }
             else
             {
@@ -110,7 +109,7 @@ namespace POLDAM
         std::vector<std::string> d = POLDAM_UTIL::split(line, ',');
         unsigned int dataidIdx = static_cast<unsigned int>(std::stoi(d[0]));
         // we do not recored length of target string
-        this->parsedStringDatas[dataidIdx] = d[1];
+        this->parsedStringDatas[dataidIdx] = d[2];
     }
 
     void ObjectfileParser::readObjectTypeData()
@@ -147,7 +146,7 @@ namespace POLDAM
             }
             else
             {
-                parseLogLine(line);
+                parseLogTypesLine(line);
             }
         }
     }
@@ -158,19 +157,27 @@ namespace POLDAM
         {
             ObjectData obj{};
             // dataids.txt
-            auto &logData = parsedObjectTypesDatas[id];
-            obj.objectId = id + 1;
-            // map dataid to objectid
-            obj.objectTypesId = parsedObjectTypesDatas[id];
-            obj.objecttype = logData["objecttype"];
-            obj.loadclasss = logData["loadclass"];
+            unsigned int objectId = parsedObjectTypesDatas[id];
+            obj.fileIdx_ = id + 1;
 
-            obj.typenum1 = logData["typenum1"];
-            obj.typenum2 = logData["typenum2"];
-            obj.loader = logData["loader"];
-            if (obj.objecttype == "string")
+            // map dataid to objectid
+            obj.objectId = objectId;
+
+            std::map<std::string, std::string> typesData = this->parsedTypesDatas[objectId];
+
+            obj.objectType = typesData["objectType"];
+            obj.jarFile = typesData["jarFile"];
+
+            obj.typenum1 = std::stoi(typesData["typenum1"]);
+            obj.typenum2 = std::stoi(typesData["typenum2"]);
+
+            obj.loadFrom = typesData["loadFrom"];
+
+            if (obj.objectType == "java.lang.String")
             {
-                obj.value = parsedStringDatas[obj.objectId];
+                assert(parsedStringDatas.find(obj.fileIdx_) != parsedStringDatas.end());
+
+                obj.stringValue = parsedStringDatas[obj.fileIdx_];
             }
 
             this->objectDatas.emplace_back(obj);

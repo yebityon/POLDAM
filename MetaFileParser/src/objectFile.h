@@ -8,18 +8,16 @@ namespace POLDAM
     struct ObjectData
     {
         // recored in  LOG$ObjectTypes
+        unsigned int fileIdx_; // internal use only
         unsigned int objectId;
-        // map to LOG$Types file
-        unsigned int objectTypesId;
         // typenum is recored in LOG$Types.txt
+        std::string objectType;
+        std::string jarFile;
         int typenum1;
         int typenum2;
-
-        std::string loadclasss;
-        std::string objecttype;
-        std::string loader;
+        std::string loadFrom;
         //  if type is sstring, concreate value is available
-        std::string value;
+        std::string stringValue;
     };
 
     class ObjectfileParser : fileReader
@@ -48,7 +46,7 @@ namespace POLDAM
         };
 
         void parseLine(std::string line) override;
-        void parseLogLine(std::string line);
+        void parseLogTypesLine(std::string line);
         void parseStringLine(std::string line);
 
         void accumulateObjectFile();

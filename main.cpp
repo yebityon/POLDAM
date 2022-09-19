@@ -177,13 +177,13 @@ int main(int argc, char *argv[])
     std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "Successfully Parsed\n";
     POLDAM::OmniGraph targetGraph{};
 
+    int id = 0;
     for (const POLDAM::SeloggerData log : seloggerParser.getParserdData())
     {
 
         POLDAM::DataId dataId = parsedDataIds[log.dataid];
         const POLDAM::MethodsData m = parsedMethodsData[dataId.methodid];
         const POLDAM::ClassesData c = parsedClassesData[dataId.classid];
-        const POLDAM::ObjectData o = parsedObjectData[log.value];
 
         if (dataId.eventtype == "METHOD_ENTRY")
         {
@@ -213,17 +213,20 @@ int main(int argc, char *argv[])
 
             if (paramType.find("String") != std::string::npos)
             {
-                std::cout << "paramType: " << paramType << " Value: " << o.value << std::endl;
+                const POLDAM::ObjectData o = parsedObjectData[log.value - 1];
+                std::cout << "paramType: " << paramType << ",Value: " << o.stringValue << std::endl;
             }
             // branch for paramType that paramValue is directly recored in SELogger.
-            else if (paramType.find("Interger") != std::string::npos or
-                     paramType.find("int") != std::string::npos)
+            else if (paramType.find("Integer") != std::string::npos or
+                     paramType.find("int") != std::string::npos or paramType == "I")
             {
-                std::cout << "paramType: " << paramType << " Value: " << log.value << std::endl;
+
+                std::cout << "paramType: " << paramType << ",Value: " << log.value << std::endl;
             }
             else
             {
-                std::cout << "paramType: " << paramType << " Value: " << o.objecttype << std::endl;
+                const POLDAM::ObjectData o = parsedObjectData[log.value - 1];
+                std::cout << "paramType: " << paramType << ",Value: " << o.objectType << std::endl;
             }
         }
         else
@@ -231,6 +234,7 @@ int main(int argc, char *argv[])
             const std::string logString = dataidsData[log.dataid] + classesData[dataId.classid] + methodData[dataId.methodid];
             targetGraph.updateStackTopVertex(logString, log.threadid);
         }
+        ++id;
     }
 
     // Phase3. Apply algorrithms　and Compare two Graphs.

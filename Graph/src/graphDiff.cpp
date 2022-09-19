@@ -1,6 +1,7 @@
 #include "graph.hpp"
 
 /**
+ * GraphDiff algorithm is beta, There might be good way to compute the diff between two graphs, like following URL
  * https://www.researchgate.net/publication/220618233_Simple_Fast_Algorithms_for_the_Editing_Distance_Between_Trees_and_Related_Problems
  *
  */
@@ -8,7 +9,7 @@ namespace POLDAM
 {
     bool isSameVertex(GraphVertex v, GraphVertex u)
     {
-        return true;
+        return v.flowHash == u.flowHash;
     }
 
     /**
@@ -25,8 +26,18 @@ namespace POLDAM
 
         std::vector<boost::graph_traits<Graph>::vertex_descriptor> originPath, targetPath;
 
+        std::cout << "GRAPHDIFF WORKING\n";
+
         originPath = this->path;
         targetPath = target.copyGraphPath();
+
+        std::cout << "==================================== PATH DEBUG ===================================\n";
+        for (const auto &v : originPath)
+        {
+            std::cout << this->g[v].methodStr << '\n';
+        }
+        std::cout << '\n';
+        std::cout << "==================================== PATH DEBUG ===================================\n";
 
         unsigned int originDescIdx = 0, targetDescIdx = 0;
 
@@ -46,35 +57,67 @@ namespace POLDAM
             if (isSameVertex(originVertex, targetVertex))
             {
                 // no need to show
+                ++originDescIdx;
+                ++targetDescIdx;
             }
             else
             {
-                // different vertex, append two vertex
-                boost::graph_traits<Graph>::vertex_descriptor prevVertexDesc = diffGraph.getStackTopVertex(defaultThreadId);
+                boost::graph_traits<Graph>::vertex_descriptor prevVertexDesc = -1;
 
+                if (not diffGraph.isStackEmpty(defaultThreadId))
+                {
+                    prevVertexDesc = diffGraph.getStackTopVertex(defaultThreadId);
+                }
+
+                // TODO: methodHash and
                 if (originVertex.methodHash == targetVertex.methodHash)
                 {
+                    std::cout << "originDescIdx: " << originDescIdx << " targetDescIdx: " << targetDescIdx << '\n';
+                    std::cout << ">> origin: " << this->g[originDesc].methodStr << " target: " << target.g[targetDesc].methodStr << '\n';
                     // Based on Diff difinition, there are vertex that it has same method hash, but different flow/param hash.
                     // called same vertices
                     boost::graph_traits<Graph>::vertex_descriptor diffOriginVertexDesc = diffGraph.addOmniVertex(originVertex, defaultThreadId);
-                    diffGraph.addOmniEdge(prevVertexDesc, diffOriginVertexDesc, defaultThreadId);
+
+                    // if diffOriginVertexDesc is root vertex, no need to create edge.
+                    if (diffOriginVertexDesc != diffGraph.root[defaultThreadId])
+                    {
+                        assert(prevVertexDesc != -1);
+                        diffGraph.addOmniEdge(prevVertexDesc, diffOriginVertexDesc, defaultThreadId);
+                    }
+
+                    ++originDescIdx;
+                    ++targetDescIdx;
                 }
                 else
                 {
-                    // different method is called
+                    std::cout << "Different Method is called" << std::endl;
+                    std::cout << "originDescIdx: " << originDescIdx << " targetDescIdx: " << targetDescIdx << '\n';
+                    std::cout << ">> origin: " << this->g[originDesc].methodStr << " target: " << target.g[targetDesc].methodStr << '\n';
+                    boost::graph_traits<Graph>::vertex_descriptor diffOriginVertexDesc = diffGraph.addOmniVertexDesc(originVertex, defaultThreadId);
 
-                    boost::graph_traits<Graph>::vertex_descriptor diffOriginVertexDesc = diffGraph.addOmniVertex(originVertex, defaultThreadId);
-                    boost::graph_traits<Graph>::vertex_descriptor diffTargetVertexDesc = diffGraph.addOmniVertex(targetVertex, defaultThreadId);
+                    boost::graph_traits<Graph>::vertex_descriptor diffTargetVertexDesc = diffGraph.addOmniVertexDesc(targetVertex, defaultThreadId);
 
-                    diffGraph.addOmniEdge(prevVertexDesc, diffOriginVertexDesc, defaultThreadId);
-                    diffGraph.addOmniEdge(prevVertexDesc, diffTargetVertexDesc, defaultThreadId);
+                    if (diffOriginVertexDesc != diffGraph.root[defaultThreadId])
+                    {
+                        assert(prevVertexDesc != -1);
+                        std::cout << "--> " << diffGraph.g[prevVertexDesc].methodStr << std::endl;
+                        diffGraph.addOmniEdge(prevVertexDesc, diffOriginVertexDesc, defaultThreadId);
+                        diffGraph.addOmniEdge(prevVertexDesc, diffTargetVertexDesc, defaultThreadId);
+                        return diffGraph;
+                    }
+                    else
+                    {
+                        // In this case, the root vertices are different
+                        std::cout << "TOP VERTICES ARE DIFFERENT" << std::endl;
+                        return POLDAM::OmniGraph();
+                    }
 
                     // try to append vertex until its leaf
                     originDescIdx++;
 
                     boost::graph_traits<Graph>::vertex_descriptor branchDesc{};
                     GraphVertex branchVertex{};
-
+                    std::cout << "never reach here\n";
                     while (originDescIdx < originPath.size() && !isLeaf(originDescIdx))
                     {
                         // copy from branch vertex Info

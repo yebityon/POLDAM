@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <iostream>
 #include <stack>
 #include <functional>
 
@@ -63,10 +63,15 @@ namespace POLDAM
     {
     public:
         bool addOmniVertex(GraphVertex v, const size_t threadId);
+        boost::graph_traits<Graph>::vertex_descriptor addOmniVertexDesc(GraphVertex v, const size_t threadId);
+
         bool updateStackTopVertex(const std::string log, const unsigned int threadId);
         bool popStackVertex(const unsigned int threadId);
 
         bool computeHash(const unsigned int threadId);
+
+        bool isStackEmpty(const unsigned int threadId);
+
         Graph getGraphCopy();
 
         boost::graph_traits<Graph>::vertex_descriptor getStackTopVertex(const unsigned int threadId);
@@ -88,7 +93,8 @@ namespace POLDAM
             boost::graph_traits<Graph>::vertex_descriptor v_, const size_t threadId);
 
         Graph g{};
-        boost::graph_traits<Graph>::vertex_descriptor root{};
+
+        std::map<unsigned int, boost::graph_traits<Graph>::vertex_descriptor> root{};
 
         std::vector<boost::graph_traits<Graph>::vertex_descriptor> path;
         // stack for vertexies

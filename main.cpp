@@ -56,7 +56,7 @@ namespace POLDAM
 
 }
 
-void buildGraph(POLDAM::poldamConfig config, const std::string inputDir, const std::string outputFileName)
+POLDAM::OmniGraph buildGraph(POLDAM::poldamConfig config, const std::string inputDir, const std::string outputFileName)
 {
     std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "Reading Metafiles\n";
     POLDAM::metafileFactory factory(inputDir);
@@ -159,6 +159,8 @@ void buildGraph(POLDAM::poldamConfig config, const std::string inputDir, const s
     POLDAM::OmniWriter writer(targetGraph);
     std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "writing result..." << std::endl;
     writer.writeOmniGraph(outputFileName);
+
+    return targetGraph;
 }
 int main(int argc, char *argv[])
 {
@@ -246,8 +248,15 @@ int main(int argc, char *argv[])
     std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "targetMethod: {" << config.targetMethodName << "}\n";
     std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "outputFileName: {" << config.outputFileName << "}\n";
 
-    buildGraph(config, config.originDir, config.outputFileName + "_origin.dot");
-    buildGraph(config, config.targetDir, config.outputFileName + "_target.dot");
+    POLDAM::OmniGraph originGraph = buildGraph(config, config.originDir, config.outputFileName + "_origin.dot");
+    POLDAM::OmniGraph targetGraph = buildGraph(config, config.targetDir, config.outputFileName + "_target.dot");
+
+    std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "Computhing DiffGraph..." << std::endl;
+    POLDAM::OmniGraph diffGraph = originGraph.computeDiffGraph(targetGraph);
+
+    POLDAM::OmniWriter writer(diffGraph);
+    std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "writhing diffGraph...." << std::endl;
+    writer.writeOmniGraph("diffGraph.dot");
 
     // Phase 1. read and parse all metafiles
 

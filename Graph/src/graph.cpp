@@ -15,8 +15,20 @@ namespace POLDAM
             const auto &prev = this->vStack[threadId].top();
             OmniGraph::addOmniEdge(prev, v, threadId);
         }
+        else
+        {
+            root[threadId] = v;
+        }
         this->vStack[threadId].push(v);
+        this->path.push_back(v);
 
+        return v;
+    }
+
+    boost::graph_traits<Graph>::vertex_descriptor OmniGraph::addOmniVertexDesc(GraphVertex v_, const size_t threadId)
+    {
+        boost::graph_traits<Graph>::vertex_descriptor v = boost::add_vertex(this->g);
+        this->g[v] = v_;
         return v;
     }
 
@@ -41,6 +53,11 @@ namespace POLDAM
         return true;
     }
 
+    bool OmniGraph::isStackEmpty(const unsigned int threadId)
+    {
+        return this->vStack[threadId].empty();
+    }
+
     bool OmniGraph::isLeaf(boost::graph_traits<Graph>::vertex_descriptor vDesc)
     {
         return boost::out_degree(vDesc, this->g);
@@ -60,7 +77,17 @@ namespace POLDAM
 
     boost::graph_traits<Graph>::vertex_descriptor OmniGraph::getStackTopVertex(const unsigned int threadId)
     {
-        return this->vStack[threadId].top();
+        // TODO: handle error exception
+        try
+        {
+            return this->vStack[threadId].top();
+        }
+        catch (const std::exception &e)
+        {
+            std::cerr << e.what() << '\n';
+        }
+
+        return boost::graph_traits<Graph>::vertex_descriptor();
     }
 
     bool OmniGraph::computeFlowHash(const unsigned int threadId)

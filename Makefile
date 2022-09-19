@@ -10,8 +10,8 @@ UTIL_INCLUDE_DIR = $(UTIL_DIR)/include/src
 
 BOOST_PATH = usr/local/boost_1_80_0
 
-main: main.cpp util.o metafileParser.o graph.o
-	g++-11 -I/$(BOOST_PATH) -I./ main.cpp util.o metafileParser.o graph.o -o main
+main: main.cpp util.o metafileParser.o omniGraph.o
+	g++-11 -I/$(BOOST_PATH) -I./ main.cpp util.o metafileParser.o omniGraph.o -o main
 
 MetafileParserTest: metafileParser.o util.o
 	g++-11 $(METAFILE_DIR)/test/main.cpp metafileParser.o util.o -o MetaFileParserTest
@@ -31,8 +31,11 @@ metafileParser.o: $(METAFILE_SRC_DIR)/*.cpp $(METAFILE_SRC_DIR)/*.h
 	rm methods.o
 	rm classes.o 
 
-graph.o: $(GRAPH_SRC_DIR)/*.cpp $(GRAPH_SRC_DIR)/*.h
+omniGraph.o: $(GRAPH_SRC_DIR)/*.cpp $(GRAPH_SRC_DIR)/*.h
 	g++-11 -I/$(BOOST_PATH) -c $(GRAPH_SRC_DIR)/*.cpp
+	ar rvs omniGraph.o graph.o graphDiff.o
+	rm graph.o
+	rm graphDiff.o 
 
 clean: *.o
 	rm -f *.o

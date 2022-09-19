@@ -146,7 +146,7 @@ void buildGraph(POLDAM::poldamConfig config, const std::string inputDir, const s
         }
         else
         {
-            const std::string logString = dataidsData[log.dataid] + classesData[dataId.classid] + methodData[dataId.methodid];
+            const std::string logString = dataidsData[log.dataid] /*+ classesData[dataId.classid]*/ + methodData[dataId.methodid];
             targetGraph.updateStackTopVertex(logString, log.threadid);
         }
         ++id;

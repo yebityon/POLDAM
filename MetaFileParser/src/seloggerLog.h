@@ -9,7 +9,7 @@ namespace POLDAM
     {
         unsigned int eventid;
         unsigned int dataid;
-        int value;
+        std::string value;
         unsigned int threadid;
     };
 

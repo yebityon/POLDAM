@@ -48,7 +48,7 @@ namespace POLDAM
         rec.eventid = static_cast<unsigned int>(std::stoi(parsedLog[0]));
         rec.dataid = static_cast<unsigned int>(std::stoi(parsedLog[1]));
         rec.threadid = static_cast<unsigned int>(std::stoi(parsedLog[2]));
-        rec.value = std::stoi(parsedLog[3]);
+        rec.value = parsedLog[3];
 
         this->parsedData.push_back(rec);
     }

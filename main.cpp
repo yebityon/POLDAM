@@ -56,105 +56,16 @@ namespace POLDAM
 
 }
 
-int main(int argc, char *argv[])
+void buildGraph(POLDAM::poldamConfig config, const std::string inputDir, const std::string outputFileName)
 {
-    POLDAM::poldamConfig config = {};
-
-    if (argc <= 1)
-    {
-        std::cout << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX << "You need to designate input directory." << std::endl;
-        exit(1);
-    }
-
-    for (unsigned int i = 1; i < argc; ++i)
-    {
-
-        const std::string arg = argv[i];
-        if (arg == "-d" or arg == "--outputDir")
-        {
-            if (i + 1 >= argc)
-            {
-                std::cout << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX << "No directory is Gieven\n";
-                printHelp();
-                exit(1);
-            }
-            const std::string outputDir = argv[i + 1];
-            config.outputDir = outputDir;
-            ++i;
-        }
-        else if (arg == "-s" or arg == "--inputDir")
-        {
-            if (i + 1 >= argc)
-            {
-                std::cout << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX << "No directory is Given\n";
-                printHelp();
-                exit(1);
-            }
-            const std::string inputDir = argv[i + 1];
-            config.inputDir = inputDir;
-            ++i;
-        }
-        else if (arg == "-t" or arg == "--targetMethod")
-        {
-            if (i + 1 >= argc)
-            {
-                std::cout << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX << "No targetMethod is Given\n";
-                printHelp();
-                exit(1);
-            }
-            const std::string targetMethod = argv[i + 1];
-            config.targetMethodName = targetMethod;
-            ++i;
-        }
-        else if (arg == "-outputFile")
-        {
-            if (i + 1 > argc)
-            {
-                std::cout << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX << "No outputfile is Given\n";
-                printHelp();
-                exit(1);
-            }
-            const std::string outputFileName = argv[i + 1];
-            config.outputFileName = outputFileName;
-            ++i;
-        }
-        else if (arg == "--fastIO")
-        {
-            std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "Use fast IO\n"
-                      << std::endl;
-            std::cin.tie(nullptr);
-            std::ios_base::sync_with_stdio(false);
-            config.useFastIO = true;
-        }
-        else if (arg == "--debug")
-        {
-            config.isDebugMode = true;
-        }
-        else
-        {
-
-            std::cout << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX << "Unknown Option\n";
-            std::cout << argv[i] << " is Not  Valid Option\n";
-            printHelp();
-            exit(1);
-        }
-    }
-
-    std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "POLDAM IS WORKING\n";
-    std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "outputDir: {" << config.outputDir << "}\n";
-    std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "inputDir: {" << config.inputDir << "}\n";
-    std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "targetMethod: {" << config.targetMethodName << "}\n";
-    std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "outputFileName: {" << config.outputFileName << "}\n";
-
-    // Phase 1. read and parse all metafiles
     std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "Reading Metafiles\n";
-    POLDAM::metafileFactory factory(config.inputDir);
+    POLDAM::metafileFactory factory(inputDir);
 
-    auto dataids = factory.createInstance<POLDAM::dataidsParser>(config.inputDir, "dataids.txt", true);
-    auto seloggerParser = factory.createInstance<POLDAM::seloggerLogParser>(config.inputDir, "log-00001.txt");
-    auto objectFileParser = factory.createInstance<POLDAM::ObjectfileParser>(config.inputDir);
-    auto methodParser = factory.createInstance<POLDAM::methodDataParser>(config.inputDir, "methods.txt", true);
-    auto classesParser = factory.createInstance<POLDAM::classesDataParser>(config.inputDir, "classes.txt", true);
+    auto dataids = factory.createInstance<POLDAM::dataidsParser>(inputDir, "dataids.txt", true);
+    auto seloggerParser = factory.createInstance<POLDAM::seloggerLogParser>(inputDir, "log-00001.txt");
+    auto objectFileParser = factory.createInstance<POLDAM::ObjectfileParser>(inputDir);
+    auto methodParser = factory.createInstance<POLDAM::methodDataParser>(inputDir, "methods.txt", true);
+    auto classesParser = factory.createInstance<POLDAM::classesDataParser>(inputDir, "classes.txt", true);
 
     std::cout
         << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "Successfully reading Metafiles\n";
@@ -180,7 +91,7 @@ int main(int argc, char *argv[])
     int id = 0;
     for (const POLDAM::SeloggerData log : seloggerParser.getParserdData())
     {
-
+        //  std::cout << id << std::endl;
         POLDAM::DataId dataId = parsedDataIds[log.dataid];
         const POLDAM::MethodsData m = parsedMethodsData[dataId.methodid];
         const POLDAM::ClassesData c = parsedClassesData[dataId.classid];
@@ -198,7 +109,7 @@ int main(int argc, char *argv[])
         }
         else if (dataId.eventtype == "METHOD_PARAM")
         {
-            const int argValue = log.value;
+            const std::string argValue = log.value;
         }
         else if (dataId.eventtype == "METHOD_NORMAL_EXIT")
         {
@@ -207,16 +118,20 @@ int main(int argc, char *argv[])
         }
         else if (dataId.eventtype == "CALL_PARAM")
         {
+            // Use these values to compute param hash.
             const unsigned int paramIdx = static_cast<unsigned int>(std::stoi(dataId.attr["index"]));
             const std::string paramType = dataId.attr["type"];
             std::string paramConcreateValue = "";
 
             if (paramType.find("String") != std::string::npos)
             {
-                const POLDAM::ObjectData o = parsedObjectData[log.value - 1];
+                // fixed for 0-index
+                const int argValueIdx = std::stoi(log.value) - 1;
+                const POLDAM::ObjectData o = parsedObjectData[argValueIdx];
                 std::cout << "paramType: " << paramType << ",Value: " << o.stringValue << std::endl;
             }
             // branch for paramType that paramValue is directly recored in SELogger.
+            // NO
             else if (paramType.find("Integer") != std::string::npos or
                      paramType.find("int") != std::string::npos or paramType == "I")
             {
@@ -225,8 +140,8 @@ int main(int argc, char *argv[])
             }
             else
             {
-                const POLDAM::ObjectData o = parsedObjectData[log.value - 1];
-                std::cout << "paramType: " << paramType << ",Value: " << o.objectType << std::endl;
+                // const POLDAM::ObjectData o = parsedObjectData[log.value - 1];
+                // std::cout << "paramType: " << paramType << ",Value: " << o.objectType << std::endl;
             }
         }
         else
@@ -243,8 +158,99 @@ int main(int argc, char *argv[])
 
     POLDAM::OmniWriter writer(targetGraph);
     std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "writing result..." << std::endl;
-    writer.writeOmniGraph(config.outputFileName);
+    writer.writeOmniGraph(outputFileName);
+}
+int main(int argc, char *argv[])
+{
+    POLDAM::poldamConfig config = {};
+
+    if (argc <= 1)
+    {
+        std::cout << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX << "You need to designate input directory." << std::endl;
+        exit(1);
+    }
+
+    for (unsigned int i = 1; i < argc; ++i)
+    {
+
+        const std::string arg = argv[i];
+        if (arg == "-o" or arg == "--originDir")
+        {
+            if (i + 1 >= argc)
+            {
+                std::cout << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX << "No directory is Gieven\n";
+                printHelp();
+                exit(1);
+            }
+            config.originDir = argv[i + 1];
+            ++i;
+        }
+        else if (arg == "-t" or arg == "--targetDir")
+        {
+            if (i + 1 >= argc)
+            {
+                std::cout << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX << "No directory is Given\n";
+                printHelp();
+                exit(1);
+            }
+            config.targetDir = argv[i + 1];
+            ++i;
+        }
+        else if (arg == "-m" or arg == "--targetMethod")
+        {
+            if (i + 1 >= argc)
+            {
+                std::cout << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX << "No targetMethod is Given\n";
+                printHelp();
+                exit(1);
+            }
+            config.targetMethodName = argv[i + 1];
+            ++i;
+        }
+        else if (arg == "-out" or arg == "--outFileName")
+        {
+            if (i + 1 > argc)
+            {
+                std::cout << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX << "No outputfile is Given\n";
+                printHelp();
+                exit(1);
+            }
+            config.outputFileName = argv[i + 1];
+            ++i;
+        }
+        else if (arg == "--fastIO")
+        {
+            std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "Use fast IO\n"
+                      << std::endl;
+            std::cin.tie(nullptr);
+            std::ios_base::sync_with_stdio(false);
+            config.useFastIO = true;
+        }
+        else if (arg == "--debug")
+        {
+            config.isDebugMode = true;
+        }
+        else
+        {
+
+            std::cout << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX << "Unknown Option\n";
+            std::cout << argv[i] << " is Not  Valid Option\n";
+            printHelp();
+            exit(1);
+        }
+    }
+
+    std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "POLDAM IS WORKING\n";
+    std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "originDir: {" << config.originDir << "}\n";
+    std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "targetDir: {" << config.targetDir << "}\n";
+    std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "targetMethod: {" << config.targetMethodName << "}\n";
+    std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "outputFileName: {" << config.outputFileName << "}\n";
+
+    buildGraph(config, config.originDir, config.outputFileName + "_origin.dot");
+    buildGraph(config, config.targetDir, config.outputFileName + "_target.dot");
+
+    // Phase 1. read and parse all metafiles
 
     std::cout
-        << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "Successfully Finished...!!" << std::endl;
+        << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "Successfully Finished." << std::endl;
 }

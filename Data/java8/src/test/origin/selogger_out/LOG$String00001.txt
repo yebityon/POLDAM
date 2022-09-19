@@ -1,2 +1,4 @@
 3,13,"Hello World!!"
 5,26,"Create Math Class Instance"
+23,10,"2 is prime"
+25,15,"10 is not prime"

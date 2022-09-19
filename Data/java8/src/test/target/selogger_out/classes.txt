@@ -1,3 +1,3 @@
 ClassID,LoadedFrom,FileName,ClassName,LogLevel,ClassHash,ClassLoaderID
-0,file:/root/selogger/src/test/target/,Main,Main,Normal,1ac54224092eff310a9473b4af6d1c798fdb762f,Loader@18b4aac2:Main
-1,file:/root/selogger/src/test/target/,customClass/myMath,customClass/myMath,Normal,22d65438836d1a72439be04609e4517abe51684e,Loader@18b4aac2:customClass/myMath
+0,file:/root/selogger/src/test/target/,Main,Main,Normal,258f546d48b10f162768ad18fb68cd0c80c92659,Loader@18b4aac2:Main
+1,file:/root/selogger/src/test/target/,customClass/myMath,customClass/myMath,Normal,a5cb62b2d7ec5a54b8f85cd2ede152970c07e412,Loader@18b4aac2:customClass/myMath

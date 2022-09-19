@@ -16,3 +16,4 @@
 15,customClass.myMath,file:/root/selogger/src/test/origin/customClass/myMath.class,9,-1,Loader@18b4aac2:customClass/myMath
 16,java.lang.Number,jar:file:/usr/local/openjdk-8/jre/lib/rt.jar!/java/lang/Number.class,9,-1,Loader@0:java/lang/Number
 17,java.lang.Integer,jar:file:/usr/local/openjdk-8/jre/lib/rt.jar!/java/lang/Integer.class,16,-1,Loader@0:java/lang/Integer
+18,java.lang.Boolean,jar:file:/usr/local/openjdk-8/jre/lib/rt.jar!/java/lang/Boolean.class,9,-1,Loader@0:java/lang/Boolean

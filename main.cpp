@@ -91,7 +91,6 @@ POLDAM::OmniGraph buildGraph(POLDAM::poldamConfig config, const std::string inpu
     int id = 0;
     for (const POLDAM::SeloggerData log : seloggerParser.getParserdData())
     {
-        //  std::cout << id << std::endl;
         POLDAM::DataId dataId = parsedDataIds[log.dataid];
         const POLDAM::MethodsData m = parsedMethodsData[dataId.methodid];
         const POLDAM::ClassesData c = parsedClassesData[dataId.classid];
@@ -102,7 +101,7 @@ POLDAM::OmniGraph buildGraph(POLDAM::poldamConfig config, const std::string inpu
             const unsigned int classId = dataId.classid;
 
             v.methodStr = m.methodName;
-            v.methodHash = m.methodHash;
+            v.methodHash = std::to_string(std::hash<std::string>()(m.className + m.methodName));
             v.outputFormat = m.methodName;
 
             bool result = targetGraph.addOmniVertex(v, log.threadid);

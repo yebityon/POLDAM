@@ -7,19 +7,21 @@ namespace POLDAM
 
     bool OmniGraph::addOmniVertex(GraphVertex v_, const size_t threadId)
     {
-        boost::graph_traits<Graph>::vertex_descriptor v = boost::add_vertex(this->g);
+        // FIXME: it should be perfect forwarding
+        boost::graph_traits<Graph>::vertex_descriptor v = OmniGraph::addOmniVertexDesc(v_, threadId);
 
-        this->g[v] = v_;
         if (not this->vStack[threadId].empty())
         {
-            const auto &prev = this->vStack[threadId].top();
+            const auto &prev = OmniGraph::getStackTopVertex(threadId);
             OmniGraph::addOmniEdge(prev, v, threadId);
         }
         else
         {
             root[threadId] = v;
         }
-        this->vStack[threadId].push(v);
+
+        OmniGraph::pushStackVertex(v, threadId);
+
         this->path.push_back(v);
 
         return v;
@@ -45,6 +47,11 @@ namespace POLDAM
         return true;
     }
 
+    bool OmniGraph::pushStackVertex(const boost::graph_traits<Graph>::vertex_descriptor vDesc, const unsigned int threadId)
+    {
+        this->vStack[threadId].push(vDesc);
+    }
+
     bool OmniGraph::computeHash(const unsigned int threadId)
     {
         computeFlowHash(threadId);
@@ -60,7 +67,7 @@ namespace POLDAM
 
     bool OmniGraph::isLeaf(boost::graph_traits<Graph>::vertex_descriptor vDesc)
     {
-        return boost::out_degree(vDesc, this->g);
+        return boost::out_degree(vDesc, this->g) == 1;
     }
 
     bool OmniGraph::addOmniEdge(
@@ -104,13 +111,6 @@ namespace POLDAM
         return true;
     }
 
-    /**
-     * @brief the implementation when vertex Stack is popped. the function describe the relationship between caller and callee.
-     *
-     * @param threadId the threadId of target log
-     * @return true implementation has succesfully finished.
-     * @return false implementation has not finished succesfully.
-     */
     bool OmniGraph::popVertex(const unsigned int threadId)
     {
         const auto crtVertex = this->vStack[threadId].top();

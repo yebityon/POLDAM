@@ -62,9 +62,24 @@ namespace POLDAM
     class OmniGraph
     {
     public:
+        /**
+         * @brief Create vertex Descriptor from given Graph Vertex, and Create edge if vStack is not empty.\
+         *
+         * @param v GraphVertex,
+         * @param threadId
+         * @return true  return true if succedd to add vertex to graph.
+         * @return false return false if failed to add vertex to graph.
+         */
         bool addOmniVertex(GraphVertex v, const size_t threadId);
-        boost::graph_traits<Graph>::vertex_descriptor addOmniVertexDesc(GraphVertex v, const size_t threadId);
 
+        /**
+         * @brief
+         *
+         * @param log string, add log context to vStack top vertex.
+         * @param threadId
+         * @return true
+         * @return false
+         */
         bool updateStackTopVertex(const std::string log, const unsigned int threadId);
         bool popStackVertex(const unsigned int threadId);
 
@@ -86,8 +101,52 @@ namespace POLDAM
     private:
         bool computeFlowHash(const unsigned int threadId);
         bool computeParamHash(const unsigned int threadId);
+        /**
+         * @brief the implementation when vertex Stack is popped. the function describe the relationship between caller and callee.
+         *
+         * @param threadId the threadId of target log
+         * @return true implementation has succesfully finished.
+         * @return false implementation has not finished succesfully.
+         */
         bool popVertex(const unsigned int threadId);
+
+        /**
+         * @brief return true if given vertex descriptor is leaf in graph.
+         *
+         * @param vDesc boost::graph_traits<Graph>::vertex_descriptor
+         * @return true
+         * @return false
+         */
         bool isLeaf(boost::graph_traits<Graph>::vertex_descriptor vDesc);
+
+        /**
+         * @brief return true if given vertex descriptor is leaf in graph.
+         *
+         * @param vDesc boost::graph_traits<Graph>::vertex_descriptor
+         * @return true
+         * @return false
+         */
+        bool pushStackVertex(const boost::graph_traits<Graph>::vertex_descriptor vDesc, const unsigned int threadId);
+
+        /**
+         * @brief Create VertexDescriptor. Note this function DO NOT add to graph.\
+         * NOTE: this function do not update vStack, Therefore, you need to handle it carefully.
+         *
+         * @param v
+         * @param threadId
+         * @return boost::graph_traits<Graph>::vertex_descriptor return vertex_descriptor if succedd to add
+         */
+        boost::graph_traits<Graph>::vertex_descriptor addOmniVertexDesc(GraphVertex v, const size_t threadId);
+
+        /**
+         * @brief Add edge between two given vertices.
+         *
+         * @param u_
+         * @param v_
+         * @param threadId
+         * @return true
+         * @return false
+         */
         bool addOmniEdge(
             boost::graph_traits<Graph>::vertex_descriptor u_,
             boost::graph_traits<Graph>::vertex_descriptor v_, const size_t threadId);

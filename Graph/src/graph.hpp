@@ -5,6 +5,7 @@
 #include <boost/graph/adjacency_iterator.hpp>
 #include <boost/graph/depth_first_search.hpp>
 #include <boost/graph/adjacency_list.hpp>
+#include <boost/graph/connected_components.hpp>
 
 namespace POLDAM
 {
@@ -97,6 +98,8 @@ namespace POLDAM
         };
 
         OmniGraph computeDiffGraph(OmniGraph &targetGraph);
+        // need to move Graph
+        OmniGraph computeDiffGraphBeta(OmniGraph &&targetGraph);
 
     private:
         bool computeFlowHash(const unsigned int threadId);

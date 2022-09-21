@@ -158,4 +158,47 @@ namespace POLDAM
         return diffGraph;
     }
 
+    OmniGraph OmniGraph::computeDiffGraphBeta(OmniGraph &&target)
+    {
+        const Graph &originGraph = this->g;
+        const Graph &targetGraph = target.g;
+
+        unsigned int originDescIdx = 0, targetDescIdx = 0;
+        const unsigned int defaultThreadId = 0;
+
+        const boost::graph_traits<Graph>::vertex_descriptor orignRoot = this->path.front();
+        const boost::graph_traits<Graph>::vertex_descriptor targetRoot = target.path.front();
+
+        std::vector<boost::graph_traits<Graph>::vertex_descriptor> originChilds(
+            boost::num_vertices(originGraph));
+
+        std::vector<boost::graph_traits<Graph>::vertex_descriptor> targetChilds(
+            boost::num_vertices(targetGraph));
+
+        if (originChilds.size() != targetChilds.size())
+        {
+            // different method call exist
+        }
+        else
+        {
+            for (unsigned int i = 0; i < originChilds.size(); ++i)
+            {
+                const boost::graph_traits<Graph>::vertex_descriptor originVertexDesc = originChilds[i];
+                const boost::graph_traits<Graph>::vertex_descriptor targetVertexDesc = targetChilds[i];
+
+                if (isSameVertex(originGraph[originVertexDesc], targetGraph[targetVertexDesc]))
+                {
+                    // just append, no need to iterate
+                    // OmniGraph::append_samevertices
+                }
+                else
+                {
+                    //  Different Graph is detected
+                    //  othewise
+                    // if has_same_signature (0)
+                    // if different_method _call ()
+                }
+            }
+        }
+    }
 }

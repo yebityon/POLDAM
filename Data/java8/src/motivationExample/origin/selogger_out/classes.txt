@@ -1,0 +1,3 @@
+ClassID,LoadedFrom,FileName,ClassName,LogLevel,ClassHash,ClassLoaderID
+0,file:/root/selogger/src/motivationExample/origin/,Main,Main,Normal,d76b89da72d9fcbf7a743d5b5fb25447ed24cb0f,Loader@18b4aac2:Main
+1,file:/root/selogger/src/motivationExample/origin/,customClass/myMath,customClass/myMath,Normal,80a6e9ec17664c9d9cb321964eb002c6907302b3,Loader@18b4aac2:customClass/myMath

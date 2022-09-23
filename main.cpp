@@ -43,7 +43,7 @@ namespace POLDAM
             catch (...)
             {
                 std::cerr << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX
-                          << "Can not export as graphviz." << std::endl;
+                          << "Can not export to graphviz." << std::endl;
                 return;
             }
 
@@ -55,6 +55,20 @@ namespace POLDAM
         Graph g;
     };
 
+}
+
+std::string shapeLogString(const POLDAM::DataId d, const POLDAM::MethodsData m, const POLDAM::ClassesData c)
+{
+    std::string res;
+    res += d.eventtype + d.valuedesc;
+    for (const auto itr : d.attr)
+    {
+        res += itr.first + itr.second;
+    }
+
+    res += m.className + m.methodName + m.methodDesc;
+    res += c.className + c.fileName;
+    return res;
 }
 
 POLDAM::OmniGraph buildGraph(POLDAM::poldamConfig config, const std::string inputDir, const std::string outputFileName)
@@ -146,7 +160,7 @@ POLDAM::OmniGraph buildGraph(POLDAM::poldamConfig config, const std::string inpu
         }
         else
         {
-            const std::string logString = dataidsData[log.dataid] /*+ classesData[dataId.classid]*/ + methodData[dataId.methodid];
+            const std::string logString = shapeLogString(dataId, m, c);
             targetGraph.updateStackTopVertex(logString, log.threadid);
         }
         ++id;
@@ -162,6 +176,7 @@ POLDAM::OmniGraph buildGraph(POLDAM::poldamConfig config, const std::string inpu
 
     return targetGraph;
 }
+
 int main(int argc, char *argv[])
 {
     POLDAM::poldamConfig config = {};

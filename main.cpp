@@ -52,6 +52,7 @@ namespace POLDAM
 
     private:
         POLDAM::OmniGraph &G;
+        Graph g;
     };
 
 }
@@ -251,11 +252,16 @@ int main(int argc, char *argv[])
     POLDAM::OmniGraph targetGraph = buildGraph(config, config.targetDir, config.outputFileName + "_target.dot");
 
     std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "Computhing DiffGraph..." << std::endl;
-    POLDAM::OmniGraph diffGraph = originGraph.computeDiffGraph(targetGraph);
+    POLDAM::Graph diffGraph = originGraph.computeDiffGraphBeta(std::move(targetGraph));
 
-    POLDAM::OmniWriter writer(diffGraph);
-    std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "writhing diffGraph...." << std::endl;
-    writer.writeOmniGraph("diffGraph.dot");
+    std::ofstream outputDotFile("ouptput_diff.dot");
+    boost::write_graphviz(outputDotFile, diffGraph,
+                          boost::make_label_writer(get(&POLDAM::GraphVertex::outputFormat, diffGraph)),
+                          boost::make_label_writer(get(&POLDAM::GraphEdge::outputFormat, diffGraph)));
+
+    // POLDAM::OmniWriter writer(diffGraph);
+    // std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "writhing diffGraph...." << std::endl;
+    // writer.writeOmniGraph("diffGraph.dot");
 
     // Phase 1. read and parse all metafiles
 

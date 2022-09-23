@@ -105,7 +105,7 @@ namespace POLDAM
 
         OmniGraph computeDiffGraph(OmniGraph &targetGraph);
         // need to move Graph
-        OmniGraph computeDiffGraphBeta(OmniGraph &&targetGraph);
+        Graph computeDiffGraphBeta(OmniGraph &&targetGraph);
 
     private:
         bool computeFlowHash(const unsigned int threadId);

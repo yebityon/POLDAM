@@ -240,6 +240,8 @@ namespace POLDAM
                 }
                 else
                 {
+                    diffGraph[verDesc].outputFormat += "\nDIFFERENT HASH";
+
                     traverseDiffVertices(originGraph, targetGraph, nOriginVerDesc, nTragetVerDesc, verDesc);
                     break;
                 }
@@ -252,7 +254,7 @@ namespace POLDAM
         return;
     }
 
-    OmniGraph OmniGraph::computeDiffGraphBeta(OmniGraph &&target)
+    Graph OmniGraph::computeDiffGraphBeta(OmniGraph &&target)
     {
         const Graph &originGraph = this->g;
         const Graph &targetGraph = target.g;
@@ -269,5 +271,7 @@ namespace POLDAM
                              this->getRoot(),
                              target.getRoot(),
                              diffGraphRootDesc);
+
+        return this->diffGraph;
     }
 }

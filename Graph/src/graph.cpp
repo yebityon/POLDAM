@@ -18,6 +18,7 @@ namespace POLDAM
         else
         {
             root[threadId] = v;
+            this->Root = v;
         }
 
         OmniGraph::pushStackVertex(v, threadId);

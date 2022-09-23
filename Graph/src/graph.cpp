@@ -102,6 +102,7 @@ namespace POLDAM
     {
         const auto &topVertex = this->vStack[threadId].top();
         this->g[topVertex].flowHash = std::hash<std::string>()(this->g[topVertex].flowStr);
+
         return true;
     }
 
@@ -116,12 +117,13 @@ namespace POLDAM
     {
         const auto crtVertex = this->vStack[threadId].top();
         this->vStack[threadId].pop();
-        if (not this->vStack[threadId].empty())
+        if (not isStackEmpty(threadId))
         {
             const auto &callerVertex = this->vStack[threadId].top();
-            this->g[callerVertex].controlFlowHash = std::hash<size_t>()(
+            this->g[callerVertex].childFlowHash = std::hash<size_t>()(
                 this->g[callerVertex].childFlowHash + g[crtVertex].flowHash);
-            this->g[callerVertex].controlParamHash = std::hash<size_t>()(
+
+            this->g[callerVertex].childParamHash = std::hash<size_t>()(
                 this->g[callerVertex].childParamHash + g[crtVertex].paramHash);
         }
 

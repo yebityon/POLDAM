@@ -9,7 +9,7 @@ namespace POLDAM
 {
     bool isSameVertex(GraphVertex v, GraphVertex u)
     {
-        return v.flowHash == u.flowHash;
+        return v.controlFlowHash == u.controlFlowHash;
     }
 
     /**
@@ -164,7 +164,8 @@ namespace POLDAM
                                          const boost::graph_traits<Graph>::vertex_descriptor parDiffVerDesc)
     {
 
-        assert(not isSameVertex(originGraph[originVerDesc], targetGraph[targetVerDesc]));
+        // assert(not isSameVertex(originGraph[originVerDesc], targetGraph[targetVerDesc]));
+
         boost::graph_traits<Graph>::out_edge_iterator oEdgeItr,
             oEdgeItrEnd, tEdgeItr, tEdgeItrEnd;
 
@@ -237,10 +238,11 @@ namespace POLDAM
                 if (isSameVertex(originGraph[nOriginVerDesc], targetGraph[nTragetVerDesc]))
                 {
                     // no need to traversal anymore.
+                    diffGraph[verDesc].outputFormat += "\nSAME_HAHS";
                 }
                 else
                 {
-                    diffGraph[verDesc].outputFormat += "\nDIFFERENT HASH";
+                    diffGraph[verDesc].outputFormat += "\nDIFFERENT_HASH";
 
                     traverseDiffVertices(originGraph, targetGraph, nOriginVerDesc, nTragetVerDesc, verDesc);
                     break;

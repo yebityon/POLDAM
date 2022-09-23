@@ -158,6 +158,100 @@ namespace POLDAM
         return diffGraph;
     }
 
+    void OmniGraph::traverseDiffVertices(const Graph &originGraph, const Graph &targetGraph,
+                                         const boost::graph_traits<Graph>::vertex_descriptor originVerDesc,
+                                         const boost::graph_traits<Graph>::vertex_descriptor targetVerDesc,
+                                         const boost::graph_traits<Graph>::vertex_descriptor parDiffVerDesc)
+    {
+
+        assert(not isSameVertex(originGraph[originVerDesc], targetGraph[targetVerDesc]));
+        boost::graph_traits<Graph>::out_edge_iterator oEdgeItr,
+            oEdgeItrEnd, tEdgeItr, tEdgeItrEnd;
+
+        const unsigned int oOutEdgeSize = boost::out_degree(originVerDesc, originGraph);
+        const unsigned int tOutEdgeSize = boost::out_degree(targetVerDesc, targetGraph);
+
+        // if oOutEdgeSize  != tOutEdgeSize, it indicated there is a different method call
+
+        if (oOutEdgeSize != tOutEdgeSize)
+        {
+            std::cout << "DIFFERENT NUMBER OF METHOD CALL IS DETECTED\n";
+
+            boost::tie(oEdgeItr, oEdgeItrEnd) = boost::out_edges(originVerDesc, originGraph);
+            boost::tie(tEdgeItr, tEdgeItrEnd) = boost::out_edges(targetVerDesc, targetGraph);
+
+            for (unsigned int i = 0; i < std::min(oOutEdgeSize, tOutEdgeSize); ++i)
+            {
+                const boost::graph_traits<Graph>::vertex_descriptor nOriginVerDesc = boost::target(*oEdgeItr, originGraph);
+                const boost::graph_traits<Graph>::vertex_descriptor nTragetVerDesc = boost::target(*tEdgeItr, targetGraph);
+
+                boost::graph_traits<Graph>::edge_descriptor edgeDesc;
+                boost::graph_traits<Graph>::vertex_descriptor verDesc;
+
+                verDesc = boost::add_vertex(this->diffGraph);
+                diffGraph[verDesc] = originGraph[nOriginVerDesc];
+                bool isInserted = false;
+                boost::tie(edgeDesc, isInserted) = boost::add_edge(parDiffVerDesc, verDesc, this->diffGraph);
+                ++oEdgeItr;
+                ++tEdgeItr;
+            }
+
+            boost::graph_traits<Graph>::vertex_descriptor extraMethodCallDesc = boost::add_vertex(this->diffGraph);
+
+            if (oEdgeItr != oEdgeItrEnd)
+            {
+                this->diffGraph[extraMethodCallDesc] = originGraph[boost::target(*oEdgeItr, originGraph)];
+            }
+            else
+            {
+                assert(tEdgeItr != tEdgeItrEnd);
+
+                this->diffGraph[extraMethodCallDesc] = targetGraph[boost::target(*tEdgeItr, targetGraph)];
+            }
+
+            this->diffGraph[extraMethodCallDesc].outputFormat += "\nDIFFEREMT METHOD CALL";
+
+            return;
+        }
+
+        // oOutEdgeSize ==  tOutEdgeSize --> True
+
+        boost::tie(oEdgeItr, oEdgeItrEnd) = boost::out_edges(originVerDesc, originGraph);
+        boost::tie(tEdgeItr, tEdgeItrEnd) = boost::out_edges(targetVerDesc, targetGraph);
+
+        for (unsigned int i = 0; i < oOutEdgeSize; ++i)
+        {
+            if (oEdgeItr != oEdgeItrEnd && tEdgeItr != oEdgeItrEnd)
+            {
+                const boost::graph_traits<Graph>::vertex_descriptor nOriginVerDesc = boost::target(*oEdgeItr, originGraph);
+                const boost::graph_traits<Graph>::vertex_descriptor nTragetVerDesc = boost::target(*tEdgeItr, targetGraph);
+
+                boost::graph_traits<Graph>::edge_descriptor edgeDesc;
+                boost::graph_traits<Graph>::vertex_descriptor verDesc;
+
+                verDesc = boost::add_vertex(this->diffGraph);
+                diffGraph[verDesc] = originGraph[nOriginVerDesc];
+                bool isInserted = false;
+                boost::tie(edgeDesc, isInserted) = boost::add_edge(parDiffVerDesc, verDesc, this->diffGraph);
+
+                if (isSameVertex(originGraph[nOriginVerDesc], targetGraph[nTragetVerDesc]))
+                {
+                    // no need to traversal anymore.
+                }
+                else
+                {
+                    traverseDiffVertices(originGraph, targetGraph, nOriginVerDesc, nTragetVerDesc, verDesc);
+                    break;
+                }
+
+                ++oEdgeItr;
+                ++tEdgeItr;
+            }
+        }
+
+        return;
+    }
+
     OmniGraph OmniGraph::computeDiffGraphBeta(OmniGraph &&target)
     {
         const Graph &originGraph = this->g;
@@ -166,39 +260,14 @@ namespace POLDAM
         unsigned int originDescIdx = 0, targetDescIdx = 0;
         const unsigned int defaultThreadId = 0;
 
-        const boost::graph_traits<Graph>::vertex_descriptor orignRoot = this->path.front();
-        const boost::graph_traits<Graph>::vertex_descriptor targetRoot = target.path.front();
+        // create root vertices
+        boost::graph_traits<Graph>::vertex_descriptor diffGraphRootDesc = boost::add_vertex(this->diffGraph);
 
-        std::vector<boost::graph_traits<Graph>::vertex_descriptor> originChilds(
-            boost::num_vertices(originGraph));
+        this->diffGraph[diffGraphRootDesc].outputFormat = "DIFF GRAPH";
 
-        std::vector<boost::graph_traits<Graph>::vertex_descriptor> targetChilds(
-            boost::num_vertices(targetGraph));
-
-        if (originChilds.size() != targetChilds.size())
-        {
-            // different method call exist
-        }
-        else
-        {
-            for (unsigned int i = 0; i < originChilds.size(); ++i)
-            {
-                const boost::graph_traits<Graph>::vertex_descriptor originVertexDesc = originChilds[i];
-                const boost::graph_traits<Graph>::vertex_descriptor targetVertexDesc = targetChilds[i];
-
-                if (isSameVertex(originGraph[originVertexDesc], targetGraph[targetVertexDesc]))
-                {
-                    // just append, no need to iterate
-                    // OmniGraph::append_samevertices
-                }
-                else
-                {
-                    //  Different Graph is detected
-                    //  othewise
-                    // if has_same_signature (0)
-                    // if different_method _call ()
-                }
-            }
-        }
+        traverseDiffVertices(originGraph, targetGraph,
+                             this->getRoot(),
+                             target.getRoot(),
+                             diffGraphRootDesc);
     }
 }

@@ -1,6 +1,7 @@
 #include <iostream>
 #include <stack>
 #include <functional>
+#include <iterator>
 
 #include <boost/graph/adjacency_iterator.hpp>
 #include <boost/graph/depth_first_search.hpp>
@@ -97,6 +98,11 @@ namespace POLDAM
             return this->path;
         };
 
+        const boost::graph_traits<Graph>::vertex_descriptor getRoot()
+        {
+            return this->Root;
+        }
+
         OmniGraph computeDiffGraph(OmniGraph &targetGraph);
         // need to move Graph
         OmniGraph computeDiffGraphBeta(OmniGraph &&targetGraph);
@@ -154,7 +160,18 @@ namespace POLDAM
             boost::graph_traits<Graph>::vertex_descriptor u_,
             boost::graph_traits<Graph>::vertex_descriptor v_, const size_t threadId);
 
+        void traverseDiffVertices(
+            const Graph &o, const Graph &t,
+            const boost::graph_traits<Graph>::vertex_descriptor ovd,
+            const boost::graph_traits<Graph>::vertex_descriptor tvd,
+            const boost::graph_traits<Graph>::vertex_descriptor parDiffVerDesc
+
+        );
+
         Graph g{};
+        Graph diffGraph{};
+
+        boost::graph_traits<Graph>::vertex_descriptor Root;
 
         std::map<unsigned int, boost::graph_traits<Graph>::vertex_descriptor> root{};
 

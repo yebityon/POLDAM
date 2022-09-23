@@ -15,6 +15,8 @@ namespace POLDAM
 
         bool useFastIO = false;
         bool isDebugMode = false;
+        bool useFlowHash = false;
+        bool usePramHash = false;
     };
 
 }

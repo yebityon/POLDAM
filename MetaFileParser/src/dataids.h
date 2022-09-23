@@ -1,7 +1,7 @@
 #pragma once
 #include "metafileHandlerCommon.h"
 #include "../../Util/include/src/poldamUtil.h"
-#include "../../Interpreter/src/InterpreterCommon.h"
+#include "../../Interpreter/src/eventHandler.h"
 #include <map>
 
 // TODO: Interface should be speciallized for each struct type.
@@ -10,14 +10,14 @@ namespace POLDAM
 {
     struct DataId
     {
-        unsigned int dataidx;
-        unsigned int classid;
-        unsigned int methodid;
+        unsigned int dataIdx;
+        unsigned int classId;
+        unsigned int methodId;
         // -1 is undefined or N/A
         int line;
-        int instructionid;
-        std::string eventtype;
-        std::string valuedesc;
+        int instructionId;
+        POLDAM::SELOGGER_EVENT_TYPE eventType;
+        std::string valueDesc;
         std::map<std::string, std::string> attr;
     };
     class dataidsParser : fileReader
@@ -52,6 +52,7 @@ namespace POLDAM
         bool setTargetFileName(const std::string targetFileName)
         {
             this->targetFileNames.push_back(targetFileName);
+            return true;
         };
 
     private:

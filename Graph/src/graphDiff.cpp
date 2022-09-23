@@ -13,7 +13,8 @@ namespace POLDAM
     }
 
     /**
-     * @brief compute the tree diff between this graph and given OmniGraoh.
+     * @brief **DEPRECATED**\
+     * Diff algorithm to compute the difference between origin and target
      * @param target
      * @return OmniGraph the diffGraph
      */
@@ -158,10 +159,19 @@ namespace POLDAM
         return diffGraph;
     }
 
+    /**
+     * @brief  traverse tree to compute diff algorithm
+     * @param originGraph
+     * @param targetGraph
+     * @param originVerDesc
+     * @param targetVerDesc
+     * @param parDiffVerDesc
+     */
     void OmniGraph::traverseDiffVertices(const Graph &originGraph, const Graph &targetGraph,
                                          const boost::graph_traits<Graph>::vertex_descriptor originVerDesc,
                                          const boost::graph_traits<Graph>::vertex_descriptor targetVerDesc,
-                                         const boost::graph_traits<Graph>::vertex_descriptor parDiffVerDesc)
+                                         const boost::graph_traits<Graph>::vertex_descriptor parDiffVerDesc,
+                                         const std::function<bool(const GraphVertex &v, const GraphVertex &u)> &isSameVertex)
     {
 
         // assert(not isSameVertex(originGraph[originVerDesc], targetGraph[targetVerDesc]));
@@ -172,7 +182,7 @@ namespace POLDAM
         const unsigned int oOutEdgeSize = boost::out_degree(originVerDesc, originGraph);
         const unsigned int tOutEdgeSize = boost::out_degree(targetVerDesc, targetGraph);
 
-        // if oOutEdgeSize  != tOutEdgeSize, it indicated there is a different method call
+        // if oOutEdgeSize  != tOutEdgeSize, it indicate there is a different method call.
 
         if (oOutEdgeSize != tOutEdgeSize)
         {
@@ -237,14 +247,14 @@ namespace POLDAM
 
                 if (isSameVertex(originGraph[nOriginVerDesc], targetGraph[nTragetVerDesc]))
                 {
-                    // no need to traversal anymore.
-                    diffGraph[verDesc].outputFormat += "\nSAME_HAHS";
+                    // no need to traverse anymore.
+                    diffGraph[verDesc].outputFormat += "\nSAME_HASH";
                 }
                 else
                 {
                     diffGraph[verDesc].outputFormat += "\nDIFFERENT_HASH";
 
-                    traverseDiffVertices(originGraph, targetGraph, nOriginVerDesc, nTragetVerDesc, verDesc);
+                    traverseDiffVertices(originGraph, targetGraph, nOriginVerDesc, nTragetVerDesc, verDesc, isSameVertex);
                     break;
                 }
 
@@ -256,7 +266,14 @@ namespace POLDAM
         return;
     }
 
-    Graph OmniGraph::computeDiffGraphBeta(OmniGraph &&target)
+    /**
+     * @brief compute Diff between given OmniGraph and this->g through trversal tree.
+     *
+     * @param target
+     * @return Graph
+     */
+    Graph OmniGraph::computeDiffGraphBeta(OmniGraph &&target,
+                                          const std::function<bool(const GraphVertex &v, const GraphVertex &u)> &isSameVertex)
     {
         const Graph &originGraph = this->g;
         const Graph &targetGraph = target.g;
@@ -267,12 +284,13 @@ namespace POLDAM
         // create root vertices
         boost::graph_traits<Graph>::vertex_descriptor diffGraphRootDesc = boost::add_vertex(this->diffGraph);
 
-        this->diffGraph[diffGraphRootDesc].outputFormat = "DIFF GRAPH";
+        this->diffGraph[diffGraphRootDesc].outputFormat = "DIFF_GRAPH_ENTRY";
 
         traverseDiffVertices(originGraph, targetGraph,
                              this->getRoot(),
                              target.getRoot(),
-                             diffGraphRootDesc);
+                             diffGraphRootDesc,
+                             isSameVertex);
 
         return this->diffGraph;
     }

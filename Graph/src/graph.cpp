@@ -42,6 +42,13 @@ namespace POLDAM
         return true;
     }
 
+    bool OmniGraph::updateStackTopVertexParamInfo(const std::string &paramValue, unsigned int threadId)
+    {
+        const auto &prevVertx = this->vStack[threadId].top();
+        this->g[prevVertx].paramStr += paramValue;
+        return true;
+    }
+
     bool OmniGraph::popStackVertex(const unsigned int threadId)
     {
         popVertex(threadId);

@@ -5,7 +5,7 @@
 #include "../../Util/include/src/poldamUtil.h"
 namespace POLDAM
 {
-    enum class EventType
+    enum class SELOGGER_EVENT_TYPE
     {
         RESERVED,
         METHOD_ENTRY,
@@ -62,22 +62,13 @@ namespace POLDAM
         UNDEFINED,
     };
 
-    class ILogInterpreter
+    enum class SELOGGER_EVENT_ATTR
     {
-
-    public:
-        virtual void parseLog() = 0;
-        virtual std::string getLog() = 0;
-        virtual EventType getEventType() = 0;
+        WRITE_OBJECT,
+        READ_OBJECT,
     };
 
-    template <typename T>
-    class LogInterpreter : ILogInterpreter
-    {
+    SELOGGER_EVENT_TYPE getEventType(const std::string &log);
+    bool isPrimitiveType(const std::string &objectType);
 
-    public:
-        void parseLog() override{};
-        std::string getLog() override { return std::string(0); };
-        EventType getEventType() override { return EventType::UNDEFINED; }
-    };
 }

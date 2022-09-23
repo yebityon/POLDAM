@@ -83,6 +83,8 @@ namespace POLDAM
          * @return false
          */
         bool updateStackTopVertex(const std::string log, const unsigned int threadId);
+
+        bool updateStackTopVertexParamInfo(const std::string &paramValue, unsigned int threadId);
         bool popStackVertex(const unsigned int threadId);
 
         bool computeHash(const unsigned int threadId);
@@ -105,7 +107,7 @@ namespace POLDAM
 
         OmniGraph computeDiffGraph(OmniGraph &targetGraph);
         // need to move Graph
-        Graph computeDiffGraphBeta(OmniGraph &&targetGraph);
+        Graph computeDiffGraphBeta(OmniGraph &&targetGraph, const std::function<bool(const GraphVertex &, const GraphVertex &)> &isSameVertex);
 
     private:
         bool computeFlowHash(const unsigned int threadId);
@@ -164,7 +166,8 @@ namespace POLDAM
             const Graph &o, const Graph &t,
             const boost::graph_traits<Graph>::vertex_descriptor ovd,
             const boost::graph_traits<Graph>::vertex_descriptor tvd,
-            const boost::graph_traits<Graph>::vertex_descriptor parDiffVerDesc
+            const boost::graph_traits<Graph>::vertex_descriptor parDiffVerDesc,
+            const std::function<bool(const GraphVertex &, const GraphVertex &)> &isSameVertex
 
         );
 

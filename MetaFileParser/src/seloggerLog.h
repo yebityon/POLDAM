@@ -7,10 +7,10 @@ namespace POLDAM
 
     struct SeloggerData
     {
-        unsigned int eventid;
-        unsigned int dataid;
+        unsigned int eventId;
+        unsigned int dataId;
         std::string value;
-        unsigned int threadid;
+        unsigned int threadId;
     };
 
     class seloggerLogParser : fileReader

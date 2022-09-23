@@ -47,13 +47,13 @@ namespace POLDAM
 
         const auto &&parsedline = POLDAM_UTIL::parse(line);
 
-        dataid.dataidx = static_cast<unsigned int>(std::stoi(parsedline[0]));
-        dataid.classid = static_cast<unsigned int>(std::stoi(parsedline[1]));
-        dataid.methodid = static_cast<unsigned int>(std::stoi(parsedline[2]));
+        dataid.dataIdx = static_cast<unsigned int>(std::stoi(parsedline[0]));
+        dataid.classId = static_cast<unsigned int>(std::stoi(parsedline[1]));
+        dataid.methodId = static_cast<unsigned int>(std::stoi(parsedline[2]));
         dataid.line = std::stoi(parsedline[3]);
-        dataid.instructionid = std::stoi(parsedline[4]);
-        dataid.eventtype = parsedline[5];
-        dataid.valuedesc = parsedline[6];
+        dataid.instructionId = std::stoi(parsedline[4]);
+        dataid.eventType = POLDAM::getEventType(parsedline[5]);
+        dataid.valueDesc = parsedline[6];
 
         for (int i = 7; i < parsedline.size(); ++i)
         {

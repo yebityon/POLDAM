@@ -53,9 +53,9 @@ Motivation Exampleを実行するための最低限のステップをいかに�
 1. Dependency　を実行したい環境に用意してください
 2. このレポジトリ　を git clone してください
 3. `POLDAM/Makefile`の中の`BOOST_PATH`の部分を適宜変更してください
-4. `make main`を実行して`main`をコンパイルしてください
-5. `./main  -o ./Data/java8/src/motivationExample/origin/selogger_out/ -t ./Data/java8/src/motivationExample/target/selogger_out/ -m notsupported -out diff.dot --flow` を実行してください
-6. `diff.out`が出力されると成功です。
+4. `make main`を実行して`main.cpp`をコンパイルしてください
+5. `./POLDAM  -o ./Data/java8/src/motivationExample/origin/selogger_out/ -t ./Data/java8/src/motivationExample/target/selogger_out/ -m notsupported -out sample --flow` を実行してください
+6. `sample_diff.out`が出力されると成功です。
 
 # Limitation
 - `-m` option is not supported. it is useful when you try to parse log that contain test framework (like JUnit). It will be supported soon.

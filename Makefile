@@ -18,8 +18,9 @@ BOOST_PATH = /home/prebe/boost_1_18
 #BOOST_PATH = usr/local/boost_1_80_0
 
 main: main.cpp util.o metafileParser.o interpreter.o omniGraph.o
-	g++-11 -I/$(BOOST_PATH) -I./ main.cpp util.o metafileParser.o interpreter.o omniGraph.o -o main
-
+	g++-11 -I/$(BOOST_PATH) -I./ main.cpp util.o metafileParser.o interpreter.o omniGraph.o -o POLDAM
+	rm *.o
+	
 MetafileParserTest: metafileParser.o util.o
 	g++-11 $(METAFILE_DIR)/test/main.cpp metafileParser.o util.o -o MetaFileParserTest
 	./MetaFileParserTest

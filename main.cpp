@@ -151,13 +151,13 @@ POLDAM::OmniGraph buildGraph(POLDAM::poldamConfig config, const std::string inpu
             // branch for paramType that paramValue is directly recored in SELogger.
             else if (paramType.find("Ljava") == std::string::npos)
             {
-                std::cout << "paramType: " << paramType << ",Value: " << log.value << std::endl;
+                // std::cout << "paramType: " << paramType << ",Value: " << log.value << std::endl;
                 omniGraph.updateStackTopVertexParamInfo(log.value, log.threadId);
             }
             else
             {
                 const POLDAM::ObjectData o = parsedObjectData[std::stoi(log.value) - 1];
-                std::cout << "paramType: " << paramType << ",Value: " << o.objectType << std::endl;
+                // std::cout << "paramType: " << paramType << ",Value: " << o.objectType << std::endl;
             }
         }
         else
@@ -299,16 +299,10 @@ int main(int argc, char *argv[])
     POLDAM::Graph diffGraph = originGraph.computeDiffGraphBeta(std::move(targetGraph), isSameVertex);
 
     // Phase4. Write DiffGraph Resulf
-    std::ofstream outputDotFile("ouptput_diff.dot");
+    std::ofstream outputDotFile(config.outputFileName + "_diff.dot");
     boost::write_graphviz(outputDotFile, diffGraph,
                           boost::make_label_writer(get(&POLDAM::GraphVertex::outputFormat, diffGraph)),
                           boost::make_label_writer(get(&POLDAM::GraphEdge::outputFormat, diffGraph)));
-
-    // POLDAM::OmniWriter writer(diffGraph);
-    // std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "writhing diffGraph...." << std::endl;
-    // writer.writeOmniGraph("diffGraph.dot");
-
-    // Phase 1. read and parse all metafiles
 
     std::cout
         << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "Successfully Finished." << std::endl;

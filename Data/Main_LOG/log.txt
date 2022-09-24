@@ -1,8 +1,0 @@
-Excluded by name filter: sun/launcher/LauncherHelper
-Weaving executed: Main loaded from file:/Users/seong/Documents/GitHub/diffanalysis/experiment/motivationExample/
-Weaving executed: myLibrary/myMath loaded from file:/Users/seong/Documents/GitHub/diffanalysis/experiment/
-Excluded by name filter: selogger/com/fasterxml/jackson/core/io/JsonStringEncoder
-Excluded by name filter: selogger/com/fasterxml/jackson/core/io/CharTypes
-Excluded by name filter: java/util/IdentityHashMap$IdentityHashMapIterator
-Excluded by name filter: java/util/IdentityHashMap$KeyIterator
-Excluded by name filter: java/io/FileOutputStream$1

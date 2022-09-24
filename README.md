@@ -1,47 +1,66 @@
-## Parser
+# POLDAM
 
-基本的には二つに分ける
+## 概要
+このスクリプトは、[実行トレースのマークル木を用いたプログラム変更前後の差分検出法の提案](https://library.naist.jp/dspace/handle/10061/14739) で使用したスクリプトの具体的な実装です。
 
-ログのインタプリタ
-→ 　イベントごとにパースする内容を追加する
+[selogger](https://github.com/takashi-ishio/selogger)から取得した実行トレースをもとに、マークル木を構築し、これを用いてプログラムの変更前後の差分を`dot`ファイルとして出力します。
 
-ログの塊を一つずつに分割し
+`selogger`が出力したディレクトリのファイル群から、メソッド呼び出し、オブジェクトの様々な情報を取得するサンプル実装が含まれます。
 
-ログをパースする。一行ずつストリームを読む。
-イベントごとに何をするか決める
+`dev`は開発用のブランチです。`main`ブランチが安定板のリリースとなります。
 
-イベントタイプとその他の情報を返
+## tree
+```
+.
+├── Data
+│   └── java8
+├── dockerfiles
+│   └── java8
+├── Graph
+│   └── src
+├── Interpreter
+│   └── src
+├── MetaFileParser
+│   ├── src
+│   └── test
+└── Util
+    └── include
+```
 
-## Graph
+### Description
+- Data
+  - seloggerやJavaのMotivation Exampleが含まれるディレクトリです。docker-composeではこのディレクトリがjavaコンテナにマウントされます
+- dockerfiles
+  - java8のDcockerfileが含まれています。
+- Graph
+  - `MetaFileParser`によってパースされた情報からマークル木を構築し、それらを比較するアルゴリズムを提供します
+- Interpreter 
+  - `selogger`のイベントタイプなどの定義が含まれていいます。
+- MetaFileParser
+  - seloggerによって出力されたログディレクトリを入力として、そのディレクトリ以下のファイルを解釈し、必要な情報を出力するパーサーを提供します。
+- Util
+  - このスクリプト内で用いている汎用的なクラスや関数を提供します
+## Dependency 
+- boost 1.80
+- g++-11 
+- selogger v0.5.0 ( for logging)
+- GNU Make 4.3 (Optional)
 
-比較
-グラフ構築
+## How to Use it 
 
-##　頂点情報
-頂点情報でグラフになにを追加するかを考える
+Motivation Exampleを実行するための最低限のステップをいかに示します。
 
-## コーディング規約
-
-命名規則
-
-### Class, Struct
-
-PascalClass
-
-### method, function, variable
-
-camelCase
-
-### filename, std
-
-snake_case
-
-### Enum, macro
-
-SNAKE_CASE
+1. Dependency　を実行したい環境に用意してください
+2. このレポジトリ　を git clone してください
+3. `POLDAM/Makefile`の中の`BOOST_PATH`の部分を適宜変更してください
+4. `make main`を実行して`main`をコンパイルしてください
+5. `./main  -o ./Data/java8/src/motivationExample/origin/selogger_out/ -t ./Data/java8/src/motivationExample/target/selogger_out/ -m notsupported -out diff.dot --flow` を実行してください
+6. `diff.out`が出力されると成功です。
 
 # Limitation
-
-- Multiple Object type parser is not supported
-- The Interprete for the line which has 　 Object Type is not supported
-- Method factory pattern in under development.
+- `-m` option is not supported. it is useful when you try to parse log that contain test framework (like JUnit). It will be supported soon.
+- This script have been fully rewritten, hence, it's slightly different from the one I used in thesis.
+- Multithread is not supported.
+- Only `-omni` option is supported.
+- Object write instruction tracking is not supported.
+- Defects4j motivation will be added soon.

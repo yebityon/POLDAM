@@ -122,18 +122,7 @@ namespace POLDAM
 
     bool OmniGraph::popVertex(const unsigned int threadId)
     {
-        const auto crtVertex = this->vStack[threadId].top();
-        this->vStack[threadId].pop();
-        if (not isStackEmpty(threadId))
-        {
-            const auto &callerVertex = this->vStack[threadId].top();
-            this->g[callerVertex].childFlowHash = std::hash<size_t>()(
-                this->g[callerVertex].childFlowHash + g[crtVertex].flowHash);
-
-            this->g[callerVertex].childParamHash = std::hash<size_t>()(
-                this->g[callerVertex].childParamHash + g[crtVertex].paramHash);
-        }
-
+        const boost::graph_traits<Graph>::vertex_descriptor &crtVertex = this->vStack[threadId].top();
         this->g[crtVertex].controlFlowHash = std::hash<size_t>()(
             this->g[crtVertex].childFlowHash +
             this->g[crtVertex].flowHash);
@@ -143,6 +132,17 @@ namespace POLDAM
             this->g[crtVertex].paramHash);
 
         g[crtVertex].outputFormat += "\nCFH=" + std::to_string(g[crtVertex].controlFlowHash) + "\nCPH=" + std::to_string(g[crtVertex].controlParamHash);
+
+        this->vStack[threadId].pop();
+        if (not isStackEmpty(threadId))
+        {
+            const auto &callerVertex = this->vStack[threadId].top();
+            this->g[callerVertex].childFlowHash = std::hash<size_t>()(
+                this->g[callerVertex].childFlowHash + g[crtVertex].controlFlowHash);
+
+            this->g[callerVertex].childParamHash = std::hash<size_t>()(
+                this->g[callerVertex].childParamHash + g[crtVertex].controlParamHash);
+        }
 
         return true;
     }

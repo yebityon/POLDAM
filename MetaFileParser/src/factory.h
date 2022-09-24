@@ -19,7 +19,7 @@ namespace POLDAM
         template <typename T, typename... Args>
         T createInstance(Args &&...args)
         {
-            return T(std::forward<Args>(args)...);
+            return T(dirPath, std::forward<Args>(args)...);
         }
 
         std::string getDirPath()

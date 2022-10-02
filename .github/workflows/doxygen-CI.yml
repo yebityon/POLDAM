@@ -37,7 +37,7 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
       - name: Doxygen Action
-        uses: mattnotmitt/doxygen-action@1.9.3
+        uses: mattnotmitt/doxygen-action@1.9.4
         with:
               working-directory: '.'
               doxyfile-path: './Doxyfile'

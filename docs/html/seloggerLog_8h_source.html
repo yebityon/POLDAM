@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.9.1"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>POLDAM: MetaFileParser/src/seloggerLog.h ソースファイル</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
@@ -23,8 +23,8 @@
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
- <tr style="height: 56px;">
-  <td id="projectalign" style="padding-left: 0.5em;">
+ <tr id="projectrow">
+  <td id="projectalign">
    <div id="projectname">POLDAM
    </div>
   </td>
@@ -33,21 +33,22 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 構築: Doxygen 1.9.1 -->
+<!-- 構築: Doxygen 1.9.4 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-var searchBox = new SearchBox("searchBox", "search",false,'検索','.html');
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'検索','.html');
 /* @license-end */
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
   initMenu('',true,false,'search.php','検索');
   $(document).ready(function() { init_search(); });
 });
-/* @license-end */</script>
+/* @license-end */
+</script>
 <div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
@@ -61,7 +62,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(document).ready(function(){initNavTree('seloggerLog_8h_source.html',''); initResizable(); });
 /* @license-end */
 </script>
@@ -81,84 +82,83 @@ $(document).ready(function(){initNavTree('seloggerLog_8h_source.html',''); initR
 </div>
 
 <div class="header">
-  <div class="headertitle">
-<div class="title">seloggerLog.h</div>  </div>
+  <div class="headertitle"><div class="title">seloggerLog.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="seloggerLog_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="metafileHandlerCommon_8h.html">metafileHandlerCommon.h</a>&quot;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;../../Util/include/src/poldamUtil.h&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacePOLDAM.html">POLDAM</a></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="structPOLDAM_1_1SeloggerData.html">    8</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structPOLDAM_1_1SeloggerData.html">SeloggerData</a></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    {</div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="structPOLDAM_1_1SeloggerData.html#a2ed2655986f74d34f6f066220e6bdc54">   10</a></span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="structPOLDAM_1_1SeloggerData.html#a2ed2655986f74d34f6f066220e6bdc54">eventId</a>;</div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="structPOLDAM_1_1SeloggerData.html#a6d491e86e143a4d984d58fcd307f6e82">   11</a></span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="structPOLDAM_1_1SeloggerData.html#a6d491e86e143a4d984d58fcd307f6e82">dataId</a>;</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="structPOLDAM_1_1SeloggerData.html#a23b145877054ce6016d058118f8ac908">   12</a></span>&#160;        std::string <a class="code" href="structPOLDAM_1_1SeloggerData.html#a23b145877054ce6016d058118f8ac908">value</a>;</div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="structPOLDAM_1_1SeloggerData.html#a7eb4285627b016049e89781f916ef5e2">   13</a></span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="structPOLDAM_1_1SeloggerData.html#a7eb4285627b016049e89781f916ef5e2">threadId</a>;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    };</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1seloggerLogParser.html">   16</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classPOLDAM_1_1seloggerLogParser.html">seloggerLogParser</a> : <a class="code" href="classPOLDAM_1_1fileReader.html">fileReader</a></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1seloggerLogParser.html#a2a12ef9e218d45c8075e5df8a7e20bd4">   19</a></span>&#160;        <a class="code" href="classPOLDAM_1_1seloggerLogParser.html#a2a12ef9e218d45c8075e5df8a7e20bd4">seloggerLogParser</a>(std::string inputDir_, std::string fileName_) : <a class="code" href="classPOLDAM_1_1seloggerLogParser.html#a132d70d089a49d51ee07f236193c1cb7">dirName</a>(inputDir_),</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                                                                          <a class="code" href="classPOLDAM_1_1seloggerLogParser.html#a6bd569ec1e6d8d77a93d96110c3229f0">filePath</a>(),</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                                                                          <a class="code" href="classPOLDAM_1_1seloggerLogParser.html#aab925ec784750ce9d5d1d4e7191fea50">fileName</a>(fileName_),</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                                                                          <a class="code" href="classPOLDAM_1_1seloggerLogParser.html#a27073b534ef1af681417ef4e09697500">data</a>(),</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                                                                          <a class="code" href="classPOLDAM_1_1seloggerLogParser.html#afb5d371a77c510f492ade3ed442232fc">parsedData</a>(){};</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1seloggerLogParser.html#a701c6a839c9be693a064bb4284c45e3e">   25</a></span>&#160;        std::string <a class="code" href="classPOLDAM_1_1seloggerLogParser.html#a701c6a839c9be693a064bb4284c45e3e">getDirName</a>()</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classPOLDAM_1_1seloggerLogParser.html#a132d70d089a49d51ee07f236193c1cb7">dirName</a>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        };</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1seloggerLogParser.html#a424986ab3b859ed7340da0023925b568">   30</a></span>&#160;        std::vector&lt;std::string&gt; <a class="code" href="classPOLDAM_1_1seloggerLogParser.html#a424986ab3b859ed7340da0023925b568">getData</a>()</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            this-&gt;<a class="code" href="classPOLDAM_1_1seloggerLogParser.html#a191d6778d3ca2ddae9d9e7f9e8bdb9aa">dirTraversal</a>(this-&gt;<a class="code" href="classPOLDAM_1_1seloggerLogParser.html#a132d70d089a49d51ee07f236193c1cb7">dirName</a>);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            this-&gt;<a class="code" href="classPOLDAM_1_1seloggerLogParser.html#ad1c4e9f57bd82ee8718274e6561fe5ad">readFile</a>(this-&gt;<a class="code" href="classPOLDAM_1_1seloggerLogParser.html#a6bd569ec1e6d8d77a93d96110c3229f0">filePath</a>, this-&gt;<a class="code" href="classPOLDAM_1_1seloggerLogParser.html#a27073b534ef1af681417ef4e09697500">data</a>);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            this-&gt;<a class="code" href="classPOLDAM_1_1seloggerLogParser.html#a5aa7b585a38238053e84263f85372e83">parseReadlines</a>(this-&gt;<a class="code" href="classPOLDAM_1_1seloggerLogParser.html#a27073b534ef1af681417ef4e09697500">data</a>);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <span class="keywordflow">return</span> this-&gt;<a class="code" href="classPOLDAM_1_1seloggerLogParser.html#a27073b534ef1af681417ef4e09697500">data</a>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        };</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1seloggerLogParser.html#a7c0ad9372a5e21f213f38808377f13de">   38</a></span>&#160;        std::vector&lt;SeloggerData&gt; <a class="code" href="classPOLDAM_1_1seloggerLogParser.html#a7c0ad9372a5e21f213f38808377f13de">getParserdData</a>()</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keywordflow">return</span> this-&gt;<a class="code" href="classPOLDAM_1_1seloggerLogParser.html#afb5d371a77c510f492ade3ed442232fc">parsedData</a>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        }</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1seloggerLogParser.html#a7da2eb2400b796cfdbe84ac8f5133b90">   48</a></span>&#160;        std::string <a class="code" href="classPOLDAM_1_1seloggerLogParser.html#a7da2eb2400b796cfdbe84ac8f5133b90">readNextStream</a>();</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classPOLDAM_1_1seloggerLogParser.html#ad1c4e9f57bd82ee8718274e6561fe5ad">readFile</a>(<span class="keyword">const</span> std::string <a class="code" href="classPOLDAM_1_1seloggerLogParser.html#aab925ec784750ce9d5d1d4e7191fea50">fileName</a>, std::vector&lt;std::string&gt; &amp;<a class="code" href="classPOLDAM_1_1seloggerLogParser.html#a27073b534ef1af681417ef4e09697500">data</a>) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classPOLDAM_1_1seloggerLogParser.html#a5aa7b585a38238053e84263f85372e83">parseReadlines</a>(std::vector&lt;std::string&gt; &amp;<a class="code" href="classPOLDAM_1_1seloggerLogParser.html#a27073b534ef1af681417ef4e09697500">data</a>) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classPOLDAM_1_1seloggerLogParser.html#a191d6778d3ca2ddae9d9e7f9e8bdb9aa">dirTraversal</a>(std::string <a class="code" href="classPOLDAM_1_1seloggerLogParser.html#aab925ec784750ce9d5d1d4e7191fea50">fileName</a>) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classPOLDAM_1_1seloggerLogParser.html#a0d706871ad6527ab54db295539387288">parseLine</a>(<span class="keyword">const</span> std::string line) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1seloggerLogParser.html#a181d953851d752394ea89ce8e6913c31">   62</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classPOLDAM_1_1seloggerLogParser.html#a181d953851d752394ea89ce8e6913c31">isTargetFile</a>(<span class="keyword">const</span> std::string <a class="code" href="classPOLDAM_1_1seloggerLogParser.html#aab925ec784750ce9d5d1d4e7191fea50">fileName</a>);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="comment">// TODO: string fileName should be disgnated from out of this file.</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1seloggerLogParser.html#aab925ec784750ce9d5d1d4e7191fea50">   65</a></span>&#160;        <span class="keyword">const</span> std::string <a class="code" href="classPOLDAM_1_1seloggerLogParser.html#aab925ec784750ce9d5d1d4e7191fea50">fileName</a>{};</div>
-<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1seloggerLogParser.html#a6bd569ec1e6d8d77a93d96110c3229f0">   66</a></span>&#160;        std::string <a class="code" href="classPOLDAM_1_1seloggerLogParser.html#a6bd569ec1e6d8d77a93d96110c3229f0">filePath</a>;</div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1seloggerLogParser.html#a132d70d089a49d51ee07f236193c1cb7">   67</a></span>&#160;        std::string <a class="code" href="classPOLDAM_1_1seloggerLogParser.html#a132d70d089a49d51ee07f236193c1cb7">dirName</a>;</div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1seloggerLogParser.html#a27073b534ef1af681417ef4e09697500">   68</a></span>&#160;        std::vector&lt;std::string&gt; <a class="code" href="classPOLDAM_1_1seloggerLogParser.html#a27073b534ef1af681417ef4e09697500">data</a>;</div>
-<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1seloggerLogParser.html#afb5d371a77c510f492ade3ed442232fc">   69</a></span>&#160;        std::vector&lt;SeloggerData&gt; <a class="code" href="classPOLDAM_1_1seloggerLogParser.html#afb5d371a77c510f492ade3ed442232fc">parsedData</a>;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    };</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
+<a href="seloggerLog_8h.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="metafileHandlerCommon_8h.html">metafileHandlerCommon.h</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;../../Util/include/src/poldamUtil.h&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacePOLDAM.html">POLDAM</a></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>{</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="structPOLDAM_1_1SeloggerData.html">    8</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structPOLDAM_1_1SeloggerData.html">SeloggerData</a></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    {</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="structPOLDAM_1_1SeloggerData.html#a2ed2655986f74d34f6f066220e6bdc54">   10</a></span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="structPOLDAM_1_1SeloggerData.html#a2ed2655986f74d34f6f066220e6bdc54">eventId</a>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="structPOLDAM_1_1SeloggerData.html#a6d491e86e143a4d984d58fcd307f6e82">   11</a></span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="structPOLDAM_1_1SeloggerData.html#a6d491e86e143a4d984d58fcd307f6e82">dataId</a>;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="structPOLDAM_1_1SeloggerData.html#a23b145877054ce6016d058118f8ac908">   12</a></span>        std::string <a class="code hl_variable" href="structPOLDAM_1_1SeloggerData.html#a23b145877054ce6016d058118f8ac908">value</a>;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="structPOLDAM_1_1SeloggerData.html#a7eb4285627b016049e89781f916ef5e2">   13</a></span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="structPOLDAM_1_1SeloggerData.html#a7eb4285627b016049e89781f916ef5e2">threadId</a>;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    };</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1seloggerLogParser.html">   16</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classPOLDAM_1_1seloggerLogParser.html">seloggerLogParser</a> : <a class="code hl_class" href="classPOLDAM_1_1fileReader.html">fileReader</a></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1seloggerLogParser.html#a2a12ef9e218d45c8075e5df8a7e20bd4">   19</a></span>        <a class="code hl_function" href="classPOLDAM_1_1seloggerLogParser.html#a2a12ef9e218d45c8075e5df8a7e20bd4">seloggerLogParser</a>(std::string inputDir_, std::string fileName_) : <a class="code hl_variable" href="classPOLDAM_1_1seloggerLogParser.html#a132d70d089a49d51ee07f236193c1cb7">dirName</a>(inputDir_),</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>                                                                          <a class="code hl_variable" href="classPOLDAM_1_1seloggerLogParser.html#a6bd569ec1e6d8d77a93d96110c3229f0">filePath</a>(),</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>                                                                          <a class="code hl_variable" href="classPOLDAM_1_1seloggerLogParser.html#aab925ec784750ce9d5d1d4e7191fea50">fileName</a>(fileName_),</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>                                                                          <a class="code hl_variable" href="classPOLDAM_1_1seloggerLogParser.html#a27073b534ef1af681417ef4e09697500">data</a>(),</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>                                                                          <a class="code hl_variable" href="classPOLDAM_1_1seloggerLogParser.html#afb5d371a77c510f492ade3ed442232fc">parsedData</a>(){};</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1seloggerLogParser.html#a701c6a839c9be693a064bb4284c45e3e">   25</a></span>        std::string <a class="code hl_function" href="classPOLDAM_1_1seloggerLogParser.html#a701c6a839c9be693a064bb4284c45e3e">getDirName</a>()</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classPOLDAM_1_1seloggerLogParser.html#a132d70d089a49d51ee07f236193c1cb7">dirName</a>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        };</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1seloggerLogParser.html#a0c90f585102c4b68471fd0da22cc737e">   30</a></span>        std::vector&lt;std::string&gt; <a class="code hl_function" href="classPOLDAM_1_1seloggerLogParser.html#a0c90f585102c4b68471fd0da22cc737e">getData</a>()</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            this-&gt;<a class="code hl_function" href="classPOLDAM_1_1seloggerLogParser.html#a191d6778d3ca2ddae9d9e7f9e8bdb9aa">dirTraversal</a>(this-&gt;<a class="code hl_variable" href="classPOLDAM_1_1seloggerLogParser.html#a132d70d089a49d51ee07f236193c1cb7">dirName</a>);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            this-&gt;<a class="code hl_function" href="classPOLDAM_1_1seloggerLogParser.html#ad1c4e9f57bd82ee8718274e6561fe5ad">readFile</a>(this-&gt;<a class="code hl_variable" href="classPOLDAM_1_1seloggerLogParser.html#a6bd569ec1e6d8d77a93d96110c3229f0">filePath</a>, this-&gt;<a class="code hl_variable" href="classPOLDAM_1_1seloggerLogParser.html#a27073b534ef1af681417ef4e09697500">data</a>);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            this-&gt;<a class="code hl_function" href="classPOLDAM_1_1seloggerLogParser.html#a5aa7b585a38238053e84263f85372e83">parseReadlines</a>(this-&gt;<a class="code hl_variable" href="classPOLDAM_1_1seloggerLogParser.html#a27073b534ef1af681417ef4e09697500">data</a>);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            <span class="keywordflow">return</span> this-&gt;<a class="code hl_variable" href="classPOLDAM_1_1seloggerLogParser.html#a27073b534ef1af681417ef4e09697500">data</a>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        };</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1seloggerLogParser.html#a3da33b3d39ea9d800b9980a53c44ad5d">   38</a></span>        std::vector&lt;SeloggerData&gt; <a class="code hl_function" href="classPOLDAM_1_1seloggerLogParser.html#a3da33b3d39ea9d800b9980a53c44ad5d">getParserdData</a>()</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            <span class="keywordflow">return</span> this-&gt;<a class="code hl_variable" href="classPOLDAM_1_1seloggerLogParser.html#afb5d371a77c510f492ade3ed442232fc">parsedData</a>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        }</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1seloggerLogParser.html#a7da2eb2400b796cfdbe84ac8f5133b90">   48</a></span>        std::string <a class="code hl_function" href="classPOLDAM_1_1seloggerLogParser.html#a7da2eb2400b796cfdbe84ac8f5133b90">readNextStream</a>();</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classPOLDAM_1_1seloggerLogParser.html#ad1c4e9f57bd82ee8718274e6561fe5ad">readFile</a>(<span class="keyword">const</span> std::string <a class="code hl_variable" href="classPOLDAM_1_1seloggerLogParser.html#aab925ec784750ce9d5d1d4e7191fea50">fileName</a>, std::vector&lt;std::string&gt; &amp;<a class="code hl_variable" href="classPOLDAM_1_1seloggerLogParser.html#a27073b534ef1af681417ef4e09697500">data</a>) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classPOLDAM_1_1seloggerLogParser.html#a5aa7b585a38238053e84263f85372e83">parseReadlines</a>(std::vector&lt;std::string&gt; &amp;<a class="code hl_variable" href="classPOLDAM_1_1seloggerLogParser.html#a27073b534ef1af681417ef4e09697500">data</a>) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classPOLDAM_1_1seloggerLogParser.html#a191d6778d3ca2ddae9d9e7f9e8bdb9aa">dirTraversal</a>(std::string <a class="code hl_variable" href="classPOLDAM_1_1seloggerLogParser.html#aab925ec784750ce9d5d1d4e7191fea50">fileName</a>) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classPOLDAM_1_1seloggerLogParser.html#a0d706871ad6527ab54db295539387288">parseLine</a>(<span class="keyword">const</span> std::string line) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1seloggerLogParser.html#a181d953851d752394ea89ce8e6913c31">   62</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classPOLDAM_1_1seloggerLogParser.html#a181d953851d752394ea89ce8e6913c31">isTargetFile</a>(<span class="keyword">const</span> std::string <a class="code hl_variable" href="classPOLDAM_1_1seloggerLogParser.html#aab925ec784750ce9d5d1d4e7191fea50">fileName</a>);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="comment">// TODO: string fileName should be disgnated from out of this file.</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1seloggerLogParser.html#aab925ec784750ce9d5d1d4e7191fea50">   65</a></span>        <span class="keyword">const</span> std::string <a class="code hl_variable" href="classPOLDAM_1_1seloggerLogParser.html#aab925ec784750ce9d5d1d4e7191fea50">fileName</a>{};</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1seloggerLogParser.html#a6bd569ec1e6d8d77a93d96110c3229f0">   66</a></span>        std::string <a class="code hl_variable" href="classPOLDAM_1_1seloggerLogParser.html#a6bd569ec1e6d8d77a93d96110c3229f0">filePath</a>;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1seloggerLogParser.html#a132d70d089a49d51ee07f236193c1cb7">   67</a></span>        std::string <a class="code hl_variable" href="classPOLDAM_1_1seloggerLogParser.html#a132d70d089a49d51ee07f236193c1cb7">dirName</a>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1seloggerLogParser.html#a27073b534ef1af681417ef4e09697500">   68</a></span>        std::vector&lt;std::string&gt; <a class="code hl_variable" href="classPOLDAM_1_1seloggerLogParser.html#a27073b534ef1af681417ef4e09697500">data</a>;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1seloggerLogParser.html#afb5d371a77c510f492ade3ed442232fc">   69</a></span>        std::vector&lt;SeloggerData&gt; <a class="code hl_variable" href="classPOLDAM_1_1seloggerLogParser.html#afb5d371a77c510f492ade3ed442232fc">parsedData</a>;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    };</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>}</div>
 <div class="ttc" id="aclassPOLDAM_1_1fileReader_html"><div class="ttname"><a href="classPOLDAM_1_1fileReader.html">POLDAM::fileReader</a></div><div class="ttdef"><b>Definition:</b> <a href="metafileHandlerCommon_8h_source.html#l00014">metafileHandlerCommon.h:15</a></div></div>
 <div class="ttc" id="aclassPOLDAM_1_1seloggerLogParser_html"><div class="ttname"><a href="classPOLDAM_1_1seloggerLogParser.html">POLDAM::seloggerLogParser</a></div><div class="ttdef"><b>Definition:</b> <a href="seloggerLog_8h_source.html#l00016">seloggerLog.h:17</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1seloggerLogParser_html_a0c90f585102c4b68471fd0da22cc737e"><div class="ttname"><a href="classPOLDAM_1_1seloggerLogParser.html#a0c90f585102c4b68471fd0da22cc737e">POLDAM::seloggerLogParser::getData</a></div><div class="ttdeci">std::vector&lt; std::string &gt; getData()</div><div class="ttdef"><b>Definition:</b> <a href="seloggerLog_8h_source.html#l00030">seloggerLog.h:30</a></div></div>
 <div class="ttc" id="aclassPOLDAM_1_1seloggerLogParser_html_a0d706871ad6527ab54db295539387288"><div class="ttname"><a href="classPOLDAM_1_1seloggerLogParser.html#a0d706871ad6527ab54db295539387288">POLDAM::seloggerLogParser::parseLine</a></div><div class="ttdeci">void parseLine(const std::string line) override</div><div class="ttdoc">parseLine() return the SELOGGER_LOG that is interpreted data of given argument. this function is call...</div><div class="ttdef"><b>Definition:</b> <a href="seloggerLog_8cpp_source.html#l00041">seloggerLog.cpp:41</a></div></div>
 <div class="ttc" id="aclassPOLDAM_1_1seloggerLogParser_html_a132d70d089a49d51ee07f236193c1cb7"><div class="ttname"><a href="classPOLDAM_1_1seloggerLogParser.html#a132d70d089a49d51ee07f236193c1cb7">POLDAM::seloggerLogParser::dirName</a></div><div class="ttdeci">std::string dirName</div><div class="ttdef"><b>Definition:</b> <a href="seloggerLog_8h_source.html#l00067">seloggerLog.h:67</a></div></div>
 <div class="ttc" id="aclassPOLDAM_1_1seloggerLogParser_html_a181d953851d752394ea89ce8e6913c31"><div class="ttname"><a href="classPOLDAM_1_1seloggerLogParser.html#a181d953851d752394ea89ce8e6913c31">POLDAM::seloggerLogParser::isTargetFile</a></div><div class="ttdeci">bool isTargetFile(const std::string fileName)</div></div>
 <div class="ttc" id="aclassPOLDAM_1_1seloggerLogParser_html_a191d6778d3ca2ddae9d9e7f9e8bdb9aa"><div class="ttname"><a href="classPOLDAM_1_1seloggerLogParser.html#a191d6778d3ca2ddae9d9e7f9e8bdb9aa">POLDAM::seloggerLogParser::dirTraversal</a></div><div class="ttdeci">void dirTraversal(std::string fileName) override</div><div class="ttdoc">iterate target Directory to look up target file. Please note there may be more than one target file.</div><div class="ttdef"><b>Definition:</b> <a href="seloggerLog_8cpp_source.html#l00056">seloggerLog.cpp:56</a></div></div>
 <div class="ttc" id="aclassPOLDAM_1_1seloggerLogParser_html_a27073b534ef1af681417ef4e09697500"><div class="ttname"><a href="classPOLDAM_1_1seloggerLogParser.html#a27073b534ef1af681417ef4e09697500">POLDAM::seloggerLogParser::data</a></div><div class="ttdeci">std::vector&lt; std::string &gt; data</div><div class="ttdef"><b>Definition:</b> <a href="seloggerLog_8h_source.html#l00068">seloggerLog.h:68</a></div></div>
 <div class="ttc" id="aclassPOLDAM_1_1seloggerLogParser_html_a2a12ef9e218d45c8075e5df8a7e20bd4"><div class="ttname"><a href="classPOLDAM_1_1seloggerLogParser.html#a2a12ef9e218d45c8075e5df8a7e20bd4">POLDAM::seloggerLogParser::seloggerLogParser</a></div><div class="ttdeci">seloggerLogParser(std::string inputDir_, std::string fileName_)</div><div class="ttdef"><b>Definition:</b> <a href="seloggerLog_8h_source.html#l00019">seloggerLog.h:19</a></div></div>
-<div class="ttc" id="aclassPOLDAM_1_1seloggerLogParser_html_a424986ab3b859ed7340da0023925b568"><div class="ttname"><a href="classPOLDAM_1_1seloggerLogParser.html#a424986ab3b859ed7340da0023925b568">POLDAM::seloggerLogParser::getData</a></div><div class="ttdeci">std::vector&lt; std::string &gt; getData()</div><div class="ttdef"><b>Definition:</b> <a href="seloggerLog_8h_source.html#l00030">seloggerLog.h:30</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1seloggerLogParser_html_a3da33b3d39ea9d800b9980a53c44ad5d"><div class="ttname"><a href="classPOLDAM_1_1seloggerLogParser.html#a3da33b3d39ea9d800b9980a53c44ad5d">POLDAM::seloggerLogParser::getParserdData</a></div><div class="ttdeci">std::vector&lt; SeloggerData &gt; getParserdData()</div><div class="ttdef"><b>Definition:</b> <a href="seloggerLog_8h_source.html#l00038">seloggerLog.h:38</a></div></div>
 <div class="ttc" id="aclassPOLDAM_1_1seloggerLogParser_html_a5aa7b585a38238053e84263f85372e83"><div class="ttname"><a href="classPOLDAM_1_1seloggerLogParser.html#a5aa7b585a38238053e84263f85372e83">POLDAM::seloggerLogParser::parseReadlines</a></div><div class="ttdeci">void parseReadlines(std::vector&lt; std::string &gt; &amp;data) override</div><div class="ttdoc">parse and iterate this -&gt; data.</div><div class="ttdef"><b>Definition:</b> <a href="seloggerLog_8cpp_source.html#l00033">seloggerLog.cpp:33</a></div></div>
 <div class="ttc" id="aclassPOLDAM_1_1seloggerLogParser_html_a6bd569ec1e6d8d77a93d96110c3229f0"><div class="ttname"><a href="classPOLDAM_1_1seloggerLogParser.html#a6bd569ec1e6d8d77a93d96110c3229f0">POLDAM::seloggerLogParser::filePath</a></div><div class="ttdeci">std::string filePath</div><div class="ttdef"><b>Definition:</b> <a href="seloggerLog_8h_source.html#l00066">seloggerLog.h:66</a></div></div>
 <div class="ttc" id="aclassPOLDAM_1_1seloggerLogParser_html_a701c6a839c9be693a064bb4284c45e3e"><div class="ttname"><a href="classPOLDAM_1_1seloggerLogParser.html#a701c6a839c9be693a064bb4284c45e3e">POLDAM::seloggerLogParser::getDirName</a></div><div class="ttdeci">std::string getDirName()</div><div class="ttdef"><b>Definition:</b> <a href="seloggerLog_8h_source.html#l00025">seloggerLog.h:25</a></div></div>
-<div class="ttc" id="aclassPOLDAM_1_1seloggerLogParser_html_a7c0ad9372a5e21f213f38808377f13de"><div class="ttname"><a href="classPOLDAM_1_1seloggerLogParser.html#a7c0ad9372a5e21f213f38808377f13de">POLDAM::seloggerLogParser::getParserdData</a></div><div class="ttdeci">std::vector&lt; SeloggerData &gt; getParserdData()</div><div class="ttdef"><b>Definition:</b> <a href="seloggerLog_8h_source.html#l00038">seloggerLog.h:38</a></div></div>
 <div class="ttc" id="aclassPOLDAM_1_1seloggerLogParser_html_a7da2eb2400b796cfdbe84ac8f5133b90"><div class="ttname"><a href="classPOLDAM_1_1seloggerLogParser.html#a7da2eb2400b796cfdbe84ac8f5133b90">POLDAM::seloggerLogParser::readNextStream</a></div><div class="ttdeci">std::string readNextStream()</div><div class="ttdoc">read next stream and store the data to this -&gt; currentBuffer. Please note seloggerLog might contain l...</div></div>
 <div class="ttc" id="aclassPOLDAM_1_1seloggerLogParser_html_aab925ec784750ce9d5d1d4e7191fea50"><div class="ttname"><a href="classPOLDAM_1_1seloggerLogParser.html#aab925ec784750ce9d5d1d4e7191fea50">POLDAM::seloggerLogParser::fileName</a></div><div class="ttdeci">const std::string fileName</div><div class="ttdef"><b>Definition:</b> <a href="seloggerLog_8h_source.html#l00065">seloggerLog.h:65</a></div></div>
 <div class="ttc" id="aclassPOLDAM_1_1seloggerLogParser_html_ad1c4e9f57bd82ee8718274e6561fe5ad"><div class="ttname"><a href="classPOLDAM_1_1seloggerLogParser.html#ad1c4e9f57bd82ee8718274e6561fe5ad">POLDAM::seloggerLogParser::readFile</a></div><div class="ttdeci">void readFile(const std::string fileName, std::vector&lt; std::string &gt; &amp;data) override</div><div class="ttdoc">open the fileName and read data. this-&gt;data has these data. Please NOTE: This Strategy might be not e...</div><div class="ttdef"><b>Definition:</b> <a href="seloggerLog_8cpp_source.html#l00006">seloggerLog.cpp:6</a></div></div>
@@ -176,7 +176,7 @@ $(document).ready(function(){initNavTree('seloggerLog_8h_source.html',''); initR
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_802f708e05b331bfe8b7d1e3cd980d15.html">MetaFileParser</a></li><li class="navelem"><a class="el" href="dir_f15734ee1191266c41688ce3a3999d68.html">src</a></li><li class="navelem"><a class="el" href="seloggerLog_8h.html">seloggerLog.h</a></li>
-    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

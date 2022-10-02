@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.9.1"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>POLDAM: MetaFileParser/src/methods.cpp ソースファイル</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
@@ -23,8 +23,8 @@
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
- <tr style="height: 56px;">
-  <td id="projectalign" style="padding-left: 0.5em;">
+ <tr id="projectrow">
+  <td id="projectalign">
    <div id="projectname">POLDAM
    </div>
   </td>
@@ -33,21 +33,22 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 構築: Doxygen 1.9.1 -->
+<!-- 構築: Doxygen 1.9.4 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-var searchBox = new SearchBox("searchBox", "search",false,'検索','.html');
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'検索','.html');
 /* @license-end */
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
   initMenu('',true,false,'search.php','検索');
   $(document).ready(function() { init_search(); });
 });
-/* @license-end */</script>
+/* @license-end */
+</script>
 <div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
@@ -61,7 +62,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(document).ready(function(){initNavTree('methods_8cpp_source.html',''); initResizable(); });
 /* @license-end */
 </script>
@@ -81,85 +82,84 @@ $(document).ready(function(){initNavTree('methods_8cpp_source.html',''); initRes
 </div>
 
 <div class="header">
-  <div class="headertitle">
-<div class="title">methods.cpp</div>  </div>
+  <div class="headertitle"><div class="title">methods.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="methods_8cpp.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="methods_8h.html">methods.h</a>&quot;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacePOLDAM.html">POLDAM</a></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;{</div>
-<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1methodDataParser.html#a9fd2dd888885bb38c41ba970c7ac72f8">    5</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPOLDAM_1_1methodDataParser.html#a9fd2dd888885bb38c41ba970c7ac72f8">methodDataParser::readFile</a>(<span class="keyword">const</span> std::string filePath, std::vector&lt;std::string&gt; &amp;data)</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    {</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;        std::ifstream fileStream;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        fileStream.open(<a class="code" href="classPOLDAM_1_1methodDataParser.html#a7bda37a433731141824084baaef7747d">filePath</a>, std::ios::in);</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <span class="keywordflow">if</span> (!fileStream)</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            std::cout &lt;&lt; <a class="code" href="namespacePOLDAM__UTIL.html#abf66ef525f1dcbb30393e2c72ec5bc8f">POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX</a> &lt;&lt; <span class="stringliteral">&quot;methodData file is not found\n&quot;</span>;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            exit(1);</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        }</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keywordflow">while</span> (not fileStream.eof())</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            std::string buffer;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            std::getline(fileStream, buffer);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <span class="keywordflow">if</span> (buffer.empty())</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <span class="comment">// if you want to hold interpreted data, call parseLine()</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <span class="comment">// buffer = this.parseLine(buffer);</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            this-&gt;data.push_back(buffer);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        }</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classPOLDAM_1_1methodDataParser.html#a0c6d6216fa9827b6b3331546f6fc3c4a">hasHeaderData</a>)</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            this-&gt;data.erase(this-&gt;data.begin());</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        }</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    }</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1methodDataParser.html#a8810dc6b90d67b35b3a9c4da6d1a39f5">   35</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPOLDAM_1_1methodDataParser.html#a8810dc6b90d67b35b3a9c4da6d1a39f5">methodDataParser::parseReadlines</a>(std::vector&lt;std::string&gt; &amp;data)</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        std::vector&lt;MethodsData&gt; <a class="code" href="classPOLDAM_1_1methodDataParser.html#a3776cbd05729f66a9ec8a3ce71939dc7">parsedData</a>;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;str : <a class="code" href="classPOLDAM_1_1methodDataParser.html#a9b3e5e201faede67d2348063d9022733">data</a>)</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            this-&gt;<a class="code" href="classPOLDAM_1_1methodDataParser.html#a41b0131b179e6386a0f73876729d74cf">parseLine</a>(str);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        }</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1methodDataParser.html#a41b0131b179e6386a0f73876729d74cf">   44</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPOLDAM_1_1methodDataParser.html#a41b0131b179e6386a0f73876729d74cf">methodDataParser::parseLine</a>(std::string line)</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <a class="code" href="structPOLDAM_1_1MethodsData.html">MethodsData</a> m;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> parsedline = <a class="code" href="namespacePOLDAM__UTIL.html#ab12f26ce0829989968645e176c6427ae">POLDAM_UTIL::parse</a>(line);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        assert(parsedline.size() == 8);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        m.<a class="code" href="structPOLDAM_1_1MethodsData.html#a22f2fb45c8b046710ebf0af0518d6069">classId</a> = <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(std::stoi(parsedline[0]));</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        m.<a class="code" href="structPOLDAM_1_1MethodsData.html#adf253125d864ebb1fe521fe70516833d">methodId</a> = <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(std::stoi(parsedline[1]));</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        m.<a class="code" href="structPOLDAM_1_1MethodsData.html#aa865f07657304a59b2ef7fa1e46b5702">className</a> = parsedline[2];</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        m.<a class="code" href="structPOLDAM_1_1MethodsData.html#a8a3740c16a02bdf5425ba601fb0dd3da">methodName</a> = parsedline[3];</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        m.<a class="code" href="structPOLDAM_1_1MethodsData.html#a6355c1f94d0080118a47772afbadc0ec">methodDesc</a> = parsedline[4];</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        m.<a class="code" href="structPOLDAM_1_1MethodsData.html#a2d7352ed86bd2ca992e1555ec89e90e0">access</a> = parsedline[5];</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        m.<a class="code" href="structPOLDAM_1_1MethodsData.html#a8974979ae7162f04ea915333a84ee016">sourceFileName</a> = parsedline[6];</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        m.<a class="code" href="structPOLDAM_1_1MethodsData.html#a1a86ad927901b1d4f6041a8ef01487bb">methodHash</a> = parsedline[7];</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        this-&gt;<a class="code" href="classPOLDAM_1_1methodDataParser.html#a3776cbd05729f66a9ec8a3ce71939dc7">parsedData</a>.push_back(m);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">// TODO: move this fucntion to base class, all you need to do is just desginate fileName in base class.</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1methodDataParser.html#aa6f0b6c6ba32f0e986ad367160aa64ac">   63</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPOLDAM_1_1methodDataParser.html#aa6f0b6c6ba32f0e986ad367160aa64ac">methodDataParser::dirTraversal</a>(std::string dirName)</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> std::filesystem::directory_entry &amp;i : std::filesystem::directory_iterator(<a class="code" href="classPOLDAM_1_1methodDataParser.html#ad41afeecfeed768133e6acd553bc3be7">dirName</a>))</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code" href="classPOLDAM_1_1methodDataParser.html#a7bda37a433731141824084baaef7747d">filePath</a> = i.path();</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classPOLDAM_1_1methodDataParser.html#a7bda37a433731141824084baaef7747d">filePath</a>.filename() == this-&gt;fileName)</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                this-&gt;<a class="code" href="classPOLDAM_1_1methodDataParser.html#a7bda37a433731141824084baaef7747d">filePath</a> = std::string(i.path().c_str());</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            }</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    };</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
+<a href="methods_8cpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="methods_8h.html">methods.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacePOLDAM.html">POLDAM</a></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>{</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1methodDataParser.html#a9fd2dd888885bb38c41ba970c7ac72f8">    5</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classPOLDAM_1_1methodDataParser.html#a9fd2dd888885bb38c41ba970c7ac72f8">methodDataParser::readFile</a>(<span class="keyword">const</span> std::string filePath, std::vector&lt;std::string&gt; &amp;data)</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    {</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>        std::ifstream fileStream;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        fileStream.open(<a class="code hl_variable" href="classPOLDAM_1_1methodDataParser.html#a7bda37a433731141824084baaef7747d">filePath</a>, std::ios::in);</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <span class="keywordflow">if</span> (!fileStream)</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>            std::cout &lt;&lt; <a class="code hl_variable" href="namespacePOLDAM__UTIL.html#abf66ef525f1dcbb30393e2c72ec5bc8f">POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX</a> &lt;&lt; <span class="stringliteral">&quot;methodData file is not found\n&quot;</span>;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>            exit(1);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        }</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keywordflow">while</span> (not fileStream.eof())</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>            std::string buffer;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>            std::getline(fileStream, buffer);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            <span class="keywordflow">if</span> (buffer.empty())</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>                <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            <span class="comment">// if you want to hold interpreted data, call parseLine()</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            <span class="comment">// buffer = this.parseLine(buffer);</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            this-&gt;data.push_back(buffer);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        }</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keywordflow">if</span> (this-&gt;<a class="code hl_variable" href="classPOLDAM_1_1methodDataParser.html#a0c6d6216fa9827b6b3331546f6fc3c4a">hasHeaderData</a>)</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            this-&gt;data.erase(this-&gt;data.begin());</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        }</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    }</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1methodDataParser.html#a8810dc6b90d67b35b3a9c4da6d1a39f5">   35</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classPOLDAM_1_1methodDataParser.html#a8810dc6b90d67b35b3a9c4da6d1a39f5">methodDataParser::parseReadlines</a>(std::vector&lt;std::string&gt; &amp;data)</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        std::vector&lt;MethodsData&gt; <a class="code hl_variable" href="classPOLDAM_1_1methodDataParser.html#a3776cbd05729f66a9ec8a3ce71939dc7">parsedData</a>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;str : <a class="code hl_variable" href="classPOLDAM_1_1methodDataParser.html#a9b3e5e201faede67d2348063d9022733">data</a>)</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            this-&gt;<a class="code hl_function" href="classPOLDAM_1_1methodDataParser.html#a41b0131b179e6386a0f73876729d74cf">parseLine</a>(str);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        }</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    }</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1methodDataParser.html#a41b0131b179e6386a0f73876729d74cf">   44</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classPOLDAM_1_1methodDataParser.html#a41b0131b179e6386a0f73876729d74cf">methodDataParser::parseLine</a>(std::string line)</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <a class="code hl_struct" href="structPOLDAM_1_1MethodsData.html">MethodsData</a> m;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keyword">const</span> <span class="keyword">auto</span> parsedline = <a class="code hl_function" href="namespacePOLDAM__UTIL.html#ab12f26ce0829989968645e176c6427ae">POLDAM_UTIL::parse</a>(line);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        assert(parsedline.size() == 8);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        m.<a class="code hl_variable" href="structPOLDAM_1_1MethodsData.html#a22f2fb45c8b046710ebf0af0518d6069">classId</a> = <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(std::stoi(parsedline[0]));</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        m.<a class="code hl_variable" href="structPOLDAM_1_1MethodsData.html#adf253125d864ebb1fe521fe70516833d">methodId</a> = <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(std::stoi(parsedline[1]));</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        m.<a class="code hl_variable" href="structPOLDAM_1_1MethodsData.html#aa865f07657304a59b2ef7fa1e46b5702">className</a> = parsedline[2];</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        m.<a class="code hl_variable" href="structPOLDAM_1_1MethodsData.html#a8a3740c16a02bdf5425ba601fb0dd3da">methodName</a> = parsedline[3];</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        m.<a class="code hl_variable" href="structPOLDAM_1_1MethodsData.html#a6355c1f94d0080118a47772afbadc0ec">methodDesc</a> = parsedline[4];</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        m.<a class="code hl_variable" href="structPOLDAM_1_1MethodsData.html#a2d7352ed86bd2ca992e1555ec89e90e0">access</a> = parsedline[5];</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        m.<a class="code hl_variable" href="structPOLDAM_1_1MethodsData.html#a8974979ae7162f04ea915333a84ee016">sourceFileName</a> = parsedline[6];</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        m.<a class="code hl_variable" href="structPOLDAM_1_1MethodsData.html#a1a86ad927901b1d4f6041a8ef01487bb">methodHash</a> = parsedline[7];</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        this-&gt;<a class="code hl_variable" href="classPOLDAM_1_1methodDataParser.html#a3776cbd05729f66a9ec8a3ce71939dc7">parsedData</a>.push_back(m);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    }</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="comment">// TODO: move this fucntion to base class, all you need to do is just desginate fileName in base class.</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1methodDataParser.html#aa6f0b6c6ba32f0e986ad367160aa64ac">   63</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classPOLDAM_1_1methodDataParser.html#aa6f0b6c6ba32f0e986ad367160aa64ac">methodDataParser::dirTraversal</a>(std::string dirName)</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> std::filesystem::directory_entry &amp;i : std::filesystem::directory_iterator(<a class="code hl_variable" href="classPOLDAM_1_1methodDataParser.html#ad41afeecfeed768133e6acd553bc3be7">dirName</a>))</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code hl_variable" href="classPOLDAM_1_1methodDataParser.html#a7bda37a433731141824084baaef7747d">filePath</a> = i.path();</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="classPOLDAM_1_1methodDataParser.html#a7bda37a433731141824084baaef7747d">filePath</a>.filename() == this-&gt;fileName)</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            {</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                this-&gt;<a class="code hl_variable" href="classPOLDAM_1_1methodDataParser.html#a7bda37a433731141824084baaef7747d">filePath</a> = std::string(i.path().c_str());</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            }</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        }</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    };</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>}</div>
 <div class="ttc" id="aclassPOLDAM_1_1methodDataParser_html_a0c6d6216fa9827b6b3331546f6fc3c4a"><div class="ttname"><a href="classPOLDAM_1_1methodDataParser.html#a0c6d6216fa9827b6b3331546f6fc3c4a">POLDAM::methodDataParser::hasHeaderData</a></div><div class="ttdeci">bool hasHeaderData</div><div class="ttdef"><b>Definition:</b> <a href="methods_8h_source.html#l00058">methods.h:58</a></div></div>
 <div class="ttc" id="aclassPOLDAM_1_1methodDataParser_html_a3776cbd05729f66a9ec8a3ce71939dc7"><div class="ttname"><a href="classPOLDAM_1_1methodDataParser.html#a3776cbd05729f66a9ec8a3ce71939dc7">POLDAM::methodDataParser::parsedData</a></div><div class="ttdeci">std::vector&lt; MethodsData &gt; parsedData</div><div class="ttdef"><b>Definition:</b> <a href="methods_8h_source.html#l00065">methods.h:65</a></div></div>
 <div class="ttc" id="aclassPOLDAM_1_1methodDataParser_html_a41b0131b179e6386a0f73876729d74cf"><div class="ttname"><a href="classPOLDAM_1_1methodDataParser.html#a41b0131b179e6386a0f73876729d74cf">POLDAM::methodDataParser::parseLine</a></div><div class="ttdeci">void parseLine(const std::string line) override</div><div class="ttdoc">delegate function. this function receive string data and paser it to shape Dataid structuo,...</div><div class="ttdef"><b>Definition:</b> <a href="methods_8cpp_source.html#l00044">methods.cpp:44</a></div></div>
@@ -188,7 +188,7 @@ $(document).ready(function(){initNavTree('methods_8cpp_source.html',''); initRes
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_802f708e05b331bfe8b7d1e3cd980d15.html">MetaFileParser</a></li><li class="navelem"><a class="el" href="dir_f15734ee1191266c41688ce3a3999d68.html">src</a></li><li class="navelem"><a class="el" href="methods_8cpp.html">methods.cpp</a></li>
-    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

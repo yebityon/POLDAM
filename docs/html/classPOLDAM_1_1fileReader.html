@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.9.1"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>POLDAM: POLDAM::fileReader クラス</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
@@ -23,8 +23,8 @@
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
- <tr style="height: 56px;">
-  <td id="projectalign" style="padding-left: 0.5em;">
+ <tr id="projectrow">
+  <td id="projectalign">
    <div id="projectname">POLDAM
    </div>
   </td>
@@ -33,21 +33,22 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 構築: Doxygen 1.9.1 -->
+<!-- 構築: Doxygen 1.9.4 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-var searchBox = new SearchBox("searchBox", "search",false,'検索','.html');
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'検索','.html');
 /* @license-end */
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
   initMenu('',true,false,'search.php','検索');
   $(document).ready(function() { init_search(); });
 });
-/* @license-end */</script>
+/* @license-end */
+</script>
 <div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
@@ -61,7 +62,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(document).ready(function(){initNavTree('classPOLDAM_1_1fileReader.html',''); initResizable(); });
 /* @license-end */
 </script>
@@ -84,8 +85,7 @@ $(document).ready(function(){initNavTree('classPOLDAM_1_1fileReader.html',''); i
   <div class="summary">
 <a href="#pri-methods">非公開メンバ関数</a> &#124;
 <a href="classPOLDAM_1_1fileReader-members.html">全メンバ一覧</a>  </div>
-  <div class="headertitle">
-<div class="title">POLDAM::fileReader クラス<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+  <div class="headertitle"><div class="title">POLDAM::fileReader クラス<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -94,9 +94,17 @@ $(document).ready(function(){initNavTree('classPOLDAM_1_1fileReader.html',''); i
 POLDAM::fileReader の継承関係図</div>
 <div class="dyncontent">
 <div class="center"><img src="classPOLDAM_1_1fileReader__inherit__graph.png" border="0" usemap="#aPOLDAM_1_1fileReader_inherit__map" alt="Inheritance graph"/></div>
+<map name="aPOLDAM_1_1fileReader_inherit__map" id="aPOLDAM_1_1fileReader_inherit__map">
+<area shape="rect" title=" " alt="" coords="5,107,147,133"/>
+<area shape="rect" href="classPOLDAM_1_1ObjectfileParser.html" title=" " alt="" coords="204,5,380,32"/>
+<area shape="rect" href="classPOLDAM_1_1classesDataParser.html" title=" " alt="" coords="195,56,389,83"/>
+<area shape="rect" href="classPOLDAM_1_1dataidsParser.html" title=" " alt="" coords="210,107,374,133"/>
+<area shape="rect" href="classPOLDAM_1_1methodDataParser.html" title=" " alt="" coords="196,157,388,184"/>
+<area shape="rect" href="classPOLDAM_1_1seloggerLogParser.html" title=" " alt="" coords="195,208,389,235"/>
+</map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">凡例</a>]</span></center></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 非公開メンバ関数</h2></td></tr>
 <tr class="memitem:a163e20669b6dd43f125e227b66da506c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1fileReader.html#a163e20669b6dd43f125e227b66da506c">readFile</a> (const std::string fileName, std::vector&lt; std::string &gt; &amp;data)=0</td></tr>
 <tr class="memdesc:a163e20669b6dd43f125e227b66da506c"><td class="mdescLeft">&#160;</td><td class="mdescRight">open the fileName and read data. this-&gt;data has these data. Please NOTE: This Strategy might be not efficient, you need to hold raw string data and transforemed data. It consumes 2 * sizeof(filedata).  <a href="classPOLDAM_1_1fileReader.html#a163e20669b6dd43f125e227b66da506c">[詳解]</a><br /></td></tr>
@@ -115,7 +123,7 @@ POLDAM::fileReader の継承関係図</div>
 <div class="textblock">
 <p class="definition"> <a class="el" href="metafileHandlerCommon_8h_source.html">metafileHandlerCommon.h</a> の <a class="el" href="metafileHandlerCommon_8h_source.html#l00014">14</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">関数詳解</h2>
-<a id="a45baf2e224893e6767deabe6d71e5a64"></a>
+<a id="a45baf2e224893e6767deabe6d71e5a64" name="a45baf2e224893e6767deabe6d71e5a64"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a45baf2e224893e6767deabe6d71e5a64">&#9670;&nbsp;</a></span>dirTraversal()</h2>
 
 <div class="memitem">
@@ -147,11 +155,11 @@ POLDAM::fileReader の継承関係図</div>
   </dd>
 </dl>
 
-<p><a class="el" href="classPOLDAM_1_1seloggerLogParser.html#a191d6778d3ca2ddae9d9e7f9e8bdb9aa">POLDAM::seloggerLogParser</a>, <a class="el" href="classPOLDAM_1_1ObjectfileParser.html#addcda5654bc65e1b544bb742e43a656f">POLDAM::ObjectfileParser</a>, <a class="el" href="classPOLDAM_1_1methodDataParser.html#aa6f0b6c6ba32f0e986ad367160aa64ac">POLDAM::methodDataParser</a>, <a class="el" href="classPOLDAM_1_1dataidsParser.html#a9d0ca785b1dc57461704739c786c735d">POLDAM::dataidsParser</a>, <a class="el" href="classPOLDAM_1_1classesDataParser.html#a536ae1448d2c529bdf75a80b627fba21">POLDAM::classesDataParser</a>で実装されています。</p>
+<p><a class="el" href="classPOLDAM_1_1classesDataParser.html#a536ae1448d2c529bdf75a80b627fba21">POLDAM::classesDataParser</a>, <a class="el" href="classPOLDAM_1_1dataidsParser.html#a9d0ca785b1dc57461704739c786c735d">POLDAM::dataidsParser</a>, <a class="el" href="classPOLDAM_1_1methodDataParser.html#aa6f0b6c6ba32f0e986ad367160aa64ac">POLDAM::methodDataParser</a>, <a class="el" href="classPOLDAM_1_1ObjectfileParser.html#addcda5654bc65e1b544bb742e43a656f">POLDAM::ObjectfileParser</a>, <a class="el" href="classPOLDAM_1_1seloggerLogParser.html#a191d6778d3ca2ddae9d9e7f9e8bdb9aa">POLDAM::seloggerLogParser</a>で実装されています。</p>
 
 </div>
 </div>
-<a id="a33178368ce43cff8f99af7fc8cafaa6e"></a>
+<a id="a33178368ce43cff8f99af7fc8cafaa6e" name="a33178368ce43cff8f99af7fc8cafaa6e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a33178368ce43cff8f99af7fc8cafaa6e">&#9670;&nbsp;</a></span>parseLine()</h2>
 
 <div class="memitem">
@@ -177,11 +185,11 @@ POLDAM::fileReader の継承関係図</div>
 
 <p>delegate function. this fucntion will be called in parseReadlines function, and access to this method. </p>
 
-<p><a class="el" href="classPOLDAM_1_1ObjectfileParser.html#aaf50213a995cf40a0fdb2bc8689139f9">POLDAM::ObjectfileParser</a>, <a class="el" href="classPOLDAM_1_1seloggerLogParser.html#a0d706871ad6527ab54db295539387288">POLDAM::seloggerLogParser</a>, <a class="el" href="classPOLDAM_1_1methodDataParser.html#a41b0131b179e6386a0f73876729d74cf">POLDAM::methodDataParser</a>, <a class="el" href="classPOLDAM_1_1dataidsParser.html#ac92748d5e9700623aeef45fe56777026">POLDAM::dataidsParser</a>, <a class="el" href="classPOLDAM_1_1classesDataParser.html#a51c3e06e848bedf7d82344372728636c">POLDAM::classesDataParser</a>で実装されています。</p>
+<p><a class="el" href="classPOLDAM_1_1classesDataParser.html#a51c3e06e848bedf7d82344372728636c">POLDAM::classesDataParser</a>, <a class="el" href="classPOLDAM_1_1dataidsParser.html#ac92748d5e9700623aeef45fe56777026">POLDAM::dataidsParser</a>, <a class="el" href="classPOLDAM_1_1methodDataParser.html#a41b0131b179e6386a0f73876729d74cf">POLDAM::methodDataParser</a>, <a class="el" href="classPOLDAM_1_1seloggerLogParser.html#a0d706871ad6527ab54db295539387288">POLDAM::seloggerLogParser</a>, <a class="el" href="classPOLDAM_1_1ObjectfileParser.html#aaf50213a995cf40a0fdb2bc8689139f9">POLDAM::ObjectfileParser</a>で実装されています。</p>
 
 </div>
 </div>
-<a id="a9ddf6efa4b2622dd7ad690901966db0c"></a>
+<a id="a9ddf6efa4b2622dd7ad690901966db0c" name="a9ddf6efa4b2622dd7ad690901966db0c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9ddf6efa4b2622dd7ad690901966db0c">&#9670;&nbsp;</a></span>parseReadlines()</h2>
 
 <div class="memitem">
@@ -207,11 +215,11 @@ POLDAM::fileReader の継承関係図</div>
 
 <p>parse and iterate this -&gt; data. </p>
 
-<p><a class="el" href="classPOLDAM_1_1seloggerLogParser.html#a5aa7b585a38238053e84263f85372e83">POLDAM::seloggerLogParser</a>, <a class="el" href="classPOLDAM_1_1ObjectfileParser.html#acb8ba4fdb7e79aa1d35dbbc326f26a26">POLDAM::ObjectfileParser</a>, <a class="el" href="classPOLDAM_1_1methodDataParser.html#a8810dc6b90d67b35b3a9c4da6d1a39f5">POLDAM::methodDataParser</a>, <a class="el" href="classPOLDAM_1_1dataidsParser.html#a8d7920a7b5a385d059f149d120a95742">POLDAM::dataidsParser</a>, <a class="el" href="classPOLDAM_1_1classesDataParser.html#a7d7efd8ab765bf6c5d040f01121dc58a">POLDAM::classesDataParser</a>で実装されています。</p>
+<p><a class="el" href="classPOLDAM_1_1classesDataParser.html#a7d7efd8ab765bf6c5d040f01121dc58a">POLDAM::classesDataParser</a>, <a class="el" href="classPOLDAM_1_1dataidsParser.html#a8d7920a7b5a385d059f149d120a95742">POLDAM::dataidsParser</a>, <a class="el" href="classPOLDAM_1_1methodDataParser.html#a8810dc6b90d67b35b3a9c4da6d1a39f5">POLDAM::methodDataParser</a>, <a class="el" href="classPOLDAM_1_1ObjectfileParser.html#acb8ba4fdb7e79aa1d35dbbc326f26a26">POLDAM::ObjectfileParser</a>, <a class="el" href="classPOLDAM_1_1seloggerLogParser.html#a5aa7b585a38238053e84263f85372e83">POLDAM::seloggerLogParser</a>で実装されています。</p>
 
 </div>
 </div>
-<a id="a163e20669b6dd43f125e227b66da506c"></a>
+<a id="a163e20669b6dd43f125e227b66da506c" name="a163e20669b6dd43f125e227b66da506c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a163e20669b6dd43f125e227b66da506c">&#9670;&nbsp;</a></span>readFile()</h2>
 
 <div class="memitem">
@@ -254,7 +262,7 @@ POLDAM::fileReader の継承関係図</div>
 </dl>
 <dl class="section return"><dt>戻り値</dt><dd>void. </dd></dl>
 
-<p><a class="el" href="classPOLDAM_1_1ObjectfileParser.html#a0f266c1db909ceb37deb3c1c7bad87bc">POLDAM::ObjectfileParser</a>, <a class="el" href="classPOLDAM_1_1methodDataParser.html#a9fd2dd888885bb38c41ba970c7ac72f8">POLDAM::methodDataParser</a>, <a class="el" href="classPOLDAM_1_1dataidsParser.html#a538be4c9fa2ff741b2d27f21193dc5b7">POLDAM::dataidsParser</a>, <a class="el" href="classPOLDAM_1_1classesDataParser.html#a1f7bc6ea7be8d3d063a578f353879179">POLDAM::classesDataParser</a>, <a class="el" href="classPOLDAM_1_1seloggerLogParser.html#ad1c4e9f57bd82ee8718274e6561fe5ad">POLDAM::seloggerLogParser</a>で実装されています。</p>
+<p><a class="el" href="classPOLDAM_1_1seloggerLogParser.html#ad1c4e9f57bd82ee8718274e6561fe5ad">POLDAM::seloggerLogParser</a>, <a class="el" href="classPOLDAM_1_1classesDataParser.html#a1f7bc6ea7be8d3d063a578f353879179">POLDAM::classesDataParser</a>, <a class="el" href="classPOLDAM_1_1dataidsParser.html#a538be4c9fa2ff741b2d27f21193dc5b7">POLDAM::dataidsParser</a>, <a class="el" href="classPOLDAM_1_1methodDataParser.html#a9fd2dd888885bb38c41ba970c7ac72f8">POLDAM::methodDataParser</a>, <a class="el" href="classPOLDAM_1_1ObjectfileParser.html#a0f266c1db909ceb37deb3c1c7bad87bc">POLDAM::ObjectfileParser</a>で実装されています。</p>
 
 </div>
 </div>
@@ -267,7 +275,7 @@ POLDAM::fileReader の継承関係図</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacePOLDAM.html">POLDAM</a></li><li class="navelem"><a class="el" href="classPOLDAM_1_1fileReader.html">fileReader</a></li>
-    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

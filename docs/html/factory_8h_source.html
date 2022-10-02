@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.9.1"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>POLDAM: MetaFileParser/src/factory.h ソースファイル</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
@@ -23,8 +23,8 @@
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
- <tr style="height: 56px;">
-  <td id="projectalign" style="padding-left: 0.5em;">
+ <tr id="projectrow">
+  <td id="projectalign">
    <div id="projectname">POLDAM
    </div>
   </td>
@@ -33,21 +33,22 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 構築: Doxygen 1.9.1 -->
+<!-- 構築: Doxygen 1.9.4 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-var searchBox = new SearchBox("searchBox", "search",false,'検索','.html');
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'検索','.html');
 /* @license-end */
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
   initMenu('',true,false,'search.php','検索');
   $(document).ready(function() { init_search(); });
 });
-/* @license-end */</script>
+/* @license-end */
+</script>
 <div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
@@ -61,7 +62,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(document).ready(function(){initNavTree('factory_8h_source.html',''); initResizable(); });
 /* @license-end */
 </script>
@@ -81,43 +82,42 @@ $(document).ready(function(){initNavTree('factory_8h_source.html',''); initResiz
 </div>
 
 <div class="header">
-  <div class="headertitle">
-<div class="title">factory.h</div>  </div>
+  <div class="headertitle"><div class="title">factory.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="factory_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="metafileHandlerCommon_8h.html">metafileHandlerCommon.h</a>&quot;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="dataids_8h.html">dataids.h</a>&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="seloggerLog_8h.html">seloggerLog.h</a>&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="objectFile_8h.html">objectFile.h</a>&quot;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="methods_8h.html">methods.h</a>&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="classes_8h.html">classes.h</a>&quot;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacePOLDAM.html">POLDAM</a></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="comment">// metafileFactory should be static class</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1metafileFactory.html">   12</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classPOLDAM_1_1metafileFactory.html">metafileFactory</a></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1metafileFactory.html#ad32f5847157e1f4d7b8ad23e8a15a745">   15</a></span>&#160;        <a class="code" href="classPOLDAM_1_1metafileFactory.html#ad32f5847157e1f4d7b8ad23e8a15a745">metafileFactory</a>(std::string dirPath_) : <a class="code" href="classPOLDAM_1_1metafileFactory.html#a227784d1204d9bc6fc1584b264e73970">dirPath</a>(dirPath_){};</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span>... Args&gt;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classPOLDAM_1_1metafileFactory.html#aadb144e0b8ef9264e863b71546237d9e">createInstance</a>(T *&amp;outputPtr, Args &amp;&amp;...args);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span>... Args&gt;</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1metafileFactory.html#ad5b20b95daf667947367054a1875c29c">   20</a></span>&#160;        T <a class="code" href="classPOLDAM_1_1metafileFactory.html#ad5b20b95daf667947367054a1875c29c">createInstance</a>(Args &amp;&amp;...args)</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <span class="keywordflow">return</span> T(<a class="code" href="classPOLDAM_1_1metafileFactory.html#a227784d1204d9bc6fc1584b264e73970">dirPath</a>, std::forward&lt;Args&gt;(args)...);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        }</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1metafileFactory.html#a06810cd4022c2b6169bcb904fedc021e">   25</a></span>&#160;        std::string <a class="code" href="classPOLDAM_1_1metafileFactory.html#a06810cd4022c2b6169bcb904fedc021e">getDirPath</a>()</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classPOLDAM_1_1metafileFactory.html#a227784d1204d9bc6fc1584b264e73970">dirPath</a>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        }</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1metafileFactory.html#a227784d1204d9bc6fc1584b264e73970">   31</a></span>&#160;        <span class="keyword">const</span> std::string <a class="code" href="classPOLDAM_1_1metafileFactory.html#a227784d1204d9bc6fc1584b264e73970">dirPath</a>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    };</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
+<a href="factory_8h.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="metafileHandlerCommon_8h.html">metafileHandlerCommon.h</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="dataids_8h.html">dataids.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="seloggerLog_8h.html">seloggerLog.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="objectFile_8h.html">objectFile.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="methods_8h.html">methods.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="classes_8h.html">classes.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacePOLDAM.html">POLDAM</a></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>{</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="comment">// metafileFactory should be static class</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1metafileFactory.html">   12</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classPOLDAM_1_1metafileFactory.html">metafileFactory</a></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1metafileFactory.html#ad32f5847157e1f4d7b8ad23e8a15a745">   15</a></span>        <a class="code hl_function" href="classPOLDAM_1_1metafileFactory.html#ad32f5847157e1f4d7b8ad23e8a15a745">metafileFactory</a>(std::string dirPath_) : <a class="code hl_variable" href="classPOLDAM_1_1metafileFactory.html#a227784d1204d9bc6fc1584b264e73970">dirPath</a>(dirPath_){};</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span>... Args&gt;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classPOLDAM_1_1metafileFactory.html#aadb144e0b8ef9264e863b71546237d9e">createInstance</a>(T *&amp;outputPtr, Args &amp;&amp;...args);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span>... Args&gt;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1metafileFactory.html#ad5b20b95daf667947367054a1875c29c">   20</a></span>        T <a class="code hl_function" href="classPOLDAM_1_1metafileFactory.html#ad5b20b95daf667947367054a1875c29c">createInstance</a>(Args &amp;&amp;...args)</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            <span class="keywordflow">return</span> T(<a class="code hl_variable" href="classPOLDAM_1_1metafileFactory.html#a227784d1204d9bc6fc1584b264e73970">dirPath</a>, std::forward&lt;Args&gt;(args)...);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        }</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1metafileFactory.html#a06810cd4022c2b6169bcb904fedc021e">   25</a></span>        std::string <a class="code hl_function" href="classPOLDAM_1_1metafileFactory.html#a06810cd4022c2b6169bcb904fedc021e">getDirPath</a>()</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classPOLDAM_1_1metafileFactory.html#a227784d1204d9bc6fc1584b264e73970">dirPath</a>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        }</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1metafileFactory.html#a227784d1204d9bc6fc1584b264e73970">   31</a></span>        <span class="keyword">const</span> std::string <a class="code hl_variable" href="classPOLDAM_1_1metafileFactory.html#a227784d1204d9bc6fc1584b264e73970">dirPath</a>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    };</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>}</div>
 <div class="ttc" id="aclassPOLDAM_1_1metafileFactory_html"><div class="ttname"><a href="classPOLDAM_1_1metafileFactory.html">POLDAM::metafileFactory</a></div><div class="ttdef"><b>Definition:</b> <a href="factory_8h_source.html#l00012">factory.h:13</a></div></div>
 <div class="ttc" id="aclassPOLDAM_1_1metafileFactory_html_a06810cd4022c2b6169bcb904fedc021e"><div class="ttname"><a href="classPOLDAM_1_1metafileFactory.html#a06810cd4022c2b6169bcb904fedc021e">POLDAM::metafileFactory::getDirPath</a></div><div class="ttdeci">std::string getDirPath()</div><div class="ttdef"><b>Definition:</b> <a href="factory_8h_source.html#l00025">factory.h:25</a></div></div>
 <div class="ttc" id="aclassPOLDAM_1_1metafileFactory_html_a227784d1204d9bc6fc1584b264e73970"><div class="ttname"><a href="classPOLDAM_1_1metafileFactory.html#a227784d1204d9bc6fc1584b264e73970">POLDAM::metafileFactory::dirPath</a></div><div class="ttdeci">const std::string dirPath</div><div class="ttdef"><b>Definition:</b> <a href="factory_8h_source.html#l00031">factory.h:31</a></div></div>
@@ -137,7 +137,7 @@ $(document).ready(function(){initNavTree('factory_8h_source.html',''); initResiz
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_802f708e05b331bfe8b7d1e3cd980d15.html">MetaFileParser</a></li><li class="navelem"><a class="el" href="dir_f15734ee1191266c41688ce3a3999d68.html">src</a></li><li class="navelem"><a class="el" href="factory_8h.html">factory.h</a></li>
-    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

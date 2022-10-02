@@ -1,6 +1,6 @@
 var main_8cpp =
 [
-    [ "OmniWriter", "classPOLDAM_1_1OmniWriter.html", "classPOLDAM_1_1OmniWriter" ],
+    [ "POLDAM::OmniWriter", "classPOLDAM_1_1OmniWriter.html", "classPOLDAM_1_1OmniWriter" ],
     [ "buildGraph", "main_8cpp.html#abe3eece136484b149da262697afb3792", null ],
     [ "main", "main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97", null ],
     [ "printHelp", "main_8cpp.html#a0d20b69b0ad703df78459e1033d5c1d4", null ],

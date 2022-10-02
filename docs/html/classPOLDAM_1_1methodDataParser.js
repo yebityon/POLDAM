@@ -2,8 +2,8 @@ var classPOLDAM_1_1methodDataParser =
 [
     [ "methodDataParser", "classPOLDAM_1_1methodDataParser.html#a8573aa83a0eda0a4231a1021d3df57b0", null ],
     [ "dirTraversal", "classPOLDAM_1_1methodDataParser.html#aa6f0b6c6ba32f0e986ad367160aa64ac", null ],
-    [ "getData", "classPOLDAM_1_1methodDataParser.html#ac5494e9a1b725f90bd0aaaca7f5b7ece", null ],
-    [ "getParsedData", "classPOLDAM_1_1methodDataParser.html#a241a72db260b58daf9f5dc4ebc896459", null ],
+    [ "getData", "classPOLDAM_1_1methodDataParser.html#a2c3e026827b5cd819064a5da0e925ac0", null ],
+    [ "getParsedData", "classPOLDAM_1_1methodDataParser.html#a491586480f6b96ba02d8693332220b14", null ],
     [ "isTargetFile", "classPOLDAM_1_1methodDataParser.html#a89b1ba50778e983224c589dc3b4ae564", null ],
     [ "parseLine", "classPOLDAM_1_1methodDataParser.html#a41b0131b179e6386a0f73876729d74cf", null ],
     [ "parseReadlines", "classPOLDAM_1_1methodDataParser.html#a8810dc6b90d67b35b3a9c4da6d1a39f5", null ],

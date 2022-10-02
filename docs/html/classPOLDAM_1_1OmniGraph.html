@@ -1,0 +1,1078 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>POLDAM: POLDAM::OmniGraph クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">POLDAM
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classPOLDAM_1_1OmniGraph.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classPOLDAM_1_1OmniGraph-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">POLDAM::OmniGraph クラス</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="graph_8hpp_source.html">graph.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:add3843fe336ad17aace4e3b29579a160"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1OmniGraph.html#add3843fe336ad17aace4e3b29579a160">addOmniVertex</a> (<a class="el" href="structPOLDAM_1_1GraphVertex.html">GraphVertex</a> v, const size_t threadId)</td></tr>
+<tr class="memdesc:add3843fe336ad17aace4e3b29579a160"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create vertex Descriptor from given Graph Vertex, and Create edge if vStack is not empty.\  <a href="classPOLDAM_1_1OmniGraph.html#add3843fe336ad17aace4e3b29579a160">[詳解]</a><br /></td></tr>
+<tr class="separator:add3843fe336ad17aace4e3b29579a160"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41acc42f6852f3bc80de137cabec1a0a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1OmniGraph.html#a41acc42f6852f3bc80de137cabec1a0a">updateStackTopVertex</a> (const std::string log, const unsigned int threadId)</td></tr>
+<tr class="separator:a41acc42f6852f3bc80de137cabec1a0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29666fde2077f2a83149ec8491d58287"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1OmniGraph.html#a29666fde2077f2a83149ec8491d58287">updateStackTopVertexParamInfo</a> (const std::string &amp;paramValue, unsigned int threadId)</td></tr>
+<tr class="separator:a29666fde2077f2a83149ec8491d58287"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c15accbd347cbf3766b3ce3573ccdd8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1OmniGraph.html#a6c15accbd347cbf3766b3ce3573ccdd8">popStackVertex</a> (const unsigned int threadId)</td></tr>
+<tr class="separator:a6c15accbd347cbf3766b3ce3573ccdd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5dc3a6d921e15c9c0731922bc53c7b6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1OmniGraph.html#ab5dc3a6d921e15c9c0731922bc53c7b6">computeHash</a> (const unsigned int threadId)</td></tr>
+<tr class="separator:ab5dc3a6d921e15c9c0731922bc53c7b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acecaecae6d55687c810cccd9d56463e7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1OmniGraph.html#acecaecae6d55687c810cccd9d56463e7">isStackEmpty</a> (const unsigned int threadId)</td></tr>
+<tr class="separator:acecaecae6d55687c810cccd9d56463e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a662e76ad3bd3fd1e2291c756ee4c355e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacePOLDAM.html#a0931ae32716a1c3f6a8a39815b925843">Graph</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1OmniGraph.html#a662e76ad3bd3fd1e2291c756ee4c355e">getGraphCopy</a> ()</td></tr>
+<tr class="separator:a662e76ad3bd3fd1e2291c756ee4c355e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76380aa388966214787f41932b9dc301"><td class="memItemLeft" align="right" valign="top">boost::graph_traits&lt; <a class="el" href="namespacePOLDAM.html#a0931ae32716a1c3f6a8a39815b925843">Graph</a> &gt;::vertex_descriptor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1OmniGraph.html#a76380aa388966214787f41932b9dc301">getStackTopVertex</a> (const unsigned int threadId)</td></tr>
+<tr class="separator:a76380aa388966214787f41932b9dc301"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ffa913d782376e688fc9ab8d9cf4a32"><td class="memItemLeft" align="right" valign="top">std::vector&lt; boost::graph_traits&lt; <a class="el" href="namespacePOLDAM.html#a0931ae32716a1c3f6a8a39815b925843">Graph</a> &gt;::vertex_descriptor &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1OmniGraph.html#a4ffa913d782376e688fc9ab8d9cf4a32">copyGraphPath</a> ()</td></tr>
+<tr class="separator:a4ffa913d782376e688fc9ab8d9cf4a32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5cb79b8a6fefad6d6958947404b627e"><td class="memItemLeft" align="right" valign="top">const boost::graph_traits&lt; <a class="el" href="namespacePOLDAM.html#a0931ae32716a1c3f6a8a39815b925843">Graph</a> &gt;::vertex_descriptor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1OmniGraph.html#ab5cb79b8a6fefad6d6958947404b627e">getRoot</a> ()</td></tr>
+<tr class="separator:ab5cb79b8a6fefad6d6958947404b627e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8dd73c9cb97aa448ae50cd37e4ed665"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPOLDAM_1_1OmniGraph.html">OmniGraph</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1OmniGraph.html#ac8dd73c9cb97aa448ae50cd37e4ed665">computeDiffGraph</a> (<a class="el" href="classPOLDAM_1_1OmniGraph.html">OmniGraph</a> &amp;targetGraph)</td></tr>
+<tr class="memdesc:ac8dd73c9cb97aa448ae50cd37e4ed665"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>DEPRECATED</b><em>Diff</em> algorithm to compute the difference between origin and target  <a href="classPOLDAM_1_1OmniGraph.html#ac8dd73c9cb97aa448ae50cd37e4ed665">[詳解]</a><br /></td></tr>
+<tr class="separator:ac8dd73c9cb97aa448ae50cd37e4ed665"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9c98590e8caf6e9c4357ef9a5751f77"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacePOLDAM.html#a0931ae32716a1c3f6a8a39815b925843">Graph</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1OmniGraph.html#ab9c98590e8caf6e9c4357ef9a5751f77">computeDiffGraphBeta</a> (<a class="el" href="classPOLDAM_1_1OmniGraph.html">OmniGraph</a> &amp;&amp;targetGraph, const std::function&lt; bool(const <a class="el" href="structPOLDAM_1_1GraphVertex.html">GraphVertex</a> &amp;, const <a class="el" href="structPOLDAM_1_1GraphVertex.html">GraphVertex</a> &amp;)&gt; &amp;<a class="el" href="namespacePOLDAM.html#a91c4064545f5cfe6c1197d3d993396b0">isSameVertex</a>)</td></tr>
+<tr class="memdesc:ab9c98590e8caf6e9c4357ef9a5751f77"><td class="mdescLeft">&#160;</td><td class="mdescRight">compute Diff between given <a class="el" href="classPOLDAM_1_1OmniGraph.html">OmniGraph</a> and this-&gt;g through trversal tree.  <a href="classPOLDAM_1_1OmniGraph.html#ab9c98590e8caf6e9c4357ef9a5751f77">[詳解]</a><br /></td></tr>
+<tr class="separator:ab9c98590e8caf6e9c4357ef9a5751f77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:a20ddd1c1d3b6acb2f1465f25bc8f8bd4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1OmniGraph.html#a20ddd1c1d3b6acb2f1465f25bc8f8bd4">computeFlowHash</a> (const unsigned int threadId)</td></tr>
+<tr class="separator:a20ddd1c1d3b6acb2f1465f25bc8f8bd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55146795d7c186539535e608096aad0a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1OmniGraph.html#a55146795d7c186539535e608096aad0a">computeParamHash</a> (const unsigned int threadId)</td></tr>
+<tr class="separator:a55146795d7c186539535e608096aad0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47754733dcda68cdf474e1e1ecafeaf1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1OmniGraph.html#a47754733dcda68cdf474e1e1ecafeaf1">popVertex</a> (const unsigned int threadId)</td></tr>
+<tr class="memdesc:a47754733dcda68cdf474e1e1ecafeaf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">the implementation when vertex Stack is popped. the function describe the relationship between caller and callee.  <a href="classPOLDAM_1_1OmniGraph.html#a47754733dcda68cdf474e1e1ecafeaf1">[詳解]</a><br /></td></tr>
+<tr class="separator:a47754733dcda68cdf474e1e1ecafeaf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07382c3f2fe2f6109c4f8a6e0a657b2d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1OmniGraph.html#a07382c3f2fe2f6109c4f8a6e0a657b2d">isLeaf</a> (boost::graph_traits&lt; <a class="el" href="namespacePOLDAM.html#a0931ae32716a1c3f6a8a39815b925843">Graph</a> &gt;::vertex_descriptor vDesc)</td></tr>
+<tr class="memdesc:a07382c3f2fe2f6109c4f8a6e0a657b2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">return true if given vertex descriptor is leaf in graph.  <a href="classPOLDAM_1_1OmniGraph.html#a07382c3f2fe2f6109c4f8a6e0a657b2d">[詳解]</a><br /></td></tr>
+<tr class="separator:a07382c3f2fe2f6109c4f8a6e0a657b2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f922cd27cc54d858dffdfa04848d6d3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1OmniGraph.html#a5f922cd27cc54d858dffdfa04848d6d3">pushStackVertex</a> (const boost::graph_traits&lt; <a class="el" href="namespacePOLDAM.html#a0931ae32716a1c3f6a8a39815b925843">Graph</a> &gt;::vertex_descriptor vDesc, const unsigned int threadId)</td></tr>
+<tr class="memdesc:a5f922cd27cc54d858dffdfa04848d6d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">return true if given vertex descriptor is leaf in graph.  <a href="classPOLDAM_1_1OmniGraph.html#a5f922cd27cc54d858dffdfa04848d6d3">[詳解]</a><br /></td></tr>
+<tr class="separator:a5f922cd27cc54d858dffdfa04848d6d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a775f4c3a5843f019e428ab681c8cf77c"><td class="memItemLeft" align="right" valign="top">boost::graph_traits&lt; <a class="el" href="namespacePOLDAM.html#a0931ae32716a1c3f6a8a39815b925843">Graph</a> &gt;::vertex_descriptor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1OmniGraph.html#a775f4c3a5843f019e428ab681c8cf77c">addOmniVertexDesc</a> (<a class="el" href="structPOLDAM_1_1GraphVertex.html">GraphVertex</a> v, const size_t threadId)</td></tr>
+<tr class="memdesc:a775f4c3a5843f019e428ab681c8cf77c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create VertexDescriptor. Note this function DO NOT add to graph.\ NOTE: this function do not update vStack, Therefore, you need to handle it carefully.  <a href="classPOLDAM_1_1OmniGraph.html#a775f4c3a5843f019e428ab681c8cf77c">[詳解]</a><br /></td></tr>
+<tr class="separator:a775f4c3a5843f019e428ab681c8cf77c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74b4762b5ddb0cdd14886215304049b6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1OmniGraph.html#a74b4762b5ddb0cdd14886215304049b6">addOmniEdge</a> (boost::graph_traits&lt; <a class="el" href="namespacePOLDAM.html#a0931ae32716a1c3f6a8a39815b925843">Graph</a> &gt;::vertex_descriptor u_, boost::graph_traits&lt; <a class="el" href="namespacePOLDAM.html#a0931ae32716a1c3f6a8a39815b925843">Graph</a> &gt;::vertex_descriptor v_, const size_t threadId)</td></tr>
+<tr class="memdesc:a74b4762b5ddb0cdd14886215304049b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add edge between two given vertices.  <a href="classPOLDAM_1_1OmniGraph.html#a74b4762b5ddb0cdd14886215304049b6">[詳解]</a><br /></td></tr>
+<tr class="separator:a74b4762b5ddb0cdd14886215304049b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb6fda17e05e94769bf3101606c909e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1OmniGraph.html#abb6fda17e05e94769bf3101606c909e7">traverseDiffVertices</a> (const <a class="el" href="namespacePOLDAM.html#a0931ae32716a1c3f6a8a39815b925843">Graph</a> &amp;o, const <a class="el" href="namespacePOLDAM.html#a0931ae32716a1c3f6a8a39815b925843">Graph</a> &amp;t, const boost::graph_traits&lt; <a class="el" href="namespacePOLDAM.html#a0931ae32716a1c3f6a8a39815b925843">Graph</a> &gt;::vertex_descriptor ovd, const boost::graph_traits&lt; <a class="el" href="namespacePOLDAM.html#a0931ae32716a1c3f6a8a39815b925843">Graph</a> &gt;::vertex_descriptor tvd, const boost::graph_traits&lt; <a class="el" href="namespacePOLDAM.html#a0931ae32716a1c3f6a8a39815b925843">Graph</a> &gt;::vertex_descriptor parDiffVerDesc, const std::function&lt; bool(const <a class="el" href="structPOLDAM_1_1GraphVertex.html">GraphVertex</a> &amp;, const <a class="el" href="structPOLDAM_1_1GraphVertex.html">GraphVertex</a> &amp;)&gt; &amp;<a class="el" href="namespacePOLDAM.html#a91c4064545f5cfe6c1197d3d993396b0">isSameVertex</a>)</td></tr>
+<tr class="memdesc:abb6fda17e05e94769bf3101606c909e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">traverse tree to compute diff algorithm  <a href="classPOLDAM_1_1OmniGraph.html#abb6fda17e05e94769bf3101606c909e7">[詳解]</a><br /></td></tr>
+<tr class="separator:abb6fda17e05e94769bf3101606c909e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:a8205c11f26131c65d7d39d5853caca2b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacePOLDAM.html#a0931ae32716a1c3f6a8a39815b925843">Graph</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1OmniGraph.html#a8205c11f26131c65d7d39d5853caca2b">g</a> {}</td></tr>
+<tr class="separator:a8205c11f26131c65d7d39d5853caca2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b0b799682f7010dabd79882a296cd19"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacePOLDAM.html#a0931ae32716a1c3f6a8a39815b925843">Graph</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1OmniGraph.html#a4b0b799682f7010dabd79882a296cd19">diffGraph</a> {}</td></tr>
+<tr class="separator:a4b0b799682f7010dabd79882a296cd19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0051ac1e392b9ccdc48768b5b4d3af78"><td class="memItemLeft" align="right" valign="top">boost::graph_traits&lt; <a class="el" href="namespacePOLDAM.html#a0931ae32716a1c3f6a8a39815b925843">Graph</a> &gt;::vertex_descriptor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1OmniGraph.html#a0051ac1e392b9ccdc48768b5b4d3af78">Root</a></td></tr>
+<tr class="separator:a0051ac1e392b9ccdc48768b5b4d3af78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53ceb0249e9e2ea24dd95427373b21f7"><td class="memItemLeft" align="right" valign="top">std::map&lt; unsigned int, boost::graph_traits&lt; <a class="el" href="namespacePOLDAM.html#a0931ae32716a1c3f6a8a39815b925843">Graph</a> &gt;::vertex_descriptor &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1OmniGraph.html#a53ceb0249e9e2ea24dd95427373b21f7">root</a> {}</td></tr>
+<tr class="separator:a53ceb0249e9e2ea24dd95427373b21f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a238bec81931c0ee38ebcd78951314dd7"><td class="memItemLeft" align="right" valign="top">std::vector&lt; boost::graph_traits&lt; <a class="el" href="namespacePOLDAM.html#a0931ae32716a1c3f6a8a39815b925843">Graph</a> &gt;::vertex_descriptor &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1OmniGraph.html#a238bec81931c0ee38ebcd78951314dd7">path</a></td></tr>
+<tr class="separator:a238bec81931c0ee38ebcd78951314dd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae446bcad7a9b892c7c9dddc6f839b5e"><td class="memItemLeft" align="right" valign="top">std::map&lt; unsigned int, std::stack&lt; boost::graph_traits&lt; <a class="el" href="namespacePOLDAM.html#a0931ae32716a1c3f6a8a39815b925843">Graph</a> &gt;::vertex_descriptor &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1OmniGraph.html#aae446bcad7a9b892c7c9dddc6f839b5e">vStack</a></td></tr>
+<tr class="separator:aae446bcad7a9b892c7c9dddc6f839b5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30a1a03a8b675c057db3450a674c3e6f"><td class="memItemLeft" align="right" valign="top">std::map&lt; unsigned int, std::stack&lt; std::map&lt; std::string, std::string &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1OmniGraph.html#a30a1a03a8b675c057db3450a674c3e6f">callStack</a></td></tr>
+<tr class="separator:a30a1a03a8b675c057db3450a674c3e6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c850e49f9ef7f274161cb2a00d383ca"><td class="memItemLeft" align="right" valign="top">std::map&lt; unsigned int, std::stack&lt; std::map&lt; std::string, std::string &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1OmniGraph.html#a1c850e49f9ef7f274161cb2a00d383ca">callInstStack</a></td></tr>
+<tr class="separator:a1c850e49f9ef7f274161cb2a00d383ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock">
+<p class="definition"> <a class="el" href="graph_8hpp_source.html">graph.hpp</a> の <a class="el" href="graph_8hpp_source.html#l00064">64</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">関数詳解</h2>
+<a id="a74b4762b5ddb0cdd14886215304049b6" name="a74b4762b5ddb0cdd14886215304049b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74b4762b5ddb0cdd14886215304049b6">&#9670;&nbsp;</a></span>addOmniEdge()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool POLDAM::OmniGraph::addOmniEdge </td>
+          <td>(</td>
+          <td class="paramtype">boost::graph_traits&lt; <a class="el" href="namespacePOLDAM.html#a0931ae32716a1c3f6a8a39815b925843">Graph</a> &gt;::vertex_descriptor&#160;</td>
+          <td class="paramname"><em>u_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boost::graph_traits&lt; <a class="el" href="namespacePOLDAM.html#a0931ae32716a1c3f6a8a39815b925843">Graph</a> &gt;::vertex_descriptor&#160;</td>
+          <td class="paramname"><em>v_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>threadId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Add edge between two given vertices. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">u_</td><td></td></tr>
+    <tr><td class="paramname">v_</td><td></td></tr>
+    <tr><td class="paramname">threadId</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>true </dd>
+<dd>
+false </dd></dl>
+
+<p class="definition"> <a class="el" href="graph_8cpp_source.html">graph.cpp</a> の <a class="el" href="graph_8cpp_source.html#l00081">81</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="add3843fe336ad17aace4e3b29579a160" name="add3843fe336ad17aace4e3b29579a160"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add3843fe336ad17aace4e3b29579a160">&#9670;&nbsp;</a></span>addOmniVertex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool POLDAM::OmniGraph::addOmniVertex </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structPOLDAM_1_1GraphVertex.html">GraphVertex</a>&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>threadId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create vertex Descriptor from given Graph Vertex, and Create edge if vStack is not empty.\ </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td><a class="el" href="structPOLDAM_1_1GraphVertex.html">GraphVertex</a>, </td></tr>
+    <tr><td class="paramname">threadId</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>true return true if succedd to add vertex to graph. </dd>
+<dd>
+false return false if failed to add vertex to graph. </dd></dl>
+
+<p class="definition"> <a class="el" href="graph_8cpp_source.html">graph.cpp</a> の <a class="el" href="graph_8cpp_source.html#l00008">8</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a775f4c3a5843f019e428ab681c8cf77c" name="a775f4c3a5843f019e428ab681c8cf77c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a775f4c3a5843f019e428ab681c8cf77c">&#9670;&nbsp;</a></span>addOmniVertexDesc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::graph_traits&lt; <a class="el" href="namespacePOLDAM.html#a0931ae32716a1c3f6a8a39815b925843">Graph</a> &gt;::vertex_descriptor POLDAM::OmniGraph::addOmniVertexDesc </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structPOLDAM_1_1GraphVertex.html">GraphVertex</a>&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>threadId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create VertexDescriptor. Note this function DO NOT add to graph.\ NOTE: this function do not update vStack, Therefore, you need to handle it carefully. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td></td></tr>
+    <tr><td class="paramname">threadId</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>boost::graph_traits&lt;Graph&gt;::vertex_descriptor return vertex_descriptor if succedd to add </dd></dl>
+
+<p class="definition"> <a class="el" href="graph_8cpp_source.html">graph.cpp</a> の <a class="el" href="graph_8cpp_source.html#l00031">31</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ac8dd73c9cb97aa448ae50cd37e4ed665" name="ac8dd73c9cb97aa448ae50cd37e4ed665"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8dd73c9cb97aa448ae50cd37e4ed665">&#9670;&nbsp;</a></span>computeDiffGraph()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classPOLDAM_1_1OmniGraph.html">OmniGraph</a> POLDAM::OmniGraph::computeDiffGraph </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classPOLDAM_1_1OmniGraph.html">OmniGraph</a> &amp;&#160;</td>
+          <td class="paramname"><em>target</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><b>DEPRECATED</b><em>Diff</em> algorithm to compute the difference between origin and target </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">target</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd><a class="el" href="classPOLDAM_1_1OmniGraph.html">OmniGraph</a> the diffGraph </dd></dl>
+<p >if different method call is detected, it's impossible to compare the two method callds</p>
+
+<p class="definition"> <a class="el" href="graphDiff_8cpp_source.html">graphDiff.cpp</a> の <a class="el" href="graphDiff_8cpp_source.html#l00022">22</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ab9c98590e8caf6e9c4357ef9a5751f77" name="ab9c98590e8caf6e9c4357ef9a5751f77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9c98590e8caf6e9c4357ef9a5751f77">&#9670;&nbsp;</a></span>computeDiffGraphBeta()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacePOLDAM.html#a0931ae32716a1c3f6a8a39815b925843">Graph</a> POLDAM::OmniGraph::computeDiffGraphBeta </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classPOLDAM_1_1OmniGraph.html">OmniGraph</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>targetGraph</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::function&lt; bool(const <a class="el" href="structPOLDAM_1_1GraphVertex.html">GraphVertex</a> &amp;, const <a class="el" href="structPOLDAM_1_1GraphVertex.html">GraphVertex</a> &amp;)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>isSameVertex</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>compute Diff between given <a class="el" href="classPOLDAM_1_1OmniGraph.html">OmniGraph</a> and this-&gt;g through trversal tree. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">target</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>Graph </dd></dl>
+
+<p class="definition"> <a class="el" href="graphDiff_8cpp_source.html">graphDiff.cpp</a> の <a class="el" href="graphDiff_8cpp_source.html#l00276">276</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a20ddd1c1d3b6acb2f1465f25bc8f8bd4" name="a20ddd1c1d3b6acb2f1465f25bc8f8bd4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20ddd1c1d3b6acb2f1465f25bc8f8bd4">&#9670;&nbsp;</a></span>computeFlowHash()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool POLDAM::OmniGraph::computeFlowHash </td>
+          <td>(</td>
+          <td class="paramtype">const unsigned int&#160;</td>
+          <td class="paramname"><em>threadId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="graph_8cpp_source.html">graph.cpp</a> の <a class="el" href="graph_8cpp_source.html#l00108">108</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ab5dc3a6d921e15c9c0731922bc53c7b6" name="ab5dc3a6d921e15c9c0731922bc53c7b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5dc3a6d921e15c9c0731922bc53c7b6">&#9670;&nbsp;</a></span>computeHash()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool POLDAM::OmniGraph::computeHash </td>
+          <td>(</td>
+          <td class="paramtype">const unsigned int&#160;</td>
+          <td class="paramname"><em>threadId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="graph_8cpp_source.html">graph.cpp</a> の <a class="el" href="graph_8cpp_source.html#l00063">63</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a55146795d7c186539535e608096aad0a" name="a55146795d7c186539535e608096aad0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55146795d7c186539535e608096aad0a">&#9670;&nbsp;</a></span>computeParamHash()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool POLDAM::OmniGraph::computeParamHash </td>
+          <td>(</td>
+          <td class="paramtype">const unsigned int&#160;</td>
+          <td class="paramname"><em>threadId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="graph_8cpp_source.html">graph.cpp</a> の <a class="el" href="graph_8cpp_source.html#l00116">116</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a4ffa913d782376e688fc9ab8d9cf4a32" name="a4ffa913d782376e688fc9ab8d9cf4a32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ffa913d782376e688fc9ab8d9cf4a32">&#9670;&nbsp;</a></span>copyGraphPath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; boost::graph_traits&lt; <a class="el" href="namespacePOLDAM.html#a0931ae32716a1c3f6a8a39815b925843">Graph</a> &gt;::vertex_descriptor &gt; POLDAM::OmniGraph::copyGraphPath </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="graph_8hpp_source.html">graph.hpp</a> の <a class="el" href="graph_8hpp_source.html#l00098">98</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a662e76ad3bd3fd1e2291c756ee4c355e" name="a662e76ad3bd3fd1e2291c756ee4c355e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a662e76ad3bd3fd1e2291c756ee4c355e">&#9670;&nbsp;</a></span>getGraphCopy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacePOLDAM.html#a0931ae32716a1c3f6a8a39815b925843">Graph</a> POLDAM::OmniGraph::getGraphCopy </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="graph_8cpp_source.html">graph.cpp</a> の <a class="el" href="graph_8cpp_source.html#l00150">150</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ab5cb79b8a6fefad6d6958947404b627e" name="ab5cb79b8a6fefad6d6958947404b627e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5cb79b8a6fefad6d6958947404b627e">&#9670;&nbsp;</a></span>getRoot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const boost::graph_traits&lt; <a class="el" href="namespacePOLDAM.html#a0931ae32716a1c3f6a8a39815b925843">Graph</a> &gt;::vertex_descriptor POLDAM::OmniGraph::getRoot </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="graph_8hpp_source.html">graph.hpp</a> の <a class="el" href="graph_8hpp_source.html#l00103">103</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a76380aa388966214787f41932b9dc301" name="a76380aa388966214787f41932b9dc301"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76380aa388966214787f41932b9dc301">&#9670;&nbsp;</a></span>getStackTopVertex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::graph_traits&lt; <a class="el" href="namespacePOLDAM.html#a0931ae32716a1c3f6a8a39815b925843">Graph</a> &gt;::vertex_descriptor POLDAM::OmniGraph::getStackTopVertex </td>
+          <td>(</td>
+          <td class="paramtype">const unsigned int&#160;</td>
+          <td class="paramname"><em>threadId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="graph_8cpp_source.html">graph.cpp</a> の <a class="el" href="graph_8cpp_source.html#l00093">93</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a07382c3f2fe2f6109c4f8a6e0a657b2d" name="a07382c3f2fe2f6109c4f8a6e0a657b2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07382c3f2fe2f6109c4f8a6e0a657b2d">&#9670;&nbsp;</a></span>isLeaf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool POLDAM::OmniGraph::isLeaf </td>
+          <td>(</td>
+          <td class="paramtype">boost::graph_traits&lt; <a class="el" href="namespacePOLDAM.html#a0931ae32716a1c3f6a8a39815b925843">Graph</a> &gt;::vertex_descriptor&#160;</td>
+          <td class="paramname"><em>vDesc</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>return true if given vertex descriptor is leaf in graph. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vDesc</td><td>boost::graph_traits&lt;Graph&gt;::vertex_descriptor </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>true </dd>
+<dd>
+false </dd></dl>
+
+<p class="definition"> <a class="el" href="graph_8cpp_source.html">graph.cpp</a> の <a class="el" href="graph_8cpp_source.html#l00076">76</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="acecaecae6d55687c810cccd9d56463e7" name="acecaecae6d55687c810cccd9d56463e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acecaecae6d55687c810cccd9d56463e7">&#9670;&nbsp;</a></span>isStackEmpty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool POLDAM::OmniGraph::isStackEmpty </td>
+          <td>(</td>
+          <td class="paramtype">const unsigned int&#160;</td>
+          <td class="paramname"><em>threadId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="graph_8cpp_source.html">graph.cpp</a> の <a class="el" href="graph_8cpp_source.html#l00071">71</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a6c15accbd347cbf3766b3ce3573ccdd8" name="a6c15accbd347cbf3766b3ce3573ccdd8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c15accbd347cbf3766b3ce3573ccdd8">&#9670;&nbsp;</a></span>popStackVertex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool POLDAM::OmniGraph::popStackVertex </td>
+          <td>(</td>
+          <td class="paramtype">const unsigned int&#160;</td>
+          <td class="paramname"><em>threadId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="graph_8cpp_source.html">graph.cpp</a> の <a class="el" href="graph_8cpp_source.html#l00052">52</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a47754733dcda68cdf474e1e1ecafeaf1" name="a47754733dcda68cdf474e1e1ecafeaf1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47754733dcda68cdf474e1e1ecafeaf1">&#9670;&nbsp;</a></span>popVertex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool POLDAM::OmniGraph::popVertex </td>
+          <td>(</td>
+          <td class="paramtype">const unsigned int&#160;</td>
+          <td class="paramname"><em>threadId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>the implementation when vertex Stack is popped. the function describe the relationship between caller and callee. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">threadId</td><td>the threadId of target log </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>true implementation has succesfully finished. </dd>
+<dd>
+false implementation has not finished succesfully. </dd></dl>
+
+<p class="definition"> <a class="el" href="graph_8cpp_source.html">graph.cpp</a> の <a class="el" href="graph_8cpp_source.html#l00123">123</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a5f922cd27cc54d858dffdfa04848d6d3" name="a5f922cd27cc54d858dffdfa04848d6d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f922cd27cc54d858dffdfa04848d6d3">&#9670;&nbsp;</a></span>pushStackVertex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool POLDAM::OmniGraph::pushStackVertex </td>
+          <td>(</td>
+          <td class="paramtype">const boost::graph_traits&lt; <a class="el" href="namespacePOLDAM.html#a0931ae32716a1c3f6a8a39815b925843">Graph</a> &gt;::vertex_descriptor&#160;</td>
+          <td class="paramname"><em>vDesc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned int&#160;</td>
+          <td class="paramname"><em>threadId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>return true if given vertex descriptor is leaf in graph. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vDesc</td><td>boost::graph_traits&lt;Graph&gt;::vertex_descriptor </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>true </dd>
+<dd>
+false </dd></dl>
+
+<p class="definition"> <a class="el" href="graph_8cpp_source.html">graph.cpp</a> の <a class="el" href="graph_8cpp_source.html#l00058">58</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="abb6fda17e05e94769bf3101606c909e7" name="abb6fda17e05e94769bf3101606c909e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb6fda17e05e94769bf3101606c909e7">&#9670;&nbsp;</a></span>traverseDiffVertices()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void POLDAM::OmniGraph::traverseDiffVertices </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacePOLDAM.html#a0931ae32716a1c3f6a8a39815b925843">Graph</a> &amp;&#160;</td>
+          <td class="paramname"><em>o</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespacePOLDAM.html#a0931ae32716a1c3f6a8a39815b925843">Graph</a> &amp;&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const boost::graph_traits&lt; <a class="el" href="namespacePOLDAM.html#a0931ae32716a1c3f6a8a39815b925843">Graph</a> &gt;::vertex_descriptor&#160;</td>
+          <td class="paramname"><em>ovd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const boost::graph_traits&lt; <a class="el" href="namespacePOLDAM.html#a0931ae32716a1c3f6a8a39815b925843">Graph</a> &gt;::vertex_descriptor&#160;</td>
+          <td class="paramname"><em>tvd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const boost::graph_traits&lt; <a class="el" href="namespacePOLDAM.html#a0931ae32716a1c3f6a8a39815b925843">Graph</a> &gt;::vertex_descriptor&#160;</td>
+          <td class="paramname"><em>parDiffVerDesc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::function&lt; bool(const <a class="el" href="structPOLDAM_1_1GraphVertex.html">GraphVertex</a> &amp;, const <a class="el" href="structPOLDAM_1_1GraphVertex.html">GraphVertex</a> &amp;)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>isSameVertex</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>traverse tree to compute diff algorithm </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">originGraph</td><td></td></tr>
+    <tr><td class="paramname">targetGraph</td><td></td></tr>
+    <tr><td class="paramname">originVerDesc</td><td></td></tr>
+    <tr><td class="paramname">targetVerDesc</td><td></td></tr>
+    <tr><td class="paramname">parDiffVerDesc</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="graphDiff_8cpp_source.html">graphDiff.cpp</a> の <a class="el" href="graphDiff_8cpp_source.html#l00171">171</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a41acc42f6852f3bc80de137cabec1a0a" name="a41acc42f6852f3bc80de137cabec1a0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41acc42f6852f3bc80de137cabec1a0a">&#9670;&nbsp;</a></span>updateStackTopVertex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool POLDAM::OmniGraph::updateStackTopVertex </td>
+          <td>(</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>log</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned int&#160;</td>
+          <td class="paramname"><em>threadId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">log</td><td>string, add log context to vStack top vertex. </td></tr>
+    <tr><td class="paramname">threadId</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>true </dd>
+<dd>
+false </dd></dl>
+
+<p class="definition"> <a class="el" href="graph_8cpp_source.html">graph.cpp</a> の <a class="el" href="graph_8cpp_source.html#l00038">38</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a29666fde2077f2a83149ec8491d58287" name="a29666fde2077f2a83149ec8491d58287"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29666fde2077f2a83149ec8491d58287">&#9670;&nbsp;</a></span>updateStackTopVertexParamInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool POLDAM::OmniGraph::updateStackTopVertexParamInfo </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>paramValue</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>threadId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="graph_8cpp_source.html">graph.cpp</a> の <a class="el" href="graph_8cpp_source.html#l00045">45</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a1c850e49f9ef7f274161cb2a00d383ca" name="a1c850e49f9ef7f274161cb2a00d383ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c850e49f9ef7f274161cb2a00d383ca">&#9670;&nbsp;</a></span>callInstStack</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;unsigned int, std::stack&lt;std::map&lt;std::string, std::string&gt; &gt; &gt; POLDAM::OmniGraph::callInstStack</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="graph_8hpp_source.html">graph.hpp</a> の <a class="el" href="graph_8hpp_source.html#l00189">189</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a30a1a03a8b675c057db3450a674c3e6f" name="a30a1a03a8b675c057db3450a674c3e6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30a1a03a8b675c057db3450a674c3e6f">&#9670;&nbsp;</a></span>callStack</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;unsigned int, std::stack&lt;std::map&lt;std::string, std::string&gt; &gt; &gt; POLDAM::OmniGraph::callStack</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="graph_8hpp_source.html">graph.hpp</a> の <a class="el" href="graph_8hpp_source.html#l00187">187</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a4b0b799682f7010dabd79882a296cd19" name="a4b0b799682f7010dabd79882a296cd19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b0b799682f7010dabd79882a296cd19">&#9670;&nbsp;</a></span>diffGraph</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacePOLDAM.html#a0931ae32716a1c3f6a8a39815b925843">Graph</a> POLDAM::OmniGraph::diffGraph {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="graph_8hpp_source.html">graph.hpp</a> の <a class="el" href="graph_8hpp_source.html#l00175">175</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a8205c11f26131c65d7d39d5853caca2b" name="a8205c11f26131c65d7d39d5853caca2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8205c11f26131c65d7d39d5853caca2b">&#9670;&nbsp;</a></span>g</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacePOLDAM.html#a0931ae32716a1c3f6a8a39815b925843">Graph</a> POLDAM::OmniGraph::g {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="graph_8hpp_source.html">graph.hpp</a> の <a class="el" href="graph_8hpp_source.html#l00174">174</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a238bec81931c0ee38ebcd78951314dd7" name="a238bec81931c0ee38ebcd78951314dd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a238bec81931c0ee38ebcd78951314dd7">&#9670;&nbsp;</a></span>path</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;boost::graph_traits&lt;<a class="el" href="namespacePOLDAM.html#a0931ae32716a1c3f6a8a39815b925843">Graph</a>&gt;::vertex_descriptor&gt; POLDAM::OmniGraph::path</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="graph_8hpp_source.html">graph.hpp</a> の <a class="el" href="graph_8hpp_source.html#l00181">181</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a0051ac1e392b9ccdc48768b5b4d3af78" name="a0051ac1e392b9ccdc48768b5b4d3af78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0051ac1e392b9ccdc48768b5b4d3af78">&#9670;&nbsp;</a></span>Root</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::graph_traits&lt;<a class="el" href="namespacePOLDAM.html#a0931ae32716a1c3f6a8a39815b925843">Graph</a>&gt;::vertex_descriptor POLDAM::OmniGraph::Root</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="graph_8hpp_source.html">graph.hpp</a> の <a class="el" href="graph_8hpp_source.html#l00177">177</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a53ceb0249e9e2ea24dd95427373b21f7" name="a53ceb0249e9e2ea24dd95427373b21f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53ceb0249e9e2ea24dd95427373b21f7">&#9670;&nbsp;</a></span>root</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;unsigned int, boost::graph_traits&lt;<a class="el" href="namespacePOLDAM.html#a0931ae32716a1c3f6a8a39815b925843">Graph</a>&gt;::vertex_descriptor&gt; POLDAM::OmniGraph::root {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="graph_8hpp_source.html">graph.hpp</a> の <a class="el" href="graph_8hpp_source.html#l00179">179</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aae446bcad7a9b892c7c9dddc6f839b5e" name="aae446bcad7a9b892c7c9dddc6f839b5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae446bcad7a9b892c7c9dddc6f839b5e">&#9670;&nbsp;</a></span>vStack</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;unsigned int, std::stack&lt;boost::graph_traits&lt;<a class="el" href="namespacePOLDAM.html#a0931ae32716a1c3f6a8a39815b925843">Graph</a>&gt;::vertex_descriptor&gt; &gt; POLDAM::OmniGraph::vStack</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="graph_8hpp_source.html">graph.hpp</a> の <a class="el" href="graph_8hpp_source.html#l00185">185</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>Graph/src/<a class="el" href="graph_8hpp_source.html">graph.hpp</a></li>
+<li>Graph/src/<a class="el" href="graph_8cpp_source.html">graph.cpp</a></li>
+<li>Graph/src/<a class="el" href="graphDiff_8cpp_source.html">graphDiff.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacePOLDAM.html">POLDAM</a></li><li class="navelem"><a class="el" href="classPOLDAM_1_1OmniGraph.html">OmniGraph</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -11,9 +11,10 @@ namespace POLDAM
     {
         return v.controlFlowHash == u.controlFlowHash;
     }
+    // this change no effect to generate document
 
     /**
-     * @brief **DEPRECATED**\
+     * @brief **DEPRECATED**\a
      * Diff algorithm to compute the difference between origin and target
      * @param target
      * @return OmniGraph the diffGraph

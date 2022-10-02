@@ -1,0 +1,1087 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>2022_kenshu_w3-4: selogger.logging.io.EventFrequencyLogger クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">2022_kenshu_w3-4
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('classselogger_1_1logging_1_1io_1_1EventFrequencyLogger.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pro-methods">限定公開メンバ関数</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classselogger_1_1logging_1_1io_1_1EventFrequencyLogger-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">selogger.logging.io.EventFrequencyLogger クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+selogger.logging.io.EventFrequencyLogger の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><img src="classselogger_1_1logging_1_1io_1_1EventFrequencyLogger__inherit__graph.png" border="0" usemap="#aselogger_8logging_8io_8EventFrequencyLogger_inherit__map" alt="Inheritance graph"/></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">凡例</a>]</span></center></div>
+<div class="dynheader">
+selogger.logging.io.EventFrequencyLogger 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="classselogger_1_1logging_1_1io_1_1EventFrequencyLogger__coll__graph.png" border="0" usemap="#aselogger_8logging_8io_8EventFrequencyLogger_coll__map" alt="Collaboration graph"/></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">凡例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a5b58c9c897a0eeb775225e86c877df5f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1io_1_1EventFrequencyLogger.html#a5b58c9c897a0eeb775225e86c877df5f">EventFrequencyLogger</a> (File <a class="el" href="classselogger_1_1logging_1_1io_1_1EventFrequencyLogger.html#a0c0db5c82aa5deaa841a4e9d173aec07">traceFile</a>, <a class="el" href="interfaceselogger_1_1logging_1_1IErrorLogger.html">IErrorLogger</a> <a class="el" href="classselogger_1_1logging_1_1io_1_1EventFrequencyLogger.html#aa725da656f3dc4d71ff7874ee937c5e6">logger</a>)</td></tr>
+<tr class="separator:a5b58c9c897a0eeb775225e86c877df5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4bfe8956e38807df61054c712166748"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1io_1_1EventFrequencyLogger.html#ac4bfe8956e38807df61054c712166748">recordEvent</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> dataId, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ad2c19257446c052b290090a0144280a6">boolean</a> value)</td></tr>
+<tr class="separator:ac4bfe8956e38807df61054c712166748"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ee7e11df69ee4ee8063993470b138a7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1io_1_1EventFrequencyLogger.html#a9ee7e11df69ee4ee8063993470b138a7">recordEvent</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> dataId, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a7deea305c4cb166535253609e1b3cda4">byte</a> value)</td></tr>
+<tr class="separator:a9ee7e11df69ee4ee8063993470b138a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3627717e92abc997a49906be3d5095d3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1io_1_1EventFrequencyLogger.html#a3627717e92abc997a49906be3d5095d3">recordEvent</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> dataId, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a5816f3b8d9c5e627300604143414e94a">char</a> value)</td></tr>
+<tr class="separator:a3627717e92abc997a49906be3d5095d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a384b61f26c1c18ad32e8df5e74fd63a6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1io_1_1EventFrequencyLogger.html#a384b61f26c1c18ad32e8df5e74fd63a6">recordEvent</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> dataId, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a326980bd779bb441a6fed78af5695baa">double</a> value)</td></tr>
+<tr class="separator:a384b61f26c1c18ad32e8df5e74fd63a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac88a33336b37319e93711f0ca31abd94"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1io_1_1EventFrequencyLogger.html#ac88a33336b37319e93711f0ca31abd94">recordEvent</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> dataId, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#aea9a834e154d1a79fb1cd804e1e7758d">float</a> value)</td></tr>
+<tr class="separator:ac88a33336b37319e93711f0ca31abd94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeef88c844db24bc07fc14cbe555f69e1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1io_1_1EventFrequencyLogger.html#aeef88c844db24bc07fc14cbe555f69e1">recordEvent</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> dataId, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> value)</td></tr>
+<tr class="separator:aeef88c844db24bc07fc14cbe555f69e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5494303a9cb20e7b4988dbc8b9c61b96"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1io_1_1EventFrequencyLogger.html#a5494303a9cb20e7b4988dbc8b9c61b96">recordEvent</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> dataId, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ab2b82a801222598deb6167bea46d3172">long</a> value)</td></tr>
+<tr class="separator:a5494303a9cb20e7b4988dbc8b9c61b96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0eb4db11b1488313710f011f5b6e470"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1io_1_1EventFrequencyLogger.html#af0eb4db11b1488313710f011f5b6e470">recordEvent</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> dataId, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a9cb912cc9367a723499e6458503cb25f">Object</a> value)</td></tr>
+<tr class="separator:af0eb4db11b1488313710f011f5b6e470"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cd2ce0ec29d1cdd72947b9357cfdeb1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1io_1_1EventFrequencyLogger.html#a8cd2ce0ec29d1cdd72947b9357cfdeb1">recordEvent</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> dataId, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ad4f20e9bf6d5d484b64167b0fdd8bc0e">short</a> value)</td></tr>
+<tr class="separator:a8cd2ce0ec29d1cdd72947b9357cfdeb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5976942531b25122a2407c4f5cbfdb9"><td class="memItemLeft" align="right" valign="top">synchronized <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1io_1_1EventFrequencyLogger.html#ab5976942531b25122a2407c4f5cbfdb9">save</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ad2c19257446c052b290090a0144280a6">boolean</a> resetTrace)</td></tr>
+<tr class="separator:ab5976942531b25122a2407c4f5cbfdb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a597645e38cbf0d37c4c1868b82bac5b2"><td class="memItemLeft" align="right" valign="top">synchronized <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1io_1_1EventFrequencyLogger.html#a597645e38cbf0d37c4c1868b82bac5b2">close</a> ()</td></tr>
+<tr class="separator:a597645e38cbf0d37c4c1868b82bac5b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classselogger_1_1logging_1_1io_1_1AbstractEventLogger"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classselogger_1_1logging_1_1io_1_1AbstractEventLogger')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="classselogger_1_1logging_1_1io_1_1AbstractEventLogger.html">selogger.logging.io.AbstractEventLogger</a> に属する継承公開メンバ関数</td></tr>
+<tr class="memitem:a0dad98221aa33e0e1be8ab3c239899e1 inherit pub_methods_classselogger_1_1logging_1_1io_1_1AbstractEventLogger"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1io_1_1AbstractEventLogger.html#a0dad98221aa33e0e1be8ab3c239899e1">AbstractEventLogger</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> <a class="el" href="classselogger_1_1logging_1_1io_1_1AbstractEventLogger.html#ac74ceaeb1b567d70d5a535dfcc140b6e">formatName</a>)</td></tr>
+<tr class="separator:a0dad98221aa33e0e1be8ab3c239899e1 inherit pub_methods_classselogger_1_1logging_1_1io_1_1AbstractEventLogger"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad947ee8d5bd30b41829f3ddb03673950 inherit pub_methods_classselogger_1_1logging_1_1io_1_1AbstractEventLogger"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1io_1_1AbstractEventLogger.html#ad947ee8d5bd30b41829f3ddb03673950">onCreated</a> (List&lt; <a class="el" href="classselogger_1_1weaver_1_1DataInfo.html">DataInfo</a> &gt; events)</td></tr>
+<tr class="separator:ad947ee8d5bd30b41829f3ddb03673950 inherit pub_methods_classselogger_1_1logging_1_1io_1_1AbstractEventLogger"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+限定公開メンバ関数</h2></td></tr>
+<tr class="memitem:a62462f7d6293338c933077cb7ae8e26a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ad2c19257446c052b290090a0144280a6">boolean</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1io_1_1EventFrequencyLogger.html#a62462f7d6293338c933077cb7ae8e26a">isRecorded</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> dataid)</td></tr>
+<tr class="separator:a62462f7d6293338c933077cb7ae8e26a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78e9520cb5f2863e2afacd20a325fa6f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1io_1_1EventFrequencyLogger.html#a78e9520cb5f2863e2afacd20a325fa6f">writeAttributes</a> (<a class="el" href="classselogger_1_1logging_1_1util_1_1JsonBuffer.html">JsonBuffer</a> json, <a class="el" href="classselogger_1_1weaver_1_1DataInfo.html">DataInfo</a> d)</td></tr>
+<tr class="separator:a78e9520cb5f2863e2afacd20a325fa6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54159f177e412698d49eb64d4732cb39"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1io_1_1EventFrequencyLogger.html#a54159f177e412698d49eb64d4732cb39">getColumnNames</a> ()</td></tr>
+<tr class="separator:a54159f177e412698d49eb64d4732cb39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3baecb2b77e348f900602f207ff3994c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1io_1_1EventFrequencyLogger.html#a3baecb2b77e348f900602f207ff3994c">writeAttributes</a> (<a class="el" href="motivationExample_2target_2selogger__out_2LOG_0bTypes_8txt.html#a3140f761d6d30d14c2f6da02c9e6546f">StringBuilder</a> builder, <a class="el" href="classselogger_1_1weaver_1_1DataInfo.html">DataInfo</a> d)</td></tr>
+<tr class="separator:a3baecb2b77e348f900602f207ff3994c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classselogger_1_1logging_1_1io_1_1AbstractEventLogger"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classselogger_1_1logging_1_1io_1_1AbstractEventLogger')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="classselogger_1_1logging_1_1io_1_1AbstractEventLogger.html">selogger.logging.io.AbstractEventLogger</a> に属する継承限定公開メンバ関数</td></tr>
+<tr class="memitem:a8ff2d08abd1665733b2ca2816ad4834d inherit pro_methods_classselogger_1_1logging_1_1io_1_1AbstractEventLogger"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1io_1_1AbstractEventLogger.html#a8ff2d08abd1665733b2ca2816ad4834d">saveText</a> (PrintWriter w)</td></tr>
+<tr class="separator:a8ff2d08abd1665733b2ca2816ad4834d inherit pro_methods_classselogger_1_1logging_1_1io_1_1AbstractEventLogger"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e23904c05eba97d709ce44b5da23582 inherit pro_methods_classselogger_1_1logging_1_1io_1_1AbstractEventLogger"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1io_1_1AbstractEventLogger.html#a4e23904c05eba97d709ce44b5da23582">saveJson</a> (PrintWriter w)</td></tr>
+<tr class="separator:a4e23904c05eba97d709ce44b5da23582 inherit pro_methods_classselogger_1_1logging_1_1io_1_1AbstractEventLogger"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b6e94439b71d34a2cb56a49f0cf986f inherit pro_methods_classselogger_1_1logging_1_1io_1_1AbstractEventLogger"><td class="memItemLeft" align="right" valign="top"><a class="el" href="motivationExample_2target_2selogger__out_2LOG_0bTypes_8txt.html#ab409ec46b2ad130cfe3fa5e599f8b417">ArrayList</a>&lt; <a class="el" href="classselogger_1_1weaver_1_1DataInfo.html">DataInfo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1io_1_1AbstractEventLogger.html#a1b6e94439b71d34a2cb56a49f0cf986f">getDataids</a> ()</td></tr>
+<tr class="separator:a1b6e94439b71d34a2cb56a49f0cf986f inherit pro_methods_classselogger_1_1logging_1_1io_1_1AbstractEventLogger"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:ad15d98fe5d7b07bfd2c01c3d7361d99c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1io_1_1EventFrequencyLogger.html#ad15d98fe5d7b07bfd2c01c3d7361d99c">countOccurrence</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> dataId)</td></tr>
+<tr class="separator:ad15d98fe5d7b07bfd2c01c3d7361d99c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8af5c34d58a56caca5b9eb8805fe4993"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1io_1_1EventFrequencyLogger.html#a8af5c34d58a56caca5b9eb8805fe4993">saveCurrentCounters</a> (File <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a309c74a02cef9d45224f2c233efc91a1">file</a>, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ad2c19257446c052b290090a0144280a6">boolean</a> resetTrace)</td></tr>
+<tr class="separator:a8af5c34d58a56caca5b9eb8805fe4993"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:a2d9b1054b693cd8e88117e7972afe3c1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="motivationExample_2target_2selogger__out_2LOG_0bTypes_8txt.html#ab409ec46b2ad130cfe3fa5e599f8b417">ArrayList</a>&lt; AtomicLong &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1io_1_1EventFrequencyLogger.html#a2d9b1054b693cd8e88117e7972afe3c1">counters</a></td></tr>
+<tr class="separator:a2d9b1054b693cd8e88117e7972afe3c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c0db5c82aa5deaa841a4e9d173aec07"><td class="memItemLeft" align="right" valign="top">File&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1io_1_1EventFrequencyLogger.html#a0c0db5c82aa5deaa841a4e9d173aec07">traceFile</a></td></tr>
+<tr class="separator:a0c0db5c82aa5deaa841a4e9d173aec07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6919da1c31c4851d7464dc6c400c4c9b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1io_1_1EventFrequencyLogger.html#a6919da1c31c4851d7464dc6c400c4c9b">saveCount</a></td></tr>
+<tr class="separator:a6919da1c31c4851d7464dc6c400c4c9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2d52dae5b18c4bc5de5a21d0aa5b3a2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ad2c19257446c052b290090a0144280a6">boolean</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1io_1_1EventFrequencyLogger.html#af2d52dae5b18c4bc5de5a21d0aa5b3a2">closed</a></td></tr>
+<tr class="separator:af2d52dae5b18c4bc5de5a21d0aa5b3a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa725da656f3dc4d71ff7874ee937c5e6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interfaceselogger_1_1logging_1_1IErrorLogger.html">IErrorLogger</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1io_1_1EventFrequencyLogger.html#aa725da656f3dc4d71ff7874ee937c5e6">logger</a></td></tr>
+<tr class="separator:aa725da656f3dc4d71ff7874ee937c5e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>This class is an implementation of <a class="el" href="interfaceselogger_1_1logging_1_1IEventLogger.html">IEventLogger</a> that counts the number of occurrences for each event (dataId). The generated "eventfreq.txt" file is a CSV file. Each line shows a pair of dataId and the number of occurrences of the event. </p>
+
+<p class="definition"> <a class="el" href="EventFrequencyLogger_8java_source.html">EventFrequencyLogger.java</a> の <a class="el" href="EventFrequencyLogger_8java_source.html#l00021">21</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="a5b58c9c897a0eeb775225e86c877df5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b58c9c897a0eeb775225e86c877df5f">&#9670;&nbsp;</a></span>EventFrequencyLogger()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">selogger.logging.io.EventFrequencyLogger.EventFrequencyLogger </td>
+          <td>(</td>
+          <td class="paramtype">File&#160;</td>
+          <td class="paramname"><em>traceFile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="interfaceselogger_1_1logging_1_1IErrorLogger.html">IErrorLogger</a>&#160;</td>
+          <td class="paramname"><em>logger</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Create the logger object. </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">outputDir</td><td>specifies a directory where a resultant file is stored </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="EventFrequencyLogger_8java_source.html">EventFrequencyLogger.java</a> の <a class="el" href="EventFrequencyLogger_8java_source.html#l00052">52</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a597645e38cbf0d37c4c1868b82bac5b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a597645e38cbf0d37c4c1868b82bac5b2">&#9670;&nbsp;</a></span>close()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">synchronized <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.logging.io.EventFrequencyLogger.close </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Write the event count into files when terminated </p>
+
+<p><a class="el" href="interfaceselogger_1_1logging_1_1IEventLogger.html#a29671e6f8fcbe464833d0b5839acb138">selogger.logging.IEventLogger</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="EventFrequencyLogger_8java_source.html">EventFrequencyLogger.java</a> の <a class="el" href="EventFrequencyLogger_8java_source.html#l00222">222</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ad15d98fe5d7b07bfd2c01c3d7361d99c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad15d98fe5d7b07bfd2c01c3d7361d99c">&#9670;&nbsp;</a></span>countOccurrence()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.logging.io.EventFrequencyLogger.countOccurrence </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>dataId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Increment an event count. </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dataId</td><td>specifies an event. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="EventFrequencyLogger_8java_source.html">EventFrequencyLogger.java</a> の <a class="el" href="EventFrequencyLogger_8java_source.html#l00172">172</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a54159f177e412698d49eb64d4732cb39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54159f177e412698d49eb64d4732cb39">&#9670;&nbsp;</a></span>getColumnNames()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> selogger.logging.io.EventFrequencyLogger.getColumnNames </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>戻り値</dt><dd>A subclass should return a header line for additional attributes </dd></dl>
+
+<p><a class="el" href="classselogger_1_1logging_1_1io_1_1AbstractEventLogger.html#ad02ebf41db349fc63a955eee0ed8055d">selogger.logging.io.AbstractEventLogger</a>を再実装しています。</p>
+
+<p class="definition"> <a class="el" href="EventFrequencyLogger_8java_source.html">EventFrequencyLogger.java</a> の <a class="el" href="EventFrequencyLogger_8java_source.html#l00249">249</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a62462f7d6293338c933077cb7ae8e26a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62462f7d6293338c933077cb7ae8e26a">&#9670;&nbsp;</a></span>isRecorded()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ad2c19257446c052b290090a0144280a6">boolean</a> selogger.logging.io.EventFrequencyLogger.isRecorded </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>dataid</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dataid</td><td>specifies an event </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>A subclass should return true if the event is recorded </dd></dl>
+
+<p><a class="el" href="classselogger_1_1logging_1_1io_1_1AbstractEventLogger.html#aa785413208f9505c0e81548b31967f2b">selogger.logging.io.AbstractEventLogger</a>を再実装しています。</p>
+
+<p class="definition"> <a class="el" href="EventFrequencyLogger_8java_source.html">EventFrequencyLogger.java</a> の <a class="el" href="EventFrequencyLogger_8java_source.html#l00232">232</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ac4bfe8956e38807df61054c712166748"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4bfe8956e38807df61054c712166748">&#9670;&nbsp;</a></span>recordEvent() <span class="overload">[1/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.logging.io.EventFrequencyLogger.recordEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>dataId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ad2c19257446c052b290090a0144280a6">boolean</a>&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Count the event occurrence. </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dataId</td><td>specifies an event to be counted. </td></tr>
+    <tr><td class="paramname">value</td><td>is required for interface, but the value is discarded by this logger. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><a class="el" href="interfaceselogger_1_1logging_1_1IEventLogger.html#ab99432f9c8a315a97b175ef21f3da60f">selogger.logging.IEventLogger</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="EventFrequencyLogger_8java_source.html">EventFrequencyLogger.java</a> の <a class="el" href="EventFrequencyLogger_8java_source.html#l00066">66</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a9ee7e11df69ee4ee8063993470b138a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ee7e11df69ee4ee8063993470b138a7">&#9670;&nbsp;</a></span>recordEvent() <span class="overload">[2/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.logging.io.EventFrequencyLogger.recordEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>dataId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a7deea305c4cb166535253609e1b3cda4">byte</a>&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Count the event occurrence. </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dataId</td><td>specifies an event to be counted. </td></tr>
+    <tr><td class="paramname">value</td><td>is required for interface, but the value is discarded by this logger. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><a class="el" href="interfaceselogger_1_1logging_1_1IEventLogger.html#a8c1545dd50c7131ed3e394b90632d7b7">selogger.logging.IEventLogger</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="EventFrequencyLogger_8java_source.html">EventFrequencyLogger.java</a> の <a class="el" href="EventFrequencyLogger_8java_source.html#l00078">78</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a3627717e92abc997a49906be3d5095d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3627717e92abc997a49906be3d5095d3">&#9670;&nbsp;</a></span>recordEvent() <span class="overload">[3/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.logging.io.EventFrequencyLogger.recordEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>dataId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a5816f3b8d9c5e627300604143414e94a">char</a>&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Count the event occurrence. </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dataId</td><td>specifies an event to be counted. </td></tr>
+    <tr><td class="paramname">value</td><td>is required for interface, but the value is discarded by this logger. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><a class="el" href="interfaceselogger_1_1logging_1_1IEventLogger.html#ac8d1d3334cdb3b1d0bd1c18311bf62cd">selogger.logging.IEventLogger</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="EventFrequencyLogger_8java_source.html">EventFrequencyLogger.java</a> の <a class="el" href="EventFrequencyLogger_8java_source.html#l00090">90</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a384b61f26c1c18ad32e8df5e74fd63a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a384b61f26c1c18ad32e8df5e74fd63a6">&#9670;&nbsp;</a></span>recordEvent() <span class="overload">[4/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.logging.io.EventFrequencyLogger.recordEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>dataId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a326980bd779bb441a6fed78af5695baa">double</a>&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Count the event occurrence. </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dataId</td><td>specifies an event to be counted. </td></tr>
+    <tr><td class="paramname">value</td><td>is required for interface, but the value is discarded by this logger. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><a class="el" href="interfaceselogger_1_1logging_1_1IEventLogger.html#ad3081bb6a4a6567830e3265e0889290d">selogger.logging.IEventLogger</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="EventFrequencyLogger_8java_source.html">EventFrequencyLogger.java</a> の <a class="el" href="EventFrequencyLogger_8java_source.html#l00102">102</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ac88a33336b37319e93711f0ca31abd94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac88a33336b37319e93711f0ca31abd94">&#9670;&nbsp;</a></span>recordEvent() <span class="overload">[5/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.logging.io.EventFrequencyLogger.recordEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>dataId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#aea9a834e154d1a79fb1cd804e1e7758d">float</a>&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Count the event occurrence. </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dataId</td><td>specifies an event to be counted. </td></tr>
+    <tr><td class="paramname">value</td><td>is required for interface, but the value is discarded by this logger. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><a class="el" href="interfaceselogger_1_1logging_1_1IEventLogger.html#a8f0986021acae7eff20b68ca0322a0fc">selogger.logging.IEventLogger</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="EventFrequencyLogger_8java_source.html">EventFrequencyLogger.java</a> の <a class="el" href="EventFrequencyLogger_8java_source.html#l00114">114</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aeef88c844db24bc07fc14cbe555f69e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeef88c844db24bc07fc14cbe555f69e1">&#9670;&nbsp;</a></span>recordEvent() <span class="overload">[6/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.logging.io.EventFrequencyLogger.recordEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>dataId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Count the event occurrence. </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dataId</td><td>specifies an event to be counted. </td></tr>
+    <tr><td class="paramname">value</td><td>is required for interface, but the value is discarded by this logger. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><a class="el" href="interfaceselogger_1_1logging_1_1IEventLogger.html#a87ea2f812b86b5dadc408bd8e0e29a82">selogger.logging.IEventLogger</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="EventFrequencyLogger_8java_source.html">EventFrequencyLogger.java</a> の <a class="el" href="EventFrequencyLogger_8java_source.html#l00126">126</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a5494303a9cb20e7b4988dbc8b9c61b96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5494303a9cb20e7b4988dbc8b9c61b96">&#9670;&nbsp;</a></span>recordEvent() <span class="overload">[7/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.logging.io.EventFrequencyLogger.recordEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>dataId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ab2b82a801222598deb6167bea46d3172">long</a>&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Count the event occurrence. </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dataId</td><td>specifies an event to be counted. </td></tr>
+    <tr><td class="paramname">value</td><td>is required for interface, but the value is discarded by this logger. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><a class="el" href="interfaceselogger_1_1logging_1_1IEventLogger.html#acbbd86ed45b431251782b5df101b9dc7">selogger.logging.IEventLogger</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="EventFrequencyLogger_8java_source.html">EventFrequencyLogger.java</a> の <a class="el" href="EventFrequencyLogger_8java_source.html#l00138">138</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="af0eb4db11b1488313710f011f5b6e470"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0eb4db11b1488313710f011f5b6e470">&#9670;&nbsp;</a></span>recordEvent() <span class="overload">[8/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.logging.io.EventFrequencyLogger.recordEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>dataId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a9cb912cc9367a723499e6458503cb25f">Object</a>&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Count the event occurrence. </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dataId</td><td>specifies an event to be counted. </td></tr>
+    <tr><td class="paramname">value</td><td>is required for interface, but the value is discarded by this logger. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><a class="el" href="interfaceselogger_1_1logging_1_1IEventLogger.html#a39593ff7b918cc3c34b5d19e810a1425">selogger.logging.IEventLogger</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="EventFrequencyLogger_8java_source.html">EventFrequencyLogger.java</a> の <a class="el" href="EventFrequencyLogger_8java_source.html#l00150">150</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a8cd2ce0ec29d1cdd72947b9357cfdeb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cd2ce0ec29d1cdd72947b9357cfdeb1">&#9670;&nbsp;</a></span>recordEvent() <span class="overload">[9/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.logging.io.EventFrequencyLogger.recordEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>dataId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ad4f20e9bf6d5d484b64167b0fdd8bc0e">short</a>&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Count the event occurrence. </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dataId</td><td>specifies an event to be counted. </td></tr>
+    <tr><td class="paramname">value</td><td>is required for interface, but the value is discarded by this logger. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><a class="el" href="interfaceselogger_1_1logging_1_1IEventLogger.html#aeafb56cfaaf4dca6d3edc2619ece18eb">selogger.logging.IEventLogger</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="EventFrequencyLogger_8java_source.html">EventFrequencyLogger.java</a> の <a class="el" href="EventFrequencyLogger_8java_source.html#l00162">162</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ab5976942531b25122a2407c4f5cbfdb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5976942531b25122a2407c4f5cbfdb9">&#9670;&nbsp;</a></span>save()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">synchronized <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.logging.io.EventFrequencyLogger.save </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ad2c19257446c052b290090a0144280a6">boolean</a>&#160;</td>
+          <td class="paramname"><em>resetTrace</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Save an intermediate execution trace. </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">resetTrace</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><a class="el" href="interfaceselogger_1_1logging_1_1IEventLogger.html#a4bf45d6ec23b2a1bfe885266e4baa1e3">selogger.logging.IEventLogger</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="EventFrequencyLogger_8java_source.html">EventFrequencyLogger.java</a> の <a class="el" href="EventFrequencyLogger_8java_source.html#l00212">212</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a8af5c34d58a56caca5b9eb8805fe4993"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8af5c34d58a56caca5b9eb8805fe4993">&#9670;&nbsp;</a></span>saveCurrentCounters()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.logging.io.EventFrequencyLogger.saveCurrentCounters </td>
+          <td>(</td>
+          <td class="paramtype">File&#160;</td>
+          <td class="paramname"><em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ad2c19257446c052b290090a0144280a6">boolean</a>&#160;</td>
+          <td class="paramname"><em>resetTrace</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>TODO Due to the unsafe handling of counters, this method may include the count in different threads during the execution of <a class="el" href="classselogger_1_1logging_1_1io_1_1EventFrequencyLogger.html#ab5976942531b25122a2407c4f5cbfdb9">save()</a> </p>
+
+<p class="definition"> <a class="el" href="EventFrequencyLogger_8java_source.html">EventFrequencyLogger.java</a> の <a class="el" href="EventFrequencyLogger_8java_source.html#l00191">191</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a78e9520cb5f2863e2afacd20a325fa6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78e9520cb5f2863e2afacd20a325fa6f">&#9670;&nbsp;</a></span>writeAttributes() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.logging.io.EventFrequencyLogger.writeAttributes </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classselogger_1_1logging_1_1util_1_1JsonBuffer.html">JsonBuffer</a>&#160;</td>
+          <td class="paramname"><em>json</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classselogger_1_1weaver_1_1DataInfo.html">DataInfo</a>&#160;</td>
+          <td class="paramname"><em>d</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>A subclass overrides this method to write additional attributes for JSON </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">json</td><td>buffer to record the output </td></tr>
+    <tr><td class="paramname">d</td><td>specifies the event to be written </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><a class="el" href="classselogger_1_1logging_1_1io_1_1AbstractEventLogger.html#a7468d12a43ae4278cc3c56c01734182a">selogger.logging.io.AbstractEventLogger</a>を再実装しています。</p>
+
+<p class="definition"> <a class="el" href="EventFrequencyLogger_8java_source.html">EventFrequencyLogger.java</a> の <a class="el" href="EventFrequencyLogger_8java_source.html#l00243">243</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a3baecb2b77e348f900602f207ff3994c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3baecb2b77e348f900602f207ff3994c">&#9670;&nbsp;</a></span>writeAttributes() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.logging.io.EventFrequencyLogger.writeAttributes </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="motivationExample_2target_2selogger__out_2LOG_0bTypes_8txt.html#a3140f761d6d30d14c2f6da02c9e6546f">StringBuilder</a>&#160;</td>
+          <td class="paramname"><em>builder</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classselogger_1_1weaver_1_1DataInfo.html">DataInfo</a>&#160;</td>
+          <td class="paramname"><em>d</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>A subclass overrides this method to write additional attributes for CSV </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">builder</td><td>is a buffer to record the output </td></tr>
+    <tr><td class="paramname">d</td><td>specifies the event to be written </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><a class="el" href="classselogger_1_1logging_1_1io_1_1AbstractEventLogger.html#a3c1f38fb0351389ac407512c7c7276b1">selogger.logging.io.AbstractEventLogger</a>を再実装しています。</p>
+
+<p class="definition"> <a class="el" href="EventFrequencyLogger_8java_source.html">EventFrequencyLogger.java</a> の <a class="el" href="EventFrequencyLogger_8java_source.html#l00254">254</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="af2d52dae5b18c4bc5de5a21d0aa5b3a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2d52dae5b18c4bc5de5a21d0aa5b3a2">&#9670;&nbsp;</a></span>closed</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ad2c19257446c052b290090a0144280a6">boolean</a> selogger.logging.io.EventFrequencyLogger.closed</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The object does not record after closing </p>
+
+<p class="definition"> <a class="el" href="EventFrequencyLogger_8java_source.html">EventFrequencyLogger.java</a> の <a class="el" href="EventFrequencyLogger_8java_source.html#l00041">41</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a2d9b1054b693cd8e88117e7972afe3c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d9b1054b693cd8e88117e7972afe3c1">&#9670;&nbsp;</a></span>counters</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="motivationExample_2target_2selogger__out_2LOG_0bTypes_8txt.html#ab409ec46b2ad130cfe3fa5e599f8b417">ArrayList</a>&lt;AtomicLong&gt; selogger.logging.io.EventFrequencyLogger.counters</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Array of counter objects. dataId is used as an index for this array. </p>
+
+<p class="definition"> <a class="el" href="EventFrequencyLogger_8java_source.html">EventFrequencyLogger.java</a> の <a class="el" href="EventFrequencyLogger_8java_source.html#l00026">26</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aa725da656f3dc4d71ff7874ee937c5e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa725da656f3dc4d71ff7874ee937c5e6">&#9670;&nbsp;</a></span>logger</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="interfaceselogger_1_1logging_1_1IErrorLogger.html">IErrorLogger</a> selogger.logging.io.EventFrequencyLogger.logger</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>This object is to record error messages </p>
+
+<p class="definition"> <a class="el" href="EventFrequencyLogger_8java_source.html">EventFrequencyLogger.java</a> の <a class="el" href="EventFrequencyLogger_8java_source.html#l00046">46</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a6919da1c31c4851d7464dc6c400c4c9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6919da1c31c4851d7464dc6c400c4c9b">&#9670;&nbsp;</a></span>saveCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> selogger.logging.io.EventFrequencyLogger.saveCount</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>A field to record intermediate file name </p>
+
+<p class="definition"> <a class="el" href="EventFrequencyLogger_8java_source.html">EventFrequencyLogger.java</a> の <a class="el" href="EventFrequencyLogger_8java_source.html#l00036">36</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a0c0db5c82aa5deaa841a4e9d173aec07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c0db5c82aa5deaa841a4e9d173aec07">&#9670;&nbsp;</a></span>traceFile</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">File selogger.logging.io.EventFrequencyLogger.traceFile</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>A directory where a resultant file is stored </p>
+
+<p class="definition"> <a class="el" href="EventFrequencyLogger_8java_source.html">EventFrequencyLogger.java</a> の <a class="el" href="EventFrequencyLogger_8java_source.html#l00031">31</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>Data/java8/selogger/src/selogger/logging/io/<a class="el" href="EventFrequencyLogger_8java_source.html">EventFrequencyLogger.java</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespaceselogger.html">selogger</a></li><li class="navelem"><a class="el" href="namespaceselogger_1_1logging.html">logging</a></li><li class="navelem"><a class="el" href="namespaceselogger_1_1logging_1_1io.html">io</a></li><li class="navelem"><a class="el" href="classselogger_1_1logging_1_1io_1_1EventFrequencyLogger.html">EventFrequencyLogger</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

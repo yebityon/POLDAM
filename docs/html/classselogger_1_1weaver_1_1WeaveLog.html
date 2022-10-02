@@ -1,0 +1,811 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>2022_kenshu_w3-4: selogger.weaver.WeaveLog クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">2022_kenshu_w3-4
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('classselogger_1_1weaver_1_1WeaveLog.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-static-attribs">静的公開変数類</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classselogger_1_1weaver_1_1WeaveLog-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">selogger.weaver.WeaveLog クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+selogger.weaver.WeaveLog 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="classselogger_1_1weaver_1_1WeaveLog__coll__graph.png" border="0" usemap="#aselogger_8weaver_8WeaveLog_coll__map" alt="Collaboration graph"/></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">凡例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a7bbd00e4adc81f11f1cef2a8167aa31d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1WeaveLog.html#a7bbd00e4adc81f11f1cef2a8167aa31d">WeaveLog</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> <a class="el" href="classselogger_1_1weaver_1_1WeaveLog.html#a6adababcadfe5d0846a818d48398c301">classId</a>, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> nextMethodId, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> <a class="el" href="classselogger_1_1weaver_1_1WeaveLog.html#a4dcc3643d85ed0be4df90109bd5d6868">nextDataId</a>)</td></tr>
+<tr class="separator:a7bbd00e4adc81f11f1cef2a8167aa31d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7247764f5ad50932da6222226e5034c9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1WeaveLog.html#a7247764f5ad50932da6222226e5034c9">setFullClassName</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> <a class="el" href="test_2target_2selogger__out_2dataids_8txt.html#ab74e6bf80237ddc4109968cedc58c151">name</a>)</td></tr>
+<tr class="separator:a7247764f5ad50932da6222226e5034c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d6a8fb41540c7aac7afac0d7b547a20"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1WeaveLog.html#a7d6a8fb41540c7aac7afac0d7b547a20">getFullClassName</a> ()</td></tr>
+<tr class="separator:a7d6a8fb41540c7aac7afac0d7b547a20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae71e57be61925f6c04b473939a93079e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1WeaveLog.html#ae71e57be61925f6c04b473939a93079e">getNextMethodId</a> ()</td></tr>
+<tr class="separator:ae71e57be61925f6c04b473939a93079e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1542e3fea28652f60f68dc0b93d06aed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1WeaveLog.html#a1542e3fea28652f60f68dc0b93d06aed">getNextDataId</a> ()</td></tr>
+<tr class="separator:a1542e3fea28652f60f68dc0b93d06aed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64d3b7d8487e1da2ec29def97a63b264"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1WeaveLog.html#a64d3b7d8487e1da2ec29def97a63b264">startMethod</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> className, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> methodName, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> methodDesc, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> access, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> sourceFileName, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> methodHash)</td></tr>
+<tr class="separator:a64d3b7d8487e1da2ec29def97a63b264"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4dcc3643d85ed0be4df90109bd5d6868"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1WeaveLog.html#a4dcc3643d85ed0be4df90109bd5d6868">nextDataId</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> line, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> instructionIndex, <a class="el" href="enumselogger_1_1EventType.html">EventType</a> eventType, <a class="el" href="enumselogger_1_1weaver_1_1method_1_1Descriptor.html">Descriptor</a> valueDesc, <a class="el" href="classselogger_1_1weaver_1_1method_1_1InstructionAttributes.html">InstructionAttributes</a> attributes)</td></tr>
+<tr class="separator:a4dcc3643d85ed0be4df90109bd5d6868"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4c4d6584d6b2f40363c180906753adf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1WeaveLog.html#aa4c4d6584d6b2f40363c180906753adf">log</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> msg)</td></tr>
+<tr class="separator:aa4c4d6584d6b2f40363c180906753adf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06fc6d802f78b997f09650a4096de99a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1WeaveLog.html#a06fc6d802f78b997f09650a4096de99a">getLog</a> ()</td></tr>
+<tr class="separator:a06fc6d802f78b997f09650a4096de99a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a29a3fc248551818f7537c331714aba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="motivationExample_2target_2selogger__out_2LOG_0bTypes_8txt.html#ab409ec46b2ad130cfe3fa5e599f8b417">ArrayList</a>&lt; <a class="el" href="classselogger_1_1weaver_1_1DataInfo.html">DataInfo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1WeaveLog.html#a1a29a3fc248551818f7537c331714aba">getDataEntries</a> ()</td></tr>
+<tr class="separator:a1a29a3fc248551818f7537c331714aba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dcaf466c1ca1ef5999a04b543414715"><td class="memItemLeft" align="right" valign="top"><a class="el" href="motivationExample_2target_2selogger__out_2LOG_0bTypes_8txt.html#ab409ec46b2ad130cfe3fa5e599f8b417">ArrayList</a>&lt; <a class="el" href="classselogger_1_1weaver_1_1MethodInfo.html">MethodInfo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1WeaveLog.html#a2dcaf466c1ca1ef5999a04b543414715">getMethods</a> ()</td></tr>
+<tr class="separator:a2dcaf466c1ca1ef5999a04b543414715"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+静的公開変数類</h2></td></tr>
+<tr class="memitem:ab020d799d16d1f35b0eb8b5de820b9a7"><td class="memItemLeft" align="right" valign="top">static final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1WeaveLog.html#ab020d799d16d1f35b0eb8b5de820b9a7">SEPARATOR</a> = &quot;,&quot;</td></tr>
+<tr class="separator:ab020d799d16d1f35b0eb8b5de820b9a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:a6adababcadfe5d0846a818d48398c301"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1WeaveLog.html#a6adababcadfe5d0846a818d48398c301">classId</a></td></tr>
+<tr class="separator:a6adababcadfe5d0846a818d48398c301"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76ec10fcc6ebdc4476dddc2e59973f99"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1WeaveLog.html#a76ec10fcc6ebdc4476dddc2e59973f99">methodId</a></td></tr>
+<tr class="separator:a76ec10fcc6ebdc4476dddc2e59973f99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09ce44a2cffbe1cbbee918d56ad6bedf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1WeaveLog.html#a09ce44a2cffbe1cbbee918d56ad6bedf">dataId</a></td></tr>
+<tr class="separator:a09ce44a2cffbe1cbbee918d56ad6bedf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54a49f6690635a65c5c5fac856ce9229"><td class="memItemLeft" align="right" valign="top"><a class="el" href="motivationExample_2target_2selogger__out_2LOG_0bTypes_8txt.html#ab409ec46b2ad130cfe3fa5e599f8b417">ArrayList</a>&lt; <a class="el" href="classselogger_1_1weaver_1_1DataInfo.html">DataInfo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1WeaveLog.html#a54a49f6690635a65c5c5fac856ce9229">dataEntries</a></td></tr>
+<tr class="separator:a54a49f6690635a65c5c5fac856ce9229"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4e0e2f929554b448468094bad411523"><td class="memItemLeft" align="right" valign="top"><a class="el" href="motivationExample_2target_2selogger__out_2LOG_0bTypes_8txt.html#ab409ec46b2ad130cfe3fa5e599f8b417">ArrayList</a>&lt; <a class="el" href="classselogger_1_1weaver_1_1MethodInfo.html">MethodInfo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1WeaveLog.html#ae4e0e2f929554b448468094bad411523">methodEntries</a></td></tr>
+<tr class="separator:ae4e0e2f929554b448468094bad411523"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a313ac37b07fe86f3835d0600b6e2a72c"><td class="memItemLeft" align="right" valign="top">StringWriter&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1WeaveLog.html#a313ac37b07fe86f3835d0600b6e2a72c">logger</a></td></tr>
+<tr class="separator:a313ac37b07fe86f3835d0600b6e2a72c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa64bf20fc13041843a55dfb5e8f218bc"><td class="memItemLeft" align="right" valign="top">PrintWriter&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1WeaveLog.html#aa64bf20fc13041843a55dfb5e8f218bc">loggerWrapper</a></td></tr>
+<tr class="separator:aa64bf20fc13041843a55dfb5e8f218bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20b45fb1258dd7a8abf82569daf6a8ac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1WeaveLog.html#a20b45fb1258dd7a8abf82569daf6a8ac">fullClassName</a></td></tr>
+<tr class="separator:a20b45fb1258dd7a8abf82569daf6a8ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>This object generates data IDs and records the weaving process for a single class file. If a bytecode weaving is terminated by an error, the generated data IDs are disabled by disposing this log object. </p>
+
+<p class="definition"> <a class="el" href="WeaveLog_8java_source.html">WeaveLog.java</a> の <a class="el" href="WeaveLog_8java_source.html#l00017">17</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="a7bbd00e4adc81f11f1cef2a8167aa31d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bbd00e4adc81f11f1cef2a8167aa31d">&#9670;&nbsp;</a></span>WeaveLog()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">selogger.weaver.WeaveLog.WeaveLog </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>classId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>nextMethodId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>nextDataId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Create an instance having the given state. </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">classId</td><td>is the ID used by the target class (if succeeded) </td></tr>
+    <tr><td class="paramname">nextMethodId</td><td>is the first ID of the methods of the target class </td></tr>
+    <tr><td class="paramname">nextDataId</td><td>is the first ID of the data IDs of the target class </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="WeaveLog_8java_source.html">WeaveLog.java</a> の <a class="el" href="WeaveLog_8java_source.html#l00037">37</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a1a29a3fc248551818f7537c331714aba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a29a3fc248551818f7537c331714aba">&#9670;&nbsp;</a></span>getDataEntries()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="motivationExample_2target_2selogger__out_2LOG_0bTypes_8txt.html#ab409ec46b2ad130cfe3fa5e599f8b417">ArrayList</a>&lt;<a class="el" href="classselogger_1_1weaver_1_1DataInfo.html">DataInfo</a>&gt; selogger.weaver.WeaveLog.getDataEntries </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>戻り値</dt><dd>data ID objects created during the weaving. </dd></dl>
+
+<p class="definition"> <a class="el" href="WeaveLog_8java_source.html">WeaveLog.java</a> の <a class="el" href="WeaveLog_8java_source.html#l00129">129</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a7d6a8fb41540c7aac7afac0d7b547a20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d6a8fb41540c7aac7afac0d7b547a20">&#9670;&nbsp;</a></span>getFullClassName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> selogger.weaver.WeaveLog.getFullClassName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>戻り値</dt><dd>the full class name that is currently woven. </dd></dl>
+
+<p class="definition"> <a class="el" href="WeaveLog_8java_source.html">WeaveLog.java</a> の <a class="el" href="WeaveLog_8java_source.html#l00061">61</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a06fc6d802f78b997f09650a4096de99a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06fc6d802f78b997f09650a4096de99a">&#9670;&nbsp;</a></span>getLog()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> selogger.weaver.WeaveLog.getLog </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>戻り値</dt><dd>a string including the error messages recorded in this object. </dd></dl>
+
+<p class="definition"> <a class="el" href="WeaveLog_8java_source.html">WeaveLog.java</a> の <a class="el" href="WeaveLog_8java_source.html#l00121">121</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a2dcaf466c1ca1ef5999a04b543414715"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2dcaf466c1ca1ef5999a04b543414715">&#9670;&nbsp;</a></span>getMethods()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="motivationExample_2target_2selogger__out_2LOG_0bTypes_8txt.html#ab409ec46b2ad130cfe3fa5e599f8b417">ArrayList</a>&lt;<a class="el" href="classselogger_1_1weaver_1_1MethodInfo.html">MethodInfo</a>&gt; selogger.weaver.WeaveLog.getMethods </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>戻り値</dt><dd>methods processed by this weaving. </dd></dl>
+
+<p class="definition"> <a class="el" href="WeaveLog_8java_source.html">WeaveLog.java</a> の <a class="el" href="WeaveLog_8java_source.html#l00136">136</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a1542e3fea28652f60f68dc0b93d06aed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1542e3fea28652f60f68dc0b93d06aed">&#9670;&nbsp;</a></span>getNextDataId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> selogger.weaver.WeaveLog.getNextDataId </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>戻り値</dt><dd>the next data ID. This method is to transfer the current Data ID to the next weaving target class. </dd></dl>
+
+<p class="definition"> <a class="el" href="WeaveLog_8java_source.html">WeaveLog.java</a> の <a class="el" href="WeaveLog_8java_source.html#l00076">76</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae71e57be61925f6c04b473939a93079e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae71e57be61925f6c04b473939a93079e">&#9670;&nbsp;</a></span>getNextMethodId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> selogger.weaver.WeaveLog.getNextMethodId </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>戻り値</dt><dd>the next method ID after this weaving. </dd></dl>
+
+<p class="definition"> <a class="el" href="WeaveLog_8java_source.html">WeaveLog.java</a> の <a class="el" href="WeaveLog_8java_source.html#l00068">68</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aa4c4d6584d6b2f40363c180906753adf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4c4d6584d6b2f40363c180906753adf">&#9670;&nbsp;</a></span>log()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.weaver.WeaveLog.log </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td>
+          <td class="paramname"><em>msg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Record an error message. </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="WeaveLog_8java_source.html">WeaveLog.java</a> の <a class="el" href="WeaveLog_8java_source.html#l00114">114</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a4dcc3643d85ed0be4df90109bd5d6868"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4dcc3643d85ed0be4df90109bd5d6868">&#9670;&nbsp;</a></span>nextDataId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> selogger.weaver.WeaveLog.nextDataId </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>line</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>instructionIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="enumselogger_1_1EventType.html">EventType</a>&#160;</td>
+          <td class="paramname"><em>eventType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="enumselogger_1_1weaver_1_1method_1_1Descriptor.html">Descriptor</a>&#160;</td>
+          <td class="paramname"><em>valueDesc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classselogger_1_1weaver_1_1method_1_1InstructionAttributes.html">InstructionAttributes</a>&#160;</td>
+          <td class="paramname"><em>attributes</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Create a new Data ID and record the information. </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">line</td><td>specifies the line number. </td></tr>
+    <tr><td class="paramname">instructionIndex</td><td>specifies the location of the instruction in the ASM's InsnList object. </td></tr>
+    <tr><td class="paramname">eventType</td><td>is an event type (decided by the instruction type). </td></tr>
+    <tr><td class="paramname">valueDesc</td><td>specifies a data type of the value observed by the event. </td></tr>
+    <tr><td class="paramname">attributes</td><td>specifies additional static information obtained from bytecode. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd></dd></dl>
+
+<p class="definition"> <a class="el" href="WeaveLog_8java_source.html">WeaveLog.java</a> の <a class="el" href="WeaveLog_8java_source.html#l00103">103</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a7247764f5ad50932da6222226e5034c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7247764f5ad50932da6222226e5034c9">&#9670;&nbsp;</a></span>setFullClassName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.weaver.WeaveLog.setFullClassName </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Record the current target class with a full class name obtained from a target class file. This is separated from the constructor because the class name is unavailable at the beginning of the weaving process. </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="WeaveLog_8java_source.html">WeaveLog.java</a> の <a class="el" href="WeaveLog_8java_source.html#l00054">54</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a64d3b7d8487e1da2ec29def97a63b264"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64d3b7d8487e1da2ec29def97a63b264">&#9670;&nbsp;</a></span>startMethod()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.weaver.WeaveLog.startMethod </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td>
+          <td class="paramname"><em>className</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td>
+          <td class="paramname"><em>methodName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td>
+          <td class="paramname"><em>methodDesc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>access</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td>
+          <td class="paramname"><em>sourceFileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td>
+          <td class="paramname"><em>methodHash</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Record a woven method name. </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">className</td><td>is a clas name. </td></tr>
+    <tr><td class="paramname">methodName</td><td>is a method name. </td></tr>
+    <tr><td class="paramname">methodDesc</td><td>is a descripor representing the signature. </td></tr>
+    <tr><td class="paramname">access</td><td>represents modifiers, e.g. static. </td></tr>
+    <tr><td class="paramname">sourceFileName</td><td>specifies a source file name recorded in the class file. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="WeaveLog_8java_source.html">WeaveLog.java</a> の <a class="el" href="WeaveLog_8java_source.html#l00088">88</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a6adababcadfe5d0846a818d48398c301"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6adababcadfe5d0846a818d48398c301">&#9670;&nbsp;</a></span>classId</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> selogger.weaver.WeaveLog.classId</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="WeaveLog_8java_source.html">WeaveLog.java</a> の <a class="el" href="WeaveLog_8java_source.html#l00019">19</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a54a49f6690635a65c5c5fac856ce9229"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54a49f6690635a65c5c5fac856ce9229">&#9670;&nbsp;</a></span>dataEntries</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="motivationExample_2target_2selogger__out_2LOG_0bTypes_8txt.html#ab409ec46b2ad130cfe3fa5e599f8b417">ArrayList</a>&lt;<a class="el" href="classselogger_1_1weaver_1_1DataInfo.html">DataInfo</a>&gt; selogger.weaver.WeaveLog.dataEntries</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="WeaveLog_8java_source.html">WeaveLog.java</a> の <a class="el" href="WeaveLog_8java_source.html#l00022">22</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a09ce44a2cffbe1cbbee918d56ad6bedf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09ce44a2cffbe1cbbee918d56ad6bedf">&#9670;&nbsp;</a></span>dataId</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> selogger.weaver.WeaveLog.dataId</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="WeaveLog_8java_source.html">WeaveLog.java</a> の <a class="el" href="WeaveLog_8java_source.html#l00021">21</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a20b45fb1258dd7a8abf82569daf6a8ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20b45fb1258dd7a8abf82569daf6a8ac">&#9670;&nbsp;</a></span>fullClassName</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> selogger.weaver.WeaveLog.fullClassName</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="WeaveLog_8java_source.html">WeaveLog.java</a> の <a class="el" href="WeaveLog_8java_source.html#l00027">27</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a313ac37b07fe86f3835d0600b6e2a72c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a313ac37b07fe86f3835d0600b6e2a72c">&#9670;&nbsp;</a></span>logger</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">StringWriter selogger.weaver.WeaveLog.logger</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="WeaveLog_8java_source.html">WeaveLog.java</a> の <a class="el" href="WeaveLog_8java_source.html#l00024">24</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aa64bf20fc13041843a55dfb5e8f218bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa64bf20fc13041843a55dfb5e8f218bc">&#9670;&nbsp;</a></span>loggerWrapper</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">PrintWriter selogger.weaver.WeaveLog.loggerWrapper</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="WeaveLog_8java_source.html">WeaveLog.java</a> の <a class="el" href="WeaveLog_8java_source.html#l00025">25</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae4e0e2f929554b448468094bad411523"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4e0e2f929554b448468094bad411523">&#9670;&nbsp;</a></span>methodEntries</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="motivationExample_2target_2selogger__out_2LOG_0bTypes_8txt.html#ab409ec46b2ad130cfe3fa5e599f8b417">ArrayList</a>&lt;<a class="el" href="classselogger_1_1weaver_1_1MethodInfo.html">MethodInfo</a>&gt; selogger.weaver.WeaveLog.methodEntries</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="WeaveLog_8java_source.html">WeaveLog.java</a> の <a class="el" href="WeaveLog_8java_source.html#l00023">23</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a76ec10fcc6ebdc4476dddc2e59973f99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76ec10fcc6ebdc4476dddc2e59973f99">&#9670;&nbsp;</a></span>methodId</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> selogger.weaver.WeaveLog.methodId</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="WeaveLog_8java_source.html">WeaveLog.java</a> の <a class="el" href="WeaveLog_8java_source.html#l00020">20</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ab020d799d16d1f35b0eb8b5de820b9a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab020d799d16d1f35b0eb8b5de820b9a7">&#9670;&nbsp;</a></span>SEPARATOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> selogger.weaver.WeaveLog.SEPARATOR = &quot;,&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="WeaveLog_8java_source.html">WeaveLog.java</a> の <a class="el" href="WeaveLog_8java_source.html#l00029">29</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>Data/java8/selogger/src/selogger/weaver/<a class="el" href="WeaveLog_8java_source.html">WeaveLog.java</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespaceselogger.html">selogger</a></li><li class="navelem"><a class="el" href="namespaceselogger_1_1weaver.html">weaver</a></li><li class="navelem"><a class="el" href="classselogger_1_1weaver_1_1WeaveLog.html">WeaveLog</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

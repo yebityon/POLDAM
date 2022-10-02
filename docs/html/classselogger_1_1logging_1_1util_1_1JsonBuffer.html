@@ -1,0 +1,779 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>2022_kenshu_w3-4: selogger.logging.util.JsonBuffer クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">2022_kenshu_w3-4
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('classselogger_1_1logging_1_1util_1_1JsonBuffer.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classselogger_1_1logging_1_1util_1_1JsonBuffer-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">selogger.logging.util.JsonBuffer クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+selogger.logging.util.JsonBuffer の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><img src="classselogger_1_1logging_1_1util_1_1JsonBuffer__inherit__graph.png" border="0" usemap="#aselogger_8logging_8util_8JsonBuffer_inherit__map" alt="Inheritance graph"/></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">凡例</a>]</span></center></div>
+<div class="dynheader">
+selogger.logging.util.JsonBuffer 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="classselogger_1_1logging_1_1util_1_1JsonBuffer__coll__graph.png" border="0" usemap="#aselogger_8logging_8util_8JsonBuffer_coll__map" alt="Collaboration graph"/></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">凡例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a9917d765cbb73026e1b2feb42046c911"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1util_1_1JsonBuffer.html#a9917d765cbb73026e1b2feb42046c911">JsonBuffer</a> ()</td></tr>
+<tr class="separator:a9917d765cbb73026e1b2feb42046c911"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a397f382bb61f2f27a74ce1405ddfe4ee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1util_1_1JsonBuffer.html#a397f382bb61f2f27a74ce1405ddfe4ee">writeStartObject</a> ()</td></tr>
+<tr class="separator:a397f382bb61f2f27a74ce1405ddfe4ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d03ae71e7115417567f6cdd0b243482"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1util_1_1JsonBuffer.html#a9d03ae71e7115417567f6cdd0b243482">writeEndObject</a> ()</td></tr>
+<tr class="separator:a9d03ae71e7115417567f6cdd0b243482"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6dd463c26434d54d4ea5beaa0430c039"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1util_1_1JsonBuffer.html#a6dd463c26434d54d4ea5beaa0430c039">writeObjectFieldStart</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> field)</td></tr>
+<tr class="separator:a6dd463c26434d54d4ea5beaa0430c039"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1c7fa1c6e1fe4fc68d033ea8c9c76d4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1util_1_1JsonBuffer.html#ac1c7fa1c6e1fe4fc68d033ea8c9c76d4">writeStringField</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> key, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> value)</td></tr>
+<tr class="separator:ac1c7fa1c6e1fe4fc68d033ea8c9c76d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae174d054789943ad8768880fb4a9eaaa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1util_1_1JsonBuffer.html#ae174d054789943ad8768880fb4a9eaaa">writeEscapedStringField</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> key, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> value)</td></tr>
+<tr class="separator:ae174d054789943ad8768880fb4a9eaaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab40dca21afbe196f5c38639f935a3652"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1util_1_1JsonBuffer.html#ab40dca21afbe196f5c38639f935a3652">writeNumberField</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> key, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ab2b82a801222598deb6167bea46d3172">long</a> value)</td></tr>
+<tr class="separator:ab40dca21afbe196f5c38639f935a3652"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5665168e42179d6e18c9a1cf601cf321"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1util_1_1JsonBuffer.html#a5665168e42179d6e18c9a1cf601cf321">writeArrayFieldStart</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> field)</td></tr>
+<tr class="separator:a5665168e42179d6e18c9a1cf601cf321"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a588ef4052ac6b253ba087911a9542c98"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1util_1_1JsonBuffer.html#a588ef4052ac6b253ba087911a9542c98">writeEndArray</a> ()</td></tr>
+<tr class="separator:a588ef4052ac6b253ba087911a9542c98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92214fccf3cf27197cda36bf880a6b86"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1util_1_1JsonBuffer.html#a92214fccf3cf27197cda36bf880a6b86">writeNumber</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ab2b82a801222598deb6167bea46d3172">long</a> value)</td></tr>
+<tr class="separator:a92214fccf3cf27197cda36bf880a6b86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6fd51a815351acd7d4b9f2503ab4d9f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1util_1_1JsonBuffer.html#ac6fd51a815351acd7d4b9f2503ab4d9f">writeNumber</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#aea9a834e154d1a79fb1cd804e1e7758d">float</a> value)</td></tr>
+<tr class="separator:ac6fd51a815351acd7d4b9f2503ab4d9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac97002bcf06ea76d0f6f28de3195c566"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1util_1_1JsonBuffer.html#ac97002bcf06ea76d0f6f28de3195c566">writeNumber</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a326980bd779bb441a6fed78af5695baa">double</a> value)</td></tr>
+<tr class="separator:ac97002bcf06ea76d0f6f28de3195c566"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acef00081d4293aa558b5473cbf7f3700"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1util_1_1JsonBuffer.html#acef00081d4293aa558b5473cbf7f3700">writeNull</a> ()</td></tr>
+<tr class="separator:acef00081d4293aa558b5473cbf7f3700"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f699699a675e4ac8463b602655b685d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1util_1_1JsonBuffer.html#a5f699699a675e4ac8463b602655b685d">writeBoolean</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ad2c19257446c052b290090a0144280a6">boolean</a> value)</td></tr>
+<tr class="separator:a5f699699a675e4ac8463b602655b685d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3473ce86d3b42308e603666dfd1f01a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1util_1_1JsonBuffer.html#ad3473ce86d3b42308e603666dfd1f01a">writeString</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> value)</td></tr>
+<tr class="separator:ad3473ce86d3b42308e603666dfd1f01a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa81acaa71aaac824ebfd6c84907395c5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1util_1_1JsonBuffer.html#aa81acaa71aaac824ebfd6c84907395c5">toString</a> ()</td></tr>
+<tr class="separator:aa81acaa71aaac824ebfd6c84907395c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d4debbf6c3e04f725aa44c4a159b784"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1util_1_1JsonBuffer.html#a8d4debbf6c3e04f725aa44c4a159b784">process</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> key, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> value)</td></tr>
+<tr class="separator:a8d4debbf6c3e04f725aa44c4a159b784"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4193fd53e16d584b35af94cf8299717f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1util_1_1JsonBuffer.html#a4193fd53e16d584b35af94cf8299717f">process</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> key, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> value)</td></tr>
+<tr class="separator:a4193fd53e16d584b35af94cf8299717f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:a53b6f5f2b1fdc43b3c812c48d15dd90b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="motivationExample_2target_2selogger__out_2LOG_0bTypes_8txt.html#a3140f761d6d30d14c2f6da02c9e6546f">StringBuilder</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1util_1_1JsonBuffer.html#a53b6f5f2b1fdc43b3c812c48d15dd90b">buf</a></td></tr>
+<tr class="separator:a53b6f5f2b1fdc43b3c812c48d15dd90b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c81a5acf7346f053948e951d7a183db"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ad2c19257446c052b290090a0144280a6">boolean</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1util_1_1JsonBuffer.html#a1c81a5acf7346f053948e951d7a183db">needSeparator</a></td></tr>
+<tr class="separator:a1c81a5acf7346f053948e951d7a183db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>This class is to generate a JSON fragment without an overhead of Jackson's JsonGenerator class. </p>
+
+<p class="definition"> <a class="el" href="JsonBuffer_8java_source.html">JsonBuffer.java</a> の <a class="el" href="JsonBuffer_8java_source.html#l00011">11</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="a9917d765cbb73026e1b2feb42046c911"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9917d765cbb73026e1b2feb42046c911">&#9670;&nbsp;</a></span>JsonBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">selogger.logging.util.JsonBuffer.JsonBuffer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="JsonBuffer_8java_source.html">JsonBuffer.java</a> の <a class="el" href="JsonBuffer_8java_source.html#l00016">16</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a8d4debbf6c3e04f725aa44c4a159b784"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d4debbf6c3e04f725aa44c4a159b784">&#9670;&nbsp;</a></span>process() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.logging.util.JsonBuffer.process </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="JsonBuffer_8java_source.html">JsonBuffer.java</a> の <a class="el" href="JsonBuffer_8java_source.html#l00140">140</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a4193fd53e16d584b35af94cf8299717f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4193fd53e16d584b35af94cf8299717f">&#9670;&nbsp;</a></span>process() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.logging.util.JsonBuffer.process </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="JsonBuffer_8java_source.html">JsonBuffer.java</a> の <a class="el" href="JsonBuffer_8java_source.html#l00145">145</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aa81acaa71aaac824ebfd6c84907395c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa81acaa71aaac824ebfd6c84907395c5">&#9670;&nbsp;</a></span>toString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> selogger.logging.util.JsonBuffer.toString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="JsonBuffer_8java_source.html">JsonBuffer.java</a> の <a class="el" href="JsonBuffer_8java_source.html#l00135">135</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a5665168e42179d6e18c9a1cf601cf321"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5665168e42179d6e18c9a1cf601cf321">&#9670;&nbsp;</a></span>writeArrayFieldStart()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.logging.util.JsonBuffer.writeArrayFieldStart </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td>
+          <td class="paramname"><em>field</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="JsonBuffer_8java_source.html">JsonBuffer.java</a> の <a class="el" href="JsonBuffer_8java_source.html#l00078">78</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a5f699699a675e4ac8463b602655b685d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f699699a675e4ac8463b602655b685d">&#9670;&nbsp;</a></span>writeBoolean()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.logging.util.JsonBuffer.writeBoolean </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ad2c19257446c052b290090a0144280a6">boolean</a>&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="JsonBuffer_8java_source.html">JsonBuffer.java</a> の <a class="el" href="JsonBuffer_8java_source.html#l00115">115</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a588ef4052ac6b253ba087911a9542c98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a588ef4052ac6b253ba087911a9542c98">&#9670;&nbsp;</a></span>writeEndArray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.logging.util.JsonBuffer.writeEndArray </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="JsonBuffer_8java_source.html">JsonBuffer.java</a> の <a class="el" href="JsonBuffer_8java_source.html#l00086">86</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a9d03ae71e7115417567f6cdd0b243482"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d03ae71e7115417567f6cdd0b243482">&#9670;&nbsp;</a></span>writeEndObject()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.logging.util.JsonBuffer.writeEndObject </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="JsonBuffer_8java_source.html">JsonBuffer.java</a> の <a class="el" href="JsonBuffer_8java_source.html#l00026">26</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae174d054789943ad8768880fb4a9eaaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae174d054789943ad8768880fb4a9eaaa">&#9670;&nbsp;</a></span>writeEscapedStringField()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.logging.util.JsonBuffer.writeEscapedStringField </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Write a string that may include control code </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td></td></tr>
+    <tr><td class="paramname">value</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="JsonBuffer_8java_source.html">JsonBuffer.java</a> の <a class="el" href="JsonBuffer_8java_source.html#l00059">59</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="acef00081d4293aa558b5473cbf7f3700"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acef00081d4293aa558b5473cbf7f3700">&#9670;&nbsp;</a></span>writeNull()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.logging.util.JsonBuffer.writeNull </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="JsonBuffer_8java_source.html">JsonBuffer.java</a> の <a class="el" href="JsonBuffer_8java_source.html#l00109">109</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ac97002bcf06ea76d0f6f28de3195c566"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac97002bcf06ea76d0f6f28de3195c566">&#9670;&nbsp;</a></span>writeNumber() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.logging.util.JsonBuffer.writeNumber </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a326980bd779bb441a6fed78af5695baa">double</a>&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="JsonBuffer_8java_source.html">JsonBuffer.java</a> の <a class="el" href="JsonBuffer_8java_source.html#l00103">103</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ac6fd51a815351acd7d4b9f2503ab4d9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6fd51a815351acd7d4b9f2503ab4d9f">&#9670;&nbsp;</a></span>writeNumber() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.logging.util.JsonBuffer.writeNumber </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#aea9a834e154d1a79fb1cd804e1e7758d">float</a>&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="JsonBuffer_8java_source.html">JsonBuffer.java</a> の <a class="el" href="JsonBuffer_8java_source.html#l00097">97</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a92214fccf3cf27197cda36bf880a6b86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92214fccf3cf27197cda36bf880a6b86">&#9670;&nbsp;</a></span>writeNumber() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.logging.util.JsonBuffer.writeNumber </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ab2b82a801222598deb6167bea46d3172">long</a>&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="JsonBuffer_8java_source.html">JsonBuffer.java</a> の <a class="el" href="JsonBuffer_8java_source.html#l00091">91</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ab40dca21afbe196f5c38639f935a3652"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab40dca21afbe196f5c38639f935a3652">&#9670;&nbsp;</a></span>writeNumberField()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.logging.util.JsonBuffer.writeNumberField </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ab2b82a801222598deb6167bea46d3172">long</a>&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="JsonBuffer_8java_source.html">JsonBuffer.java</a> の <a class="el" href="JsonBuffer_8java_source.html#l00069">69</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a6dd463c26434d54d4ea5beaa0430c039"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6dd463c26434d54d4ea5beaa0430c039">&#9670;&nbsp;</a></span>writeObjectFieldStart()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.logging.util.JsonBuffer.writeObjectFieldStart </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td>
+          <td class="paramname"><em>field</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="JsonBuffer_8java_source.html">JsonBuffer.java</a> の <a class="el" href="JsonBuffer_8java_source.html#l00031">31</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a397f382bb61f2f27a74ce1405ddfe4ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a397f382bb61f2f27a74ce1405ddfe4ee">&#9670;&nbsp;</a></span>writeStartObject()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.logging.util.JsonBuffer.writeStartObject </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="JsonBuffer_8java_source.html">JsonBuffer.java</a> の <a class="el" href="JsonBuffer_8java_source.html#l00020">20</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ad3473ce86d3b42308e603666dfd1f01a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3473ce86d3b42308e603666dfd1f01a">&#9670;&nbsp;</a></span>writeString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.logging.util.JsonBuffer.writeString </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="JsonBuffer_8java_source.html">JsonBuffer.java</a> の <a class="el" href="JsonBuffer_8java_source.html#l00121">121</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ac1c7fa1c6e1fe4fc68d033ea8c9c76d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1c7fa1c6e1fe4fc68d033ea8c9c76d4">&#9670;&nbsp;</a></span>writeStringField()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.logging.util.JsonBuffer.writeStringField </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Write a string that does not need qutoation </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td></td></tr>
+    <tr><td class="paramname">value</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="JsonBuffer_8java_source.html">JsonBuffer.java</a> の <a class="el" href="JsonBuffer_8java_source.html#l00044">44</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a53b6f5f2b1fdc43b3c812c48d15dd90b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53b6f5f2b1fdc43b3c812c48d15dd90b">&#9670;&nbsp;</a></span>buf</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="motivationExample_2target_2selogger__out_2LOG_0bTypes_8txt.html#a3140f761d6d30d14c2f6da02c9e6546f">StringBuilder</a> selogger.logging.util.JsonBuffer.buf</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="JsonBuffer_8java_source.html">JsonBuffer.java</a> の <a class="el" href="JsonBuffer_8java_source.html#l00013">13</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a1c81a5acf7346f053948e951d7a183db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c81a5acf7346f053948e951d7a183db">&#9670;&nbsp;</a></span>needSeparator</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ad2c19257446c052b290090a0144280a6">boolean</a> selogger.logging.util.JsonBuffer.needSeparator</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="JsonBuffer_8java_source.html">JsonBuffer.java</a> の <a class="el" href="JsonBuffer_8java_source.html#l00014">14</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>Data/java8/selogger/src/selogger/logging/util/<a class="el" href="JsonBuffer_8java_source.html">JsonBuffer.java</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespaceselogger.html">selogger</a></li><li class="navelem"><a class="el" href="namespaceselogger_1_1logging.html">logging</a></li><li class="navelem"><a class="el" href="namespaceselogger_1_1logging_1_1util.html">util</a></li><li class="navelem"><a class="el" href="classselogger_1_1logging_1_1util_1_1JsonBuffer.html">JsonBuffer</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

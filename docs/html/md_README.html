@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>POLDAM: POLDAM</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">POLDAM
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('md_README.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title"><a class="el" href="namespacePOLDAM.html">POLDAM</a> </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><h1><a class="anchor" id="autotoc_md1"></a>
+概要</h1>
+<p >このスクリプトは、<a href="https://library.naist.jp/dspace/handle/10061/14739">実行トレースのマークル木を用いたプログラム変更前後の差分検出法の提案</a> で使用したスクリプトの具体的な実装です。</p>
+<p ><a href="https://github.com/takashi-ishio/selogger">selogger</a>から取得した実行トレースをもとに、マークル木を構築し、これを用いてプログラムの変更前後の差分を<code>dot</code>ファイルとして出力します。</p>
+<p ><code>selogger</code>が出力したディレクトリのファイル群から、メソッド呼び出し、オブジェクトの様々な情報を取得するサンプル実装が含まれます。</p>
+<p ><code>dev</code>は開発用のブランチです。<code>main</code>ブランチが安定板のリリースとなります。</p>
+<h1><a class="anchor" id="autotoc_md2"></a>
+tree</h1>
+<div class="fragment"><div class="line">.</div>
+<div class="line">├── Data</div>
+<div class="line">│   └── java8</div>
+<div class="line">├── dockerfiles</div>
+<div class="line">│   └── java8</div>
+<div class="line">├── Graph</div>
+<div class="line">│   └── src</div>
+<div class="line">├── Interpreter</div>
+<div class="line">│   └── src</div>
+<div class="line">├── MetaFileParser</div>
+<div class="line">│   ├── src</div>
+<div class="line">│   └── test</div>
+<div class="line">└── Util</div>
+<div class="line">    └── include</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md3"></a>
+Description</h2>
+<ul>
+<li>Data<ul>
+<li>seloggerやJavaのMotivation Exampleが含まれるディレクトリです。docker-composeではこのディレクトリがjavaコンテナにマウントされます</li>
+</ul>
+</li>
+<li>dockerfiles<ul>
+<li>java8のDcockerfileが含まれています。</li>
+</ul>
+</li>
+<li>Graph<ul>
+<li><code>MetaFileParser</code>によってパースされた情報からマークル木を構築し、それらを比較するアルゴリズムを提供します</li>
+</ul>
+</li>
+<li>Interpreter<ul>
+<li><code>selogger</code>のイベントタイプなどの定義が含まれていいます。</li>
+</ul>
+</li>
+<li>MetaFileParser<ul>
+<li>seloggerによって出力されたログディレクトリを入力として、そのディレクトリ以下のファイルを解釈し、必要な情報を出力するパーサーを提供します。</li>
+</ul>
+</li>
+<li>Util<ul>
+<li>このスクリプト内で用いている汎用的なクラスや関数を提供します </li>
+</ul>
+</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md4"></a>
+Dependency</h1>
+<ul>
+<li>boost 1.80</li>
+<li>g++-11</li>
+<li>selogger v0.5.0 ( for logging)</li>
+<li>GNU Make 4.3 (Optional)</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md5"></a>
+How to Use it</h1>
+<p >Motivation Exampleを実行するための最低限のステップをいかに示します。</p>
+<ol type="1">
+<li>Dependency　を実行したい環境に用意してください</li>
+<li>このレポジトリ　を git clone してください</li>
+<li><code>POLDAM/Makefile</code>の中の<code>BOOST_PATH</code>の部分を適宜変更してください</li>
+<li><code>make main</code>を実行して<code>main.cpp</code>をコンパイルしてください</li>
+<li><code>./POLDAM -o ./Data/java8/src/motivationExample/origin/selogger_out/ -t ./Data/java8/src/motivationExample/target/selogger_out/ -m notsupported -out sample --flow</code> を実行してください</li>
+<li><code>sample_diff.out</code>が出力されると成功です。</li>
+</ol>
+<h1><a class="anchor" id="autotoc_md6"></a>
+Limitation</h1>
+<ul>
+<li><code>-m</code> option is not supported. it is useful when you try to parse log that contain test framework (like JUnit). It will be supported soon.</li>
+<li>This script have been fully rewritten, hence, it's slightly different from the one I used in thesis.</li>
+<li>Multithread is not supported.</li>
+<li>Only <code>-omni</code> option is supported.</li>
+<li>Object write instruction tracking is not supported.</li>
+<li>Defects4j motivation will be added soon. </li>
+</ul>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+  </ul>
+</div>
+</body>
+</html>

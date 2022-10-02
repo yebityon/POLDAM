@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>2022_kenshu_w3-4: Data/java8/selogger/src/selogger/weaver/WeaveLog.java ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">2022_kenshu_w3-4
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('WeaveLog_8java_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">WeaveLog.java</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="WeaveLog_8java.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">package </span>selogger.weaver;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">import</span> <a class="code" href="motivationExample_2origin_2selogger__out_2methods_8txt.html#abef7b47c4c5ab5ca7b95d064f2fd5aaf">java</a>.io.PrintWriter;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">import</span> <a class="code" href="motivationExample_2origin_2selogger__out_2methods_8txt.html#abef7b47c4c5ab5ca7b95d064f2fd5aaf">java</a>.io.StringWriter;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">import</span> <a class="code" href="motivationExample_2origin_2selogger__out_2methods_8txt.html#abef7b47c4c5ab5ca7b95d064f2fd5aaf">java</a>.util.ArrayList;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">import</span> <a class="code" href="namespaceselogger.html">selogger</a>.<a class="code" href="enumselogger_1_1EventType.html">EventType</a>;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">import</span> <a class="code" href="namespaceselogger.html">selogger</a>.<a class="code" href="namespaceselogger_1_1weaver.html">weaver</a>.<a class="code" href="namespaceselogger_1_1weaver_1_1method.html">method</a>.<a class="code" href="enumselogger_1_1weaver_1_1method_1_1Descriptor.html">Descriptor</a>;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">import</span> <a class="code" href="namespaceselogger.html">selogger</a>.<a class="code" href="namespaceselogger_1_1weaver.html">weaver</a>.<a class="code" href="namespaceselogger_1_1weaver_1_1method.html">method</a>.<a class="code" href="classselogger_1_1weaver_1_1method_1_1InstructionAttributes.html">InstructionAttributes</a>;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classselogger_1_1weaver_1_1WeaveLog.html">   17</a></span>&#160;<span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classselogger_1_1weaver_1_1WeaveLog.html">WeaveLog</a> {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classselogger_1_1weaver_1_1WeaveLog.html#a6adababcadfe5d0846a818d48398c301">   19</a></span>&#160;    <span class="keyword">private</span> <span class="keywordtype">int</span> <a class="code" href="classselogger_1_1weaver_1_1WeaveLog.html#a6adababcadfe5d0846a818d48398c301">classId</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classselogger_1_1weaver_1_1WeaveLog.html#a76ec10fcc6ebdc4476dddc2e59973f99">   20</a></span>&#160;    <span class="keyword">private</span> <span class="keywordtype">int</span> <a class="code" href="classselogger_1_1weaver_1_1WeaveLog.html#a76ec10fcc6ebdc4476dddc2e59973f99">methodId</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classselogger_1_1weaver_1_1WeaveLog.html#a09ce44a2cffbe1cbbee918d56ad6bedf">   21</a></span>&#160;    <span class="keyword">private</span> <span class="keywordtype">int</span> <a class="code" href="classselogger_1_1weaver_1_1WeaveLog.html#a09ce44a2cffbe1cbbee918d56ad6bedf">dataId</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classselogger_1_1weaver_1_1WeaveLog.html#a54a49f6690635a65c5c5fac856ce9229">   22</a></span>&#160;    <span class="keyword">private</span> ArrayList&lt;DataInfo&gt; <a class="code" href="classselogger_1_1weaver_1_1WeaveLog.html#a54a49f6690635a65c5c5fac856ce9229">dataEntries</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classselogger_1_1weaver_1_1WeaveLog.html#ae4e0e2f929554b448468094bad411523">   23</a></span>&#160;    <span class="keyword">private</span> ArrayList&lt;MethodInfo&gt; <a class="code" href="classselogger_1_1weaver_1_1WeaveLog.html#ae4e0e2f929554b448468094bad411523">methodEntries</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classselogger_1_1weaver_1_1WeaveLog.html#a313ac37b07fe86f3835d0600b6e2a72c">   24</a></span>&#160;    <span class="keyword">private</span> StringWriter <a class="code" href="classselogger_1_1weaver_1_1WeaveLog.html#a313ac37b07fe86f3835d0600b6e2a72c">logger</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classselogger_1_1weaver_1_1WeaveLog.html#aa64bf20fc13041843a55dfb5e8f218bc">   25</a></span>&#160;    <span class="keyword">private</span> PrintWriter <a class="code" href="classselogger_1_1weaver_1_1WeaveLog.html#aa64bf20fc13041843a55dfb5e8f218bc">loggerWrapper</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classselogger_1_1weaver_1_1WeaveLog.html#a20b45fb1258dd7a8abf82569daf6a8ac">   27</a></span>&#160;    <span class="keyword">private</span> <a class="code" href="motivationExample_2origin_2selogger__out_2LOG_0bTypes_8txt.html#a8a59ef96aecacd04b5a5896effedfaf2">String</a> <a class="code" href="classselogger_1_1weaver_1_1WeaveLog.html#a20b45fb1258dd7a8abf82569daf6a8ac">fullClassName</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classselogger_1_1weaver_1_1WeaveLog.html#ab020d799d16d1f35b0eb8b5de820b9a7">   29</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <a class="code" href="motivationExample_2origin_2selogger__out_2LOG_0bTypes_8txt.html#a8a59ef96aecacd04b5a5896effedfaf2">String</a> <a class="code" href="classselogger_1_1weaver_1_1WeaveLog.html#ab020d799d16d1f35b0eb8b5de820b9a7">SEPARATOR</a> = <span class="stringliteral">&quot;,&quot;</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classselogger_1_1weaver_1_1WeaveLog.html#a7bbd00e4adc81f11f1cef2a8167aa31d">   37</a></span>&#160;    <span class="keyword">public</span> <a class="code" href="classselogger_1_1weaver_1_1WeaveLog.html#a7bbd00e4adc81f11f1cef2a8167aa31d">WeaveLog</a>(<span class="keywordtype">int</span> <a class="code" href="classselogger_1_1weaver_1_1WeaveLog.html#a6adababcadfe5d0846a818d48398c301">classId</a>, <span class="keywordtype">int</span> nextMethodId, <span class="keywordtype">int</span> <a class="code" href="classselogger_1_1weaver_1_1WeaveLog.html#a4dcc3643d85ed0be4df90109bd5d6868">nextDataId</a>) {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        this.classId = <a class="code" href="classselogger_1_1weaver_1_1WeaveLog.html#a6adababcadfe5d0846a818d48398c301">classId</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        this.methodId = nextMethodId;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        this.dataId = <a class="code" href="classselogger_1_1weaver_1_1WeaveLog.html#a4dcc3643d85ed0be4df90109bd5d6868">nextDataId</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="classselogger_1_1weaver_1_1WeaveLog.html#a54a49f6690635a65c5c5fac856ce9229">dataEntries</a> = <span class="keyword">new</span> ArrayList&lt;&gt;();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="classselogger_1_1weaver_1_1WeaveLog.html#ae4e0e2f929554b448468094bad411523">methodEntries</a> = <span class="keyword">new</span> ArrayList&lt;&gt;();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="classselogger_1_1weaver_1_1WeaveLog.html#a313ac37b07fe86f3835d0600b6e2a72c">logger</a> = <span class="keyword">new</span> StringWriter();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="classselogger_1_1weaver_1_1WeaveLog.html#aa64bf20fc13041843a55dfb5e8f218bc">loggerWrapper</a> = <span class="keyword">new</span> PrintWriter(<a class="code" href="classselogger_1_1weaver_1_1WeaveLog.html#a313ac37b07fe86f3835d0600b6e2a72c">logger</a>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    </div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classselogger_1_1weaver_1_1WeaveLog.html#a7247764f5ad50932da6222226e5034c9">   54</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classselogger_1_1weaver_1_1WeaveLog.html#a7247764f5ad50932da6222226e5034c9">setFullClassName</a>(<a class="code" href="motivationExample_2origin_2selogger__out_2LOG_0bTypes_8txt.html#a8a59ef96aecacd04b5a5896effedfaf2">String</a> <a class="code" href="motivationExample_2origin_2selogger__out_2dataids_8txt.html#ab74e6bf80237ddc4109968cedc58c151">name</a>) {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        this.fullClassName = <a class="code" href="motivationExample_2origin_2selogger__out_2dataids_8txt.html#ab74e6bf80237ddc4109968cedc58c151">name</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classselogger_1_1weaver_1_1WeaveLog.html#a7d6a8fb41540c7aac7afac0d7b547a20">   61</a></span>&#160;    <span class="keyword">public</span> <a class="code" href="motivationExample_2origin_2selogger__out_2LOG_0bTypes_8txt.html#a8a59ef96aecacd04b5a5896effedfaf2">String</a> <a class="code" href="classselogger_1_1weaver_1_1WeaveLog.html#a7d6a8fb41540c7aac7afac0d7b547a20">getFullClassName</a>() {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classselogger_1_1weaver_1_1WeaveLog.html#a20b45fb1258dd7a8abf82569daf6a8ac">fullClassName</a>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="classselogger_1_1weaver_1_1WeaveLog.html#ae71e57be61925f6c04b473939a93079e">   68</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code" href="classselogger_1_1weaver_1_1WeaveLog.html#ae71e57be61925f6c04b473939a93079e">getNextMethodId</a>() {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classselogger_1_1weaver_1_1WeaveLog.html#a76ec10fcc6ebdc4476dddc2e59973f99">methodId</a>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    </div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="classselogger_1_1weaver_1_1WeaveLog.html#a1542e3fea28652f60f68dc0b93d06aed">   76</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code" href="classselogger_1_1weaver_1_1WeaveLog.html#a1542e3fea28652f60f68dc0b93d06aed">getNextDataId</a>() { </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classselogger_1_1weaver_1_1WeaveLog.html#a09ce44a2cffbe1cbbee918d56ad6bedf">dataId</a>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    </div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="classselogger_1_1weaver_1_1WeaveLog.html#a64d3b7d8487e1da2ec29def97a63b264">   88</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classselogger_1_1weaver_1_1WeaveLog.html#a64d3b7d8487e1da2ec29def97a63b264">startMethod</a>(<a class="code" href="motivationExample_2origin_2selogger__out_2LOG_0bTypes_8txt.html#a8a59ef96aecacd04b5a5896effedfaf2">String</a> className, <a class="code" href="motivationExample_2origin_2selogger__out_2LOG_0bTypes_8txt.html#a8a59ef96aecacd04b5a5896effedfaf2">String</a> methodName, <a class="code" href="motivationExample_2origin_2selogger__out_2LOG_0bTypes_8txt.html#a8a59ef96aecacd04b5a5896effedfaf2">String</a> methodDesc, <span class="keywordtype">int</span> access, <a class="code" href="motivationExample_2origin_2selogger__out_2LOG_0bTypes_8txt.html#a8a59ef96aecacd04b5a5896effedfaf2">String</a> sourceFileName, <a class="code" href="motivationExample_2origin_2selogger__out_2LOG_0bTypes_8txt.html#a8a59ef96aecacd04b5a5896effedfaf2">String</a> methodHash) {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <a class="code" href="classselogger_1_1weaver_1_1MethodInfo.html">MethodInfo</a> entry = <span class="keyword">new</span> <a class="code" href="classselogger_1_1weaver_1_1MethodInfo.html">MethodInfo</a>(<a class="code" href="classselogger_1_1weaver_1_1WeaveLog.html#a6adababcadfe5d0846a818d48398c301">classId</a>, <a class="code" href="classselogger_1_1weaver_1_1WeaveLog.html#a76ec10fcc6ebdc4476dddc2e59973f99">methodId</a>, className, methodName, methodDesc, access, sourceFileName, methodHash);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <a class="code" href="classselogger_1_1weaver_1_1WeaveLog.html#ae4e0e2f929554b448468094bad411523">methodEntries</a>.add(entry);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <a class="code" href="classselogger_1_1weaver_1_1WeaveLog.html#a76ec10fcc6ebdc4476dddc2e59973f99">methodId</a>++;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    </div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="classselogger_1_1weaver_1_1WeaveLog.html#a4dcc3643d85ed0be4df90109bd5d6868">  103</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code" href="classselogger_1_1weaver_1_1WeaveLog.html#a4dcc3643d85ed0be4df90109bd5d6868">nextDataId</a>(<span class="keywordtype">int</span> line, <span class="keywordtype">int</span> instructionIndex, <a class="code" href="enumselogger_1_1EventType.html">EventType</a> eventType, <a class="code" href="enumselogger_1_1weaver_1_1method_1_1Descriptor.html">Descriptor</a> valueDesc, <a class="code" href="classselogger_1_1weaver_1_1method_1_1InstructionAttributes.html">InstructionAttributes</a> attributes) {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <a class="code" href="classselogger_1_1weaver_1_1DataInfo.html">DataInfo</a> entry = <span class="keyword">new</span> <a class="code" href="classselogger_1_1weaver_1_1DataInfo.html">DataInfo</a>(<a class="code" href="classselogger_1_1weaver_1_1WeaveLog.html#a6adababcadfe5d0846a818d48398c301">classId</a>, <a class="code" href="classselogger_1_1weaver_1_1WeaveLog.html#a76ec10fcc6ebdc4476dddc2e59973f99">methodId</a>-1, <a class="code" href="classselogger_1_1weaver_1_1WeaveLog.html#a09ce44a2cffbe1cbbee918d56ad6bedf">dataId</a>, line, instructionIndex, eventType, valueDesc, attributes);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <a class="code" href="classselogger_1_1weaver_1_1WeaveLog.html#a54a49f6690635a65c5c5fac856ce9229">dataEntries</a>.add(entry);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        entry.<a class="code" href="classselogger_1_1weaver_1_1DataInfo.html#a447ec47125f6e4348b30945187ed29fc">setMethodInfo</a>(<a class="code" href="classselogger_1_1weaver_1_1WeaveLog.html#ae4e0e2f929554b448468094bad411523">methodEntries</a>.get(<a class="code" href="classselogger_1_1weaver_1_1WeaveLog.html#ae4e0e2f929554b448468094bad411523">methodEntries</a>.size()-1));</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classselogger_1_1weaver_1_1WeaveLog.html#a09ce44a2cffbe1cbbee918d56ad6bedf">dataId</a>++;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    }</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    </div>
+<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="classselogger_1_1weaver_1_1WeaveLog.html#aa4c4d6584d6b2f40363c180906753adf">  114</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classselogger_1_1weaver_1_1WeaveLog.html#aa4c4d6584d6b2f40363c180906753adf">log</a>(<a class="code" href="motivationExample_2origin_2selogger__out_2LOG_0bTypes_8txt.html#a8a59ef96aecacd04b5a5896effedfaf2">String</a> msg) {</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <a class="code" href="classselogger_1_1weaver_1_1WeaveLog.html#aa64bf20fc13041843a55dfb5e8f218bc">loggerWrapper</a>.println(msg);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="classselogger_1_1weaver_1_1WeaveLog.html#a06fc6d802f78b997f09650a4096de99a">  121</a></span>&#160;    <span class="keyword">public</span> <a class="code" href="motivationExample_2origin_2selogger__out_2LOG_0bTypes_8txt.html#a8a59ef96aecacd04b5a5896effedfaf2">String</a> <a class="code" href="classselogger_1_1weaver_1_1WeaveLog.html#a06fc6d802f78b997f09650a4096de99a">getLog</a>() {</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <a class="code" href="classselogger_1_1weaver_1_1WeaveLog.html#aa64bf20fc13041843a55dfb5e8f218bc">loggerWrapper</a>.close();</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classselogger_1_1weaver_1_1WeaveLog.html#a313ac37b07fe86f3835d0600b6e2a72c">logger</a>.toString();</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    }</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    </div>
+<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="classselogger_1_1weaver_1_1WeaveLog.html#a1a29a3fc248551818f7537c331714aba">  129</a></span>&#160;    <span class="keyword">public</span> ArrayList&lt;DataInfo&gt; <a class="code" href="classselogger_1_1weaver_1_1WeaveLog.html#a1a29a3fc248551818f7537c331714aba">getDataEntries</a>() {</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classselogger_1_1weaver_1_1WeaveLog.html#a54a49f6690635a65c5c5fac856ce9229">dataEntries</a>;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    }</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    </div>
+<div class="line"><a name="l00136"></a><span class="lineno"><a class="line" href="classselogger_1_1weaver_1_1WeaveLog.html#a2dcaf466c1ca1ef5999a04b543414715">  136</a></span>&#160;    <span class="keyword">public</span> ArrayList&lt;MethodInfo&gt; <a class="code" href="classselogger_1_1weaver_1_1WeaveLog.html#a2dcaf466c1ca1ef5999a04b543414715">getMethods</a>() {</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classselogger_1_1weaver_1_1WeaveLog.html#ae4e0e2f929554b448468094bad411523">methodEntries</a>;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    }</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    </div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;}</div>
+<div class="ttc" id="aclassselogger_1_1weaver_1_1DataInfo_html"><div class="ttname"><a href="classselogger_1_1weaver_1_1DataInfo.html">selogger.weaver.DataInfo</a></div><div class="ttdef"><b>Definition:</b> <a href="DataInfo_8java_source.html#l00012">DataInfo.java:12</a></div></div>
+<div class="ttc" id="aclassselogger_1_1weaver_1_1DataInfo_html_a447ec47125f6e4348b30945187ed29fc"><div class="ttname"><a href="classselogger_1_1weaver_1_1DataInfo.html#a447ec47125f6e4348b30945187ed29fc">selogger.weaver.DataInfo.setMethodInfo</a></div><div class="ttdeci">void setMethodInfo(MethodInfo methodInfo)</div><div class="ttdef"><b>Definition:</b> <a href="DataInfo_8java_source.html#l00058">DataInfo.java:58</a></div></div>
+<div class="ttc" id="aclassselogger_1_1weaver_1_1MethodInfo_html"><div class="ttname"><a href="classselogger_1_1weaver_1_1MethodInfo.html">selogger.weaver.MethodInfo</a></div><div class="ttdef"><b>Definition:</b> <a href="MethodInfo_8java_source.html#l00009">MethodInfo.java:9</a></div></div>
+<div class="ttc" id="aclassselogger_1_1weaver_1_1WeaveLog_html"><div class="ttname"><a href="classselogger_1_1weaver_1_1WeaveLog.html">selogger.weaver.WeaveLog</a></div><div class="ttdef"><b>Definition:</b> <a href="WeaveLog_8java_source.html#l00017">WeaveLog.java:17</a></div></div>
+<div class="ttc" id="aclassselogger_1_1weaver_1_1WeaveLog_html_a06fc6d802f78b997f09650a4096de99a"><div class="ttname"><a href="classselogger_1_1weaver_1_1WeaveLog.html#a06fc6d802f78b997f09650a4096de99a">selogger.weaver.WeaveLog.getLog</a></div><div class="ttdeci">String getLog()</div><div class="ttdef"><b>Definition:</b> <a href="WeaveLog_8java_source.html#l00121">WeaveLog.java:121</a></div></div>
+<div class="ttc" id="aclassselogger_1_1weaver_1_1WeaveLog_html_a09ce44a2cffbe1cbbee918d56ad6bedf"><div class="ttname"><a href="classselogger_1_1weaver_1_1WeaveLog.html#a09ce44a2cffbe1cbbee918d56ad6bedf">selogger.weaver.WeaveLog.dataId</a></div><div class="ttdeci">int dataId</div><div class="ttdef"><b>Definition:</b> <a href="WeaveLog_8java_source.html#l00021">WeaveLog.java:21</a></div></div>
+<div class="ttc" id="aclassselogger_1_1weaver_1_1WeaveLog_html_a1542e3fea28652f60f68dc0b93d06aed"><div class="ttname"><a href="classselogger_1_1weaver_1_1WeaveLog.html#a1542e3fea28652f60f68dc0b93d06aed">selogger.weaver.WeaveLog.getNextDataId</a></div><div class="ttdeci">int getNextDataId()</div><div class="ttdef"><b>Definition:</b> <a href="WeaveLog_8java_source.html#l00076">WeaveLog.java:76</a></div></div>
+<div class="ttc" id="aclassselogger_1_1weaver_1_1WeaveLog_html_a1a29a3fc248551818f7537c331714aba"><div class="ttname"><a href="classselogger_1_1weaver_1_1WeaveLog.html#a1a29a3fc248551818f7537c331714aba">selogger.weaver.WeaveLog.getDataEntries</a></div><div class="ttdeci">ArrayList&lt; DataInfo &gt; getDataEntries()</div><div class="ttdef"><b>Definition:</b> <a href="WeaveLog_8java_source.html#l00129">WeaveLog.java:129</a></div></div>
+<div class="ttc" id="aclassselogger_1_1weaver_1_1WeaveLog_html_a20b45fb1258dd7a8abf82569daf6a8ac"><div class="ttname"><a href="classselogger_1_1weaver_1_1WeaveLog.html#a20b45fb1258dd7a8abf82569daf6a8ac">selogger.weaver.WeaveLog.fullClassName</a></div><div class="ttdeci">String fullClassName</div><div class="ttdef"><b>Definition:</b> <a href="WeaveLog_8java_source.html#l00027">WeaveLog.java:27</a></div></div>
+<div class="ttc" id="aclassselogger_1_1weaver_1_1WeaveLog_html_a2dcaf466c1ca1ef5999a04b543414715"><div class="ttname"><a href="classselogger_1_1weaver_1_1WeaveLog.html#a2dcaf466c1ca1ef5999a04b543414715">selogger.weaver.WeaveLog.getMethods</a></div><div class="ttdeci">ArrayList&lt; MethodInfo &gt; getMethods()</div><div class="ttdef"><b>Definition:</b> <a href="WeaveLog_8java_source.html#l00136">WeaveLog.java:136</a></div></div>
+<div class="ttc" id="aclassselogger_1_1weaver_1_1WeaveLog_html_a313ac37b07fe86f3835d0600b6e2a72c"><div class="ttname"><a href="classselogger_1_1weaver_1_1WeaveLog.html#a313ac37b07fe86f3835d0600b6e2a72c">selogger.weaver.WeaveLog.logger</a></div><div class="ttdeci">StringWriter logger</div><div class="ttdef"><b>Definition:</b> <a href="WeaveLog_8java_source.html#l00024">WeaveLog.java:24</a></div></div>
+<div class="ttc" id="aclassselogger_1_1weaver_1_1WeaveLog_html_a4dcc3643d85ed0be4df90109bd5d6868"><div class="ttname"><a href="classselogger_1_1weaver_1_1WeaveLog.html#a4dcc3643d85ed0be4df90109bd5d6868">selogger.weaver.WeaveLog.nextDataId</a></div><div class="ttdeci">int nextDataId(int line, int instructionIndex, EventType eventType, Descriptor valueDesc, InstructionAttributes attributes)</div><div class="ttdef"><b>Definition:</b> <a href="WeaveLog_8java_source.html#l00103">WeaveLog.java:103</a></div></div>
+<div class="ttc" id="aclassselogger_1_1weaver_1_1WeaveLog_html_a54a49f6690635a65c5c5fac856ce9229"><div class="ttname"><a href="classselogger_1_1weaver_1_1WeaveLog.html#a54a49f6690635a65c5c5fac856ce9229">selogger.weaver.WeaveLog.dataEntries</a></div><div class="ttdeci">ArrayList&lt; DataInfo &gt; dataEntries</div><div class="ttdef"><b>Definition:</b> <a href="WeaveLog_8java_source.html#l00022">WeaveLog.java:22</a></div></div>
+<div class="ttc" id="aclassselogger_1_1weaver_1_1WeaveLog_html_a64d3b7d8487e1da2ec29def97a63b264"><div class="ttname"><a href="classselogger_1_1weaver_1_1WeaveLog.html#a64d3b7d8487e1da2ec29def97a63b264">selogger.weaver.WeaveLog.startMethod</a></div><div class="ttdeci">void startMethod(String className, String methodName, String methodDesc, int access, String sourceFileName, String methodHash)</div><div class="ttdef"><b>Definition:</b> <a href="WeaveLog_8java_source.html#l00088">WeaveLog.java:88</a></div></div>
+<div class="ttc" id="aclassselogger_1_1weaver_1_1WeaveLog_html_a6adababcadfe5d0846a818d48398c301"><div class="ttname"><a href="classselogger_1_1weaver_1_1WeaveLog.html#a6adababcadfe5d0846a818d48398c301">selogger.weaver.WeaveLog.classId</a></div><div class="ttdeci">int classId</div><div class="ttdef"><b>Definition:</b> <a href="WeaveLog_8java_source.html#l00019">WeaveLog.java:19</a></div></div>
+<div class="ttc" id="aclassselogger_1_1weaver_1_1WeaveLog_html_a7247764f5ad50932da6222226e5034c9"><div class="ttname"><a href="classselogger_1_1weaver_1_1WeaveLog.html#a7247764f5ad50932da6222226e5034c9">selogger.weaver.WeaveLog.setFullClassName</a></div><div class="ttdeci">void setFullClassName(String name)</div><div class="ttdef"><b>Definition:</b> <a href="WeaveLog_8java_source.html#l00054">WeaveLog.java:54</a></div></div>
+<div class="ttc" id="aclassselogger_1_1weaver_1_1WeaveLog_html_a76ec10fcc6ebdc4476dddc2e59973f99"><div class="ttname"><a href="classselogger_1_1weaver_1_1WeaveLog.html#a76ec10fcc6ebdc4476dddc2e59973f99">selogger.weaver.WeaveLog.methodId</a></div><div class="ttdeci">int methodId</div><div class="ttdef"><b>Definition:</b> <a href="WeaveLog_8java_source.html#l00020">WeaveLog.java:20</a></div></div>
+<div class="ttc" id="aclassselogger_1_1weaver_1_1WeaveLog_html_a7bbd00e4adc81f11f1cef2a8167aa31d"><div class="ttname"><a href="classselogger_1_1weaver_1_1WeaveLog.html#a7bbd00e4adc81f11f1cef2a8167aa31d">selogger.weaver.WeaveLog.WeaveLog</a></div><div class="ttdeci">WeaveLog(int classId, int nextMethodId, int nextDataId)</div><div class="ttdef"><b>Definition:</b> <a href="WeaveLog_8java_source.html#l00037">WeaveLog.java:37</a></div></div>
+<div class="ttc" id="aclassselogger_1_1weaver_1_1WeaveLog_html_a7d6a8fb41540c7aac7afac0d7b547a20"><div class="ttname"><a href="classselogger_1_1weaver_1_1WeaveLog.html#a7d6a8fb41540c7aac7afac0d7b547a20">selogger.weaver.WeaveLog.getFullClassName</a></div><div class="ttdeci">String getFullClassName()</div><div class="ttdef"><b>Definition:</b> <a href="WeaveLog_8java_source.html#l00061">WeaveLog.java:61</a></div></div>
+<div class="ttc" id="aclassselogger_1_1weaver_1_1WeaveLog_html_aa4c4d6584d6b2f40363c180906753adf"><div class="ttname"><a href="classselogger_1_1weaver_1_1WeaveLog.html#aa4c4d6584d6b2f40363c180906753adf">selogger.weaver.WeaveLog.log</a></div><div class="ttdeci">void log(String msg)</div><div class="ttdef"><b>Definition:</b> <a href="WeaveLog_8java_source.html#l00114">WeaveLog.java:114</a></div></div>
+<div class="ttc" id="aclassselogger_1_1weaver_1_1WeaveLog_html_aa64bf20fc13041843a55dfb5e8f218bc"><div class="ttname"><a href="classselogger_1_1weaver_1_1WeaveLog.html#aa64bf20fc13041843a55dfb5e8f218bc">selogger.weaver.WeaveLog.loggerWrapper</a></div><div class="ttdeci">PrintWriter loggerWrapper</div><div class="ttdef"><b>Definition:</b> <a href="WeaveLog_8java_source.html#l00025">WeaveLog.java:25</a></div></div>
+<div class="ttc" id="aclassselogger_1_1weaver_1_1WeaveLog_html_ab020d799d16d1f35b0eb8b5de820b9a7"><div class="ttname"><a href="classselogger_1_1weaver_1_1WeaveLog.html#ab020d799d16d1f35b0eb8b5de820b9a7">selogger.weaver.WeaveLog.SEPARATOR</a></div><div class="ttdeci">static final String SEPARATOR</div><div class="ttdef"><b>Definition:</b> <a href="WeaveLog_8java_source.html#l00029">WeaveLog.java:29</a></div></div>
+<div class="ttc" id="aclassselogger_1_1weaver_1_1WeaveLog_html_ae4e0e2f929554b448468094bad411523"><div class="ttname"><a href="classselogger_1_1weaver_1_1WeaveLog.html#ae4e0e2f929554b448468094bad411523">selogger.weaver.WeaveLog.methodEntries</a></div><div class="ttdeci">ArrayList&lt; MethodInfo &gt; methodEntries</div><div class="ttdef"><b>Definition:</b> <a href="WeaveLog_8java_source.html#l00023">WeaveLog.java:23</a></div></div>
+<div class="ttc" id="aclassselogger_1_1weaver_1_1WeaveLog_html_ae71e57be61925f6c04b473939a93079e"><div class="ttname"><a href="classselogger_1_1weaver_1_1WeaveLog.html#ae71e57be61925f6c04b473939a93079e">selogger.weaver.WeaveLog.getNextMethodId</a></div><div class="ttdeci">int getNextMethodId()</div><div class="ttdef"><b>Definition:</b> <a href="WeaveLog_8java_source.html#l00068">WeaveLog.java:68</a></div></div>
+<div class="ttc" id="aclassselogger_1_1weaver_1_1method_1_1InstructionAttributes_html"><div class="ttname"><a href="classselogger_1_1weaver_1_1method_1_1InstructionAttributes.html">selogger.weaver.method.InstructionAttributes</a></div><div class="ttdef"><b>Definition:</b> <a href="InstructionAttributes_8java_source.html#l00009">InstructionAttributes.java:9</a></div></div>
+<div class="ttc" id="aenumselogger_1_1EventType_html"><div class="ttname"><a href="enumselogger_1_1EventType.html">selogger.EventType</a></div><div class="ttdef"><b>Definition:</b> <a href="EventType_8java_source.html#l00008">EventType.java:8</a></div></div>
+<div class="ttc" id="aenumselogger_1_1weaver_1_1method_1_1Descriptor_html"><div class="ttname"><a href="enumselogger_1_1weaver_1_1method_1_1Descriptor.html">selogger.weaver.method.Descriptor</a></div><div class="ttdef"><b>Definition:</b> <a href="Descriptor_8java_source.html#l00006">Descriptor.java:6</a></div></div>
+<div class="ttc" id="amotivationExample_2origin_2selogger__out_2LOG_0bTypes_8txt_html_a8a59ef96aecacd04b5a5896effedfaf2"><div class="ttname"><a href="motivationExample_2origin_2selogger__out_2LOG_0bTypes_8txt.html#a8a59ef96aecacd04b5a5896effedfaf2">String</a></div><div class="ttdeci">Loader java lang java lang String</div><div class="ttdef"><b>Definition:</b> <a href="motivationExample_2origin_2selogger__out_2LOG_0bTypes_8txt_source.html#l00011">LOG$Types.txt:11</a></div></div>
+<div class="ttc" id="amotivationExample_2origin_2selogger__out_2dataids_8txt_html_ab74e6bf80237ddc4109968cedc58c151"><div class="ttname"><a href="motivationExample_2origin_2selogger__out_2dataids_8txt.html#ab74e6bf80237ddc4109968cedc58c151">name</a></div><div class="ttdeci">name</div><div class="ttdef"><b>Definition:</b> <a href="motivationExample_2origin_2selogger__out_2dataids_8txt_source.html#l00006">dataids.txt:6</a></div></div>
+<div class="ttc" id="amotivationExample_2origin_2selogger__out_2methods_8txt_html_abef7b47c4c5ab5ca7b95d064f2fd5aaf"><div class="ttname"><a href="motivationExample_2origin_2selogger__out_2methods_8txt.html#abef7b47c4c5ab5ca7b95d064f2fd5aaf">java</a></div><div class="ttdeci">&lt; init &gt; Main java</div><div class="ttdef"><b>Definition:</b> <a href="motivationExample_2origin_2selogger__out_2methods_8txt_source.html#l00002">methods.txt:2</a></div></div>
+<div class="ttc" id="anamespaceselogger_1_1weaver_1_1method_html"><div class="ttname"><a href="namespaceselogger_1_1weaver_1_1method.html">selogger.weaver.method</a></div><div class="ttdef"><b>Definition:</b> <a href="ANewInstruction_8java_source.html#l00001">ANewInstruction.java:1</a></div></div>
+<div class="ttc" id="anamespaceselogger_1_1weaver_html"><div class="ttname"><a href="namespaceselogger_1_1weaver.html">selogger.weaver</a></div><div class="ttdef"><b>Definition:</b> <a href="ClassInfo_8java_source.html#l00001">ClassInfo.java:1</a></div></div>
+<div class="ttc" id="anamespaceselogger_html"><div class="ttname"><a href="namespaceselogger.html">selogger</a></div><div class="ttdef"><b>Definition:</b> <a href="EventType_8java_source.html#l00001">EventType.java:1</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_e3d743d0ec9b4013b28b5d69101bc7fb.html">Data</a></li><li class="navelem"><a class="el" href="dir_01f621d9ce496b7a25fbd2fbbc4de9b5.html">java8</a></li><li class="navelem"><a class="el" href="dir_00a102e375c7e4cf721fc27b336fd614.html">selogger</a></li><li class="navelem"><a class="el" href="dir_c35f250929eab5b4494939a1c8666d4d.html">src</a></li><li class="navelem"><a class="el" href="dir_f3c5bd6ef90b4f2df958b6e4e44d2b30.html">selogger</a></li><li class="navelem"><a class="el" href="dir_171c03598d1a119b1bbbd93d917397f5.html">weaver</a></li><li class="navelem"><a class="el" href="WeaveLog_8java.html">WeaveLog.java</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

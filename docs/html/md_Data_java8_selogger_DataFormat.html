@@ -1,0 +1,482 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>2022_kenshu_w3-4: SELogger Data Format</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">2022_kenshu_w3-4
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('md_Data_java8_selogger_DataFormat.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="PageDoc"><div class="header">
+  <div class="headertitle">
+<div class="title">SELogger Data Format </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p>A program execution with SELogger produces two types of data: runtime events and static attributes. The runtime events include data values observed for the bytecode instructions; each event is recorded before/after a particular bytecode instruction is executed. Each runtime event is represented by a tuple: a data ID, an observed data value, a sequential number representing the chronological order, and a thread ID of the event. The static attributes contains the information of the executed program.</p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Execution Trace</h1>
+<p>The injected logging code calls <code>recordEvent</code> methods defined in class <code><a class="el" href="classselogger_1_1logging_1_1Logging.html">selogger.logging.Logging</a></code>. It internally uses different logging implementations depending on the <code>format</code> option.</p>
+<h2><a class="anchor" id="autotoc_md2"></a>
+Near-Omniscient Execution Trace (format=nearomni)</h2>
+<h3><a class="anchor" id="autotoc_md3"></a>
+recentdata.json</h3>
+<p>The default <code>nearomni</code> mode produces a file in a JSON format. The JSON object has a <code>events</code> field including an array of JSON objects. Each object represents one or more occurrences of a particular runtime event. Each object has the following fields.</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Field Name   </th><th class="markdownTableHeadLeft">Content    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">cname   </td><td class="markdownTableBodyLeft">The class name of the event location    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">mname   </td><td class="markdownTableBodyLeft">The method name of the event location    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">mdesc   </td><td class="markdownTableBodyLeft">The descriptor of the method of the event location    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">mhash   </td><td class="markdownTableBodyLeft">A shortened method hash (the first 8 characeters of <code>MethodHash</code>) of the method    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">line   </td><td class="markdownTableBodyLeft">The line number of the event location    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">inst   </td><td class="markdownTableBodyLeft">The bytecode location corresponding to the event    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">event   </td><td class="markdownTableBodyLeft">Event type name    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">attr   </td><td class="markdownTableBodyLeft">Additional attributes of an instruction corresponding to the event    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">vtype   </td><td class="markdownTableBodyLeft">The type of a recorded value for the event    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">freq   </td><td class="markdownTableBodyLeft">The number of events observed in the execution    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">record   </td><td class="markdownTableBodyLeft">The number of the events recorded in the file    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">value   </td><td class="markdownTableBodyLeft">An array of recorded values. This field does not exist if the vtype is <code>void</code>.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">seqnum   </td><td class="markdownTableBodyLeft">An array of sequential numbers representing the order of events    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">thread   </td><td class="markdownTableBodyLeft">An array of thread IDs of events   </td></tr>
+</table>
+<p>Each value recorded in the <code>value</code> field is a string, number, or a boolean value. An object reference is recorded as an object ID string in the <code>typename@hash</code> format. A string object is recorded with the content (<code>typename@hash:content</code>). In the reference, <code>&lt;GC&gt;</code> indicates that the object is garbage collected.</p>
+<p>The <code>attr</code> field is a JSON object including the following information.</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Field Name   </th><th class="markdownTableHeadLeft">Content    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">owner   </td><td class="markdownTableBodyLeft">A class name having the method or field used by the CALL/FIELD event    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">name   </td><td class="markdownTableBodyLeft">A method/field/variable name used by the CALL/INVOKEDYNAMIC/FIELD/LOCAL event    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">desc   </td><td class="markdownTableBodyLeft">A descriptor representing the parameter list and return value of the method used by the CALL event    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">type   </td><td class="markdownTableBodyLeft">A type descriptor used by an event. Object type for class instantiation, element type for array creation, parameter type for method calls, variable type for local variable access, and so on.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">methodtype   </td><td class="markdownTableBodyLeft">A method type related to METHOD_ENTRY and CALL events: instance method, static method, or constructor    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">index   </td><td class="markdownTableBodyLeft">An index to specify the position of an argument in a method call    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">varindex   </td><td class="markdownTableBodyLeft">An index representing a local variable. Two or more variables may use the same index if their scope are different.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">opcode   </td><td class="markdownTableBodyLeft">The actual bytecode instruction used for call and jump    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">jumpto   </td><td class="markdownTableBodyLeft">Jump destination for a jump (branch) instruction    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">amount   </td><td class="markdownTableBodyLeft">The amount incremented by an increment (IINC) instruction    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">location   </td><td class="markdownTableBodyLeft">This attribute is used to indicate a special instruction at the end of method    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">created   </td><td class="markdownTableBodyLeft">A constructor call has this attribute pointing to a bytecode location that created the object (In Java bytecode, an object is created and then its constructor is called)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">blocktype   </td><td class="markdownTableBodyLeft">A label has this attribute if this label is the beginning of a CATCH or FINALLY block    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">start   </td><td class="markdownTableBodyLeft">The first instruction of a TRY block corresponding to the CATHC/FINALLY block    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">end   </td><td class="markdownTableBodyLeft">The last instruction of a TRY block corresponding to the CATHC/FINALLY block   </td></tr>
+</table>
+<p>An object reference is recorded as a JSON object that has <code>type</code> and <code>id</code> fields. A <code>null</code> object is recorded if the object reference is null. The id <code>&lt;GC&gt;</code> indicates that the object is garbage collected.</p>
+<h3><a class="anchor" id="autotoc_md4"></a>
+recentdata.txt</h3>
+<p>The <code>json=false</code> option produces a file named <code>recentdata.txt</code>. It is a CSV format with a header line. The columns are the same as the json version.</p>
+<p>Multiple value, seqnum, and thread columns are recorded using multiple columns (e.g. value1, value2, ...).</p>
+<h2><a class="anchor" id="autotoc_md5"></a>
+Event Frequency (format=freq)</h2>
+<p>The <code>freq</code> mode produces a csv named <code>eventfreq.txt</code>. The file has two columns:</p><ul>
+<li>The first column represents <code>dataID</code> defined in <code>dataids.txt</code>.</li>
+<li>The second column represents the number of occurrences of the event.</li>
+</ul>
+<p>The file does not include dataIDs that never occurred at runtime.</p>
+<h2><a class="anchor" id="autotoc_md6"></a>
+Empty Trace (format=discard)</h2>
+<p>The <code>discard</code> mode produce no files.</p>
+<h2><a class="anchor" id="autotoc_md7"></a>
+Binary Omniscient Execuion Trace (format=omni)</h2>
+<p>In the binary omniscient mode, SELogger produces <code>.slg</code> files with a sequential number recording all runtime events observed during a program execution.</p>
+<p>The <code><a class="el" href="classselogger_1_1reader_1_1LogPrinter.html">selogger.reader.LogPrinter</a></code> class is to translate the binary format into a text format.</p>
+<blockquote class="doxtable">
+<p>java -classpath selogger-0.2.3.jar <a class="el" href="classselogger_1_1reader_1_1LogPrinter.html">selogger.reader.LogPrinter</a> selogger-output </p>
+</blockquote>
+<p>The command accepts the following options.</p>
+<ul>
+<li><code>-from=N</code> skips the first N events.</li>
+<li><code>-num=M</code> terminates the program after printing M events.</li>
+<li><code>-thread=</code> specifies a list of thread ID separated with commas. The program ignores events in other threads.</li>
+<li><code>-processparams</code> links parameter events to its METHOD ENTRY/CALL events.</li>
+</ul>
+<p>The output format is like this:</p>
+<blockquote class="doxtable">
+<p>EventId=475,EventType=CALL,ThreadId=0,DataId=18009,Value=35,objectType=java.lang.String,method:CallType=Regular,Instruction=INVOKEVIRTUAL,Owner=java/lang/String,Name=indexOf,Desc=(Ljava/lang/String;)I,,org/apache/tools/ant/taskdefs/condition/Os:isOs,Os.java:260:38 </p>
+</blockquote>
+<p>Each line includes the following attributes.</p>
+<ul>
+<li>Event ID</li>
+<li>Event Type</li>
+<li>Thread ID</li>
+<li>DataID (to refer dataids.txt to its static information)</li>
+<li>Value associated with the event (in case of CALL, it is an object ID)</li>
+<li>objectType is the class name represented by an object ID (if the value points to an object)</li>
+<li>attributes recorded in dataids.txt</li>
+<li>Class Name,</li>
+<li>File Name, Line Number (recorded as debug symbols)</li>
+<li>Instruction Index of the bytecode in the method (it is useful when you analyze the bytecode with the ASM library)</li>
+</ul>
+<p>The object types and string contents are separately stored in the following files.</p>
+<h3><a class="anchor" id="autotoc_md8"></a>
+LOG$Types.txt</h3>
+<p>The file records object types. It is a CSV file including 6 columns.</p>
+<ul>
+<li>Type ID</li>
+<li>Type Name</li>
+<li>Class file location</li>
+<li>The superclass type ID</li>
+<li>The component type ID (available for an array type)</li>
+<li>A string representation of class loader that loaded the type and followed by the class name. This text is linked to the weaving information (<code>classes.txt</code>) described below.</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md9"></a>
+LOG$ObjectTypesNNNNN.txt</h3>
+<p>This CSV file includes two columns. Each row represents an object.</p>
+<ul>
+<li>The first column shows the object ID.</li>
+<li>The second column shows the type ID.</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md10"></a>
+LOG$ExceptionNNNNN.txt</h3>
+<p>This is a semi-structured CSV file records messages and stack traces of exceptions thrown during a program execution. Each exception is recorded by the following lines.</p>
+<ul>
+<li>Message line including three columns<ul>
+<li>Object ID of the Throwable object</li>
+<li>A literal "M"</li>
+<li>Textual message returned by <code>Throwable.getMessage()</code></li>
+</ul>
+</li>
+<li>Cause Object<ul>
+<li>Object ID of the Throwable object</li>
+<li>A literal "CS"</li>
+<li>Object ID of the cause object returned by <code>Throwable.getCause()</code></li>
+<li>If the object has suppressed exceptions (returned by <code>getSuppressed()</code>), their object IDs</li>
+</ul>
+</li>
+<li>Stack Trace Elements (Each line corresponds to a single line of a stack trace)<ul>
+<li>Object ID of the Throwable object</li>
+<li>A literal "S"</li>
+<li>A literal "T" or "F": "T" represents the method is a native method.</li>
+<li>Class Name</li>
+<li>Method Name</li>
+<li>File Name</li>
+<li>Line Number</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md11"></a>
+LOG$StringNNNNN.txt</h3>
+<p>The file records the contents of string objects used in an execution. It is a CSV file format; each line has three fields.</p>
+<ul>
+<li>The object ID of the string</li>
+<li>The length of the string</li>
+<li>The content escaped as a JSON string</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md12"></a>
+Text-based Omniscient Execution Trace (format=textstream)</h2>
+<p>In this mode, SELogger produces a series of text files. Other supplementary files are the same as the binary stream mode.</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Column Index   </th><th class="markdownTableHeadLeft">Name   </th><th class="markdownTableHeadLeft">Content    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">1   </td><td class="markdownTableBodyLeft">Seqnum   </td><td class="markdownTableBodyLeft">A sequential number representing the order of events    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">2   </td><td class="markdownTableBodyLeft">Data ID   </td><td class="markdownTableBodyLeft">A data ID representing the event type and source code location    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">3   </td><td class="markdownTableBodyLeft">Thread ID   </td><td class="markdownTableBodyLeft">A thread that the event occurred    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">4   </td><td class="markdownTableBodyLeft">Value   </td><td class="markdownTableBodyLeft">A data value recorded for the event   </td></tr>
+</table>
+<h1><a class="anchor" id="autotoc_md13"></a>
+Runtime Events</h1>
+<p>The following table is a list of events that can be recorded by SELogger. The event name is defined in the class <code><a class="el" href="enumselogger_1_1EventType.html">selogger.EventType</a></code>. <br  />
+</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Event group   </th><th class="markdownTableHeadLeft">Event Type   </th><th class="markdownTableHeadLeft">Timing   </th><th class="markdownTableHeadLeft">Recorded Data    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">Method Execution (EXEC)   </td><td class="markdownTableBodyLeft">METHOD_ENTRY   </td><td class="markdownTableBodyLeft">The method is entered, before any instructions in the method is executed   </td><td class="markdownTableBodyLeft">Receiver object if the method is an instance method    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft">METHOD_PARAM   </td><td class="markdownTableBodyLeft">Immediately after METHOD_ENTRY, before any instructions in the method is executed. The number of the events is the same as the number of formal parameters.   </td><td class="markdownTableBodyLeft">Parameter given to the method    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft">METHOD_NORMAL_EXIT   </td><td class="markdownTableBodyLeft">Before a return instruction (one of RETURN, IRETURN, ARETURN, LRETURN, FRETURN, or DRETURN) is executed   </td><td class="markdownTableBodyLeft">Returned value from the method (= The value passed to the return instruction)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft">METHOD_EXCEPTIONAL_EXIT   </td><td class="markdownTableBodyLeft">When the method is exiting by an exception   </td><td class="markdownTableBodyLeft">Exception thrown from the method to the caller    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft">METHOD_OBJECT_INITIALIZED   </td><td class="markdownTableBodyLeft">Immediately after execution of <code>this()</code> or <code>super()</code> in a constructor, before any other instructions in the constructor is executed   </td><td class="markdownTableBodyLeft">Object initialized by the constructor    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft">METHOD_THROW   </td><td class="markdownTableBodyLeft">Before a throw instruction (ATHROW) is executed   </td><td class="markdownTableBodyLeft">Exception thrown by the throw statement    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">Method Call (CALL)   </td><td class="markdownTableBodyLeft">CALL   </td><td class="markdownTableBodyLeft">Before a method is called by a method call instruction (one of INVOKEVIRTUAL, INVOKESTATIC, and INVOKESPECIAL)   </td><td class="markdownTableBodyLeft">Receiver object    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft">CALL_PARAM   </td><td class="markdownTableBodyLeft">Immediately after a CALL event, before executing the method invocation. The number of the events is the same as the number of actual parameters.   </td><td class="markdownTableBodyLeft">Parameter passed to the callee    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft">CALL_RETURN   </td><td class="markdownTableBodyLeft">After a method invocation instruction is executed   </td><td class="markdownTableBodyLeft">Returned value from the callee    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft">NEW_OBJECT   </td><td class="markdownTableBodyLeft">When a <code>new</code> statement created an instance of some class.   </td><td class="markdownTableBodyLeft">This event does NOT record the object because the created object is not initialized (i.e. not accessible) at this point of execution.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft">NEW_OBJECT_CREATED   </td><td class="markdownTableBodyLeft">After a constructor call is finished.   </td><td class="markdownTableBodyLeft">Object initialized by the constructor call    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft">INVOKE_DYNAMIC   </td><td class="markdownTableBodyLeft">Before INVOKEDYNAMIC instruction creates a function object.   </td><td class="markdownTableBodyLeft">(None)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft">INVOKE_DYNAMIC_PARAM   </td><td class="markdownTableBodyLeft">Immediately after INVOKE_DYNAMIC event.   </td><td class="markdownTableBodyLeft">Parameter passed to INVOKEDYNAMIC instruction.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft">INVOKE_DYNAMIC_RESULT   </td><td class="markdownTableBodyLeft">After the INVOKEDYNAMIC instruction.   </td><td class="markdownTableBodyLeft">A function object created by the INVOKEDYNAMIC instruction.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">Field access (FIELD)   </td><td class="markdownTableBodyLeft">GET_INSTANCE_FIELD   </td><td class="markdownTableBodyLeft">Before the instance field is read by a GETFIELD instruction   </td><td class="markdownTableBodyLeft">Object whose field is read    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft">GET_INSTANCE_FIELD_RESULT   </td><td class="markdownTableBodyLeft">After the field is read by a GETFIELD instruction   </td><td class="markdownTableBodyLeft">Value read from the field    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft">GET_STATIC_FIELD   </td><td class="markdownTableBodyLeft">After the static field is read by a GETSTATIC instruction   </td><td class="markdownTableBodyLeft">Value read from the field    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft">PUT_INSTANCE_FIELD   </td><td class="markdownTableBodyLeft">Before the instance field is written by a PUTFIELD instruction   </td><td class="markdownTableBodyLeft">Object whose field is written    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft">PUT_INSTANCE_FIELD_VALUE   </td><td class="markdownTableBodyLeft">Immediately after PUT_INSTANCE_FIELD, before the instance field is written   </td><td class="markdownTableBodyLeft">Value written to the field    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft">PUT_INSTANCE_FIELD_BEFORE_INITIALIZATION   </td><td class="markdownTableBodyLeft">Before the instance field is written by a PUTFIELD instruction. This event is used when the object has not been initialized by a constructor but whose field is assigned; for example, when an anonymous inner class object stores the external context into its filed.   </td><td class="markdownTableBodyLeft">Value written to the field    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft">PUT_STATIC_FIELD   </td><td class="markdownTableBodyLeft">Before the static field is written by a PUTSTATIC instruction   </td><td class="markdownTableBodyLeft">Value written to the field    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">Array access (ARRAY)   </td><td class="markdownTableBodyLeft">ARRAY_LOAD   </td><td class="markdownTableBodyLeft">Before a value is read from the array by an array load instruction (one of AALOAD, BALOAD, CALOAD, DALOAD, FALOAD, IALOAD, LALOAD, and SALOAD)   </td><td class="markdownTableBodyLeft">Accessed array to read    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft">ARRAY_LOAD_INDEX   </td><td class="markdownTableBodyLeft">Immediately after ARRAY_LOAD event.   </td><td class="markdownTableBodyLeft">Accessed index to read    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft">ARRAY_LOAD_RESULT   </td><td class="markdownTableBodyLeft">After a value is loaded from the array.   </td><td class="markdownTableBodyLeft">Value read from the array    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft">ARRAY_STORE   </td><td class="markdownTableBodyLeft">Before a value is written to the array by an array store instruction (one of AASTORE, BASTORE, CASTORE, DASTORE, FASTORE, IASTORE, LASTORE, and SASTORE)   </td><td class="markdownTableBodyLeft">Accessed array to write    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft">ARRAY_STORE_INDEX   </td><td class="markdownTableBodyLeft">Immediately after ARRAY_STORE event   </td><td class="markdownTableBodyLeft">Accessed index to write    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft">ARRAY_STORE_VALUE   </td><td class="markdownTableBodyLeft">Immediately after ARRAY_STORE_INDEX event   </td><td class="markdownTableBodyLeft">Value written to the array    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft">NEW_ARRAY   </td><td class="markdownTableBodyLeft">Before an array is created.   </td><td class="markdownTableBodyLeft">Length of the new array to be created    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft">NEW_ARRAY_RESULT   </td><td class="markdownTableBodyLeft">After an array is created.   </td><td class="markdownTableBodyLeft">Created array object    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft">MULTI_NEW_ARRAY   </td><td class="markdownTableBodyLeft">After a multi-dimendioanl array is created.   </td><td class="markdownTableBodyLeft">Created array object    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft">MULTI_NEW_ARRAY_OWNER   </td><td class="markdownTableBodyLeft">A sequence of MULTI_NEW_ARRAY_OWNER followed by MULTI_NEW_ARRAY_ELEMENT events are recorded immediately after a MULTI_NEW_ARRAY event. The events represent a recursive structure of multi-dimensional arrays (An OWNER array has a number of ELEMENT arrays).   </td><td class="markdownTableBodyLeft">An array object which contains array objects    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft">MULTI_NEW_ARRAY_ELEMENT (<code>new</code> instruction for arrays)   </td><td class="markdownTableBodyLeft">This event is generated to record an array object contained in an owner array.   </td><td class="markdownTableBodyLeft">Array object contained in the owner array.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft">ARRAY_LENGTH   </td><td class="markdownTableBodyLeft">Before the length of the array is read by an ARRAYLENGTH instruction   </td><td class="markdownTableBodyLeft">Array whose length is referred. This may be null.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft">ARRAY_LENGTH_RESULT   </td><td class="markdownTableBodyLeft">After the execution of the ARRAYLENGTH instruction.   </td><td class="markdownTableBodyLeft">The length of the array    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">Synchronized block (SYNC)   </td><td class="markdownTableBodyLeft">MONITOR_ENTER   </td><td class="markdownTableBodyLeft">When a thread of control reached the synchronized block, before entering the block.   </td><td class="markdownTableBodyLeft">Object to be locked by the synchronized block.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft">MONITOR_ENTER_RESULT   </td><td class="markdownTableBodyLeft">When a thread of control entered the synchronized block, before any instructions in the block is executed   </td><td class="markdownTableBodyLeft">Object locked by the synchronized block.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft">MONTIOR_EXIT   </td><td class="markdownTableBodyLeft">When a thread of control is exiting the synchronized block.   </td><td class="markdownTableBodyLeft">Object to be unlocked by the block    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">Object manipulation (OBJECT)   </td><td class="markdownTableBodyLeft">OBJECT_CONSTANT_LOAD   </td><td class="markdownTableBodyLeft">When a constant object (usually String) is loaded by the instruction.   </td><td class="markdownTableBodyLeft">Object loaded by the instruction. This may be null.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft">OBJECT_INSTANCEOF   </td><td class="markdownTableBodyLeft">Before the INSTANCEOF instruction is executed.   </td><td class="markdownTableBodyLeft">Object whose class is checked by the instruction    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft">OBJECT_INSTANCEOF_RESULT   </td><td class="markdownTableBodyLeft">After the INSTANCEOF instruction is executed.   </td><td class="markdownTableBodyLeft">Result (true or false) of the instruction    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">Local variables (LOCAL)   </td><td class="markdownTableBodyLeft">LOCAL_LOAD   </td><td class="markdownTableBodyLeft">Before the value of the local variable is read by a local variable instruction (one of ALOD, DLOAD, FLOAD, ILOAD, and LLOAD)   </td><td class="markdownTableBodyLeft">Value read from the variable    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft">LOCAL_STORE   </td><td class="markdownTableBodyLeft">Before the value is written to the local variable by an instruction (one of ASTORE, DSTORE, FSTORE, ISTORE, and LSTORE)   </td><td class="markdownTableBodyLeft">Value written to the variable    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft">LOCAL_INCREMENT   </td><td class="markdownTableBodyLeft">After the local variable is updated by an IINC instruction. An IINC instruction is not only for <code>i++</code>; it is also used for <code>i+=k</code> and <code>i-=k</code> if <code>k</code> is constant (depending on a compiler).   </td><td class="markdownTableBodyLeft">Value written to the variable by an increment instruction    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft">RET   </td><td class="markdownTableBodyLeft" colspan="2">This event corresponds to a RET instruction for subroutine call. The current version does not generate this event.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">Control-flow events (LABEL)   </td><td class="markdownTableBodyLeft">LABEL   </td><td class="markdownTableBodyLeft">This event is recorded when an execution passed a particular code location. LABEL itself is not a Java bytecode, a pseudo instruction inserted by ASM bytecode manipulation library used by SELogger.   </td><td class="markdownTableBodyLeft">A dataId corresponding to the previous program location is recorded so that a user can trace a control-flow path.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft">CATCH_LABEL   </td><td class="markdownTableBodyLeft">This event is recorded when an execution entered a catch/finally block.   </td><td class="markdownTableBodyLeft">A dataId corresponding to the previous program location (that is likely where an exception was thrown) is recorded.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft">CATCH   </td><td class="markdownTableBodyLeft">When an execution entered a catch/finally block, immediately after a CATCH_LABEL event, before any instructions in the catch/finally block is executed.   </td><td class="markdownTableBodyLeft">Exception object caught by the block    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft">JUMP   </td><td class="markdownTableBodyLeft">This event represents a jump instruction in bytecode.   </td><td class="markdownTableBodyLeft">The event itself is not directly recorded in a trace. The dataId of this event may appear in LABEL events.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft">DEVIDE   </td><td class="markdownTableBodyLeft">This event represents an arithmetic division instruction (IDIV).   </td><td class="markdownTableBodyLeft">The event itself is not directly recorded in a trace. The dataId of this event may appear in LABEL events.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft">LINE_NUMBER   </td><td class="markdownTableBodyLeft" colspan="2">This event represents an execution of a line of source code. As a single line of code may be compiled into separated bytecode blocks, a number of LINE_NUMBER events having different data ID may point to the same line number.   </td></tr>
+</table>
+<h1><a class="anchor" id="autotoc_md14"></a>
+Static Attributes</h1>
+<p>The weaver component of SELogger analyzes a target program and injects logging instructions into code. The component produces the following files including the result.</p>
+<ul>
+<li><code>weaving.properties</code>: The configuration options recognized by the weaver.</li>
+<li><code>log.txt</code>: Recording errors encountered during bytecode manipulation.</li>
+<li></li>
+<li><code>classes.txt</code>: A list of woven classes. The content is defined in the <code><a class="el" href="classselogger_1_1weaver_1_1ClassInfo.html">selogger.weaver.ClassInfo</a></code> class.</li>
+<li><code>methods .txt</code>: A list of methods in the woven classes. The content is defined in the <code><a class="el" href="classselogger_1_1weaver_1_1MethodInfo.html">selogger.weaver.MethodInfo</a></code> class.</li>
+<li><code>dataids.txt</code>: A list of Data IDs.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md15"></a>
+classes.txt</h2>
+<p>Each line of this file represents a Java class manipulated by SELogger. The file is a CSV having the following columns without a header line.</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Column Name   </th><th class="markdownTableHeadLeft">Content    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">ClassID   </td><td class="markdownTableBodyLeft">A sequential number assigned to the class    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">LoadedFrom   </td><td class="markdownTableBodyLeft">The name of a JAR file or directory from which the class is loaded    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">FileName   </td><td class="markdownTableBodyLeft">The class file name    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">ClassName   </td><td class="markdownTableBodyLeft">The name of the class    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">LogLevel   </td><td class="markdownTableBodyLeft">The level of inserted logging code. <code>Normal</code> indicates the weaving has been successfully finished.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">ClassHash   </td><td class="markdownTableBodyLeft">SHA-1 hash of the class bytecode    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">ClassLoaderID   </td><td class="markdownTableBodyLeft">A string representing a class loader that loaded the original class   </td></tr>
+</table>
+<p>In Java, a program may load multiple instances of a class using multiple class loaders. <br  />
+ For example, the DaCapo benchmark suite is a Java program that internally executes other programs. Some of the executed programs independently load and use different versions of the same library. Such classes can be distinguished by the <code>LoadedFrom</code>, <code>ClassHash</code>, and <code>ClassLoaderID</code> fields.</p>
+<p>The data format is represented by <code><a class="el" href="classselogger_1_1weaver_1_1ClassInfo.html">selogger.weaver.ClassInfo</a></code> class. You can parse a line using its <code>parse(String)</code> method.</p>
+<h2><a class="anchor" id="autotoc_md16"></a>
+methods.txt</h2>
+<p>Each line of this file represents a Java method defined in a class included in <code>classes.txt</code>. The file is a CSV having the following columns without a header line.</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Column Name   </th><th class="markdownTableHeadLeft">Content    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">ClassID   </td><td class="markdownTableBodyLeft">The ClassID in <code>classes.txt</code> of the class including the method    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">MethodID   </td><td class="markdownTableBodyLeft">A sequential number assigned to this method    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">ClassName   </td><td class="markdownTableBodyLeft">The name of the class. This is redundant but for ease of use.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">MethodName   </td><td class="markdownTableBodyLeft">The name of the method    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">MethodDesc   </td><td class="markdownTableBodyLeft">The descriptor of the method containing parameter and return value types.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">Access   </td><td class="markdownTableBodyLeft">The access modifiers of the method    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">SourceFileName   </td><td class="markdownTableBodyLeft">The source file name embedded by a compiler    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">MethodHash   </td><td class="markdownTableBodyLeft">SHA-1 hash of the byte array of the method body (before weaving)   </td></tr>
+</table>
+<p>The data format is represented by <code><a class="el" href="classselogger_1_1weaver_1_1MethodInfo.html">selogger.weaver.MethodInfo</a></code> class. You can parse a line using its <code>parse(String)</code> method.</p>
+<h2><a class="anchor" id="autotoc_md17"></a>
+dataids.txt</h2>
+<p>Each line of this file represents a runtime event corresponding to a Java bytecode instruction. The file is a CSV having the following columns without a header line.</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Column Name   </th><th class="markdownTableHeadLeft">Content    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">DataID   </td><td class="markdownTableBodyLeft">A sequential number assigned to an event    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">ClassID   </td><td class="markdownTableBodyLeft">ClassID for <code>classes.txt</code>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">MethodID   </td><td class="markdownTableBodyLeft">MethodID for <code>methods.txt</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">Line   </td><td class="markdownTableBodyLeft">Line number including the bytecode instruction    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">InstructionIndex   </td><td class="markdownTableBodyLeft">This points to an AbstractInsnNode object in <code>InsnList</code> of the ASM library.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">EventType   </td><td class="markdownTableBodyLeft">Event type name    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">ValueDesc   </td><td class="markdownTableBodyLeft">The type of a "Recorded Data" value of the event    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">Attributes   </td><td class="markdownTableBodyLeft">Extra attributes representing additional information about the bytecode instruction   </td></tr>
+</table>
+<p>The data format is represented by <code><a class="el" href="classselogger_1_1weaver_1_1DataInfo.html">selogger.weaver.DataInfo</a></code> class. You can parse a line using its <code>parse(String)</code> method. </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

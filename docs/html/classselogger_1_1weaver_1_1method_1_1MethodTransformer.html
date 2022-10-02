@@ -1,0 +1,2813 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>2022_kenshu_w3-4: selogger.weaver.method.MethodTransformer クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">2022_kenshu_w3-4
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('classselogger_1_1weaver_1_1method_1_1MethodTransformer.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-static-attribs">静的公開変数類</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classselogger_1_1weaver_1_1method_1_1MethodTransformer-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">selogger.weaver.method.MethodTransformer クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+selogger.weaver.method.MethodTransformer の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><img src="classselogger_1_1weaver_1_1method_1_1MethodTransformer__inherit__graph.png" border="0" usemap="#aselogger_8weaver_8method_8MethodTransformer_inherit__map" alt="Inheritance graph"/></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">凡例</a>]</span></center></div>
+<div class="dynheader">
+selogger.weaver.method.MethodTransformer 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="classselogger_1_1weaver_1_1method_1_1MethodTransformer__coll__graph.png" border="0" usemap="#aselogger_8weaver_8method_8MethodTransformer_coll__map" alt="Collaboration graph"/></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">凡例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a94a35b4bfbad94b654748e1b04685217"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a94a35b4bfbad94b654748e1b04685217">MethodTransformer</a> (<a class="el" href="classselogger_1_1weaver_1_1WeaveLog.html">WeaveLog</a> w, <a class="el" href="classselogger_1_1weaver_1_1WeaveConfig.html">WeaveConfig</a> <a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a528f5ce48c7c19fb4309a8f11f668c63">config</a>, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> <a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#ae60f5e7abd94160b4e28d62afd7e7854">sourceFileName</a>, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> <a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a821f367369663a3c2c71f72ce573b25f">className</a>, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> outerClassName, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> <a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a2fe37f45f03bfeb0e9474eff3012b23a">access</a>, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> <a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a33bcf9fb769dcf581b8dda873203991c">methodName</a>, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> <a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a588a89eb92796c0d3af2c09d55fd79cc">methodDesc</a>, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> signature, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>[] exceptions, MethodVisitor mv)</td></tr>
+<tr class="separator:a94a35b4bfbad94b654748e1b04685217"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7434e6301f16ca07dc03d7271dc6519e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a7434e6301f16ca07dc03d7271dc6519e">setup</a> (List&lt;?&gt; localVariableNodes, InsnList instructions)</td></tr>
+<tr class="separator:a7434e6301f16ca07dc03d7271dc6519e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b07c3084ae9c3d8543a5c0052eeb92c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a2b07c3084ae9c3d8543a5c0052eeb92c">visitEnd</a> ()</td></tr>
+<tr class="separator:a2b07c3084ae9c3d8543a5c0052eeb92c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b836748c6949b0a92a5d100674d02ec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a5b836748c6949b0a92a5d100674d02ec">visitLineNumber</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> line, Label <a class="el" href="test_2target_2selogger__out_2dataids_8txt.html#a550769bbd4e7537ff90a656f5b0c23b2">start</a>)</td></tr>
+<tr class="separator:a5b836748c6949b0a92a5d100674d02ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a078955a69e56a93a38b7d99efda0565f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a078955a69e56a93a38b7d99efda0565f">visitCode</a> ()</td></tr>
+<tr class="separator:a078955a69e56a93a38b7d99efda0565f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51a03d1fd57d1d9dfe4910db4b5b87b0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a51a03d1fd57d1d9dfe4910db4b5b87b0">visitTryCatchBlock</a> (Label <a class="el" href="test_2target_2selogger__out_2dataids_8txt.html#a550769bbd4e7537ff90a656f5b0c23b2">start</a>, Label <a class="el" href="test_2target_2selogger__out_2dataids_8txt.html#afb358f48b1646c750fb9da6c6585be2b">end</a>, Label <a class="el" href="test_2target_2selogger__out_2dataids_8txt.html#a3efeda223c3a4c0daa5611007cb90843">handler</a>, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> <a class="el" href="test_2target_2selogger__out_2dataids_8txt.html#a7aead736a07eaf25623ad7bfa1f0ee2d">type</a>)</td></tr>
+<tr class="separator:a51a03d1fd57d1d9dfe4910db4b5b87b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac873082485b94cc406de955eeabd524f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#ac873082485b94cc406de955eeabd524f">visitLabel</a> (Label label)</td></tr>
+<tr class="separator:ac873082485b94cc406de955eeabd524f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb1dabd023e704bc40c182125ceb7e2d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#acb1dabd023e704bc40c182125ceb7e2d">visitFrame</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> <a class="el" href="test_2target_2selogger__out_2dataids_8txt.html#a7aead736a07eaf25623ad7bfa1f0ee2d">type</a>, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> nLocal, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a9cb912cc9367a723499e6458503cb25f">Object</a>[] local, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> nStack, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a9cb912cc9367a723499e6458503cb25f">Object</a>[] stack)</td></tr>
+<tr class="separator:acb1dabd023e704bc40c182125ceb7e2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7812cc42063f96691efad8359ffb45c3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a7812cc42063f96691efad8359ffb45c3">visitJumpInsn</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> <a class="el" href="test_2target_2selogger__out_2dataids_8txt.html#a299fc707c775371e0b2b0495ccb6158e">opcode</a>, Label label)</td></tr>
+<tr class="separator:a7812cc42063f96691efad8359ffb45c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc58ebdc839589e699690ce7599ca1c1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#acc58ebdc839589e699690ce7599ca1c1">visitMaxs</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> maxStack, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> maxLocals)</td></tr>
+<tr class="separator:acc58ebdc839589e699690ce7599ca1c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac96798cd2b7ba87b468296bef9573bd6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#ac96798cd2b7ba87b468296bef9573bd6">visitTypeInsn</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> <a class="el" href="test_2target_2selogger__out_2dataids_8txt.html#a299fc707c775371e0b2b0495ccb6158e">opcode</a>, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> <a class="el" href="test_2target_2selogger__out_2dataids_8txt.html#a7aead736a07eaf25623ad7bfa1f0ee2d">type</a>)</td></tr>
+<tr class="separator:ac96798cd2b7ba87b468296bef9573bd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2ae25d9b18bb10ef1a2cbaa315e6ccc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#ae2ae25d9b18bb10ef1a2cbaa315e6ccc">visitIntInsn</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> <a class="el" href="test_2target_2selogger__out_2dataids_8txt.html#a299fc707c775371e0b2b0495ccb6158e">opcode</a>, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> operand)</td></tr>
+<tr class="separator:ae2ae25d9b18bb10ef1a2cbaa315e6ccc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae37a52c71bde610ed2247446418a62ff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#ae37a52c71bde610ed2247446418a62ff">visitMethodInsn</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> <a class="el" href="test_2target_2selogger__out_2dataids_8txt.html#a299fc707c775371e0b2b0495ccb6158e">opcode</a>, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> <a class="el" href="test_2target_2selogger__out_2dataids_8txt.html#aee6e0cd65a787643e49e447538a62770">owner</a>, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> <a class="el" href="test_2target_2selogger__out_2dataids_8txt.html#ab74e6bf80237ddc4109968cedc58c151">name</a>, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> <a class="el" href="test_2target_2selogger__out_2dataids_8txt.html#aafc566bb08a9f46485e7238669581c2b">desc</a>, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ad2c19257446c052b290090a0144280a6">boolean</a> itf)</td></tr>
+<tr class="separator:ae37a52c71bde610ed2247446418a62ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf9eeeb2899f889b45ad9f66d5eeae4c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#abf9eeeb2899f889b45ad9f66d5eeae4c">visitMultiANewArrayInsn</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> <a class="el" href="test_2target_2selogger__out_2dataids_8txt.html#aafc566bb08a9f46485e7238669581c2b">desc</a>, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> dims)</td></tr>
+<tr class="separator:abf9eeeb2899f889b45ad9f66d5eeae4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f209dee01cf32f637931c3e2799c969"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a6f209dee01cf32f637931c3e2799c969">visitIincInsn</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> var, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> increment)</td></tr>
+<tr class="separator:a6f209dee01cf32f637931c3e2799c969"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d699751aa2ba837d96c176bd9a5e77d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a6d699751aa2ba837d96c176bd9a5e77d">visitInsn</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> <a class="el" href="test_2target_2selogger__out_2dataids_8txt.html#a299fc707c775371e0b2b0495ccb6158e">opcode</a>)</td></tr>
+<tr class="separator:a6d699751aa2ba837d96c176bd9a5e77d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8460a4794e0de1c46015c906c5b7551"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#ae8460a4794e0de1c46015c906c5b7551">visitInvokeDynamicInsn</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> <a class="el" href="test_2target_2selogger__out_2dataids_8txt.html#ab74e6bf80237ddc4109968cedc58c151">name</a>, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> <a class="el" href="test_2target_2selogger__out_2dataids_8txt.html#aafc566bb08a9f46485e7238669581c2b">desc</a>, Handle bsm, Object... bsmArgs)</td></tr>
+<tr class="separator:ae8460a4794e0de1c46015c906c5b7551"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cb809108efa017202f80ab8ce4e866f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a1cb809108efa017202f80ab8ce4e866f">visitLookupSwitchInsn</a> (Label dflt, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>[] keys, Label[] labels)</td></tr>
+<tr class="separator:a1cb809108efa017202f80ab8ce4e866f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7bf922fdca203c1b1fc439c26fb1272"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#ab7bf922fdca203c1b1fc439c26fb1272">visitTableSwitchInsn</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> min, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> max, Label dflt, Label... labels)</td></tr>
+<tr class="separator:ab7bf922fdca203c1b1fc439c26fb1272"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b4843fe0591f192046660eb87551789"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a6b4843fe0591f192046660eb87551789">visitLdcInsn</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a9cb912cc9367a723499e6458503cb25f">Object</a> cst)</td></tr>
+<tr class="separator:a6b4843fe0591f192046660eb87551789"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08fe610140bd6383c79249b2031c1e7e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a08fe610140bd6383c79249b2031c1e7e">visitFieldInsn</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> <a class="el" href="test_2target_2selogger__out_2dataids_8txt.html#a299fc707c775371e0b2b0495ccb6158e">opcode</a>, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> <a class="el" href="test_2target_2selogger__out_2dataids_8txt.html#aee6e0cd65a787643e49e447538a62770">owner</a>, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> <a class="el" href="test_2target_2selogger__out_2dataids_8txt.html#ab74e6bf80237ddc4109968cedc58c151">name</a>, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> <a class="el" href="test_2target_2selogger__out_2dataids_8txt.html#aafc566bb08a9f46485e7238669581c2b">desc</a>)</td></tr>
+<tr class="separator:a08fe610140bd6383c79249b2031c1e7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45f0e550209eab7e06b1cb1905153c81"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a45f0e550209eab7e06b1cb1905153c81">visitVarInsn</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> <a class="el" href="test_2target_2selogger__out_2dataids_8txt.html#a299fc707c775371e0b2b0495ccb6158e">opcode</a>, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> var)</td></tr>
+<tr class="separator:a45f0e550209eab7e06b1cb1905153c81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+静的公開変数類</h2></td></tr>
+<tr class="memitem:aa7cc39422b0f184d7d89d767b5ec49cf"><td class="memItemLeft" align="right" valign="top">static final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#aa7cc39422b0f184d7d89d767b5ec49cf">LOGGER_CLASS</a> = &quot;selogger/logging/<a class="el" href="classselogger_1_1logging_1_1Logging.html">Logging</a>&quot;</td></tr>
+<tr class="separator:aa7cc39422b0f184d7d89d767b5ec49cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a2ffdca67845dad49f5ff7f38b4d93d"><td class="memItemLeft" align="right" valign="top">static final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a5a2ffdca67845dad49f5ff7f38b4d93d">METHOD_RECORD_EVENT</a> = &quot;recordEvent&quot;</td></tr>
+<tr class="separator:a5a2ffdca67845dad49f5ff7f38b4d93d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61bd4bab602ccb2d51d1d21edf494e9b"><td class="memItemLeft" align="right" valign="top">static final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a61bd4bab602ccb2d51d1d21edf494e9b">ATTRIBUTE_OWNER</a> = &quot;owner&quot;</td></tr>
+<tr class="separator:a61bd4bab602ccb2d51d1d21edf494e9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8b51de80017613d3ef9c4549d90d546"><td class="memItemLeft" align="right" valign="top">static final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#af8b51de80017613d3ef9c4549d90d546">ATTRIBUTE_NAME</a> = &quot;name&quot;</td></tr>
+<tr class="separator:af8b51de80017613d3ef9c4549d90d546"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc493ee382085101029f68cf50ca1ecf"><td class="memItemLeft" align="right" valign="top">static final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#afc493ee382085101029f68cf50ca1ecf">ATTRIBUTE_DESCRIPTOR</a> = &quot;desc&quot;</td></tr>
+<tr class="separator:afc493ee382085101029f68cf50ca1ecf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add6794c1340242d57447ca0068ba08a7"><td class="memItemLeft" align="right" valign="top">static final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#add6794c1340242d57447ca0068ba08a7">ATTRIBUTE_TYPE</a> = &quot;type&quot;</td></tr>
+<tr class="separator:add6794c1340242d57447ca0068ba08a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73a7550ad7817a6424c849db23681e71"><td class="memItemLeft" align="right" valign="top">static final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a73a7550ad7817a6424c849db23681e71">ATTRIBUTE_INCREMENT_AMOUNT</a> = &quot;amount&quot;</td></tr>
+<tr class="separator:a73a7550ad7817a6424c849db23681e71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac86ed3d28ed37df6d6a4bc49d0516010"><td class="memItemLeft" align="right" valign="top">static final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#ac86ed3d28ed37df6d6a4bc49d0516010">ATTRIBUTE_METHOD_TYPE</a> = &quot;methodtype&quot;</td></tr>
+<tr class="separator:ac86ed3d28ed37df6d6a4bc49d0516010"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a700494e123ff3ebb958a93dacb71a938"><td class="memItemLeft" align="right" valign="top">static final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a700494e123ff3ebb958a93dacb71a938">ATTRIBUTE_INDEX</a> = &quot;index&quot;</td></tr>
+<tr class="separator:a700494e123ff3ebb958a93dacb71a938"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e2c3f9a752b155c52bf65a0a4c62f02"><td class="memItemLeft" align="right" valign="top">static final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a2e2c3f9a752b155c52bf65a0a4c62f02">ATTRIBUTE_VARIABLE_INDEX</a> = &quot;varindex&quot;</td></tr>
+<tr class="separator:a2e2c3f9a752b155c52bf65a0a4c62f02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a336c878ba67da9f4f2c618d5a76992ff"><td class="memItemLeft" align="right" valign="top">static final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a336c878ba67da9f4f2c618d5a76992ff">ATTRIBUTE_OPCODE</a> = &quot;opcode&quot;</td></tr>
+<tr class="separator:a336c878ba67da9f4f2c618d5a76992ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a736cca5a19cbe25151d9b27099c84b7d"><td class="memItemLeft" align="right" valign="top">static final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a736cca5a19cbe25151d9b27099c84b7d">ATTRIBUTE_JUMP</a> = &quot;jumpto&quot;</td></tr>
+<tr class="separator:a736cca5a19cbe25151d9b27099c84b7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a453b1736adfe6d046a19fa3fdc566651"><td class="memItemLeft" align="right" valign="top">static final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a453b1736adfe6d046a19fa3fdc566651">ATTRIBUTE_LOCATION</a> = &quot;location&quot;</td></tr>
+<tr class="separator:a453b1736adfe6d046a19fa3fdc566651"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6fee43d1551741e36d1294501154b77"><td class="memItemLeft" align="right" valign="top">static final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#ad6fee43d1551741e36d1294501154b77">ATTRIBUTE_CREATION_LOCATION</a> = &quot;created&quot;</td></tr>
+<tr class="separator:ad6fee43d1551741e36d1294501154b77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a374b8750eed1d41bad4a79e7deab6866"><td class="memItemLeft" align="right" valign="top">static final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a374b8750eed1d41bad4a79e7deab6866">ATTRIBUTE_BLOCK_TYPE</a> = &quot;blocktype&quot;</td></tr>
+<tr class="separator:a374b8750eed1d41bad4a79e7deab6866"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8a321d69ee28dc2e42bf72f19c687c1"><td class="memItemLeft" align="right" valign="top">static final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#ad8a321d69ee28dc2e42bf72f19c687c1">ATTRIBUTE_BLOCK_START</a> = &quot;start&quot;</td></tr>
+<tr class="separator:ad8a321d69ee28dc2e42bf72f19c687c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b82c827d9e8a801e2cd55e6aa01c069"><td class="memItemLeft" align="right" valign="top">static final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a5b82c827d9e8a801e2cd55e6aa01c069">ATTRIBUTE_BLOCK_END</a> = &quot;end&quot;</td></tr>
+<tr class="separator:a5b82c827d9e8a801e2cd55e6aa01c069"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90f0bf5c89b671c19dc5aff4aa3c3190"><td class="memItemLeft" align="right" valign="top">static final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a90f0bf5c89b671c19dc5aff4aa3c3190">ATTRIBUTE_BLOCK_HANDLER</a> = &quot;handler&quot;</td></tr>
+<tr class="separator:a90f0bf5c89b671c19dc5aff4aa3c3190"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4cfcb0227bae8d695915136b6735834"><td class="memItemLeft" align="right" valign="top">static final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#af4cfcb0227bae8d695915136b6735834">ATTRIBUTE_BOOTSTRAP_OWNER</a> = &quot;bootstrap_owner&quot;</td></tr>
+<tr class="separator:af4cfcb0227bae8d695915136b6735834"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab612cb4865dbc6a8fbbd27fc98d0d3a0"><td class="memItemLeft" align="right" valign="top">static final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#ab612cb4865dbc6a8fbbd27fc98d0d3a0">ATTRIBUTE_BOOTSTRAP_NAME</a> = &quot;bootstrap_name&quot;</td></tr>
+<tr class="separator:ab612cb4865dbc6a8fbbd27fc98d0d3a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a75430f1e692b936b6f4286775788cf"><td class="memItemLeft" align="right" valign="top">static final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a0a75430f1e692b936b6f4286775788cf">ATTRIBUTE_BOOTSTRAP_DESC</a> = &quot;bootstrap_desc&quot;</td></tr>
+<tr class="separator:a0a75430f1e692b936b6f4286775788cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae69e556cfdf51d1c66b9567c01bb9512"><td class="memItemLeft" align="right" valign="top">static final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#ae69e556cfdf51d1c66b9567c01bb9512">ATTRIBUTE_BOOTSTRAP_ARG</a> = &quot;bootstrap_arg&quot;</td></tr>
+<tr class="separator:ae69e556cfdf51d1c66b9567c01bb9512"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0de4d372f51e0b1e877f7c8b3b7cd47"><td class="memItemLeft" align="right" valign="top">static final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#aa0de4d372f51e0b1e877f7c8b3b7cd47">ATTRIBUTE_ARRAY_DIMENSIONS</a> = &quot;dimensions&quot;</td></tr>
+<tr class="separator:aa0de4d372f51e0b1e877f7c8b3b7cd47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:a0f35970c2ffc59cb778f1a50e35460ef"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a0f35970c2ffc59cb778f1a50e35460ef">getLabelString</a> (Label label)</td></tr>
+<tr class="separator:a0f35970c2ffc59cb778f1a50e35460ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa2309a198c8c4dbd61a391040607251"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ad2c19257446c052b290090a0144280a6">boolean</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#afa2309a198c8c4dbd61a391040607251">hasReceiver</a> ()</td></tr>
+<tr class="separator:afa2309a198c8c4dbd61a391040607251"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af64fbb97e261267215ff53d068fbff31"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ad2c19257446c052b290090a0144280a6">boolean</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#af64fbb97e261267215ff53d068fbff31">isConstructor</a> ()</td></tr>
+<tr class="separator:af64fbb97e261267215ff53d068fbff31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a523ca1ac3ddfef10458fe7fe815b1665"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a523ca1ac3ddfef10458fe7fe815b1665">generateLocationUpdate</a> ()</td></tr>
+<tr class="separator:a523ca1ac3ddfef10458fe7fe815b1665"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89caab7e71666df6125335f0b277766e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a89caab7e71666df6125335f0b277766e">getReturnValueDesc</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> <a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a588a89eb92796c0d3af2c09d55fd79cc">methodDesc</a>)</td></tr>
+<tr class="separator:a89caab7e71666df6125335f0b277766e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9db7ab0004537e4127146f66f77391ca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enumselogger_1_1weaver_1_1method_1_1Descriptor.html">Descriptor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a9db7ab0004537e4127146f66f77391ca">getDescForReturn</a> ()</td></tr>
+<tr class="separator:a9db7ab0004537e4127146f66f77391ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb6c37451cbb44113dfde80e7f68b04c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#adb6c37451cbb44113dfde80e7f68b04c">generateRecordArrayLoad</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> <a class="el" href="test_2target_2selogger__out_2dataids_8txt.html#a299fc707c775371e0b2b0495ccb6158e">opcode</a>)</td></tr>
+<tr class="separator:adb6c37451cbb44113dfde80e7f68b04c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7844e0b9156062d57fa19eef277c7d76"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a7844e0b9156062d57fa19eef277c7d76">generateRecordArrayStore</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> <a class="el" href="test_2target_2selogger__out_2dataids_8txt.html#a299fc707c775371e0b2b0495ccb6158e">opcode</a>)</td></tr>
+<tr class="separator:a7844e0b9156062d57fa19eef277c7d76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabbaf91eb631b2311387919ae8bfe70b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#aabbaf91eb631b2311387919ae8bfe70b">nextDataId</a> (<a class="el" href="enumselogger_1_1EventType.html">EventType</a> eventType, <a class="el" href="enumselogger_1_1weaver_1_1method_1_1Descriptor.html">Descriptor</a> <a class="el" href="test_2target_2selogger__out_2dataids_8txt.html#aafc566bb08a9f46485e7238669581c2b">desc</a>, <a class="el" href="classselogger_1_1weaver_1_1method_1_1InstructionAttributes.html">InstructionAttributes</a> label)</td></tr>
+<tr class="separator:aabbaf91eb631b2311387919ae8bfe70b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a0728242247eeb16de7c1522bcb18dd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a3a0728242247eeb16de7c1522bcb18dd">generateNewVarInsn</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> <a class="el" href="test_2target_2selogger__out_2dataids_8txt.html#a299fc707c775371e0b2b0495ccb6158e">opcode</a>, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> local)</td></tr>
+<tr class="separator:a3a0728242247eeb16de7c1522bcb18dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a764b4b0dbacbab569ecb1966e4541745"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a764b4b0dbacbab569ecb1966e4541745">generateLogging</a> (<a class="el" href="enumselogger_1_1EventType.html">EventType</a> eventType, <a class="el" href="enumselogger_1_1weaver_1_1method_1_1Descriptor.html">Descriptor</a> valueDesc, <a class="el" href="classselogger_1_1weaver_1_1method_1_1InstructionAttributes.html">InstructionAttributes</a> label)</td></tr>
+<tr class="separator:a764b4b0dbacbab569ecb1966e4541745"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b508ef7a856033c48be92f40bbd39af"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a7b508ef7a856033c48be92f40bbd39af">generateLoggingPreservingStackTop</a> (<a class="el" href="enumselogger_1_1EventType.html">EventType</a> eventType, <a class="el" href="enumselogger_1_1weaver_1_1method_1_1Descriptor.html">Descriptor</a> valueDesc, <a class="el" href="classselogger_1_1weaver_1_1method_1_1InstructionAttributes.html">InstructionAttributes</a> label)</td></tr>
+<tr class="separator:a7b508ef7a856033c48be92f40bbd39af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14fcb7332edbbff54aa1469ea1ae9a83"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a14fcb7332edbbff54aa1469ea1ae9a83">getInstructionString</a> (InsnList instructions, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> <a class="el" href="test_2target_2selogger__out_2dataids_8txt.html#a6784e1c334dfceb8f017667c0b0f6a3e">index</a>)</td></tr>
+<tr class="separator:a14fcb7332edbbff54aa1469ea1ae9a83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:a6b67a7ab37d0da08d698ee122fdfca3f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classselogger_1_1weaver_1_1WeaveLog.html">WeaveLog</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a6b67a7ab37d0da08d698ee122fdfca3f">weavingInfo</a></td></tr>
+<tr class="separator:a6b67a7ab37d0da08d698ee122fdfca3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a528f5ce48c7c19fb4309a8f11f668c63"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classselogger_1_1weaver_1_1WeaveConfig.html">WeaveConfig</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a528f5ce48c7c19fb4309a8f11f668c63">config</a></td></tr>
+<tr class="separator:a528f5ce48c7c19fb4309a8f11f668c63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abaa9345cab4c04c1b81b433e19fc32c0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#abaa9345cab4c04c1b81b433e19fc32c0">currentLine</a> = -1</td></tr>
+<tr class="separator:abaa9345cab4c04c1b81b433e19fc32c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a821f367369663a3c2c71f72ce573b25f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a821f367369663a3c2c71f72ce573b25f">className</a></td></tr>
+<tr class="separator:a821f367369663a3c2c71f72ce573b25f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae60f5e7abd94160b4e28d62afd7e7854"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#ae60f5e7abd94160b4e28d62afd7e7854">sourceFileName</a></td></tr>
+<tr class="separator:ae60f5e7abd94160b4e28d62afd7e7854"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fe37f45f03bfeb0e9474eff3012b23a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a2fe37f45f03bfeb0e9474eff3012b23a">access</a></td></tr>
+<tr class="separator:a2fe37f45f03bfeb0e9474eff3012b23a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33bcf9fb769dcf581b8dda873203991c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a33bcf9fb769dcf581b8dda873203991c">methodName</a></td></tr>
+<tr class="separator:a33bcf9fb769dcf581b8dda873203991c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a588a89eb92796c0d3af2c09d55fd79cc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a588a89eb92796c0d3af2c09d55fd79cc">methodDesc</a></td></tr>
+<tr class="separator:a588a89eb92796c0d3af2c09d55fd79cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66bf503f66f58fc3715340453d671c77"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a66bf503f66f58fc3715340453d671c77">instructionIndex</a></td></tr>
+<tr class="separator:a66bf503f66f58fc3715340453d671c77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1c72b2f1e672606dfa632a2de060f01"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classselogger_1_1weaver_1_1method_1_1LocalVariables.html">LocalVariables</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#af1c72b2f1e672606dfa632a2de060f01">variables</a></td></tr>
+<tr class="separator:af1c72b2f1e672606dfa632a2de060f01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f07b5861be70912e2e137163cab3266"><td class="memItemLeft" align="right" valign="top">Label&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a9f07b5861be70912e2e137163cab3266">startLabel</a> = new Label()</td></tr>
+<tr class="separator:a9f07b5861be70912e2e137163cab3266"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf8c0527553e416731253b52eb61d138"><td class="memItemLeft" align="right" valign="top">Label&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#aaf8c0527553e416731253b52eb61d138">endLabel</a> = new Label()</td></tr>
+<tr class="separator:aaf8c0527553e416731253b52eb61d138"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72e46933b32f7f4bcd44fc7b4bd3057a"><td class="memItemLeft" align="right" valign="top">HashMap&lt; Label, <a class="el" href="classselogger_1_1weaver_1_1method_1_1InstructionAttributes.html">InstructionAttributes</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a72e46933b32f7f4bcd44fc7b4bd3057a">catchBlockInfo</a> = new HashMap&lt;&gt;()</td></tr>
+<tr class="separator:a72e46933b32f7f4bcd44fc7b4bd3057a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44624bba36eeb97b93b4ee697b88ff0e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ad2c19257446c052b290090a0144280a6">boolean</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a44624bba36eeb97b93b4ee697b88ff0e">isStartLabelLocated</a></td></tr>
+<tr class="separator:a44624bba36eeb97b93b4ee697b88ff0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60a86696616890f6b2576b333304dc09"><td class="memItemLeft" align="right" valign="top">HashMap&lt; Label, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a6d0a82503c06a35abc77cfc2e88f84d3">Integer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a60a86696616890f6b2576b333304dc09">labelInstructionIndexMap</a> = new HashMap&lt;Label, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a6d0a82503c06a35abc77cfc2e88f84d3">Integer</a>&gt;()</td></tr>
+<tr class="separator:a60a86696616890f6b2576b333304dc09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6805168b70d8147f882db213668e1eef"><td class="memItemLeft" align="right" valign="top">HashMap&lt; Label, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a6d0a82503c06a35abc77cfc2e88f84d3">Integer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a6805168b70d8147f882db213668e1eef">labelLineNumberMap</a> = new HashMap&lt;Label, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a6d0a82503c06a35abc77cfc2e88f84d3">Integer</a>&gt;()</td></tr>
+<tr class="separator:a6805168b70d8147f882db213668e1eef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44f631750ab17cb71d29bbb281568e81"><td class="memItemLeft" align="right" valign="top">Stack&lt; <a class="el" href="classselogger_1_1weaver_1_1method_1_1ANewInstruction.html">ANewInstruction</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a44f631750ab17cb71d29bbb281568e81">newInstructionStack</a> = new Stack&lt;<a class="el" href="classselogger_1_1weaver_1_1method_1_1ANewInstruction.html">ANewInstruction</a>&gt;()</td></tr>
+<tr class="memdesc:a44f631750ab17cb71d29bbb281568e81"><td class="mdescLeft">&#160;</td><td class="mdescRight">To check a pair of NEW instruction and its constructor call  <a href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a44f631750ab17cb71d29bbb281568e81">[詳解]</a><br /></td></tr>
+<tr class="separator:a44f631750ab17cb71d29bbb281568e81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cf514a92fa156d4ac77461fb3ea4f64"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a8cf514a92fa156d4ac77461fb3ea4f64">lastLocationVar</a> = -1</td></tr>
+<tr class="separator:a8cf514a92fa156d4ac77461fb3ea4f64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1331b146fe65b99d01e6bc525bb0144"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ad2c19257446c052b290090a0144280a6">boolean</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#ae1331b146fe65b99d01e6bc525bb0144">afterInitialization</a></td></tr>
+<tr class="separator:ae1331b146fe65b99d01e6bc525bb0144"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f7d8949dfa21102614ab0c29f366820"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ad2c19257446c052b290090a0144280a6">boolean</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a1f7d8949dfa21102614ab0c29f366820">afterNewArray</a> = <a class="el" href="src_2test_2target_2selogger__out_2log-00001_8txt.html#ae6c865df784842196d411c1466b01686">false</a></td></tr>
+<tr class="separator:a1f7d8949dfa21102614ab0c29f366820"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ecaa8b69bb9d56e428172a1d2ab0d9e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html#a2ecaa8b69bb9d56e428172a1d2ab0d9e">originalInsnListSize</a></td></tr>
+<tr class="separator:a2ecaa8b69bb9d56e428172a1d2ab0d9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>This class is the main implementation of the weaving process for each method. This class extends LocalVariablesSorter because this class insert additional local variables to temporarily preserves method parameters. </p>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00038">38</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="a94a35b4bfbad94b654748e1b04685217"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94a35b4bfbad94b654748e1b04685217">&#9670;&nbsp;</a></span>MethodTransformer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">selogger.weaver.method.MethodTransformer.MethodTransformer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classselogger_1_1weaver_1_1WeaveLog.html">WeaveLog</a>&#160;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classselogger_1_1weaver_1_1WeaveConfig.html">WeaveConfig</a>&#160;</td>
+          <td class="paramname"><em>config</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td>
+          <td class="paramname"><em>sourceFileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td>
+          <td class="paramname"><em>className</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td>
+          <td class="paramname"><em>outerClassName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>access</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td>
+          <td class="paramname"><em>methodName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td>
+          <td class="paramname"><em>methodDesc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td>
+          <td class="paramname"><em>signature</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>[]&#160;</td>
+          <td class="paramname"><em>exceptions</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MethodVisitor&#160;</td>
+          <td class="paramname"><em>mv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Initialize the instance </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">w</td><td>is to log the progress </td></tr>
+    <tr><td class="paramname">config</td><td>is the configuration of the weaving </td></tr>
+    <tr><td class="paramname">sourceFileName</td><td>is a source file name (just for logging the progress) </td></tr>
+    <tr><td class="paramname">className</td><td>is a class name </td></tr>
+    <tr><td class="paramname">outerClassName</td><td>is outer class name if this class is ineer class </td></tr>
+    <tr><td class="paramname">access</td><td>is modifiers of the method </td></tr>
+    <tr><td class="paramname">methodName</td><td>is a method name </td></tr>
+    <tr><td class="paramname">methodDesc</td><td>is a descriptor (parameter types and a return type) </td></tr>
+    <tr><td class="paramname">signature</td><td>is a generics signature </td></tr>
+    <tr><td class="paramname">exceptions</td><td>represents a throws clause </td></tr>
+    <tr><td class="paramname">mv</td><td>is the object for writing bytecode </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00198">198</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a523ca1ac3ddfef10458fe7fe815b1665"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a523ca1ac3ddfef10458fe7fe815b1665">&#9670;&nbsp;</a></span>generateLocationUpdate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.weaver.method.MethodTransformer.generateLocationUpdate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Insert an instruction to store the current bytecode location to a local variable to track the control flow. <br  />
+ </p>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00736">736</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a764b4b0dbacbab569ecb1966e4541745"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a764b4b0dbacbab569ecb1966e4541745">&#9670;&nbsp;</a></span>generateLogging()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.weaver.method.MethodTransformer.generateLogging </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enumselogger_1_1EventType.html">EventType</a>&#160;</td>
+          <td class="paramname"><em>eventType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="enumselogger_1_1weaver_1_1method_1_1Descriptor.html">Descriptor</a>&#160;</td>
+          <td class="paramname"><em>valueDesc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classselogger_1_1weaver_1_1method_1_1InstructionAttributes.html">InstructionAttributes</a>&#160;</td>
+          <td class="paramname"><em>label</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Generate logging instructions.</p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">paramName</td><td>specifies a data name. </td></tr>
+    <tr><td class="paramname">valueDesc</td><td>specifies a data type. If it has no data, use <a class="el" href="enumselogger_1_1weaver_1_1method_1_1Descriptor.html#aa90fe01bb389a08993397690aa1daa5d">Descriptor.Void</a>. <br  />
+ </td></tr>
+    <tr><td class="paramname">label</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l01181">1181</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a7b508ef7a856033c48be92f40bbd39af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b508ef7a856033c48be92f40bbd39af">&#9670;&nbsp;</a></span>generateLoggingPreservingStackTop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.weaver.method.MethodTransformer.generateLoggingPreservingStackTop </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enumselogger_1_1EventType.html">EventType</a>&#160;</td>
+          <td class="paramname"><em>eventType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="enumselogger_1_1weaver_1_1method_1_1Descriptor.html">Descriptor</a>&#160;</td>
+          <td class="paramname"><em>valueDesc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classselogger_1_1weaver_1_1method_1_1InstructionAttributes.html">InstructionAttributes</a>&#160;</td>
+          <td class="paramname"><em>label</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Generate logging instructions to record a copy value on the stack top. This call does not change a stack.</p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">paramName</td><td></td></tr>
+    <tr><td class="paramname">valueDesc</td><td></td></tr>
+    <tr><td class="paramname">label</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l01200">1200</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a3a0728242247eeb16de7c1522bcb18dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a0728242247eeb16de7c1522bcb18dd">&#9670;&nbsp;</a></span>generateNewVarInsn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.weaver.method.MethodTransformer.generateNewVarInsn </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>opcode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>local</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Create a variable instruction using new local variables created by newLocal. This method does not use super.visitVarInsn because visitVarInsn will renumber variable index. (A return value of newLocal is a renumbered index.)</p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">opcode</td><td></td></tr>
+    <tr><td class="paramname">local</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l01169">1169</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="adb6c37451cbb44113dfde80e7f68b04c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb6c37451cbb44113dfde80e7f68b04c">&#9670;&nbsp;</a></span>generateRecordArrayLoad()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.weaver.method.MethodTransformer.generateRecordArrayLoad </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>opcode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Insert logging code for ARRAY LOAD instruction. </p>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00981">981</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a7844e0b9156062d57fa19eef277c7d76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7844e0b9156062d57fa19eef277c7d76">&#9670;&nbsp;</a></span>generateRecordArrayStore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.weaver.method.MethodTransformer.generateRecordArrayStore </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>opcode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Insert logging code for ARRAY STORE instruction. </p>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l01011">1011</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a9db7ab0004537e4127146f66f77391ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9db7ab0004537e4127146f66f77391ca">&#9670;&nbsp;</a></span>getDescForReturn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enumselogger_1_1weaver_1_1method_1_1Descriptor.html">Descriptor</a> selogger.weaver.method.MethodTransformer.getDescForReturn </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>戻り値</dt><dd>a descriptor representing the return type of this method. </dd></dl>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00797">797</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a14fcb7332edbbff54aa1469ea1ae9a83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14fcb7332edbbff54aa1469ea1ae9a83">&#9670;&nbsp;</a></span>getInstructionString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> selogger.weaver.method.MethodTransformer.getInstructionString </td>
+          <td>(</td>
+          <td class="paramtype">InsnList&#160;</td>
+          <td class="paramname"><em>instructions</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>index</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">method</td><td>specifies a method containing an instruction. </td></tr>
+    <tr><td class="paramname">index</td><td>specifies the position of an instruction in the list of instructions. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>a string representation of an instruction. </dd></dl>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l01222">1222</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a0f35970c2ffc59cb778f1a50e35460ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f35970c2ffc59cb778f1a50e35460ef">&#9670;&nbsp;</a></span>getLabelString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> selogger.weaver.method.MethodTransformer.getLabelString </td>
+          <td>(</td>
+          <td class="paramtype">Label&#160;</td>
+          <td class="paramname"><em>label</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>戻り値</dt><dd>a string representation for a given label. </dd></dl>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00280">280</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a89caab7e71666df6125335f0b277766e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89caab7e71666df6125335f0b277766e">&#9670;&nbsp;</a></span>getReturnValueDesc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> selogger.weaver.method.MethodTransformer.getReturnValueDesc </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td>
+          <td class="paramname"><em>methodDesc</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Extract a descriptor representing the return type of a given method descriptor. TODO This should be moved to <a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodParameters.html">MethodParameters</a>. </p>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00788">788</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="afa2309a198c8c4dbd61a391040607251"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa2309a198c8c4dbd61a391040607251">&#9670;&nbsp;</a></span>hasReceiver()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ad2c19257446c052b290090a0144280a6">boolean</a> selogger.weaver.method.MethodTransformer.hasReceiver </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>戻り値</dt><dd>true if the method has a receiver, i.e., the method is an instance method. </dd></dl>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00317">317</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="af64fbb97e261267215ff53d068fbff31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af64fbb97e261267215ff53d068fbff31">&#9670;&nbsp;</a></span>isConstructor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ad2c19257446c052b290090a0144280a6">boolean</a> selogger.weaver.method.MethodTransformer.isConstructor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>戻り値</dt><dd>true if the method is a constructor. <br  />
+ </dd></dl>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00324">324</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aabbaf91eb631b2311387919ae8bfe70b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabbaf91eb631b2311387919ae8bfe70b">&#9670;&nbsp;</a></span>nextDataId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> selogger.weaver.method.MethodTransformer.nextDataId </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enumselogger_1_1EventType.html">EventType</a>&#160;</td>
+          <td class="paramname"><em>eventType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="enumselogger_1_1weaver_1_1method_1_1Descriptor.html">Descriptor</a>&#160;</td>
+          <td class="paramname"><em>desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classselogger_1_1weaver_1_1method_1_1InstructionAttributes.html">InstructionAttributes</a>&#160;</td>
+          <td class="paramname"><em>label</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Create a new Data ID. </p>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l01113">1113</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a7434e6301f16ca07dc03d7271dc6519e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7434e6301f16ca07dc03d7271dc6519e">&#9670;&nbsp;</a></span>setup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.weaver.method.MethodTransformer.setup </td>
+          <td>(</td>
+          <td class="paramtype">List&lt;?&gt;&#160;</td>
+          <td class="paramname"><em>localVariableNodes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">InsnList&#160;</td>
+          <td class="paramname"><em>instructions</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Receives local variables and instructions in this method. This method must be called before weaving because local variable names and instruction indices are necessary to generate textual information for DataId. </p>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00222">222</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a078955a69e56a93a38b7d99efda0565f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a078955a69e56a93a38b7d99efda0565f">&#9670;&nbsp;</a></span>visitCode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.weaver.method.MethodTransformer.visitCode </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Visiting a method body. Generate try { recordEntryEvent; recordParams; body(); } catch (Throwable t) { ... }. </p>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00334">334</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a2b07c3084ae9c3d8543a5c0052eeb92c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b07c3084ae9c3d8543a5c0052eeb92c">&#9670;&nbsp;</a></span>visitEnd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.weaver.method.MethodTransformer.visitEnd </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>End the weaving. </p>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00273">273</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a08fe610140bd6383c79249b2031c1e7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08fe610140bd6383c79249b2031c1e7e">&#9670;&nbsp;</a></span>visitFieldInsn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.weaver.method.MethodTransformer.visitFieldInsn </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>opcode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td>
+          <td class="paramname"><em>owner</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td>
+          <td class="paramname"><em>desc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Insert logging code for field access instruction. </p>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l01040">1040</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="acb1dabd023e704bc40c182125ceb7e2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb1dabd023e704bc40c182125ceb7e2d">&#9670;&nbsp;</a></span>visitFrame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.weaver.method.MethodTransformer.visitFrame </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>nLocal</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a9cb912cc9367a723499e6458503cb25f">Object</a>[]&#160;</td>
+          <td class="paramname"><em>local</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>nStack</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a9cb912cc9367a723499e6458503cb25f">Object</a>[]&#160;</td>
+          <td class="paramname"><em>stack</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>No additional actions but count the number of instructions. </p>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00444">444</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a6f209dee01cf32f637931c3e2799c969"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f209dee01cf32f637931c3e2799c969">&#9670;&nbsp;</a></span>visitIincInsn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.weaver.method.MethodTransformer.visitIincInsn </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>var</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>increment</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Insert logging code for an IINC instruction. It records a value after increment. </p>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00770">770</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a6d699751aa2ba837d96c176bd9a5e77d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d699751aa2ba837d96c176bd9a5e77d">&#9670;&nbsp;</a></span>visitInsn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.weaver.method.MethodTransformer.visitInsn </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>opcode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Insert logging code for various instructions. </p>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00808">808</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae2ae25d9b18bb10ef1a2cbaa315e6ccc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2ae25d9b18bb10ef1a2cbaa315e6ccc">&#9670;&nbsp;</a></span>visitIntInsn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.weaver.method.MethodTransformer.visitIntInsn </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>opcode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>operand</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Insert logging code for a NEWARRAY instruction. It records the array size and a created array. </p>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00553">553</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae8460a4794e0de1c46015c906c5b7551"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8460a4794e0de1c46015c906c5b7551">&#9670;&nbsp;</a></span>visitInvokeDynamicInsn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.weaver.method.MethodTransformer.visitInvokeDynamicInsn </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td>
+          <td class="paramname"><em>desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Handle&#160;</td>
+          <td class="paramname"><em>bsm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Object...&#160;</td>
+          <td class="paramname"><em>bsmArgs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Insert logging code for INVOKEDYNAMIC instruction. </p>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00888">888</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a7812cc42063f96691efad8359ffb45c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7812cc42063f96691efad8359ffb45c3">&#9670;&nbsp;</a></span>visitJumpInsn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.weaver.method.MethodTransformer.visitJumpInsn </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>opcode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Label&#160;</td>
+          <td class="paramname"><em>label</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Store a location for LABEL event if recordLabel is enabled. </p>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00453">453</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ac873082485b94cc406de955eeabd524f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac873082485b94cc406de955eeabd524f">&#9670;&nbsp;</a></span>visitLabel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.weaver.method.MethodTransformer.visitLabel </td>
+          <td>(</td>
+          <td class="paramtype">Label&#160;</td>
+          <td class="paramname"><em>label</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Logging a jump instruction if recordLabel is enabled. Logging a catch event for a method call. </p>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00412">412</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a6b4843fe0591f192046660eb87551789"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b4843fe0591f192046660eb87551789">&#9670;&nbsp;</a></span>visitLdcInsn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.weaver.method.MethodTransformer.visitLdcInsn </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a9cb912cc9367a723499e6458503cb25f">Object</a>&#160;</td>
+          <td class="paramname"><em>cst</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Insert logging code for a Load Constant instruction in order to record the constant object. </p>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00968">968</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a5b836748c6949b0a92a5d100674d02ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b836748c6949b0a92a5d100674d02ec">&#9670;&nbsp;</a></span>visitLineNumber()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.weaver.method.MethodTransformer.visitLineNumber </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>line</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Label&#160;</td>
+          <td class="paramname"><em>start</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Record current line number for other visit methods </p>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00301">301</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a1cb809108efa017202f80ab8ce4e866f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cb809108efa017202f80ab8ce4e866f">&#9670;&nbsp;</a></span>visitLookupSwitchInsn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.weaver.method.MethodTransformer.visitLookupSwitchInsn </td>
+          <td>(</td>
+          <td class="paramtype">Label&#160;</td>
+          <td class="paramname"><em>dflt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>[]&#160;</td>
+          <td class="paramname"><em>keys</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Label[]&#160;</td>
+          <td class="paramname"><em>labels</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>No additional actions but count the number of instructions. </p>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00949">949</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="acc58ebdc839589e699690ce7599ca1c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc58ebdc839589e699690ce7599ca1c1">&#9670;&nbsp;</a></span>visitMaxs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.weaver.method.MethodTransformer.visitMaxs </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>maxStack</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>maxLocals</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Finalize the method. Generate a finally block for exceptional exit. </p>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00470">470</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae37a52c71bde610ed2247446418a62ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae37a52c71bde610ed2247446418a62ff">&#9670;&nbsp;</a></span>visitMethodInsn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.weaver.method.MethodTransformer.visitMethodInsn </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>opcode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td>
+          <td class="paramname"><em>owner</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td>
+          <td class="paramname"><em>desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ad2c19257446c052b290090a0144280a6">boolean</a>&#160;</td>
+          <td class="paramname"><em>itf</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Insert logging code for INVOKE instructions. </p>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00576">576</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="abf9eeeb2899f889b45ad9f66d5eeae4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf9eeeb2899f889b45ad9f66d5eeae4c">&#9670;&nbsp;</a></span>visitMultiANewArrayInsn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.weaver.method.MethodTransformer.visitMultiANewArrayInsn </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td>
+          <td class="paramname"><em>desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>dims</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Insert logging code for a MultiANewArray instruction. It records a created array and its elements. </p>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00747">747</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ab7bf922fdca203c1b1fc439c26fb1272"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7bf922fdca203c1b1fc439c26fb1272">&#9670;&nbsp;</a></span>visitTableSwitchInsn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.weaver.method.MethodTransformer.visitTableSwitchInsn </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>min</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>max</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Label&#160;</td>
+          <td class="paramname"><em>dflt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Label...&#160;</td>
+          <td class="paramname"><em>labels</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>No additional actions but count the number of instructions. </p>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00958">958</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a51a03d1fd57d1d9dfe4910db4b5b87b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51a03d1fd57d1d9dfe4910db4b5b87b0">&#9670;&nbsp;</a></span>visitTryCatchBlock()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.weaver.method.MethodTransformer.visitTryCatchBlock </td>
+          <td>(</td>
+          <td class="paramtype">Label&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Label&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Label&#160;</td>
+          <td class="paramname"><em>handler</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td>
+          <td class="paramname"><em>type</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Store entry points of catch blocks for later visit* methods. The method is called BEFORE visit* methods for other instructions, according to the implementation of MethodNode class. </p>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00394">394</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ac96798cd2b7ba87b468296bef9573bd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac96798cd2b7ba87b468296bef9573bd6">&#9670;&nbsp;</a></span>visitTypeInsn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.weaver.method.MethodTransformer.visitTypeInsn </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>opcode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td>
+          <td class="paramname"><em>type</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Insert logging code for NEW, ANEWARRAY, INSTANCEOF instructions. </p>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00515">515</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a45f0e550209eab7e06b1cb1905153c81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45f0e550209eab7e06b1cb1905153c81">&#9670;&nbsp;</a></span>visitVarInsn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.weaver.method.MethodTransformer.visitVarInsn </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>opcode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>var</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Insert logging code for local variable and RET instructions. </p>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l01123">1123</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a2fe37f45f03bfeb0e9474eff3012b23a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fe37f45f03bfeb0e9474eff3012b23a">&#9670;&nbsp;</a></span>access</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> selogger.weaver.method.MethodTransformer.access</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00145">145</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae1331b146fe65b99d01e6bc525bb0144"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1331b146fe65b99d01e6bc525bb0144">&#9670;&nbsp;</a></span>afterInitialization</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ad2c19257446c052b290090a0144280a6">boolean</a> selogger.weaver.method.MethodTransformer.afterInitialization</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>In a constructor, this flag becomes true after the super() is called. </p>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00172">172</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a1f7d8949dfa21102614ab0c29f366820"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f7d8949dfa21102614ab0c29f366820">&#9670;&nbsp;</a></span>afterNewArray</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ad2c19257446c052b290090a0144280a6">boolean</a> selogger.weaver.method.MethodTransformer.afterNewArray = <a class="el" href="src_2test_2target_2selogger__out_2log-00001_8txt.html#ae6c865df784842196d411c1466b01686">false</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>To skip ARRAY STORE instructions after an array creation </p>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00177">177</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aa0de4d372f51e0b1e877f7c8b3b7cd47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0de4d372f51e0b1e877f7c8b3b7cd47">&#9670;&nbsp;</a></span>ATTRIBUTE_ARRAY_DIMENSIONS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> selogger.weaver.method.MethodTransformer.ATTRIBUTE_ARRAY_DIMENSIONS = &quot;dimensions&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The dimensions for MULTINEWARRAY </p>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00138">138</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a5b82c827d9e8a801e2cd55e6aa01c069"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b82c827d9e8a801e2cd55e6aa01c069">&#9670;&nbsp;</a></span>ATTRIBUTE_BLOCK_END</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> selogger.weaver.method.MethodTransformer.ATTRIBUTE_BLOCK_END = &quot;end&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00124">124</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a90f0bf5c89b671c19dc5aff4aa3c3190"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90f0bf5c89b671c19dc5aff4aa3c3190">&#9670;&nbsp;</a></span>ATTRIBUTE_BLOCK_HANDLER</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> selogger.weaver.method.MethodTransformer.ATTRIBUTE_BLOCK_HANDLER = &quot;handler&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00125">125</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ad8a321d69ee28dc2e42bf72f19c687c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8a321d69ee28dc2e42bf72f19c687c1">&#9670;&nbsp;</a></span>ATTRIBUTE_BLOCK_START</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> selogger.weaver.method.MethodTransformer.ATTRIBUTE_BLOCK_START = &quot;start&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>A label of a CATCH/FINALLY block has the attributes representing the block information </p>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00123">123</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a374b8750eed1d41bad4a79e7deab6866"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a374b8750eed1d41bad4a79e7deab6866">&#9670;&nbsp;</a></span>ATTRIBUTE_BLOCK_TYPE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> selogger.weaver.method.MethodTransformer.ATTRIBUTE_BLOCK_TYPE = &quot;blocktype&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Attribute for a catch/finally block label to represent CATCH or FINALLY. </p>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00117">117</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae69e556cfdf51d1c66b9567c01bb9512"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae69e556cfdf51d1c66b9567c01bb9512">&#9670;&nbsp;</a></span>ATTRIBUTE_BOOTSTRAP_ARG</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> selogger.weaver.method.MethodTransformer.ATTRIBUTE_BOOTSTRAP_ARG = &quot;bootstrap_arg&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00133">133</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a0a75430f1e692b936b6f4286775788cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a75430f1e692b936b6f4286775788cf">&#9670;&nbsp;</a></span>ATTRIBUTE_BOOTSTRAP_DESC</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> selogger.weaver.method.MethodTransformer.ATTRIBUTE_BOOTSTRAP_DESC = &quot;bootstrap_desc&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00132">132</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ab612cb4865dbc6a8fbbd27fc98d0d3a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab612cb4865dbc6a8fbbd27fc98d0d3a0">&#9670;&nbsp;</a></span>ATTRIBUTE_BOOTSTRAP_NAME</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> selogger.weaver.method.MethodTransformer.ATTRIBUTE_BOOTSTRAP_NAME = &quot;bootstrap_name&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00131">131</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="af4cfcb0227bae8d695915136b6735834"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4cfcb0227bae8d695915136b6735834">&#9670;&nbsp;</a></span>ATTRIBUTE_BOOTSTRAP_OWNER</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> selogger.weaver.method.MethodTransformer.ATTRIBUTE_BOOTSTRAP_OWNER = &quot;bootstrap_owner&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>INVOKEDYNAMIC instruction has the following attribtes </p>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00130">130</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ad6fee43d1551741e36d1294501154b77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6fee43d1551741e36d1294501154b77">&#9670;&nbsp;</a></span>ATTRIBUTE_CREATION_LOCATION</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> selogger.weaver.method.MethodTransformer.ATTRIBUTE_CREATION_LOCATION = &quot;created&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Attribute to represent the instruction location of object creation </p>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00112">112</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="afc493ee382085101029f68cf50ca1ecf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc493ee382085101029f68cf50ca1ecf">&#9670;&nbsp;</a></span>ATTRIBUTE_DESCRIPTOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> selogger.weaver.method.MethodTransformer.ATTRIBUTE_DESCRIPTOR = &quot;desc&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>CALL and INVOKEDYNAMIC events have descriptors indicating the parameter lists and return values. </p>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00059">59</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a73a7550ad7817a6424c849db23681e71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73a7550ad7817a6424c849db23681e71">&#9670;&nbsp;</a></span>ATTRIBUTE_INCREMENT_AMOUNT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> selogger.weaver.method.MethodTransformer.ATTRIBUTE_INCREMENT_AMOUNT = &quot;amount&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The number added by INCREMENT instruction. </p>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00075">75</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a700494e123ff3ebb958a93dacb71a938"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a700494e123ff3ebb958a93dacb71a938">&#9670;&nbsp;</a></span>ATTRIBUTE_INDEX</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> selogger.weaver.method.MethodTransformer.ATTRIBUTE_INDEX = &quot;index&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>METHOD_ENTRY and CALL of instance method and METHOD_PARAM, CALL_PARAM the index of a parameter sequence </p>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00087">87</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a736cca5a19cbe25151d9b27099c84b7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a736cca5a19cbe25151d9b27099c84b7d">&#9670;&nbsp;</a></span>ATTRIBUTE_JUMP</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> selogger.weaver.method.MethodTransformer.ATTRIBUTE_JUMP = &quot;jumpto&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Jump instructions have a destination of the jump. </p>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00102">102</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a453b1736adfe6d046a19fa3fdc566651"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a453b1736adfe6d046a19fa3fdc566651">&#9670;&nbsp;</a></span>ATTRIBUTE_LOCATION</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> selogger.weaver.method.MethodTransformer.ATTRIBUTE_LOCATION = &quot;location&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Attribute to represent the instruction is special. </p>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00107">107</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ac86ed3d28ed37df6d6a4bc49d0516010"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac86ed3d28ed37df6d6a4bc49d0516010">&#9670;&nbsp;</a></span>ATTRIBUTE_METHOD_TYPE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> selogger.weaver.method.MethodTransformer.ATTRIBUTE_METHOD_TYPE = &quot;methodtype&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>METHOD_ENTRY and CALL has this attribute representing the type of the method: instance method, static method, or constructor. </p>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00081">81</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="af8b51de80017613d3ef9c4549d90d546"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8b51de80017613d3ef9c4549d90d546">&#9670;&nbsp;</a></span>ATTRIBUTE_NAME</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> selogger.weaver.method.MethodTransformer.ATTRIBUTE_NAME = &quot;name&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>String attribute for CALL, INVOKEDYNAMIC, FIELD, and LOCAL variable events. This attribute represents a method/variable name. </p>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00054">54</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a336c878ba67da9f4f2c618d5a76992ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a336c878ba67da9f4f2c618d5a76992ff">&#9670;&nbsp;</a></span>ATTRIBUTE_OPCODE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> selogger.weaver.method.MethodTransformer.ATTRIBUTE_OPCODE = &quot;opcode&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>CALL and JUMP have this attribute representing the actual instructions. </p>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00097">97</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a61bd4bab602ccb2d51d1d21edf494e9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61bd4bab602ccb2d51d1d21edf494e9b">&#9670;&nbsp;</a></span>ATTRIBUTE_OWNER</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> selogger.weaver.method.MethodTransformer.ATTRIBUTE_OWNER = &quot;owner&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>String attribute for CALL and FIELD events. Class name that has the method to be called or the field to be accessed. </p>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00048">48</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="add6794c1340242d57447ca0068ba08a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add6794c1340242d57447ca0068ba08a7">&#9670;&nbsp;</a></span>ATTRIBUTE_TYPE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> selogger.weaver.method.MethodTransformer.ATTRIBUTE_TYPE = &quot;type&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>NEWOBJECT (created type), INSTANCEOF (checked type), CALL PARAM (parameter type) MULTI_NEW_ARRAY (created type), CALL_RETURN (return value type), IINC (variable type), INVOKE_DYNAMIC_PARAM (parameter type), OBJECT_CONSTANT_LOAD (object type), FIELD (field type), LOCAL variables (variable type), NEW_ARRAY and ANEWARRAY (element type), LABEL for catch block (exception type) </p>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00070">70</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a2e2c3f9a752b155c52bf65a0a4c62f02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e2c3f9a752b155c52bf65a0a4c62f02">&#9670;&nbsp;</a></span>ATTRIBUTE_VARIABLE_INDEX</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> selogger.weaver.method.MethodTransformer.ATTRIBUTE_VARIABLE_INDEX = &quot;varindex&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>LOCAL events have its local variable number </p>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00092">92</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a72e46933b32f7f4bcd44fc7b4bd3057a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72e46933b32f7f4bcd44fc7b4bd3057a">&#9670;&nbsp;</a></span>catchBlockInfo</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">HashMap&lt;Label, <a class="el" href="classselogger_1_1weaver_1_1method_1_1InstructionAttributes.html">InstructionAttributes</a>&gt; selogger.weaver.method.MethodTransformer.catchBlockInfo = new HashMap&lt;&gt;()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00158">158</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a821f367369663a3c2c71f72ce573b25f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a821f367369663a3c2c71f72ce573b25f">&#9670;&nbsp;</a></span>className</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> selogger.weaver.method.MethodTransformer.className</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00143">143</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a528f5ce48c7c19fb4309a8f11f668c63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a528f5ce48c7c19fb4309a8f11f668c63">&#9670;&nbsp;</a></span>config</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classselogger_1_1weaver_1_1WeaveConfig.html">WeaveConfig</a> selogger.weaver.method.MethodTransformer.config</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00141">141</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="abaa9345cab4c04c1b81b433e19fc32c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abaa9345cab4c04c1b81b433e19fc32c0">&#9670;&nbsp;</a></span>currentLine</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> selogger.weaver.method.MethodTransformer.currentLine = -1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00142">142</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aaf8c0527553e416731253b52eb61d138"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf8c0527553e416731253b52eb61d138">&#9670;&nbsp;</a></span>endLabel</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Label selogger.weaver.method.MethodTransformer.endLabel = new Label()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00157">157</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a66bf503f66f58fc3715340453d671c77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66bf503f66f58fc3715340453d671c77">&#9670;&nbsp;</a></span>instructionIndex</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> selogger.weaver.method.MethodTransformer.instructionIndex</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The index represents the original location in the InsnList object. </p>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00152">152</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a44624bba36eeb97b93b4ee697b88ff0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44624bba36eeb97b93b4ee697b88ff0e">&#9670;&nbsp;</a></span>isStartLabelLocated</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ad2c19257446c052b290090a0144280a6">boolean</a> selogger.weaver.method.MethodTransformer.isStartLabelLocated</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00159">159</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a60a86696616890f6b2576b333304dc09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60a86696616890f6b2576b333304dc09">&#9670;&nbsp;</a></span>labelInstructionIndexMap</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">HashMap&lt;Label, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a6d0a82503c06a35abc77cfc2e88f84d3">Integer</a>&gt; selogger.weaver.method.MethodTransformer.labelInstructionIndexMap = new HashMap&lt;Label, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a6d0a82503c06a35abc77cfc2e88f84d3">Integer</a>&gt;()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00160">160</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a6805168b70d8147f882db213668e1eef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6805168b70d8147f882db213668e1eef">&#9670;&nbsp;</a></span>labelLineNumberMap</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">HashMap&lt;Label, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a6d0a82503c06a35abc77cfc2e88f84d3">Integer</a>&gt; selogger.weaver.method.MethodTransformer.labelLineNumberMap = new HashMap&lt;Label, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a6d0a82503c06a35abc77cfc2e88f84d3">Integer</a>&gt;()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00161">161</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a8cf514a92fa156d4ac77461fb3ea4f64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cf514a92fa156d4ac77461fb3ea4f64">&#9670;&nbsp;</a></span>lastLocationVar</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> selogger.weaver.method.MethodTransformer.lastLocationVar = -1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00167">167</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aa7cc39422b0f184d7d89d767b5ec49cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7cc39422b0f184d7d89d767b5ec49cf">&#9670;&nbsp;</a></span>LOGGER_CLASS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> selogger.weaver.method.MethodTransformer.LOGGER_CLASS = &quot;selogger/logging/<a class="el" href="classselogger_1_1logging_1_1Logging.html">Logging</a>&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00040">40</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a5a2ffdca67845dad49f5ff7f38b4d93d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a2ffdca67845dad49f5ff7f38b4d93d">&#9670;&nbsp;</a></span>METHOD_RECORD_EVENT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> selogger.weaver.method.MethodTransformer.METHOD_RECORD_EVENT = &quot;recordEvent&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00042">42</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a588a89eb92796c0d3af2c09d55fd79cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a588a89eb92796c0d3af2c09d55fd79cc">&#9670;&nbsp;</a></span>methodDesc</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> selogger.weaver.method.MethodTransformer.methodDesc</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00147">147</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a33bcf9fb769dcf581b8dda873203991c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33bcf9fb769dcf581b8dda873203991c">&#9670;&nbsp;</a></span>methodName</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> selogger.weaver.method.MethodTransformer.methodName</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00146">146</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a44f631750ab17cb71d29bbb281568e81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44f631750ab17cb71d29bbb281568e81">&#9670;&nbsp;</a></span>newInstructionStack</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Stack&lt;<a class="el" href="classselogger_1_1weaver_1_1method_1_1ANewInstruction.html">ANewInstruction</a>&gt; selogger.weaver.method.MethodTransformer.newInstructionStack = new Stack&lt;<a class="el" href="classselogger_1_1weaver_1_1method_1_1ANewInstruction.html">ANewInstruction</a>&gt;()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>To check a pair of NEW instruction and its constructor call </p>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00164">164</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a2ecaa8b69bb9d56e428172a1d2ab0d9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ecaa8b69bb9d56e428172a1d2ab0d9e">&#9670;&nbsp;</a></span>originalInsnListSize</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> selogger.weaver.method.MethodTransformer.originalInsnListSize</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The size of original instruction list </p>
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00182">182</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae60f5e7abd94160b4e28d62afd7e7854"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae60f5e7abd94160b4e28d62afd7e7854">&#9670;&nbsp;</a></span>sourceFileName</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> selogger.weaver.method.MethodTransformer.sourceFileName</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00144">144</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a9f07b5861be70912e2e137163cab3266"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f07b5861be70912e2e137163cab3266">&#9670;&nbsp;</a></span>startLabel</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Label selogger.weaver.method.MethodTransformer.startLabel = new Label()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00156">156</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="af1c72b2f1e672606dfa632a2de060f01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1c72b2f1e672606dfa632a2de060f01">&#9670;&nbsp;</a></span>variables</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classselogger_1_1weaver_1_1method_1_1LocalVariables.html">LocalVariables</a> selogger.weaver.method.MethodTransformer.variables</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00154">154</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a6b67a7ab37d0da08d698ee122fdfca3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b67a7ab37d0da08d698ee122fdfca3f">&#9670;&nbsp;</a></span>weavingInfo</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classselogger_1_1weaver_1_1WeaveLog.html">WeaveLog</a> selogger.weaver.method.MethodTransformer.weavingInfo</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a> の <a class="el" href="MethodTransformer_8java_source.html#l00140">140</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>Data/java8/selogger/src/selogger/weaver/method/<a class="el" href="MethodTransformer_8java_source.html">MethodTransformer.java</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespaceselogger.html">selogger</a></li><li class="navelem"><a class="el" href="namespaceselogger_1_1weaver.html">weaver</a></li><li class="navelem"><a class="el" href="namespaceselogger_1_1weaver_1_1method.html">method</a></li><li class="navelem"><a class="el" href="classselogger_1_1weaver_1_1method_1_1MethodTransformer.html">MethodTransformer</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>2022_kenshu_w3-4: Data/java8/selogger/src/selogger/logging/io/MemoryLogger.java ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">2022_kenshu_w3-4
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('MemoryLogger_8java_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">MemoryLogger.java</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="MemoryLogger_8java.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">package </span>selogger.logging.io;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">import</span> <a class="code" href="motivationExample_2origin_2selogger__out_2methods_8txt.html#abef7b47c4c5ab5ca7b95d064f2fd5aaf">java</a>.util.ArrayList;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">import</span> <a class="code" href="namespaceselogger.html">selogger</a>.<a class="code" href="namespaceselogger_1_1logging.html">logging</a>.<a class="code" href="interfaceselogger_1_1logging_1_1IEventLogger.html">IEventLogger</a>;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html">   10</a></span>&#160;<span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html">MemoryLogger</a> <span class="keyword">implements</span> <a class="code" href="interfaceselogger_1_1logging_1_1IEventLogger.html">IEventLogger</a> {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class </span>Event {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keyword">private</span> <span class="keywordtype">int</span> dataId;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keyword">private</span> Class&lt;?&gt; valueType;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keyword">private</span> <a class="code" href="motivationExample_2origin_2selogger__out_2dataids_8txt.html#a9ce9a1b5ad860d83fe75b6593a3169af">Object</a> objectValue;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keyword">private</span> <span class="keywordtype">long</span> value;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keyword">public</span> Event(<span class="keywordtype">int</span> dataId, Class&lt;?&gt; <a class="code" href="motivationExample_2origin_2selogger__out_2dataids_8txt.html#a7aead736a07eaf25623ad7bfa1f0ee2d">type</a>, <span class="keywordtype">long</span> value) {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            this.dataId = dataId;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            this.valueType = <a class="code" href="motivationExample_2origin_2selogger__out_2dataids_8txt.html#a7aead736a07eaf25623ad7bfa1f0ee2d">type</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            this.value = value;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keyword">public</span> Event(<span class="keywordtype">int</span> dataId, <a class="code" href="motivationExample_2origin_2selogger__out_2dataids_8txt.html#a9ce9a1b5ad860d83fe75b6593a3169af">Object</a> value) {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            this.dataId = dataId;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keywordflow">if</span> (value == <span class="keyword">null</span>) {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                this.valueType = <a class="code" href="motivationExample_2origin_2selogger__out_2dataids_8txt.html#a9ce9a1b5ad860d83fe75b6593a3169af">Object</a>.class;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                this.valueType = value.getClass();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            this.objectValue = value;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keyword">public</span> <span class="keywordtype">int</span> getDataId() {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keywordflow">return</span> dataId;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keyword">public</span> Class&lt;?&gt; getValueType() {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keywordflow">return</span> valueType;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keyword">public</span> <span class="keywordtype">boolean</span> getBooleanValue() {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            assert valueType.equals(<span class="keywordtype">boolean</span>.<span class="keyword">class</span>);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="keywordflow">return</span> value != 0;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keyword">public</span> <span class="keywordtype">byte</span> getByteValue() {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            assert valueType.equals(<span class="keywordtype">byte</span>.<span class="keyword">class</span>);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <span class="keywordflow">return</span> (<span class="keywordtype">byte</span>)value;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keyword">public</span> <span class="keywordtype">char</span> getCharValue() {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            assert valueType.equals(<span class="keywordtype">char</span>.<span class="keyword">class</span>);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="keywordflow">return</span> (<span class="keywordtype">char</span>)value;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keyword">public</span> <span class="keywordtype">short</span> getShortValue() {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            assert valueType.equals(<span class="keywordtype">short</span>.<span class="keyword">class</span>);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="keywordflow">return</span> (<span class="keywordtype">short</span>)value;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keyword">public</span> <span class="keywordtype">int</span> getIntValue() {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            assert valueType.equals(<span class="keywordtype">int</span>.<span class="keyword">class</span>);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <span class="keywordflow">return</span> (<span class="keywordtype">int</span>)value;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keyword">public</span> <span class="keywordtype">long</span> getLongValue() {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            assert valueType.equals(<span class="keywordtype">long</span>.<span class="keyword">class</span>);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <span class="keywordflow">return</span> (<span class="keywordtype">long</span>)value;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        }</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keyword">public</span> <span class="keywordtype">float</span> getFloatValue() {</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            assert valueType.equals(<span class="keywordtype">float</span>.<span class="keyword">class</span>);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            <span class="keywordflow">return</span> Float.intBitsToFloat((<span class="keywordtype">int</span>)value);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keyword">public</span> <span class="keywordtype">double</span> getDoubleValue() {</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            assert valueType.equals(<span class="keywordtype">double</span>.<span class="keyword">class</span>);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            <span class="keywordflow">return</span> Double.longBitsToDouble(value);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        }</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keyword">public</span> <a class="code" href="motivationExample_2origin_2selogger__out_2dataids_8txt.html#a9ce9a1b5ad860d83fe75b6593a3169af">Object</a> getObjectValue() {</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            assert !valueType.isPrimitive();</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            <span class="keywordflow">return</span> objectValue;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        }</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    }</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    </div>
+<div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html#a962747053c2d3c82f0439e0a3064a6fb">  134</a></span>&#160;    <span class="keyword">private</span> ArrayList&lt;Event&gt; <a class="code" href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html#a962747053c2d3c82f0439e0a3064a6fb">events</a>;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    </div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    </div>
+<div class="line"><a name="l00141"></a><span class="lineno"><a class="line" href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html#a296eb1d82827d154e48eb4314bcc38fb">  141</a></span>&#160;    <span class="keyword">public</span> <a class="code" href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html#a296eb1d82827d154e48eb4314bcc38fb">MemoryLogger</a>() {</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <a class="code" href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html#a962747053c2d3c82f0439e0a3064a6fb">events</a> = <span class="keyword">new</span> ArrayList&lt;&gt;();</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    }</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    </div>
+<div class="line"><a name="l00148"></a><span class="lineno"><a class="line" href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html#a063347b73f22acc052fdb82b387498be">  148</a></span>&#160;    <span class="keyword">public</span> ArrayList&lt;Event&gt; <a class="code" href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html#a063347b73f22acc052fdb82b387498be">getEvents</a>() {</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html#a962747053c2d3c82f0439e0a3064a6fb">events</a>;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    }</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    </div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    @Override</div>
+<div class="line"><a name="l00156"></a><span class="lineno"><a class="line" href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html#a5e668cc9152cb08471239ee9c7cc8abe">  156</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html#a5e668cc9152cb08471239ee9c7cc8abe">close</a>() {</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    }</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    </div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    @Override</div>
+<div class="line"><a name="l00164"></a><span class="lineno"><a class="line" href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html#a38d3409bc8eaa3c501adf77a8d7cf8b3">  164</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html#a38d3409bc8eaa3c501adf77a8d7cf8b3">save</a>(<span class="keywordtype">boolean</span> resetTrace) {</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <span class="keywordflow">if</span> (resetTrace) {</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            <a class="code" href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html#a962747053c2d3c82f0439e0a3064a6fb">events</a> = <span class="keyword">new</span> ArrayList&lt;&gt;();</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        }</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    }</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    @Override</div>
+<div class="line"><a name="l00174"></a><span class="lineno"><a class="line" href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html#a872fcf7ec3a9878c9dc18ab6e5ade29f">  174</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html#a872fcf7ec3a9878c9dc18ab6e5ade29f">recordEvent</a>(<span class="keywordtype">int</span> dataId, <span class="keywordtype">boolean</span> value) {</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <a class="code" href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html#a962747053c2d3c82f0439e0a3064a6fb">events</a>.add(<span class="keyword">new</span> Event(dataId, <span class="keywordtype">boolean</span>.<span class="keyword">class</span>, value? 1: 0));</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    }</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    </div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    @Override</div>
+<div class="line"><a name="l00182"></a><span class="lineno"><a class="line" href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html#a56d82389e2f6d60ffc3d230e54c86144">  182</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html#a56d82389e2f6d60ffc3d230e54c86144">recordEvent</a>(<span class="keywordtype">int</span> dataId, <span class="keywordtype">byte</span> value) {</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <a class="code" href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html#a962747053c2d3c82f0439e0a3064a6fb">events</a>.add(<span class="keyword">new</span> Event(dataId, <span class="keywordtype">byte</span>.<span class="keyword">class</span>, value));</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    }</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    </div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    @Override</div>
+<div class="line"><a name="l00190"></a><span class="lineno"><a class="line" href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html#a832567b6241735fbe5d9b650db59cbbc">  190</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html#a832567b6241735fbe5d9b650db59cbbc">recordEvent</a>(<span class="keywordtype">int</span> dataId, <span class="keywordtype">char</span> value) {</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <a class="code" href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html#a962747053c2d3c82f0439e0a3064a6fb">events</a>.add(<span class="keyword">new</span> Event(dataId, <span class="keywordtype">char</span>.<span class="keyword">class</span>, value));</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    }</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    </div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    @Override</div>
+<div class="line"><a name="l00198"></a><span class="lineno"><a class="line" href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html#af01068eb08c9ff1f6265daf3e571a3ea">  198</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html#af01068eb08c9ff1f6265daf3e571a3ea">recordEvent</a>(<span class="keywordtype">int</span> dataId, <span class="keywordtype">double</span> value) {</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        <a class="code" href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html#a962747053c2d3c82f0439e0a3064a6fb">events</a>.add(<span class="keyword">new</span> Event(dataId, <span class="keywordtype">double</span>.<span class="keyword">class</span>, Double.doubleToLongBits(value)));</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    }</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    @Override</div>
+<div class="line"><a name="l00206"></a><span class="lineno"><a class="line" href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html#ab24b8227d345adfd1e55b6f73fcc437e">  206</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html#ab24b8227d345adfd1e55b6f73fcc437e">recordEvent</a>(<span class="keywordtype">int</span> dataId, <span class="keywordtype">float</span> value) {</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        <a class="code" href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html#a962747053c2d3c82f0439e0a3064a6fb">events</a>.add(<span class="keyword">new</span> Event(dataId, <span class="keywordtype">float</span>.<span class="keyword">class</span>, Float.floatToIntBits(value)));</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    }</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    </div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    @Override</div>
+<div class="line"><a name="l00214"></a><span class="lineno"><a class="line" href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html#a996ad924f2aa10f10fc34f493d7d781d">  214</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html#a996ad924f2aa10f10fc34f493d7d781d">recordEvent</a>(<span class="keywordtype">int</span> dataId, <span class="keywordtype">int</span> value) {</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        <a class="code" href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html#a962747053c2d3c82f0439e0a3064a6fb">events</a>.add(<span class="keyword">new</span> Event(dataId, <span class="keywordtype">int</span>.<span class="keyword">class</span>, value));</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    }</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    @Override</div>
+<div class="line"><a name="l00222"></a><span class="lineno"><a class="line" href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html#adf1897eb851fdb6cfc0be40995cc2786">  222</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html#adf1897eb851fdb6cfc0be40995cc2786">recordEvent</a>(<span class="keywordtype">int</span> dataId, <span class="keywordtype">long</span> value) {</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        <a class="code" href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html#a962747053c2d3c82f0439e0a3064a6fb">events</a>.add(<span class="keyword">new</span> Event(dataId, <span class="keywordtype">long</span>.<span class="keyword">class</span>, value));</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    }</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    </div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    @Override</div>
+<div class="line"><a name="l00230"></a><span class="lineno"><a class="line" href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html#a97005096040a0a702308a5c4c14210e6">  230</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html#a97005096040a0a702308a5c4c14210e6">recordEvent</a>(<span class="keywordtype">int</span> dataId, <a class="code" href="motivationExample_2origin_2selogger__out_2dataids_8txt.html#a9ce9a1b5ad860d83fe75b6593a3169af">Object</a> value) {</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        <a class="code" href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html#a962747053c2d3c82f0439e0a3064a6fb">events</a>.add(<span class="keyword">new</span> Event(dataId, value));</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    }</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    </div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    @Override</div>
+<div class="line"><a name="l00238"></a><span class="lineno"><a class="line" href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html#a92340db6e245cba5cc9e443b18e424cd">  238</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html#a92340db6e245cba5cc9e443b18e424cd">recordEvent</a>(<span class="keywordtype">int</span> dataId, <span class="keywordtype">short</span> value) {</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        <a class="code" href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html#a962747053c2d3c82f0439e0a3064a6fb">events</a>.add(<span class="keyword">new</span> Event(dataId, <span class="keywordtype">short</span>.<span class="keyword">class</span>, value));</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    }</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;}</div>
+<div class="ttc" id="aclassselogger_1_1logging_1_1io_1_1MemoryLogger_html"><div class="ttname"><a href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html">selogger.logging.io.MemoryLogger</a></div><div class="ttdef"><b>Definition:</b> <a href="MemoryLogger_8java_source.html#l00010">MemoryLogger.java:10</a></div></div>
+<div class="ttc" id="aclassselogger_1_1logging_1_1io_1_1MemoryLogger_html_a063347b73f22acc052fdb82b387498be"><div class="ttname"><a href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html#a063347b73f22acc052fdb82b387498be">selogger.logging.io.MemoryLogger.getEvents</a></div><div class="ttdeci">ArrayList&lt; Event &gt; getEvents()</div><div class="ttdef"><b>Definition:</b> <a href="MemoryLogger_8java_source.html#l00148">MemoryLogger.java:148</a></div></div>
+<div class="ttc" id="aclassselogger_1_1logging_1_1io_1_1MemoryLogger_html_a296eb1d82827d154e48eb4314bcc38fb"><div class="ttname"><a href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html#a296eb1d82827d154e48eb4314bcc38fb">selogger.logging.io.MemoryLogger.MemoryLogger</a></div><div class="ttdeci">MemoryLogger()</div><div class="ttdef"><b>Definition:</b> <a href="MemoryLogger_8java_source.html#l00141">MemoryLogger.java:141</a></div></div>
+<div class="ttc" id="aclassselogger_1_1logging_1_1io_1_1MemoryLogger_html_a38d3409bc8eaa3c501adf77a8d7cf8b3"><div class="ttname"><a href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html#a38d3409bc8eaa3c501adf77a8d7cf8b3">selogger.logging.io.MemoryLogger.save</a></div><div class="ttdeci">void save(boolean resetTrace)</div><div class="ttdef"><b>Definition:</b> <a href="MemoryLogger_8java_source.html#l00164">MemoryLogger.java:164</a></div></div>
+<div class="ttc" id="aclassselogger_1_1logging_1_1io_1_1MemoryLogger_html_a56d82389e2f6d60ffc3d230e54c86144"><div class="ttname"><a href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html#a56d82389e2f6d60ffc3d230e54c86144">selogger.logging.io.MemoryLogger.recordEvent</a></div><div class="ttdeci">void recordEvent(int dataId, byte value)</div><div class="ttdef"><b>Definition:</b> <a href="MemoryLogger_8java_source.html#l00182">MemoryLogger.java:182</a></div></div>
+<div class="ttc" id="aclassselogger_1_1logging_1_1io_1_1MemoryLogger_html_a5e668cc9152cb08471239ee9c7cc8abe"><div class="ttname"><a href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html#a5e668cc9152cb08471239ee9c7cc8abe">selogger.logging.io.MemoryLogger.close</a></div><div class="ttdeci">void close()</div><div class="ttdef"><b>Definition:</b> <a href="MemoryLogger_8java_source.html#l00156">MemoryLogger.java:156</a></div></div>
+<div class="ttc" id="aclassselogger_1_1logging_1_1io_1_1MemoryLogger_html_a832567b6241735fbe5d9b650db59cbbc"><div class="ttname"><a href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html#a832567b6241735fbe5d9b650db59cbbc">selogger.logging.io.MemoryLogger.recordEvent</a></div><div class="ttdeci">void recordEvent(int dataId, char value)</div><div class="ttdef"><b>Definition:</b> <a href="MemoryLogger_8java_source.html#l00190">MemoryLogger.java:190</a></div></div>
+<div class="ttc" id="aclassselogger_1_1logging_1_1io_1_1MemoryLogger_html_a872fcf7ec3a9878c9dc18ab6e5ade29f"><div class="ttname"><a href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html#a872fcf7ec3a9878c9dc18ab6e5ade29f">selogger.logging.io.MemoryLogger.recordEvent</a></div><div class="ttdeci">void recordEvent(int dataId, boolean value)</div><div class="ttdef"><b>Definition:</b> <a href="MemoryLogger_8java_source.html#l00174">MemoryLogger.java:174</a></div></div>
+<div class="ttc" id="aclassselogger_1_1logging_1_1io_1_1MemoryLogger_html_a92340db6e245cba5cc9e443b18e424cd"><div class="ttname"><a href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html#a92340db6e245cba5cc9e443b18e424cd">selogger.logging.io.MemoryLogger.recordEvent</a></div><div class="ttdeci">void recordEvent(int dataId, short value)</div><div class="ttdef"><b>Definition:</b> <a href="MemoryLogger_8java_source.html#l00238">MemoryLogger.java:238</a></div></div>
+<div class="ttc" id="aclassselogger_1_1logging_1_1io_1_1MemoryLogger_html_a962747053c2d3c82f0439e0a3064a6fb"><div class="ttname"><a href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html#a962747053c2d3c82f0439e0a3064a6fb">selogger.logging.io.MemoryLogger.events</a></div><div class="ttdeci">ArrayList&lt; Event &gt; events</div><div class="ttdef"><b>Definition:</b> <a href="MemoryLogger_8java_source.html#l00134">MemoryLogger.java:134</a></div></div>
+<div class="ttc" id="aclassselogger_1_1logging_1_1io_1_1MemoryLogger_html_a97005096040a0a702308a5c4c14210e6"><div class="ttname"><a href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html#a97005096040a0a702308a5c4c14210e6">selogger.logging.io.MemoryLogger.recordEvent</a></div><div class="ttdeci">void recordEvent(int dataId, Object value)</div><div class="ttdef"><b>Definition:</b> <a href="MemoryLogger_8java_source.html#l00230">MemoryLogger.java:230</a></div></div>
+<div class="ttc" id="aclassselogger_1_1logging_1_1io_1_1MemoryLogger_html_a996ad924f2aa10f10fc34f493d7d781d"><div class="ttname"><a href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html#a996ad924f2aa10f10fc34f493d7d781d">selogger.logging.io.MemoryLogger.recordEvent</a></div><div class="ttdeci">void recordEvent(int dataId, int value)</div><div class="ttdef"><b>Definition:</b> <a href="MemoryLogger_8java_source.html#l00214">MemoryLogger.java:214</a></div></div>
+<div class="ttc" id="aclassselogger_1_1logging_1_1io_1_1MemoryLogger_html_ab24b8227d345adfd1e55b6f73fcc437e"><div class="ttname"><a href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html#ab24b8227d345adfd1e55b6f73fcc437e">selogger.logging.io.MemoryLogger.recordEvent</a></div><div class="ttdeci">void recordEvent(int dataId, float value)</div><div class="ttdef"><b>Definition:</b> <a href="MemoryLogger_8java_source.html#l00206">MemoryLogger.java:206</a></div></div>
+<div class="ttc" id="aclassselogger_1_1logging_1_1io_1_1MemoryLogger_html_adf1897eb851fdb6cfc0be40995cc2786"><div class="ttname"><a href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html#adf1897eb851fdb6cfc0be40995cc2786">selogger.logging.io.MemoryLogger.recordEvent</a></div><div class="ttdeci">void recordEvent(int dataId, long value)</div><div class="ttdef"><b>Definition:</b> <a href="MemoryLogger_8java_source.html#l00222">MemoryLogger.java:222</a></div></div>
+<div class="ttc" id="aclassselogger_1_1logging_1_1io_1_1MemoryLogger_html_af01068eb08c9ff1f6265daf3e571a3ea"><div class="ttname"><a href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html#af01068eb08c9ff1f6265daf3e571a3ea">selogger.logging.io.MemoryLogger.recordEvent</a></div><div class="ttdeci">void recordEvent(int dataId, double value)</div><div class="ttdef"><b>Definition:</b> <a href="MemoryLogger_8java_source.html#l00198">MemoryLogger.java:198</a></div></div>
+<div class="ttc" id="ainterfaceselogger_1_1logging_1_1IEventLogger_html"><div class="ttname"><a href="interfaceselogger_1_1logging_1_1IEventLogger.html">selogger.logging.IEventLogger</a></div><div class="ttdef"><b>Definition:</b> <a href="IEventLogger_8java_source.html#l00009">IEventLogger.java:9</a></div></div>
+<div class="ttc" id="amotivationExample_2origin_2selogger__out_2dataids_8txt_html_a7aead736a07eaf25623ad7bfa1f0ee2d"><div class="ttname"><a href="motivationExample_2origin_2selogger__out_2dataids_8txt.html#a7aead736a07eaf25623ad7bfa1f0ee2d">type</a></div><div class="ttdeci">type</div><div class="ttdef"><b>Definition:</b> <a href="motivationExample_2origin_2selogger__out_2dataids_8txt_source.html#l00012">dataids.txt:12</a></div></div>
+<div class="ttc" id="amotivationExample_2origin_2selogger__out_2dataids_8txt_html_a9ce9a1b5ad860d83fe75b6593a3169af"><div class="ttname"><a href="motivationExample_2origin_2selogger__out_2dataids_8txt.html#a9ce9a1b5ad860d83fe75b6593a3169af">Object</a></div><div class="ttdeci">Ljava lang Object</div><div class="ttdef"><b>Definition:</b> <a href="motivationExample_2origin_2selogger__out_2dataids_8txt_source.html#l00034">dataids.txt:34</a></div></div>
+<div class="ttc" id="amotivationExample_2origin_2selogger__out_2methods_8txt_html_abef7b47c4c5ab5ca7b95d064f2fd5aaf"><div class="ttname"><a href="motivationExample_2origin_2selogger__out_2methods_8txt.html#abef7b47c4c5ab5ca7b95d064f2fd5aaf">java</a></div><div class="ttdeci">&lt; init &gt; Main java</div><div class="ttdef"><b>Definition:</b> <a href="motivationExample_2origin_2selogger__out_2methods_8txt_source.html#l00002">methods.txt:2</a></div></div>
+<div class="ttc" id="anamespaceselogger_1_1logging_html"><div class="ttname"><a href="namespaceselogger_1_1logging.html">selogger.logging</a></div><div class="ttdef"><b>Definition:</b> <a href="IErrorLogger_8java_source.html#l00001">IErrorLogger.java:1</a></div></div>
+<div class="ttc" id="anamespaceselogger_html"><div class="ttname"><a href="namespaceselogger.html">selogger</a></div><div class="ttdef"><b>Definition:</b> <a href="EventType_8java_source.html#l00001">EventType.java:1</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_e3d743d0ec9b4013b28b5d69101bc7fb.html">Data</a></li><li class="navelem"><a class="el" href="dir_01f621d9ce496b7a25fbd2fbbc4de9b5.html">java8</a></li><li class="navelem"><a class="el" href="dir_00a102e375c7e4cf721fc27b336fd614.html">selogger</a></li><li class="navelem"><a class="el" href="dir_c35f250929eab5b4494939a1c8666d4d.html">src</a></li><li class="navelem"><a class="el" href="dir_f3c5bd6ef90b4f2df958b6e4e44d2b30.html">selogger</a></li><li class="navelem"><a class="el" href="dir_060bd6d3e492c323a5210f0d1cea9121.html">logging</a></li><li class="navelem"><a class="el" href="dir_0051db0e6be28625d6b496a7823c38e0.html">io</a></li><li class="navelem"><a class="el" href="MemoryLogger_8java.html">MemoryLogger.java</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

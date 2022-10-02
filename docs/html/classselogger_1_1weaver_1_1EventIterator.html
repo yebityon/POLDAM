@@ -1,0 +1,770 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>2022_kenshu_w3-4: selogger.weaver.EventIterator クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">2022_kenshu_w3-4
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('classselogger_1_1weaver_1_1EventIterator.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classselogger_1_1weaver_1_1EventIterator-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">selogger.weaver.EventIterator クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+selogger.weaver.EventIterator 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="classselogger_1_1weaver_1_1EventIterator__coll__graph.png" border="0" usemap="#aselogger_8weaver_8EventIterator_coll__map" alt="Collaboration graph"/></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">凡例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a69e5d5dda82e26f48386cd6e760e0f35"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1EventIterator.html#a69e5d5dda82e26f48386cd6e760e0f35">EventIterator</a> (<a class="el" href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html">MemoryLogger</a> mem, <a class="el" href="classselogger_1_1weaver_1_1WeaveLog.html">WeaveLog</a> log)</td></tr>
+<tr class="separator:a69e5d5dda82e26f48386cd6e760e0f35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7527f438db4d89a2d41d47de441def7e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ad2c19257446c052b290090a0144280a6">boolean</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1EventIterator.html#a7527f438db4d89a2d41d47de441def7e">next</a> ()</td></tr>
+<tr class="separator:a7527f438db4d89a2d41d47de441def7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae9758be9141923f4717bfb090cac655"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1EventIterator.html#aae9758be9141923f4717bfb090cac655">getDataId</a> ()</td></tr>
+<tr class="separator:aae9758be9141923f4717bfb090cac655"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba973f3a539e19d3afd2b143f7bc0432"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1EventIterator.html#aba973f3a539e19d3afd2b143f7bc0432">getClassName</a> ()</td></tr>
+<tr class="separator:aba973f3a539e19d3afd2b143f7bc0432"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4dd0065431632a5a8781a0d1dee0fa01"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1EventIterator.html#a4dd0065431632a5a8781a0d1dee0fa01">getMethodName</a> ()</td></tr>
+<tr class="separator:a4dd0065431632a5a8781a0d1dee0fa01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a0ad3f88adff463466a7c3735f162b7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enumselogger_1_1EventType.html">EventType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1EventIterator.html#a3a0ad3f88adff463466a7c3735f162b7">getEventType</a> ()</td></tr>
+<tr class="separator:a3a0ad3f88adff463466a7c3735f162b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7462212f6729c7ab2f64d88907226c7b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#aea9a834e154d1a79fb1cd804e1e7758d">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1EventIterator.html#a7462212f6729c7ab2f64d88907226c7b">getFloatValue</a> ()</td></tr>
+<tr class="separator:a7462212f6729c7ab2f64d88907226c7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d6a90b28061a3c1ebbc4b236cfdb447"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1EventIterator.html#a7d6a90b28061a3c1ebbc4b236cfdb447">getIntValue</a> ()</td></tr>
+<tr class="separator:a7d6a90b28061a3c1ebbc4b236cfdb447"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18ec3a4be284758f91b4a3aa9d0904e7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a326980bd779bb441a6fed78af5695baa">double</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1EventIterator.html#a18ec3a4be284758f91b4a3aa9d0904e7">getDoubleValue</a> ()</td></tr>
+<tr class="separator:a18ec3a4be284758f91b4a3aa9d0904e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83e0de8c4b59fab882b1af12b4dc01c1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ad2c19257446c052b290090a0144280a6">boolean</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1EventIterator.html#a83e0de8c4b59fab882b1af12b4dc01c1">getBooleanValue</a> ()</td></tr>
+<tr class="separator:a83e0de8c4b59fab882b1af12b4dc01c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61805d80c13b65b73197ea99d9b6589e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a7deea305c4cb166535253609e1b3cda4">byte</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1EventIterator.html#a61805d80c13b65b73197ea99d9b6589e">getByteValue</a> ()</td></tr>
+<tr class="separator:a61805d80c13b65b73197ea99d9b6589e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cbffdea2829c8e37529e2b64105fc5b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a5816f3b8d9c5e627300604143414e94a">char</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1EventIterator.html#a8cbffdea2829c8e37529e2b64105fc5b">getCharValue</a> ()</td></tr>
+<tr class="separator:a8cbffdea2829c8e37529e2b64105fc5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b106dd43a962ca2111d4b7a785cf166"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ad4f20e9bf6d5d484b64167b0fdd8bc0e">short</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1EventIterator.html#a9b106dd43a962ca2111d4b7a785cf166">getShortValue</a> ()</td></tr>
+<tr class="separator:a9b106dd43a962ca2111d4b7a785cf166"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1aaa1abcd5ac4dae28feec1b9f111538"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a9cb912cc9367a723499e6458503cb25f">Object</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1EventIterator.html#a1aaa1abcd5ac4dae28feec1b9f111538">getObjectValue</a> ()</td></tr>
+<tr class="separator:a1aaa1abcd5ac4dae28feec1b9f111538"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad67480e9c20e12ae4692f3e83060b7d4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ab2b82a801222598deb6167bea46d3172">long</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1EventIterator.html#ad67480e9c20e12ae4692f3e83060b7d4">getLongValue</a> ()</td></tr>
+<tr class="separator:ad67480e9c20e12ae4692f3e83060b7d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae78893bd155ced6eb711ae93a8d4b204"><td class="memItemLeft" align="right" valign="top">Class&lt;?&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1EventIterator.html#ae78893bd155ced6eb711ae93a8d4b204">getValueType</a> ()</td></tr>
+<tr class="separator:ae78893bd155ced6eb711ae93a8d4b204"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0a4917fd4fb8e7f49793527b815e79b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enumselogger_1_1weaver_1_1method_1_1Descriptor.html">Descriptor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1EventIterator.html#aa0a4917fd4fb8e7f49793527b815e79b">getDataIdValueDesc</a> ()</td></tr>
+<tr class="separator:aa0a4917fd4fb8e7f49793527b815e79b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3016721bd79a5f1c7aa393e1120e29c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classselogger_1_1weaver_1_1method_1_1InstructionAttributes.html">InstructionAttributes</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1EventIterator.html#ae3016721bd79a5f1c7aa393e1120e29c">getAttributes</a> ()</td></tr>
+<tr class="separator:ae3016721bd79a5f1c7aa393e1120e29c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:a9e3bb66203e3958229a6ffe3ac6317b7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html">MemoryLogger</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1EventIterator.html#a9e3bb66203e3958229a6ffe3ac6317b7">memoryLogger</a></td></tr>
+<tr class="separator:a9e3bb66203e3958229a6ffe3ac6317b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82b7193491ba6a84e6b7d6c0966b09dd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classselogger_1_1weaver_1_1WeaveLog.html">WeaveLog</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1EventIterator.html#a82b7193491ba6a84e6b7d6c0966b09dd">weaveLog</a></td></tr>
+<tr class="separator:a82b7193491ba6a84e6b7d6c0966b09dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a512f5fe6510a50facd0594e9437ee626"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1weaver_1_1EventIterator.html#a512f5fe6510a50facd0594e9437ee626">eventIndex</a></td></tr>
+<tr class="separator:a512f5fe6510a50facd0594e9437ee626"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>An iterator object to read events from MemoryLogger. </p>
+
+<p class="definition"> <a class="el" href="EventIterator_8java_source.html">EventIterator.java</a> の <a class="el" href="EventIterator_8java_source.html#l00011">11</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="a69e5d5dda82e26f48386cd6e760e0f35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69e5d5dda82e26f48386cd6e760e0f35">&#9670;&nbsp;</a></span>EventIterator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">selogger.weaver.EventIterator.EventIterator </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html">MemoryLogger</a>&#160;</td>
+          <td class="paramname"><em>mem</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classselogger_1_1weaver_1_1WeaveLog.html">WeaveLog</a>&#160;</td>
+          <td class="paramname"><em>log</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Create an instance for a memory logger </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mem</td><td>is a MemoryLogger </td></tr>
+    <tr><td class="paramname">log</td><td>is the weave log including dataId information </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="EventIterator_8java_source.html">EventIterator.java</a> の <a class="el" href="EventIterator_8java_source.html#l00022">22</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="ae3016721bd79a5f1c7aa393e1120e29c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3016721bd79a5f1c7aa393e1120e29c">&#9670;&nbsp;</a></span>getAttributes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classselogger_1_1weaver_1_1method_1_1InstructionAttributes.html">InstructionAttributes</a> selogger.weaver.EventIterator.getAttributes </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>戻り値</dt><dd>attributes of the event data Id </dd></dl>
+
+<p class="definition"> <a class="el" href="EventIterator_8java_source.html">EventIterator.java</a> の <a class="el" href="EventIterator_8java_source.html#l00153">153</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a83e0de8c4b59fab882b1af12b4dc01c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83e0de8c4b59fab882b1af12b4dc01c1">&#9670;&nbsp;</a></span>getBooleanValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ad2c19257446c052b290090a0144280a6">boolean</a> selogger.weaver.EventIterator.getBooleanValue </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>戻り値</dt><dd>the observed value of the event <br  />
+ </dd></dl>
+
+<p class="definition"> <a class="el" href="EventIterator_8java_source.html">EventIterator.java</a> の <a class="el" href="EventIterator_8java_source.html#l00096">96</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a61805d80c13b65b73197ea99d9b6589e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61805d80c13b65b73197ea99d9b6589e">&#9670;&nbsp;</a></span>getByteValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a7deea305c4cb166535253609e1b3cda4">byte</a> selogger.weaver.EventIterator.getByteValue </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>戻り値</dt><dd>the observed value of the event <br  />
+ </dd></dl>
+
+<p class="definition"> <a class="el" href="EventIterator_8java_source.html">EventIterator.java</a> の <a class="el" href="EventIterator_8java_source.html#l00103">103</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a8cbffdea2829c8e37529e2b64105fc5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cbffdea2829c8e37529e2b64105fc5b">&#9670;&nbsp;</a></span>getCharValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a5816f3b8d9c5e627300604143414e94a">char</a> selogger.weaver.EventIterator.getCharValue </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>戻り値</dt><dd>the observed value of the event <br  />
+ </dd></dl>
+
+<p class="definition"> <a class="el" href="EventIterator_8java_source.html">EventIterator.java</a> の <a class="el" href="EventIterator_8java_source.html#l00110">110</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aba973f3a539e19d3afd2b143f7bc0432"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba973f3a539e19d3afd2b143f7bc0432">&#9670;&nbsp;</a></span>getClassName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> selogger.weaver.EventIterator.getClassName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>戻り値</dt><dd>class name of the event </dd></dl>
+
+<p class="definition"> <a class="el" href="EventIterator_8java_source.html">EventIterator.java</a> の <a class="el" href="EventIterator_8java_source.html#l00049">49</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aae9758be9141923f4717bfb090cac655"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae9758be9141923f4717bfb090cac655">&#9670;&nbsp;</a></span>getDataId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> selogger.weaver.EventIterator.getDataId </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>戻り値</dt><dd>dataId of the event </dd></dl>
+
+<p class="definition"> <a class="el" href="EventIterator_8java_source.html">EventIterator.java</a> の <a class="el" href="EventIterator_8java_source.html#l00042">42</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aa0a4917fd4fb8e7f49793527b815e79b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0a4917fd4fb8e7f49793527b815e79b">&#9670;&nbsp;</a></span>getDataIdValueDesc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enumselogger_1_1weaver_1_1method_1_1Descriptor.html">Descriptor</a> selogger.weaver.EventIterator.getDataIdValueDesc </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>戻り値</dt><dd>the descriptor of the observed value </dd></dl>
+
+<p class="definition"> <a class="el" href="EventIterator_8java_source.html">EventIterator.java</a> の <a class="el" href="EventIterator_8java_source.html#l00145">145</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a18ec3a4be284758f91b4a3aa9d0904e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18ec3a4be284758f91b4a3aa9d0904e7">&#9670;&nbsp;</a></span>getDoubleValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a326980bd779bb441a6fed78af5695baa">double</a> selogger.weaver.EventIterator.getDoubleValue </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>戻り値</dt><dd>the observed value of the event <br  />
+ </dd></dl>
+
+<p class="definition"> <a class="el" href="EventIterator_8java_source.html">EventIterator.java</a> の <a class="el" href="EventIterator_8java_source.html#l00089">89</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a3a0ad3f88adff463466a7c3735f162b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a0ad3f88adff463466a7c3735f162b7">&#9670;&nbsp;</a></span>getEventType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enumselogger_1_1EventType.html">EventType</a> selogger.weaver.EventIterator.getEventType </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>戻り値</dt><dd>event type <br  />
+ </dd></dl>
+
+<p class="definition"> <a class="el" href="EventIterator_8java_source.html">EventIterator.java</a> の <a class="el" href="EventIterator_8java_source.html#l00067">67</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a7462212f6729c7ab2f64d88907226c7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7462212f6729c7ab2f64d88907226c7b">&#9670;&nbsp;</a></span>getFloatValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#aea9a834e154d1a79fb1cd804e1e7758d">float</a> selogger.weaver.EventIterator.getFloatValue </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>戻り値</dt><dd>the observed value of the event <br  />
+ </dd></dl>
+
+<p class="definition"> <a class="el" href="EventIterator_8java_source.html">EventIterator.java</a> の <a class="el" href="EventIterator_8java_source.html#l00075">75</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a7d6a90b28061a3c1ebbc4b236cfdb447"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d6a90b28061a3c1ebbc4b236cfdb447">&#9670;&nbsp;</a></span>getIntValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> selogger.weaver.EventIterator.getIntValue </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>戻り値</dt><dd>the observed value of the event <br  />
+ </dd></dl>
+
+<p class="definition"> <a class="el" href="EventIterator_8java_source.html">EventIterator.java</a> の <a class="el" href="EventIterator_8java_source.html#l00082">82</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ad67480e9c20e12ae4692f3e83060b7d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad67480e9c20e12ae4692f3e83060b7d4">&#9670;&nbsp;</a></span>getLongValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ab2b82a801222598deb6167bea46d3172">long</a> selogger.weaver.EventIterator.getLongValue </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>戻り値</dt><dd>the observed value of the event <br  />
+ </dd></dl>
+
+<p class="definition"> <a class="el" href="EventIterator_8java_source.html">EventIterator.java</a> の <a class="el" href="EventIterator_8java_source.html#l00131">131</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a4dd0065431632a5a8781a0d1dee0fa01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4dd0065431632a5a8781a0d1dee0fa01">&#9670;&nbsp;</a></span>getMethodName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> selogger.weaver.EventIterator.getMethodName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>戻り値</dt><dd>method name of the event </dd></dl>
+
+<p class="definition"> <a class="el" href="EventIterator_8java_source.html">EventIterator.java</a> の <a class="el" href="EventIterator_8java_source.html#l00058">58</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a1aaa1abcd5ac4dae28feec1b9f111538"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1aaa1abcd5ac4dae28feec1b9f111538">&#9670;&nbsp;</a></span>getObjectValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a9cb912cc9367a723499e6458503cb25f">Object</a> selogger.weaver.EventIterator.getObjectValue </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>戻り値</dt><dd>the observed value of the event <br  />
+ </dd></dl>
+
+<p class="definition"> <a class="el" href="EventIterator_8java_source.html">EventIterator.java</a> の <a class="el" href="EventIterator_8java_source.html#l00124">124</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a9b106dd43a962ca2111d4b7a785cf166"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b106dd43a962ca2111d4b7a785cf166">&#9670;&nbsp;</a></span>getShortValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ad4f20e9bf6d5d484b64167b0fdd8bc0e">short</a> selogger.weaver.EventIterator.getShortValue </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>戻り値</dt><dd>the observed value of the event <br  />
+ </dd></dl>
+
+<p class="definition"> <a class="el" href="EventIterator_8java_source.html">EventIterator.java</a> の <a class="el" href="EventIterator_8java_source.html#l00117">117</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae78893bd155ced6eb711ae93a8d4b204"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae78893bd155ced6eb711ae93a8d4b204">&#9670;&nbsp;</a></span>getValueType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Class&lt;?&gt; selogger.weaver.EventIterator.getValueType </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>戻り値</dt><dd>the observed value type <br  />
+ </dd></dl>
+
+<p class="definition"> <a class="el" href="EventIterator_8java_source.html">EventIterator.java</a> の <a class="el" href="EventIterator_8java_source.html#l00138">138</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a7527f438db4d89a2d41d47de441def7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7527f438db4d89a2d41d47de441def7e">&#9670;&nbsp;</a></span>next()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ad2c19257446c052b290090a0144280a6">boolean</a> selogger.weaver.EventIterator.next </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Proceed to the next event. This method must be called before calling other getter methods. </p><dl class="section return"><dt>戻り値</dt><dd>true if the event data is available. False indicate the end of data. </dd></dl>
+
+<p class="definition"> <a class="el" href="EventIterator_8java_source.html">EventIterator.java</a> の <a class="el" href="EventIterator_8java_source.html#l00034">34</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a512f5fe6510a50facd0594e9437ee626"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a512f5fe6510a50facd0594e9437ee626">&#9670;&nbsp;</a></span>eventIndex</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> selogger.weaver.EventIterator.eventIndex</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="EventIterator_8java_source.html">EventIterator.java</a> の <a class="el" href="EventIterator_8java_source.html#l00015">15</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a9e3bb66203e3958229a6ffe3ac6317b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e3bb66203e3958229a6ffe3ac6317b7">&#9670;&nbsp;</a></span>memoryLogger</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classselogger_1_1logging_1_1io_1_1MemoryLogger.html">MemoryLogger</a> selogger.weaver.EventIterator.memoryLogger</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="EventIterator_8java_source.html">EventIterator.java</a> の <a class="el" href="EventIterator_8java_source.html#l00013">13</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a82b7193491ba6a84e6b7d6c0966b09dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82b7193491ba6a84e6b7d6c0966b09dd">&#9670;&nbsp;</a></span>weaveLog</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classselogger_1_1weaver_1_1WeaveLog.html">WeaveLog</a> selogger.weaver.EventIterator.weaveLog</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="EventIterator_8java_source.html">EventIterator.java</a> の <a class="el" href="EventIterator_8java_source.html#l00014">14</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>Data/java8/selogger/tests/selogger/weaver/<a class="el" href="EventIterator_8java_source.html">EventIterator.java</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespaceselogger.html">selogger</a></li><li class="navelem"><a class="el" href="namespaceselogger_1_1weaver.html">weaver</a></li><li class="navelem"><a class="el" href="classselogger_1_1weaver_1_1EventIterator.html">EventIterator</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

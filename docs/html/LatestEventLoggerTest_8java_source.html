@@ -1,0 +1,352 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>2022_kenshu_w3-4: Data/java8/selogger/tests/selogger/logging/io/LatestEventLoggerTest.java ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">2022_kenshu_w3-4
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('LatestEventLoggerTest_8java_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">LatestEventLoggerTest.java</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="LatestEventLoggerTest_8java.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">package </span>selogger.logging.io;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">import</span> <a class="code" href="motivationExample_2origin_2selogger__out_2methods_8txt.html#abef7b47c4c5ab5ca7b95d064f2fd5aaf">java</a>.io.IOException;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">import</span> <a class="code" href="motivationExample_2origin_2selogger__out_2methods_8txt.html#abef7b47c4c5ab5ca7b95d064f2fd5aaf">java</a>.io.LineNumberReader;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">import</span> <a class="code" href="motivationExample_2origin_2selogger__out_2methods_8txt.html#abef7b47c4c5ab5ca7b95d064f2fd5aaf">java</a>.io.PrintWriter;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">import</span> <a class="code" href="motivationExample_2origin_2selogger__out_2methods_8txt.html#abef7b47c4c5ab5ca7b95d064f2fd5aaf">java</a>.io.StringReader;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">import</span> <a class="code" href="motivationExample_2origin_2selogger__out_2methods_8txt.html#abef7b47c4c5ab5ca7b95d064f2fd5aaf">java</a>.io.StringWriter;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">import</span> <a class="code" href="motivationExample_2origin_2selogger__out_2methods_8txt.html#abef7b47c4c5ab5ca7b95d064f2fd5aaf">java</a>.util.Arrays;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">import</span> org.junit.Assert;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">import</span> org.junit.Test;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">import</span> com.fasterxml.jackson.databind.JsonNode;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">import</span> com.fasterxml.jackson.databind.ObjectMapper;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">import</span> <a class="code" href="namespaceselogger.html">selogger</a>.<a class="code" href="enumselogger_1_1EventType.html">EventType</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">import</span> <a class="code" href="namespaceselogger.html">selogger</a>.<a class="code" href="namespaceselogger_1_1logging.html">logging</a>.<a class="code" href="namespaceselogger_1_1logging_1_1io.html">io</a>.<a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventLogger.html">LatestEventLogger</a>.<a class="code" href="enumselogger_1_1logging_1_1io_1_1LatestEventLogger_1_1ObjectRecordingStrategy.html">ObjectRecordingStrategy</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">import</span> <a class="code" href="namespaceselogger.html">selogger</a>.<a class="code" href="namespaceselogger_1_1logging.html">logging</a>.<a class="code" href="namespaceselogger_1_1logging_1_1util.html">util</a>.<a class="code" href="classselogger_1_1logging_1_1util_1_1ObjectId.html">ObjectId</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">import</span> <a class="code" href="namespaceselogger.html">selogger</a>.<a class="code" href="namespaceselogger_1_1weaver.html">weaver</a>.<a class="code" href="classselogger_1_1weaver_1_1DataInfo.html">DataInfo</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">import</span> <a class="code" href="namespaceselogger.html">selogger</a>.<a class="code" href="namespaceselogger_1_1weaver.html">weaver</a>.<a class="code" href="classselogger_1_1weaver_1_1MethodInfo.html">MethodInfo</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">import</span> <a class="code" href="namespaceselogger.html">selogger</a>.<a class="code" href="namespaceselogger_1_1weaver.html">weaver</a>.<a class="code" href="namespaceselogger_1_1weaver_1_1method.html">method</a>.<a class="code" href="enumselogger_1_1weaver_1_1method_1_1Descriptor.html">Descriptor</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classselogger_1_1logging_1_1io_1_1LatestEventLoggerTest.html">   25</a></span>&#160;<span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventLoggerTest.html">LatestEventLoggerTest</a> {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    @Test</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classselogger_1_1logging_1_1io_1_1LatestEventLoggerTest.html#ae0462cd6f9f78d551fd4d8455e6b799b">   31</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventLoggerTest.html#ae0462cd6f9f78d551fd4d8455e6b799b">testLatestTimeLogger</a>() {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventLogger.html">LatestEventLogger</a> log = <span class="keyword">new</span> <a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventLogger.html">LatestEventLogger</a>(<span class="keyword">null</span>, 4, <a class="code" href="enumselogger_1_1logging_1_1io_1_1LatestEventLogger_1_1ObjectRecordingStrategy.html">ObjectRecordingStrategy</a>.<a class="code" href="enumselogger_1_1logging_1_1io_1_1LatestEventLogger_1_1ObjectRecordingStrategy.html#ae8fffba3cc13ba00a1faa132743a9d6e">Weak</a>, <span class="keyword">true</span>, <span class="keyword">null</span>);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordtype">long</span> seqnum = <a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventLogger.html">LatestEventLogger</a>.<a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventLogger.html#a99ecfbd3ac1e278add3f4f68181bcb7a">getSeqnum</a>();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="comment">// Add three events for dataId=0</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        log.<a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventLogger.html#ac046fcff174204343d1ab4c23bf5868e">recordEvent</a>(0, 1);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        log.<a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventLogger.html#ac046fcff174204343d1ab4c23bf5868e">recordEvent</a>(0, 2);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        log.<a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventLogger.html#ac046fcff174204343d1ab4c23bf5868e">recordEvent</a>(0, 3);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventBuffer.html">LatestEventBuffer</a> buf = log.<a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventLogger.html#a06304a310557990dee285b124422631e">prepareBuffer</a>(<span class="keywordtype">int</span>.<span class="keyword">class</span>, 0);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="comment">// They should be correctly recorded.  (Freq, Record, Triples of value, timestamp, and thread)</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="motivationExample_2origin_2selogger__out_2LOG_0bTypes_8txt.html#a8a59ef96aecacd04b5a5896effedfaf2">String</a>[] elements = buf.<a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventBuffer.html#ab278f9f2eb3d96ff793f51df34c06243">toString</a>().split(<span class="stringliteral">&quot;,&quot;</span>);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        Assert.assertEquals(<span class="stringliteral">&quot;3&quot;</span>, elements[0]);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        Assert.assertEquals(<span class="stringliteral">&quot;3&quot;</span>, elements[1]);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        Assert.assertEquals(<span class="stringliteral">&quot;1&quot;</span>, elements[2]);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        Assert.assertEquals(Long.toString(seqnum), elements[3]);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        Assert.assertEquals(<span class="stringliteral">&quot;0&quot;</span>, elements[4]);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        Assert.assertEquals(<span class="stringliteral">&quot;2&quot;</span>, elements[5]);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        Assert.assertEquals(Long.toString(seqnum+1), elements[6]);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        Assert.assertEquals(<span class="stringliteral">&quot;0&quot;</span>, elements[7]);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        Assert.assertEquals(<span class="stringliteral">&quot;3&quot;</span>, elements[8]);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        Assert.assertEquals(Long.toString(seqnum+2), elements[9]);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        Assert.assertEquals(<span class="stringliteral">&quot;0&quot;</span>, elements[10]);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        Assert.assertEquals(3, buf.<a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventBuffer.html#a56b4a90bb6fb5afee5883f11328f6251">count</a>());</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        Assert.assertEquals(3, buf.<a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventBuffer.html#a5b999fd5f4a60a1a13914e0f4c73da21">size</a>());</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="comment">// Add additional three events for dataId=0</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        log.<a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventLogger.html#ac046fcff174204343d1ab4c23bf5868e">recordEvent</a>(0, 4);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        log.<a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventLogger.html#ac046fcff174204343d1ab4c23bf5868e">recordEvent</a>(0, 5);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        log.<a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventLogger.html#ac046fcff174204343d1ab4c23bf5868e">recordEvent</a>(0, 6);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="comment">// As the buffer size = 4, the latest four events should be recorded</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        elements = buf.<a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventBuffer.html#ab278f9f2eb3d96ff793f51df34c06243">toString</a>().split(<span class="stringliteral">&quot;,&quot;</span>);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        Assert.assertEquals(<span class="stringliteral">&quot;6&quot;</span>, elements[0]);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        Assert.assertEquals(<span class="stringliteral">&quot;4&quot;</span>, elements[1]);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        Assert.assertEquals(<span class="stringliteral">&quot;3&quot;</span>, elements[2]);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        Assert.assertEquals(<span class="stringliteral">&quot;4&quot;</span>, elements[5]);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        Assert.assertEquals(<span class="stringliteral">&quot;5&quot;</span>, elements[8]);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        Assert.assertEquals(<span class="stringliteral">&quot;6&quot;</span>, elements[11]);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        Assert.assertEquals(Long.toString(seqnum+2), elements[3]);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        Assert.assertEquals(Long.toString(seqnum+3), elements[6]);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        Assert.assertEquals(Long.toString(seqnum+4), elements[9]);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        Assert.assertEquals(Long.toString(seqnum+5), elements[12]);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        Assert.assertEquals(6, buf.<a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventBuffer.html#a56b4a90bb6fb5afee5883f11328f6251">count</a>());</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        Assert.assertEquals(4, buf.<a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventBuffer.html#a5b999fd5f4a60a1a13914e0f4c73da21">size</a>());</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="comment">// Add five events for dataId=0</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        log.<a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventLogger.html#ac046fcff174204343d1ab4c23bf5868e">recordEvent</a>(0, 7);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        log.<a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventLogger.html#ac046fcff174204343d1ab4c23bf5868e">recordEvent</a>(0, 8);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        log.<a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventLogger.html#ac046fcff174204343d1ab4c23bf5868e">recordEvent</a>(0, 9);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        log.<a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventLogger.html#ac046fcff174204343d1ab4c23bf5868e">recordEvent</a>(0, 10);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        log.<a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventLogger.html#ac046fcff174204343d1ab4c23bf5868e">recordEvent</a>(0, 11);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="comment">// As the buffer size = 4, the latest four events should be recorded</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        elements = buf.<a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventBuffer.html#ab278f9f2eb3d96ff793f51df34c06243">toString</a>().split(<span class="stringliteral">&quot;,&quot;</span>);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        Assert.assertEquals(<span class="stringliteral">&quot;11&quot;</span>, elements[0]);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        Assert.assertEquals(<span class="stringliteral">&quot;4&quot;</span>, elements[1]);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        Assert.assertEquals(<span class="stringliteral">&quot;8&quot;</span>, elements[2]);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        Assert.assertEquals(<span class="stringliteral">&quot;9&quot;</span>, elements[5]);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        Assert.assertEquals(<span class="stringliteral">&quot;10&quot;</span>, elements[8]);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        Assert.assertEquals(<span class="stringliteral">&quot;11&quot;</span>, elements[11]);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        Assert.assertEquals(11, buf.<a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventBuffer.html#a56b4a90bb6fb5afee5883f11328f6251">count</a>()); <span class="comment">// 11 events</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        Assert.assertEquals(4, buf.<a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventBuffer.html#a5b999fd5f4a60a1a13914e0f4c73da21">size</a>());</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="classselogger_1_1logging_1_1io_1_1LatestEventLoggerTest.html#ae8ab8735af8e83e30c152cebfb09915d">   96</a></span>&#160;    <span class="keyword">private</span> <a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventLogger.html">LatestEventLogger</a> <a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventLoggerTest.html#ae8ab8735af8e83e30c152cebfb09915d">createLog</a>() {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventLogger.html">LatestEventLogger</a> log = <span class="keyword">new</span> <a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventLogger.html">LatestEventLogger</a>(<span class="keyword">null</span>, 4, <a class="code" href="enumselogger_1_1logging_1_1io_1_1LatestEventLogger_1_1ObjectRecordingStrategy.html">ObjectRecordingStrategy</a>.<a class="code" href="enumselogger_1_1logging_1_1io_1_1LatestEventLogger_1_1ObjectRecordingStrategy.html#ae8fffba3cc13ba00a1faa132743a9d6e">Weak</a>, <span class="keyword">true</span>, <span class="keyword">null</span>);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <a class="code" href="classselogger_1_1weaver_1_1DataInfo.html">DataInfo</a> d1 = <span class="keyword">new</span> <a class="code" href="classselogger_1_1weaver_1_1DataInfo.html">DataInfo</a>(0, 0, 0, 0, 0, <a class="code" href="enumselogger_1_1EventType.html">EventType</a>.<a class="code" href="enumselogger_1_1EventType.html#acc2aeb1e2cf6d493cc56da1c164eeb95">METHOD_ENTRY</a>, <a class="code" href="enumselogger_1_1weaver_1_1method_1_1Descriptor.html">Descriptor</a>.<a class="code" href="enumselogger_1_1weaver_1_1method_1_1Descriptor.html#aa90fe01bb389a08993397690aa1daa5d">Void</a>, <span class="keyword">null</span>);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <a class="code" href="classselogger_1_1weaver_1_1DataInfo.html">DataInfo</a> d2 = <span class="keyword">new</span> <a class="code" href="classselogger_1_1weaver_1_1DataInfo.html">DataInfo</a>(0, 0, 1, 0, 0, <a class="code" href="enumselogger_1_1EventType.html">EventType</a>.<a class="code" href="enumselogger_1_1EventType.html#ad31ea400e891271eae00c193d09fbad4">METHOD_NORMAL_EXIT</a>, <a class="code" href="enumselogger_1_1weaver_1_1method_1_1Descriptor.html">Descriptor</a>.<a class="code" href="enumselogger_1_1weaver_1_1method_1_1Descriptor.html#a9a6ffeb0d0fffe3cd3d7d21c56e80694">Integer</a>, <span class="keyword">null</span>);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <a class="code" href="classselogger_1_1weaver_1_1MethodInfo.html">MethodInfo</a> m = <span class="keyword">new</span> <a class="code" href="classselogger_1_1weaver_1_1MethodInfo.html">MethodInfo</a>(0, 0, <span class="stringliteral">&quot;myClass&quot;</span>, <span class="stringliteral">&quot;myMethod&quot;</span>, <span class="stringliteral">&quot;()I&quot;</span>, 0, <span class="stringliteral">&quot;myClass.java&quot;</span>, <span class="stringliteral">&quot;0123456789abcdef&quot;</span>);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        d1.<a class="code" href="classselogger_1_1weaver_1_1DataInfo.html#a447ec47125f6e4348b30945187ed29fc">setMethodInfo</a>(m);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        d2.<a class="code" href="classselogger_1_1weaver_1_1DataInfo.html#a447ec47125f6e4348b30945187ed29fc">setMethodInfo</a>(m);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        log.<a class="code" href="classselogger_1_1logging_1_1io_1_1AbstractEventLogger.html#ad947ee8d5bd30b41829f3ddb03673950">onCreated</a>(Arrays.asList(d1, d2));</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordflow">return</span> log;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    @Test</div>
+<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="classselogger_1_1logging_1_1io_1_1LatestEventLoggerTest.html#a47c3cb1d5d3cb62d74649a82d3feebf2">  108</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventLoggerTest.html#a47c3cb1d5d3cb62d74649a82d3feebf2">testJsonFormat</a>() {</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="comment">// Create an artificial program</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventLogger.html">LatestEventLogger</a> log = <a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventLoggerTest.html#ae8ab8735af8e83e30c152cebfb09915d">createLog</a>();</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="comment">// Add events</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        log.<a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventLogger.html#ac046fcff174204343d1ab4c23bf5868e">recordEvent</a>(0, 1);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        log.<a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventLogger.html#ac046fcff174204343d1ab4c23bf5868e">recordEvent</a>(1, 1);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        log.<a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventLogger.html#ac046fcff174204343d1ab4c23bf5868e">recordEvent</a>(0, 2);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        log.<a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventLogger.html#ac046fcff174204343d1ab4c23bf5868e">recordEvent</a>(1, 2);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        log.<a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventLogger.html#ac046fcff174204343d1ab4c23bf5868e">recordEvent</a>(1, 3);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="comment">// Save the content to a Json string</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        StringWriter w = <span class="keyword">new</span> StringWriter();</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        PrintWriter writer = <span class="keyword">new</span> PrintWriter(w);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        log.<a class="code" href="classselogger_1_1logging_1_1io_1_1AbstractEventLogger.html#a4e23904c05eba97d709ce44b5da23582">saveJson</a>(writer);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        writer.close();</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <a class="code" href="motivationExample_2origin_2selogger__out_2LOG_0bTypes_8txt.html#a8a59ef96aecacd04b5a5896effedfaf2">String</a> json = w.toString();</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            ObjectMapper mapper = <span class="keyword">new</span> ObjectMapper();</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            JsonNode node = mapper.readTree(json);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            Assert.assertEquals(<span class="stringliteral">&quot;nearomni&quot;</span>, node.get(<span class="stringliteral">&quot;format&quot;</span>).asText());</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            </div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            JsonNode event1 = node.get(<span class="stringliteral">&quot;events&quot;</span>).get(0);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            Assert.assertEquals(<span class="stringliteral">&quot;myClass&quot;</span>, event1.get(<span class="stringliteral">&quot;cname&quot;</span>).asText());</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            Assert.assertEquals(<span class="stringliteral">&quot;myMethod&quot;</span>, event1.get(<span class="stringliteral">&quot;mname&quot;</span>).asText());</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            Assert.assertEquals(<span class="stringliteral">&quot;()I&quot;</span>, event1.get(<span class="stringliteral">&quot;mdesc&quot;</span>).asText());</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            Assert.assertEquals(<span class="stringliteral">&quot;METHOD_ENTRY&quot;</span>, event1.get(<span class="stringliteral">&quot;event&quot;</span>).asText());</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            Assert.assertEquals(2, event1.get(<span class="stringliteral">&quot;freq&quot;</span>).asInt());</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            Assert.assertEquals(2, event1.get(<span class="stringliteral">&quot;record&quot;</span>).asInt());               </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            Assert.assertEquals(<span class="stringliteral">&quot;void&quot;</span>, event1.get(<span class="stringliteral">&quot;vtype&quot;</span>).asText());              </div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            Assert.assertNull(event1.get(<span class="stringliteral">&quot;value&quot;</span>));</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;            JsonNode event2 = node.get(<span class="stringliteral">&quot;events&quot;</span>).get(1);</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;            Assert.assertEquals(<span class="stringliteral">&quot;myClass&quot;</span>, event2.get(<span class="stringliteral">&quot;cname&quot;</span>).asText());</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            Assert.assertEquals(<span class="stringliteral">&quot;myMethod&quot;</span>, event2.get(<span class="stringliteral">&quot;mname&quot;</span>).asText());</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            Assert.assertEquals(<span class="stringliteral">&quot;()I&quot;</span>, event2.get(<span class="stringliteral">&quot;mdesc&quot;</span>).asText());</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            Assert.assertEquals(<span class="stringliteral">&quot;METHOD_NORMAL_EXIT&quot;</span>, event2.get(<span class="stringliteral">&quot;event&quot;</span>).asText());</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            Assert.assertEquals(3, event2.get(<span class="stringliteral">&quot;freq&quot;</span>).asInt());</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            Assert.assertEquals(3, event2.get(<span class="stringliteral">&quot;record&quot;</span>).asInt());               </div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            Assert.assertEquals(<span class="stringliteral">&quot;int&quot;</span>, event2.get(<span class="stringliteral">&quot;vtype&quot;</span>).asText());               </div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            JsonNode values = event2.get(<span class="stringliteral">&quot;value&quot;</span>);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            Assert.assertEquals(1, values.get(0).asInt());</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            Assert.assertEquals(2, values.get(1).asInt());</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            Assert.assertEquals(3, values.get(2).asInt());</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        } <span class="keywordflow">catch</span> (IOException e) {</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            Assert.fail();</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        }</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    }   </div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
+<div class="line"><a name="l00158"></a><span class="lineno"><a class="line" href="classselogger_1_1logging_1_1io_1_1LatestEventLoggerTest.html#a14a01c04ab15a083119736017db8239e">  158</a></span>&#160;    <span class="keyword">private</span> <span class="keywordtype">int</span> <a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventLoggerTest.html#a14a01c04ab15a083119736017db8239e">countColumns</a>(<a class="code" href="motivationExample_2origin_2selogger__out_2LOG_0bTypes_8txt.html#a8a59ef96aecacd04b5a5896effedfaf2">String</a> line) {</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <span class="keywordflow">return</span> line.split(<span class="stringliteral">&quot;,&quot;</span>, -1).length;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    }</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    @Test</div>
+<div class="line"><a name="l00163"></a><span class="lineno"><a class="line" href="classselogger_1_1logging_1_1io_1_1LatestEventLoggerTest.html#a7abc5ca242c21182384d652b7378fe69">  163</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventLoggerTest.html#a7abc5ca242c21182384d652b7378fe69">testCsvFormat</a>() {</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <span class="comment">// Create an artificial program</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventLogger.html">LatestEventLogger</a> log = <a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventLoggerTest.html#ae8ab8735af8e83e30c152cebfb09915d">createLog</a>();</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <span class="comment">// Add events</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        log.<a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventLogger.html#ac046fcff174204343d1ab4c23bf5868e">recordEvent</a>(0, 1);</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        log.<a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventLogger.html#ac046fcff174204343d1ab4c23bf5868e">recordEvent</a>(1, 2);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        log.<a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventLogger.html#ac046fcff174204343d1ab4c23bf5868e">recordEvent</a>(0, 3);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        log.<a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventLogger.html#ac046fcff174204343d1ab4c23bf5868e">recordEvent</a>(1, 4);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        log.<a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventLogger.html#ac046fcff174204343d1ab4c23bf5868e">recordEvent</a>(0, 5);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        log.<a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventLogger.html#ac046fcff174204343d1ab4c23bf5868e">recordEvent</a>(1, 6);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        log.<a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventLogger.html#ac046fcff174204343d1ab4c23bf5868e">recordEvent</a>(0, 7);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        </div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        StringWriter w = <span class="keyword">new</span> StringWriter();</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        PrintWriter writer = <span class="keyword">new</span> PrintWriter(w);</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        log.<a class="code" href="classselogger_1_1logging_1_1io_1_1AbstractEventLogger.html#a8ff2d08abd1665733b2ca2816ad4834d">saveText</a>(writer);</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        writer.close();</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <a class="code" href="motivationExample_2origin_2selogger__out_2LOG_0bTypes_8txt.html#a8a59ef96aecacd04b5a5896effedfaf2">String</a> csv = w.toString();</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        </div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        LineNumberReader reader = <span class="keyword">new</span> LineNumberReader(<span class="keyword">new</span> StringReader(csv));</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;            <span class="comment">// The number of columns in the header should be the same as other lines </span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            <a class="code" href="motivationExample_2origin_2selogger__out_2LOG_0bTypes_8txt.html#a8a59ef96aecacd04b5a5896effedfaf2">String</a> header = reader.readLine();</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            Assert.assertNotNull(header);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            <a class="code" href="motivationExample_2origin_2selogger__out_2LOG_0bTypes_8txt.html#a8a59ef96aecacd04b5a5896effedfaf2">String</a>[] columns = header.split(<span class="stringliteral">&quot;,&quot;</span>);</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            </div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            <span class="keywordflow">for</span> (<a class="code" href="motivationExample_2origin_2selogger__out_2LOG_0bTypes_8txt.html#a8a59ef96aecacd04b5a5896effedfaf2">String</a> line = reader.readLine(); line != <span class="keyword">null</span>; line = reader.readLine()) {</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                <span class="keywordtype">int</span> c = <a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventLoggerTest.html#a14a01c04ab15a083119736017db8239e">countColumns</a>(line);</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                Assert.assertEquals(columns.length, c);</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;            }</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        } <span class="keywordflow">catch</span> (IOException e) {</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            Assert.fail();</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        }</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    }   </div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    </div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    @Test</div>
+<div class="line"><a name="l00199"></a><span class="lineno"><a class="line" href="classselogger_1_1logging_1_1io_1_1LatestEventLoggerTest.html#a7651df62bbf5ed45fceb1bf6696f16b1">  199</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventLoggerTest.html#a7651df62bbf5ed45fceb1bf6696f16b1">testObjectId</a>() {</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        <a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventLogger.html">LatestEventLogger</a> logger = <span class="keyword">new</span> <a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventLogger.html">LatestEventLogger</a>(<span class="keyword">null</span>, 4, <a class="code" href="enumselogger_1_1logging_1_1io_1_1LatestEventLogger_1_1ObjectRecordingStrategy.html">ObjectRecordingStrategy</a>.<a class="code" href="enumselogger_1_1logging_1_1io_1_1LatestEventLogger_1_1ObjectRecordingStrategy.html#aedfa87732fbac2fbefa206e3a2a65c96">Id</a>, <span class="keyword">true</span>, <span class="keyword">null</span>);</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <a class="code" href="motivationExample_2origin_2selogger__out_2LOG_0bTypes_8txt.html#a8a59ef96aecacd04b5a5896effedfaf2">String</a> obj = <span class="stringliteral">&quot;a&quot;</span>;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        logger.<a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventLogger.html#ac046fcff174204343d1ab4c23bf5868e">recordEvent</a>(0, obj);</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        logger.<a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventLogger.html#ac046fcff174204343d1ab4c23bf5868e">recordEvent</a>(0, <span class="keyword">new</span> Throwable(<span class="stringliteral">&quot;test&quot;</span>));</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        <a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventBuffer.html">LatestEventBuffer</a> buffer = logger.<a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventLogger.html#a06304a310557990dee285b124422631e">prepareBuffer</a>(<a class="code" href="classselogger_1_1logging_1_1util_1_1ObjectId.html">ObjectId</a>.class, 0);</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        <a class="code" href="classselogger_1_1logging_1_1util_1_1ObjectId.html">ObjectId</a> strId = buffer.<a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventBuffer.html#a3bd8c7e535817d1b960a07be85ab9fcc">getObjectId</a>(0);</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        Assert.assertEquals(1, strId.<a class="code" href="classselogger_1_1logging_1_1util_1_1ObjectId.html#a971c5d826d7ba9cc53697d0454bbf91a">getId</a>());</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        Assert.assertTrue(obj == strId.<a class="code" href="classselogger_1_1logging_1_1util_1_1ObjectId.html#a83cc0b640cfd3e7e750324611621edca">getContent</a>());</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        Assert.assertEquals(<span class="stringliteral">&quot;java.lang.String&quot;</span>, strId.<a class="code" href="classselogger_1_1logging_1_1util_1_1ObjectId.html#a189f90db5c0c5d65aa52a5cdc02f5b1e">getClassName</a>());</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160; </div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        <a class="code" href="classselogger_1_1logging_1_1util_1_1ObjectId.html">ObjectId</a> exceptionId = buffer.<a class="code" href="classselogger_1_1logging_1_1io_1_1LatestEventBuffer.html#a3bd8c7e535817d1b960a07be85ab9fcc">getObjectId</a>(1);</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        Assert.assertEquals(2, exceptionId.<a class="code" href="classselogger_1_1logging_1_1util_1_1ObjectId.html#a971c5d826d7ba9cc53697d0454bbf91a">getId</a>());</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        Assert.assertEquals(<span class="stringliteral">&quot;test&quot;</span>, exceptionId.<a class="code" href="classselogger_1_1logging_1_1util_1_1ObjectId.html#a83cc0b640cfd3e7e750324611621edca">getContent</a>());</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        Assert.assertEquals(<span class="stringliteral">&quot;java.lang.Throwable&quot;</span>, exceptionId.<a class="code" href="classselogger_1_1logging_1_1util_1_1ObjectId.html#a189f90db5c0c5d65aa52a5cdc02f5b1e">getClassName</a>());</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    }</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    </div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;}</div>
+<div class="ttc" id="aclassselogger_1_1logging_1_1io_1_1AbstractEventLogger_html_a4e23904c05eba97d709ce44b5da23582"><div class="ttname"><a href="classselogger_1_1logging_1_1io_1_1AbstractEventLogger.html#a4e23904c05eba97d709ce44b5da23582">selogger.logging.io.AbstractEventLogger.saveJson</a></div><div class="ttdeci">void saveJson(PrintWriter w)</div><div class="ttdef"><b>Definition:</b> <a href="AbstractEventLogger_8java_source.html#l00076">AbstractEventLogger.java:76</a></div></div>
+<div class="ttc" id="aclassselogger_1_1logging_1_1io_1_1AbstractEventLogger_html_a8ff2d08abd1665733b2ca2816ad4834d"><div class="ttname"><a href="classselogger_1_1logging_1_1io_1_1AbstractEventLogger.html#a8ff2d08abd1665733b2ca2816ad4834d">selogger.logging.io.AbstractEventLogger.saveText</a></div><div class="ttdeci">void saveText(PrintWriter w)</div><div class="ttdef"><b>Definition:</b> <a href="AbstractEventLogger_8java_source.html#l00040">AbstractEventLogger.java:40</a></div></div>
+<div class="ttc" id="aclassselogger_1_1logging_1_1io_1_1AbstractEventLogger_html_ad947ee8d5bd30b41829f3ddb03673950"><div class="ttname"><a href="classselogger_1_1logging_1_1io_1_1AbstractEventLogger.html#ad947ee8d5bd30b41829f3ddb03673950">selogger.logging.io.AbstractEventLogger.onCreated</a></div><div class="ttdeci">void onCreated(List&lt; DataInfo &gt; events)</div><div class="ttdef"><b>Definition:</b> <a href="AbstractEventLogger_8java_source.html#l00032">AbstractEventLogger.java:32</a></div></div>
+<div class="ttc" id="aclassselogger_1_1logging_1_1io_1_1LatestEventBuffer_html"><div class="ttname"><a href="classselogger_1_1logging_1_1io_1_1LatestEventBuffer.html">selogger.logging.io.LatestEventBuffer</a></div><div class="ttdef"><b>Definition:</b> <a href="LatestEventBuffer_8java_source.html#l00017">LatestEventBuffer.java:17</a></div></div>
+<div class="ttc" id="aclassselogger_1_1logging_1_1io_1_1LatestEventBuffer_html_a3bd8c7e535817d1b960a07be85ab9fcc"><div class="ttname"><a href="classselogger_1_1logging_1_1io_1_1LatestEventBuffer.html#a3bd8c7e535817d1b960a07be85ab9fcc">selogger.logging.io.LatestEventBuffer.getObjectId</a></div><div class="ttdeci">ObjectId getObjectId(int i)</div><div class="ttdef"><b>Definition:</b> <a href="LatestEventBuffer_8java_source.html#l00358">LatestEventBuffer.java:358</a></div></div>
+<div class="ttc" id="aclassselogger_1_1logging_1_1io_1_1LatestEventBuffer_html_a56b4a90bb6fb5afee5883f11328f6251"><div class="ttname"><a href="classselogger_1_1logging_1_1io_1_1LatestEventBuffer.html#a56b4a90bb6fb5afee5883f11328f6251">selogger.logging.io.LatestEventBuffer.count</a></div><div class="ttdeci">long count</div><div class="ttdef"><b>Definition:</b> <a href="LatestEventBuffer_8java_source.html#l00023">LatestEventBuffer.java:23</a></div></div>
+<div class="ttc" id="aclassselogger_1_1logging_1_1io_1_1LatestEventBuffer_html_a5b999fd5f4a60a1a13914e0f4c73da21"><div class="ttname"><a href="classselogger_1_1logging_1_1io_1_1LatestEventBuffer.html#a5b999fd5f4a60a1a13914e0f4c73da21">selogger.logging.io.LatestEventBuffer.size</a></div><div class="ttdeci">synchronized int size()</div><div class="ttdef"><b>Definition:</b> <a href="LatestEventBuffer_8java_source.html#l00327">LatestEventBuffer.java:327</a></div></div>
+<div class="ttc" id="aclassselogger_1_1logging_1_1io_1_1LatestEventBuffer_html_ab278f9f2eb3d96ff793f51df34c06243"><div class="ttname"><a href="classselogger_1_1logging_1_1io_1_1LatestEventBuffer.html#ab278f9f2eb3d96ff793f51df34c06243">selogger.logging.io.LatestEventBuffer.toString</a></div><div class="ttdeci">synchronized String toString()</div><div class="ttdef"><b>Definition:</b> <a href="LatestEventBuffer_8java_source.html#l00216">LatestEventBuffer.java:216</a></div></div>
+<div class="ttc" id="aclassselogger_1_1logging_1_1io_1_1LatestEventLoggerTest_html"><div class="ttname"><a href="classselogger_1_1logging_1_1io_1_1LatestEventLoggerTest.html">selogger.logging.io.LatestEventLoggerTest</a></div><div class="ttdef"><b>Definition:</b> <a href="LatestEventLoggerTest_8java_source.html#l00025">LatestEventLoggerTest.java:25</a></div></div>
+<div class="ttc" id="aclassselogger_1_1logging_1_1io_1_1LatestEventLoggerTest_html_a14a01c04ab15a083119736017db8239e"><div class="ttname"><a href="classselogger_1_1logging_1_1io_1_1LatestEventLoggerTest.html#a14a01c04ab15a083119736017db8239e">selogger.logging.io.LatestEventLoggerTest.countColumns</a></div><div class="ttdeci">int countColumns(String line)</div><div class="ttdef"><b>Definition:</b> <a href="LatestEventLoggerTest_8java_source.html#l00158">LatestEventLoggerTest.java:158</a></div></div>
+<div class="ttc" id="aclassselogger_1_1logging_1_1io_1_1LatestEventLoggerTest_html_a47c3cb1d5d3cb62d74649a82d3feebf2"><div class="ttname"><a href="classselogger_1_1logging_1_1io_1_1LatestEventLoggerTest.html#a47c3cb1d5d3cb62d74649a82d3feebf2">selogger.logging.io.LatestEventLoggerTest.testJsonFormat</a></div><div class="ttdeci">void testJsonFormat()</div><div class="ttdef"><b>Definition:</b> <a href="LatestEventLoggerTest_8java_source.html#l00108">LatestEventLoggerTest.java:108</a></div></div>
+<div class="ttc" id="aclassselogger_1_1logging_1_1io_1_1LatestEventLoggerTest_html_a7651df62bbf5ed45fceb1bf6696f16b1"><div class="ttname"><a href="classselogger_1_1logging_1_1io_1_1LatestEventLoggerTest.html#a7651df62bbf5ed45fceb1bf6696f16b1">selogger.logging.io.LatestEventLoggerTest.testObjectId</a></div><div class="ttdeci">void testObjectId()</div><div class="ttdef"><b>Definition:</b> <a href="LatestEventLoggerTest_8java_source.html#l00199">LatestEventLoggerTest.java:199</a></div></div>
+<div class="ttc" id="aclassselogger_1_1logging_1_1io_1_1LatestEventLoggerTest_html_a7abc5ca242c21182384d652b7378fe69"><div class="ttname"><a href="classselogger_1_1logging_1_1io_1_1LatestEventLoggerTest.html#a7abc5ca242c21182384d652b7378fe69">selogger.logging.io.LatestEventLoggerTest.testCsvFormat</a></div><div class="ttdeci">void testCsvFormat()</div><div class="ttdef"><b>Definition:</b> <a href="LatestEventLoggerTest_8java_source.html#l00163">LatestEventLoggerTest.java:163</a></div></div>
+<div class="ttc" id="aclassselogger_1_1logging_1_1io_1_1LatestEventLoggerTest_html_ae0462cd6f9f78d551fd4d8455e6b799b"><div class="ttname"><a href="classselogger_1_1logging_1_1io_1_1LatestEventLoggerTest.html#ae0462cd6f9f78d551fd4d8455e6b799b">selogger.logging.io.LatestEventLoggerTest.testLatestTimeLogger</a></div><div class="ttdeci">void testLatestTimeLogger()</div><div class="ttdef"><b>Definition:</b> <a href="LatestEventLoggerTest_8java_source.html#l00031">LatestEventLoggerTest.java:31</a></div></div>
+<div class="ttc" id="aclassselogger_1_1logging_1_1io_1_1LatestEventLoggerTest_html_ae8ab8735af8e83e30c152cebfb09915d"><div class="ttname"><a href="classselogger_1_1logging_1_1io_1_1LatestEventLoggerTest.html#ae8ab8735af8e83e30c152cebfb09915d">selogger.logging.io.LatestEventLoggerTest.createLog</a></div><div class="ttdeci">LatestEventLogger createLog()</div><div class="ttdef"><b>Definition:</b> <a href="LatestEventLoggerTest_8java_source.html#l00096">LatestEventLoggerTest.java:96</a></div></div>
+<div class="ttc" id="aclassselogger_1_1logging_1_1io_1_1LatestEventLogger_html"><div class="ttname"><a href="classselogger_1_1logging_1_1io_1_1LatestEventLogger.html">selogger.logging.io.LatestEventLogger</a></div><div class="ttdef"><b>Definition:</b> <a href="LatestEventLogger_8java_source.html#l00026">LatestEventLogger.java:26</a></div></div>
+<div class="ttc" id="aclassselogger_1_1logging_1_1io_1_1LatestEventLogger_html_a06304a310557990dee285b124422631e"><div class="ttname"><a href="classselogger_1_1logging_1_1io_1_1LatestEventLogger.html#a06304a310557990dee285b124422631e">selogger.logging.io.LatestEventLogger.prepareBuffer</a></div><div class="ttdeci">synchronized LatestEventBuffer prepareBuffer(Class&lt;?&gt; type, int dataId)</div><div class="ttdef"><b>Definition:</b> <a href="LatestEventLogger_8java_source.html#l00182">LatestEventLogger.java:182</a></div></div>
+<div class="ttc" id="aclassselogger_1_1logging_1_1io_1_1LatestEventLogger_html_a99ecfbd3ac1e278add3f4f68181bcb7a"><div class="ttname"><a href="classselogger_1_1logging_1_1io_1_1LatestEventLogger.html#a99ecfbd3ac1e278add3f4f68181bcb7a">selogger.logging.io.LatestEventLogger.getSeqnum</a></div><div class="ttdeci">static long getSeqnum()</div><div class="ttdef"><b>Definition:</b> <a href="LatestEventLogger_8java_source.html#l00102">LatestEventLogger.java:102</a></div></div>
+<div class="ttc" id="aclassselogger_1_1logging_1_1io_1_1LatestEventLogger_html_ac046fcff174204343d1ab4c23bf5868e"><div class="ttname"><a href="classselogger_1_1logging_1_1io_1_1LatestEventLogger.html#ac046fcff174204343d1ab4c23bf5868e">selogger.logging.io.LatestEventLogger.recordEvent</a></div><div class="ttdeci">void recordEvent(int dataId, boolean value)</div><div class="ttdef"><b>Definition:</b> <a href="LatestEventLogger_8java_source.html#l00209">LatestEventLogger.java:209</a></div></div>
+<div class="ttc" id="aclassselogger_1_1logging_1_1util_1_1ObjectId_html"><div class="ttname"><a href="classselogger_1_1logging_1_1util_1_1ObjectId.html">selogger.logging.util.ObjectId</a></div><div class="ttdef"><b>Definition:</b> <a href="ObjectId_8java_source.html#l00003">ObjectId.java:3</a></div></div>
+<div class="ttc" id="aclassselogger_1_1logging_1_1util_1_1ObjectId_html_a189f90db5c0c5d65aa52a5cdc02f5b1e"><div class="ttname"><a href="classselogger_1_1logging_1_1util_1_1ObjectId.html#a189f90db5c0c5d65aa52a5cdc02f5b1e">selogger.logging.util.ObjectId.getClassName</a></div><div class="ttdeci">String getClassName()</div><div class="ttdef"><b>Definition:</b> <a href="ObjectId_8java_source.html#l00019">ObjectId.java:19</a></div></div>
+<div class="ttc" id="aclassselogger_1_1logging_1_1util_1_1ObjectId_html_a83cc0b640cfd3e7e750324611621edca"><div class="ttname"><a href="classselogger_1_1logging_1_1util_1_1ObjectId.html#a83cc0b640cfd3e7e750324611621edca">selogger.logging.util.ObjectId.getContent</a></div><div class="ttdeci">String getContent()</div><div class="ttdef"><b>Definition:</b> <a href="ObjectId_8java_source.html#l00023">ObjectId.java:23</a></div></div>
+<div class="ttc" id="aclassselogger_1_1logging_1_1util_1_1ObjectId_html_a971c5d826d7ba9cc53697d0454bbf91a"><div class="ttname"><a href="classselogger_1_1logging_1_1util_1_1ObjectId.html#a971c5d826d7ba9cc53697d0454bbf91a">selogger.logging.util.ObjectId.getId</a></div><div class="ttdeci">long getId()</div><div class="ttdef"><b>Definition:</b> <a href="ObjectId_8java_source.html#l00015">ObjectId.java:15</a></div></div>
+<div class="ttc" id="aclassselogger_1_1weaver_1_1DataInfo_html"><div class="ttname"><a href="classselogger_1_1weaver_1_1DataInfo.html">selogger.weaver.DataInfo</a></div><div class="ttdef"><b>Definition:</b> <a href="DataInfo_8java_source.html#l00012">DataInfo.java:12</a></div></div>
+<div class="ttc" id="aclassselogger_1_1weaver_1_1DataInfo_html_a447ec47125f6e4348b30945187ed29fc"><div class="ttname"><a href="classselogger_1_1weaver_1_1DataInfo.html#a447ec47125f6e4348b30945187ed29fc">selogger.weaver.DataInfo.setMethodInfo</a></div><div class="ttdeci">void setMethodInfo(MethodInfo methodInfo)</div><div class="ttdef"><b>Definition:</b> <a href="DataInfo_8java_source.html#l00058">DataInfo.java:58</a></div></div>
+<div class="ttc" id="aclassselogger_1_1weaver_1_1MethodInfo_html"><div class="ttname"><a href="classselogger_1_1weaver_1_1MethodInfo.html">selogger.weaver.MethodInfo</a></div><div class="ttdef"><b>Definition:</b> <a href="MethodInfo_8java_source.html#l00009">MethodInfo.java:9</a></div></div>
+<div class="ttc" id="aenumselogger_1_1EventType_html"><div class="ttname"><a href="enumselogger_1_1EventType.html">selogger.EventType</a></div><div class="ttdef"><b>Definition:</b> <a href="EventType_8java_source.html#l00008">EventType.java:8</a></div></div>
+<div class="ttc" id="aenumselogger_1_1EventType_html_acc2aeb1e2cf6d493cc56da1c164eeb95"><div class="ttname"><a href="enumselogger_1_1EventType.html#acc2aeb1e2cf6d493cc56da1c164eeb95">selogger.EventType.METHOD_ENTRY</a></div><div class="ttdeci">METHOD_ENTRY</div><div class="ttdef"><b>Definition:</b> <a href="EventType_8java_source.html#l00023">EventType.java:23</a></div></div>
+<div class="ttc" id="aenumselogger_1_1EventType_html_ad31ea400e891271eae00c193d09fbad4"><div class="ttname"><a href="enumselogger_1_1EventType.html#ad31ea400e891271eae00c193d09fbad4">selogger.EventType.METHOD_NORMAL_EXIT</a></div><div class="ttdeci">METHOD_NORMAL_EXIT</div><div class="ttdef"><b>Definition:</b> <a href="EventType_8java_source.html#l00041">EventType.java:41</a></div></div>
+<div class="ttc" id="aenumselogger_1_1logging_1_1io_1_1LatestEventLogger_1_1ObjectRecordingStrategy_html"><div class="ttname"><a href="enumselogger_1_1logging_1_1io_1_1LatestEventLogger_1_1ObjectRecordingStrategy.html">selogger.logging.io.LatestEventLogger.ObjectRecordingStrategy</a></div><div class="ttdef"><b>Definition:</b> <a href="LatestEventLogger_8java_source.html#l00031">LatestEventLogger.java:31</a></div></div>
+<div class="ttc" id="aenumselogger_1_1logging_1_1io_1_1LatestEventLogger_1_1ObjectRecordingStrategy_html_ae8fffba3cc13ba00a1faa132743a9d6e"><div class="ttname"><a href="enumselogger_1_1logging_1_1io_1_1LatestEventLogger_1_1ObjectRecordingStrategy.html#ae8fffba3cc13ba00a1faa132743a9d6e">selogger.logging.io.LatestEventLogger.ObjectRecordingStrategy.Weak</a></div><div class="ttdeci">Weak</div><div class="ttdef"><b>Definition:</b> <a href="LatestEventLogger_8java_source.html#l00042">LatestEventLogger.java:42</a></div></div>
+<div class="ttc" id="aenumselogger_1_1logging_1_1io_1_1LatestEventLogger_1_1ObjectRecordingStrategy_html_aedfa87732fbac2fbefa206e3a2a65c96"><div class="ttname"><a href="enumselogger_1_1logging_1_1io_1_1LatestEventLogger_1_1ObjectRecordingStrategy.html#aedfa87732fbac2fbefa206e3a2a65c96">selogger.logging.io.LatestEventLogger.ObjectRecordingStrategy.Id</a></div><div class="ttdeci">Id</div><div class="ttdef"><b>Definition:</b> <a href="LatestEventLogger_8java_source.html#l00048">LatestEventLogger.java:47</a></div></div>
+<div class="ttc" id="aenumselogger_1_1weaver_1_1method_1_1Descriptor_html"><div class="ttname"><a href="enumselogger_1_1weaver_1_1method_1_1Descriptor.html">selogger.weaver.method.Descriptor</a></div><div class="ttdef"><b>Definition:</b> <a href="Descriptor_8java_source.html#l00006">Descriptor.java:6</a></div></div>
+<div class="ttc" id="aenumselogger_1_1weaver_1_1method_1_1Descriptor_html_a9a6ffeb0d0fffe3cd3d7d21c56e80694"><div class="ttname"><a href="enumselogger_1_1weaver_1_1method_1_1Descriptor.html#a9a6ffeb0d0fffe3cd3d7d21c56e80694">selogger.weaver.method.Descriptor.Integer</a></div><div class="ttdeci">Integer</div><div class="ttdef"><b>Definition:</b> <a href="Descriptor_8java_source.html#l00009">Descriptor.java:9</a></div></div>
+<div class="ttc" id="aenumselogger_1_1weaver_1_1method_1_1Descriptor_html_aa90fe01bb389a08993397690aa1daa5d"><div class="ttname"><a href="enumselogger_1_1weaver_1_1method_1_1Descriptor.html#aa90fe01bb389a08993397690aa1daa5d">selogger.weaver.method.Descriptor.Void</a></div><div class="ttdeci">Void</div><div class="ttdef"><b>Definition:</b> <a href="Descriptor_8java_source.html#l00010">Descriptor.java:10</a></div></div>
+<div class="ttc" id="amotivationExample_2origin_2selogger__out_2LOG_0bTypes_8txt_html_a8a59ef96aecacd04b5a5896effedfaf2"><div class="ttname"><a href="motivationExample_2origin_2selogger__out_2LOG_0bTypes_8txt.html#a8a59ef96aecacd04b5a5896effedfaf2">String</a></div><div class="ttdeci">Loader java lang java lang String</div><div class="ttdef"><b>Definition:</b> <a href="motivationExample_2origin_2selogger__out_2LOG_0bTypes_8txt_source.html#l00011">LOG$Types.txt:11</a></div></div>
+<div class="ttc" id="amotivationExample_2origin_2selogger__out_2methods_8txt_html_abef7b47c4c5ab5ca7b95d064f2fd5aaf"><div class="ttname"><a href="motivationExample_2origin_2selogger__out_2methods_8txt.html#abef7b47c4c5ab5ca7b95d064f2fd5aaf">java</a></div><div class="ttdeci">&lt; init &gt; Main java</div><div class="ttdef"><b>Definition:</b> <a href="motivationExample_2origin_2selogger__out_2methods_8txt_source.html#l00002">methods.txt:2</a></div></div>
+<div class="ttc" id="anamespaceselogger_1_1logging_1_1io_html"><div class="ttname"><a href="namespaceselogger_1_1logging_1_1io.html">selogger.logging.io</a></div><div class="ttdef"><b>Definition:</b> <a href="AbstractEventLogger_8java_source.html#l00001">AbstractEventLogger.java:1</a></div></div>
+<div class="ttc" id="anamespaceselogger_1_1logging_1_1util_html"><div class="ttname"><a href="namespaceselogger_1_1logging_1_1util.html">selogger.logging.util</a></div><div class="ttdef"><b>Definition:</b> <a href="FileNameGenerator_8java_source.html#l00001">FileNameGenerator.java:1</a></div></div>
+<div class="ttc" id="anamespaceselogger_1_1logging_html"><div class="ttname"><a href="namespaceselogger_1_1logging.html">selogger.logging</a></div><div class="ttdef"><b>Definition:</b> <a href="IErrorLogger_8java_source.html#l00001">IErrorLogger.java:1</a></div></div>
+<div class="ttc" id="anamespaceselogger_1_1weaver_1_1method_html"><div class="ttname"><a href="namespaceselogger_1_1weaver_1_1method.html">selogger.weaver.method</a></div><div class="ttdef"><b>Definition:</b> <a href="ANewInstruction_8java_source.html#l00001">ANewInstruction.java:1</a></div></div>
+<div class="ttc" id="anamespaceselogger_1_1weaver_html"><div class="ttname"><a href="namespaceselogger_1_1weaver.html">selogger.weaver</a></div><div class="ttdef"><b>Definition:</b> <a href="ClassInfo_8java_source.html#l00001">ClassInfo.java:1</a></div></div>
+<div class="ttc" id="anamespaceselogger_html"><div class="ttname"><a href="namespaceselogger.html">selogger</a></div><div class="ttdef"><b>Definition:</b> <a href="EventType_8java_source.html#l00001">EventType.java:1</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_e3d743d0ec9b4013b28b5d69101bc7fb.html">Data</a></li><li class="navelem"><a class="el" href="dir_01f621d9ce496b7a25fbd2fbbc4de9b5.html">java8</a></li><li class="navelem"><a class="el" href="dir_00a102e375c7e4cf721fc27b336fd614.html">selogger</a></li><li class="navelem"><a class="el" href="dir_8a7c879528b4df7d2e153840d5d6f434.html">tests</a></li><li class="navelem"><a class="el" href="dir_c416619d5fd286c50d86a022cdc4d527.html">selogger</a></li><li class="navelem"><a class="el" href="dir_186f7de6d28c764689b12ccbc3a1e328.html">logging</a></li><li class="navelem"><a class="el" href="dir_6c7c39ab953f807162976a92f94a33b3.html">io</a></li><li class="navelem"><a class="el" href="LatestEventLoggerTest_8java.html">LatestEventLoggerTest.java</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

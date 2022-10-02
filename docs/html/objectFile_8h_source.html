@@ -1,0 +1,214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>POLDAM: MetaFileParser/src/objectFile.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">POLDAM
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('objectFile_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">objectFile.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="objectFile_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="metafileHandlerCommon_8h.html">metafileHandlerCommon.h</a>&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;../../Util/include/src/poldamUtil.h&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacePOLDAM.html">POLDAM</a></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="structPOLDAM_1_1ObjectData.html">    8</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structPOLDAM_1_1ObjectData.html">ObjectData</a></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <span class="comment">// recored in  LOG$ObjectTypes</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="structPOLDAM_1_1ObjectData.html#a22747b60b84836371108d4b685cb1e5f">   11</a></span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="structPOLDAM_1_1ObjectData.html#a22747b60b84836371108d4b685cb1e5f">fileIdx_</a>; <span class="comment">// internal use only</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="structPOLDAM_1_1ObjectData.html#aefaa6e936a616c2b8e284c7daf108998">   12</a></span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="structPOLDAM_1_1ObjectData.html#aefaa6e936a616c2b8e284c7daf108998">objectId</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="comment">// typenum is recored in LOG$Types.txt</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="structPOLDAM_1_1ObjectData.html#a0839bd2ae4cedfa6950a43ceb0bbe013">   14</a></span>&#160;        std::string <a class="code" href="structPOLDAM_1_1ObjectData.html#a0839bd2ae4cedfa6950a43ceb0bbe013">objectType</a>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="structPOLDAM_1_1ObjectData.html#a973d0078c2dedb9fe9e80e407b13f65b">   15</a></span>&#160;        std::string <a class="code" href="structPOLDAM_1_1ObjectData.html#a973d0078c2dedb9fe9e80e407b13f65b">jarFile</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="structPOLDAM_1_1ObjectData.html#a8e0a9bfaf7a9d4e27b79c8bb32658896">   16</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="structPOLDAM_1_1ObjectData.html#a8e0a9bfaf7a9d4e27b79c8bb32658896">typenum1</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="structPOLDAM_1_1ObjectData.html#a1aa69d3dbfed1fbc8ecc91c0829615df">   17</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="structPOLDAM_1_1ObjectData.html#a1aa69d3dbfed1fbc8ecc91c0829615df">typenum2</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="structPOLDAM_1_1ObjectData.html#a6a451756a5dbf6a5791ee043d66a3bfb">   18</a></span>&#160;        std::string <a class="code" href="structPOLDAM_1_1ObjectData.html#a6a451756a5dbf6a5791ee043d66a3bfb">loadFrom</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="comment">//  if type is sstring, concreate value is available</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="structPOLDAM_1_1ObjectData.html#a45e7a22a4ca53cccdabeab909e55ff17">   20</a></span>&#160;        std::string <a class="code" href="structPOLDAM_1_1ObjectData.html#a45e7a22a4ca53cccdabeab909e55ff17">stringValue</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    };</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1ObjectfileParser.html">   23</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classPOLDAM_1_1ObjectfileParser.html">ObjectfileParser</a> : <a class="code" href="classPOLDAM_1_1fileReader.html">fileReader</a></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1ObjectfileParser.html#ab733222e7afc27c4e3bd1ddd171a84ac">   26</a></span>&#160;        <a class="code" href="classPOLDAM_1_1ObjectfileParser.html#ab733222e7afc27c4e3bd1ddd171a84ac">ObjectfileParser</a>(std::string inputDir_)</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            this-&gt;<a class="code" href="classPOLDAM_1_1ObjectfileParser.html#addcda5654bc65e1b544bb742e43a656f">dirTraversal</a>(inputDir_);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            this-&gt;<a class="code" href="classPOLDAM_1_1ObjectfileParser.html#a8b94a9cd04c000892cc746fa2b2c2dda">readObjectTypeData</a>();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            this-&gt;<a class="code" href="classPOLDAM_1_1ObjectfileParser.html#aae94b1e7f03b7992f209b242e0ad6782">accumulateObjectFile</a>();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        };</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1ObjectfileParser.html#acefb4763abd64346d04c2a70779d2d73">   33</a></span>&#160;        std::vector&lt;ObjectData&gt; <a class="code" href="classPOLDAM_1_1ObjectfileParser.html#acefb4763abd64346d04c2a70779d2d73">getParsedData</a>()</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <span class="keywordflow">return</span> this-&gt;<a class="code" href="classPOLDAM_1_1ObjectfileParser.html#af5994aa6e914aab185b33668756163d8">objectDatas</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classPOLDAM_1_1ObjectfileParser.html#a0f266c1db909ceb37deb3c1c7bad87bc">readFile</a>(<span class="keyword">const</span> std::string filePath, std::vector&lt;std::string&gt; &amp;data) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classPOLDAM_1_1ObjectfileParser.html#acb8ba4fdb7e79aa1d35dbbc326f26a26">parseReadlines</a>(std::vector&lt;std::string&gt; &amp;data) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classPOLDAM_1_1ObjectfileParser.html#addcda5654bc65e1b544bb742e43a656f">dirTraversal</a>(std::string fileName) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1ObjectfileParser.html#a4ebfc41f32e05e07c763deea6f6f835e">   43</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classPOLDAM_1_1ObjectfileParser.html#a4ebfc41f32e05e07c763deea6f6f835e">setObjectfileType</a>(std::string <a class="code" href="classPOLDAM_1_1ObjectfileParser.html#a6fcc90c8c429619d7485ddd3a349601b">fileType</a>)</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            this-&gt;fileType = <a class="code" href="classPOLDAM_1_1ObjectfileParser.html#a6fcc90c8c429619d7485ddd3a349601b">fileType</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        };</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classPOLDAM_1_1ObjectfileParser.html#aaf50213a995cf40a0fdb2bc8689139f9">parseLine</a>(std::string line) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classPOLDAM_1_1ObjectfileParser.html#acec61d93b5d22ee206929c2225e0dda9">parseLogTypesLine</a>(std::string line);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classPOLDAM_1_1ObjectfileParser.html#a40b8485a37ca1fa0eb12a355f31b861d">parseStringLine</a>(std::string line);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classPOLDAM_1_1ObjectfileParser.html#aae94b1e7f03b7992f209b242e0ad6782">accumulateObjectFile</a>();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classPOLDAM_1_1ObjectfileParser.html#a8b94a9cd04c000892cc746fa2b2c2dda">readObjectTypeData</a>();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1ObjectfileParser.html#a0a4c6061e10853e808595b3b5ee30650">   59</a></span>&#160;        std::pair&lt;int, int&gt; <a class="code" href="classPOLDAM_1_1ObjectfileParser.html#a0a4c6061e10853e808595b3b5ee30650">parseObjectData</a>(<span class="keyword">const</span> std::string line);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1ObjectfileParser.html#a6fcc90c8c429619d7485ddd3a349601b">   61</a></span>&#160;        std::string <a class="code" href="classPOLDAM_1_1ObjectfileParser.html#a6fcc90c8c429619d7485ddd3a349601b">fileType</a>{};</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1ObjectfileParser.html#ae820aa25c3378263fb62e2a6c137914e">   63</a></span>&#160;        std::string <a class="code" href="classPOLDAM_1_1ObjectfileParser.html#ae820aa25c3378263fb62e2a6c137914e">ojbectTypesFileName</a>{<span class="stringliteral">&quot;LOG$ObjectTypes00001.txt&quot;</span>};</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1ObjectfileParser.html#abe971535e228d956f1a7f767a2f784e7">   64</a></span>&#160;        std::string <a class="code" href="classPOLDAM_1_1ObjectfileParser.html#abe971535e228d956f1a7f767a2f784e7">stringFileName</a>{<span class="stringliteral">&quot;LOG$String00001.txt&quot;</span>};</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1ObjectfileParser.html#a38b5bf8ce0f60ede1c7760223498fc8e">   65</a></span>&#160;        std::string <a class="code" href="classPOLDAM_1_1ObjectfileParser.html#a38b5bf8ce0f60ede1c7760223498fc8e">typesFileName</a>{<span class="stringliteral">&quot;LOG$Types.txt&quot;</span>};</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1ObjectfileParser.html#a58d2444d34f178a702182f88ebc0f6af">   67</a></span>&#160;        std::string <a class="code" href="classPOLDAM_1_1ObjectfileParser.html#a58d2444d34f178a702182f88ebc0f6af">objectTypesFilePath</a>{};</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1ObjectfileParser.html#a6225230aacc8607f4c8b687ad0e8f82a">   68</a></span>&#160;        std::string <a class="code" href="classPOLDAM_1_1ObjectfileParser.html#a6225230aacc8607f4c8b687ad0e8f82a">stringFilePath</a>{};</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1ObjectfileParser.html#a756cafeefbe849be19e4250d5c35d7b5">   69</a></span>&#160;        std::string <a class="code" href="classPOLDAM_1_1ObjectfileParser.html#a756cafeefbe849be19e4250d5c35d7b5">typesFilePath</a>{};</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1ObjectfileParser.html#a111756cf4e5c45decb77f6f3b6c52f7f">   71</a></span>&#160;        std::vector&lt;std::string&gt; <a class="code" href="classPOLDAM_1_1ObjectfileParser.html#a111756cf4e5c45decb77f6f3b6c52f7f">objectTypesDatas</a>{};</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1ObjectfileParser.html#a61c43bfce0c437d17c4badbd5e5602cb">   72</a></span>&#160;        std::vector&lt;std::string&gt; <a class="code" href="classPOLDAM_1_1ObjectfileParser.html#a61c43bfce0c437d17c4badbd5e5602cb">stringDatas</a>{};</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1ObjectfileParser.html#a7ae7e463d03c5c749f7e1c254938eee6">   73</a></span>&#160;        std::vector&lt;std::string&gt; <a class="code" href="classPOLDAM_1_1ObjectfileParser.html#a7ae7e463d03c5c749f7e1c254938eee6">typesDatas</a>{};</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1ObjectfileParser.html#afb29eda2e8abad242386a43e228333da">   75</a></span>&#160;        std::vector&lt;unsigned int&gt; <a class="code" href="classPOLDAM_1_1ObjectfileParser.html#afb29eda2e8abad242386a43e228333da">parsedObjectTypesDatas</a>{};</div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1ObjectfileParser.html#a0ef037433532c84dfead738544a0c148">   76</a></span>&#160;        std::map&lt;unsigned int, std::string&gt; <a class="code" href="classPOLDAM_1_1ObjectfileParser.html#a0ef037433532c84dfead738544a0c148">parsedStringDatas</a>{};</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1ObjectfileParser.html#a79940f68576cbdb3f7706f024013be4e">   77</a></span>&#160;        std::vector&lt;std::map&lt;std::string, std::string&gt;&gt; <a class="code" href="classPOLDAM_1_1ObjectfileParser.html#a79940f68576cbdb3f7706f024013be4e">parsedTypesDatas</a>{};</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1ObjectfileParser.html#af5994aa6e914aab185b33668756163d8">   79</a></span>&#160;        std::vector&lt;ObjectData&gt; <a class="code" href="classPOLDAM_1_1ObjectfileParser.html#af5994aa6e914aab185b33668756163d8">objectDatas</a>{};</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    };</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
+<div class="ttc" id="aclassPOLDAM_1_1ObjectfileParser_html"><div class="ttname"><a href="classPOLDAM_1_1ObjectfileParser.html">POLDAM::ObjectfileParser</a></div><div class="ttdef"><b>Definition:</b> <a href="objectFile_8h_source.html#l00023">objectFile.h:24</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1ObjectfileParser_html_a0a4c6061e10853e808595b3b5ee30650"><div class="ttname"><a href="classPOLDAM_1_1ObjectfileParser.html#a0a4c6061e10853e808595b3b5ee30650">POLDAM::ObjectfileParser::parseObjectData</a></div><div class="ttdeci">std::pair&lt; int, int &gt; parseObjectData(const std::string line)</div></div>
+<div class="ttc" id="aclassPOLDAM_1_1ObjectfileParser_html_a0ef037433532c84dfead738544a0c148"><div class="ttname"><a href="classPOLDAM_1_1ObjectfileParser.html#a0ef037433532c84dfead738544a0c148">POLDAM::ObjectfileParser::parsedStringDatas</a></div><div class="ttdeci">std::map&lt; unsigned int, std::string &gt; parsedStringDatas</div><div class="ttdef"><b>Definition:</b> <a href="objectFile_8h_source.html#l00076">objectFile.h:76</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1ObjectfileParser_html_a0f266c1db909ceb37deb3c1c7bad87bc"><div class="ttname"><a href="classPOLDAM_1_1ObjectfileParser.html#a0f266c1db909ceb37deb3c1c7bad87bc">POLDAM::ObjectfileParser::readFile</a></div><div class="ttdeci">void readFile(const std::string filePath, std::vector&lt; std::string &gt; &amp;data) override</div><div class="ttdoc">open the fileName and read data. this-&gt;data has these data. Please NOTE: This Strategy might be not e...</div><div class="ttdef"><b>Definition:</b> <a href="objectFile_8cpp_source.html#l00028">objectFile.cpp:28</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1ObjectfileParser_html_a111756cf4e5c45decb77f6f3b6c52f7f"><div class="ttname"><a href="classPOLDAM_1_1ObjectfileParser.html#a111756cf4e5c45decb77f6f3b6c52f7f">POLDAM::ObjectfileParser::objectTypesDatas</a></div><div class="ttdeci">std::vector&lt; std::string &gt; objectTypesDatas</div><div class="ttdef"><b>Definition:</b> <a href="objectFile_8h_source.html#l00071">objectFile.h:71</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1ObjectfileParser_html_a38b5bf8ce0f60ede1c7760223498fc8e"><div class="ttname"><a href="classPOLDAM_1_1ObjectfileParser.html#a38b5bf8ce0f60ede1c7760223498fc8e">POLDAM::ObjectfileParser::typesFileName</a></div><div class="ttdeci">std::string typesFileName</div><div class="ttdef"><b>Definition:</b> <a href="objectFile_8h_source.html#l00065">objectFile.h:65</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1ObjectfileParser_html_a40b8485a37ca1fa0eb12a355f31b861d"><div class="ttname"><a href="classPOLDAM_1_1ObjectfileParser.html#a40b8485a37ca1fa0eb12a355f31b861d">POLDAM::ObjectfileParser::parseStringLine</a></div><div class="ttdeci">void parseStringLine(std::string line)</div><div class="ttdef"><b>Definition:</b> <a href="objectFile_8cpp_source.html#l00107">objectFile.cpp:107</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1ObjectfileParser_html_a4ebfc41f32e05e07c763deea6f6f835e"><div class="ttname"><a href="classPOLDAM_1_1ObjectfileParser.html#a4ebfc41f32e05e07c763deea6f6f835e">POLDAM::ObjectfileParser::setObjectfileType</a></div><div class="ttdeci">void setObjectfileType(std::string fileType)</div><div class="ttdef"><b>Definition:</b> <a href="objectFile_8h_source.html#l00043">objectFile.h:43</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1ObjectfileParser_html_a58d2444d34f178a702182f88ebc0f6af"><div class="ttname"><a href="classPOLDAM_1_1ObjectfileParser.html#a58d2444d34f178a702182f88ebc0f6af">POLDAM::ObjectfileParser::objectTypesFilePath</a></div><div class="ttdeci">std::string objectTypesFilePath</div><div class="ttdef"><b>Definition:</b> <a href="objectFile_8h_source.html#l00067">objectFile.h:67</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1ObjectfileParser_html_a61c43bfce0c437d17c4badbd5e5602cb"><div class="ttname"><a href="classPOLDAM_1_1ObjectfileParser.html#a61c43bfce0c437d17c4badbd5e5602cb">POLDAM::ObjectfileParser::stringDatas</a></div><div class="ttdeci">std::vector&lt; std::string &gt; stringDatas</div><div class="ttdef"><b>Definition:</b> <a href="objectFile_8h_source.html#l00072">objectFile.h:72</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1ObjectfileParser_html_a6225230aacc8607f4c8b687ad0e8f82a"><div class="ttname"><a href="classPOLDAM_1_1ObjectfileParser.html#a6225230aacc8607f4c8b687ad0e8f82a">POLDAM::ObjectfileParser::stringFilePath</a></div><div class="ttdeci">std::string stringFilePath</div><div class="ttdef"><b>Definition:</b> <a href="objectFile_8h_source.html#l00068">objectFile.h:68</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1ObjectfileParser_html_a6fcc90c8c429619d7485ddd3a349601b"><div class="ttname"><a href="classPOLDAM_1_1ObjectfileParser.html#a6fcc90c8c429619d7485ddd3a349601b">POLDAM::ObjectfileParser::fileType</a></div><div class="ttdeci">std::string fileType</div><div class="ttdef"><b>Definition:</b> <a href="objectFile_8h_source.html#l00061">objectFile.h:61</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1ObjectfileParser_html_a756cafeefbe849be19e4250d5c35d7b5"><div class="ttname"><a href="classPOLDAM_1_1ObjectfileParser.html#a756cafeefbe849be19e4250d5c35d7b5">POLDAM::ObjectfileParser::typesFilePath</a></div><div class="ttdeci">std::string typesFilePath</div><div class="ttdef"><b>Definition:</b> <a href="objectFile_8h_source.html#l00069">objectFile.h:69</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1ObjectfileParser_html_a79940f68576cbdb3f7706f024013be4e"><div class="ttname"><a href="classPOLDAM_1_1ObjectfileParser.html#a79940f68576cbdb3f7706f024013be4e">POLDAM::ObjectfileParser::parsedTypesDatas</a></div><div class="ttdeci">std::vector&lt; std::map&lt; std::string, std::string &gt; &gt; parsedTypesDatas</div><div class="ttdef"><b>Definition:</b> <a href="objectFile_8h_source.html#l00077">objectFile.h:77</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1ObjectfileParser_html_a7ae7e463d03c5c749f7e1c254938eee6"><div class="ttname"><a href="classPOLDAM_1_1ObjectfileParser.html#a7ae7e463d03c5c749f7e1c254938eee6">POLDAM::ObjectfileParser::typesDatas</a></div><div class="ttdeci">std::vector&lt; std::string &gt; typesDatas</div><div class="ttdef"><b>Definition:</b> <a href="objectFile_8h_source.html#l00073">objectFile.h:73</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1ObjectfileParser_html_a8b94a9cd04c000892cc746fa2b2c2dda"><div class="ttname"><a href="classPOLDAM_1_1ObjectfileParser.html#a8b94a9cd04c000892cc746fa2b2c2dda">POLDAM::ObjectfileParser::readObjectTypeData</a></div><div class="ttdeci">void readObjectTypeData()</div><div class="ttdoc">raed Object metafile. (i.e., objectTypesData, StringData and Types Data)</div><div class="ttdef"><b>Definition:</b> <a href="objectFile_8cpp_source.html#l00115">objectFile.cpp:115</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1ObjectfileParser_html_aae94b1e7f03b7992f209b242e0ad6782"><div class="ttname"><a href="classPOLDAM_1_1ObjectfileParser.html#aae94b1e7f03b7992f209b242e0ad6782">POLDAM::ObjectfileParser::accumulateObjectFile</a></div><div class="ttdeci">void accumulateObjectFile()</div><div class="ttdef"><b>Definition:</b> <a href="objectFile_8cpp_source.html#l00154">objectFile.cpp:154</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1ObjectfileParser_html_aaf50213a995cf40a0fdb2bc8689139f9"><div class="ttname"><a href="classPOLDAM_1_1ObjectfileParser.html#aaf50213a995cf40a0fdb2bc8689139f9">POLDAM::ObjectfileParser::parseLine</a></div><div class="ttdeci">void parseLine(std::string line) override</div><div class="ttdoc">delegate function. this fucntion will be called in parseReadlines function, and access to this method...</div><div class="ttdef"><b>Definition:</b> <a href="objectFile_8cpp_source.html#l00055">objectFile.cpp:55</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1ObjectfileParser_html_ab733222e7afc27c4e3bd1ddd171a84ac"><div class="ttname"><a href="classPOLDAM_1_1ObjectfileParser.html#ab733222e7afc27c4e3bd1ddd171a84ac">POLDAM::ObjectfileParser::ObjectfileParser</a></div><div class="ttdeci">ObjectfileParser(std::string inputDir_)</div><div class="ttdef"><b>Definition:</b> <a href="objectFile_8h_source.html#l00026">objectFile.h:26</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1ObjectfileParser_html_abe971535e228d956f1a7f767a2f784e7"><div class="ttname"><a href="classPOLDAM_1_1ObjectfileParser.html#abe971535e228d956f1a7f767a2f784e7">POLDAM::ObjectfileParser::stringFileName</a></div><div class="ttdeci">std::string stringFileName</div><div class="ttdef"><b>Definition:</b> <a href="objectFile_8h_source.html#l00064">objectFile.h:64</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1ObjectfileParser_html_acb8ba4fdb7e79aa1d35dbbc326f26a26"><div class="ttname"><a href="classPOLDAM_1_1ObjectfileParser.html#acb8ba4fdb7e79aa1d35dbbc326f26a26">POLDAM::ObjectfileParser::parseReadlines</a></div><div class="ttdeci">void parseReadlines(std::vector&lt; std::string &gt; &amp;data) override</div><div class="ttdoc">parse and iterate this -&gt; data.</div><div class="ttdef"><b>Definition:</b> <a href="objectFile_8cpp_source.html#l00133">objectFile.cpp:133</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1ObjectfileParser_html_acec61d93b5d22ee206929c2225e0dda9"><div class="ttname"><a href="classPOLDAM_1_1ObjectfileParser.html#acec61d93b5d22ee206929c2225e0dda9">POLDAM::ObjectfileParser::parseLogTypesLine</a></div><div class="ttdeci">void parseLogTypesLine(std::string line)</div><div class="ttdef"><b>Definition:</b> <a href="objectFile_8cpp_source.html#l00062">objectFile.cpp:62</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1ObjectfileParser_html_acefb4763abd64346d04c2a70779d2d73"><div class="ttname"><a href="classPOLDAM_1_1ObjectfileParser.html#acefb4763abd64346d04c2a70779d2d73">POLDAM::ObjectfileParser::getParsedData</a></div><div class="ttdeci">std::vector&lt; ObjectData &gt; getParsedData()</div><div class="ttdef"><b>Definition:</b> <a href="objectFile_8h_source.html#l00033">objectFile.h:33</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1ObjectfileParser_html_addcda5654bc65e1b544bb742e43a656f"><div class="ttname"><a href="classPOLDAM_1_1ObjectfileParser.html#addcda5654bc65e1b544bb742e43a656f">POLDAM::ObjectfileParser::dirTraversal</a></div><div class="ttdeci">void dirTraversal(std::string fileName) override</div><div class="ttdoc">iterate target Directory to look up target file. Please note there may be more than one target file.</div><div class="ttdef"><b>Definition:</b> <a href="objectFile_8cpp_source.html#l00007">objectFile.cpp:7</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1ObjectfileParser_html_ae820aa25c3378263fb62e2a6c137914e"><div class="ttname"><a href="classPOLDAM_1_1ObjectfileParser.html#ae820aa25c3378263fb62e2a6c137914e">POLDAM::ObjectfileParser::ojbectTypesFileName</a></div><div class="ttdeci">std::string ojbectTypesFileName</div><div class="ttdef"><b>Definition:</b> <a href="objectFile_8h_source.html#l00063">objectFile.h:63</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1ObjectfileParser_html_af5994aa6e914aab185b33668756163d8"><div class="ttname"><a href="classPOLDAM_1_1ObjectfileParser.html#af5994aa6e914aab185b33668756163d8">POLDAM::ObjectfileParser::objectDatas</a></div><div class="ttdeci">std::vector&lt; ObjectData &gt; objectDatas</div><div class="ttdef"><b>Definition:</b> <a href="objectFile_8h_source.html#l00079">objectFile.h:79</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1ObjectfileParser_html_afb29eda2e8abad242386a43e228333da"><div class="ttname"><a href="classPOLDAM_1_1ObjectfileParser.html#afb29eda2e8abad242386a43e228333da">POLDAM::ObjectfileParser::parsedObjectTypesDatas</a></div><div class="ttdeci">std::vector&lt; unsigned int &gt; parsedObjectTypesDatas</div><div class="ttdef"><b>Definition:</b> <a href="objectFile_8h_source.html#l00075">objectFile.h:75</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1fileReader_html"><div class="ttname"><a href="classPOLDAM_1_1fileReader.html">POLDAM::fileReader</a></div><div class="ttdef"><b>Definition:</b> <a href="metafileHandlerCommon_8h_source.html#l00014">metafileHandlerCommon.h:15</a></div></div>
+<div class="ttc" id="ametafileHandlerCommon_8h_html"><div class="ttname"><a href="metafileHandlerCommon_8h.html">metafileHandlerCommon.h</a></div></div>
+<div class="ttc" id="anamespacePOLDAM_html"><div class="ttname"><a href="namespacePOLDAM.html">POLDAM</a></div><div class="ttdef"><b>Definition:</b> <a href="graph_8cpp_source.html#l00005">graph.cpp:6</a></div></div>
+<div class="ttc" id="astructPOLDAM_1_1ObjectData_html"><div class="ttname"><a href="structPOLDAM_1_1ObjectData.html">POLDAM::ObjectData</a></div><div class="ttdef"><b>Definition:</b> <a href="objectFile_8h_source.html#l00008">objectFile.h:9</a></div></div>
+<div class="ttc" id="astructPOLDAM_1_1ObjectData_html_a0839bd2ae4cedfa6950a43ceb0bbe013"><div class="ttname"><a href="structPOLDAM_1_1ObjectData.html#a0839bd2ae4cedfa6950a43ceb0bbe013">POLDAM::ObjectData::objectType</a></div><div class="ttdeci">std::string objectType</div><div class="ttdef"><b>Definition:</b> <a href="objectFile_8h_source.html#l00014">objectFile.h:14</a></div></div>
+<div class="ttc" id="astructPOLDAM_1_1ObjectData_html_a1aa69d3dbfed1fbc8ecc91c0829615df"><div class="ttname"><a href="structPOLDAM_1_1ObjectData.html#a1aa69d3dbfed1fbc8ecc91c0829615df">POLDAM::ObjectData::typenum2</a></div><div class="ttdeci">int typenum2</div><div class="ttdef"><b>Definition:</b> <a href="objectFile_8h_source.html#l00017">objectFile.h:17</a></div></div>
+<div class="ttc" id="astructPOLDAM_1_1ObjectData_html_a22747b60b84836371108d4b685cb1e5f"><div class="ttname"><a href="structPOLDAM_1_1ObjectData.html#a22747b60b84836371108d4b685cb1e5f">POLDAM::ObjectData::fileIdx_</a></div><div class="ttdeci">unsigned int fileIdx_</div><div class="ttdef"><b>Definition:</b> <a href="objectFile_8h_source.html#l00011">objectFile.h:11</a></div></div>
+<div class="ttc" id="astructPOLDAM_1_1ObjectData_html_a45e7a22a4ca53cccdabeab909e55ff17"><div class="ttname"><a href="structPOLDAM_1_1ObjectData.html#a45e7a22a4ca53cccdabeab909e55ff17">POLDAM::ObjectData::stringValue</a></div><div class="ttdeci">std::string stringValue</div><div class="ttdef"><b>Definition:</b> <a href="objectFile_8h_source.html#l00020">objectFile.h:20</a></div></div>
+<div class="ttc" id="astructPOLDAM_1_1ObjectData_html_a6a451756a5dbf6a5791ee043d66a3bfb"><div class="ttname"><a href="structPOLDAM_1_1ObjectData.html#a6a451756a5dbf6a5791ee043d66a3bfb">POLDAM::ObjectData::loadFrom</a></div><div class="ttdeci">std::string loadFrom</div><div class="ttdef"><b>Definition:</b> <a href="objectFile_8h_source.html#l00018">objectFile.h:18</a></div></div>
+<div class="ttc" id="astructPOLDAM_1_1ObjectData_html_a8e0a9bfaf7a9d4e27b79c8bb32658896"><div class="ttname"><a href="structPOLDAM_1_1ObjectData.html#a8e0a9bfaf7a9d4e27b79c8bb32658896">POLDAM::ObjectData::typenum1</a></div><div class="ttdeci">int typenum1</div><div class="ttdef"><b>Definition:</b> <a href="objectFile_8h_source.html#l00016">objectFile.h:16</a></div></div>
+<div class="ttc" id="astructPOLDAM_1_1ObjectData_html_a973d0078c2dedb9fe9e80e407b13f65b"><div class="ttname"><a href="structPOLDAM_1_1ObjectData.html#a973d0078c2dedb9fe9e80e407b13f65b">POLDAM::ObjectData::jarFile</a></div><div class="ttdeci">std::string jarFile</div><div class="ttdef"><b>Definition:</b> <a href="objectFile_8h_source.html#l00015">objectFile.h:15</a></div></div>
+<div class="ttc" id="astructPOLDAM_1_1ObjectData_html_aefaa6e936a616c2b8e284c7daf108998"><div class="ttname"><a href="structPOLDAM_1_1ObjectData.html#aefaa6e936a616c2b8e284c7daf108998">POLDAM::ObjectData::objectId</a></div><div class="ttdeci">unsigned int objectId</div><div class="ttdef"><b>Definition:</b> <a href="objectFile_8h_source.html#l00012">objectFile.h:12</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_802f708e05b331bfe8b7d1e3cd980d15.html">MetaFileParser</a></li><li class="navelem"><a class="el" href="dir_f15734ee1191266c41688ce3a3999d68.html">src</a></li><li class="navelem"><a class="el" href="objectFile_8h.html">objectFile.h</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

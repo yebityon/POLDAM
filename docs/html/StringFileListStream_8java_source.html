@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>2022_kenshu_w3-4: Data/java8/selogger/src/selogger/logging/util/StringFileListStream.java ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">2022_kenshu_w3-4
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('StringFileListStream_8java_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">StringFileListStream.java</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="StringFileListStream_8java.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">package </span>selogger.logging.util;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">import</span> <a class="code" href="motivationExample_2origin_2selogger__out_2methods_8txt.html#abef7b47c4c5ab5ca7b95d064f2fd5aaf">java</a>.io.ByteArrayOutputStream;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">import</span> <a class="code" href="motivationExample_2origin_2selogger__out_2methods_8txt.html#abef7b47c4c5ab5ca7b95d064f2fd5aaf">java</a>.io.File;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">import</span> <a class="code" href="motivationExample_2origin_2selogger__out_2methods_8txt.html#abef7b47c4c5ab5ca7b95d064f2fd5aaf">java</a>.io.FileOutputStream;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">import</span> <a class="code" href="motivationExample_2origin_2selogger__out_2methods_8txt.html#abef7b47c4c5ab5ca7b95d064f2fd5aaf">java</a>.io.IOException;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">import</span> <a class="code" href="motivationExample_2origin_2selogger__out_2methods_8txt.html#abef7b47c4c5ab5ca7b95d064f2fd5aaf">java</a>.nio.charset.StandardCharsets;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">import</span> <a class="code" href="motivationExample_2origin_2selogger__out_2methods_8txt.html#abef7b47c4c5ab5ca7b95d064f2fd5aaf">java</a>.util.zip.GZIPOutputStream;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html">   13</a></span>&#160;<span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html">StringFileListStream</a> {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#af61b58e60f8aac485d87180770a7bf9a">   18</a></span>&#160;    <span class="keyword">private</span> <a class="code" href="classselogger_1_1logging_1_1util_1_1FileNameGenerator.html">FileNameGenerator</a> <a class="code" href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#af61b58e60f8aac485d87180770a7bf9a">filenames</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#a0cb523a16e7ea376aa7645c5d789e17f">   23</a></span>&#160;    <span class="keyword">private</span> <span class="keywordtype">long</span> <a class="code" href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#a0cb523a16e7ea376aa7645c5d789e17f">maxFileSize</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#aa35f7b7694af6d10406e6757f371d378">   28</a></span>&#160;    <span class="keyword">private</span> <span class="keywordtype">boolean</span> <a class="code" href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#aa35f7b7694af6d10406e6757f371d378">compress</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#a4a1e9a646d1b30a567c9b92a2f6f86ed">   33</a></span>&#160;    <span class="keyword">private</span> ByteArrayOutputStream <a class="code" href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#a4a1e9a646d1b30a567c9b92a2f6f86ed">buffer</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#a8eb309797d123e4262b59afc2b6ac8bb">   38</a></span>&#160;    <span class="keyword">private</span> <span class="keywordtype">long</span> <a class="code" href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#a8eb309797d123e4262b59afc2b6ac8bb">byteCount</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#a64308279a54d662b46a3b659094f2ef4">   46</a></span>&#160;    <span class="keyword">public</span> <a class="code" href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#a64308279a54d662b46a3b659094f2ef4">StringFileListStream</a>(<a class="code" href="classselogger_1_1logging_1_1util_1_1FileNameGenerator.html">FileNameGenerator</a> <a class="code" href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#af61b58e60f8aac485d87180770a7bf9a">filenames</a>) {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keyword">this</span>(<a class="code" href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#af61b58e60f8aac485d87180770a7bf9a">filenames</a>, 512*1024*1024, <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#a668288ce0596e4bbeddb086d13906a91">   58</a></span>&#160;    <span class="keyword">public</span> <a class="code" href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#a668288ce0596e4bbeddb086d13906a91">StringFileListStream</a>(<a class="code" href="classselogger_1_1logging_1_1util_1_1FileNameGenerator.html">FileNameGenerator</a> <a class="code" href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#af61b58e60f8aac485d87180770a7bf9a">filenames</a>, <span class="keywordtype">int</span> <a class="code" href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#a0cb523a16e7ea376aa7645c5d789e17f">maxFileSize</a>, <span class="keywordtype">boolean</span> <a class="code" href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#aa35f7b7694af6d10406e6757f371d378">compress</a>) {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        this.filenames = <a class="code" href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#af61b58e60f8aac485d87180770a7bf9a">filenames</a>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        this.maxFileSize = <a class="code" href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#a0cb523a16e7ea376aa7645c5d789e17f">maxFileSize</a>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        this.compress = <a class="code" href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#aa35f7b7694af6d10406e6757f371d378">compress</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        this.byteCount = 0;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        this.buffer = <span class="keyword">new</span> ByteArrayOutputStream(<a class="code" href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#a0cb523a16e7ea376aa7645c5d789e17f">maxFileSize</a>);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#a96aa96bd2948252499db86a472fbc22a">   71</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keywordtype">void</span> <a class="code" href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#a96aa96bd2948252499db86a472fbc22a">write</a>(<a class="code" href="motivationExample_2origin_2selogger__out_2LOG_0bTypes_8txt.html#a8a59ef96aecacd04b5a5896effedfaf2">String</a> s) {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="keywordflow">if</span> (s != <span class="keyword">null</span>) {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                <span class="keywordtype">byte</span>[] content = s.getBytes(StandardCharsets.UTF_8);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#a8eb309797d123e4262b59afc2b6ac8bb">byteCount</a> + content.length &gt; <a class="code" href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#a0cb523a16e7ea376aa7645c5d789e17f">maxFileSize</a>) {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                    <a class="code" href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#a7a2a79ff3e76a31dce0e11fbc0348f8f">save</a>();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                    <a class="code" href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#a4a1e9a646d1b30a567c9b92a2f6f86ed">buffer</a>.reset();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                    <a class="code" href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#a8eb309797d123e4262b59afc2b6ac8bb">byteCount</a> = 0;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                <a class="code" href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#a4a1e9a646d1b30a567c9b92a2f6f86ed">buffer</a>.write(content);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                <a class="code" href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#a8eb309797d123e4262b59afc2b6ac8bb">byteCount</a> += content.length;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        } <span class="keywordflow">catch</span> (IOException e) {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <a class="code" href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#a4a1e9a646d1b30a567c9b92a2f6f86ed">buffer</a> = <span class="keyword">null</span>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#a247b7d82c91b3b42f1673e07f2627778">   91</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keywordtype">void</span> <a class="code" href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#a247b7d82c91b3b42f1673e07f2627778">close</a>() {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#a8eb309797d123e4262b59afc2b6ac8bb">byteCount</a> &gt; 0) {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#a4a1e9a646d1b30a567c9b92a2f6f86ed">buffer</a> != <span class="keyword">null</span>) {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                    <a class="code" href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#a4a1e9a646d1b30a567c9b92a2f6f86ed">buffer</a>.close();</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                    <a class="code" href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#a7a2a79ff3e76a31dce0e11fbc0348f8f">save</a>();</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            } <span class="keywordflow">catch</span> (IOException e) {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        }</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#a7a2a79ff3e76a31dce0e11fbc0348f8f">  106</a></span>&#160;    <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code" href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#a7a2a79ff3e76a31dce0e11fbc0348f8f">save</a>() {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#a4a1e9a646d1b30a567c9b92a2f6f86ed">buffer</a> == <span class="keyword">null</span>) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        File f = <a class="code" href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#af61b58e60f8aac485d87180770a7bf9a">filenames</a>.<a class="code" href="classselogger_1_1logging_1_1util_1_1FileNameGenerator.html#ae09be6e6a8ee7ebfc1efe864106b9e47">getNextFile</a>();</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#aa35f7b7694af6d10406e6757f371d378">compress</a>) {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                GZIPOutputStream w = <span class="keyword">new</span> GZIPOutputStream(<span class="keyword">new</span> FileOutputStream(f));</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                <a class="code" href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#a4a1e9a646d1b30a567c9b92a2f6f86ed">buffer</a>.writeTo(w);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                w.close();</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                FileOutputStream w = <span class="keyword">new</span> FileOutputStream(f);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                <a class="code" href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#a4a1e9a646d1b30a567c9b92a2f6f86ed">buffer</a>.writeTo(w);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                w.close();</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            }</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        } <span class="keywordflow">catch</span> (IOException e) {</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            <span class="keywordflow">throw</span> <span class="keyword">new</span> RuntimeException(<span class="stringliteral">&quot;ERROR: failed to open a file: &quot;</span> + f.getAbsolutePath());</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        }</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    }</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;}</div>
+<div class="ttc" id="aclassselogger_1_1logging_1_1util_1_1FileNameGenerator_html"><div class="ttname"><a href="classselogger_1_1logging_1_1util_1_1FileNameGenerator.html">selogger.logging.util.FileNameGenerator</a></div><div class="ttdef"><b>Definition:</b> <a href="FileNameGenerator_8java_source.html#l00009">FileNameGenerator.java:9</a></div></div>
+<div class="ttc" id="aclassselogger_1_1logging_1_1util_1_1FileNameGenerator_html_ae09be6e6a8ee7ebfc1efe864106b9e47"><div class="ttname"><a href="classselogger_1_1logging_1_1util_1_1FileNameGenerator.html#ae09be6e6a8ee7ebfc1efe864106b9e47">selogger.logging.util.FileNameGenerator.getNextFile</a></div><div class="ttdeci">File getNextFile()</div><div class="ttdef"><b>Definition:</b> <a href="FileNameGenerator_8java_source.html#l00033">FileNameGenerator.java:33</a></div></div>
+<div class="ttc" id="aclassselogger_1_1logging_1_1util_1_1StringFileListStream_html"><div class="ttname"><a href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html">selogger.logging.util.StringFileListStream</a></div><div class="ttdef"><b>Definition:</b> <a href="StringFileListStream_8java_source.html#l00013">StringFileListStream.java:13</a></div></div>
+<div class="ttc" id="aclassselogger_1_1logging_1_1util_1_1StringFileListStream_html_a0cb523a16e7ea376aa7645c5d789e17f"><div class="ttname"><a href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#a0cb523a16e7ea376aa7645c5d789e17f">selogger.logging.util.StringFileListStream.maxFileSize</a></div><div class="ttdeci">long maxFileSize</div><div class="ttdef"><b>Definition:</b> <a href="StringFileListStream_8java_source.html#l00023">StringFileListStream.java:23</a></div></div>
+<div class="ttc" id="aclassselogger_1_1logging_1_1util_1_1StringFileListStream_html_a247b7d82c91b3b42f1673e07f2627778"><div class="ttname"><a href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#a247b7d82c91b3b42f1673e07f2627778">selogger.logging.util.StringFileListStream.close</a></div><div class="ttdeci">synchronized void close()</div><div class="ttdef"><b>Definition:</b> <a href="StringFileListStream_8java_source.html#l00091">StringFileListStream.java:91</a></div></div>
+<div class="ttc" id="aclassselogger_1_1logging_1_1util_1_1StringFileListStream_html_a4a1e9a646d1b30a567c9b92a2f6f86ed"><div class="ttname"><a href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#a4a1e9a646d1b30a567c9b92a2f6f86ed">selogger.logging.util.StringFileListStream.buffer</a></div><div class="ttdeci">ByteArrayOutputStream buffer</div><div class="ttdef"><b>Definition:</b> <a href="StringFileListStream_8java_source.html#l00033">StringFileListStream.java:33</a></div></div>
+<div class="ttc" id="aclassselogger_1_1logging_1_1util_1_1StringFileListStream_html_a64308279a54d662b46a3b659094f2ef4"><div class="ttname"><a href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#a64308279a54d662b46a3b659094f2ef4">selogger.logging.util.StringFileListStream.StringFileListStream</a></div><div class="ttdeci">StringFileListStream(FileNameGenerator filenames)</div><div class="ttdef"><b>Definition:</b> <a href="StringFileListStream_8java_source.html#l00046">StringFileListStream.java:46</a></div></div>
+<div class="ttc" id="aclassselogger_1_1logging_1_1util_1_1StringFileListStream_html_a668288ce0596e4bbeddb086d13906a91"><div class="ttname"><a href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#a668288ce0596e4bbeddb086d13906a91">selogger.logging.util.StringFileListStream.StringFileListStream</a></div><div class="ttdeci">StringFileListStream(FileNameGenerator filenames, int maxFileSize, boolean compress)</div><div class="ttdef"><b>Definition:</b> <a href="StringFileListStream_8java_source.html#l00058">StringFileListStream.java:58</a></div></div>
+<div class="ttc" id="aclassselogger_1_1logging_1_1util_1_1StringFileListStream_html_a7a2a79ff3e76a31dce0e11fbc0348f8f"><div class="ttname"><a href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#a7a2a79ff3e76a31dce0e11fbc0348f8f">selogger.logging.util.StringFileListStream.save</a></div><div class="ttdeci">void save()</div><div class="ttdef"><b>Definition:</b> <a href="StringFileListStream_8java_source.html#l00106">StringFileListStream.java:106</a></div></div>
+<div class="ttc" id="aclassselogger_1_1logging_1_1util_1_1StringFileListStream_html_a8eb309797d123e4262b59afc2b6ac8bb"><div class="ttname"><a href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#a8eb309797d123e4262b59afc2b6ac8bb">selogger.logging.util.StringFileListStream.byteCount</a></div><div class="ttdeci">long byteCount</div><div class="ttdef"><b>Definition:</b> <a href="StringFileListStream_8java_source.html#l00038">StringFileListStream.java:38</a></div></div>
+<div class="ttc" id="aclassselogger_1_1logging_1_1util_1_1StringFileListStream_html_a96aa96bd2948252499db86a472fbc22a"><div class="ttname"><a href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#a96aa96bd2948252499db86a472fbc22a">selogger.logging.util.StringFileListStream.write</a></div><div class="ttdeci">synchronized void write(String s)</div><div class="ttdef"><b>Definition:</b> <a href="StringFileListStream_8java_source.html#l00071">StringFileListStream.java:71</a></div></div>
+<div class="ttc" id="aclassselogger_1_1logging_1_1util_1_1StringFileListStream_html_aa35f7b7694af6d10406e6757f371d378"><div class="ttname"><a href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#aa35f7b7694af6d10406e6757f371d378">selogger.logging.util.StringFileListStream.compress</a></div><div class="ttdeci">boolean compress</div><div class="ttdef"><b>Definition:</b> <a href="StringFileListStream_8java_source.html#l00028">StringFileListStream.java:28</a></div></div>
+<div class="ttc" id="aclassselogger_1_1logging_1_1util_1_1StringFileListStream_html_af61b58e60f8aac485d87180770a7bf9a"><div class="ttname"><a href="classselogger_1_1logging_1_1util_1_1StringFileListStream.html#af61b58e60f8aac485d87180770a7bf9a">selogger.logging.util.StringFileListStream.filenames</a></div><div class="ttdeci">FileNameGenerator filenames</div><div class="ttdef"><b>Definition:</b> <a href="StringFileListStream_8java_source.html#l00018">StringFileListStream.java:18</a></div></div>
+<div class="ttc" id="amotivationExample_2origin_2selogger__out_2LOG_0bTypes_8txt_html_a8a59ef96aecacd04b5a5896effedfaf2"><div class="ttname"><a href="motivationExample_2origin_2selogger__out_2LOG_0bTypes_8txt.html#a8a59ef96aecacd04b5a5896effedfaf2">String</a></div><div class="ttdeci">Loader java lang java lang String</div><div class="ttdef"><b>Definition:</b> <a href="motivationExample_2origin_2selogger__out_2LOG_0bTypes_8txt_source.html#l00011">LOG$Types.txt:11</a></div></div>
+<div class="ttc" id="amotivationExample_2origin_2selogger__out_2methods_8txt_html_abef7b47c4c5ab5ca7b95d064f2fd5aaf"><div class="ttname"><a href="motivationExample_2origin_2selogger__out_2methods_8txt.html#abef7b47c4c5ab5ca7b95d064f2fd5aaf">java</a></div><div class="ttdeci">&lt; init &gt; Main java</div><div class="ttdef"><b>Definition:</b> <a href="motivationExample_2origin_2selogger__out_2methods_8txt_source.html#l00002">methods.txt:2</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_e3d743d0ec9b4013b28b5d69101bc7fb.html">Data</a></li><li class="navelem"><a class="el" href="dir_01f621d9ce496b7a25fbd2fbbc4de9b5.html">java8</a></li><li class="navelem"><a class="el" href="dir_00a102e375c7e4cf721fc27b336fd614.html">selogger</a></li><li class="navelem"><a class="el" href="dir_c35f250929eab5b4494939a1c8666d4d.html">src</a></li><li class="navelem"><a class="el" href="dir_f3c5bd6ef90b4f2df958b6e4e44d2b30.html">selogger</a></li><li class="navelem"><a class="el" href="dir_060bd6d3e492c323a5210f0d1cea9121.html">logging</a></li><li class="navelem"><a class="el" href="dir_53d4227d8cb2626be8d58397a190bb63.html">util</a></li><li class="navelem"><a class="el" href="StringFileListStream_8java.html">StringFileListStream.java</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

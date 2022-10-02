@@ -1,0 +1,1022 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>2022_kenshu_w3-4: selogger.logging.io.BinaryStreamLogger クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">2022_kenshu_w3-4
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('classselogger_1_1logging_1_1io_1_1BinaryStreamLogger.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-static-attribs">静的公開変数類</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classselogger_1_1logging_1_1io_1_1BinaryStreamLogger-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">selogger.logging.io.BinaryStreamLogger クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+selogger.logging.io.BinaryStreamLogger の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><img src="classselogger_1_1logging_1_1io_1_1BinaryStreamLogger__inherit__graph.png" border="0" usemap="#aselogger_8logging_8io_8BinaryStreamLogger_inherit__map" alt="Inheritance graph"/></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">凡例</a>]</span></center></div>
+<div class="dynheader">
+selogger.logging.io.BinaryStreamLogger 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="classselogger_1_1logging_1_1io_1_1BinaryStreamLogger__coll__graph.png" border="0" usemap="#aselogger_8logging_8io_8BinaryStreamLogger_coll__map" alt="Collaboration graph"/></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">凡例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a5f460d93e143ade22bbfa18525bf71c6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1io_1_1BinaryStreamLogger.html#a5f460d93e143ade22bbfa18525bf71c6">BinaryStreamLogger</a> (<a class="el" href="interfaceselogger_1_1logging_1_1IErrorLogger.html">IErrorLogger</a> logger, File <a class="el" href="classselogger_1_1logging_1_1io_1_1BinaryStreamLogger.html#a97e6bfdc73dc6fd44e1b47269a19bc2c">outputDir</a>, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ad2c19257446c052b290090a0144280a6">boolean</a> recordString, <a class="el" href="enumselogger_1_1logging_1_1util_1_1ObjectIdFile_1_1ExceptionRecording.html">ExceptionRecording</a> recordExceptions)</td></tr>
+<tr class="separator:a5f460d93e143ade22bbfa18525bf71c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f0145c54e4364ff9c902f7c76fca75f"><td class="memItemLeft" align="right" valign="top">synchronized <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1io_1_1BinaryStreamLogger.html#a8f0145c54e4364ff9c902f7c76fca75f">close</a> ()</td></tr>
+<tr class="separator:a8f0145c54e4364ff9c902f7c76fca75f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a786b8a67d8d26e268fffc2b2dc904797"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1io_1_1BinaryStreamLogger.html#a786b8a67d8d26e268fffc2b2dc904797">save</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ad2c19257446c052b290090a0144280a6">boolean</a> resetTrace)</td></tr>
+<tr class="separator:a786b8a67d8d26e268fffc2b2dc904797"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80721582db82a54c200ad2458895d19c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1io_1_1BinaryStreamLogger.html#a80721582db82a54c200ad2458895d19c">recordEvent</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> dataId, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a9cb912cc9367a723499e6458503cb25f">Object</a> value)</td></tr>
+<tr class="separator:a80721582db82a54c200ad2458895d19c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae18d3f36cba970e95e71497a06871ab2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1io_1_1BinaryStreamLogger.html#ae18d3f36cba970e95e71497a06871ab2">recordEvent</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> dataId, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> value)</td></tr>
+<tr class="separator:ae18d3f36cba970e95e71497a06871ab2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ddd58165723c9691cb525b87b4d4c5a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1io_1_1BinaryStreamLogger.html#a9ddd58165723c9691cb525b87b4d4c5a">recordEvent</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> dataId, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ab2b82a801222598deb6167bea46d3172">long</a> value)</td></tr>
+<tr class="separator:a9ddd58165723c9691cb525b87b4d4c5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2db3155e6a1c7e3f53eaea694ebf7cb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1io_1_1BinaryStreamLogger.html#ae2db3155e6a1c7e3f53eaea694ebf7cb">recordEvent</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> dataId, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a7deea305c4cb166535253609e1b3cda4">byte</a> value)</td></tr>
+<tr class="separator:ae2db3155e6a1c7e3f53eaea694ebf7cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c1c4ff40a39b1ee691935f4b3eb7241"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1io_1_1BinaryStreamLogger.html#a3c1c4ff40a39b1ee691935f4b3eb7241">recordEvent</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> dataId, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ad4f20e9bf6d5d484b64167b0fdd8bc0e">short</a> value)</td></tr>
+<tr class="separator:a3c1c4ff40a39b1ee691935f4b3eb7241"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a813a4548511d507573a8017418d51dce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1io_1_1BinaryStreamLogger.html#a813a4548511d507573a8017418d51dce">recordEvent</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> dataId, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a5816f3b8d9c5e627300604143414e94a">char</a> value)</td></tr>
+<tr class="separator:a813a4548511d507573a8017418d51dce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fc2b39ebecb3a70a7099f8c3bf891a0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1io_1_1BinaryStreamLogger.html#a4fc2b39ebecb3a70a7099f8c3bf891a0">recordEvent</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> dataId, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ad2c19257446c052b290090a0144280a6">boolean</a> value)</td></tr>
+<tr class="separator:a4fc2b39ebecb3a70a7099f8c3bf891a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ee0da7ecad4636ed089f08480d190d4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1io_1_1BinaryStreamLogger.html#a4ee0da7ecad4636ed089f08480d190d4">recordEvent</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> dataId, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a326980bd779bb441a6fed78af5695baa">double</a> value)</td></tr>
+<tr class="separator:a4ee0da7ecad4636ed089f08480d190d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace4e670fde11fbba9ebe2d0481a278ea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1io_1_1BinaryStreamLogger.html#ace4e670fde11fbba9ebe2d0481a278ea">recordEvent</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> dataId, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#aea9a834e154d1a79fb1cd804e1e7758d">float</a> value)</td></tr>
+<tr class="separator:ace4e670fde11fbba9ebe2d0481a278ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+静的公開変数類</h2></td></tr>
+<tr class="memitem:ab348c47bc919fb1db4a9f39ddd2398c4"><td class="memItemLeft" align="right" valign="top">static final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1io_1_1BinaryStreamLogger.html#ab348c47bc919fb1db4a9f39ddd2398c4">FILENAME_TYPEID</a> = &quot;LOG$Types.txt&quot;</td></tr>
+<tr class="separator:ab348c47bc919fb1db4a9f39ddd2398c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bd3b0d2a6211c77d81bce45929b60c0"><td class="memItemLeft" align="right" valign="top">static final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1io_1_1BinaryStreamLogger.html#a1bd3b0d2a6211c77d81bce45929b60c0">LOG_PREFIX</a> = &quot;log-&quot;</td></tr>
+<tr class="separator:a1bd3b0d2a6211c77d81bce45929b60c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae951b75e536aef464b4431a90d1611c8"><td class="memItemLeft" align="right" valign="top">static final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1io_1_1BinaryStreamLogger.html#ae951b75e536aef464b4431a90d1611c8">LOG_SUFFIX</a> = &quot;.slg&quot;</td></tr>
+<tr class="separator:ae951b75e536aef464b4431a90d1611c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c3b3310431464b653d55f7ebf140bd7"><td class="memItemLeft" align="right" valign="top">static final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1io_1_1BinaryStreamLogger.html#a8c3b3310431464b653d55f7ebf140bd7">MAX_EVENTS_PER_FILE</a> = 10000000</td></tr>
+<tr class="separator:a8c3b3310431464b653d55f7ebf140bd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0aab44c42f9da4ecb77767ce82e9fa2a"><td class="memItemLeft" align="right" valign="top">static final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1io_1_1BinaryStreamLogger.html#a0aab44c42f9da4ecb77767ce82e9fa2a">BYTES_PER_EVENT</a> = 16</td></tr>
+<tr class="separator:a0aab44c42f9da4ecb77767ce82e9fa2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:a34f8b4322fc7c2e414e957b157dbcee5"><td class="memItemLeft" align="right" valign="top">synchronized <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1io_1_1BinaryStreamLogger.html#a34f8b4322fc7c2e414e957b157dbcee5">write</a> (<a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> dataId, <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ab2b82a801222598deb6167bea46d3172">long</a> value)</td></tr>
+<tr class="separator:a34f8b4322fc7c2e414e957b157dbcee5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:a97e6bfdc73dc6fd44e1b47269a19bc2c"><td class="memItemLeft" align="right" valign="top">File&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1io_1_1BinaryStreamLogger.html#a97e6bfdc73dc6fd44e1b47269a19bc2c">outputDir</a></td></tr>
+<tr class="separator:a97e6bfdc73dc6fd44e1b47269a19bc2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06cef7e6ca64bb01ec9050b50ab144ec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classselogger_1_1logging_1_1util_1_1FileNameGenerator.html">FileNameGenerator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1io_1_1BinaryStreamLogger.html#a06cef7e6ca64bb01ec9050b50ab144ec">files</a></td></tr>
+<tr class="separator:a06cef7e6ca64bb01ec9050b50ab144ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06ba877da4cbc0d667e83aebf5a93d4a"><td class="memItemLeft" align="right" valign="top">DataOutputStream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1io_1_1BinaryStreamLogger.html#a06ba877da4cbc0d667e83aebf5a93d4a">out</a></td></tr>
+<tr class="separator:a06ba877da4cbc0d667e83aebf5a93d4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e2795121f0209b720743f6a80ad5c2d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interfaceselogger_1_1logging_1_1IErrorLogger.html">IErrorLogger</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1io_1_1BinaryStreamLogger.html#a2e2795121f0209b720743f6a80ad5c2d">err</a></td></tr>
+<tr class="separator:a2e2795121f0209b720743f6a80ad5c2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab48d677102822e3bdd830362b99c4a78"><td class="memItemLeft" align="right" valign="top"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1io_1_1BinaryStreamLogger.html#ab48d677102822e3bdd830362b99c4a78">count</a></td></tr>
+<tr class="separator:ab48d677102822e3bdd830362b99c4a78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab87d018cbaab65cee70344c6b7977ca4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classselogger_1_1logging_1_1util_1_1TypeIdMap.html">TypeIdMap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1io_1_1BinaryStreamLogger.html#ab87d018cbaab65cee70344c6b7977ca4">typeToId</a></td></tr>
+<tr class="separator:ab87d018cbaab65cee70344c6b7977ca4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae564f65db62f438e819b8b75b699cc3a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classselogger_1_1logging_1_1util_1_1ObjectIdFile.html">ObjectIdFile</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselogger_1_1logging_1_1io_1_1BinaryStreamLogger.html#ae564f65db62f438e819b8b75b699cc3a">objectIdMap</a></td></tr>
+<tr class="separator:ae564f65db62f438e819b8b75b699cc3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>This class is an implementation of <a class="el" href="interfaceselogger_1_1logging_1_1IEventLogger.html">IEventLogger</a> that records a sequence of runtime events in files. This object creates three types of files:</p><ol type="1">
+<li>log-*.slg files recording a sequence of events,</li>
+<li>LOG$Types.txt recording a list of type IDs and their corresponding type names,</li>
+<li>ObjectIdMap recording a list of object IDs and their type IDs. Using the second and third files, a user can know classes in an execution trace. </li>
+</ol>
+
+<p class="definition"> <a class="el" href="BinaryStreamLogger_8java_source.html">BinaryStreamLogger.java</a> の <a class="el" href="BinaryStreamLogger_8java_source.html#l00026">26</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="a5f460d93e143ade22bbfa18525bf71c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f460d93e143ade22bbfa18525bf71c6">&#9670;&nbsp;</a></span>BinaryStreamLogger()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">selogger.logging.io.BinaryStreamLogger.BinaryStreamLogger </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="interfaceselogger_1_1logging_1_1IErrorLogger.html">IErrorLogger</a>&#160;</td>
+          <td class="paramname"><em>logger</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">File&#160;</td>
+          <td class="paramname"><em>outputDir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ad2c19257446c052b290090a0144280a6">boolean</a>&#160;</td>
+          <td class="paramname"><em>recordString</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="enumselogger_1_1logging_1_1util_1_1ObjectIdFile_1_1ExceptionRecording.html">ExceptionRecording</a>&#160;</td>
+          <td class="paramname"><em>recordExceptions</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Create an instance of logging object. </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">logger</td><td>specifies an object to record errors that occur in this class </td></tr>
+    <tr><td class="paramname">outputDir</td><td>specifies a directory for output files. </td></tr>
+    <tr><td class="paramname">recordString</td><td>If this is set to true, the object also records contents of string objects. </td></tr>
+    <tr><td class="paramname">recordExceptions</td><td>specifies whether the logger records Exception contents or not. Create an instance of stream. </td></tr>
+    <tr><td class="paramname">target</td><td>is an object generating file names. </td></tr>
+    <tr><td class="paramname">logger</td><td>is to report errors that occur in this class. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="BinaryStreamLogger_8java_source.html">BinaryStreamLogger.java</a> の <a class="el" href="BinaryStreamLogger_8java_source.html#l00064">64</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a8f0145c54e4364ff9c902f7c76fca75f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f0145c54e4364ff9c902f7c76fca75f">&#9670;&nbsp;</a></span>close()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">synchronized <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.logging.io.BinaryStreamLogger.close </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Close the stream. </p>
+
+<p><a class="el" href="interfaceselogger_1_1logging_1_1IEventLogger.html#a29671e6f8fcbe464833d0b5839acb138">selogger.logging.IEventLogger</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="BinaryStreamLogger_8java_source.html">BinaryStreamLogger.java</a> の <a class="el" href="BinaryStreamLogger_8java_source.html#l00083">83</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a4fc2b39ebecb3a70a7099f8c3bf891a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fc2b39ebecb3a70a7099f8c3bf891a0">&#9670;&nbsp;</a></span>recordEvent() <span class="overload">[1/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.logging.io.BinaryStreamLogger.recordEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>dataId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ad2c19257446c052b290090a0144280a6">boolean</a>&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Record an event and a boolean value. To simplify the file writing process, the value is translated into a long value (true = 1, false = 0). <br  />
+ </p>
+
+<p><a class="el" href="interfaceselogger_1_1logging_1_1IEventLogger.html#ab99432f9c8a315a97b175ef21f3da60f">selogger.logging.IEventLogger</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="BinaryStreamLogger_8java_source.html">BinaryStreamLogger.java</a> の <a class="el" href="BinaryStreamLogger_8java_source.html#l00178">178</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae2db3155e6a1c7e3f53eaea694ebf7cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2db3155e6a1c7e3f53eaea694ebf7cb">&#9670;&nbsp;</a></span>recordEvent() <span class="overload">[2/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.logging.io.BinaryStreamLogger.recordEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>dataId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a7deea305c4cb166535253609e1b3cda4">byte</a>&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Record an event and a byte value. To simplify the file writing process, the value is translated into a long value. <br  />
+ </p>
+
+<p><a class="el" href="interfaceselogger_1_1logging_1_1IEventLogger.html#a8c1545dd50c7131ed3e394b90632d7b7">selogger.logging.IEventLogger</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="BinaryStreamLogger_8java_source.html">BinaryStreamLogger.java</a> の <a class="el" href="BinaryStreamLogger_8java_source.html#l00154">154</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a813a4548511d507573a8017418d51dce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a813a4548511d507573a8017418d51dce">&#9670;&nbsp;</a></span>recordEvent() <span class="overload">[3/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.logging.io.BinaryStreamLogger.recordEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>dataId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a5816f3b8d9c5e627300604143414e94a">char</a>&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Record an event and a char value. To simplify the file writing process, the value is translated into a long value. <br  />
+ </p>
+
+<p><a class="el" href="interfaceselogger_1_1logging_1_1IEventLogger.html#ac8d1d3334cdb3b1d0bd1c18311bf62cd">selogger.logging.IEventLogger</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="BinaryStreamLogger_8java_source.html">BinaryStreamLogger.java</a> の <a class="el" href="BinaryStreamLogger_8java_source.html#l00170">170</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a4ee0da7ecad4636ed089f08480d190d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ee0da7ecad4636ed089f08480d190d4">&#9670;&nbsp;</a></span>recordEvent() <span class="overload">[4/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.logging.io.BinaryStreamLogger.recordEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>dataId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a326980bd779bb441a6fed78af5695baa">double</a>&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Record an event and a double number. To simplify the file writing process, the value is translated into a long value preserving the information. </p>
+
+<p><a class="el" href="interfaceselogger_1_1logging_1_1IEventLogger.html#ad3081bb6a4a6567830e3265e0889290d">selogger.logging.IEventLogger</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="BinaryStreamLogger_8java_source.html">BinaryStreamLogger.java</a> の <a class="el" href="BinaryStreamLogger_8java_source.html#l00186">186</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ace4e670fde11fbba9ebe2d0481a278ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace4e670fde11fbba9ebe2d0481a278ea">&#9670;&nbsp;</a></span>recordEvent() <span class="overload">[5/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.logging.io.BinaryStreamLogger.recordEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>dataId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#aea9a834e154d1a79fb1cd804e1e7758d">float</a>&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Record an event and a float value. To simplify the file writing process, the value is translated into a long value preserving the information. </p>
+
+<p><a class="el" href="interfaceselogger_1_1logging_1_1IEventLogger.html#a8f0986021acae7eff20b68ca0322a0fc">selogger.logging.IEventLogger</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="BinaryStreamLogger_8java_source.html">BinaryStreamLogger.java</a> の <a class="el" href="BinaryStreamLogger_8java_source.html#l00194">194</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae18d3f36cba970e95e71497a06871ab2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae18d3f36cba970e95e71497a06871ab2">&#9670;&nbsp;</a></span>recordEvent() <span class="overload">[6/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.logging.io.BinaryStreamLogger.recordEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>dataId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Record an event and an integer value. To simplify the file writing process, the value is translated into a long value. <br  />
+ </p>
+
+<p><a class="el" href="interfaceselogger_1_1logging_1_1IEventLogger.html#a87ea2f812b86b5dadc408bd8e0e29a82">selogger.logging.IEventLogger</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="BinaryStreamLogger_8java_source.html">BinaryStreamLogger.java</a> の <a class="el" href="BinaryStreamLogger_8java_source.html#l00139">139</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a9ddd58165723c9691cb525b87b4d4c5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ddd58165723c9691cb525b87b4d4c5a">&#9670;&nbsp;</a></span>recordEvent() <span class="overload">[7/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.logging.io.BinaryStreamLogger.recordEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>dataId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ab2b82a801222598deb6167bea46d3172">long</a>&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Record an event and a long integer value. </p>
+
+<p><a class="el" href="interfaceselogger_1_1logging_1_1IEventLogger.html#acbbd86ed45b431251782b5df101b9dc7">selogger.logging.IEventLogger</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="BinaryStreamLogger_8java_source.html">BinaryStreamLogger.java</a> の <a class="el" href="BinaryStreamLogger_8java_source.html#l00146">146</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a80721582db82a54c200ad2458895d19c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80721582db82a54c200ad2458895d19c">&#9670;&nbsp;</a></span>recordEvent() <span class="overload">[8/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.logging.io.BinaryStreamLogger.recordEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>dataId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a9cb912cc9367a723499e6458503cb25f">Object</a>&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Record an event and an object. The object is translated into an object ID. </p>
+
+<p><a class="el" href="interfaceselogger_1_1logging_1_1IEventLogger.html#a39593ff7b918cc3c34b5d19e810a1425">selogger.logging.IEventLogger</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="BinaryStreamLogger_8java_source.html">BinaryStreamLogger.java</a> の <a class="el" href="BinaryStreamLogger_8java_source.html#l00131">131</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a3c1c4ff40a39b1ee691935f4b3eb7241"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c1c4ff40a39b1ee691935f4b3eb7241">&#9670;&nbsp;</a></span>recordEvent() <span class="overload">[9/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.logging.io.BinaryStreamLogger.recordEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>dataId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ad4f20e9bf6d5d484b64167b0fdd8bc0e">short</a>&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Record an event and a short integer value. To simplify the file writing process, the value is translated into a long value. <br  />
+ </p>
+
+<p><a class="el" href="interfaceselogger_1_1logging_1_1IEventLogger.html#aeafb56cfaaf4dca6d3edc2619ece18eb">selogger.logging.IEventLogger</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="BinaryStreamLogger_8java_source.html">BinaryStreamLogger.java</a> の <a class="el" href="BinaryStreamLogger_8java_source.html#l00162">162</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a786b8a67d8d26e268fffc2b2dc904797"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a786b8a67d8d26e268fffc2b2dc904797">&#9670;&nbsp;</a></span>save()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.logging.io.BinaryStreamLogger.save </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ad2c19257446c052b290090a0144280a6">boolean</a>&#160;</td>
+          <td class="paramname"><em>resetTrace</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>This class does not support a partial trace. </p>
+
+<p><a class="el" href="interfaceselogger_1_1logging_1_1IEventLogger.html#a4bf45d6ec23b2a1bfe885266e4baa1e3">selogger.logging.IEventLogger</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="BinaryStreamLogger_8java_source.html">BinaryStreamLogger.java</a> の <a class="el" href="BinaryStreamLogger_8java_source.html#l00100">100</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a34f8b4322fc7c2e414e957b157dbcee5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34f8b4322fc7c2e414e957b157dbcee5">&#9670;&nbsp;</a></span>write()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">synchronized <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ac9c84fa68bbad002983e35ce3663c686">void</a> selogger.logging.io.BinaryStreamLogger.write </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a>&#160;</td>
+          <td class="paramname"><em>dataId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ab2b82a801222598deb6167bea46d3172">long</a>&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Write an event data into a file. The thread ID is also recorded. </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dataId</td><td>specifies an event and its bytecode location. </td></tr>
+    <tr><td class="paramname">value</td><td>specifies a data value observed in the event. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="BinaryStreamLogger_8java_source.html">BinaryStreamLogger.java</a> の <a class="el" href="BinaryStreamLogger_8java_source.html#l00108">108</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a0aab44c42f9da4ecb77767ce82e9fa2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0aab44c42f9da4ecb77767ce82e9fa2a">&#9670;&nbsp;</a></span>BYTES_PER_EVENT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> selogger.logging.io.BinaryStreamLogger.BYTES_PER_EVENT = 16</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The data size of an event. </p>
+
+<p class="definition"> <a class="el" href="BinaryStreamLogger_8java_source.html">BinaryStreamLogger.java</a> の <a class="el" href="BinaryStreamLogger_8java_source.html#l00041">41</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ab48d677102822e3bdd830362b99c4a78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab48d677102822e3bdd830362b99c4a78">&#9670;&nbsp;</a></span>count</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> selogger.logging.io.BinaryStreamLogger.count</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="BinaryStreamLogger_8java_source.html">BinaryStreamLogger.java</a> の <a class="el" href="BinaryStreamLogger_8java_source.html#l00047">47</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a2e2795121f0209b720743f6a80ad5c2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e2795121f0209b720743f6a80ad5c2d">&#9670;&nbsp;</a></span>err</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="interfaceselogger_1_1logging_1_1IErrorLogger.html">IErrorLogger</a> selogger.logging.io.BinaryStreamLogger.err</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="BinaryStreamLogger_8java_source.html">BinaryStreamLogger.java</a> の <a class="el" href="BinaryStreamLogger_8java_source.html#l00046">46</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ab348c47bc919fb1db4a9f39ddd2398c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab348c47bc919fb1db4a9f39ddd2398c4">&#9670;&nbsp;</a></span>FILENAME_TYPEID</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> selogger.logging.io.BinaryStreamLogger.FILENAME_TYPEID = &quot;LOG$Types.txt&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="BinaryStreamLogger_8java_source.html">BinaryStreamLogger.java</a> の <a class="el" href="BinaryStreamLogger_8java_source.html#l00028">28</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a06cef7e6ca64bb01ec9050b50ab144ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06cef7e6ca64bb01ec9050b50ab144ec">&#9670;&nbsp;</a></span>files</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classselogger_1_1logging_1_1util_1_1FileNameGenerator.html">FileNameGenerator</a> selogger.logging.io.BinaryStreamLogger.files</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="BinaryStreamLogger_8java_source.html">BinaryStreamLogger.java</a> の <a class="el" href="BinaryStreamLogger_8java_source.html#l00044">44</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a1bd3b0d2a6211c77d81bce45929b60c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1bd3b0d2a6211c77d81bce45929b60c0">&#9670;&nbsp;</a></span>LOG_PREFIX</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> selogger.logging.io.BinaryStreamLogger.LOG_PREFIX = &quot;log-&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="BinaryStreamLogger_8java_source.html">BinaryStreamLogger.java</a> の <a class="el" href="BinaryStreamLogger_8java_source.html#l00030">30</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae951b75e536aef464b4431a90d1611c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae951b75e536aef464b4431a90d1611c8">&#9670;&nbsp;</a></span>LOG_SUFFIX</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#ae472fad3e10aa824dd95a68f2a297626">String</a> selogger.logging.io.BinaryStreamLogger.LOG_SUFFIX = &quot;.slg&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="BinaryStreamLogger_8java_source.html">BinaryStreamLogger.java</a> の <a class="el" href="BinaryStreamLogger_8java_source.html#l00031">31</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a8c3b3310431464b653d55f7ebf140bd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c3b3310431464b653d55f7ebf140bd7">&#9670;&nbsp;</a></span>MAX_EVENTS_PER_FILE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final <a class="el" href="test_2target_2selogger__out_2LOG_0bTypes_8txt.html#a8e2cf07b84feefd8528d8695d808dd5f">int</a> selogger.logging.io.BinaryStreamLogger.MAX_EVENTS_PER_FILE = 10000000</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The number of events stored in a single file. </p>
+
+<p class="definition"> <a class="el" href="BinaryStreamLogger_8java_source.html">BinaryStreamLogger.java</a> の <a class="el" href="BinaryStreamLogger_8java_source.html#l00036">36</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae564f65db62f438e819b8b75b699cc3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae564f65db62f438e819b8b75b699cc3a">&#9670;&nbsp;</a></span>objectIdMap</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classselogger_1_1logging_1_1util_1_1ObjectIdFile.html">ObjectIdFile</a> selogger.logging.io.BinaryStreamLogger.objectIdMap</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="BinaryStreamLogger_8java_source.html">BinaryStreamLogger.java</a> の <a class="el" href="BinaryStreamLogger_8java_source.html#l00050">50</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a06ba877da4cbc0d667e83aebf5a93d4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06ba877da4cbc0d667e83aebf5a93d4a">&#9670;&nbsp;</a></span>out</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">DataOutputStream selogger.logging.io.BinaryStreamLogger.out</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="BinaryStreamLogger_8java_source.html">BinaryStreamLogger.java</a> の <a class="el" href="BinaryStreamLogger_8java_source.html#l00045">45</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a97e6bfdc73dc6fd44e1b47269a19bc2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97e6bfdc73dc6fd44e1b47269a19bc2c">&#9670;&nbsp;</a></span>outputDir</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">File selogger.logging.io.BinaryStreamLogger.outputDir</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="BinaryStreamLogger_8java_source.html">BinaryStreamLogger.java</a> の <a class="el" href="BinaryStreamLogger_8java_source.html#l00043">43</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ab87d018cbaab65cee70344c6b7977ca4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab87d018cbaab65cee70344c6b7977ca4">&#9670;&nbsp;</a></span>typeToId</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classselogger_1_1logging_1_1util_1_1TypeIdMap.html">TypeIdMap</a> selogger.logging.io.BinaryStreamLogger.typeToId</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="BinaryStreamLogger_8java_source.html">BinaryStreamLogger.java</a> の <a class="el" href="BinaryStreamLogger_8java_source.html#l00049">49</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>Data/java8/selogger/src/selogger/logging/io/<a class="el" href="BinaryStreamLogger_8java_source.html">BinaryStreamLogger.java</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespaceselogger.html">selogger</a></li><li class="navelem"><a class="el" href="namespaceselogger_1_1logging.html">logging</a></li><li class="navelem"><a class="el" href="namespaceselogger_1_1logging_1_1io.html">io</a></li><li class="navelem"><a class="el" href="classselogger_1_1logging_1_1io_1_1BinaryStreamLogger.html">BinaryStreamLogger</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

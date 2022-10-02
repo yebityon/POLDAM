@@ -41,3 +41,14 @@ jobs:
         with:
               working-directory: '.'
               doxyfile-path: './Doxyfile'
+
+      - name: Update Document
+        run: |
+          git remote set-url origin https://github-actions:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}
+          git config --global user.name "Nodoka Toyohama"
+          git config --global user.email "bot@bot.noreply.github.com"
+          if (git diff --name-only | grep -v '*.html'); then \
+            git add docs/html; \
+            git commit -m "📕  GithubAction updated jsdoc"; \
+            git push origin HEAD:${GITHUB_REF}; \
+          fi

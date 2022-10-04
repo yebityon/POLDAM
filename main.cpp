@@ -79,11 +79,11 @@ POLDAM::OmniGraph buildGraph(POLDAM::poldamConfig config, const std::string inpu
     std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "Reading Metafiles\n";
     POLDAM::metafileFactory factory(inputDir);
 
-    auto dataids = factory.createInstance<POLDAM::dataidsParser>("dataids.txt", true);
-    auto seloggerParser = factory.createInstance<POLDAM::seloggerLogParser>("log-00001.txt");
+    auto dataids = factory.createInstance<POLDAM::DataIdsParser>("dataids.txt", true);
+    auto seloggerParser = factory.createInstance<POLDAM::SeloggerLogParser>("log-00001.txt");
     auto objectFileParser = factory.createInstance<POLDAM::ObjectfileParser>();
-    auto methodParser = factory.createInstance<POLDAM::methodDataParser>("methods.txt", true);
-    auto classesParser = factory.createInstance<POLDAM::classesDataParser>("classes.txt", true);
+    auto methodParser = factory.createInstance<POLDAM::MethodDataParser>("methods.txt", true);
+    auto classesParser = factory.createInstance<POLDAM::ClassesDataParser>("classes.txt", true);
 
     std::cout
         << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "Successfully reading Metafiles\n";

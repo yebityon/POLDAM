@@ -20,7 +20,7 @@ namespace POLDAM
         std::string stringValue;
     };
 
-    class ObjectfileParser : fileReader
+    class ObjectfileParser : FileReader
     {
     public:
         ObjectfileParser(std::string inputDir_)

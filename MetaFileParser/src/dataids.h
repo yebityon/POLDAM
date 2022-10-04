@@ -20,10 +20,10 @@ namespace POLDAM
         std::string valueDesc;
         std::map<std::string, std::string> attr;
     };
-    class dataidsParser : fileReader
+    class DataIdsParser : FileReader
     {
     public:
-        dataidsParser(std::string inputDir_, std::string fileName_ = "dataids.txt", bool hasHeaderData_ = false) : dirName(inputDir_),
+        DataIdsParser(std::string inputDir_, std::string fileName_ = "dataids.txt", bool hasHeaderData_ = false) : dirName(inputDir_),
                                                                                                                    filePath(),
                                                                                                                    fileName(fileName_),
                                                                                                                    hasHeaderData(hasHeaderData_),

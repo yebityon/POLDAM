@@ -15,10 +15,10 @@ namespace POLDAM
         std::string classLoaderId;
     };
 
-    class classesDataParser : fileReader
+    class ClassesDataParser : FileReader
     {
     public:
-        classesDataParser(std::string inputDir_, std::string fileName_ = "methods.txt", bool hasHeaderData_ = false) : dirName(inputDir_),
+        ClassesDataParser(std::string inputDir_, std::string fileName_ = "methods.txt", bool hasHeaderData_ = false) : dirName(inputDir_),
                                                                                                                        filePath(),
                                                                                                                        fileName(fileName_),
                                                                                                                        hasHeaderData(hasHeaderData_),

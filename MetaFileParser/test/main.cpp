@@ -6,7 +6,7 @@ void test_dataids_1()
 {
     const std::string inputDir = "./Data/Main_LOG";
     POLDAM::metafileFactory factory(inputDir);
-    auto dataids = factory.createInstance<POLDAM::dataidsParser>(inputDir);
+    auto dataids = factory.createInstance<POLDAM::DataIdsParser>(inputDir);
 
     auto dataidsData = dataids.getData();
     auto dataidsParsedData = dataids.getParsedData();
@@ -31,7 +31,7 @@ void test_dataids_2()
 {
     const std::string inputDir = "./Data/java8/src/test/origin/selogger_out";
     POLDAM::metafileFactory factory(inputDir);
-    auto dataids = factory.createInstance<POLDAM::dataidsParser>(inputDir, "dataids.txt", true);
+    auto dataids = factory.createInstance<POLDAM::DataIdsParser>(inputDir, "dataids.txt", true);
 
     const std::string base = "97,1,4,12,0,LABEL,I,\"null\"";
 
@@ -83,7 +83,7 @@ void test_seloggerLogParser_1()
 {
     const std::string inputDir = "./Data/java8/src/test/origin/selogger_out";
     POLDAM::metafileFactory factory(inputDir);
-    auto seloggerParser = factory.createInstance<POLDAM::seloggerLogParser>(inputDir, "log-00001.txt");
+    auto seloggerParser = factory.createInstance<POLDAM::SeloggerLogParser>(inputDir, "log-00001.txt");
 
     seloggerParser.getData();
     std::vector<POLDAM::SeloggerData> parsedData = seloggerParser.getParserdData();

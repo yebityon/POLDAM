@@ -11,7 +11,7 @@
 namespace POLDAM
 {
 
-    class fileReader
+    class FileReader
     {
     private:
         /**

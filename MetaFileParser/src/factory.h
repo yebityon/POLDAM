@@ -1,8 +1,8 @@
 #pragma once
-#include "metafileHandlerCommon.h"
+#include "metafile_handler_common.h"
 #include "dataids.h"
-#include "seloggerLog.h"
-#include "objectFile.h"
+#include "selogger_log.h"
+#include "object_file.h"
 #include "methods.h"
 #include "classes.h"
 

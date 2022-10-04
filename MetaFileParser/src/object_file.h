@@ -1,7 +1,7 @@
 #pragma once
 
-#include "metafileHandlerCommon.h"
-#include "../../Util/include/src/poldamUtil.h"
+#include "metafile_handler_common.h"
+#include "../../Util/include/src/poldam_util.h"
 
 namespace POLDAM
 {

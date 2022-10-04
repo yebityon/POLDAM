@@ -3,12 +3,12 @@
 #include <chrono>
 #include <cassert>
 
-#include "Util/include/src/poldamUtil.h"
-#include "Util/include/src/poldamConfig.h"
+#include "Util/include/src/poldam_util.h"
+#include "Util/include/src/poldam_config.h"
 
 // Provide function for Metafile of SELogger
 #include "MetafileParser/src/factory.h"
-#include "Metafileparser/src/metafileHandlerCommon.h"
+#include "Metafileparser/src/metafile_handler_common.h"
 
 // Provide Graph fucntion, Build MarkleTree and Compute Diff Tree of Target Program.
 #include "Graph/src/graph.hpp"

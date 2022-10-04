@@ -2,7 +2,7 @@
 
 #include <string>
 #include <iostream>
-#include "../../Util/include/src/poldamUtil.h"
+#include "../../Util/include/src/poldam_util.h"
 namespace POLDAM
 {
     enum class SELOGGER_EVENT_TYPE

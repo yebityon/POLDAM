@@ -1,4 +1,3 @@
-#pragma once
 #include "object_file.h"
 #include <cassert>
 namespace POLDAM

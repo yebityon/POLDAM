@@ -1,4 +1,4 @@
-#include "graph.hpp"
+#include "graph.h"
 
 /**
  * GraphDiff algorithm is beta, There might be good way to compute the diff between two graphs, like following URL

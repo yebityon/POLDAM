@@ -1,5 +1,3 @@
-#pragma once
-
 #include "poldam_util.h"
 namespace POLDAM_UTIL
 {

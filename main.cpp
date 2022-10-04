@@ -1,4 +1,3 @@
-#pragma once
 #include <iostream>
 #include <chrono>
 #include <cassert>
@@ -11,7 +10,7 @@
 #include "Metafileparser/src/metafile_handler_common.h"
 
 // Provide Graph fucntion, Build MarkleTree and Compute Diff Tree of Target Program.
-#include "Graph/src/graph.hpp"
+#include "Graph/src/graph.h"
 
 #include <boost/graph/graphviz.hpp>
 

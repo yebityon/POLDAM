@@ -1,5 +1,4 @@
-#pragma once
-#include "graph.hpp"
+#include "graph.h"
 #include <iostream>
 
 namespace POLDAM
@@ -58,6 +57,7 @@ namespace POLDAM
     bool OmniGraph::pushStackVertex(const boost::graph_traits<Graph>::vertex_descriptor vDesc, const unsigned int threadId)
     {
         this->vStack[threadId].push(vDesc);
+        return true;
     }
 
     bool OmniGraph::computeHash(const unsigned int threadId)

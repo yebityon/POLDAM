@@ -1,4 +1,3 @@
-#pragma once
 #include "../src/factory.h"
 #include <iostream>
 #include <cassert>

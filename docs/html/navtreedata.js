@@ -32,7 +32,10 @@ var NAVTREE =
       ] ],
       [ "Dependency", "md_README.html#autotoc_md4", null ],
       [ "How to Use it", "md_README.html#autotoc_md5", null ],
-      [ "Limitation", "md_README.html#autotoc_md6", null ]
+      [ "Limitation", "md_README.html#autotoc_md6", null ],
+      [ "Coding Style", "md_README.html#autotoc_md7", [
+        [ "Formatter", "md_README.html#autotoc_md8", null ]
+      ] ]
     ] ],
     [ "名前空間", "namespaces.html", [
       [ "名前空間一覧", "namespaces.html", "namespaces_dup" ],
@@ -68,8 +71,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "MetaFileParser_2test_2main_8cpp.html",
-"classPOLDAM_1_1seloggerLogParser.html",
-"seloggerLog_8h_source.html"
+"classPOLDAM_1_1SeloggerLogParser.html#a8c6304d763d9e1154e4a7a50e1bd5b2c",
+"selogger__log_8h_source.html"
 ];
 
 var SYNCONMSG = 'クリックで同期表示が無効になります';

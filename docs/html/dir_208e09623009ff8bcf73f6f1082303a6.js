@@ -1,7 +1,6 @@
 var dir_208e09623009ff8bcf73f6f1082303a6 =
 [
     [ "graph.cpp", "graph_8cpp.html", null ],
-    [ "graph.hpp", "graph_8hpp.html", "graph_8hpp" ],
-    [ "graphConstructor.h", "graphConstructor_8h.html", null ],
-    [ "graphDiff.cpp", "graphDiff_8cpp.html", "graphDiff_8cpp" ]
+    [ "graph.h", "graph_8h.html", "graph_8h" ],
+    [ "graph_diff.cpp", "graph__diff_8cpp.html", "graph__diff_8cpp" ]
 ];

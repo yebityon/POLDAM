@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hasheaderdata_0',['hasHeaderData',['../classPOLDAM_1_1classesDataParser.html#a5f357ec37d06c5104f5315be00010645',1,'POLDAM::classesDataParser::hasHeaderData()'],['../classPOLDAM_1_1dataidsParser.html#a839bf9e331a8ff47dc8f94976c64dc0c',1,'POLDAM::dataidsParser::hasHeaderData()'],['../classPOLDAM_1_1methodDataParser.html#a0c6d6216fa9827b6b3331546f6fc3c4a',1,'POLDAM::methodDataParser::hasHeaderData()']]]
+  ['hasheaderdata_0',['hasHeaderData',['../classPOLDAM_1_1ClassesDataParser.html#a71a801f5155f6d723233f7e894e2c122',1,'POLDAM::ClassesDataParser::hasHeaderData()'],['../classPOLDAM_1_1DataIdsParser.html#a2f2141be7d7f94b3de5563b112839db5',1,'POLDAM::DataIdsParser::hasHeaderData()'],['../classPOLDAM_1_1MethodDataParser.html#a8b2fd5257ba3465005a417bc7174c3dc',1,'POLDAM::MethodDataParser::hasHeaderData()']]]
 ];

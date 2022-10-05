@@ -1,7 +1,7 @@
 #pragma once
-#include "metafileHandlerCommon.h"
-#include "../../Util/include/src/poldamUtil.h"
-#include "../../Interpreter/src/eventHandler.h"
+#include "metafile_handler_common.h"
+#include "../../Util/include/src/poldam_util.h"
+#include "../../Interpreter/src/event_handler.h"
 #include <map>
 
 // TODO: Interface should be speciallized for each struct type.
@@ -20,10 +20,10 @@ namespace POLDAM
         std::string valueDesc;
         std::map<std::string, std::string> attr;
     };
-    class dataidsParser : fileReader
+    class DataIdsParser : FileReader
     {
     public:
-        dataidsParser(std::string inputDir_, std::string fileName_ = "dataids.txt", bool hasHeaderData_ = false) : dirName(inputDir_),
+        DataIdsParser(std::string inputDir_, std::string fileName_ = "dataids.txt", bool hasHeaderData_ = false) : dirName(inputDir_),
                                                                                                                    filePath(),
                                                                                                                    fileName(fileName_),
                                                                                                                    hasHeaderData(hasHeaderData_),

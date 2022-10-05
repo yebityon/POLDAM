@@ -1,6 +1,6 @@
 #pragma once
-#include "metafileHandlerCommon.h"
-#include "../../Util/include/src/poldamUtil.h"
+#include "metafile_handler_common.h"
+#include "../../Util/include/src/poldam_util.h"
 
 namespace POLDAM
 {
@@ -16,10 +16,10 @@ namespace POLDAM
         std::string methodHash;
     };
 
-    class methodDataParser : fileReader
+    class MethodDataParser : FileReader
     {
     public:
-        methodDataParser(std::string inputDir_, std::string fileName_ = "methods.txt", bool hasHeaderData_ = false) : dirName(inputDir_),
+        MethodDataParser(std::string inputDir_, std::string fileName_ = "methods.txt", bool hasHeaderData_ = false) : dirName(inputDir_),
                                                                                                                       filePath(),
                                                                                                                       fileName(fileName_),
                                                                                                                       hasHeaderData(hasHeaderData_),

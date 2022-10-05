@@ -1,6 +1,4 @@
-#pragma once
-
-#include "poldamUtil.h"
+#include "poldam_util.h"
 namespace POLDAM_UTIL
 {
     // TODO: duplicated functions

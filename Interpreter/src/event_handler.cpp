@@ -1,5 +1,5 @@
 
-#include "eventHandler.h"
+#include "event_handler.h"
 namespace POLDAM
 {
     SELOGGER_EVENT_TYPE getEventType(const std::string &log)

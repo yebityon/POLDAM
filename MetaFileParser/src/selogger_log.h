@@ -1,6 +1,6 @@
 #pragma once
-#include "metafileHandlerCommon.h"
-#include "../../Util/include/src/poldamUtil.h"
+#include "metafile_handler_common.h"
+#include "../../Util/include/src/poldam_util.h"
 
 namespace POLDAM
 {
@@ -13,10 +13,10 @@ namespace POLDAM
         unsigned int threadId;
     };
 
-    class seloggerLogParser : fileReader
+    class SeloggerLogParser : FileReader
     {
     public:
-        seloggerLogParser(std::string inputDir_, std::string fileName_) : dirName(inputDir_),
+        SeloggerLogParser(std::string inputDir_, std::string fileName_) : dirName(inputDir_),
                                                                           filePath(),
                                                                           fileName(fileName_),
                                                                           data(),

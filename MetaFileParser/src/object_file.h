@@ -1,7 +1,7 @@
 #pragma once
 
-#include "metafileHandlerCommon.h"
-#include "../../Util/include/src/poldamUtil.h"
+#include "metafile_handler_common.h"
+#include "../../Util/include/src/poldam_util.h"
 
 namespace POLDAM
 {
@@ -20,7 +20,7 @@ namespace POLDAM
         std::string stringValue;
     };
 
-    class ObjectfileParser : fileReader
+    class ObjectfileParser : FileReader
     {
     public:
         ObjectfileParser(std::string inputDir_)

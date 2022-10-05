@@ -1,9 +1,9 @@
-#include "seloggerLog.h"
+#include "selogger_log.h"
 
 namespace POLDAM
 {
     void
-    seloggerLogParser::readFile(const std::string filePath, std::vector<std::string> &data)
+    SeloggerLogParser::readFile(const std::string filePath, std::vector<std::string> &data)
     {
         std::ifstream fileStream;
 
@@ -30,7 +30,7 @@ namespace POLDAM
         fileStream.close();
     }
 
-    void seloggerLogParser::parseReadlines(std::vector<std::string> &data)
+    void SeloggerLogParser::parseReadlines(std::vector<std::string> &data)
     {
         for (const auto &buffer : this->data)
         {
@@ -38,7 +38,7 @@ namespace POLDAM
         }
     }
 
-    void seloggerLogParser::parseLine(const std::string line)
+    void SeloggerLogParser::parseLine(const std::string line)
     {
         SeloggerData rec{};
         const std::vector<std::string> parsedLog = POLDAM_UTIL::parse(line, ',');
@@ -53,7 +53,7 @@ namespace POLDAM
         this->parsedData.push_back(rec);
     }
     // TODO: move this fucntion to base class, all you need to do is just desginate fileName in base class.
-    void seloggerLogParser::dirTraversal(const std::string dirName)
+    void SeloggerLogParser::dirTraversal(const std::string dirName)
     {
         for (const std::filesystem::directory_entry &i : std::filesystem::directory_iterator(dirName))
         {

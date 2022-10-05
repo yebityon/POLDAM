@@ -2,7 +2,7 @@
 
 namespace POLDAM
 {
-    void dataidsParser::readFile(const std::string filePath, std::vector<std::string> &data)
+    void DataIdsParser::readFile(const std::string filePath, std::vector<std::string> &data)
     {
         std::ifstream fileStream;
 
@@ -32,7 +32,7 @@ namespace POLDAM
         }
     }
 
-    void dataidsParser::parseReadlines(std::vector<std::string> &data)
+    void DataIdsParser::parseReadlines(std::vector<std::string> &data)
     {
         std::vector<DataId> parsedData;
         for (const auto &str : data)
@@ -41,7 +41,7 @@ namespace POLDAM
         }
     }
 
-    void dataidsParser::parseLine(std::string line)
+    void DataIdsParser::parseLine(std::string line)
     {
         DataId dataid;
 
@@ -92,7 +92,7 @@ namespace POLDAM
     }
 
     // TODO: move this fucntion to base class, all you need to do is just desginate fileName in base class.
-    void dataidsParser::dirTraversal(std::string dirName)
+    void DataIdsParser::dirTraversal(std::string dirName)
     {
         for (const std::filesystem::directory_entry &i : std::filesystem::directory_iterator(dirName))
         {

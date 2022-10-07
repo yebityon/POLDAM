@@ -1,18 +1,18 @@
-var classPOLDAM_1_1seloggerLogParser =
+var classPOLDAM_1_1SeloggerLogParser =
 [
-    [ "seloggerLogParser", "classPOLDAM_1_1seloggerLogParser.html#a2a12ef9e218d45c8075e5df8a7e20bd4", null ],
-    [ "dirTraversal", "classPOLDAM_1_1seloggerLogParser.html#a191d6778d3ca2ddae9d9e7f9e8bdb9aa", null ],
-    [ "getData", "classPOLDAM_1_1seloggerLogParser.html#a0c90f585102c4b68471fd0da22cc737e", null ],
-    [ "getDirName", "classPOLDAM_1_1seloggerLogParser.html#a701c6a839c9be693a064bb4284c45e3e", null ],
-    [ "getParserdData", "classPOLDAM_1_1seloggerLogParser.html#a3da33b3d39ea9d800b9980a53c44ad5d", null ],
-    [ "isTargetFile", "classPOLDAM_1_1seloggerLogParser.html#a181d953851d752394ea89ce8e6913c31", null ],
-    [ "parseLine", "classPOLDAM_1_1seloggerLogParser.html#a0d706871ad6527ab54db295539387288", null ],
-    [ "parseReadlines", "classPOLDAM_1_1seloggerLogParser.html#a5aa7b585a38238053e84263f85372e83", null ],
-    [ "readFile", "classPOLDAM_1_1seloggerLogParser.html#ad1c4e9f57bd82ee8718274e6561fe5ad", null ],
-    [ "readNextStream", "classPOLDAM_1_1seloggerLogParser.html#a7da2eb2400b796cfdbe84ac8f5133b90", null ],
-    [ "data", "classPOLDAM_1_1seloggerLogParser.html#a27073b534ef1af681417ef4e09697500", null ],
-    [ "dirName", "classPOLDAM_1_1seloggerLogParser.html#a132d70d089a49d51ee07f236193c1cb7", null ],
-    [ "fileName", "classPOLDAM_1_1seloggerLogParser.html#aab925ec784750ce9d5d1d4e7191fea50", null ],
-    [ "filePath", "classPOLDAM_1_1seloggerLogParser.html#a6bd569ec1e6d8d77a93d96110c3229f0", null ],
-    [ "parsedData", "classPOLDAM_1_1seloggerLogParser.html#afb5d371a77c510f492ade3ed442232fc", null ]
+    [ "SeloggerLogParser", "classPOLDAM_1_1SeloggerLogParser.html#afdeb6f440cfd0b3d1a242780e93b1cd7", null ],
+    [ "dirTraversal", "classPOLDAM_1_1SeloggerLogParser.html#a9099c88625e5a03f85e2a1d5e8e68cfc", null ],
+    [ "getData", "classPOLDAM_1_1SeloggerLogParser.html#a42a355eed5396527b175bbf695899e11", null ],
+    [ "getDirName", "classPOLDAM_1_1SeloggerLogParser.html#adf723d6848749b6eb59f06abe3493394", null ],
+    [ "getParserdData", "classPOLDAM_1_1SeloggerLogParser.html#a37fd522276b1f758712d453a53534931", null ],
+    [ "isTargetFile", "classPOLDAM_1_1SeloggerLogParser.html#a1091c357b2c19d5e48df4ecb566005c8", null ],
+    [ "parseLine", "classPOLDAM_1_1SeloggerLogParser.html#aa7eefee90c0a670d6c9b506b45f1b318", null ],
+    [ "parseReadlines", "classPOLDAM_1_1SeloggerLogParser.html#ab8c60579fc24e4fe4741d9a806de3c87", null ],
+    [ "readFile", "classPOLDAM_1_1SeloggerLogParser.html#ae9da199faea5cfdd86d0f8e9e40362a6", null ],
+    [ "readNextStream", "classPOLDAM_1_1SeloggerLogParser.html#a8c6304d763d9e1154e4a7a50e1bd5b2c", null ],
+    [ "data", "classPOLDAM_1_1SeloggerLogParser.html#a17869f2691c21e13e54e50f873d23dfd", null ],
+    [ "dirName", "classPOLDAM_1_1SeloggerLogParser.html#a2ea480b37aab360f22c9a119b4b1129c", null ],
+    [ "fileName", "classPOLDAM_1_1SeloggerLogParser.html#aa3735ea8ca09217a4f80dd13ada35584", null ],
+    [ "filePath", "classPOLDAM_1_1SeloggerLogParser.html#af64e89242333ad0224aa5905f45663b5", null ],
+    [ "parsedData", "classPOLDAM_1_1SeloggerLogParser.html#acc32720fd60521377c81eb922a124590", null ]
 ];

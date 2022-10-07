@@ -44,7 +44,7 @@ namespace POLDAM
     private:
         void readFile(const std::string &filePath, std::vector<std::string> &data) override;
         void parseReadlines(std::vector<std::string> &data) override;
-        void dirTraversal(cosnt std::string &dirName) override;
+        void dirTraversal(const std::string &dirName) override;
 
         /**
          * @brief delegate function. this function receive string data and paser it to shape Dataid structuo,

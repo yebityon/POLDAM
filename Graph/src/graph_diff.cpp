@@ -273,7 +273,7 @@ namespace POLDAM
      * @param target
      * @return Graph
      */
-    Graph OmniGraph::computeDiffGraphBeta(OmniGraph &&target,
+    Graph OmniGraph::computeDiffGraphBeta(OmniGraph target,
                                           const std::function<bool(const GraphVertex &v, const GraphVertex &u)> &isSameVertex)
     {
         const Graph &originGraph = this->g;

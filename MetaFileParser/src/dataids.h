@@ -23,13 +23,14 @@ namespace POLDAM
     class DataIdsParser : FileReader
     {
     public:
-        DataIdsParser(std::string inputDir_, std::string fileName_ = "dataids.txt", bool hasHeaderData_ = false) : dirName(inputDir_),
-                                                                                                                   filePath(),
-                                                                                                                   fileName(fileName_),
-                                                                                                                   hasHeaderData(hasHeaderData_),
-                                                                                                                   data(),
-                                                                                                                   parsedData(),
-                                                                                                                   targetFileNames(){};
+        DataIdsParser(const std::string &inputDir_, const std::string &fileName_ = "dataids.txt", const bool &hasHeaderData_ = false)
+            : dirName(inputDir_),
+              filePath(),
+              fileName(fileName_),
+              hasHeaderData(hasHeaderData_),
+              data(),
+              parsedData(),
+              targetFileNames(){};
 
         std::vector<std::string> getData()
         {
@@ -56,9 +57,9 @@ namespace POLDAM
         };
 
     private:
-        void readFile(const std::string filePath, std::vector<std::string> &data) override;
+        void readFile(const std::string &filePath, std::vector<std::string> &data) override;
         void parseReadlines(std::vector<std::string> &data) override;
-        void dirTraversal(std::string fileName) override;
+        void dirTraversal(const std::string &dirName) override;
 
         /**
          * @brief delegate function. this function receive string data and paser it to shape Dataid structuo,
@@ -66,7 +67,7 @@ namespace POLDAM
          *
          * @param line
          */
-        void parseLine(const std::string line) override;
+        void parseLine(const std::string &line) override;
 
         bool isTargetFile(const std::string fileName);
 

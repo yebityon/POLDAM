@@ -41,7 +41,7 @@ namespace POLDAM
     void SeloggerLogParser::parseLine(const std::string line)
     {
         SeloggerData rec{};
-        const std::vector<std::string> parsedLog = POLDAM_UTIL::parse(line, ',');
+        const std::vector<std::string> parsedLog = POLDAM_UTIL::split(line, ',');
 
         assert(parsedLog.size() == 4);
 

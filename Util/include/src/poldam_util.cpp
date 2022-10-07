@@ -1,13 +1,7 @@
 #include "poldam_util.h"
 namespace POLDAM_UTIL
 {
-    // TODO: duplicated functions
-    std::vector<std::string> parse(const std::string str, const char terminator)
-    {
-        return split(str, terminator);
-    }
-
-    std::vector<std::string> split(const std::string str, const char terminator)
+    std::vector<std::string> split(const std::string &str, const char &terminator)
     {
         std::vector<std::string> rec{};
         std::string buffer{};

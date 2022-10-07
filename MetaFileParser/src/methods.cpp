@@ -44,7 +44,7 @@ namespace POLDAM
     void MethodDataParser::parseLine(std::string line)
     {
         MethodsData m;
-        const auto parsedline = POLDAM_UTIL::parse(line);
+        const auto parsedline = POLDAM_UTIL::split(line, ',');
         assert(parsedline.size() == 8);
 
         m.classId = static_cast<unsigned int>(std::stoi(parsedline[0]));

@@ -1,14 +1,14 @@
 var namespacePOLDAM =
 [
     [ "ClassesData", "structPOLDAM_1_1ClassesData.html", "structPOLDAM_1_1ClassesData" ],
-    [ "classesDataParser", "classPOLDAM_1_1classesDataParser.html", "classPOLDAM_1_1classesDataParser" ],
+    [ "ClassesDataParser", "classPOLDAM_1_1ClassesDataParser.html", "classPOLDAM_1_1ClassesDataParser" ],
     [ "DataId", "structPOLDAM_1_1DataId.html", "structPOLDAM_1_1DataId" ],
-    [ "dataidsParser", "classPOLDAM_1_1dataidsParser.html", "classPOLDAM_1_1dataidsParser" ],
-    [ "fileReader", "classPOLDAM_1_1fileReader.html", "classPOLDAM_1_1fileReader" ],
+    [ "DataIdsParser", "classPOLDAM_1_1DataIdsParser.html", "classPOLDAM_1_1DataIdsParser" ],
+    [ "FileReader", "classPOLDAM_1_1FileReader.html", "classPOLDAM_1_1FileReader" ],
     [ "GraphEdge", "structPOLDAM_1_1GraphEdge.html", "structPOLDAM_1_1GraphEdge" ],
     [ "GraphVertex", "structPOLDAM_1_1GraphVertex.html", "structPOLDAM_1_1GraphVertex" ],
     [ "metafileFactory", "classPOLDAM_1_1metafileFactory.html", "classPOLDAM_1_1metafileFactory" ],
-    [ "methodDataParser", "classPOLDAM_1_1methodDataParser.html", "classPOLDAM_1_1methodDataParser" ],
+    [ "MethodDataParser", "classPOLDAM_1_1MethodDataParser.html", "classPOLDAM_1_1MethodDataParser" ],
     [ "MethodsData", "structPOLDAM_1_1MethodsData.html", "structPOLDAM_1_1MethodsData" ],
     [ "ObjectData", "structPOLDAM_1_1ObjectData.html", "structPOLDAM_1_1ObjectData" ],
     [ "ObjectfileParser", "classPOLDAM_1_1ObjectfileParser.html", "classPOLDAM_1_1ObjectfileParser" ],
@@ -16,7 +16,7 @@ var namespacePOLDAM =
     [ "OmniWriter", "classPOLDAM_1_1OmniWriter.html", "classPOLDAM_1_1OmniWriter" ],
     [ "poldamConfig", "structPOLDAM_1_1poldamConfig.html", "structPOLDAM_1_1poldamConfig" ],
     [ "SeloggerData", "structPOLDAM_1_1SeloggerData.html", "structPOLDAM_1_1SeloggerData" ],
-    [ "seloggerLogParser", "classPOLDAM_1_1seloggerLogParser.html", "classPOLDAM_1_1seloggerLogParser" ],
+    [ "SeloggerLogParser", "classPOLDAM_1_1SeloggerLogParser.html", "classPOLDAM_1_1SeloggerLogParser" ],
     [ "Graph", "namespacePOLDAM.html#a0931ae32716a1c3f6a8a39815b925843", null ],
     [ "SELOGGER_EVENT_ATTR", "namespacePOLDAM.html#ada6b3da834f555f99d9c1d5c46418ff8", [
       [ "WRITE_OBJECT", "namespacePOLDAM.html#ada6b3da834f555f99d9c1d5c46418ff8a785ec058246e5fcbb1da68a5cc35771c", null ],

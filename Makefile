@@ -12,7 +12,7 @@ UTIL_DIR = Util
 UTIL_INCLUDE_DIR = $(UTIL_DIR)/include/src
 
 #win
-BOOST_PATH = /home/prebe/boost_1_18
+# BOOST_PATH = /home/prebe/boost_1_18
 
 # #mac 
 # BOOST_PATH = usr/local/boost_1_80_0

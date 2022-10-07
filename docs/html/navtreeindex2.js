@@ -1,6 +1,6 @@
 var NAVTREEINDEX2 =
 {
-"seloggerLog_8h_source.html":[3,0,2,0,12],
+"selogger__log_8h_source.html":[3,0,2,0,12],
 "structPOLDAM_1_1ClassesData.html":[1,0,0,0],
 "structPOLDAM_1_1ClassesData.html":[2,0,0,0],
 "structPOLDAM_1_1ClassesData.html#a0f6c63f226bc3ec5b82eafa408d81f0c":[1,0,0,0,6],

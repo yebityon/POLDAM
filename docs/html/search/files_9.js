@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['seloggerlog_2ecpp_0',['seloggerLog.cpp',['../seloggerLog_8cpp.html',1,'']]],
-  ['seloggerlog_2eh_1',['seloggerLog.h',['../seloggerLog_8h.html',1,'']]]
+  ['selogger_5flog_2ecpp_0',['selogger_log.cpp',['../selogger__log_8cpp.html',1,'']]],
+  ['selogger_5flog_2eh_1',['selogger_log.h',['../selogger__log_8h.html',1,'']]]
 ];

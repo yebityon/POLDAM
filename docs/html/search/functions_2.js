@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['classesdataparser_0',['classesDataParser',['../classPOLDAM_1_1classesDataParser.html#ade19061b41b8a07494cea38bf0f8291d',1,'POLDAM::classesDataParser']]],
+  ['classesdataparser_0',['ClassesDataParser',['../classPOLDAM_1_1ClassesDataParser.html#aa679cf1a970b48ec6fb61bec6508990a',1,'POLDAM::ClassesDataParser']]],
   ['computediffgraph_1',['computeDiffGraph',['../classPOLDAM_1_1OmniGraph.html#ac8dd73c9cb97aa448ae50cd37e4ed665',1,'POLDAM::OmniGraph']]],
   ['computediffgraphbeta_2',['computeDiffGraphBeta',['../classPOLDAM_1_1OmniGraph.html#ab9c98590e8caf6e9c4357ef9a5751f77',1,'POLDAM::OmniGraph']]],
   ['computeflowhash_3',['computeFlowHash',['../classPOLDAM_1_1OmniGraph.html#a20ddd1c1d3b6acb2f1465f25bc8f8bd4',1,'POLDAM::OmniGraph']]],

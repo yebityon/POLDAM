@@ -14,8 +14,8 @@ UTIL_INCLUDE_DIR = $(UTIL_DIR)/include/src
 #win
 # BOOST_PATH = /home/prebe/boost_1_18
 
-#mac 
-BOOST_PATH = usr/local/boost_1_80_0
+# #mac 
+# BOOST_PATH = usr/local/boost_1_80_0
 
 main: main.cpp util.o metafileParser.o interpreter.o omniGraph.o
 	g++-11 -I/$(BOOST_PATH) -I./ main.cpp util.o metafileParser.o interpreter.o omniGraph.o -o POLDAM

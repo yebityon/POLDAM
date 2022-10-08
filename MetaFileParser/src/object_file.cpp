@@ -3,7 +3,7 @@
 namespace POLDAM
 {
 
-    void ObjectfileParser::dirTraversal(const std::string dirName)
+    void ObjectfileParser::dirTraversal(const std::string &dirName)
     {
         for (const std::filesystem::directory_entry &i : std::filesystem::directory_iterator(dirName))
         {
@@ -24,7 +24,7 @@ namespace POLDAM
         }
     };
 
-    void ObjectfileParser::readFile(const std::string filePath, std::vector<std::string> &data)
+    void ObjectfileParser::readFile(const std::string &filePath, std::vector<std::string> &data)
     {
         std::ifstream fileStream;
 
@@ -51,14 +51,14 @@ namespace POLDAM
         fileStream.close();
     };
 
-    void ObjectfileParser::parseLine(std::string line)
+    void ObjectfileParser::parseLine(const std::string &line)
     {
         std::vector<std::string> d = POLDAM_UTIL::split(line, ',');
         unsigned int objectTypeId = static_cast<unsigned int>(std::stoi(d[1]));
         this->parsedObjectTypesDatas.emplace_back(objectTypeId);
     };
 
-    void ObjectfileParser::parseLogTypesLine(std::string line)
+    void ObjectfileParser::parseLogTypesLine(const std::string &line)
     {
         const std::vector<std::string> parsedVec = POLDAM_UTIL::split(line, ',');
         std::map<std::string, std::string> rec{};
@@ -103,7 +103,7 @@ namespace POLDAM
         return;
     }
 
-    void ObjectfileParser::parseStringLine(std::string line)
+    void ObjectfileParser::parseStringLine(const std::string &line)
     {
         std::vector<std::string> d = POLDAM_UTIL::split(line, ',');
         unsigned int dataidIdx = static_cast<unsigned int>(std::stoi(d[0]));

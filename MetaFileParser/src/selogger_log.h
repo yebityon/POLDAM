@@ -16,11 +16,11 @@ namespace POLDAM
     class SeloggerLogParser : FileReader
     {
     public:
-        SeloggerLogParser(std::string inputDir_, std::string fileName_) : dirName(inputDir_),
-                                                                          filePath(),
-                                                                          fileName(fileName_),
-                                                                          data(),
-                                                                          parsedData(){};
+        SeloggerLogParser(const std::string &inputDir_, const std::string &fileName_) : dirName(inputDir_),
+                                                                                        filePath(),
+                                                                                        fileName(fileName_),
+                                                                                        data(),
+                                                                                        parsedData(){};
 
         std::string getDirName()
         {
@@ -48,16 +48,16 @@ namespace POLDAM
         std::string readNextStream();
 
     private:
-        void readFile(const std::string fileName, std::vector<std::string> &data) override;
+        void readFile(const std::string &fileName, std::vector<std::string> &data) override;
         void parseReadlines(std::vector<std::string> &data) override;
-        void dirTraversal(std::string fileName) override;
+        void dirTraversal(const std::string &fileName) override;
 
         /**
          * @brief parseLine() return the SELOGGER_LOG that is interpreted data of given argument. this function is called in void paserLine()
          * @param std::string line. One of the elem of this -> data.
          * @return SELOGGER_LOG
          */
-        void parseLine(const std::string line) override;
+        void parseLine(const std::string &line) override;
 
         bool isTargetFile(const std::string fileName);
 

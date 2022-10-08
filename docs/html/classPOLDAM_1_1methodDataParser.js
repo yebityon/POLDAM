@@ -1,18 +1,18 @@
-var classPOLDAM_1_1methodDataParser =
+var classPOLDAM_1_1MethodDataParser =
 [
-    [ "methodDataParser", "classPOLDAM_1_1methodDataParser.html#a8573aa83a0eda0a4231a1021d3df57b0", null ],
-    [ "dirTraversal", "classPOLDAM_1_1methodDataParser.html#aa6f0b6c6ba32f0e986ad367160aa64ac", null ],
-    [ "getData", "classPOLDAM_1_1methodDataParser.html#a2c3e026827b5cd819064a5da0e925ac0", null ],
-    [ "getParsedData", "classPOLDAM_1_1methodDataParser.html#a491586480f6b96ba02d8693332220b14", null ],
-    [ "isTargetFile", "classPOLDAM_1_1methodDataParser.html#a89b1ba50778e983224c589dc3b4ae564", null ],
-    [ "parseLine", "classPOLDAM_1_1methodDataParser.html#a41b0131b179e6386a0f73876729d74cf", null ],
-    [ "parseReadlines", "classPOLDAM_1_1methodDataParser.html#a8810dc6b90d67b35b3a9c4da6d1a39f5", null ],
-    [ "readFile", "classPOLDAM_1_1methodDataParser.html#a9fd2dd888885bb38c41ba970c7ac72f8", null ],
-    [ "data", "classPOLDAM_1_1methodDataParser.html#a9b3e5e201faede67d2348063d9022733", null ],
-    [ "dirName", "classPOLDAM_1_1methodDataParser.html#ad41afeecfeed768133e6acd553bc3be7", null ],
-    [ "fileName", "classPOLDAM_1_1methodDataParser.html#ac433a06a7ed6d57da041a2f7c9073a21", null ],
-    [ "filePath", "classPOLDAM_1_1methodDataParser.html#a7bda37a433731141824084baaef7747d", null ],
-    [ "hasHeaderData", "classPOLDAM_1_1methodDataParser.html#a0c6d6216fa9827b6b3331546f6fc3c4a", null ],
-    [ "parsedData", "classPOLDAM_1_1methodDataParser.html#a3776cbd05729f66a9ec8a3ce71939dc7", null ],
-    [ "targetFileNames", "classPOLDAM_1_1methodDataParser.html#a90fcedb6974563b8867aa2f5a4065578", null ]
+    [ "MethodDataParser", "classPOLDAM_1_1MethodDataParser.html#a7a7f8d5e1317de6031319bbbf9f24ca1", null ],
+    [ "dirTraversal", "classPOLDAM_1_1MethodDataParser.html#afeff96aaeca89dadeaa008d383c3dbf8", null ],
+    [ "getData", "classPOLDAM_1_1MethodDataParser.html#a75915c7c9e3a619a6d902066943b0678", null ],
+    [ "getParsedData", "classPOLDAM_1_1MethodDataParser.html#a12171df6a4a77417b9b368a3b19d078d", null ],
+    [ "isTargetFile", "classPOLDAM_1_1MethodDataParser.html#a3d6ab394bb7eb9600aa5df9feb05a16c", null ],
+    [ "parseLine", "classPOLDAM_1_1MethodDataParser.html#ab843ae4e9ab9e8a27d7817469b337f02", null ],
+    [ "parseReadlines", "classPOLDAM_1_1MethodDataParser.html#adc06643a473bc34d12505d8561201ea6", null ],
+    [ "readFile", "classPOLDAM_1_1MethodDataParser.html#aa637264f45f2e2fdcbd99133be5007ae", null ],
+    [ "data", "classPOLDAM_1_1MethodDataParser.html#ad552644f8b2e621a8561b6cf77b1a2d5", null ],
+    [ "dirName", "classPOLDAM_1_1MethodDataParser.html#a5948efdf250f99f3788cc8d8a33e3510", null ],
+    [ "fileName", "classPOLDAM_1_1MethodDataParser.html#aab7ec96473ce8071d8b2f79e96dbb45b", null ],
+    [ "filePath", "classPOLDAM_1_1MethodDataParser.html#a126a5ed41dd2c357644a24884f672fde", null ],
+    [ "hasHeaderData", "classPOLDAM_1_1MethodDataParser.html#a8b2fd5257ba3465005a417bc7174c3dc", null ],
+    [ "parsedData", "classPOLDAM_1_1MethodDataParser.html#a002d5f6f675159a0dc562bc2e506ab55", null ],
+    [ "targetFileNames", "classPOLDAM_1_1MethodDataParser.html#a35e5ac5e9cbadcdb95868469ee5feddd", null ]
 ];

@@ -1,8 +1,8 @@
-<map id="POLDAM::fileReader" name="POLDAM::fileReader">
-<area shape="rect" id="node1" title=" " alt="" coords="5,107,147,133"/>
-<area shape="rect" id="node2" href="$classPOLDAM_1_1ObjectfileParser.html" title=" " alt="" coords="204,5,380,32"/>
-<area shape="rect" id="node3" href="$classPOLDAM_1_1classesDataParser.html" title=" " alt="" coords="195,56,389,83"/>
-<area shape="rect" id="node4" href="$classPOLDAM_1_1dataidsParser.html" title=" " alt="" coords="210,107,374,133"/>
-<area shape="rect" id="node5" href="$classPOLDAM_1_1methodDataParser.html" title=" " alt="" coords="196,157,388,184"/>
-<area shape="rect" id="node6" href="$classPOLDAM_1_1seloggerLogParser.html" title=" " alt="" coords="195,208,389,235"/>
+<map id="POLDAM::FileReader" name="POLDAM::FileReader">
+<area shape="rect" id="node1" title=" " alt="" coords="5,107,152,133"/>
+<area shape="rect" id="node2" href="$classPOLDAM_1_1ClassesDataParser.html" title=" " alt="" coords="200,5,396,32"/>
+<area shape="rect" id="node3" href="$classPOLDAM_1_1DataIdsParser.html" title=" " alt="" coords="215,56,381,83"/>
+<area shape="rect" id="node4" href="$classPOLDAM_1_1MethodDataParser.html" title=" " alt="" coords="202,107,394,133"/>
+<area shape="rect" id="node5" href="$classPOLDAM_1_1ObjectfileParser.html" title=" " alt="" coords="210,157,386,184"/>
+<area shape="rect" id="node6" href="$classPOLDAM_1_1SeloggerLogParser.html" title=" " alt="" coords="201,208,395,235"/>
 </map>

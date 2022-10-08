@@ -19,7 +19,7 @@ namespace POLDAM
          * @param std:;stri
          * @return void.
          */
-        virtual void readFile(const std::string fileName, std::vector<std::string> &data) = 0;
+        virtual void readFile(const std::string &fileName, std::vector<std::string> &data) = 0;
 
         /**
          * @brief parse and iterate this -> data.
@@ -30,13 +30,13 @@ namespace POLDAM
         /**
          * @brief delegate function. this fucntion will be called in parseReadlines function, and access to this method.
          */
-        virtual void parseLine(const std::string line) = 0;
+        virtual void parseLine(const std::string &line) = 0;
 
         /**
          * @brief iterate target Directory to look up target file. Please note there may be more than one target file.
          * @param targetDir
          */
-        virtual void dirTraversal(const std::string targetDir) = 0;
+        virtual void dirTraversal(const std::string &targetDir) = 0;
     };
 
 }

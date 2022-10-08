@@ -2,7 +2,7 @@
 
 namespace POLDAM
 {
-    void MethodDataParser::readFile(const std::string filePath, std::vector<std::string> &data)
+    void MethodDataParser::readFile(const std::string &filePath, std::vector<std::string> &data)
     {
         std::ifstream fileStream;
 
@@ -41,10 +41,10 @@ namespace POLDAM
         }
     }
 
-    void MethodDataParser::parseLine(std::string line)
+    void MethodDataParser::parseLine(const std::string &line)
     {
         MethodsData m;
-        const auto parsedline = POLDAM_UTIL::parse(line);
+        const auto parsedline = POLDAM_UTIL::split(line, ',');
         assert(parsedline.size() == 8);
 
         m.classId = static_cast<unsigned int>(std::stoi(parsedline[0]));
@@ -60,7 +60,7 @@ namespace POLDAM
     }
 
     // TODO: move this fucntion to base class, all you need to do is just desginate fileName in base class.
-    void MethodDataParser::dirTraversal(std::string dirName)
+    void MethodDataParser::dirTraversal(const std::string &dirName)
     {
         for (const std::filesystem::directory_entry &i : std::filesystem::directory_iterator(dirName))
         {

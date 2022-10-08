@@ -113,8 +113,8 @@ POLDAM::SeloggerLogParser 連携図</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
-<tr class="memitem:afdeb6f440cfd0b3d1a242780e93b1cd7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1SeloggerLogParser.html#afdeb6f440cfd0b3d1a242780e93b1cd7">SeloggerLogParser</a> (std::string inputDir_, std::string fileName_)</td></tr>
-<tr class="separator:afdeb6f440cfd0b3d1a242780e93b1cd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a709c4127b410b30fee74ed31e266a5bc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1SeloggerLogParser.html#a709c4127b410b30fee74ed31e266a5bc">SeloggerLogParser</a> (const std::string &amp;inputDir_, const std::string &amp;fileName_)</td></tr>
+<tr class="separator:a709c4127b410b30fee74ed31e266a5bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf723d6848749b6eb59f06abe3493394"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1SeloggerLogParser.html#adf723d6848749b6eb59f06abe3493394">getDirName</a> ()</td></tr>
 <tr class="separator:adf723d6848749b6eb59f06abe3493394"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a42a355eed5396527b175bbf695899e11"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1SeloggerLogParser.html#a42a355eed5396527b175bbf695899e11">getData</a> ()</td></tr>
@@ -122,23 +122,23 @@ POLDAM::SeloggerLogParser 連携図</div>
 <tr class="memitem:a37fd522276b1f758712d453a53534931"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structPOLDAM_1_1SeloggerData.html">SeloggerData</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1SeloggerLogParser.html#a37fd522276b1f758712d453a53534931">getParserdData</a> ()</td></tr>
 <tr class="separator:a37fd522276b1f758712d453a53534931"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c6304d763d9e1154e4a7a50e1bd5b2c"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1SeloggerLogParser.html#a8c6304d763d9e1154e4a7a50e1bd5b2c">readNextStream</a> ()</td></tr>
-<tr class="memdesc:a8c6304d763d9e1154e4a7a50e1bd5b2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">read next stream and store the data to this -&gt; currentBuffer. Please note seloggerLog might contain large data. You should use this fucntion instead of <a class="el" href="classPOLDAM_1_1SeloggerLogParser.html#ae9da199faea5cfdd86d0f8e9e40362a6" title="open the fileName and read data. this-&gt;data has these data. Please NOTE: This Strategy might be not e...">readFile()</a>.  <a href="classPOLDAM_1_1SeloggerLogParser.html#a8c6304d763d9e1154e4a7a50e1bd5b2c">[詳解]</a><br /></td></tr>
+<tr class="memdesc:a8c6304d763d9e1154e4a7a50e1bd5b2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">read next stream and store the data to this -&gt; currentBuffer. Please note seloggerLog might contain large data. You should use this fucntion instead of <a class="el" href="classPOLDAM_1_1SeloggerLogParser.html#aa8915a7fe9d9b00d22d3e4193a834e64" title="open the fileName and read data. this-&gt;data has these data. Please NOTE: This Strategy might be not e...">readFile()</a>.  <a href="classPOLDAM_1_1SeloggerLogParser.html#a8c6304d763d9e1154e4a7a50e1bd5b2c">[詳解]</a><br /></td></tr>
 <tr class="separator:a8c6304d763d9e1154e4a7a50e1bd5b2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 非公開メンバ関数</h2></td></tr>
-<tr class="memitem:ae9da199faea5cfdd86d0f8e9e40362a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1SeloggerLogParser.html#ae9da199faea5cfdd86d0f8e9e40362a6">readFile</a> (const std::string <a class="el" href="classPOLDAM_1_1SeloggerLogParser.html#aa3735ea8ca09217a4f80dd13ada35584">fileName</a>, std::vector&lt; std::string &gt; &amp;<a class="el" href="classPOLDAM_1_1SeloggerLogParser.html#a17869f2691c21e13e54e50f873d23dfd">data</a>) override</td></tr>
-<tr class="memdesc:ae9da199faea5cfdd86d0f8e9e40362a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">open the fileName and read data. this-&gt;data has these data. Please NOTE: This Strategy might be not efficient, you need to hold raw string data and transforemed data. It consumes 2 * sizeof(filedata).  <a href="classPOLDAM_1_1SeloggerLogParser.html#ae9da199faea5cfdd86d0f8e9e40362a6">[詳解]</a><br /></td></tr>
-<tr class="separator:ae9da199faea5cfdd86d0f8e9e40362a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8915a7fe9d9b00d22d3e4193a834e64"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1SeloggerLogParser.html#aa8915a7fe9d9b00d22d3e4193a834e64">readFile</a> (const std::string &amp;<a class="el" href="classPOLDAM_1_1SeloggerLogParser.html#aa3735ea8ca09217a4f80dd13ada35584">fileName</a>, std::vector&lt; std::string &gt; &amp;<a class="el" href="classPOLDAM_1_1SeloggerLogParser.html#a17869f2691c21e13e54e50f873d23dfd">data</a>) override</td></tr>
+<tr class="memdesc:aa8915a7fe9d9b00d22d3e4193a834e64"><td class="mdescLeft">&#160;</td><td class="mdescRight">open the fileName and read data. this-&gt;data has these data. Please NOTE: This Strategy might be not efficient, you need to hold raw string data and transforemed data. It consumes 2 * sizeof(filedata).  <a href="classPOLDAM_1_1SeloggerLogParser.html#aa8915a7fe9d9b00d22d3e4193a834e64">[詳解]</a><br /></td></tr>
+<tr class="separator:aa8915a7fe9d9b00d22d3e4193a834e64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8c60579fc24e4fe4741d9a806de3c87"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1SeloggerLogParser.html#ab8c60579fc24e4fe4741d9a806de3c87">parseReadlines</a> (std::vector&lt; std::string &gt; &amp;<a class="el" href="classPOLDAM_1_1SeloggerLogParser.html#a17869f2691c21e13e54e50f873d23dfd">data</a>) override</td></tr>
 <tr class="memdesc:ab8c60579fc24e4fe4741d9a806de3c87"><td class="mdescLeft">&#160;</td><td class="mdescRight">parse and iterate this -&gt; data.  <a href="classPOLDAM_1_1SeloggerLogParser.html#ab8c60579fc24e4fe4741d9a806de3c87">[詳解]</a><br /></td></tr>
 <tr class="separator:ab8c60579fc24e4fe4741d9a806de3c87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9099c88625e5a03f85e2a1d5e8e68cfc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1SeloggerLogParser.html#a9099c88625e5a03f85e2a1d5e8e68cfc">dirTraversal</a> (std::string <a class="el" href="classPOLDAM_1_1SeloggerLogParser.html#aa3735ea8ca09217a4f80dd13ada35584">fileName</a>) override</td></tr>
-<tr class="memdesc:a9099c88625e5a03f85e2a1d5e8e68cfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">iterate target Directory to look up target file. Please note there may be more than one target file.  <a href="classPOLDAM_1_1SeloggerLogParser.html#a9099c88625e5a03f85e2a1d5e8e68cfc">[詳解]</a><br /></td></tr>
-<tr class="separator:a9099c88625e5a03f85e2a1d5e8e68cfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa7eefee90c0a670d6c9b506b45f1b318"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1SeloggerLogParser.html#aa7eefee90c0a670d6c9b506b45f1b318">parseLine</a> (const std::string line) override</td></tr>
-<tr class="memdesc:aa7eefee90c0a670d6c9b506b45f1b318"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classPOLDAM_1_1SeloggerLogParser.html#aa7eefee90c0a670d6c9b506b45f1b318" title="parseLine() return the SELOGGER_LOG that is interpreted data of given argument. this function is call...">parseLine()</a> return the SELOGGER_LOG that is interpreted data of given argument. this function is called in void paserLine()  <a href="classPOLDAM_1_1SeloggerLogParser.html#aa7eefee90c0a670d6c9b506b45f1b318">[詳解]</a><br /></td></tr>
-<tr class="separator:aa7eefee90c0a670d6c9b506b45f1b318"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1913ca7651ce593301c6d80c581a82d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1SeloggerLogParser.html#a1913ca7651ce593301c6d80c581a82d0">dirTraversal</a> (const std::string &amp;<a class="el" href="classPOLDAM_1_1SeloggerLogParser.html#aa3735ea8ca09217a4f80dd13ada35584">fileName</a>) override</td></tr>
+<tr class="memdesc:a1913ca7651ce593301c6d80c581a82d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">iterate target Directory to look up target file. Please note there may be more than one target file.  <a href="classPOLDAM_1_1SeloggerLogParser.html#a1913ca7651ce593301c6d80c581a82d0">[詳解]</a><br /></td></tr>
+<tr class="separator:a1913ca7651ce593301c6d80c581a82d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad51c902261b1f51d3e9760b9146fa6fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1SeloggerLogParser.html#ad51c902261b1f51d3e9760b9146fa6fb">parseLine</a> (const std::string &amp;line) override</td></tr>
+<tr class="memdesc:ad51c902261b1f51d3e9760b9146fa6fb"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classPOLDAM_1_1SeloggerLogParser.html#ad51c902261b1f51d3e9760b9146fa6fb" title="parseLine() return the SELOGGER_LOG that is interpreted data of given argument. this function is call...">parseLine()</a> return the SELOGGER_LOG that is interpreted data of given argument. this function is called in void paserLine()  <a href="classPOLDAM_1_1SeloggerLogParser.html#ad51c902261b1f51d3e9760b9146fa6fb">[詳解]</a><br /></td></tr>
+<tr class="separator:ad51c902261b1f51d3e9760b9146fa6fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1091c357b2c19d5e48df4ecb566005c8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1SeloggerLogParser.html#a1091c357b2c19d5e48df4ecb566005c8">isTargetFile</a> (const std::string <a class="el" href="classPOLDAM_1_1SeloggerLogParser.html#aa3735ea8ca09217a4f80dd13ada35584">fileName</a>)</td></tr>
 <tr class="separator:a1091c357b2c19d5e48df4ecb566005c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -159,8 +159,8 @@ POLDAM::SeloggerLogParser 連携図</div>
 <div class="textblock">
 <p class="definition"> <a class="el" href="selogger__log_8h_source.html">selogger_log.h</a> の <a class="el" href="selogger__log_8h_source.html#l00016">16</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">構築子と解体子</h2>
-<a id="afdeb6f440cfd0b3d1a242780e93b1cd7" name="afdeb6f440cfd0b3d1a242780e93b1cd7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afdeb6f440cfd0b3d1a242780e93b1cd7">&#9670;&nbsp;</a></span>SeloggerLogParser()</h2>
+<a id="a709c4127b410b30fee74ed31e266a5bc" name="a709c4127b410b30fee74ed31e266a5bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a709c4127b410b30fee74ed31e266a5bc">&#9670;&nbsp;</a></span>SeloggerLogParser()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -171,13 +171,13 @@ POLDAM::SeloggerLogParser 連携図</div>
         <tr>
           <td class="memname">POLDAM::SeloggerLogParser::SeloggerLogParser </td>
           <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>inputDir_</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::string&#160;</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>fileName_</em>&#160;</td>
         </tr>
         <tr>
@@ -198,8 +198,8 @@ POLDAM::SeloggerLogParser 連携図</div>
 </div>
 </div>
 <h2 class="groupheader">関数詳解</h2>
-<a id="a9099c88625e5a03f85e2a1d5e8e68cfc" name="a9099c88625e5a03f85e2a1d5e8e68cfc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9099c88625e5a03f85e2a1d5e8e68cfc">&#9670;&nbsp;</a></span>dirTraversal()</h2>
+<a id="a1913ca7651ce593301c6d80c581a82d0" name="a1913ca7651ce593301c6d80c581a82d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1913ca7651ce593301c6d80c581a82d0">&#9670;&nbsp;</a></span>dirTraversal()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -210,7 +210,7 @@ POLDAM::SeloggerLogParser 連携図</div>
         <tr>
           <td class="memname">void POLDAM::SeloggerLogParser::dirTraversal </td>
           <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>targetDir</em></td><td>)</td>
           <td></td>
         </tr>
@@ -230,7 +230,7 @@ POLDAM::SeloggerLogParser 連携図</div>
   </dd>
 </dl>
 
-<p><a class="el" href="classPOLDAM_1_1FileReader.html#a1eeba75555abddcd84888cc19d52320c">POLDAM::FileReader</a>を実装しています。</p>
+<p><a class="el" href="classPOLDAM_1_1FileReader.html#afb02cbbd1b41a893dd71e05e99d5b8bc">POLDAM::FileReader</a>を実装しています。</p>
 
 <p class="definition"> <a class="el" href="selogger__log_8cpp_source.html">selogger_log.cpp</a> の <a class="el" href="selogger__log_8cpp_source.html#l00056">56</a> 行目に定義があります。</p>
 
@@ -343,8 +343,8 @@ POLDAM::SeloggerLogParser 連携図</div>
 
 </div>
 </div>
-<a id="aa7eefee90c0a670d6c9b506b45f1b318" name="aa7eefee90c0a670d6c9b506b45f1b318"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa7eefee90c0a670d6c9b506b45f1b318">&#9670;&nbsp;</a></span>parseLine()</h2>
+<a id="ad51c902261b1f51d3e9760b9146fa6fb" name="ad51c902261b1f51d3e9760b9146fa6fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad51c902261b1f51d3e9760b9146fa6fb">&#9670;&nbsp;</a></span>parseLine()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -355,7 +355,7 @@ POLDAM::SeloggerLogParser 連携図</div>
         <tr>
           <td class="memname">void POLDAM::SeloggerLogParser::parseLine </td>
           <td>(</td>
-          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>line</em></td><td>)</td>
           <td></td>
         </tr>
@@ -367,7 +367,7 @@ POLDAM::SeloggerLogParser 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="classPOLDAM_1_1SeloggerLogParser.html#aa7eefee90c0a670d6c9b506b45f1b318" title="parseLine() return the SELOGGER_LOG that is interpreted data of given argument. this function is call...">parseLine()</a> return the SELOGGER_LOG that is interpreted data of given argument. this function is called in void paserLine() </p>
+<p><a class="el" href="classPOLDAM_1_1SeloggerLogParser.html#ad51c902261b1f51d3e9760b9146fa6fb" title="parseLine() return the SELOGGER_LOG that is interpreted data of given argument. this function is call...">parseLine()</a> return the SELOGGER_LOG that is interpreted data of given argument. this function is called in void paserLine() </p>
 <dl class="params"><dt>引数</dt><dd>
   <table class="params">
     <tr><td class="paramname">std::string</td><td>line. One of the elem of this -&gt; data. </td></tr>
@@ -376,7 +376,7 @@ POLDAM::SeloggerLogParser 連携図</div>
 </dl>
 <dl class="section return"><dt>戻り値</dt><dd>SELOGGER_LOG </dd></dl>
 
-<p><a class="el" href="classPOLDAM_1_1FileReader.html#a4c40eea2d9ceb3f306212e1f0ed30918">POLDAM::FileReader</a>を実装しています。</p>
+<p><a class="el" href="classPOLDAM_1_1FileReader.html#a4f724a7b7475b52ff521c733aa547001">POLDAM::FileReader</a>を実装しています。</p>
 
 <p class="definition"> <a class="el" href="selogger__log_8cpp_source.html">selogger_log.cpp</a> の <a class="el" href="selogger__log_8cpp_source.html#l00041">41</a> 行目に定義があります。</p>
 
@@ -414,8 +414,8 @@ POLDAM::SeloggerLogParser 連携図</div>
 
 </div>
 </div>
-<a id="ae9da199faea5cfdd86d0f8e9e40362a6" name="ae9da199faea5cfdd86d0f8e9e40362a6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae9da199faea5cfdd86d0f8e9e40362a6">&#9670;&nbsp;</a></span>readFile()</h2>
+<a id="aa8915a7fe9d9b00d22d3e4193a834e64" name="aa8915a7fe9d9b00d22d3e4193a834e64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8915a7fe9d9b00d22d3e4193a834e64">&#9670;&nbsp;</a></span>readFile()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -426,7 +426,7 @@ POLDAM::SeloggerLogParser 連携図</div>
         <tr>
           <td class="memname">void POLDAM::SeloggerLogParser::readFile </td>
           <td>(</td>
-          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>fileName</em>, </td>
         </tr>
         <tr>
@@ -457,7 +457,7 @@ POLDAM::SeloggerLogParser 連携図</div>
 </dl>
 <dl class="section return"><dt>戻り値</dt><dd>void. </dd></dl>
 
-<p><a class="el" href="classPOLDAM_1_1FileReader.html#afda57ecf9770e8c299d09be77f1ea89c">POLDAM::FileReader</a>を実装しています。</p>
+<p><a class="el" href="classPOLDAM_1_1FileReader.html#ab09559b1d7024a5fbe663a704b4aa5cd">POLDAM::FileReader</a>を実装しています。</p>
 
 <p class="definition"> <a class="el" href="selogger__log_8cpp_source.html">selogger_log.cpp</a> の <a class="el" href="selogger__log_8cpp_source.html#l00006">6</a> 行目に定義があります。</p>
 
@@ -478,7 +478,7 @@ POLDAM::SeloggerLogParser 連携図</div>
       </table>
 </div><div class="memdoc">
 
-<p>read next stream and store the data to this -&gt; currentBuffer. Please note seloggerLog might contain large data. You should use this fucntion instead of <a class="el" href="classPOLDAM_1_1SeloggerLogParser.html#ae9da199faea5cfdd86d0f8e9e40362a6" title="open the fileName and read data. this-&gt;data has these data. Please NOTE: This Strategy might be not e...">readFile()</a>. </p>
+<p>read next stream and store the data to this -&gt; currentBuffer. Please note seloggerLog might contain large data. You should use this fucntion instead of <a class="el" href="classPOLDAM_1_1SeloggerLogParser.html#aa8915a7fe9d9b00d22d3e4193a834e64" title="open the fileName and read data. this-&gt;data has these data. Please NOTE: This Strategy might be not e...">readFile()</a>. </p>
 <dl class="section return"><dt>戻り値</dt><dd>std::string return this-&gt; current bugfer </dd></dl>
 
 </div>

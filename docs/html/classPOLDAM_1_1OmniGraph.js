@@ -4,7 +4,7 @@ var classPOLDAM_1_1OmniGraph =
     [ "addOmniVertex", "classPOLDAM_1_1OmniGraph.html#add3843fe336ad17aace4e3b29579a160", null ],
     [ "addOmniVertexDesc", "classPOLDAM_1_1OmniGraph.html#a775f4c3a5843f019e428ab681c8cf77c", null ],
     [ "computeDiffGraph", "classPOLDAM_1_1OmniGraph.html#ac8dd73c9cb97aa448ae50cd37e4ed665", null ],
-    [ "computeDiffGraphBeta", "classPOLDAM_1_1OmniGraph.html#ab9c98590e8caf6e9c4357ef9a5751f77", null ],
+    [ "computeDiffGraphBeta", "classPOLDAM_1_1OmniGraph.html#ad7807d8f5cd90951daec7b829b2bcf58", null ],
     [ "computeFlowHash", "classPOLDAM_1_1OmniGraph.html#a20ddd1c1d3b6acb2f1465f25bc8f8bd4", null ],
     [ "computeHash", "classPOLDAM_1_1OmniGraph.html#ab5dc3a6d921e15c9c0731922bc53c7b6", null ],
     [ "computeParamHash", "classPOLDAM_1_1OmniGraph.html#a55146795d7c186539535e608096aad0a", null ],

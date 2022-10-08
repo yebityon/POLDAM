@@ -1,7 +1,6 @@
 var poldam__util_8h =
 [
-    [ "parse", "poldam__util_8h.html#ab12f26ce0829989968645e176c6427ae", null ],
-    [ "split", "poldam__util_8h.html#a519f9e9318fe896f0155532a0a3e3e28", null ],
+    [ "split", "poldam__util_8h.html#a1a98ad44834522e34dee7cb9195f3489", null ],
     [ "POLDAM_ERROR_PRINT_SUFFIX", "poldam__util_8h.html#abf66ef525f1dcbb30393e2c72ec5bc8f", null ],
     [ "POLDAM_PRINT_SUFFIX", "poldam__util_8h.html#a721040e9f2b18517e1ff4fa7c684651c", null ]
 ];

@@ -113,31 +113,31 @@ POLDAM::ObjectfileParser 連携図</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
-<tr class="memitem:ab733222e7afc27c4e3bd1ddd171a84ac"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1ObjectfileParser.html#ab733222e7afc27c4e3bd1ddd171a84ac">ObjectfileParser</a> (std::string inputDir_)</td></tr>
-<tr class="separator:ab733222e7afc27c4e3bd1ddd171a84ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b474d26759578a0048bdb106ad4768b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1ObjectfileParser.html#a3b474d26759578a0048bdb106ad4768b">ObjectfileParser</a> (const std::string &amp;inputDir_)</td></tr>
+<tr class="separator:a3b474d26759578a0048bdb106ad4768b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac781644edb355d0fddeeb83998c40392"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structPOLDAM_1_1ObjectData.html">ObjectData</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1ObjectfileParser.html#ac781644edb355d0fddeeb83998c40392">getParsedData</a> ()</td></tr>
 <tr class="separator:ac781644edb355d0fddeeb83998c40392"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 非公開メンバ関数</h2></td></tr>
-<tr class="memitem:a0f266c1db909ceb37deb3c1c7bad87bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1ObjectfileParser.html#a0f266c1db909ceb37deb3c1c7bad87bc">readFile</a> (const std::string filePath, std::vector&lt; std::string &gt; &amp;data) override</td></tr>
-<tr class="memdesc:a0f266c1db909ceb37deb3c1c7bad87bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">open the fileName and read data. this-&gt;data has these data. Please NOTE: This Strategy might be not efficient, you need to hold raw string data and transforemed data. It consumes 2 * sizeof(filedata).  <a href="classPOLDAM_1_1ObjectfileParser.html#a0f266c1db909ceb37deb3c1c7bad87bc">[詳解]</a><br /></td></tr>
-<tr class="separator:a0f266c1db909ceb37deb3c1c7bad87bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af464a8f79a217436e14653e12951ce2b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1ObjectfileParser.html#af464a8f79a217436e14653e12951ce2b">readFile</a> (const std::string &amp;filePath, std::vector&lt; std::string &gt; &amp;data) override</td></tr>
+<tr class="memdesc:af464a8f79a217436e14653e12951ce2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">open the fileName and read data. this-&gt;data has these data. Please NOTE: This Strategy might be not efficient, you need to hold raw string data and transforemed data. It consumes 2 * sizeof(filedata).  <a href="classPOLDAM_1_1ObjectfileParser.html#af464a8f79a217436e14653e12951ce2b">[詳解]</a><br /></td></tr>
+<tr class="separator:af464a8f79a217436e14653e12951ce2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb8ba4fdb7e79aa1d35dbbc326f26a26"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1ObjectfileParser.html#acb8ba4fdb7e79aa1d35dbbc326f26a26">parseReadlines</a> (std::vector&lt; std::string &gt; &amp;data) override</td></tr>
 <tr class="memdesc:acb8ba4fdb7e79aa1d35dbbc326f26a26"><td class="mdescLeft">&#160;</td><td class="mdescRight">parse and iterate this -&gt; data.  <a href="classPOLDAM_1_1ObjectfileParser.html#acb8ba4fdb7e79aa1d35dbbc326f26a26">[詳解]</a><br /></td></tr>
 <tr class="separator:acb8ba4fdb7e79aa1d35dbbc326f26a26"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:addcda5654bc65e1b544bb742e43a656f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1ObjectfileParser.html#addcda5654bc65e1b544bb742e43a656f">dirTraversal</a> (std::string fileName) override</td></tr>
-<tr class="memdesc:addcda5654bc65e1b544bb742e43a656f"><td class="mdescLeft">&#160;</td><td class="mdescRight">iterate target Directory to look up target file. Please note there may be more than one target file.  <a href="classPOLDAM_1_1ObjectfileParser.html#addcda5654bc65e1b544bb742e43a656f">[詳解]</a><br /></td></tr>
-<tr class="separator:addcda5654bc65e1b544bb742e43a656f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bbf8a383f631aae07c4e80fd4138a40"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1ObjectfileParser.html#a7bbf8a383f631aae07c4e80fd4138a40">dirTraversal</a> (const std::string &amp;fileName) override</td></tr>
+<tr class="memdesc:a7bbf8a383f631aae07c4e80fd4138a40"><td class="mdescLeft">&#160;</td><td class="mdescRight">iterate target Directory to look up target file. Please note there may be more than one target file.  <a href="classPOLDAM_1_1ObjectfileParser.html#a7bbf8a383f631aae07c4e80fd4138a40">[詳解]</a><br /></td></tr>
+<tr class="separator:a7bbf8a383f631aae07c4e80fd4138a40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ebfc41f32e05e07c763deea6f6f835e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1ObjectfileParser.html#a4ebfc41f32e05e07c763deea6f6f835e">setObjectfileType</a> (std::string <a class="el" href="classPOLDAM_1_1ObjectfileParser.html#a6fcc90c8c429619d7485ddd3a349601b">fileType</a>)</td></tr>
 <tr class="separator:a4ebfc41f32e05e07c763deea6f6f835e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf50213a995cf40a0fdb2bc8689139f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1ObjectfileParser.html#aaf50213a995cf40a0fdb2bc8689139f9">parseLine</a> (std::string line) override</td></tr>
-<tr class="memdesc:aaf50213a995cf40a0fdb2bc8689139f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">delegate function. this fucntion will be called in parseReadlines function, and access to this method.  <a href="classPOLDAM_1_1ObjectfileParser.html#aaf50213a995cf40a0fdb2bc8689139f9">[詳解]</a><br /></td></tr>
-<tr class="separator:aaf50213a995cf40a0fdb2bc8689139f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acec61d93b5d22ee206929c2225e0dda9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1ObjectfileParser.html#acec61d93b5d22ee206929c2225e0dda9">parseLogTypesLine</a> (std::string line)</td></tr>
-<tr class="separator:acec61d93b5d22ee206929c2225e0dda9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40b8485a37ca1fa0eb12a355f31b861d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1ObjectfileParser.html#a40b8485a37ca1fa0eb12a355f31b861d">parseStringLine</a> (std::string line)</td></tr>
-<tr class="separator:a40b8485a37ca1fa0eb12a355f31b861d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af839ab815b2e22d9bea632eb8e723939"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1ObjectfileParser.html#af839ab815b2e22d9bea632eb8e723939">parseLine</a> (const std::string &amp;line) override</td></tr>
+<tr class="memdesc:af839ab815b2e22d9bea632eb8e723939"><td class="mdescLeft">&#160;</td><td class="mdescRight">delegate function. this fucntion will be called in parseReadlines function, and access to this method.  <a href="classPOLDAM_1_1ObjectfileParser.html#af839ab815b2e22d9bea632eb8e723939">[詳解]</a><br /></td></tr>
+<tr class="separator:af839ab815b2e22d9bea632eb8e723939"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65b0bf44b999b171a23956ebbfcbdf50"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1ObjectfileParser.html#a65b0bf44b999b171a23956ebbfcbdf50">parseLogTypesLine</a> (const std::string &amp;line)</td></tr>
+<tr class="separator:a65b0bf44b999b171a23956ebbfcbdf50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2567166d5968ba455112b7771ea34b5b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1ObjectfileParser.html#a2567166d5968ba455112b7771ea34b5b">parseStringLine</a> (const std::string &amp;line)</td></tr>
+<tr class="separator:a2567166d5968ba455112b7771ea34b5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae94b1e7f03b7992f209b242e0ad6782"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1ObjectfileParser.html#aae94b1e7f03b7992f209b242e0ad6782">accumulateObjectFile</a> ()</td></tr>
 <tr class="separator:aae94b1e7f03b7992f209b242e0ad6782"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b94a9cd04c000892cc746fa2b2c2dda"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1ObjectfileParser.html#a8b94a9cd04c000892cc746fa2b2c2dda">readObjectTypeData</a> ()</td></tr>
@@ -181,8 +181,8 @@ POLDAM::ObjectfileParser 連携図</div>
 <div class="textblock">
 <p class="definition"> <a class="el" href="object__file_8h_source.html">object_file.h</a> の <a class="el" href="object__file_8h_source.html#l00023">23</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">構築子と解体子</h2>
-<a id="ab733222e7afc27c4e3bd1ddd171a84ac" name="ab733222e7afc27c4e3bd1ddd171a84ac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab733222e7afc27c4e3bd1ddd171a84ac">&#9670;&nbsp;</a></span>ObjectfileParser()</h2>
+<a id="a3b474d26759578a0048bdb106ad4768b" name="a3b474d26759578a0048bdb106ad4768b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b474d26759578a0048bdb106ad4768b">&#9670;&nbsp;</a></span>ObjectfileParser()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -193,7 +193,7 @@ POLDAM::ObjectfileParser 連携図</div>
         <tr>
           <td class="memname">POLDAM::ObjectfileParser::ObjectfileParser </td>
           <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>inputDir_</em></td><td>)</td>
           <td></td>
         </tr>
@@ -237,8 +237,8 @@ POLDAM::ObjectfileParser 連携図</div>
 
 </div>
 </div>
-<a id="addcda5654bc65e1b544bb742e43a656f" name="addcda5654bc65e1b544bb742e43a656f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#addcda5654bc65e1b544bb742e43a656f">&#9670;&nbsp;</a></span>dirTraversal()</h2>
+<a id="a7bbf8a383f631aae07c4e80fd4138a40" name="a7bbf8a383f631aae07c4e80fd4138a40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bbf8a383f631aae07c4e80fd4138a40">&#9670;&nbsp;</a></span>dirTraversal()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -249,7 +249,7 @@ POLDAM::ObjectfileParser 連携図</div>
         <tr>
           <td class="memname">void POLDAM::ObjectfileParser::dirTraversal </td>
           <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>targetDir</em></td><td>)</td>
           <td></td>
         </tr>
@@ -269,7 +269,7 @@ POLDAM::ObjectfileParser 連携図</div>
   </dd>
 </dl>
 
-<p><a class="el" href="classPOLDAM_1_1FileReader.html#a1eeba75555abddcd84888cc19d52320c">POLDAM::FileReader</a>を実装しています。</p>
+<p><a class="el" href="classPOLDAM_1_1FileReader.html#afb02cbbd1b41a893dd71e05e99d5b8bc">POLDAM::FileReader</a>を実装しています。</p>
 
 <p class="definition"> <a class="el" href="object__file_8cpp_source.html">object_file.cpp</a> の <a class="el" href="object__file_8cpp_source.html#l00006">6</a> 行目に定義があります。</p>
 
@@ -302,8 +302,8 @@ POLDAM::ObjectfileParser 連携図</div>
 
 </div>
 </div>
-<a id="aaf50213a995cf40a0fdb2bc8689139f9" name="aaf50213a995cf40a0fdb2bc8689139f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaf50213a995cf40a0fdb2bc8689139f9">&#9670;&nbsp;</a></span>parseLine()</h2>
+<a id="af839ab815b2e22d9bea632eb8e723939" name="af839ab815b2e22d9bea632eb8e723939"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af839ab815b2e22d9bea632eb8e723939">&#9670;&nbsp;</a></span>parseLine()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -314,7 +314,7 @@ POLDAM::ObjectfileParser 連携図</div>
         <tr>
           <td class="memname">void POLDAM::ObjectfileParser::parseLine </td>
           <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>line</em></td><td>)</td>
           <td></td>
         </tr>
@@ -328,14 +328,14 @@ POLDAM::ObjectfileParser 連携図</div>
 
 <p>delegate function. this fucntion will be called in parseReadlines function, and access to this method. </p>
 
-<p><a class="el" href="classPOLDAM_1_1FileReader.html#a4c40eea2d9ceb3f306212e1f0ed30918">POLDAM::FileReader</a>を実装しています。</p>
+<p><a class="el" href="classPOLDAM_1_1FileReader.html#a4f724a7b7475b52ff521c733aa547001">POLDAM::FileReader</a>を実装しています。</p>
 
 <p class="definition"> <a class="el" href="object__file_8cpp_source.html">object_file.cpp</a> の <a class="el" href="object__file_8cpp_source.html#l00054">54</a> 行目に定義があります。</p>
 
 </div>
 </div>
-<a id="acec61d93b5d22ee206929c2225e0dda9" name="acec61d93b5d22ee206929c2225e0dda9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acec61d93b5d22ee206929c2225e0dda9">&#9670;&nbsp;</a></span>parseLogTypesLine()</h2>
+<a id="a65b0bf44b999b171a23956ebbfcbdf50" name="a65b0bf44b999b171a23956ebbfcbdf50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65b0bf44b999b171a23956ebbfcbdf50">&#9670;&nbsp;</a></span>parseLogTypesLine()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -346,7 +346,7 @@ POLDAM::ObjectfileParser 連携図</div>
         <tr>
           <td class="memname">void POLDAM::ObjectfileParser::parseLogTypesLine </td>
           <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>line</em></td><td>)</td>
           <td></td>
         </tr>
@@ -420,8 +420,8 @@ POLDAM::ObjectfileParser 連携図</div>
 
 </div>
 </div>
-<a id="a40b8485a37ca1fa0eb12a355f31b861d" name="a40b8485a37ca1fa0eb12a355f31b861d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a40b8485a37ca1fa0eb12a355f31b861d">&#9670;&nbsp;</a></span>parseStringLine()</h2>
+<a id="a2567166d5968ba455112b7771ea34b5b" name="a2567166d5968ba455112b7771ea34b5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2567166d5968ba455112b7771ea34b5b">&#9670;&nbsp;</a></span>parseStringLine()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -432,7 +432,7 @@ POLDAM::ObjectfileParser 連携図</div>
         <tr>
           <td class="memname">void POLDAM::ObjectfileParser::parseStringLine </td>
           <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>line</em></td><td>)</td>
           <td></td>
         </tr>
@@ -448,8 +448,8 @@ POLDAM::ObjectfileParser 連携図</div>
 
 </div>
 </div>
-<a id="a0f266c1db909ceb37deb3c1c7bad87bc" name="a0f266c1db909ceb37deb3c1c7bad87bc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0f266c1db909ceb37deb3c1c7bad87bc">&#9670;&nbsp;</a></span>readFile()</h2>
+<a id="af464a8f79a217436e14653e12951ce2b" name="af464a8f79a217436e14653e12951ce2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af464a8f79a217436e14653e12951ce2b">&#9670;&nbsp;</a></span>readFile()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -460,7 +460,7 @@ POLDAM::ObjectfileParser 連携図</div>
         <tr>
           <td class="memname">void POLDAM::ObjectfileParser::readFile </td>
           <td>(</td>
-          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>fileName</em>, </td>
         </tr>
         <tr>
@@ -491,7 +491,7 @@ POLDAM::ObjectfileParser 連携図</div>
 </dl>
 <dl class="section return"><dt>戻り値</dt><dd>void. </dd></dl>
 
-<p><a class="el" href="classPOLDAM_1_1FileReader.html#afda57ecf9770e8c299d09be77f1ea89c">POLDAM::FileReader</a>を実装しています。</p>
+<p><a class="el" href="classPOLDAM_1_1FileReader.html#ab09559b1d7024a5fbe663a704b4aa5cd">POLDAM::FileReader</a>を実装しています。</p>
 
 <p class="definition"> <a class="el" href="object__file_8cpp_source.html">object_file.cpp</a> の <a class="el" href="object__file_8cpp_source.html#l00027">27</a> 行目に定義があります。</p>
 

@@ -113,8 +113,8 @@ POLDAM::ClassesDataParser 連携図</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
-<tr class="memitem:aa679cf1a970b48ec6fb61bec6508990a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1ClassesDataParser.html#aa679cf1a970b48ec6fb61bec6508990a">ClassesDataParser</a> (std::string inputDir_, std::string fileName_=&quot;methods.txt&quot;, bool hasHeaderData_=false)</td></tr>
-<tr class="separator:aa679cf1a970b48ec6fb61bec6508990a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ae78c286bd67578ef82d2448fd6df1e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1ClassesDataParser.html#a6ae78c286bd67578ef82d2448fd6df1e">ClassesDataParser</a> (const std::string &amp;inputDir_, const std::string &amp;fileName_=&quot;methods.txt&quot;, bool hasHeaderData_=false)</td></tr>
+<tr class="separator:a6ae78c286bd67578ef82d2448fd6df1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf3550dd255c36d0c58af808fd54ba7f"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1ClassesDataParser.html#aaf3550dd255c36d0c58af808fd54ba7f">getData</a> ()</td></tr>
 <tr class="separator:aaf3550dd255c36d0c58af808fd54ba7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a283f26cd0aafb11a57b3b250ebf23210"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structPOLDAM_1_1ClassesData.html">ClassesData</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1ClassesDataParser.html#a283f26cd0aafb11a57b3b250ebf23210">getParsedData</a> ()</td></tr>
@@ -122,18 +122,18 @@ POLDAM::ClassesDataParser 連携図</div>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 非公開メンバ関数</h2></td></tr>
-<tr class="memitem:ad044e32280df3bf8ffa24c809607aaef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1ClassesDataParser.html#ad044e32280df3bf8ffa24c809607aaef">readFile</a> (const std::string <a class="el" href="classPOLDAM_1_1ClassesDataParser.html#acaf6956d0dcde2deba204bda5c6bdde0">filePath</a>, std::vector&lt; std::string &gt; &amp;<a class="el" href="classPOLDAM_1_1ClassesDataParser.html#a07af8a054569ca9d03789682c510ecc5">data</a>) override</td></tr>
-<tr class="memdesc:ad044e32280df3bf8ffa24c809607aaef"><td class="mdescLeft">&#160;</td><td class="mdescRight">open the fileName and read data. this-&gt;data has these data. Please NOTE: This Strategy might be not efficient, you need to hold raw string data and transforemed data. It consumes 2 * sizeof(filedata).  <a href="classPOLDAM_1_1ClassesDataParser.html#ad044e32280df3bf8ffa24c809607aaef">[詳解]</a><br /></td></tr>
-<tr class="separator:ad044e32280df3bf8ffa24c809607aaef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66f79adc9696334f09d8c8bef95748d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1ClassesDataParser.html#a66f79adc9696334f09d8c8bef95748d2">readFile</a> (const std::string &amp;<a class="el" href="classPOLDAM_1_1ClassesDataParser.html#acaf6956d0dcde2deba204bda5c6bdde0">filePath</a>, std::vector&lt; std::string &gt; &amp;<a class="el" href="classPOLDAM_1_1ClassesDataParser.html#a07af8a054569ca9d03789682c510ecc5">data</a>) override</td></tr>
+<tr class="memdesc:a66f79adc9696334f09d8c8bef95748d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">open the fileName and read data. this-&gt;data has these data. Please NOTE: This Strategy might be not efficient, you need to hold raw string data and transforemed data. It consumes 2 * sizeof(filedata).  <a href="classPOLDAM_1_1ClassesDataParser.html#a66f79adc9696334f09d8c8bef95748d2">[詳解]</a><br /></td></tr>
+<tr class="separator:a66f79adc9696334f09d8c8bef95748d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac8ce91a4f0975eb590eea78d443e366c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1ClassesDataParser.html#ac8ce91a4f0975eb590eea78d443e366c">parseReadlines</a> (std::vector&lt; std::string &gt; &amp;<a class="el" href="classPOLDAM_1_1ClassesDataParser.html#a07af8a054569ca9d03789682c510ecc5">data</a>) override</td></tr>
 <tr class="memdesc:ac8ce91a4f0975eb590eea78d443e366c"><td class="mdescLeft">&#160;</td><td class="mdescRight">parse and iterate this -&gt; data.  <a href="classPOLDAM_1_1ClassesDataParser.html#ac8ce91a4f0975eb590eea78d443e366c">[詳解]</a><br /></td></tr>
 <tr class="separator:ac8ce91a4f0975eb590eea78d443e366c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af0dcb37b33c1004b0e5ab2731d0a49a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1ClassesDataParser.html#af0dcb37b33c1004b0e5ab2731d0a49a0">dirTraversal</a> (std::string <a class="el" href="classPOLDAM_1_1ClassesDataParser.html#a25260617a029d0e163473e83316eb4b3">fileName</a>) override</td></tr>
-<tr class="memdesc:af0dcb37b33c1004b0e5ab2731d0a49a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">iterate target Directory to look up target file. Please note there may be more than one target file.  <a href="classPOLDAM_1_1ClassesDataParser.html#af0dcb37b33c1004b0e5ab2731d0a49a0">[詳解]</a><br /></td></tr>
-<tr class="separator:af0dcb37b33c1004b0e5ab2731d0a49a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae40844b3cb0f3f0d4ba7f5ef876dfa09"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1ClassesDataParser.html#ae40844b3cb0f3f0d4ba7f5ef876dfa09">parseLine</a> (const std::string line) override</td></tr>
-<tr class="memdesc:ae40844b3cb0f3f0d4ba7f5ef876dfa09"><td class="mdescLeft">&#160;</td><td class="mdescRight">delegate function. this function receive string data and paser it to shape Dataid structuo, and push_back to dataid vector.  <a href="classPOLDAM_1_1ClassesDataParser.html#ae40844b3cb0f3f0d4ba7f5ef876dfa09">[詳解]</a><br /></td></tr>
-<tr class="separator:ae40844b3cb0f3f0d4ba7f5ef876dfa09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66081485d8d742f4c924b0846424790b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1ClassesDataParser.html#a66081485d8d742f4c924b0846424790b">dirTraversal</a> (const std::string &amp;<a class="el" href="classPOLDAM_1_1ClassesDataParser.html#adfda80c7fa8caf2ab23d2f4f824181ca">dirName</a>) override</td></tr>
+<tr class="memdesc:a66081485d8d742f4c924b0846424790b"><td class="mdescLeft">&#160;</td><td class="mdescRight">iterate target Directory to look up target file. Please note there may be more than one target file.  <a href="classPOLDAM_1_1ClassesDataParser.html#a66081485d8d742f4c924b0846424790b">[詳解]</a><br /></td></tr>
+<tr class="separator:a66081485d8d742f4c924b0846424790b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bfb0bb61bfa7d3f1580a1b1b9c3707f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1ClassesDataParser.html#a3bfb0bb61bfa7d3f1580a1b1b9c3707f">parseLine</a> (const std::string &amp;line) override</td></tr>
+<tr class="memdesc:a3bfb0bb61bfa7d3f1580a1b1b9c3707f"><td class="mdescLeft">&#160;</td><td class="mdescRight">delegate function. this function receive string data and paser it to shape Dataid structuo, and push_back to dataid vector.  <a href="classPOLDAM_1_1ClassesDataParser.html#a3bfb0bb61bfa7d3f1580a1b1b9c3707f">[詳解]</a><br /></td></tr>
+<tr class="separator:a3bfb0bb61bfa7d3f1580a1b1b9c3707f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad138e53bba3ac9142a14f77b9cbf58ee"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPOLDAM_1_1ClassesDataParser.html#ad138e53bba3ac9142a14f77b9cbf58ee">isTargetFile</a> (const std::string <a class="el" href="classPOLDAM_1_1ClassesDataParser.html#a25260617a029d0e163473e83316eb4b3">fileName</a>)</td></tr>
 <tr class="separator:ad138e53bba3ac9142a14f77b9cbf58ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -158,8 +158,8 @@ POLDAM::ClassesDataParser 連携図</div>
 <div class="textblock">
 <p class="definition"> <a class="el" href="classes_8h_source.html">classes.h</a> の <a class="el" href="classes_8h_source.html#l00018">18</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">構築子と解体子</h2>
-<a id="aa679cf1a970b48ec6fb61bec6508990a" name="aa679cf1a970b48ec6fb61bec6508990a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa679cf1a970b48ec6fb61bec6508990a">&#9670;&nbsp;</a></span>ClassesDataParser()</h2>
+<a id="a6ae78c286bd67578ef82d2448fd6df1e" name="a6ae78c286bd67578ef82d2448fd6df1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ae78c286bd67578ef82d2448fd6df1e">&#9670;&nbsp;</a></span>ClassesDataParser()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -170,13 +170,13 @@ POLDAM::ClassesDataParser 連携図</div>
         <tr>
           <td class="memname">POLDAM::ClassesDataParser::ClassesDataParser </td>
           <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>inputDir_</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::string&#160;</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>fileName_</em> = <code>&quot;methods.txt&quot;</code>, </td>
         </tr>
         <tr>
@@ -203,8 +203,8 @@ POLDAM::ClassesDataParser 連携図</div>
 </div>
 </div>
 <h2 class="groupheader">関数詳解</h2>
-<a id="af0dcb37b33c1004b0e5ab2731d0a49a0" name="af0dcb37b33c1004b0e5ab2731d0a49a0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af0dcb37b33c1004b0e5ab2731d0a49a0">&#9670;&nbsp;</a></span>dirTraversal()</h2>
+<a id="a66081485d8d742f4c924b0846424790b" name="a66081485d8d742f4c924b0846424790b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66081485d8d742f4c924b0846424790b">&#9670;&nbsp;</a></span>dirTraversal()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -215,7 +215,7 @@ POLDAM::ClassesDataParser 連携図</div>
         <tr>
           <td class="memname">void POLDAM::ClassesDataParser::dirTraversal </td>
           <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>targetDir</em></td><td>)</td>
           <td></td>
         </tr>
@@ -235,7 +235,7 @@ POLDAM::ClassesDataParser 連携図</div>
   </dd>
 </dl>
 
-<p><a class="el" href="classPOLDAM_1_1FileReader.html#a1eeba75555abddcd84888cc19d52320c">POLDAM::FileReader</a>を実装しています。</p>
+<p><a class="el" href="classPOLDAM_1_1FileReader.html#afb02cbbd1b41a893dd71e05e99d5b8bc">POLDAM::FileReader</a>を実装しています。</p>
 
 <p class="definition"> <a class="el" href="classes_8cpp_source.html">classes.cpp</a> の <a class="el" href="classes_8cpp_source.html#l00063">63</a> 行目に定義があります。</p>
 
@@ -264,7 +264,7 @@ POLDAM::ClassesDataParser 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="classes_8h_source.html">classes.h</a> の <a class="el" href="classes_8h_source.html#l00028">28</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="classes_8h_source.html">classes.h</a> の <a class="el" href="classes_8h_source.html#l00030">30</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -291,7 +291,7 @@ POLDAM::ClassesDataParser 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="classes_8h_source.html">classes.h</a> の <a class="el" href="classes_8h_source.html#l00037">37</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="classes_8h_source.html">classes.h</a> の <a class="el" href="classes_8h_source.html#l00039">39</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -321,8 +321,8 @@ POLDAM::ClassesDataParser 連携図</div>
 
 </div>
 </div>
-<a id="ae40844b3cb0f3f0d4ba7f5ef876dfa09" name="ae40844b3cb0f3f0d4ba7f5ef876dfa09"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae40844b3cb0f3f0d4ba7f5ef876dfa09">&#9670;&nbsp;</a></span>parseLine()</h2>
+<a id="a3bfb0bb61bfa7d3f1580a1b1b9c3707f" name="a3bfb0bb61bfa7d3f1580a1b1b9c3707f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3bfb0bb61bfa7d3f1580a1b1b9c3707f">&#9670;&nbsp;</a></span>parseLine()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -333,7 +333,7 @@ POLDAM::ClassesDataParser 連携図</div>
         <tr>
           <td class="memname">void POLDAM::ClassesDataParser::parseLine </td>
           <td>(</td>
-          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>line</em></td><td>)</td>
           <td></td>
         </tr>
@@ -353,7 +353,7 @@ POLDAM::ClassesDataParser 連携図</div>
   </dd>
 </dl>
 
-<p><a class="el" href="classPOLDAM_1_1FileReader.html#a4c40eea2d9ceb3f306212e1f0ed30918">POLDAM::FileReader</a>を実装しています。</p>
+<p><a class="el" href="classPOLDAM_1_1FileReader.html#a4f724a7b7475b52ff521c733aa547001">POLDAM::FileReader</a>を実装しています。</p>
 
 <p class="definition"> <a class="el" href="classes_8cpp_source.html">classes.cpp</a> の <a class="el" href="classes_8cpp_source.html#l00044">44</a> 行目に定義があります。</p>
 
@@ -391,8 +391,8 @@ POLDAM::ClassesDataParser 連携図</div>
 
 </div>
 </div>
-<a id="ad044e32280df3bf8ffa24c809607aaef" name="ad044e32280df3bf8ffa24c809607aaef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad044e32280df3bf8ffa24c809607aaef">&#9670;&nbsp;</a></span>readFile()</h2>
+<a id="a66f79adc9696334f09d8c8bef95748d2" name="a66f79adc9696334f09d8c8bef95748d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66f79adc9696334f09d8c8bef95748d2">&#9670;&nbsp;</a></span>readFile()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -403,7 +403,7 @@ POLDAM::ClassesDataParser 連携図</div>
         <tr>
           <td class="memname">void POLDAM::ClassesDataParser::readFile </td>
           <td>(</td>
-          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>fileName</em>, </td>
         </tr>
         <tr>
@@ -434,7 +434,7 @@ POLDAM::ClassesDataParser 連携図</div>
 </dl>
 <dl class="section return"><dt>戻り値</dt><dd>void. </dd></dl>
 
-<p><a class="el" href="classPOLDAM_1_1FileReader.html#afda57ecf9770e8c299d09be77f1ea89c">POLDAM::FileReader</a>を実装しています。</p>
+<p><a class="el" href="classPOLDAM_1_1FileReader.html#ab09559b1d7024a5fbe663a704b4aa5cd">POLDAM::FileReader</a>を実装しています。</p>
 
 <p class="definition"> <a class="el" href="classes_8cpp_source.html">classes.cpp</a> の <a class="el" href="classes_8cpp_source.html#l00005">5</a> 行目に定義があります。</p>
 
@@ -461,7 +461,7 @@ POLDAM::ClassesDataParser 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="classes_8h_source.html">classes.h</a> の <a class="el" href="classes_8h_source.html#l00063">63</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="classes_8h_source.html">classes.h</a> の <a class="el" href="classes_8h_source.html#l00065">65</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -485,7 +485,7 @@ POLDAM::ClassesDataParser 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="classes_8h_source.html">classes.h</a> の <a class="el" href="classes_8h_source.html#l00062">62</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="classes_8h_source.html">classes.h</a> の <a class="el" href="classes_8h_source.html#l00064">64</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -509,7 +509,7 @@ POLDAM::ClassesDataParser 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="classes_8h_source.html">classes.h</a> の <a class="el" href="classes_8h_source.html#l00060">60</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="classes_8h_source.html">classes.h</a> の <a class="el" href="classes_8h_source.html#l00062">62</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -533,7 +533,7 @@ POLDAM::ClassesDataParser 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="classes_8h_source.html">classes.h</a> の <a class="el" href="classes_8h_source.html#l00061">61</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="classes_8h_source.html">classes.h</a> の <a class="el" href="classes_8h_source.html#l00063">63</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -557,7 +557,7 @@ POLDAM::ClassesDataParser 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="classes_8h_source.html">classes.h</a> の <a class="el" href="classes_8h_source.html#l00057">57</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="classes_8h_source.html">classes.h</a> の <a class="el" href="classes_8h_source.html#l00059">59</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -581,7 +581,7 @@ POLDAM::ClassesDataParser 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="classes_8h_source.html">classes.h</a> の <a class="el" href="classes_8h_source.html#l00064">64</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="classes_8h_source.html">classes.h</a> の <a class="el" href="classes_8h_source.html#l00066">66</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -605,7 +605,7 @@ POLDAM::ClassesDataParser 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="classes_8h_source.html">classes.h</a> の <a class="el" href="classes_8h_source.html#l00059">59</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="classes_8h_source.html">classes.h</a> の <a class="el" href="classes_8h_source.html#l00061">61</a> 行目に定義があります。</p>
 
 </div>
 </div>

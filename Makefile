@@ -10,6 +10,7 @@ GRAPH_SRC_DIR = $(GRAPH_DIR)/src
 
 UTIL_DIR = Util
 UTIL_INCLUDE_DIR = $(UTIL_DIR)/include/src
+UTIL_INCLUDE_TEST_DIR = $(UTIL_DIR)/include/test
 
 #win
 # BOOST_PATH = /home/prebe/boost_1_18
@@ -53,6 +54,12 @@ omniGraph.o: $(GRAPH_SRC_DIR)/*.cpp $(GRAPH_SRC_DIR)/*.h
 	rm graph.o
 	rm graph_diff.o 
 
-clean: *.o
+
+# TEST FILE for POLDAM 
+test_util: util.o $(UTIL_INCLUDE_TEST_DIR)/*
+	g++-11 -I/root/doctest/doctest $(UTIL_INCLUDE_TEST_DIR)/test_poldam_util.cpp util.o -o test_util
+
+clean:
 	rm -f *.o
 	rm -f *.out
+

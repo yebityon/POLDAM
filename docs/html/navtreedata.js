@@ -62,7 +62,8 @@ var NAVTREE =
       [ "ファイルメンバ", "globals.html", [
         [ "全て", "globals.html", null ],
         [ "関数", "globals_func.html", null ],
-        [ "変数", "globals_vars.html", null ]
+        [ "変数", "globals_vars.html", null ],
+        [ "マクロ定義", "globals_defs.html", null ]
       ] ]
     ] ]
   ] ]
@@ -72,7 +73,7 @@ var NAVTREEINDEX =
 [
 "MetaFileParser_2test_2main_8cpp.html",
 "classPOLDAM_1_1SeloggerLogParser.html#a42a355eed5396527b175bbf695899e11",
-"structPOLDAM_1_1ClassesData.html#a0f6c63f226bc3ec5b82eafa408d81f0c"
+"structPOLDAM_1_1ClassesData.html"
 ];
 
 var SYNCONMSG = 'クリックで同期表示が無効になります';

@@ -1,13 +1,14 @@
 <map id="MetaFileParser/src/selogger_log.h" name="MetaFileParser/src/selogger_log.h">
-<area shape="rect" id="node1" title=" " alt="" coords="151,5,283,47"/>
-<area shape="rect" id="node2" href="$metafile__handler__common_8h.html" title=" " alt="" coords="215,102,398,129"/>
-<area shape="rect" id="node11" href="$poldam__util_8h.html" title=" " alt="" coords="67,95,191,136"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,184,77,211"/>
-<area shape="rect" id="node4" title=" " alt="" coords="102,184,157,211"/>
-<area shape="rect" id="node5" title=" " alt="" coords="181,184,240,211"/>
-<area shape="rect" id="node6" title=" " alt="" coords="355,184,435,211"/>
-<area shape="rect" id="node7" title=" " alt="" coords="459,184,525,211"/>
-<area shape="rect" id="node8" title=" " alt="" coords="550,184,602,211"/>
-<area shape="rect" id="node9" title=" " alt="" coords="626,184,673,211"/>
-<area shape="rect" id="node10" title=" " alt="" coords="265,184,330,211"/>
+<area shape="rect" id="node1" title=" " alt="" coords="229,5,361,47"/>
+<area shape="rect" id="node2" href="$metafile__handler__common_8h.html" title=" " alt="" coords="293,102,475,129"/>
+<area shape="rect" id="node11" href="$poldam__util_8h.html" title=" " alt="" coords="145,95,269,136"/>
+<area shape="rect" id="node3" title=" " alt="" coords="91,184,163,211"/>
+<area shape="rect" id="node4" title=" " alt="" coords="187,184,242,211"/>
+<area shape="rect" id="node5" title=" " alt="" coords="267,184,325,211"/>
+<area shape="rect" id="node6" title=" " alt="" coords="587,184,667,211"/>
+<area shape="rect" id="node7" title=" " alt="" coords="691,184,757,211"/>
+<area shape="rect" id="node8" title=" " alt="" coords="350,184,402,211"/>
+<area shape="rect" id="node9" title=" " alt="" coords="426,184,473,211"/>
+<area shape="rect" id="node10" title=" " alt="" coords="497,184,562,211"/>
+<area shape="rect" id="node12" title=" " alt="" coords="5,184,67,211"/>
 </map>

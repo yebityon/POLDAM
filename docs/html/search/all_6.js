@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['g_0',['g',['../classPOLDAM_1_1OmniGraph.html#a8205c11f26131c65d7d39d5853caca2b',1,'POLDAM::OmniGraph']]],
-  ['g_1',['G',['../classPOLDAM_1_1OmniWriter.html#afe1ed66339752098c8cfb6debc2365c7',1,'POLDAM::OmniWriter']]],
+  ['g_0',['G',['../classPOLDAM_1_1OmniWriter.html#afe1ed66339752098c8cfb6debc2365c7',1,'POLDAM::OmniWriter']]],
+  ['g_1',['g',['../classPOLDAM_1_1OmniGraph.html#a8205c11f26131c65d7d39d5853caca2b',1,'POLDAM::OmniGraph']]],
   ['get_5finstance_5ffield_2',['GET_INSTANCE_FIELD',['../namespacePOLDAM.html#a2250f6efba1da4ff3b7067510616638eae7f78a4b9ce185210cef8c73496ba987',1,'POLDAM']]],
   ['get_5finstance_5ffield_5fresult_3',['GET_INSTANCE_FIELD_RESULT',['../namespacePOLDAM.html#a2250f6efba1da4ff3b7067510616638eaba56d985b730be859558a90f46d1a97d',1,'POLDAM']]],
   ['get_5fstatic_5ffield_4',['GET_STATIC_FIELD',['../namespacePOLDAM.html#a2250f6efba1da4ff3b7067510616638ea94c8be0db177f2557a353344a9cf6868',1,'POLDAM']]],

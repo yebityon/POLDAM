@@ -17,5 +17,6 @@ var hierarchy =
     [ "POLDAM::OmniGraph", "classPOLDAM_1_1OmniGraph.html", null ],
     [ "POLDAM::OmniWriter", "classPOLDAM_1_1OmniWriter.html", null ],
     [ "POLDAM::poldamConfig", "structPOLDAM_1_1poldamConfig.html", null ],
-    [ "POLDAM::SeloggerData", "structPOLDAM_1_1SeloggerData.html", null ]
+    [ "POLDAM::SeloggerData", "structPOLDAM_1_1SeloggerData.html", null ],
+    [ "POLDAM_UTIL::Timer", "structPOLDAM__UTIL_1_1Timer.html", null ]
 ];

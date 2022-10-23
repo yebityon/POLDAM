@@ -5,8 +5,9 @@ var searchData=
   ['readme_2emd_2',['README.md',['../README_8md.html',1,'']]],
   ['readnextstream_3',['readNextStream',['../classPOLDAM_1_1SeloggerLogParser.html#a8c6304d763d9e1154e4a7a50e1bd5b2c',1,'POLDAM::SeloggerLogParser']]],
   ['readobjecttypedata_4',['readObjectTypeData',['../classPOLDAM_1_1ObjectfileParser.html#a8b94a9cd04c000892cc746fa2b2c2dda',1,'POLDAM::ObjectfileParser']]],
-  ['reserved_5',['RESERVED',['../namespacePOLDAM.html#a2250f6efba1da4ff3b7067510616638ea83c7f2aa8c3ac10ed8beb75cad162827',1,'POLDAM']]],
-  ['ret_6',['RET',['../namespacePOLDAM.html#a2250f6efba1da4ff3b7067510616638eafb902bc4807c307b9309f2b528b96f2b',1,'POLDAM']]],
-  ['root_7',['Root',['../classPOLDAM_1_1OmniGraph.html#a0051ac1e392b9ccdc48768b5b4d3af78',1,'POLDAM::OmniGraph']]],
-  ['root_8',['root',['../classPOLDAM_1_1OmniGraph.html#a53ceb0249e9e2ea24dd95427373b21f7',1,'POLDAM::OmniGraph']]]
+  ['res_5',['res',['../test__poldam__util_8cpp.html#ae8226ae86381dfaa90b73f950a01052b',1,'test_poldam_util.cpp']]],
+  ['reserved_6',['RESERVED',['../namespacePOLDAM.html#a2250f6efba1da4ff3b7067510616638ea83c7f2aa8c3ac10ed8beb75cad162827',1,'POLDAM']]],
+  ['ret_7',['RET',['../namespacePOLDAM.html#a2250f6efba1da4ff3b7067510616638eafb902bc4807c307b9309f2b528b96f2b',1,'POLDAM']]],
+  ['root_8',['root',['../classPOLDAM_1_1OmniGraph.html#a53ceb0249e9e2ea24dd95427373b21f7',1,'POLDAM::OmniGraph']]],
+  ['root_9',['Root',['../classPOLDAM_1_1OmniGraph.html#a0051ac1e392b9ccdc48768b5b4d3af78',1,'POLDAM::OmniGraph']]]
 ];

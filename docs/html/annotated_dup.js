@@ -18,5 +18,8 @@ var annotated_dup =
       [ "poldamConfig", "structPOLDAM_1_1poldamConfig.html", "structPOLDAM_1_1poldamConfig" ],
       [ "SeloggerData", "structPOLDAM_1_1SeloggerData.html", "structPOLDAM_1_1SeloggerData" ],
       [ "SeloggerLogParser", "classPOLDAM_1_1SeloggerLogParser.html", "classPOLDAM_1_1SeloggerLogParser" ]
+    ] ],
+    [ "POLDAM_UTIL", "namespacePOLDAM__UTIL.html", [
+      [ "Timer", "structPOLDAM__UTIL_1_1Timer.html", "structPOLDAM__UTIL_1_1Timer" ]
     ] ]
 ];

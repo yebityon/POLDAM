@@ -19,11 +19,7 @@ namespace POLDAM_UTIL
             }
         }
 
-        if (not buffer.empty())
-        {
-            rec.push_back(buffer);
-        }
-
+        rec.push_back(buffer);
         return rec;
     }
 

@@ -9,3 +9,13 @@ services:
     tty: true
     volumes:
       - ./Data/java8:/root/selogger:cached
+
+  cpp:
+    restart: always
+    build: ./dockerfiles/c++
+    image: 'poldam/cpp'
+    container_name: 'poldam_cpp'
+    working_dir: '/root/'
+    tty: true
+    volumes:
+      - ./:/root/POLDAM:cached

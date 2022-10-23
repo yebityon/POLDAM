@@ -23,7 +23,7 @@ namespace POLDAM
     class ObjectfileParser : FileReader
     {
     public:
-        ObjectfileParser(std::string inputDir_)
+        ObjectfileParser(const std::string &inputDir_)
         {
             this->dirTraversal(inputDir_);
             this->readObjectTypeData();
@@ -36,18 +36,18 @@ namespace POLDAM
         }
 
     private:
-        void readFile(const std::string filePath, std::vector<std::string> &data) override;
+        void readFile(const std::string &filePath, std::vector<std::string> &data) override;
         void parseReadlines(std::vector<std::string> &data) override;
-        void dirTraversal(std::string fileName) override;
+        void dirTraversal(const std::string &fileName) override;
 
         void setObjectfileType(std::string fileType)
         {
             this->fileType = fileType;
         };
 
-        void parseLine(std::string line) override;
-        void parseLogTypesLine(std::string line);
-        void parseStringLine(std::string line);
+        void parseLine(const std::string &line) override;
+        void parseLogTypesLine(const std::string &line);
+        void parseStringLine(const std::string &line);
 
         void accumulateObjectFile();
         /**

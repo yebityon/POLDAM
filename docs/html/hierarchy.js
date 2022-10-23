@@ -2,12 +2,12 @@ var hierarchy =
 [
     [ "POLDAM::ClassesData", "structPOLDAM_1_1ClassesData.html", null ],
     [ "POLDAM::DataId", "structPOLDAM_1_1DataId.html", null ],
-    [ "POLDAM::fileReader", "classPOLDAM_1_1fileReader.html", [
+    [ "POLDAM::FileReader", "classPOLDAM_1_1FileReader.html", [
+      [ "POLDAM::ClassesDataParser", "classPOLDAM_1_1ClassesDataParser.html", null ],
+      [ "POLDAM::DataIdsParser", "classPOLDAM_1_1DataIdsParser.html", null ],
+      [ "POLDAM::MethodDataParser", "classPOLDAM_1_1MethodDataParser.html", null ],
       [ "POLDAM::ObjectfileParser", "classPOLDAM_1_1ObjectfileParser.html", null ],
-      [ "POLDAM::classesDataParser", "classPOLDAM_1_1classesDataParser.html", null ],
-      [ "POLDAM::dataidsParser", "classPOLDAM_1_1dataidsParser.html", null ],
-      [ "POLDAM::methodDataParser", "classPOLDAM_1_1methodDataParser.html", null ],
-      [ "POLDAM::seloggerLogParser", "classPOLDAM_1_1seloggerLogParser.html", null ]
+      [ "POLDAM::SeloggerLogParser", "classPOLDAM_1_1SeloggerLogParser.html", null ]
     ] ],
     [ "POLDAM::GraphEdge", "structPOLDAM_1_1GraphEdge.html", null ],
     [ "POLDAM::GraphVertex", "structPOLDAM_1_1GraphVertex.html", null ],

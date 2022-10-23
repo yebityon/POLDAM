@@ -1,0 +1,290 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>POLDAM: Graph/src/graph.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">POLDAM
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('graph_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">graph.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="graph_8h.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;stack&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;functional&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;iterator&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;boost/graph/adjacency_iterator.hpp&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;boost/graph/depth_first_search.hpp&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;boost/graph/adjacency_list.hpp&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;boost/graph/connected_components.hpp&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacePOLDAM.html">POLDAM</a></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>{</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="structPOLDAM_1_1GraphEdge.html">   13</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structPOLDAM_1_1GraphEdge.html">GraphEdge</a></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="structPOLDAM_1_1GraphEdge.html#a14ca2f537ec1073bc4c9acc0b0307ad7">   16</a></span>        <span class="keywordtype">int</span> <a class="code hl_variable" href="structPOLDAM_1_1GraphEdge.html#a14ca2f537ec1073bc4c9acc0b0307ad7">cost</a>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="structPOLDAM_1_1GraphEdge.html#ad3b28c5e424880cf8c106a874edba4e3">   17</a></span>        std::string <a class="code hl_variable" href="structPOLDAM_1_1GraphEdge.html#ad3b28c5e424880cf8c106a874edba4e3">edgeHash</a>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="structPOLDAM_1_1GraphEdge.html#ac06401887720b63a23223ea50d8f44f6">   18</a></span>        std::string <a class="code hl_variable" href="structPOLDAM_1_1GraphEdge.html#ac06401887720b63a23223ea50d8f44f6">from</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="structPOLDAM_1_1GraphEdge.html#a193e10b1d639f1f07fbf63eb94fd65bc">   19</a></span>        std::string <a class="code hl_variable" href="structPOLDAM_1_1GraphEdge.html#a193e10b1d639f1f07fbf63eb94fd65bc">to</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="structPOLDAM_1_1GraphEdge.html#a088fb9cf81a79810ae525b63130eea66">   20</a></span>        std::string <a class="code hl_variable" href="structPOLDAM_1_1GraphEdge.html#a088fb9cf81a79810ae525b63130eea66">outputFormat</a>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    };</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="structPOLDAM_1_1GraphVertex.html">   23</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structPOLDAM_1_1GraphVertex.html">GraphVertex</a></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="comment">// method hash is the hash of method</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="structPOLDAM_1_1GraphVertex.html#a626c86c29b82b02ca00ffe2ac557a994">   27</a></span>        std::string <a class="code hl_variable" href="structPOLDAM_1_1GraphVertex.html#a626c86c29b82b02ca00ffe2ac557a994">methodStr</a>{};</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="structPOLDAM_1_1GraphVertex.html#a746c2874032ed6bffbae35a1c3ea70bd">   28</a></span>        std::string <a class="code hl_variable" href="structPOLDAM_1_1GraphVertex.html#a746c2874032ed6bffbae35a1c3ea70bd">methodHash</a>{};</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="comment">// param str has param value, the hash value of object</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="structPOLDAM_1_1GraphVertex.html#abd915df301f2d8663d86463c130c5713">   31</a></span>        std::string <a class="code hl_variable" href="structPOLDAM_1_1GraphVertex.html#abd915df301f2d8663d86463c130c5713">paramStr</a>{};</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="structPOLDAM_1_1GraphVertex.html#abe01b7df6d55f21384cdca43f3f39ebb">   32</a></span>        std::size_t <a class="code hl_variable" href="structPOLDAM_1_1GraphVertex.html#abe01b7df6d55f21384cdca43f3f39ebb">paramHash</a>{};</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="comment">// flow hash is the flow of inside of the method</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="structPOLDAM_1_1GraphVertex.html#af266c6a8016d1dd8e119f36bfa380072">   35</a></span>        std::string <a class="code hl_variable" href="structPOLDAM_1_1GraphVertex.html#af266c6a8016d1dd8e119f36bfa380072">flowStr</a>{};</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="structPOLDAM_1_1GraphVertex.html#a1ed01a86d7de1504ccf204f906a41b39">   36</a></span>        std::size_t <a class="code hl_variable" href="structPOLDAM_1_1GraphVertex.html#a1ed01a86d7de1504ccf204f906a41b39">flowHash</a>{};</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="comment">// control flow hash is the method-call-chain of the hash</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="structPOLDAM_1_1GraphVertex.html#a4f8f0088acc32fd504ba1626f3e2d427">   40</a></span>        std::size_t <a class="code hl_variable" href="structPOLDAM_1_1GraphVertex.html#a4f8f0088acc32fd504ba1626f3e2d427">childFlowHash</a>{};</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="structPOLDAM_1_1GraphVertex.html#a8da6b000afa0091648e60e92f26fa644">   41</a></span>        std::size_t <a class="code hl_variable" href="structPOLDAM_1_1GraphVertex.html#a8da6b000afa0091648e60e92f26fa644">childParamHash</a>{};</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="structPOLDAM_1_1GraphVertex.html#a1422966bf278134f216073e9c6f93eeb">   43</a></span>        std::string <a class="code hl_variable" href="structPOLDAM_1_1GraphVertex.html#a1422966bf278134f216073e9c6f93eeb">controlFlowStr</a>{};</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="structPOLDAM_1_1GraphVertex.html#a1861007225756ea6db06967cd20ce6f0">   44</a></span>        std::size_t <a class="code hl_variable" href="structPOLDAM_1_1GraphVertex.html#a1861007225756ea6db06967cd20ce6f0">controlFlowHash</a>{};</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="structPOLDAM_1_1GraphVertex.html#a198e2a69ce674a5ecd10c2ebd5c4c223">   46</a></span>        std::string <a class="code hl_variable" href="structPOLDAM_1_1GraphVertex.html#a198e2a69ce674a5ecd10c2ebd5c4c223">controlParamStr</a>{};</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="structPOLDAM_1_1GraphVertex.html#aa3bb634764dd582953e820ed6b6bba31">   47</a></span>        std::size_t <a class="code hl_variable" href="structPOLDAM_1_1GraphVertex.html#aa3bb634764dd582953e820ed6b6bba31">controlParamHash</a>{};</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="comment">/*</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment">         * context hash is the flow hash of the parent hash.</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment">         */</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="structPOLDAM_1_1GraphVertex.html#a2bfcd57b1974d03ee8363a39cf089736">   52</a></span>        std::size_t <a class="code hl_variable" href="structPOLDAM_1_1GraphVertex.html#a2bfcd57b1974d03ee8363a39cf089736">contextHash</a>{};</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="structPOLDAM_1_1GraphVertex.html#a1b98a822642d932b53f9ff9aff2dfbf8">   54</a></span>        std::string <a class="code hl_variable" href="structPOLDAM_1_1GraphVertex.html#a1b98a822642d932b53f9ff9aff2dfbf8">outputFormat</a>{};</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="structPOLDAM_1_1GraphVertex.html#a2c40b74fbf78a34ac3d04c785694c54b">   56</a></span>        <span class="keywordtype">size_t</span> <span class="keywordtype">id</span>{}, <a class="code hl_variable" href="structPOLDAM_1_1GraphVertex.html#a2c40b74fbf78a34ac3d04c785694c54b">edgesSize</a>{};</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="structPOLDAM_1_1GraphVertex.html#afbef89fd9c97b4e3419b86f800aec163">   57</a></span>        std::vector&lt;std::string&gt; <a class="code hl_variable" href="structPOLDAM_1_1GraphVertex.html#afbef89fd9c97b4e3419b86f800aec163">paramList</a> = {};</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    };</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="namespacePOLDAM.html#a0931ae32716a1c3f6a8a39815b925843">   60</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="namespacePOLDAM.html#a0931ae32716a1c3f6a8a39815b925843">Graph</a> = boost::adjacency_list&lt;boost::vecS, boost::vecS, boost::directedS,</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                                        <a class="code hl_struct" href="structPOLDAM_1_1GraphVertex.html">GraphVertex</a>,</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                                        <a class="code hl_struct" href="structPOLDAM_1_1GraphEdge.html">GraphEdge</a>&gt;;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1OmniGraph.html">   64</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classPOLDAM_1_1OmniGraph.html">OmniGraph</a></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classPOLDAM_1_1OmniGraph.html#add3843fe336ad17aace4e3b29579a160">addOmniVertex</a>(<a class="code hl_struct" href="structPOLDAM_1_1GraphVertex.html">GraphVertex</a> v, <span class="keyword">const</span> <span class="keywordtype">size_t</span> threadId);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classPOLDAM_1_1OmniGraph.html#a41acc42f6852f3bc80de137cabec1a0a">updateStackTopVertex</a>(<span class="keyword">const</span> std::string log, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> threadId);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classPOLDAM_1_1OmniGraph.html#a29666fde2077f2a83149ec8491d58287">updateStackTopVertexParamInfo</a>(<span class="keyword">const</span> std::string &amp;paramValue, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> threadId);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classPOLDAM_1_1OmniGraph.html#a6c15accbd347cbf3766b3ce3573ccdd8">popStackVertex</a>(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> threadId);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classPOLDAM_1_1OmniGraph.html#ab5dc3a6d921e15c9c0731922bc53c7b6">computeHash</a>(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> threadId);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classPOLDAM_1_1OmniGraph.html#acecaecae6d55687c810cccd9d56463e7">isStackEmpty</a>(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> threadId);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        <a class="code hl_typedef" href="namespacePOLDAM.html#a0931ae32716a1c3f6a8a39815b925843">Graph</a> <a class="code hl_function" href="classPOLDAM_1_1OmniGraph.html#a662e76ad3bd3fd1e2291c756ee4c355e">getGraphCopy</a>();</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        boost::graph_traits&lt;Graph&gt;::vertex_descriptor <a class="code hl_function" href="classPOLDAM_1_1OmniGraph.html#a76380aa388966214787f41932b9dc301">getStackTopVertex</a>(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> threadId);</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1OmniGraph.html#a4ffa913d782376e688fc9ab8d9cf4a32">   98</a></span>        std::vector&lt;boost::graph_traits&lt;Graph&gt;::vertex_descriptor&gt; <a class="code hl_function" href="classPOLDAM_1_1OmniGraph.html#a4ffa913d782376e688fc9ab8d9cf4a32">copyGraphPath</a>()</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        {</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            <span class="keywordflow">return</span> this-&gt;<a class="code hl_variable" href="classPOLDAM_1_1OmniGraph.html#a238bec81931c0ee38ebcd78951314dd7">path</a>;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        };</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1OmniGraph.html#ab5cb79b8a6fefad6d6958947404b627e">  103</a></span>        <span class="keyword">const</span> boost::graph_traits&lt;Graph&gt;::vertex_descriptor <a class="code hl_function" href="classPOLDAM_1_1OmniGraph.html#ab5cb79b8a6fefad6d6958947404b627e">getRoot</a>()</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        {</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>            <span class="keywordflow">return</span> this-&gt;<a class="code hl_variable" href="classPOLDAM_1_1OmniGraph.html#a0051ac1e392b9ccdc48768b5b4d3af78">Root</a>;</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        }</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        <a class="code hl_class" href="classPOLDAM_1_1OmniGraph.html">OmniGraph</a> <a class="code hl_function" href="classPOLDAM_1_1OmniGraph.html#ac8dd73c9cb97aa448ae50cd37e4ed665">computeDiffGraph</a>(<a class="code hl_class" href="classPOLDAM_1_1OmniGraph.html">OmniGraph</a> &amp;targetGraph);</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        <span class="comment">// need to move Graph</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        <a class="code hl_typedef" href="namespacePOLDAM.html#a0931ae32716a1c3f6a8a39815b925843">Graph</a> <a class="code hl_function" href="classPOLDAM_1_1OmniGraph.html#ad7807d8f5cd90951daec7b829b2bcf58">computeDiffGraphBeta</a>(<a class="code hl_class" href="classPOLDAM_1_1OmniGraph.html">OmniGraph</a> targetGraph, <span class="keyword">const</span> std::function&lt;<span class="keywordtype">bool</span>(<span class="keyword">const</span> <a class="code hl_struct" href="structPOLDAM_1_1GraphVertex.html">GraphVertex</a> &amp;, <span class="keyword">const</span> <a class="code hl_struct" href="structPOLDAM_1_1GraphVertex.html">GraphVertex</a> &amp;)&gt; &amp;<a class="code hl_function" href="namespacePOLDAM.html#a91c4064545f5cfe6c1197d3d993396b0">isSameVertex</a>);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classPOLDAM_1_1OmniGraph.html#a20ddd1c1d3b6acb2f1465f25bc8f8bd4">computeFlowHash</a>(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> threadId);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classPOLDAM_1_1OmniGraph.html#a55146795d7c186539535e608096aad0a">computeParamHash</a>(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> threadId);</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classPOLDAM_1_1OmniGraph.html#a47754733dcda68cdf474e1e1ecafeaf1">popVertex</a>(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> threadId);</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classPOLDAM_1_1OmniGraph.html#a07382c3f2fe2f6109c4f8a6e0a657b2d">isLeaf</a>(boost::graph_traits&lt;Graph&gt;::vertex_descriptor vDesc);</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classPOLDAM_1_1OmniGraph.html#a5f922cd27cc54d858dffdfa04848d6d3">pushStackVertex</a>(<span class="keyword">const</span> boost::graph_traits&lt;Graph&gt;::vertex_descriptor vDesc, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> threadId);</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        boost::graph_traits&lt;Graph&gt;::vertex_descriptor <a class="code hl_function" href="classPOLDAM_1_1OmniGraph.html#a775f4c3a5843f019e428ab681c8cf77c">addOmniVertexDesc</a>(<a class="code hl_struct" href="structPOLDAM_1_1GraphVertex.html">GraphVertex</a> v, <span class="keyword">const</span> <span class="keywordtype">size_t</span> threadId);</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classPOLDAM_1_1OmniGraph.html#a74b4762b5ddb0cdd14886215304049b6">addOmniEdge</a>(</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>            boost::graph_traits&lt;Graph&gt;::vertex_descriptor u_,</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>            boost::graph_traits&lt;Graph&gt;::vertex_descriptor v_, <span class="keyword">const</span> <span class="keywordtype">size_t</span> threadId);</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classPOLDAM_1_1OmniGraph.html#abb6fda17e05e94769bf3101606c909e7">traverseDiffVertices</a>(</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>            <span class="keyword">const</span> <a class="code hl_typedef" href="namespacePOLDAM.html#a0931ae32716a1c3f6a8a39815b925843">Graph</a> &amp;o, <span class="keyword">const</span> <a class="code hl_typedef" href="namespacePOLDAM.html#a0931ae32716a1c3f6a8a39815b925843">Graph</a> &amp;t,</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>            <span class="keyword">const</span> boost::graph_traits&lt;Graph&gt;::vertex_descriptor ovd,</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>            <span class="keyword">const</span> boost::graph_traits&lt;Graph&gt;::vertex_descriptor tvd,</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>            <span class="keyword">const</span> boost::graph_traits&lt;Graph&gt;::vertex_descriptor parDiffVerDesc,</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>            <span class="keyword">const</span> std::function&lt;<span class="keywordtype">bool</span>(<span class="keyword">const</span> <a class="code hl_struct" href="structPOLDAM_1_1GraphVertex.html">GraphVertex</a> &amp;, <span class="keyword">const</span> <a class="code hl_struct" href="structPOLDAM_1_1GraphVertex.html">GraphVertex</a> &amp;)&gt; &amp;<a class="code hl_function" href="namespacePOLDAM.html#a91c4064545f5cfe6c1197d3d993396b0">isSameVertex</a></div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span> </div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>        );</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1OmniGraph.html#a8205c11f26131c65d7d39d5853caca2b">  174</a></span>        <a class="code hl_typedef" href="namespacePOLDAM.html#a0931ae32716a1c3f6a8a39815b925843">Graph</a> <a class="code hl_variable" href="classPOLDAM_1_1OmniGraph.html#a8205c11f26131c65d7d39d5853caca2b">g</a>{};</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1OmniGraph.html#a4b0b799682f7010dabd79882a296cd19">  175</a></span>        <a class="code hl_typedef" href="namespacePOLDAM.html#a0931ae32716a1c3f6a8a39815b925843">Graph</a> <a class="code hl_variable" href="classPOLDAM_1_1OmniGraph.html#a4b0b799682f7010dabd79882a296cd19">diffGraph</a>{};</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span> </div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1OmniGraph.html#a0051ac1e392b9ccdc48768b5b4d3af78">  177</a></span>        boost::graph_traits&lt;Graph&gt;::vertex_descriptor <a class="code hl_variable" href="classPOLDAM_1_1OmniGraph.html#a0051ac1e392b9ccdc48768b5b4d3af78">Root</a>;</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1OmniGraph.html#a53ceb0249e9e2ea24dd95427373b21f7">  179</a></span>        std::map&lt;unsigned int, boost::graph_traits&lt;Graph&gt;::vertex_descriptor&gt; <a class="code hl_variable" href="classPOLDAM_1_1OmniGraph.html#a53ceb0249e9e2ea24dd95427373b21f7">root</a>{};</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1OmniGraph.html#a238bec81931c0ee38ebcd78951314dd7">  181</a></span>        std::vector&lt;boost::graph_traits&lt;Graph&gt;::vertex_descriptor&gt; <a class="code hl_variable" href="classPOLDAM_1_1OmniGraph.html#a238bec81931c0ee38ebcd78951314dd7">path</a>;</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        <span class="comment">// stack for vertexies</span></div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span> </div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>        <span class="comment">// {key: thareadId, value:stack&lt;&gt;}</span></div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1OmniGraph.html#aae446bcad7a9b892c7c9dddc6f839b5e">  185</a></span>        std::map&lt;unsigned int, std::stack&lt;boost::graph_traits&lt;Graph&gt;::vertex_descriptor&gt;&gt; <a class="code hl_variable" href="classPOLDAM_1_1OmniGraph.html#aae446bcad7a9b892c7c9dddc6f839b5e">vStack</a>;</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>        <span class="comment">// {key: threadId, value:stack&lt;&gt;}</span></div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1OmniGraph.html#a30a1a03a8b675c057db3450a674c3e6f">  187</a></span>        std::map&lt;unsigned int, std::stack&lt;std::map&lt;std::string, std::string&gt;&gt;&gt; <a class="code hl_variable" href="classPOLDAM_1_1OmniGraph.html#a30a1a03a8b675c057db3450a674c3e6f">callStack</a>;</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        <span class="comment">// {key: threadId, value:stack&lt;&gt;}</span></div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno"><a class="line" href="classPOLDAM_1_1OmniGraph.html#a1c850e49f9ef7f274161cb2a00d383ca">  189</a></span>        std::map&lt;unsigned int, std::stack&lt;std::map&lt;std::string, std::string&gt;&gt;&gt; <a class="code hl_variable" href="classPOLDAM_1_1OmniGraph.html#a1c850e49f9ef7f274161cb2a00d383ca">callInstStack</a>;</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    };</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>}</div>
+<div class="ttc" id="aclassPOLDAM_1_1OmniGraph_html"><div class="ttname"><a href="classPOLDAM_1_1OmniGraph.html">POLDAM::OmniGraph</a></div><div class="ttdef"><b>Definition:</b> <a href="graph_8h_source.html#l00064">graph.h:65</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1OmniGraph_html_a0051ac1e392b9ccdc48768b5b4d3af78"><div class="ttname"><a href="classPOLDAM_1_1OmniGraph.html#a0051ac1e392b9ccdc48768b5b4d3af78">POLDAM::OmniGraph::Root</a></div><div class="ttdeci">boost::graph_traits&lt; Graph &gt;::vertex_descriptor Root</div><div class="ttdef"><b>Definition:</b> <a href="graph_8h_source.html#l00177">graph.h:177</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1OmniGraph_html_a07382c3f2fe2f6109c4f8a6e0a657b2d"><div class="ttname"><a href="classPOLDAM_1_1OmniGraph.html#a07382c3f2fe2f6109c4f8a6e0a657b2d">POLDAM::OmniGraph::isLeaf</a></div><div class="ttdeci">bool isLeaf(boost::graph_traits&lt; Graph &gt;::vertex_descriptor vDesc)</div><div class="ttdoc">return true if given vertex descriptor is leaf in graph.</div><div class="ttdef"><b>Definition:</b> <a href="graph_8cpp_source.html#l00076">graph.cpp:76</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1OmniGraph_html_a1c850e49f9ef7f274161cb2a00d383ca"><div class="ttname"><a href="classPOLDAM_1_1OmniGraph.html#a1c850e49f9ef7f274161cb2a00d383ca">POLDAM::OmniGraph::callInstStack</a></div><div class="ttdeci">std::map&lt; unsigned int, std::stack&lt; std::map&lt; std::string, std::string &gt; &gt; &gt; callInstStack</div><div class="ttdef"><b>Definition:</b> <a href="graph_8h_source.html#l00189">graph.h:189</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1OmniGraph_html_a20ddd1c1d3b6acb2f1465f25bc8f8bd4"><div class="ttname"><a href="classPOLDAM_1_1OmniGraph.html#a20ddd1c1d3b6acb2f1465f25bc8f8bd4">POLDAM::OmniGraph::computeFlowHash</a></div><div class="ttdeci">bool computeFlowHash(const unsigned int threadId)</div><div class="ttdef"><b>Definition:</b> <a href="graph_8cpp_source.html#l00108">graph.cpp:108</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1OmniGraph_html_a238bec81931c0ee38ebcd78951314dd7"><div class="ttname"><a href="classPOLDAM_1_1OmniGraph.html#a238bec81931c0ee38ebcd78951314dd7">POLDAM::OmniGraph::path</a></div><div class="ttdeci">std::vector&lt; boost::graph_traits&lt; Graph &gt;::vertex_descriptor &gt; path</div><div class="ttdef"><b>Definition:</b> <a href="graph_8h_source.html#l00181">graph.h:181</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1OmniGraph_html_a29666fde2077f2a83149ec8491d58287"><div class="ttname"><a href="classPOLDAM_1_1OmniGraph.html#a29666fde2077f2a83149ec8491d58287">POLDAM::OmniGraph::updateStackTopVertexParamInfo</a></div><div class="ttdeci">bool updateStackTopVertexParamInfo(const std::string &amp;paramValue, unsigned int threadId)</div><div class="ttdef"><b>Definition:</b> <a href="graph_8cpp_source.html#l00044">graph.cpp:44</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1OmniGraph_html_a30a1a03a8b675c057db3450a674c3e6f"><div class="ttname"><a href="classPOLDAM_1_1OmniGraph.html#a30a1a03a8b675c057db3450a674c3e6f">POLDAM::OmniGraph::callStack</a></div><div class="ttdeci">std::map&lt; unsigned int, std::stack&lt; std::map&lt; std::string, std::string &gt; &gt; &gt; callStack</div><div class="ttdef"><b>Definition:</b> <a href="graph_8h_source.html#l00187">graph.h:187</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1OmniGraph_html_a41acc42f6852f3bc80de137cabec1a0a"><div class="ttname"><a href="classPOLDAM_1_1OmniGraph.html#a41acc42f6852f3bc80de137cabec1a0a">POLDAM::OmniGraph::updateStackTopVertex</a></div><div class="ttdeci">bool updateStackTopVertex(const std::string log, const unsigned int threadId)</div><div class="ttdef"><b>Definition:</b> <a href="graph_8cpp_source.html#l00037">graph.cpp:37</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1OmniGraph_html_a47754733dcda68cdf474e1e1ecafeaf1"><div class="ttname"><a href="classPOLDAM_1_1OmniGraph.html#a47754733dcda68cdf474e1e1ecafeaf1">POLDAM::OmniGraph::popVertex</a></div><div class="ttdeci">bool popVertex(const unsigned int threadId)</div><div class="ttdoc">the implementation when vertex Stack is popped. the function describe the relationship between caller...</div><div class="ttdef"><b>Definition:</b> <a href="graph_8cpp_source.html#l00123">graph.cpp:123</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1OmniGraph_html_a4b0b799682f7010dabd79882a296cd19"><div class="ttname"><a href="classPOLDAM_1_1OmniGraph.html#a4b0b799682f7010dabd79882a296cd19">POLDAM::OmniGraph::diffGraph</a></div><div class="ttdeci">Graph diffGraph</div><div class="ttdef"><b>Definition:</b> <a href="graph_8h_source.html#l00175">graph.h:175</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1OmniGraph_html_a4ffa913d782376e688fc9ab8d9cf4a32"><div class="ttname"><a href="classPOLDAM_1_1OmniGraph.html#a4ffa913d782376e688fc9ab8d9cf4a32">POLDAM::OmniGraph::copyGraphPath</a></div><div class="ttdeci">std::vector&lt; boost::graph_traits&lt; Graph &gt;::vertex_descriptor &gt; copyGraphPath()</div><div class="ttdef"><b>Definition:</b> <a href="graph_8h_source.html#l00098">graph.h:98</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1OmniGraph_html_a53ceb0249e9e2ea24dd95427373b21f7"><div class="ttname"><a href="classPOLDAM_1_1OmniGraph.html#a53ceb0249e9e2ea24dd95427373b21f7">POLDAM::OmniGraph::root</a></div><div class="ttdeci">std::map&lt; unsigned int, boost::graph_traits&lt; Graph &gt;::vertex_descriptor &gt; root</div><div class="ttdef"><b>Definition:</b> <a href="graph_8h_source.html#l00179">graph.h:179</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1OmniGraph_html_a55146795d7c186539535e608096aad0a"><div class="ttname"><a href="classPOLDAM_1_1OmniGraph.html#a55146795d7c186539535e608096aad0a">POLDAM::OmniGraph::computeParamHash</a></div><div class="ttdeci">bool computeParamHash(const unsigned int threadId)</div><div class="ttdef"><b>Definition:</b> <a href="graph_8cpp_source.html#l00116">graph.cpp:116</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1OmniGraph_html_a5f922cd27cc54d858dffdfa04848d6d3"><div class="ttname"><a href="classPOLDAM_1_1OmniGraph.html#a5f922cd27cc54d858dffdfa04848d6d3">POLDAM::OmniGraph::pushStackVertex</a></div><div class="ttdeci">bool pushStackVertex(const boost::graph_traits&lt; Graph &gt;::vertex_descriptor vDesc, const unsigned int threadId)</div><div class="ttdoc">return true if given vertex descriptor is leaf in graph.</div><div class="ttdef"><b>Definition:</b> <a href="graph_8cpp_source.html#l00057">graph.cpp:57</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1OmniGraph_html_a662e76ad3bd3fd1e2291c756ee4c355e"><div class="ttname"><a href="classPOLDAM_1_1OmniGraph.html#a662e76ad3bd3fd1e2291c756ee4c355e">POLDAM::OmniGraph::getGraphCopy</a></div><div class="ttdeci">Graph getGraphCopy()</div><div class="ttdef"><b>Definition:</b> <a href="graph_8cpp_source.html#l00150">graph.cpp:150</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1OmniGraph_html_a6c15accbd347cbf3766b3ce3573ccdd8"><div class="ttname"><a href="classPOLDAM_1_1OmniGraph.html#a6c15accbd347cbf3766b3ce3573ccdd8">POLDAM::OmniGraph::popStackVertex</a></div><div class="ttdeci">bool popStackVertex(const unsigned int threadId)</div><div class="ttdef"><b>Definition:</b> <a href="graph_8cpp_source.html#l00051">graph.cpp:51</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1OmniGraph_html_a74b4762b5ddb0cdd14886215304049b6"><div class="ttname"><a href="classPOLDAM_1_1OmniGraph.html#a74b4762b5ddb0cdd14886215304049b6">POLDAM::OmniGraph::addOmniEdge</a></div><div class="ttdeci">bool addOmniEdge(boost::graph_traits&lt; Graph &gt;::vertex_descriptor u_, boost::graph_traits&lt; Graph &gt;::vertex_descriptor v_, const size_t threadId)</div><div class="ttdoc">Add edge between two given vertices.</div><div class="ttdef"><b>Definition:</b> <a href="graph_8cpp_source.html#l00081">graph.cpp:81</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1OmniGraph_html_a76380aa388966214787f41932b9dc301"><div class="ttname"><a href="classPOLDAM_1_1OmniGraph.html#a76380aa388966214787f41932b9dc301">POLDAM::OmniGraph::getStackTopVertex</a></div><div class="ttdeci">boost::graph_traits&lt; Graph &gt;::vertex_descriptor getStackTopVertex(const unsigned int threadId)</div><div class="ttdef"><b>Definition:</b> <a href="graph_8cpp_source.html#l00093">graph.cpp:93</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1OmniGraph_html_a775f4c3a5843f019e428ab681c8cf77c"><div class="ttname"><a href="classPOLDAM_1_1OmniGraph.html#a775f4c3a5843f019e428ab681c8cf77c">POLDAM::OmniGraph::addOmniVertexDesc</a></div><div class="ttdeci">boost::graph_traits&lt; Graph &gt;::vertex_descriptor addOmniVertexDesc(GraphVertex v, const size_t threadId)</div><div class="ttdoc">Create VertexDescriptor. Note this function DO NOT add to graph.\ NOTE: this function do not update v...</div><div class="ttdef"><b>Definition:</b> <a href="graph_8cpp_source.html#l00030">graph.cpp:30</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1OmniGraph_html_a8205c11f26131c65d7d39d5853caca2b"><div class="ttname"><a href="classPOLDAM_1_1OmniGraph.html#a8205c11f26131c65d7d39d5853caca2b">POLDAM::OmniGraph::g</a></div><div class="ttdeci">Graph g</div><div class="ttdef"><b>Definition:</b> <a href="graph_8h_source.html#l00174">graph.h:174</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1OmniGraph_html_aae446bcad7a9b892c7c9dddc6f839b5e"><div class="ttname"><a href="classPOLDAM_1_1OmniGraph.html#aae446bcad7a9b892c7c9dddc6f839b5e">POLDAM::OmniGraph::vStack</a></div><div class="ttdeci">std::map&lt; unsigned int, std::stack&lt; boost::graph_traits&lt; Graph &gt;::vertex_descriptor &gt; &gt; vStack</div><div class="ttdef"><b>Definition:</b> <a href="graph_8h_source.html#l00185">graph.h:185</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1OmniGraph_html_ab5cb79b8a6fefad6d6958947404b627e"><div class="ttname"><a href="classPOLDAM_1_1OmniGraph.html#ab5cb79b8a6fefad6d6958947404b627e">POLDAM::OmniGraph::getRoot</a></div><div class="ttdeci">const boost::graph_traits&lt; Graph &gt;::vertex_descriptor getRoot()</div><div class="ttdef"><b>Definition:</b> <a href="graph_8h_source.html#l00103">graph.h:103</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1OmniGraph_html_ab5dc3a6d921e15c9c0731922bc53c7b6"><div class="ttname"><a href="classPOLDAM_1_1OmniGraph.html#ab5dc3a6d921e15c9c0731922bc53c7b6">POLDAM::OmniGraph::computeHash</a></div><div class="ttdeci">bool computeHash(const unsigned int threadId)</div><div class="ttdef"><b>Definition:</b> <a href="graph_8cpp_source.html#l00063">graph.cpp:63</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1OmniGraph_html_abb6fda17e05e94769bf3101606c909e7"><div class="ttname"><a href="classPOLDAM_1_1OmniGraph.html#abb6fda17e05e94769bf3101606c909e7">POLDAM::OmniGraph::traverseDiffVertices</a></div><div class="ttdeci">void traverseDiffVertices(const Graph &amp;o, const Graph &amp;t, const boost::graph_traits&lt; Graph &gt;::vertex_descriptor ovd, const boost::graph_traits&lt; Graph &gt;::vertex_descriptor tvd, const boost::graph_traits&lt; Graph &gt;::vertex_descriptor parDiffVerDesc, const std::function&lt; bool(const GraphVertex &amp;, const GraphVertex &amp;)&gt; &amp;isSameVertex)</div><div class="ttdoc">traverse tree to compute diff algorithm</div><div class="ttdef"><b>Definition:</b> <a href="graph__diff_8cpp_source.html#l00171">graph_diff.cpp:171</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1OmniGraph_html_ac8dd73c9cb97aa448ae50cd37e4ed665"><div class="ttname"><a href="classPOLDAM_1_1OmniGraph.html#ac8dd73c9cb97aa448ae50cd37e4ed665">POLDAM::OmniGraph::computeDiffGraph</a></div><div class="ttdeci">OmniGraph computeDiffGraph(OmniGraph &amp;targetGraph)</div><div class="ttdoc">DEPRECATEDDiff algorithm to compute the difference between origin and target</div><div class="ttdef"><b>Definition:</b> <a href="graph__diff_8cpp_source.html#l00022">graph_diff.cpp:22</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1OmniGraph_html_acecaecae6d55687c810cccd9d56463e7"><div class="ttname"><a href="classPOLDAM_1_1OmniGraph.html#acecaecae6d55687c810cccd9d56463e7">POLDAM::OmniGraph::isStackEmpty</a></div><div class="ttdeci">bool isStackEmpty(const unsigned int threadId)</div><div class="ttdef"><b>Definition:</b> <a href="graph_8cpp_source.html#l00071">graph.cpp:71</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1OmniGraph_html_ad7807d8f5cd90951daec7b829b2bcf58"><div class="ttname"><a href="classPOLDAM_1_1OmniGraph.html#ad7807d8f5cd90951daec7b829b2bcf58">POLDAM::OmniGraph::computeDiffGraphBeta</a></div><div class="ttdeci">Graph computeDiffGraphBeta(OmniGraph targetGraph, const std::function&lt; bool(const GraphVertex &amp;, const GraphVertex &amp;)&gt; &amp;isSameVertex)</div><div class="ttdoc">compute Diff between given OmniGraph and this-&gt;g through trversal tree.</div><div class="ttdef"><b>Definition:</b> <a href="graph__diff_8cpp_source.html#l00276">graph_diff.cpp:276</a></div></div>
+<div class="ttc" id="aclassPOLDAM_1_1OmniGraph_html_add3843fe336ad17aace4e3b29579a160"><div class="ttname"><a href="classPOLDAM_1_1OmniGraph.html#add3843fe336ad17aace4e3b29579a160">POLDAM::OmniGraph::addOmniVertex</a></div><div class="ttdeci">bool addOmniVertex(GraphVertex v, const size_t threadId)</div><div class="ttdoc">Create vertex Descriptor from given Graph Vertex, and Create edge if vStack is not empty....</div><div class="ttdef"><b>Definition:</b> <a href="graph_8cpp_source.html#l00007">graph.cpp:7</a></div></div>
+<div class="ttc" id="anamespacePOLDAM_html"><div class="ttname"><a href="namespacePOLDAM.html">POLDAM</a></div><div class="ttdef"><b>Definition:</b> <a href="graph_8cpp_source.html#l00004">graph.cpp:5</a></div></div>
+<div class="ttc" id="anamespacePOLDAM_html_a0931ae32716a1c3f6a8a39815b925843"><div class="ttname"><a href="namespacePOLDAM.html#a0931ae32716a1c3f6a8a39815b925843">POLDAM::Graph</a></div><div class="ttdeci">boost::adjacency_list&lt; boost::vecS, boost::vecS, boost::directedS, GraphVertex, GraphEdge &gt; Graph</div><div class="ttdef"><b>Definition:</b> <a href="graph_8h_source.html#l00060">graph.h:62</a></div></div>
+<div class="ttc" id="anamespacePOLDAM_html_a91c4064545f5cfe6c1197d3d993396b0"><div class="ttname"><a href="namespacePOLDAM.html#a91c4064545f5cfe6c1197d3d993396b0">POLDAM::isSameVertex</a></div><div class="ttdeci">bool isSameVertex(GraphVertex v, GraphVertex u)</div><div class="ttdef"><b>Definition:</b> <a href="graph__diff_8cpp_source.html#l00010">graph_diff.cpp:10</a></div></div>
+<div class="ttc" id="astructPOLDAM_1_1GraphEdge_html"><div class="ttname"><a href="structPOLDAM_1_1GraphEdge.html">POLDAM::GraphEdge</a></div><div class="ttdef"><b>Definition:</b> <a href="graph_8h_source.html#l00013">graph.h:14</a></div></div>
+<div class="ttc" id="astructPOLDAM_1_1GraphEdge_html_a088fb9cf81a79810ae525b63130eea66"><div class="ttname"><a href="structPOLDAM_1_1GraphEdge.html#a088fb9cf81a79810ae525b63130eea66">POLDAM::GraphEdge::outputFormat</a></div><div class="ttdeci">std::string outputFormat</div><div class="ttdef"><b>Definition:</b> <a href="graph_8h_source.html#l00020">graph.h:20</a></div></div>
+<div class="ttc" id="astructPOLDAM_1_1GraphEdge_html_a14ca2f537ec1073bc4c9acc0b0307ad7"><div class="ttname"><a href="structPOLDAM_1_1GraphEdge.html#a14ca2f537ec1073bc4c9acc0b0307ad7">POLDAM::GraphEdge::cost</a></div><div class="ttdeci">int cost</div><div class="ttdef"><b>Definition:</b> <a href="graph_8h_source.html#l00016">graph.h:16</a></div></div>
+<div class="ttc" id="astructPOLDAM_1_1GraphEdge_html_a193e10b1d639f1f07fbf63eb94fd65bc"><div class="ttname"><a href="structPOLDAM_1_1GraphEdge.html#a193e10b1d639f1f07fbf63eb94fd65bc">POLDAM::GraphEdge::to</a></div><div class="ttdeci">std::string to</div><div class="ttdef"><b>Definition:</b> <a href="graph_8h_source.html#l00019">graph.h:19</a></div></div>
+<div class="ttc" id="astructPOLDAM_1_1GraphEdge_html_ac06401887720b63a23223ea50d8f44f6"><div class="ttname"><a href="structPOLDAM_1_1GraphEdge.html#ac06401887720b63a23223ea50d8f44f6">POLDAM::GraphEdge::from</a></div><div class="ttdeci">std::string from</div><div class="ttdef"><b>Definition:</b> <a href="graph_8h_source.html#l00018">graph.h:18</a></div></div>
+<div class="ttc" id="astructPOLDAM_1_1GraphEdge_html_ad3b28c5e424880cf8c106a874edba4e3"><div class="ttname"><a href="structPOLDAM_1_1GraphEdge.html#ad3b28c5e424880cf8c106a874edba4e3">POLDAM::GraphEdge::edgeHash</a></div><div class="ttdeci">std::string edgeHash</div><div class="ttdef"><b>Definition:</b> <a href="graph_8h_source.html#l00017">graph.h:17</a></div></div>
+<div class="ttc" id="astructPOLDAM_1_1GraphVertex_html"><div class="ttname"><a href="structPOLDAM_1_1GraphVertex.html">POLDAM::GraphVertex</a></div><div class="ttdef"><b>Definition:</b> <a href="graph_8h_source.html#l00023">graph.h:24</a></div></div>
+<div class="ttc" id="astructPOLDAM_1_1GraphVertex_html_a1422966bf278134f216073e9c6f93eeb"><div class="ttname"><a href="structPOLDAM_1_1GraphVertex.html#a1422966bf278134f216073e9c6f93eeb">POLDAM::GraphVertex::controlFlowStr</a></div><div class="ttdeci">std::string controlFlowStr</div><div class="ttdef"><b>Definition:</b> <a href="graph_8h_source.html#l00043">graph.h:43</a></div></div>
+<div class="ttc" id="astructPOLDAM_1_1GraphVertex_html_a1861007225756ea6db06967cd20ce6f0"><div class="ttname"><a href="structPOLDAM_1_1GraphVertex.html#a1861007225756ea6db06967cd20ce6f0">POLDAM::GraphVertex::controlFlowHash</a></div><div class="ttdeci">std::size_t controlFlowHash</div><div class="ttdef"><b>Definition:</b> <a href="graph_8h_source.html#l00044">graph.h:44</a></div></div>
+<div class="ttc" id="astructPOLDAM_1_1GraphVertex_html_a198e2a69ce674a5ecd10c2ebd5c4c223"><div class="ttname"><a href="structPOLDAM_1_1GraphVertex.html#a198e2a69ce674a5ecd10c2ebd5c4c223">POLDAM::GraphVertex::controlParamStr</a></div><div class="ttdeci">std::string controlParamStr</div><div class="ttdef"><b>Definition:</b> <a href="graph_8h_source.html#l00046">graph.h:46</a></div></div>
+<div class="ttc" id="astructPOLDAM_1_1GraphVertex_html_a1b98a822642d932b53f9ff9aff2dfbf8"><div class="ttname"><a href="structPOLDAM_1_1GraphVertex.html#a1b98a822642d932b53f9ff9aff2dfbf8">POLDAM::GraphVertex::outputFormat</a></div><div class="ttdeci">std::string outputFormat</div><div class="ttdef"><b>Definition:</b> <a href="graph_8h_source.html#l00054">graph.h:54</a></div></div>
+<div class="ttc" id="astructPOLDAM_1_1GraphVertex_html_a1ed01a86d7de1504ccf204f906a41b39"><div class="ttname"><a href="structPOLDAM_1_1GraphVertex.html#a1ed01a86d7de1504ccf204f906a41b39">POLDAM::GraphVertex::flowHash</a></div><div class="ttdeci">std::size_t flowHash</div><div class="ttdef"><b>Definition:</b> <a href="graph_8h_source.html#l00036">graph.h:36</a></div></div>
+<div class="ttc" id="astructPOLDAM_1_1GraphVertex_html_a2bfcd57b1974d03ee8363a39cf089736"><div class="ttname"><a href="structPOLDAM_1_1GraphVertex.html#a2bfcd57b1974d03ee8363a39cf089736">POLDAM::GraphVertex::contextHash</a></div><div class="ttdeci">std::size_t contextHash</div><div class="ttdef"><b>Definition:</b> <a href="graph_8h_source.html#l00052">graph.h:52</a></div></div>
+<div class="ttc" id="astructPOLDAM_1_1GraphVertex_html_a2c40b74fbf78a34ac3d04c785694c54b"><div class="ttname"><a href="structPOLDAM_1_1GraphVertex.html#a2c40b74fbf78a34ac3d04c785694c54b">POLDAM::GraphVertex::edgesSize</a></div><div class="ttdeci">size_t edgesSize</div><div class="ttdef"><b>Definition:</b> <a href="graph_8h_source.html#l00056">graph.h:56</a></div></div>
+<div class="ttc" id="astructPOLDAM_1_1GraphVertex_html_a4f8f0088acc32fd504ba1626f3e2d427"><div class="ttname"><a href="structPOLDAM_1_1GraphVertex.html#a4f8f0088acc32fd504ba1626f3e2d427">POLDAM::GraphVertex::childFlowHash</a></div><div class="ttdeci">std::size_t childFlowHash</div><div class="ttdef"><b>Definition:</b> <a href="graph_8h_source.html#l00040">graph.h:40</a></div></div>
+<div class="ttc" id="astructPOLDAM_1_1GraphVertex_html_a626c86c29b82b02ca00ffe2ac557a994"><div class="ttname"><a href="structPOLDAM_1_1GraphVertex.html#a626c86c29b82b02ca00ffe2ac557a994">POLDAM::GraphVertex::methodStr</a></div><div class="ttdeci">std::string methodStr</div><div class="ttdef"><b>Definition:</b> <a href="graph_8h_source.html#l00027">graph.h:27</a></div></div>
+<div class="ttc" id="astructPOLDAM_1_1GraphVertex_html_a746c2874032ed6bffbae35a1c3ea70bd"><div class="ttname"><a href="structPOLDAM_1_1GraphVertex.html#a746c2874032ed6bffbae35a1c3ea70bd">POLDAM::GraphVertex::methodHash</a></div><div class="ttdeci">std::string methodHash</div><div class="ttdef"><b>Definition:</b> <a href="graph_8h_source.html#l00028">graph.h:28</a></div></div>
+<div class="ttc" id="astructPOLDAM_1_1GraphVertex_html_a8da6b000afa0091648e60e92f26fa644"><div class="ttname"><a href="structPOLDAM_1_1GraphVertex.html#a8da6b000afa0091648e60e92f26fa644">POLDAM::GraphVertex::childParamHash</a></div><div class="ttdeci">std::size_t childParamHash</div><div class="ttdef"><b>Definition:</b> <a href="graph_8h_source.html#l00041">graph.h:41</a></div></div>
+<div class="ttc" id="astructPOLDAM_1_1GraphVertex_html_aa3bb634764dd582953e820ed6b6bba31"><div class="ttname"><a href="structPOLDAM_1_1GraphVertex.html#aa3bb634764dd582953e820ed6b6bba31">POLDAM::GraphVertex::controlParamHash</a></div><div class="ttdeci">std::size_t controlParamHash</div><div class="ttdef"><b>Definition:</b> <a href="graph_8h_source.html#l00047">graph.h:47</a></div></div>
+<div class="ttc" id="astructPOLDAM_1_1GraphVertex_html_abd915df301f2d8663d86463c130c5713"><div class="ttname"><a href="structPOLDAM_1_1GraphVertex.html#abd915df301f2d8663d86463c130c5713">POLDAM::GraphVertex::paramStr</a></div><div class="ttdeci">std::string paramStr</div><div class="ttdef"><b>Definition:</b> <a href="graph_8h_source.html#l00031">graph.h:31</a></div></div>
+<div class="ttc" id="astructPOLDAM_1_1GraphVertex_html_abe01b7df6d55f21384cdca43f3f39ebb"><div class="ttname"><a href="structPOLDAM_1_1GraphVertex.html#abe01b7df6d55f21384cdca43f3f39ebb">POLDAM::GraphVertex::paramHash</a></div><div class="ttdeci">std::size_t paramHash</div><div class="ttdef"><b>Definition:</b> <a href="graph_8h_source.html#l00032">graph.h:32</a></div></div>
+<div class="ttc" id="astructPOLDAM_1_1GraphVertex_html_af266c6a8016d1dd8e119f36bfa380072"><div class="ttname"><a href="structPOLDAM_1_1GraphVertex.html#af266c6a8016d1dd8e119f36bfa380072">POLDAM::GraphVertex::flowStr</a></div><div class="ttdeci">std::string flowStr</div><div class="ttdef"><b>Definition:</b> <a href="graph_8h_source.html#l00035">graph.h:35</a></div></div>
+<div class="ttc" id="astructPOLDAM_1_1GraphVertex_html_afbef89fd9c97b4e3419b86f800aec163"><div class="ttname"><a href="structPOLDAM_1_1GraphVertex.html#afbef89fd9c97b4e3419b86f800aec163">POLDAM::GraphVertex::paramList</a></div><div class="ttdeci">std::vector&lt; std::string &gt; paramList</div><div class="ttdef"><b>Definition:</b> <a href="graph_8h_source.html#l00057">graph.h:57</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_45814856f36e01cbe959f35071d50d5a.html">Graph</a></li><li class="navelem"><a class="el" href="dir_208e09623009ff8bcf73f6f1082303a6.html">src</a></li><li class="navelem"><a class="el" href="graph_8h.html">graph.h</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+  </ul>
+</div>
+</body>
+</html>

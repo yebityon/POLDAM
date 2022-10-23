@@ -180,6 +180,7 @@ POLDAM::OmniGraph buildGraph(POLDAM::poldamConfig config, const std::string inpu
 int main(int argc, char *argv[])
 {
     POLDAM::poldamConfig config = {};
+    POLDAM_UTIL::Timer t("main");
 
     if (argc <= 1)
     {

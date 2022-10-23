@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['filereader_0',['fileReader',['../classPOLDAM_1_1fileReader.html',1,'POLDAM']]]
+  ['filereader_0',['FileReader',['../classPOLDAM_1_1FileReader.html',1,'POLDAM']]]
 ];

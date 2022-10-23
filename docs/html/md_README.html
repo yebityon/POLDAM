@@ -111,11 +111,11 @@ tree</h1>
 Description</h2>
 <ul>
 <li>Data<ul>
-<li>seloggerやJavaのMotivation Exampleが含まれるディレクトリです。docker-composeではこのディレクトリがjavaコンテナにマウントされます</li>
+<li>selogger や Java の Motivation Example が含まれるディレクトリです。docker-compose ではこのディレクトリが java コンテナにマウントされます</li>
 </ul>
 </li>
 <li>dockerfiles<ul>
-<li>java8のDcockerfileが含まれています。</li>
+<li>java8 の Dcockerfile が含まれています。</li>
 </ul>
 </li>
 <li>Graph<ul>
@@ -127,11 +127,11 @@ Description</h2>
 </ul>
 </li>
 <li>MetaFileParser<ul>
-<li>seloggerによって出力されたログディレクトリを入力として、そのディレクトリ以下のファイルを解釈し、必要な情報を出力するパーサーを提供します。</li>
+<li>selogger によって出力されたログディレクトリを入力として、そのディレクトリ以下のファイルを解釈し、必要な情報を出力するパーサーを提供します。</li>
 </ul>
 </li>
 <li>Util<ul>
-<li>このスクリプト内で用いている汎用的なクラスや関数を提供します </li>
+<li>このスクリプト内で用いている汎用的なクラスや関数を提供します</li>
 </ul>
 </li>
 </ul>
@@ -145,9 +145,9 @@ Dependency</h1>
 </ul>
 <h1><a class="anchor" id="autotoc_md5"></a>
 How to Use it</h1>
-<p >Motivation Exampleを実行するための最低限のステップをいかに示します。</p>
+<p >Motivation Example を実行するための最低限のステップをいかに示します。</p>
 <ol type="1">
-<li>Dependency　を実行したい環境に用意してください</li>
+<li>Dependency 　を実行したい環境に用意してください</li>
 <li>このレポジトリ　を git clone してください</li>
 <li><code>POLDAM/Makefile</code>の中の<code>BOOST_PATH</code>の部分を適宜変更してください</li>
 <li><code>make main</code>を実行して<code>main.cpp</code>をコンパイルしてください</li>
@@ -162,8 +162,25 @@ Limitation</h1>
 <li>Multithread is not supported.</li>
 <li>Only <code>-omni</code> option is supported.</li>
 <li>Object write instruction tracking is not supported.</li>
-<li>Defects4j motivation will be added soon. </li>
+<li>Defects4j motivation will be added soon.</li>
 </ul>
+<h1><a class="anchor" id="autotoc_md7"></a>
+Coding Style</h1>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">命名規則名   </th><th class="markdownTableHeadNone">用途    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Pascal Case   </td><td class="markdownTableBodyNone"><code>class</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">camelCase   </td><td class="markdownTableBodyNone"><code>function</code>, <code>method</code>, <code>variable</code>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">snake_case   </td><td class="markdownTableBodyNone"><code>file_name.cpp</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">SNAKE_CASE   </td><td class="markdownTableBodyNone"><code>#define</code>, <code>enum</code>, <code>namespace</code>   </td></tr>
+</table>
+<h2><a class="anchor" id="autotoc_md8"></a>
+Formatter</h2>
+<p ><a href="https://qiita.com/shirakawa4756/items/55b509fb56cb1bb0c9a4">Reference</a> </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

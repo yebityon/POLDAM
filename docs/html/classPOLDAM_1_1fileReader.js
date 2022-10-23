@@ -1,7 +1,7 @@
-var classPOLDAM_1_1fileReader =
+var classPOLDAM_1_1FileReader =
 [
-    [ "dirTraversal", "classPOLDAM_1_1fileReader.html#a45baf2e224893e6767deabe6d71e5a64", null ],
-    [ "parseLine", "classPOLDAM_1_1fileReader.html#a33178368ce43cff8f99af7fc8cafaa6e", null ],
-    [ "parseReadlines", "classPOLDAM_1_1fileReader.html#a9ddf6efa4b2622dd7ad690901966db0c", null ],
-    [ "readFile", "classPOLDAM_1_1fileReader.html#a163e20669b6dd43f125e227b66da506c", null ]
+    [ "dirTraversal", "classPOLDAM_1_1FileReader.html#a1eeba75555abddcd84888cc19d52320c", null ],
+    [ "parseLine", "classPOLDAM_1_1FileReader.html#a4c40eea2d9ceb3f306212e1f0ed30918", null ],
+    [ "parseReadlines", "classPOLDAM_1_1FileReader.html#a5da5c2ec945998869edda6fd8c107100", null ],
+    [ "readFile", "classPOLDAM_1_1FileReader.html#afda57ecf9770e8c299d09be77f1ea89c", null ]
 ];

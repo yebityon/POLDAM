@@ -18,4 +18,4 @@ services:
     working_dir: '/root/'
     tty: true
     volumes:
-      - ./:/root/POLDMA:cached
+      - ./:/root/POLDAM:cached

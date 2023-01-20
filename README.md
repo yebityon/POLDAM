@@ -60,7 +60,7 @@ Motivation Example を実行するための最低限のステップをいかに�
 3. `POLDAM/Makefile`の中の`BOOST_PATH`の部分を適宜変更してください
 4. `make main`を実行して`main.cpp`をコンパイルしてください
 5. `./POLDAM -o ./Data/java8/src/motivationExample/origin/selogger_out/ -t ./Data/java8/src/motivationExample/target/selogger_out/ -m notsupported -out sample --flow` を実行してください
-6. `sample_diff.out`が出力されると成功です。
+6. `sample_diff.dot`が出力されると成功です。
 
 # Limitation
 
@@ -79,6 +79,11 @@ Motivation Example を実行するための最低限のステップをいかに�
 | camelCase   | `function`, `method`, `variable` |
 | snake_case  | `file_name.cpp`                  |
 | SNAKE_CASE  | `#define`, `enum`, `namespace`   |
+
+# Roadmap
+- Cmakeによるビルドシステムの改善
+- Unit testの追加
+- selogger最新版への追従
 
 ## Formatter
 

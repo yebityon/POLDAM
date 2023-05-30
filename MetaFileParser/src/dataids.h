@@ -19,6 +19,7 @@ namespace POLDAM
         POLDAM::SELOGGER_EVENT_TYPE eventType;
         std::string valueDesc;
         std::map<std::string, std::string> attr;
+        std::string raw_value;
     };
     class DataIdsParser : FileReader
     {

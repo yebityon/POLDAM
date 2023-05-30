@@ -6,8 +6,8 @@
 #include "Util/include/src/poldam_config.h"
 
 // Provide function for Metafile of SELogger
-#include "MetafileParser/src/factory.h"
-#include "Metafileparser/src/metafile_handler_common.h"
+#include "MetaFileParser/src/factory.h"
+#include "MetaFileParser/src/metafile_handler_common.h"
 
 // Provide Graph fucntion, Build MarkleTree and Compute Diff Tree of Target Program.
 #include "Graph/src/graph.h"
@@ -80,7 +80,7 @@ POLDAM::OmniGraph buildGraph(POLDAM::poldamConfig config, const std::string inpu
     POLDAM::metafileFactory factory(inputDir);
 
     auto dataids = factory.createInstance<POLDAM::DataIdsParser>("dataids.txt", true);
-    auto seloggerParser = factory.createInstance<POLDAM::SeloggerLogParser>("log-00001.txt");
+    auto seloggerParser = factory.createInstance<POLDAM::SeloggerLogParser>("log-00001.txt", "^log-.*.txt");
     auto objectFileParser = factory.createInstance<POLDAM::ObjectfileParser>();
     auto methodParser = factory.createInstance<POLDAM::MethodDataParser>("methods.txt", true);
     auto classesParser = factory.createInstance<POLDAM::ClassesDataParser>("classes.txt", true);
@@ -112,6 +112,7 @@ POLDAM::OmniGraph buildGraph(POLDAM::poldamConfig config, const std::string inpu
         POLDAM::DataId dataId = parsedDataIds[log.dataId];
         const POLDAM::MethodsData m = parsedMethodsData[dataId.methodId];
         const POLDAM::ClassesData c = parsedClassesData[dataId.classId];
+        std::cout << dataId.raw_value << std::endl;
 
         if (dataId.eventType == POLDAM::SELOGGER_EVENT_TYPE::METHOD_ENTRY)
         {

@@ -1,6 +1,7 @@
 #pragma once
 #include "metafile_handler_common.h"
 #include "../../Util/include/src/poldam_util.h"
+#include <regex>
 
 namespace POLDAM
 {
@@ -16,11 +17,12 @@ namespace POLDAM
     class SeloggerLogParser : FileReader
     {
     public:
-        SeloggerLogParser(const std::string &inputDir_, const std::string &fileName_) : dirName(inputDir_),
-                                                                                        filePath(),
-                                                                                        fileName(fileName_),
-                                                                                        data(),
-                                                                                        parsedData(){};
+        SeloggerLogParser(const std::string &inputDir_, const std::string &fileName_, const std::string &filePattern_ = "") : dirName(inputDir_),
+                                                                                                                              filePath(),
+                                                                                                                              fileName(fileName_),
+                                                                                                                              data(),
+                                                                                                                              filePattern(filePattern_),
+                                                                                                                              parsedData(){};
 
         std::string getDirName()
         {
@@ -50,7 +52,7 @@ namespace POLDAM
     private:
         void readFile(const std::string &fileName, std::vector<std::string> &data) override;
         void parseReadlines(std::vector<std::string> &data) override;
-        void dirTraversal(const std::string &fileName) override;
+        void dirTraversal(const std::string &filePattern) override;
 
         /**
          * @brief parseLine() return the SELOGGER_LOG that is interpreted data of given argument. this function is called in void paserLine()
@@ -64,6 +66,8 @@ namespace POLDAM
         // TODO: string fileName should be disgnated from out of this file.
         const std::string fileName{};
         std::string filePath;
+        std::vector<std::string> filePaths;
+        std::string filePattern;
         std::string dirName;
         std::vector<std::string> data;
         std::vector<SeloggerData> parsedData;

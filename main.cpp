@@ -14,6 +14,8 @@
 
 #include <boost/graph/graphviz.hpp>
 
+#define DEBUG_OUT(Var) std::cout << #Var << " " << Var << "\n";
+
 bool DEBUG = true;
 
 void printHelp()
@@ -37,7 +39,6 @@ namespace POLDAM
         void writeOmniGraph(const std::string outputFileName)
         {
             const auto &g = G.getGraphCopy();
-
             try
             {
                 std::ofstream outputDotFile(outputFileName);
@@ -58,7 +59,6 @@ namespace POLDAM
     private:
         POLDAM::OmniGraph &G;
     };
-
 }
 
 std::string shapeLogString(const POLDAM::DataId d, const POLDAM::MethodsData m, const POLDAM::ClassesData c)
@@ -146,24 +146,39 @@ POLDAM::OmniGraph buildGraph(POLDAM::poldamConfig config, const std::string inpu
             const std::string paramType = dataId.attr["type"];
             std::string paramConcreateValue = "";
 
-            // if (paramType.find("String") != std::string::npos)
-            // {
-            //     // fixed for 0-index
-            //     const int argValueIdx = std::stoi(log.value) - 1;
-            //     const POLDAM::ObjectData o = parsedObjectData[argValueIdx];
-            //     omniGraph.updateStackTopVertexParamInfo(o.stringValue, log.threadId);
-            // }
-            // // branch for paramType that paramValue is directly recored in SELogger.
-            // else if (paramType.find("Ljava") == std::string::npos)
-            // {
-            //     // std::cout << "paramType: " << paramType << ",Value: " << log.value << std::endl;
-            //     omniGraph.updateStackTopVertexParamInfo(log.value, log.threadId);
-            // }
-            // else
-            // {
-            //     const POLDAM::ObjectData o = parsedObjectData[std::stoi(log.value) - 1];
-            //     // std::cout << "paramType: " << paramType << ",Value: " << o.objectType << std::endl;
-            // }
+            if (paramType.find("String") != std::string::npos)
+            {
+                // fixed for 0-index
+                const int argValueIdx = std::stoi(log.value) - 1;
+                if (argValueIdx < 0)
+                {
+                    // FIXME: argValueIdx should be greater than 0
+                    //  If reach this branch, it means: you need to fix parseLine() for CALL_PARAM
+                    continue;
+                }
+                DEBUG_OUT(argValueIdx);
+                DEBUG_OUT(log.threadId)
+                const POLDAM::ObjectData o = parsedObjectData[argValueIdx];
+                omniGraph.updateStackTopVertexParamInfo(o.stringValue, log.threadId);
+            }
+            // branch for paramType that paramValue is directly recored in SELogger.
+            else if (paramType.find("Ljava") == std::string::npos)
+            {
+                // std::cout << "paramType: " << paramType << ",Value: " << log.value << std::endl;
+                omniGraph.updateStackTopVertexParamInfo(log.value, log.threadId);
+            }
+            else
+            {
+                const int argValueIdx = std::stoi(log.value) - 1;
+                if (argValueIdx < 0)
+                {
+                    // FIXME: argValueIdx should be greater than 0
+                    //  If reach this branch, it means: you need to fix parseLine() for CALL_PARAM
+                    continue;
+                }
+                const POLDAM::ObjectData o = parsedObjectData[argValueIdx];
+                // std::cout << "paramType: " << paramType << ",Value: " << o.objectType << std::endl;
+            }
         }
         else
         {

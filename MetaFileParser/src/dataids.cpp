@@ -54,6 +54,8 @@ namespace POLDAM
         dataid.instructionId = std::stoi(parsedline[4]);
         dataid.eventType = POLDAM::getEventType(parsedline[5]);
         dataid.valueDesc = parsedline[6];
+        // DEBUG use only
+        dataid.raw_value = line;
 
         for (int i = 7; i < parsedline.size(); ++i)
         {

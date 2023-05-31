@@ -22,7 +22,8 @@ void printHelp()
     std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "-o : selogger_outputDir,Directory containing selogger output of the program before modification.\n";
     std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "-t : selogger_outputDir,Directory containing selogger output of the program after modification.\n";
     std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "-m : method that you want to observe, default is the first executed method.\n";
-    std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "--debug : enable debug output.\n";
+    std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "--debug : if enalbe debug mode, POLDAM flush output to stdout, and only analysis original graph(i.e., do not analysis target graph and compute param graph) \
+    nable debug output.\n";
     std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "--flow, --param : evaluate the equivalence of method execution using the given hash. \n";
 }
 
@@ -112,7 +113,11 @@ POLDAM::OmniGraph buildGraph(POLDAM::poldamConfig config, const std::string inpu
         POLDAM::DataId dataId = parsedDataIds[log.dataId];
         const POLDAM::MethodsData m = parsedMethodsData[dataId.methodId];
         const POLDAM::ClassesData c = parsedClassesData[dataId.classId];
-        std::cout << dataId.raw_value << std::endl;
+
+        if (config.isDebugMode)
+        {
+            std::cout << dataId.raw_value << "\n";
+        }
 
         if (dataId.eventType == POLDAM::SELOGGER_EVENT_TYPE::METHOD_ENTRY)
         {
@@ -141,24 +146,24 @@ POLDAM::OmniGraph buildGraph(POLDAM::poldamConfig config, const std::string inpu
             const std::string paramType = dataId.attr["type"];
             std::string paramConcreateValue = "";
 
-            if (paramType.find("String") != std::string::npos)
-            {
-                // fixed for 0-index
-                const int argValueIdx = std::stoi(log.value) - 1;
-                const POLDAM::ObjectData o = parsedObjectData[argValueIdx];
-                omniGraph.updateStackTopVertexParamInfo(o.stringValue, log.threadId);
-            }
-            // branch for paramType that paramValue is directly recored in SELogger.
-            else if (paramType.find("Ljava") == std::string::npos)
-            {
-                // std::cout << "paramType: " << paramType << ",Value: " << log.value << std::endl;
-                omniGraph.updateStackTopVertexParamInfo(log.value, log.threadId);
-            }
-            else
-            {
-                const POLDAM::ObjectData o = parsedObjectData[std::stoi(log.value) - 1];
-                // std::cout << "paramType: " << paramType << ",Value: " << o.objectType << std::endl;
-            }
+            // if (paramType.find("String") != std::string::npos)
+            // {
+            //     // fixed for 0-index
+            //     const int argValueIdx = std::stoi(log.value) - 1;
+            //     const POLDAM::ObjectData o = parsedObjectData[argValueIdx];
+            //     omniGraph.updateStackTopVertexParamInfo(o.stringValue, log.threadId);
+            // }
+            // // branch for paramType that paramValue is directly recored in SELogger.
+            // else if (paramType.find("Ljava") == std::string::npos)
+            // {
+            //     // std::cout << "paramType: " << paramType << ",Value: " << log.value << std::endl;
+            //     omniGraph.updateStackTopVertexParamInfo(log.value, log.threadId);
+            // }
+            // else
+            // {
+            //     const POLDAM::ObjectData o = parsedObjectData[std::stoi(log.value) - 1];
+            //     // std::cout << "paramType: " << paramType << ",Value: " << o.objectType << std::endl;
+            // }
         }
         else
         {
@@ -166,7 +171,7 @@ POLDAM::OmniGraph buildGraph(POLDAM::poldamConfig config, const std::string inpu
             omniGraph.updateStackTopVertex(logString, log.threadId);
         }
     }
-
+    std::cout << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX << "successfully build OmniGraph!\n";
     POLDAM::OmniWriter writer(omniGraph);
     std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "writing result..." << std::endl;
     writer.writeOmniGraph(outputFileName);
@@ -191,7 +196,6 @@ int main(int argc, char *argv[])
 
     for (unsigned int i = 1; i < argc; ++i)
     {
-
         const std::string arg = argv[i];
         if (arg == "-o" or arg == "--originDir")
         {
@@ -243,7 +247,6 @@ int main(int argc, char *argv[])
                       << std::endl;
             std::cin.tie(nullptr);
             std::ios_base::sync_with_stdio(false);
-            config.useFastIO = true;
         }
         else if (arg == "--debug")
         {
@@ -259,7 +262,6 @@ int main(int argc, char *argv[])
         }
         else
         {
-
             std::cout << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX << "Unknown Option.\n";
             std::cout << argv[i] << " is not valid option.\n";
             printHelp();
@@ -274,6 +276,12 @@ int main(int argc, char *argv[])
     std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "outputFileName: {" << config.outputFileName << "}\n";
 
     POLDAM::OmniGraph originGraph = buildGraph(config, config.originDir, config.outputFileName + "_origin.dot");
+    if (config.isDebugMode)
+    {
+        std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "DEBUG MODE: ONLY PRINT ORIGINAL GRAPH\n";
+        std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "Successfully Finished." << std::endl;
+        return 0;
+    }
     POLDAM::OmniGraph targetGraph = buildGraph(config, config.targetDir, config.outputFileName + "_target.dot");
 
     // Phase3. Compute Diff Graph

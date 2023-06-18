@@ -4,7 +4,8 @@ RUN apt-get update \
   && apt-get install -y git \
                         g++ \
                         make \
-                        wget
+                        wget \
+                        cmake 
 
 RUN cd /root && wget http://downloads.sourceforge.net/project/boost/boost/1.80.0/boost_1_80_0.tar.gz \
   && tar xfz boost_1_80_0.tar.gz \

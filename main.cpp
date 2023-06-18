@@ -20,12 +20,13 @@ bool DEBUG = true;
 
 void printHelp()
 {
-    std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "Following Options are available now.\n";
-    std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "-o : selogger_outputDir,Directory containing selogger output of the program before modification.\n";
-    std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "-t : selogger_outputDir,Directory containing selogger output of the program after modification.\n";
-    std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "-m : method that you want to observe, default is the first executed method.\n";
-    std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "--debug : if enalbe debug mode, POLDAM flush output to stdout, and only analysis original graph(i.e., do not analysis target graph and compute param graph) \
-    nable debug output.\n";
+    std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "Usage: [command] "
+              << "-o [original_selogger_directory] -t [target_selogger_directory] -m [target_method] -d [diff_file_name] \n";
+    std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "-o, The path to the original directory. This parameter is mandatory and must point to a valid selogger output directory.\n";
+    std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "-t, The path to the target directory. This directory data  This parameter is mandatory and must point to a valid selogger output directory.\n";
+    std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "-m, The Merkle tree will be constructed using the method specified by the -m option as the entry point.\n";
+    std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "-d, The file name of the diff file\n";
+    std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "--debug, enalbe debug mode.\n";
     std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "--flow, --param : evaluate the equivalence of method execution using the given hash. \n";
 }
 
@@ -245,11 +246,11 @@ int main(int argc, char *argv[])
             config.targetMethodName = argv[i + 1];
             ++i;
         }
-        else if (arg == "-out" or arg == "--outFileName")
+        else if (arg == "-d" or arg == "--difffilename")
         {
             if (i + 1 > argc)
             {
-                std::cout << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX << "No outputfile is Given\n";
+                std::cout << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX << "No DifffileName is Given\n";
                 printHelp();
                 exit(1);
             }
@@ -277,9 +278,9 @@ int main(int argc, char *argv[])
         }
         else
         {
+            printHelp();
             std::cout << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX << "Unknown Option.\n";
             std::cout << argv[i] << " is not valid option.\n";
-            printHelp();
             exit(1);
         }
     }
@@ -288,7 +289,14 @@ int main(int argc, char *argv[])
     std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "originDir: {" << config.originDir << "}\n";
     std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "targetDir: {" << config.targetDir << "}\n";
     std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "targetMethod: {" << config.targetMethodName << "}\n";
-    std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "outputFileName: {" << config.outputFileName << "}\n";
+    if (config.outputFileName.size() == 0)
+    {
+        std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "diffFileName is Empty, use default value.\n";
+        config.outputFileName = "sample";
+    }
+    std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "diffFileName: {" << config.outputFileName << "}\n";
+    std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "Hash Settings:";
+    std::cout << "Flow: " << (config.useFlowHash ? "true, " : "false, ") << "Param: " << (config.useFlowHash ? "true" : "false") << std::endl;
 
     POLDAM::OmniGraph originGraph = buildGraph(config, config.originDir, config.outputFileName + "_origin.dot");
     if (config.isDebugMode)

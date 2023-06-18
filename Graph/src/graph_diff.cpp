@@ -221,7 +221,10 @@ namespace POLDAM
                 this->diffGraph[extraMethodCallDesc] = targetGraph[boost::target(*tEdgeItr, targetGraph)];
             }
 
-            this->diffGraph[extraMethodCallDesc].outputFormat += "\nDIFFEREMT METHOD CALL";
+            this->diffGraph[extraMethodCallDesc].outputFormat += "\nDIFFERENT METHOD CALL";
+            boost::graph_traits<Graph>::edge_descriptor edgeDesc;
+            bool isInserted = false;
+            boost::tie(edgeDesc, isInserted) = boost::add_edge(parDiffVerDesc, extraMethodCallDesc, this->diffGraph);
 
             return;
         }

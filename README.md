@@ -50,17 +50,27 @@
 - g++-11
 - selogger v0.5.0 ( for logging)
 - GNU Make 4.3 (Optional)
-
+- cmake version 3.22.1
 ## How to Use it
 
-Motivation Example を実行するための最低限のステップをいかに示します。
+Motivation Example を実行するための最低限のステップを以下に示します。
 
-1. Dependency 　を実行したい環境に用意してください
-2. このレポジトリ　を git clone してください
-3. `POLDAM/Makefile`の中の`BOOST_PATH`の部分を適宜変更してください
-4. `make main`を実行して`main.cpp`をコンパイルしてください
-5. `./POLDAM -o ./Data/java8/src/motivationExample/origin/selogger_out/ -t ./Data/java8/src/motivationExample/target/selogger_out/ -m notsupported -out sample --flow` を実行してください
-6. `sample_diff.dot`が出力されると成功です。
+1. Dependency を実行したい環境に用意してください
+2. CMakeLists.txt　内の`set(BOOST_PATH Boost/boost_1_80_0)` を適宜環境に併せて変更してください
+  
+```bash
+pwd # => /path/to/POLDAM
+#build ディレクトリの作成
+mkdir build
+# 作成したbuildディレクトリに移動
+cd build 
+# cmakeの実行
+cmake .. && make 
+# 以下のようなファイルが生成されていると成功
+ls 
+CMakeCache.txt  CMakeFiles  cmake_install.cmake  libmetafileParser.a  Makefile  POLDAM
+```
+
 
 # Limitation
 
@@ -81,7 +91,6 @@ Motivation Example を実行するための最低限のステップをいかに�
 | SNAKE_CASE  | `#define`, `enum`, `namespace`   |
 
 # Roadmap
-- Cmakeによるビルドシステムの改善
 - Unit testの追加
 - selogger最新版への追従
 

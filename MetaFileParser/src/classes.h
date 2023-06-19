@@ -56,7 +56,7 @@ namespace POLDAM
 
         bool isTargetFile(const std::string fileName);
 
-        bool hasHeaderData = false;
+        bool hasHeaderData = true;
 
         std::vector<std::string> targetFileNames{};
         std::string fileName{};

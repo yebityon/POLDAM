@@ -59,7 +59,7 @@ namespace POLDAM
         std::pair<int, int> parseObjectData(const std::string line);
 
         std::string fileType{};
-
+        // FIXME: objectTypes and String FileName and TypesFileName are directly designated here.
         std::string ojbectTypesFileName{"LOG$ObjectTypes00001.txt"};
         std::string stringFileName{"LOG$String00001.txt"};
         std::string typesFileName{"LOG$Types.txt"};

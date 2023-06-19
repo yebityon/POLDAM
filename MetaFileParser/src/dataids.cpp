@@ -28,6 +28,7 @@ namespace POLDAM
 
         if (this->hasHeaderData)
         {
+            std::cout << *this->data.begin() << std::endl;
             this->data.erase(this->data.begin());
         }
     }

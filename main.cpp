@@ -127,7 +127,7 @@ POLDAM::OmniGraph buildGraph(POLDAM::poldamConfig config, const std::string inpu
 
             v.methodStr = m.methodName;
             v.methodHash = std::to_string(std::hash<std::string>()(m.className + m.methodName));
-            v.outputFormat = m.methodName;
+            v.outputFormat = m.className + ":" + m.methodName;
 
             bool result = omniGraph.addOmniVertex(v, log.threadId);
         }

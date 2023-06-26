@@ -105,10 +105,13 @@ namespace POLDAM
 
     void ObjectfileParser::parseStringLine(const std::string &line)
     {
+        // see also
+        // https://github.com/takashi-ishio/selogger/blob/924f3d961344bf32cddc93709ed9609f27905191/src/selogger/logging/util/StringContentFile.java#L32
+
         std::vector<std::string> d = POLDAM_UTIL::split(line, ',');
-        unsigned int dataidIdx = static_cast<unsigned int>(std::stoi(d[0]));
-        // we do not recored length of target string
-        this->parsedStringDatas[dataidIdx] = d[2];
+        unsigned int objectIdx = static_cast<unsigned int>(std::stoi(d[0]));
+        // Do not recored length of target string.
+        this->parsedStringDatas[objectIdx] = d[2];
     }
 
     void ObjectfileParser::readObjectTypeData()

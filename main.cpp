@@ -149,16 +149,17 @@ POLDAM::OmniGraph buildGraph(POLDAM::poldamConfig config, const std::string inpu
 
             if (paramType.find("String") != std::string::npos)
             {
+                // see also: https://github.com/takashi-ishio/selogger/blob/924f3d961344bf32cddc93709ed9609f27905191/src/selogger/logging/util/StringContentFile.java#L32
                 // fixed for 0-index
                 const int argValueIdx = std::stoi(log.value) - 1;
                 if (argValueIdx < 0)
                 {
-                    // FIXME: argValueIdx should be greater than 0
-                    //  If reach this branch, it means: you need to fix parseLine() for CALL_PARAM
+                    if (config.isDebugMode)
+                    {
+                        std::cout << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX << dataId.raw_value + " is Invalid Data, Skitp to compute hash\n";
+                    }
                     continue;
                 }
-                DEBUG_OUT(argValueIdx);
-                DEBUG_OUT(log.threadId)
                 const POLDAM::ObjectData o = parsedObjectData[argValueIdx];
                 omniGraph.updateStackTopVertexParamInfo(o.stringValue, log.threadId);
             }
@@ -170,15 +171,17 @@ POLDAM::OmniGraph buildGraph(POLDAM::poldamConfig config, const std::string inpu
             }
             else
             {
+                // TODO: Add new condition for Integer
                 const int argValueIdx = std::stoi(log.value) - 1;
                 if (argValueIdx < 0)
                 {
-                    // FIXME: argValueIdx should be greater than 0
-                    //  If reach this branch, it means: you need to fix parseLine() for CALL_PARAM
+                    if (config.isDebugMode)
+                    {
+                        std::cout << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX << dataId.raw_value + " is Invalid Data, Skitp to compute hash\n";
+                    }
                     continue;
                 }
                 const POLDAM::ObjectData o = parsedObjectData[argValueIdx];
-                // std::cout << "paramType: " << paramType << ",Value: " << o.objectType << std::endl;
             }
         }
         else
@@ -274,7 +277,7 @@ int main(int argc, char *argv[])
         }
         else if (arg == "--param")
         {
-            config.usePramHash = true;
+            config.useParamHash = true;
         }
         else
         {
@@ -296,7 +299,7 @@ int main(int argc, char *argv[])
     }
     std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "diffFileName: {" << config.outputFileName << "}\n";
     std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "Hash Settings:";
-    std::cout << "Flow: " << (config.useFlowHash ? "true, " : "false, ") << "Param: " << (config.useFlowHash ? "true" : "false") << std::endl;
+    std::cout << "Flow: " << (config.useFlowHash ? "true, " : "false, ") << "Param: " << (config.useParamHash ? "true" : "false") << std::endl;
 
     POLDAM::OmniGraph originGraph = buildGraph(config, config.originDir, config.outputFileName + "_origin.dot");
     if (config.isDebugMode)
@@ -308,7 +311,7 @@ int main(int argc, char *argv[])
     POLDAM::OmniGraph targetGraph = buildGraph(config, config.targetDir, config.outputFileName + "_target.dot");
 
     // Phase3. Compute Diff Graph
-    bool useFlowHash = config.useFlowHash, useParamHash = config.usePramHash;
+    bool useFlowHash = config.useFlowHash, useParamHash = config.useParamHash;
 
     const auto isSameVertex = [useFlowHash, useParamHash](const POLDAM::GraphVertex &v, const POLDAM::GraphVertex &u) -> bool
     {

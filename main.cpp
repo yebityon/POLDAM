@@ -154,8 +154,10 @@ POLDAM::OmniGraph buildGraph(POLDAM::poldamConfig config, const std::string inpu
                 const int argValueIdx = std::stoi(log.value) - 1;
                 if (argValueIdx < 0)
                 {
-
-                    std::cout << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX << dataId.raw_value + " is Invalid Data, Skitp to conpute hash\n";
+                    if (config.isDebugMode)
+                    {
+                        std::cout << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX << dataId.raw_value + " is Invalid Data, Skitp to compute hash\n";
+                    }
                     continue;
                 }
                 const POLDAM::ObjectData o = parsedObjectData[argValueIdx];
@@ -169,10 +171,14 @@ POLDAM::OmniGraph buildGraph(POLDAM::poldamConfig config, const std::string inpu
             }
             else
             {
+                // TODO: Add new condition for Integer
                 const int argValueIdx = std::stoi(log.value) - 1;
                 if (argValueIdx < 0)
                 {
-                    std::cout << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX << dataId.raw_value + " is Invalid Data, Skitp to conpute hash\n";
+                    if (config.isDebugMode)
+                    {
+                        std::cout << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX << dataId.raw_value + " is Invalid Data, Skitp to compute hash\n";
+                    }
                     continue;
                 }
                 const POLDAM::ObjectData o = parsedObjectData[argValueIdx];

@@ -16,8 +16,7 @@ namespace POLDAM
             root[threadId] = v;
             this->Root = v;
         }
-        if (this->Root ==)
-            PoldamGraph::pushStackVertex(v, threadId);
+        PoldamGraph::pushStackVertex(v, threadId);
         this->path.push_back(v);
 
         return v;

@@ -62,4 +62,26 @@ public class myMath{
 
         return prime;
     }
+    public static List<Integer> sieveOfEratosthenes(int n) 
+    {
+        boolean[] isPrime = new boolean[n + 1];
+        for (int i = 2; i <= n; i++) {
+            isPrime[i] = true;
+        }
+
+        for (int factor = 2; factor*factor <= n; factor++) {
+            if (isPrime[factor]) {
+                for (int j = factor; factor*j <= n; j++) {
+                    isPrime[factor*j] = false;
+                }
+            }
+        }
+
+        List<Integer> primes = new ArrayList<>();
+        for (int i = 2; i <= n; i++) {
+            if (isPrime[i]) primes.add(i);
+        }
+
+        return primes;
+    }
 }

@@ -16,12 +16,12 @@ Excluded by name filter: java/lang/invoke/MethodHandleStatics
 Excluded by name filter: java/lang/invoke/MethodHandleStatics$1
 Excluded by name filter: sun/launcher/LauncherHelper
 Excluded by name filter: sun/misc/URLClassPath$FileLoader$1
-Weaving executed: Class=Main, LoadedFrom=file:/root/selogger/src/motivationExample/origin/, LogLevel=Normal, ClassHash=5448fc2c241381810d7898ce3d854a3f8409f3f7, ClassLoaderID=Loader@18b4aac2:Main
+Weaving executed: Class=Main, LoadedFrom=file:/root/selogger/src/motivationExample/origin/, LogLevel=Normal, ClassHash=23f9744baf05cbb601bc5ddf8f207d11dd2d4587, ClassLoaderID=Loader@18b4aac2:Main
 Excluded by name filter: sun/launcher/LauncherHelper$FXHelper
 Excluded by name filter: java/lang/Class$MethodArray
 Excluded by name filter: selogger/logging/util/ThreadId
 Excluded by name filter: selogger/logging/util/ThreadId$1
-Weaving executed: Class=customClass/myMath, LoadedFrom=file:/root/selogger/src/motivationExample/origin/, LogLevel=Normal, ClassHash=80a6e9ec17664c9d9cb321964eb002c6907302b3, ClassLoaderID=Loader@18b4aac2:customClass/myMath
+Weaving executed: Class=customClass/myMath, LoadedFrom=file:/root/selogger/src/motivationExample/origin/, LogLevel=Normal, ClassHash=a768be4ebea872377cbf1de37e9347ee249c71c0, ClassLoaderID=Loader@18b4aac2:customClass/myMath
 Excluded by name filter: selogger/com/fasterxml/jackson/core/io/JsonStringEncoder
 Excluded by name filter: selogger/com/fasterxml/jackson/core/io/CharTypes
 Excluded by name filter: jdk/internal/misc/TerminatingThreadLocal$1

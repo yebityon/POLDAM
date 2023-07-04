@@ -1,66 +1,72 @@
 #include "graph.h"
-#include <iostream>
 
 namespace POLDAM
 {
-
-    bool OmniGraph::addOmniVertex(GraphVertex v_, const size_t threadId)
+    bool PoldamGraph::addOmniVertex(GraphVertex v_, const size_t threadId)
     {
         // FIXME: it should be perfect forwarding
-        boost::graph_traits<Graph>::vertex_descriptor v = OmniGraph::addOmniVertexDesc(v_, threadId);
-
+        boost::graph_traits<Graph>::vertex_descriptor v = PoldamGraph::addOmniVertexDesc(v_, threadId);
         if (not this->vStack[threadId].empty())
         {
-            const auto &prev = OmniGraph::getStackTopVertex(threadId);
-            OmniGraph::addOmniEdge(prev, v, threadId);
+            const auto &prev = PoldamGraph::getStackTopVertex(threadId);
+            PoldamGraph::addOmniEdge(prev, v, threadId);
         }
         else
         {
-            root[threadId] = v;
-            this->Root = v;
+            // entryMethodNameが明示的に与えられなかった場合は、最初の頂点をthis->Rootに設定
+            if (!config.hasEntryMethodName && this->root.find(threadId) == this->root.end() /*threadID拡張ようのため*/)
+            {
+                this->Root = v;
+                this->root[threadId] = v;
+            }
         }
-
-        OmniGraph::pushStackVertex(v, threadId);
-
+        PoldamGraph::pushStackVertex(v, threadId);
+        // Thread IDのことは考えないことにする。
+        if (this->g[v].methodStr == config.entryMethodName && this->root.find(threadId) == this->root.end())
+        {
+            // 簡易版のRootにする
+            this->Root = v;
+            this->root[threadId] = v;
+        }
         this->path.push_back(v);
 
         return v;
     }
 
-    boost::graph_traits<Graph>::vertex_descriptor OmniGraph::addOmniVertexDesc(GraphVertex v_, const size_t threadId)
+    boost::graph_traits<Graph>::vertex_descriptor PoldamGraph::addOmniVertexDesc(GraphVertex v_, const size_t threadId)
     {
         boost::graph_traits<Graph>::vertex_descriptor v = boost::add_vertex(this->g);
         this->g[v] = v_;
         return v;
     }
 
-    bool OmniGraph::updateStackTopVertex(const std::string log, const unsigned int threadId)
+    bool PoldamGraph::updateStackTopVertex(const std::string log, const unsigned int threadId)
     {
         const auto &prevVertex = this->vStack[threadId].top();
         this->g[prevVertex].flowStr += log;
         return true;
     }
 
-    bool OmniGraph::updateStackTopVertexParamInfo(const std::string &paramValue, unsigned int threadId)
+    bool PoldamGraph::updateStackTopVertexParamInfo(const std::string &paramValue, unsigned int threadId)
     {
         const auto &prevVertx = this->vStack[threadId].top();
         this->g[prevVertx].paramStr += paramValue;
         return true;
     }
 
-    bool OmniGraph::popStackVertex(const unsigned int threadId)
+    bool PoldamGraph::popStackVertex(const unsigned int threadId)
     {
         popVertex(threadId);
         return true;
     }
 
-    bool OmniGraph::pushStackVertex(const boost::graph_traits<Graph>::vertex_descriptor vDesc, const unsigned int threadId)
+    bool PoldamGraph::pushStackVertex(const boost::graph_traits<Graph>::vertex_descriptor vDesc, const unsigned int threadId)
     {
         this->vStack[threadId].push(vDesc);
         return true;
     }
 
-    bool OmniGraph::computeHash(const unsigned int threadId)
+    bool PoldamGraph::computeHash(const unsigned int threadId)
     {
         computeFlowHash(threadId);
         computeParamHash(threadId);
@@ -68,17 +74,17 @@ namespace POLDAM
         return true;
     }
 
-    bool OmniGraph::isStackEmpty(const unsigned int threadId)
+    bool PoldamGraph::isStackEmpty(const unsigned int threadId)
     {
         return this->vStack[threadId].empty();
     }
 
-    bool OmniGraph::isLeaf(boost::graph_traits<Graph>::vertex_descriptor vDesc)
+    bool PoldamGraph::isLeaf(boost::graph_traits<Graph>::vertex_descriptor vDesc)
     {
         return boost::out_degree(vDesc, this->g) == 1;
     }
 
-    bool OmniGraph::addOmniEdge(
+    bool PoldamGraph::addOmniEdge(
         boost::graph_traits<Graph>::vertex_descriptor u_,
         boost::graph_traits<Graph>::vertex_descriptor v_, const size_t threadId)
     {
@@ -90,7 +96,7 @@ namespace POLDAM
         return isInserted;
     }
 
-    boost::graph_traits<Graph>::vertex_descriptor OmniGraph::getStackTopVertex(const unsigned int threadId)
+    boost::graph_traits<Graph>::vertex_descriptor PoldamGraph::getStackTopVertex(const unsigned int threadId)
     {
         // TODO: handle error exception
         try
@@ -105,7 +111,7 @@ namespace POLDAM
         return boost::graph_traits<Graph>::vertex_descriptor();
     }
 
-    bool OmniGraph::computeFlowHash(const unsigned int threadId)
+    bool PoldamGraph::computeFlowHash(const unsigned int threadId)
     {
         const auto &topVertex = this->vStack[threadId].top();
         this->g[topVertex].flowHash = std::hash<std::string>()(this->g[topVertex].flowStr);
@@ -113,14 +119,14 @@ namespace POLDAM
         return true;
     }
 
-    bool OmniGraph::computeParamHash(const unsigned int threadId)
+    bool PoldamGraph::computeParamHash(const unsigned int threadId)
     {
         const auto &topVertex = this->vStack[threadId].top();
         this->g[topVertex].paramHash = std::hash<std::string>()(this->g[topVertex].paramStr);
         return true;
     }
 
-    bool OmniGraph::popVertex(const unsigned int threadId)
+    bool PoldamGraph::popVertex(const unsigned int threadId)
     {
         const boost::graph_traits<Graph>::vertex_descriptor &crtVertex = this->vStack[threadId].top();
         this->g[crtVertex].controlFlowHash = std::hash<size_t>()(
@@ -147,7 +153,7 @@ namespace POLDAM
         return true;
     }
 
-    Graph OmniGraph::getGraphCopy()
+    Graph PoldamGraph::getGraphCopy()
     {
         return this->g;
     }

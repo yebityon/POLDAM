@@ -8,7 +8,9 @@ services:
     working_dir: '/root/'
     tty: true
     volumes:
-      - ./Data/java8:/root/selogger:cached
+      - type: bind
+        source: ./Data
+        target: /root/selogger       
 
   cpp:
     restart: always
@@ -18,4 +20,6 @@ services:
     working_dir: '/root/'
     tty: true
     volumes:
-      - ./:/root/POLDAM:cached
+      - type: bind
+        source: .
+        target: /root/POLDAM

@@ -1,4 +1,6 @@
 Weaving configuration: EXEC,CALL,FIELD,ARRAY,SYNC,LABEL,PARAM,LOCAL,OBJECT,LINE
+Selected File Format: TextStream
+Excluded by name filter: jdk/jfr/internal/EventWriter
 Excluded by name filter: java/lang/invoke/MethodHandleImpl
 Excluded by name filter: java/lang/invoke/MethodHandleImpl$1
 Excluded by name filter: java/lang/invoke/MethodHandleImpl$2
@@ -22,8 +24,8 @@ Excluded by name filter: selogger/logging/util/ThreadId$1
 Weaving executed: Class=customClass/myMath, LoadedFrom=file:/root/selogger/src/motivationExample/target/, LogLevel=Normal, ClassHash=baf90595777826a8753476452569a59e8365b3c2, ClassLoaderID=Loader@18b4aac2:customClass/myMath
 Excluded by name filter: selogger/com/fasterxml/jackson/core/io/JsonStringEncoder
 Excluded by name filter: selogger/com/fasterxml/jackson/core/io/CharTypes
+Excluded by name filter: jdk/internal/misc/TerminatingThreadLocal$1
 Excluded by name filter: java/util/IdentityHashMap$KeySet
 Excluded by name filter: java/util/IdentityHashMap$KeyIterator
 Excluded by name filter: java/util/IdentityHashMap$IdentityHashMapIterator
 Excluded by name filter: java/io/FileOutputStream$1
-Elapsed time: 440ms

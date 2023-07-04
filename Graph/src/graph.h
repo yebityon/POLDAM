@@ -1,7 +1,10 @@
+#pragma once
 #include <iostream>
 #include <stack>
 #include <functional>
 #include <iterator>
+
+#include "../../Util/include/src/poldam_config.hpp"
 
 #include <boost/graph/adjacency_iterator.hpp>
 #include <boost/graph/depth_first_search.hpp>
@@ -26,33 +29,24 @@ namespace POLDAM
         // method hash is the hash of method
         std::string methodStr{};
         std::string methodHash{};
-
         // param str has param value, the hash value of object
         std::string paramStr{};
         std::size_t paramHash{};
-
         // flow hash is the flow of inside of the method
         std::string flowStr{};
         std::size_t flowHash{};
-
         // control flow hash is the method-call-chain of the hash
-
         std::size_t childFlowHash{};
         std::size_t childParamHash{};
-
         std::string controlFlowStr{};
         std::size_t controlFlowHash{};
-
         std::string controlParamStr{};
         std::size_t controlParamHash{};
-
         /*
          * context hash is the flow hash of the parent hash.
          */
         std::size_t contextHash{};
-
         std::string outputFormat{};
-
         size_t id{}, edgesSize{};
         std::vector<std::string> paramList = {};
     };
@@ -61,9 +55,13 @@ namespace POLDAM
                                         GraphVertex,
                                         GraphEdge>;
 
-    class OmniGraph
+    class PoldamGraph
     {
     public:
+        POLDAM::poldamConfig config;
+        // constructor
+        PoldamGraph(const poldamConfig c) : config(c){};
+        PoldamGraph() : config(poldamConfig{}){};
         /**
          * @brief Create vertex Descriptor from given Graph Vertex, and Create edge if vStack is not empty.\
          *
@@ -105,9 +103,9 @@ namespace POLDAM
             return this->Root;
         }
 
-        OmniGraph computeDiffGraph(OmniGraph &targetGraph);
+        PoldamGraph computeDiffGraph(PoldamGraph &targetGraph);
         // need to move Graph
-        Graph computeDiffGraphBeta(OmniGraph targetGraph, const std::function<bool(const GraphVertex &, const GraphVertex &)> &isSameVertex);
+        Graph computeDiffGraphBeta(PoldamGraph targetGraph, const std::function<bool(const GraphVertex &, const GraphVertex &)> &isSameVertex);
 
     private:
         bool computeFlowHash(const unsigned int threadId);

@@ -1,5 +1,5 @@
 #pragma once
-#include "poldam_config.h"
+#include "poldam_config.hpp"
 #include "poldam_util.h"
 
 namespace POLDAM

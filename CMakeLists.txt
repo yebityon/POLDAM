@@ -31,14 +31,14 @@ include_directories(${UTIL_INCLUDE_DIR})
 add_library(util OBJECT ${UTIL_INCLUDE_DIR}/poldam_util.cpp)
 file(GLOB_RECURSE LIB_METAFILE_PARSER ${METAFILE_SRC_DIR}/*.cpp)
 file(GLOB_RECURSE LIB_INTERPRETER_PARSER ${INTERPRETER_SRC_DIR}/*.cpp)
-file(GLOB_RECURSE LIB_OMNIGRAPH_PARSER ${GRAPH_SRC_DIR}/*.cpp)
+file(GLOB_RECURSE LIB_POLDAMGRAPH_PARSER ${GRAPH_SRC_DIR}/*.cpp)
 add_library(metafileParser ${LIB_METAFILE_PARSER})
 add_library(interpreter OBJECT ${LIB_INTERPRETER_PARSER})
-add_library(omniGraph OBJECT ${LIB_OMNIGRAPH_PARSER})
+add_library(poldamGraph OBJECT ${LIB_POLDAMGRAPH_PARSER})
 
 # Add main executable
 add_executable(POLDAM main.cpp)
-target_link_libraries(POLDAM util metafileParser interpreter omniGraph)
+target_link_libraries(POLDAM util metafileParser interpreter poldamGraph)
 
 # Add test executable
 # add_executable(test_util ${UTIL_INCLUDE_TEST_DIR}/test_poldam_util.cpp)

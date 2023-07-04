@@ -3,7 +3,7 @@
 #include <cassert>
 
 #include "Util/include/src/poldam_util.h"
-#include "Util/include/src/poldam_config.h"
+#include "Util/include/src/poldam_config.hpp"
 #include "Util/include/src/cmd.cpp"
 
 // Provide function for Metafile of SELogger
@@ -17,16 +17,14 @@
 
 #define DEBUG_OUT(Var) std::cout << #Var << " " << Var << "\n";
 
-bool DEBUG = true;
-
 namespace POLDAM
 {
     class OmniWriter
     {
     public:
-        OmniWriter(POLDAM::OmniGraph &G_) : G(G_){};
+        OmniWriter(POLDAM::PoldamGraph &G_) : G(G_){};
 
-        void writeOmniGraph(const std::string outputFileName)
+        void writePoldamGraph(const std::string outputFileName)
         {
             const auto &g = G.getGraphCopy();
             try
@@ -47,7 +45,7 @@ namespace POLDAM
         }
 
     private:
-        POLDAM::OmniGraph &G;
+        POLDAM::PoldamGraph &G;
     };
 }
 
@@ -65,11 +63,12 @@ std::string shapeLogString(const POLDAM::DataId d, const POLDAM::MethodsData m, 
     return res;
 }
 
-POLDAM::OmniGraph buildGraph(POLDAM::poldamConfig config, const std::string inputDir, const std::string outputFileName)
+POLDAM::PoldamGraph buildGraph(POLDAM::poldamConfig config, const std::string inputDir, const std::string outputFileName)
 {
     std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "Reading Metafiles\n";
     POLDAM::metafileFactory factory(inputDir);
 
+    // TODO: fileNameをregexpで指定できるようにする
     auto dataids = factory.createInstance<POLDAM::DataIdsParser>("dataids.txt", true);
     auto seloggerParser = factory.createInstance<POLDAM::SeloggerLogParser>("log-00001.txt", "^log-.*.txt");
     auto objectFileParser = factory.createInstance<POLDAM::ObjectfileParser>();
@@ -96,7 +95,7 @@ POLDAM::OmniGraph buildGraph(POLDAM::poldamConfig config, const std::string inpu
     const std::vector<POLDAM::ObjectData> parsedObjectData = objectFileParser.getParsedData();
 
     std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "Successfully Parsed\n";
-    POLDAM::OmniGraph omniGraph{};
+    POLDAM::PoldamGraph PoldamGraph{config};
 
     for (const POLDAM::SeloggerData log : seloggerParser.getParserdData())
     {
@@ -118,7 +117,7 @@ POLDAM::OmniGraph buildGraph(POLDAM::poldamConfig config, const std::string inpu
             v.methodHash = std::to_string(std::hash<std::string>()(m.className + m.methodName));
             v.outputFormat = m.className + ":" + m.methodName;
 
-            bool result = omniGraph.addOmniVertex(v, log.threadId);
+            bool result = PoldamGraph.addOmniVertex(v, log.threadId);
         }
         else if (dataId.eventType == POLDAM::SELOGGER_EVENT_TYPE::METHOD_PARAM)
         {
@@ -126,8 +125,8 @@ POLDAM::OmniGraph buildGraph(POLDAM::poldamConfig config, const std::string inpu
         }
         else if (dataId.eventType == POLDAM::SELOGGER_EVENT_TYPE::METHOD_NORMAL_EXIT)
         {
-            omniGraph.computeHash(log.threadId);
-            omniGraph.popStackVertex(log.threadId);
+            PoldamGraph.computeHash(log.threadId);
+            PoldamGraph.popStackVertex(log.threadId);
         }
         else if (dataId.eventType == POLDAM::SELOGGER_EVENT_TYPE::CALL_PARAM)
         {
@@ -150,13 +149,13 @@ POLDAM::OmniGraph buildGraph(POLDAM::poldamConfig config, const std::string inpu
                     continue;
                 }
                 const POLDAM::ObjectData o = parsedObjectData[argValueIdx];
-                omniGraph.updateStackTopVertexParamInfo(o.stringValue, log.threadId);
+                PoldamGraph.updateStackTopVertexParamInfo(o.stringValue, log.threadId);
             }
             // branch for paramType that paramValue is directly recored in SELogger.
             else if (paramType.find("Ljava") == std::string::npos)
             {
                 // std::cout << "paramType: " << paramType << ",Value: " << log.value << std::endl;
-                omniGraph.updateStackTopVertexParamInfo(log.value, log.threadId);
+                PoldamGraph.updateStackTopVertexParamInfo(log.value, log.threadId);
             }
             else
             {
@@ -176,15 +175,15 @@ POLDAM::OmniGraph buildGraph(POLDAM::poldamConfig config, const std::string inpu
         else
         {
             const std::string logString = shapeLogString(dataId, m, c);
-            omniGraph.updateStackTopVertex(logString, log.threadId);
+            PoldamGraph.updateStackTopVertex(logString, log.threadId);
         }
     }
-    std::cout << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX << "successfully build OmniGraph!\n";
-    POLDAM::OmniWriter writer(omniGraph);
+    std::cout << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX << "successfully build PoldamGraph!\n";
+    POLDAM::OmniWriter writer(PoldamGraph);
     std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "writing result..." << std::endl;
-    writer.writeOmniGraph(outputFileName);
+    writer.writePoldamGraph(outputFileName);
 
-    return omniGraph;
+    return PoldamGraph;
 }
 
 /**
@@ -201,14 +200,14 @@ int main(int argc, char *argv[])
     }
     POLDAM_UTIL::Timer t("main");
 
-    POLDAM::OmniGraph originGraph = buildGraph(config, config.originDir, config.outputFileName + "_origin.dot");
+    POLDAM::PoldamGraph originGraph = buildGraph(config, config.originDir, config.outputFileName + "_origin.dot");
     if (config.isDebugMode)
     {
         std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "DEBUG MODE: ONLY PRINT ORIGINAL GRAPH\n";
         std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "Successfully Finished." << std::endl;
         return 0;
     }
-    POLDAM::OmniGraph targetGraph = buildGraph(config, config.targetDir, config.outputFileName + "_target.dot");
+    POLDAM::PoldamGraph targetGraph = buildGraph(config, config.targetDir, config.outputFileName + "_target.dot");
 
     // Phase3. Compute Diff Graph
     bool useFlowHash = config.useFlowHash, useParamHash = config.useParamHash;

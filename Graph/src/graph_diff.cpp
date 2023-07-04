@@ -17,11 +17,11 @@ namespace POLDAM
      * @brief **DEPRECATED**\a
      * Diff algorithm to compute the difference between origin and target
      * @param target
-     * @return OmniGraph the diffGraph
+     * @return PoldamGraph the diffGraph
      */
-    OmniGraph OmniGraph::computeDiffGraph(OmniGraph &target)
+    PoldamGraph PoldamGraph::computeDiffGraph(PoldamGraph &target)
     {
-        OmniGraph diffGraph;
+        PoldamGraph diffGraph;
 
         const Graph originGraph = this->g;
         const Graph targetGraph = target.getGraphCopy();
@@ -80,7 +80,7 @@ namespace POLDAM
                     ++targetDescIdx;
 
                     // if the diff between two graph is too big, should use early return.
-                    if (OmniGraph::isLeaf(originDesc))
+                    if (PoldamGraph::isLeaf(originDesc))
                     {
                         return diffGraph;
                     }
@@ -103,7 +103,7 @@ namespace POLDAM
                     else
                     {
                         // In this case, the root vertices are different
-                        return POLDAM::OmniGraph();
+                        return POLDAM::PoldamGraph();
                     }
 
                     // try to append vertex until its leaf
@@ -168,7 +168,7 @@ namespace POLDAM
      * @param targetVerDesc
      * @param parDiffVerDesc
      */
-    void OmniGraph::traverseDiffVertices(const Graph &originGraph, const Graph &targetGraph,
+    void PoldamGraph::traverseDiffVertices(const Graph &originGraph, const Graph &targetGraph,
                                          const boost::graph_traits<Graph>::vertex_descriptor originVerDesc,
                                          const boost::graph_traits<Graph>::vertex_descriptor targetVerDesc,
                                          const boost::graph_traits<Graph>::vertex_descriptor parDiffVerDesc,
@@ -271,12 +271,12 @@ namespace POLDAM
     }
 
     /**
-     * @brief compute Diff between given OmniGraph and this->g through trversal tree.
+     * @brief compute Diff between given PoldamGraph and this->g through trversal tree.
      *
      * @param target
      * @return Graph
      */
-    Graph OmniGraph::computeDiffGraphBeta(OmniGraph target,
+    Graph PoldamGraph::computeDiffGraphBeta(PoldamGraph target,
                                           const std::function<bool(const GraphVertex &v, const GraphVertex &u)> &isSameVertex)
     {
         const Graph &originGraph = this->g;

@@ -100,6 +100,8 @@ namespace POLDAM
 
         const boost::graph_traits<Graph>::vertex_descriptor getRoot()
         {
+            // throw exception if Root has not been initialized.
+            assert(this->root.size() > 0);
             return this->Root;
         }
 

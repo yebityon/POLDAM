@@ -198,6 +198,7 @@ int main(int argc, char *argv[])
         // something wrong
         exit(1);
     }
+    POLDAM::printConfig(config);
     POLDAM_UTIL::Timer t("main");
 
     POLDAM::PoldamGraph originGraph = buildGraph(config, config.originDir, config.outputFileName + "_origin.dot");

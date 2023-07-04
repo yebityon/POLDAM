@@ -169,10 +169,10 @@ namespace POLDAM
      * @param parDiffVerDesc
      */
     void PoldamGraph::traverseDiffVertices(const Graph &originGraph, const Graph &targetGraph,
-                                         const boost::graph_traits<Graph>::vertex_descriptor originVerDesc,
-                                         const boost::graph_traits<Graph>::vertex_descriptor targetVerDesc,
-                                         const boost::graph_traits<Graph>::vertex_descriptor parDiffVerDesc,
-                                         const std::function<bool(const GraphVertex &v, const GraphVertex &u)> &isSameVertex)
+                                           const boost::graph_traits<Graph>::vertex_descriptor originVerDesc,
+                                           const boost::graph_traits<Graph>::vertex_descriptor targetVerDesc,
+                                           const boost::graph_traits<Graph>::vertex_descriptor parDiffVerDesc,
+                                           const std::function<bool(const GraphVertex &v, const GraphVertex &u)> &isSameVertex)
     {
 
         // assert(not isSameVertex(originGraph[originVerDesc], targetGraph[targetVerDesc]));
@@ -277,7 +277,7 @@ namespace POLDAM
      * @return Graph
      */
     Graph PoldamGraph::computeDiffGraphBeta(PoldamGraph target,
-                                          const std::function<bool(const GraphVertex &v, const GraphVertex &u)> &isSameVertex)
+                                            const std::function<bool(const GraphVertex &v, const GraphVertex &u)> &isSameVertex)
     {
         const Graph &originGraph = this->g;
         const Graph &targetGraph = target.g;
@@ -289,6 +289,11 @@ namespace POLDAM
         boost::graph_traits<Graph>::vertex_descriptor diffGraphRootDesc = boost::add_vertex(this->diffGraph);
 
         this->diffGraph[diffGraphRootDesc].outputFormat = "DIFF_GRAPH_ENTRY";
+        if (this->config.hasEntryMethodName)
+        {
+
+            this->diffGraph[diffGraphRootDesc].outputFormat += "\n" + this->config.entryMethodName;
+        }
 
         traverseDiffVertices(originGraph, targetGraph,
                              this->getRoot(),

@@ -115,6 +115,7 @@ namespace POLDAM
             std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "diffFileName is Empty, use default value.\n";
             config.outputFileName = "sample";
         }
+        std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "entryMethod: {" << (config.hasEntryMethodName ? config.entryMethodName : "No entry method") << "}\n";
         std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "diffFileName: {" << config.outputFileName << "}\n";
         std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "Hash Settings:";
         std::cout << "Flow: " << (config.useFlowHash ? "true, " : "false, ") << "Param: " << (config.useParamHash ? "true" : "false") << std::endl;

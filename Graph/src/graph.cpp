@@ -14,12 +14,11 @@ namespace POLDAM
         else
         {
             // entryMethodNameが明示的に与えられなかった場合は、最初の頂点をthis->Rootに設定
-            if (!config.hasEntryMethodName && this->root.find(threadId) == this->root.end() /*threadID拡張洋のため*/)
+            if (!config.hasEntryMethodName && this->root.find(threadId) == this->root.end() /*threadID拡張ようのため*/)
             {
                 this->Root = v;
                 this->root[threadId] = v;
             }
-            root[threadId] = v;
         }
         PoldamGraph::pushStackVertex(v, threadId);
         // Thread IDのことは考えないことにする。

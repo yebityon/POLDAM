@@ -179,9 +179,23 @@ POLDAM::PoldamGraph buildGraph(POLDAM::poldamConfig config, const std::string in
         }
     }
     std::cout << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX << "successfully build PoldamGraph!\n";
-    POLDAM::OmniWriter writer(PoldamGraph);
     std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "writing result..." << std::endl;
-    writer.writePoldamGraph(outputFileName);
+    if (config.hasEntryMethodName)
+    {
+        std::cout << "Nekochan\n";
+        POLDAM::Graph g = PoldamGraph.getGraphCopy();
+        boost::filtered_graph<POLDAM::Graph, boost::keep_all, POLDAM::VertexPredicate> fg(
+            g, boost::keep_all(), POLDAM::VertexPredicate(&g));
+        std::ofstream outputDotFile(outputFileName);
+        boost::write_graphviz(outputDotFile, fg,
+                              boost::make_label_writer(get(&POLDAM::GraphVertex::outputFormat, fg)),
+                              boost::make_label_writer(get(&POLDAM::GraphEdge::outputFormat, fg)));
+    }
+    else
+    {
+        POLDAM::OmniWriter writer(PoldamGraph);
+        writer.writePoldamGraph(outputFileName);
+    }
 
     return PoldamGraph;
 }
@@ -233,7 +247,7 @@ int main(int argc, char *argv[])
     std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "Computhing DiffGraph..." << std::endl;
     POLDAM::Graph diffGraph = originGraph.computeDiffGraphBeta(std::move(targetGraph), isSameVertex);
 
-    // Phase4. Write DiffGraph Resulf
+    // Phase4. Write DiffGraph Result
     std::ofstream outputDotFile(config.outputFileName + "_diff.dot");
     boost::write_graphviz(outputDotFile, diffGraph,
                           boost::make_label_writer(get(&POLDAM::GraphVertex::outputFormat, diffGraph)),

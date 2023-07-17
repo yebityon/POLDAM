@@ -14,7 +14,7 @@ namespace POLDAM
         else
         {
             // entryMethodNameが明示的に与えられなかった場合は、最初の頂点をthis->Rootに設定
-            if (!config.hasEntryMethodName && this->root.find(threadId) == this->root.end() /*threadID拡張ようのため*/)
+            if (!config.hasEntryMethodName && this->root.find(threadId) == this->root.end() /*threadID拡張のため*/)
             {
                 this->Root = v;
                 this->root[threadId] = v;
@@ -24,8 +24,8 @@ namespace POLDAM
         // Thread IDのことは考えないことにする。
         if (this->g[v].methodStr == config.entryMethodName && this->root.find(threadId) == this->root.end())
         {
-            // 簡易版のRootにする
             this->Root = v;
+            this->g[v].isTargetVertex = true;
             this->root[threadId] = v;
         }
         this->path.push_back(v);
@@ -92,6 +92,14 @@ namespace POLDAM
 
         bool isInserted = false;
         boost::tie(e, isInserted) = boost::add_edge(u_, v_, this->g);
+        if (isInserted)
+        {
+            // u_ -> v_ のedgeで, u_がfilter viewであればv_の頂点も出力対象とする
+            if (this->g[u_].isTargetVertex)
+            {
+                this->g[v_].isTargetVertex = true;
+            }
+        }
 
         return isInserted;
     }

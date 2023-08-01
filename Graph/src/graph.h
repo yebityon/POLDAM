@@ -42,6 +42,11 @@ namespace POLDAM
         std::size_t controlFlowHash{};
         std::string controlParamStr{};
         std::size_t controlParamHash{};
+        /**
+         *  For the graph view
+         */
+        bool isTargetVertex = false;
+
         /*
          * context hash is the flow hash of the parent hash.
          */
@@ -54,6 +59,17 @@ namespace POLDAM
     using Graph = boost::adjacency_list<boost::vecS, boost::vecS, boost::directedS,
                                         GraphVertex,
                                         GraphEdge>;
+    struct VertexPredicate
+    {
+        VertexPredicate(){};
+        VertexPredicate(Graph const *g) : _graph(g){};
+        bool operator()(Graph::vertex_descriptor const &v) const
+        {
+            return (*_graph)[v].isTargetVertex;
+        }
+
+        Graph const *_graph;
+    };
 
     class PoldamGraph
     {

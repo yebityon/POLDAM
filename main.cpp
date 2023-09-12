@@ -112,7 +112,7 @@ POLDAM::PoldamGraph buildGraph(POLDAM::poldamConfig config, const std::string in
         {
             POLDAM::GraphVertex v;
             const unsigned int classId = dataId.classId;
-
+            v.classStr = m.className;
             v.methodStr = m.methodName;
             v.methodHash = std::to_string(std::hash<std::string>()(m.className + m.methodName));
             v.outputFormat = m.className + ":" + m.methodName;

@@ -10,6 +10,7 @@ namespace POLDAM
                   << "-o [original_selogger_directory] -t [target_selogger_directory] -m [target_method] -d [diff_file_name] \n";
         std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "-o, The path to the original directory. This parameter is mandatory and must point to a valid selogger output directory.\n";
         std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "-t, The path to the target directory. This directory data  This parameter is mandatory and must point to a valid selogger output directory.\n";
+        std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "-c, The Merkle tree will be constructed using the class specified by the -c option and -m option as the entry point.\n";
         std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "-m, The Merkle tree will be constructed using the method specified by the -m option as the entry point.\n";
         std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "-d, The file name of the diff file\n";
         std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "--debug, enalbe debug mode.\n";
@@ -51,6 +52,18 @@ namespace POLDAM
                 config.targetDir = argv[i + 1];
                 ++i;
             }
+            else if (arg == "-c")
+            {
+                if (i + 1 >= argc)
+                {
+                    std::cout << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX << "No targetMethod is Given\n";
+                    printHelp();
+                    return poldamConfig{};
+                }
+                config.entryClassName = argv[i + 1];
+                config.hasEntryClassName = true;
+                ++i;
+            }
             else if (arg == "-m" or arg == "--targetMethod")
             {
                 if (i + 1 >= argc)
@@ -63,6 +76,7 @@ namespace POLDAM
                 config.hasEntryMethodName = true;
                 ++i;
             }
+
             else if (arg == "-d" or arg == "--difffilename")
             {
                 if (i + 1 > argc)

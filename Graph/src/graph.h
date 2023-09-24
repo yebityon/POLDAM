@@ -26,6 +26,7 @@ namespace POLDAM
     struct GraphVertex
     {
     public:
+        std::string classStr{};
         // method hash is the hash of method
         std::string methodStr{};
         std::string methodHash{};

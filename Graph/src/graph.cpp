@@ -22,7 +22,7 @@ namespace POLDAM
         }
         PoldamGraph::pushStackVertex(v, threadId);
         // Thread IDのことは考えないことにする。
-        if (this->g[v].methodStr == config.entryMethodName && this->root.find(threadId) == this->root.end())
+        if (this->g[v].classStr == config.entryClassName && this->g[v].methodStr == config.entryMethodName && this->root.find(threadId) == this->root.end())
         {
             this->Root = v;
             this->g[v].isTargetVertex = true;

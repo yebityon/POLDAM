@@ -1,3 +1,5 @@
+
+
 #pragma once
 #include <iostream>
 #include <string>
@@ -11,12 +13,14 @@ namespace POLDAM
         std::string originDir{};
         std::string targetDir{};
         std::string outputFileName{};
+        std::string entryClassName{};
         std::string entryMethodName{};
 
         bool useFastIO = false;
         bool isDebugMode = false;
         bool useFlowHash = false;
         bool useParamHash = false;
+        bool hasEntryClassName = false;
         bool hasEntryMethodName = false;
 
         bool operator==(const poldamConfig &c)
@@ -30,6 +34,7 @@ namespace POLDAM
                 c.isDebugMode == isDebugMode &&
                 c.useFlowHash == useFlowHash &&
                 c.useParamHash == useParamHash &&
+                c.hasEntryClassName == hasEntryClassName &&
                 c.hasEntryMethodName == hasEntryMethodName);
         }
     };

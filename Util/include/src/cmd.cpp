@@ -12,6 +12,7 @@ namespace POLDAM
         std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "-t, The path to the target directory. This directory data  This parameter is mandatory and must point to a valid selogger output directory.\n";
         std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "-c, The Merkle tree will be constructed using the class specified by the -c option and -m option as the entry point.\n";
         std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "-m, The Merkle tree will be constructed using the method specified by the -m option as the entry point.\n";
+        std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "-f, The regex of the filterd vertex.\n";
         std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "-d, The file name of the diff file\n";
         std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "--debug, enalbe debug mode.\n";
         std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "--flow, --param : evaluate the equivalence of method execution using the given hash. \n";
@@ -76,7 +77,6 @@ namespace POLDAM
                 config.hasEntryMethodName = true;
                 ++i;
             }
-
             else if (arg == "-d" or arg == "--difffilename")
             {
                 if (i + 1 > argc)
@@ -86,6 +86,17 @@ namespace POLDAM
                     return poldamConfig{};
                 }
                 config.outputFileName = argv[i + 1];
+                ++i;
+            }
+            else if (arg == "-f" or arg == "--filterd_vertex")
+            {
+                if(i + 1 > argc )
+                {
+                    std::cout << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX << "No Filterd Vertex is Given\n";
+                    printHelp();
+                    return poldamConfig{};
+                }
+                config.setFilterdRegExp(argv[i + 1]);
                 ++i;
             }
             else if (arg == "--fastIO")

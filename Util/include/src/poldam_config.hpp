@@ -3,7 +3,7 @@
 #pragma once
 #include <iostream>
 #include <string>
-
+#include <regex>
 namespace POLDAM
 {
 
@@ -15,6 +15,9 @@ namespace POLDAM
         std::string outputFileName{};
         std::string entryClassName{};
         std::string entryMethodName{};
+        std::string filterdVertexRegexStr{};
+        
+        std::regex filterdVertexRegex{};
 
         bool useFastIO = false;
         bool isDebugMode = false;
@@ -22,6 +25,7 @@ namespace POLDAM
         bool useParamHash = false;
         bool hasEntryClassName = false;
         bool hasEntryMethodName = false;
+        bool hasFilterdRegex = false;
 
         bool operator==(const poldamConfig &c)
         {
@@ -31,11 +35,23 @@ namespace POLDAM
                 c.outputFileName == outputFileName &&
                 c.entryMethodName == entryMethodName &&
                 c.useFastIO == useFastIO &&
+                c.filterdVertexRegexStr== filterdVertexRegexStr &&
                 c.isDebugMode == isDebugMode &&
                 c.useFlowHash == useFlowHash &&
                 c.useParamHash == useParamHash &&
                 c.hasEntryClassName == hasEntryClassName &&
                 c.hasEntryMethodName == hasEntryMethodName);
+        }
+
+        bool setFilterdRegExp(const std::string& regexStr) {
+            try {
+                filterdVertexRegex = std::regex(regexStr);
+            } catch(const std::regex& error) {
+                return false;
+            }
+            filterdVertexRegexStr = regexStr;
+            hasFilterdRegex = true;
+            return true; 
         }
     };
 

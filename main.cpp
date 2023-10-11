@@ -191,8 +191,7 @@ POLDAM::PoldamGraph buildGraph(POLDAM::poldamConfig config, const std::string in
                               boost::make_label_writer(get(&POLDAM::GraphVertex::outputFormat, fg)),
                               boost::make_label_writer(get(&POLDAM::GraphEdge::outputFormat, fg)));
     }
-    
-    if(config.hasFilterdRegex)
+    else if(config.hasFilterdRegex)
     {
         POLDAM::Graph g = PoldamGraph.getGraphCopy();
         boost::filtered_graph<POLDAM::Graph, boost::keep_all, POLDAM::RegexpVertexPredicate> fg(
@@ -202,6 +201,7 @@ POLDAM::PoldamGraph buildGraph(POLDAM::poldamConfig config, const std::string in
                               boost::make_label_writer(get(&POLDAM::GraphVertex::outputFormat, fg)),
                               boost::make_label_writer(get(&POLDAM::GraphEdge::outputFormat, fg)));
     }
+    else 
     {
         POLDAM::OmniWriter writer(PoldamGraph);
         writer.writePoldamGraph(outputFileName);

@@ -12,7 +12,7 @@ namespace POLDAM
         std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "-t, The path to the target directory. This directory data  This parameter is mandatory and must point to a valid selogger output directory.\n";
         std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "-c, The Merkle tree will be constructed using the class specified by the -c option and -m option as the entry point.\n";
         std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "-m, The Merkle tree will be constructed using the method specified by the -m option as the entry point.\n";
-        std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "-f, The regex of the filterd vertex.\n";
+        std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "-f, Only outputs vertices that match the regular expression specified by the - f option.\n";
         std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "-d, The file name of the diff file\n";
         std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "--debug, enalbe debug mode.\n";
         std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "--flow, --param : evaluate the equivalence of method execution using the given hash. \n";
@@ -125,6 +125,42 @@ namespace POLDAM
                 std::cout << argv[i] << " is not valid option.\n";
                 return poldamConfig{};
             }
+        }
+        // validate config 
+        if(config.originDir.size() == 0 || config.targetDir.size() == 0)
+        {
+            // validなパスかどうかもチェックしたい
+            std::cout 
+            << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX 
+            << "You need to designate input directory." 
+            << std::endl;
+            return poldamConfig{};
+        }
+        if (config.hasEntryClassName && !config.hasEntryMethodName)
+        {
+            // -c は指定したけど-mは指定していない
+            std::cout 
+            << POLDAM_UTIL::POLDAM_WARNING_PRINT_SUFFIX
+            << "You have specified the class name but not the method name. "
+            << std::endl;
+        }
+        if(config.hasEntryMethodName && !config.hasEntryClassName)
+        {
+            // -m は指定したけど-cは指定していない
+            std::cout 
+            << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX
+            << "You have specified the method name but not the class name. "
+            << std::endl;
+            return poldamConfig{};
+        }
+        else if((config.hasEntryClassName || config.hasEntryMethodName) && (config.hasFilterdRegex))
+        {
+            // -f とentryMethodがかぶると困るのでこの場合もエラー
+            std::cout
+            << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX
+            << "You have specified the filterd regex and entry method. "
+            << std::endl;
+            return poldamConfig{};
         }
         return config;
     }

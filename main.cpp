@@ -264,5 +264,9 @@ int main(int argc, char *argv[])
                           boost::make_label_writer(get(&POLDAM::GraphEdge::outputFormat, diffGraph)));
 
     std::cout
-        << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "Successfully Finished." << std::endl;
+        << POLDAM_UTIL::POLDAM_PRINT_SUFFIX
+        << "\033[1m\033[32m"
+        << "Successfully Finished."
+        << "\033[0m"
+        << std::endl;
 }

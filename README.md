@@ -71,10 +71,10 @@ ls
 CMakeCache.txt  CMakeFiles  cmake_install.cmake  libmetafileParser.a  Makefile  POLDAM
 ```
 
-
 # Limitation
-
-- `-m` option is not supported. it is useful when you try to parse log that contain test framework (like JUnit). It will be supported soon.
+- The -c option specifies the class of the method; it has no effect when not used with the -m option.
+- When the -m option is used, it must be used in conjunction with -c, otherwise core dumping may occur or the system may not function properly.
+- When specifying a class with the `-c` option, use `package name` + `class name`. In this case, `.` in the package name should be replaced by `/`.
 - This script have been fully rewritten, hence, it's slightly different from the one I used in thesis.
 - Multithread is not supported.
 - Only `-omni` option is supported.

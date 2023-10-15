@@ -178,7 +178,10 @@ POLDAM::PoldamGraph buildGraph(POLDAM::poldamConfig config, const std::string in
             PoldamGraph.updateStackTopVertex(logString, log.threadId);
         }
     }
-    std::cout << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX << "successfully build PoldamGraph!\n";
+    std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX
+              << "\033[1m\033[32m"
+              << "Successfully build PoldamGraph!\n"
+              << "\033[0m";
     std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "writing result..." << std::endl;
     // TODO: Update output file name 
     if (config.hasEntryMethodName)

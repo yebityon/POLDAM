@@ -16,7 +16,7 @@ set(UTIL_DIR Util)
 set(UTIL_INCLUDE_DIR ${UTIL_DIR}/include/src)
 set(UTIL_INCLUDE_TEST_DIR ${UTIL_DIR}/include/test)
 
-set(BOOST_PATH Boost/boost_1_80_0)
+set(BOOST_PATH /Users/prebell/Documents/boost_1_80_0)
 
 # specify the C++ standard
 set(CMAKE_CXX_STANDARD 17)

@@ -180,9 +180,9 @@ POLDAM::PoldamGraph buildGraph(POLDAM::poldamConfig config, const std::string in
     }
     std::cout << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX << "successfully build PoldamGraph!\n";
     std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "writing result..." << std::endl;
+    // TODO: Update output file name 
     if (config.hasEntryMethodName)
     {
-        std::cout << "Nekochan\n";
         POLDAM::Graph g = PoldamGraph.getGraphCopy();
         boost::filtered_graph<POLDAM::Graph, boost::keep_all, POLDAM::VertexPredicate> fg(
             g, boost::keep_all(), POLDAM::VertexPredicate(&g));
@@ -191,7 +191,17 @@ POLDAM::PoldamGraph buildGraph(POLDAM::poldamConfig config, const std::string in
                               boost::make_label_writer(get(&POLDAM::GraphVertex::outputFormat, fg)),
                               boost::make_label_writer(get(&POLDAM::GraphEdge::outputFormat, fg)));
     }
-    else
+    else if(config.hasFilterdRegex)
+    {
+        POLDAM::Graph g = PoldamGraph.getGraphCopy();
+        boost::filtered_graph<POLDAM::Graph, boost::keep_all, POLDAM::RegexpVertexPredicate> fg(
+            g, boost::keep_all(), POLDAM::RegexpVertexPredicate(&g));
+        std::ofstream outputDotFile(outputFileName);
+        boost::write_graphviz(outputDotFile, fg,
+                              boost::make_label_writer(get(&POLDAM::GraphVertex::outputFormat, fg)),
+                              boost::make_label_writer(get(&POLDAM::GraphEdge::outputFormat, fg)));
+    }
+    else 
     {
         POLDAM::OmniWriter writer(PoldamGraph);
         writer.writePoldamGraph(outputFileName);
@@ -254,5 +264,9 @@ int main(int argc, char *argv[])
                           boost::make_label_writer(get(&POLDAM::GraphEdge::outputFormat, diffGraph)));
 
     std::cout
-        << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "Successfully Finished." << std::endl;
+        << POLDAM_UTIL::POLDAM_PRINT_SUFFIX
+        << "\033[1m\033[32m"
+        << "Successfully Finished."
+        << "\033[0m"
+        << std::endl;
 }

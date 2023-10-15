@@ -3,6 +3,8 @@
 #include <stack>
 #include <functional>
 #include <iterator>
+// for construct a filterd graph
+#include <regex>
 
 #include "../../Util/include/src/poldam_config.hpp"
 
@@ -48,6 +50,12 @@ namespace POLDAM
          */
         bool isTargetVertex = false;
 
+        /**
+         * For the filterd graph view
+         */
+        bool isFilteredVertex = false;
+
+
         /*
          * context hash is the flow hash of the parent hash.
          */
@@ -70,6 +78,19 @@ namespace POLDAM
         }
 
         Graph const *_graph;
+    };
+
+    struct RegexpVertexPredicate
+    {
+        RegexpVertexPredicate(){};
+        RegexpVertexPredicate(Graph const *g) : _graph(g){};
+        bool operator()(Graph::vertex_descriptor const &v) const
+        {
+            return (*_graph)[v].isFilteredVertex;
+        }
+
+        Graph const *_graph;
+        std::regex _regex;
     };
 
     class PoldamGraph

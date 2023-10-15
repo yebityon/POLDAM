@@ -28,6 +28,11 @@ namespace POLDAM
             this->g[v].isTargetVertex = true;
             this->root[threadId] = v;
         }
+        if(config.hasFilterdRegex) {
+            if(std::regex_match(this->g[v].methodStr, config.filterdVertexRegex)) {
+                this->g[v].isFilteredVertex = true;
+            }
+        }
         this->path.push_back(v);
 
         return v;
@@ -99,6 +104,10 @@ namespace POLDAM
             {
                 this->g[v_].isTargetVertex = true;
             }
+            
+            if(this -> g[u_].isFilteredVertex) {
+                this -> g[v_].isFilteredVertex = true;
+            }   
         }
 
         return isInserted;

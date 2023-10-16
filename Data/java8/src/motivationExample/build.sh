@@ -21,7 +21,7 @@ compile_and_run() {
 # create log dir for origin
 cd origin/
 
-compile_and_run customClass myMath
+# compile_and_run customClass myMath
 
 #======================== target ================================
 cd ../target

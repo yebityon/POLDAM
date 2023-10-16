@@ -15,13 +15,13 @@ compile_and_run() {
     javac -g Main.java
 
     echo run selogger with omni
-    java  -javaagent:../../../selogger/target/selogger-0.5.1.jar=output=selogger_out,format=omni,waverlog=hogehoeg_log.txt Main
+    java  -javaagent:../../../selogger/selogger/target/selogger-0.5.0.jar=output=selogger_out,format=omni,waverlog=hogehoeg_log.txt Main
 }
 
 # create log dir for origin
 cd origin/
 
-compile_and_run customClass myMath
+# compile_and_run customClass myMath
 
 #======================== target ================================
 cd ../target

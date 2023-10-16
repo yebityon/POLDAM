@@ -1,4 +1,5 @@
 import customClass.myMath;
+import customClass.myString;
 import java.util.*;
 
 public class Main {
@@ -9,11 +10,15 @@ public class Main {
         List<Integer> p = calculator.sieveOfEratosthenes(num);
         List<Integer> primes = calculator.primeFactors(num);
 
+        myString str = new myString("Sample Program is end");
+        myString output = new myString("is primeNumber");
+        
         for(int idx = 0; idx < primes.size(); ++idx)
         {
             String prime = Integer.toString(primes.get(idx));
-            System.out.println(prime + " is" + "primeNumber");
+            output.printWithString(prime);
         }
-        System.out.println("Sample Program is end");
+
+        str.print();
     }
 }

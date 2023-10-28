@@ -7,6 +7,7 @@
 #include <regex>
 
 #include "../../Util/include/src/poldam_config.hpp"
+#include "../../Util/include/src/poldam_util.h"
 
 #include <boost/graph/adjacency_iterator.hpp>
 #include <boost/graph/depth_first_search.hpp>

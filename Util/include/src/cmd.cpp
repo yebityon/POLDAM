@@ -144,6 +144,16 @@ namespace POLDAM
             << POLDAM_UTIL::POLDAM_WARNING_PRINT_SUFFIX
             << "You have specified the class name but not the method name. "
             << std::endl;
+            return poldamConfig{};
+        }
+        if (config.hasFilterdRegex && !config.hasEntryMethodName)
+        {
+            // -fは指定したけど、-m は指定してない
+            std::cout
+            << POLDAM_UTIL::POLDAM_WARNING_PRINT_SUFFIX
+            << "You have specified the filterd regex but not the method name. "
+            << std::endl;
+            return poldamConfig{};
         }
         if(config.hasEntryMethodName && !config.hasEntryClassName)
         {
@@ -151,15 +161,6 @@ namespace POLDAM
             std::cout 
             << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX
             << "You have specified the method name but not the class name. "
-            << std::endl;
-            return poldamConfig{};
-        }
-        else if((config.hasEntryClassName || config.hasEntryMethodName) && (config.hasFilterdRegex))
-        {
-            // -f とentryMethodがかぶると困るのでこの場合もエラー
-            std::cout
-            << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX
-            << "You have specified the filterd regex and entry method. "
             << std::endl;
             return poldamConfig{};
         }
@@ -171,11 +172,13 @@ namespace POLDAM
         std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "POLDAM IS WORKING\n";
         std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "originDir: {" << config.originDir << "}\n";
         std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "targetDir: {" << config.targetDir << "}\n";
-        std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "targetMethod: {" << config.entryMethodName << "}\n";
+        std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "entryClass: {" << config.entryClassName << "}\n";
+        std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "entryMethod: {" << config.entryMethodName << "}\n";
+        std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "filteredRegexp: {" << config.filterdVertexRegexStr << "}\n";
         if (config.outputFileName.size() == 0)
         {
             std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "diffFileName is Empty, use default value.\n";
-            config.outputFileName = "POLDAM_output/sample";
+            config.outputFileName = "sample";
         }
         std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "entryMethod: {" << (config.hasEntryMethodName ? config.entryMethodName : "No entry method") << "}\n";
         std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "diffFileName: {" << config.outputFileName << "}\n";

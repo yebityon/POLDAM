@@ -21,14 +21,22 @@ namespace POLDAM
             }
         }
         PoldamGraph::pushStackVertex(v, threadId);
-        // Thread IDのことは考えないことにする。
+        
         if (this->g[v].classStr == config.entryClassName && this->g[v].methodStr == config.entryMethodName && this->root.find(threadId) == this->root.end())
         {
+            // EtntryPointを用意してproc{}を呼ぶよう変更する
+            std::cout
+                << POLDAM_UTIL::POLDAM_DEBUG_PRINT_SUFFIX
+                << this->g[v].classStr << "/"
+                << this->g[v].methodStr
+                << std::endl;
+            g[v].isFilteredVertex = g[v].isTargetVertex = true;
             this->Root = v;
             this->g[v].isTargetVertex = true;
             this->root[threadId] = v;
         }
-        if(config.hasFilterdRegex) {
+        // Rootが設定されているとhasFilterdVeterxを有効にする
+        if(config.hasFilterdRegex && this ->root.find(threadId) != this ->root.end()) {
             if(std::regex_match(this->g[v].methodStr, config.filterdVertexRegex)) {
                 this->g[v].isFilteredVertex = true;
             }

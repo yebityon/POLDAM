@@ -1,3 +1,4 @@
 ClassID,LoadedFrom,FileName,ClassName,LogLevel,ClassHash,ClassLoaderID
-0,file:/root/selogger/src/motivationExample/target/,Main,Main,Normal,23f9744baf05cbb601bc5ddf8f207d11dd2d4587,Loader@18b4aac2:Main
-1,file:/root/selogger/src/motivationExample/target/,customClass/myMath,customClass/myMath,Normal,7e8a9642225915258b1f0e202fe46a2a04e2c2a4,Loader@18b4aac2:customClass/myMath
+0,file:/root/selogger/java8/src/motivationExample/target/,Main,Main,Normal,983022a4e15d5566d770dcd436a103e8fe395acf,Loader@18b4aac2:Main
+1,file:/root/selogger/java8/src/motivationExample/target/,customClass/myMath,customClass/myMath,Normal,7e8a9642225915258b1f0e202fe46a2a04e2c2a4,Loader@18b4aac2:customClass/myMath
+2,file:/root/selogger/java8/src/motivationExample/target/,customClass/myString,customClass/myString,Normal,07e604bfc74855eba1119ac0069cdde12135f155,Loader@18b4aac2:customClass/myString

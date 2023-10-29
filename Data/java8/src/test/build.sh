@@ -6,6 +6,8 @@ echo compile customClass
 cd customClass/
 rm *.class
 javac -g myMath.java 
+echo compile myString
+javac -g myString.java
 
 cd ../
 echo compile Main
@@ -21,6 +23,7 @@ echo compile customClass
 cd customClass/
 rm *.class
 javac -g myMath.java 
+javac -g myString.java
 
 cd ../
 echo compile Main

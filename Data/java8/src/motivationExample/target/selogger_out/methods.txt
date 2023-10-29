@@ -1,6 +1,6 @@
 ClassID,MethodID,ClassName,MethodName,MethodDesc,Access,SourceFileName,MethodHash
 0,0,Main,<init>,()V,1,Main.java,204b3c4dea2bb90b4b56dff35c6c2a032351043c
-0,1,Main,main,([Ljava/lang/String;)V,9,Main.java,e86553551b3b5fdb77a8f13097ff591d758f8c87
+0,1,Main,main,([Ljava/lang/String;)V,9,Main.java,2585c2cd1ff56ad065cca70fcec625739b5afb0c
 1,2,customClass/myMath,<init>,()V,1,myMath.java,204b3c4dea2bb90b4b56dff35c6c2a032351043c
 1,3,customClass/myMath,computeMultiple,(II)I,1,myMath.java,24d76062c47d08d5bd154003ae553e876b983e08
 1,4,customClass/myMath,computeMultiple,(Ljava/lang/Integer;Ljava/lang/Integer;)Ljava/lang/Integer;,1,myMath.java,79a9d97e7bd0fef196fec4358da77575378900dd
@@ -9,3 +9,12 @@ ClassID,MethodID,ClassName,MethodName,MethodDesc,Access,SourceFileName,MethodHas
 1,7,customClass/myMath,isPrime,(I)Ljava/lang/Boolean;,1,myMath.java,54ac2d5109ec92e5c7714b8a413fe97a77c3199d
 1,8,customClass/myMath,primeFactors,(I)Ljava/util/List;,1,myMath.java,270314ba45b329fee172a285e222daf19ed2adf1
 1,9,customClass/myMath,sieveOfEratosthenes,(I)Ljava/util/List;,9,myMath.java,982755ce07e4bedec27945479e6bf3eefe6e04e5
+2,10,customClass/myString,<init>,(Ljava/lang/String;)V,1,myString.java,dcf053b0547a4874533c4a10d986c6434ee952be
+2,11,customClass/myString,length,()I,1,myString.java,7b098a8f04e5bd780f512ad3c11c3590aa0c1944
+2,12,customClass/myString,substring,(II)Ljava/lang/String;,1,myString.java,197e16cd46eae8930c2cf179d19fadd344b3a069
+2,13,customClass/myString,replace,(CC)Ljava/lang/String;,1,myString.java,1618ce361c7b536b32d5a1b3bcd5282a84eaa5c4
+2,14,customClass/myString,toUpperCase,()Ljava/lang/String;,1,myString.java,2458c28bd5d8d87320c1a1427f81056ff094af0b
+2,15,customClass/myString,toLowerCase,()Ljava/lang/String;,1,myString.java,0be7e503271198d9c0b8f03d82f3cba4be1db916
+2,16,customClass/myString,isPalindrome,()Z,1,myString.java,3c232c3f7b0047abdecd8ba6f0220d0c35afdb08
+2,17,customClass/myString,print,()V,1,myString.java,cafef9f885d05a61b256e53676048eade2da3ff7
+2,18,customClass/myString,printWithString,(Ljava/lang/String;)V,1,myString.java,0df6e7bc32691250bd065ddce58c35c5f4ce7d23

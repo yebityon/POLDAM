@@ -4,8 +4,15 @@ settings.json
 *.dot
 *.class
 
+.vscode/*
+.DS_Store
+
+
+
 Boost/
+Data/java8/src/moshi/*
 Data/i49_bad_allocate/*
 Data/swan_selogger/*
+
 build/*
 CMakeFiles/*

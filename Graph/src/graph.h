@@ -50,6 +50,7 @@ namespace POLDAM
          *  For the graph view
          */
         bool isTargetVertex = false;
+        bool isFilreViewRoot = false;
 
         /*
          * context hash is the flow hash of the parent hash.

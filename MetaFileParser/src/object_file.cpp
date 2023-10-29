@@ -32,8 +32,8 @@ namespace POLDAM
 
         if (!fileStream)
         {
-            std::cout << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX << filePath << " is not found\n";
-            std::cout << "DEBUG: " << filePath << '\n';
+            std::cout << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX 
+            << "Given filePath is valid, but missing essential file of selogger.\n";
             exit(1);
         }
 

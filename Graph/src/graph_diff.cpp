@@ -290,7 +290,6 @@ namespace POLDAM
         this->diffGraph[diffGraphRootDesc].outputFormat = "DIFF_GRAPH_ENTRY";
         if (this->config.hasEntryMethodName)
         {
-
             this->diffGraph[diffGraphRootDesc].outputFormat += "\n" + this->config.entryMethodName;
         }
 

@@ -32,7 +32,6 @@ namespace POLDAM
         // ugly, need to fix
         for (const std::string &filePath : this->filePaths)
         {
-            std::cout << "TARGET LOG FILE -> " << filePath << std::endl;
             std::ifstream fileStream;
 
             fileStream.open(filePath, std::ios::in);

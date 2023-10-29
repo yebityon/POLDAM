@@ -178,7 +178,7 @@ namespace POLDAM
         if (config.outputFileName.size() == 0)
         {
             std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "diffFileName is Empty, use default value.\n";
-            config.outputFileName = "sample";
+            config.outputFileName = "POLDAM_output/sample";
         }
         std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "entryMethod: {" << (config.hasEntryMethodName ? config.entryMethodName : "No entry method") << "}\n";
         std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "diffFileName: {" << config.outputFileName << "}\n";

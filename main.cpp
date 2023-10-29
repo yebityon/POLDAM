@@ -65,6 +65,7 @@ std::string shapeLogString(const POLDAM::DataId d, const POLDAM::MethodsData m, 
 
 POLDAM::PoldamGraph buildGraph(POLDAM::poldamConfig config, const std::string inputDir, const std::string outputFileName)
 {
+
     std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "Reading Metafiles\n";
     POLDAM::metafileFactory factory(inputDir);
 
@@ -154,12 +155,10 @@ POLDAM::PoldamGraph buildGraph(POLDAM::poldamConfig config, const std::string in
             // branch for paramType that paramValue is directly recored in SELogger.
             else if (paramType.find("Ljava") == std::string::npos)
             {
-                // std::cout << "paramType: " << paramType << ",Value: " << log.value << std::endl;
                 PoldamGraph.updateStackTopVertexParamInfo(log.value, log.threadId);
             }
             else
             {
-                // TODO: Add new condition for Integer
                 const int argValueIdx = std::stoi(log.value) - 1;
                 if (argValueIdx < 0)
                 {
@@ -178,27 +177,18 @@ POLDAM::PoldamGraph buildGraph(POLDAM::poldamConfig config, const std::string in
             PoldamGraph.updateStackTopVertex(logString, log.threadId);
         }
     }
+    
     std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX
               << "\033[1m\033[32m"
               << "Successfully build PoldamGraph!\n"
               << "\033[0m";
     std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "writing result..." << std::endl;
-    // TODO: Update output file name 
+    
     if (config.hasEntryMethodName)
     {
         POLDAM::Graph g = PoldamGraph.getGraphCopy();
         boost::filtered_graph<POLDAM::Graph, boost::keep_all, POLDAM::VertexPredicate> fg(
             g, boost::keep_all(), POLDAM::VertexPredicate(&g));
-        std::ofstream outputDotFile(outputFileName);
-        boost::write_graphviz(outputDotFile, fg,
-                              boost::make_label_writer(get(&POLDAM::GraphVertex::outputFormat, fg)),
-                              boost::make_label_writer(get(&POLDAM::GraphEdge::outputFormat, fg)));
-    }
-    else if(config.hasFilterdRegex)
-    {
-        POLDAM::Graph g = PoldamGraph.getGraphCopy();
-        boost::filtered_graph<POLDAM::Graph, boost::keep_all, POLDAM::RegexpVertexPredicate> fg(
-            g, boost::keep_all(), POLDAM::RegexpVertexPredicate(&g));
         std::ofstream outputDotFile(outputFileName);
         boost::write_graphviz(outputDotFile, fg,
                               boost::make_label_writer(get(&POLDAM::GraphVertex::outputFormat, fg)),

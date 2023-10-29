@@ -11,28 +11,32 @@ namespace POLDAM
             const auto &prev = PoldamGraph::getStackTopVertex(threadId);
             PoldamGraph::addOmniEdge(prev, v, threadId);
         }
-        else
+        
+        PoldamGraph::pushStackVertex(v, threadId);
+
+        if(config.hasEntryMethodName) 
         {
-            // entryMethodNameが明示的に与えられなかった場合は、最初の頂点をthis->Rootに設定
-            if (!config.hasEntryMethodName && this->root.find(threadId) == this->root.end() /*threadID拡張のため*/)
+            if (this->g[v].classStr == config.entryClassName && 
+                this->g[v].methodStr == config.entryMethodName && 
+                this->root.find(threadId) == this->root.end())
             {
+                // EtntryPointを用意してproc{}を呼ぶよう変更する
                 this->Root = v;
+                this->g[v].isTargetVertex = true;
                 this->root[threadId] = v;
             }
-        }
-        PoldamGraph::pushStackVertex(v, threadId);
-        // Thread IDのことは考えないことにする。
-        if (this->g[v].classStr == config.entryClassName && this->g[v].methodStr == config.entryMethodName && this->root.find(threadId) == this->root.end())
-        {
-            this->Root = v;
-            this->g[v].isTargetVertex = true;
-            this->root[threadId] = v;
-        }
-        if(config.hasFilterdRegex) {
-            if(std::regex_match(this->g[v].methodStr, config.filterdVertexRegex)) {
-                this->g[v].isFilteredVertex = true;
+            else if( this -> root.find(threadId) != this -> root.end() && config.hasFilterdRegex) 
+            {
+                this->g[v].isTargetVertex = std::regex_match(this->g[v].methodStr, config.filterdVertexRegex);
             }
         }
+        else if(this -> root.find(threadId) == this -> root.end())
+        {
+            this -> g[v].isTargetVertex = true;
+            this->Root = v;
+            this->root[threadId] = v;
+        }
+        
         this->path.push_back(v);
 
         return v;
@@ -97,19 +101,18 @@ namespace POLDAM
 
         bool isInserted = false;
         boost::tie(e, isInserted) = boost::add_edge(u_, v_, this->g);
-        if (isInserted)
+        if(isInserted)
         {
-            // u_ -> v_ のedgeで, u_がfilter viewであればv_の頂点も出力対象とする
-            if (this->g[u_].isTargetVertex)
-            {
-                this->g[v_].isTargetVertex = true;
-            }
-            
-            if(this -> g[u_].isFilteredVertex) {
-                this -> g[v_].isFilteredVertex = true;
-            }   
+            g[e].outputFormat = std::to_string(PoldamGraph::incrementCounter());
         }
-
+        
+        if(!config.hasFilterdRegex)
+        {
+            if(g[u_].isTargetVertex)
+            {
+                g[v_].isTargetVertex = true;
+            }
+        }
         return isInserted;
     }
 
@@ -155,6 +158,20 @@ namespace POLDAM
             this->g[crtVertex].paramHash);
 
         g[crtVertex].outputFormat += "\nCFH=" + std::to_string(g[crtVertex].controlFlowHash) + "\nCPH=" + std::to_string(g[crtVertex].controlParamHash);
+        
+        if(config.hasFilterdRegex)
+        {
+            // vertex をpopするときに、子孫の一つがtarget vertexなら、自分もtarget vertexにする
+            for (auto it = boost::adjacent_vertices(crtVertex, this->g); it.first != it.second; ++it.first)
+            {
+                const auto &childVertex = *it.first;
+                if (this->g[childVertex].isTargetVertex)
+                {
+                    this -> g[crtVertex].isTargetVertex = true;
+                    break;
+                }
+            }
+        }
 
         this->vStack[threadId].pop();
         if (not isStackEmpty(threadId))

@@ -7,6 +7,7 @@
 #include <regex>
 
 #include "../../Util/include/src/poldam_config.hpp"
+#include "../../Util/include/src/poldam_util.h"
 
 #include <boost/graph/adjacency_iterator.hpp>
 #include <boost/graph/depth_first_search.hpp>
@@ -50,12 +51,6 @@ namespace POLDAM
          */
         bool isTargetVertex = false;
 
-        /**
-         * For the filterd graph view
-         */
-        bool isFilteredVertex = false;
-
-
         /*
          * context hash is the flow hash of the parent hash.
          */
@@ -78,19 +73,6 @@ namespace POLDAM
         }
 
         Graph const *_graph;
-    };
-
-    struct RegexpVertexPredicate
-    {
-        RegexpVertexPredicate(){};
-        RegexpVertexPredicate(Graph const *g) : _graph(g){};
-        bool operator()(Graph::vertex_descriptor const &v) const
-        {
-            return (*_graph)[v].isFilteredVertex;
-        }
-
-        Graph const *_graph;
-        std::regex _regex;
     };
 
     class PoldamGraph
@@ -209,9 +191,15 @@ namespace POLDAM
 
         );
 
+        unsigned int incrementCounter ()
+        {
+            return this->counter++;
+        };
+        
         Graph g{};
         Graph diffGraph{};
-
+        unsigned int counter = 0;
+        
         boost::graph_traits<Graph>::vertex_descriptor Root;
 
         std::map<unsigned int, boost::graph_traits<Graph>::vertex_descriptor> root{};

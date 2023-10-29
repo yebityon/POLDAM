@@ -1,7 +1,6 @@
+#!/bin/bash
 
 set -e
-
-# imoplement this at /PODLDAM/#!/bin/bash
 
 TARGET_DIR="./build"
 
@@ -20,9 +19,13 @@ cd "$TARGET_DIR"
 
 echo "Current directory: $PWD"
 echo "building..."
-cmake .. && make 
+cmake -D CMAKE_C_COMPILER=/usr/bin/gcc -D CMAKE_CXX_COMPILER=/opt/homebrew/bin/g++-11 .. && make
 
 echo "Done."
+
+if [ "$1" == "-y" ]; then
+  exit 0
+fi
 
 echo "Run the program? (y/n)"
 read answer

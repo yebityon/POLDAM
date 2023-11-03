@@ -1,15 +1,44 @@
-#include <poldam/util/utility.hpp>
 #include <poldam/util/arg_config.hpp>
+#include <poldam/selogger_log_parser/common.hpp>
+#include <poldam/selogger_log_parser/factory.hpp>
+#include <poldam/selogger_log_parser/dataids.hpp>
 
 int main(int argc, char *argv[])
 {
     POLDAM::poldamConfig config = POLDAM::generateConfig(argc, argv);
     if (config == POLDAM::poldamConfig{})
     {
-        // something wrong
         exit(1);
     }
     POLDAM_UTIL::Timer t("main");
+
+    POLDAM::metafileFactory factory(config.originDir);
+    auto dataids = factory.createInstance<POLDAM::DataIdsParser>("dataids.txt", true);
+    auto seloggerParser = factory.createInstance<POLDAM::SeloggerLogParser>("log-00001.txt", "^log-.*.txt");
+    auto objectFileParser = factory.createInstance<POLDAM::ObjectfileParser>();
+    auto methodParser = factory.createInstance<POLDAM::MethodDataParser>("methods.txt", true);
+    auto classesParser = factory.createInstance<POLDAM::ClassesDataParser>("classes.txt", true);
+
+    std::cout
+        << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "Successfully reading Metafiles\n";
+
+    // Phase2. Create Graph.
+    std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "Create Graph\n";
+
+    const std::vector<std::string> omniLog = seloggerParser.getData();
+
+    const std::vector<std::string> dataidsData = dataids.getData();
+    const std::vector<POLDAM::DataId> parsedDataIds = dataids.getParsedData();
+
+    const std::vector<std::string> methodData = methodParser.getData();
+    const std::vector<POLDAM::MethodsData> parsedMethodsData = methodParser.getParsedData();
+
+    const std::vector<std::string> classesData = classesParser.getData();
+    const std::vector<POLDAM::ClassesData> parsedClassesData = classesParser.getParsedData();
+
+    const std::vector<POLDAM::ObjectData> parsedObjectData = objectFileParser.getParsedData();
+
+    std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "Successfully Parsed\n";
 
     // POLDAM::PoldamGraph originGraph = buildGraph(config, config.originDir, config.outputFileName + "_origin.dot");
     // if (config.isDebugMode)

@@ -21,6 +21,9 @@ add_library(selogger_log_parser OBJECT  ${POLDAM_SELOGGER_LOG_PARSER})
 file(GLOB_RECURSE POLDAM_UTIL "poldam/util/*.cpp")
 add_library(util OBJECT ${POLDAM_UTIL})
 
+file(GLOB_RECURSE POLDAM_HELPER "poldam/helper/*.cpp")
+add_library(helper OBJECT ${POLDAM_HELPER})
+
 
 # Collect all cpp files in poldam/script directory
 file(GLOB_RECURSE SCRIPT_SOURCES "poldam/script/*.cpp")
@@ -29,5 +32,5 @@ file(GLOB_RECURSE SCRIPT_SOURCES "poldam/script/*.cpp")
 foreach(SOURCE ${SCRIPT_SOURCES})
     get_filename_component(EXECUTABLE ${SOURCE} NAME_WE)
     add_executable(${EXECUTABLE} ${SOURCE})
-    target_link_libraries(${EXECUTABLE} util selogger_log_parser)
+    target_link_libraries(${EXECUTABLE} util selogger_log_parser helper graph)
 endforeach()

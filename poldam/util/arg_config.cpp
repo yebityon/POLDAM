@@ -1,6 +1,6 @@
-#pragma once
-#include "poldam_config.hpp"
-#include "poldam_util.h"
+#pragma once 
+#include <poldam/util/utility.hpp>
+#include <poldam/util/arg_config.hpp>
 
 namespace POLDAM
 {
@@ -90,7 +90,7 @@ namespace POLDAM
             }
             else if (arg == "-f" or arg == "--filterd_vertex")
             {
-                if(i + 1 > argc )
+                if (i + 1 > argc)
                 {
                     std::cout << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX << "No Filterd Vertex is Given\n";
                     printHelp();
@@ -126,48 +126,48 @@ namespace POLDAM
                 return poldamConfig{};
             }
         }
-        
-        // validate config 
-        if(config.originDir.size() == 0 || config.targetDir.size() == 0)
+
+        // validate config
+        if (config.originDir.size() == 0 || config.targetDir.size() == 0)
         {
             // validなパスかどうかもチェックしたい
-            std::cout 
-            << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX 
-            << "You need to designate input directory." 
-            << std::endl;
+            std::cout
+                << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX
+                << "You need to designate input directory."
+                << std::endl;
             return poldamConfig{};
         }
         if (config.hasEntryClassName && !config.hasEntryMethodName)
         {
             // -c は指定したけど-mは指定していない
-            std::cout 
-            << POLDAM_UTIL::POLDAM_WARNING_PRINT_SUFFIX
-            << "You have specified the class name but not the method name. "
-            << std::endl;
+            std::cout
+                << POLDAM_UTIL::POLDAM_WARNING_PRINT_SUFFIX
+                << "You have specified the class name but not the method name. "
+                << std::endl;
             return poldamConfig{};
         }
         if (config.hasFilterdRegex && !config.hasEntryMethodName)
         {
             // -fは指定したけど、-m は指定してない
             std::cout
-            << POLDAM_UTIL::POLDAM_WARNING_PRINT_SUFFIX
-            << "You have specified the filterd regex but not the method name. "
-            << std::endl;
+                << POLDAM_UTIL::POLDAM_WARNING_PRINT_SUFFIX
+                << "You have specified the filterd regex but not the method name. "
+                << std::endl;
             return poldamConfig{};
         }
-        if(config.hasEntryMethodName && !config.hasEntryClassName)
+        if (config.hasEntryMethodName && !config.hasEntryClassName)
         {
             // -m は指定したけど-cは指定していない
-            std::cout 
-            << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX
-            << "You have specified the method name but not the class name. "
-            << std::endl;
+            std::cout
+                << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX
+                << "You have specified the method name but not the class name. "
+                << std::endl;
             return poldamConfig{};
         }
         return config;
     }
 
-    void printConfig(poldamConfig &config)
+    void printConfig(const poldamConfig &config)
     {
         std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "POLDAM IS WORKING\n";
         std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "originDir: {" << config.originDir << "}\n";
@@ -178,7 +178,6 @@ namespace POLDAM
         if (config.outputFileName.size() == 0)
         {
             std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "diffFileName is Empty, use default value.\n";
-            config.outputFileName = "POLDAM_output/sample";
         }
         std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "entryMethod: {" << (config.hasEntryMethodName ? config.entryMethodName : "No entry method") << "}\n";
         std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "diffFileName: {" << config.outputFileName << "}\n";
@@ -187,4 +186,4 @@ namespace POLDAM
 
         return;
     }
-} // namespace
+} // namespace 

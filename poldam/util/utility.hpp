@@ -3,14 +3,13 @@
 #include <vector>
 #include <iostream>
 #include <chrono>
+
 namespace POLDAM_UTIL
 {
     const char *const POLDAM_PRINT_SUFFIX = "\033[1m[POLDAM]\033[0m:";
     const char *const POLDAM_ERROR_PRINT_SUFFIX = "\033[31m\033[1m[POLDAM ERROR]\033[0m";
     const char *const POLDAM_WARNING_PRINT_SUFFIX = "\033[35m\033[1m[POLDAM WARNING]\033[0m:";
     const char *const POLDAM_DEBUG_PRINT_SUFFIX = "\033[38;5;208m\033[1m[POLDAM DEBUG]\033[0m:";
-
-    std::vector<std::string> split(const std::string &, const char & = ',');
 
     struct Timer
     {
@@ -30,4 +29,27 @@ namespace POLDAM_UTIL
         std::string timerName;
         std::chrono::system_clock::time_point start, end;
     };
+    
+    // とりあえずinlineで展開できるようにしておく
+    inline std::vector<std::string> split(const std::string &str, const char &terminator)
+    {
+        std::vector<std::string> rec{};
+        std::string buffer{};
+
+        for (auto c : str)
+        {
+            if (c == terminator)
+            {
+                rec.push_back(buffer);
+                std::string().swap(buffer);
+            }
+            else
+            {
+                buffer.push_back(c);
+            }
+        }
+
+        rec.push_back(buffer);
+        return rec;
+    }
 }

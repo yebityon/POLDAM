@@ -5,10 +5,15 @@ project(Poldam)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
+set(BOOST_PATH /Users/prebell/Documents/boost_1_80_0)
+
 # Add include directories
 include_directories(${CMAKE_SOURCE_DIR})
+include_directories(${BOOST_PATH})
 
-# Collect all cpp files in poldam directory
+
+file(GLOB_RECURSE POLDAM_GRAPH "poldam/graph/*.cpp")
+add_library(graph OBJECT  ${POLDAM_GRAPH})# Collect all cpp files in poldam directory
 
 file(GLOB_RECURSE POLDAM_SELOGGER_LOG_PARSER "poldam/selogger_log_parser/*.cpp")
 add_library(selogger_log_parser OBJECT  ${POLDAM_SELOGGER_LOG_PARSER})

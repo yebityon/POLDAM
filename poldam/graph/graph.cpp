@@ -23,19 +23,19 @@ namespace POLDAM
                 // EtntryPointを用意してproc{}を呼ぶよう変更する
                 this->Root = v;
                 this->g[v].isTargetVertex = true;
+                this->g[v].isFilreViewRoot = true;
                 this->root[threadId] = v;
             }
             else if (this->root.find(threadId) != this->root.end() && config.hasFilterdRegex)
             {
-                std::cout << POLDAM_UTIL::POLDAM_DEBUG_PRINT_SUFFIX << std::regex_match(this->g[v].methodStr, config.filterdVertexRegex) << "\n";
-                this->g[v]
-                    .isTargetVertex = std::regex_match(this->g[v].methodStr, config.filterdVertexRegex);
+                this->g[v].isTargetVertex = std::regex_match(this->g[v].classStr, config.filterdVertexRegex);
             }
         }
         else if (this->root.find(threadId) == this->root.end())
         {
             this->g[v].isTargetVertex = true;
             this->Root = v;
+            this->g[v].isFilreViewRoot = true;
             this->root[threadId] = v;
         }
 
@@ -167,7 +167,8 @@ namespace POLDAM
             for (auto it = boost::adjacent_vertices(crtVertex, this->g); it.first != it.second; ++it.first)
             {
                 const auto &childVertex = *it.first;
-                if (this->g[childVertex].isTargetVertex)
+                // 子孫がRootだと対象外なので伝搬をそこでやめる
+                if (this->g[childVertex].isTargetVertex && !this->g[childVertex].isFilreViewRoot)
                 {
                     this->g[crtVertex].isTargetVertex = true;
                     break;

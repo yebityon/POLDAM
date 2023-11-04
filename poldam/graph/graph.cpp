@@ -27,7 +27,9 @@ namespace POLDAM
             }
             else if (this->root.find(threadId) != this->root.end() && config.hasFilterdRegex)
             {
-                this->g[v].isTargetVertex = std::regex_match(this->g[v].methodStr, config.filterdVertexRegex);
+                std::cout << POLDAM_UTIL::POLDAM_DEBUG_PRINT_SUFFIX << std::regex_match(this->g[v].methodStr, config.filterdVertexRegex) << "\n";
+                this->g[v]
+                    .isTargetVertex = std::regex_match(this->g[v].methodStr, config.filterdVertexRegex);
             }
         }
         else if (this->root.find(threadId) == this->root.end())

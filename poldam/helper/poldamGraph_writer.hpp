@@ -31,12 +31,14 @@ namespace POLDAM
             return;
         }
 
-        // write graphviz from given boost::filtered_graph
-        template <typename FilteredGraph>
-        void writePoldamGraph(const std::string outputFileName, const FilteredGraph &filteredGraph)
+        template <typename F>
+        void writePoldamGraph(const std::string outputFileName, F& filterd_proc)
         {
+            
             try
             {
+                const auto& g = G.getGraphCopy();
+                auto filteredGraph = filterd_proc(g);   
                 std::ofstream outputDotFile(outputFileName);
                 boost::write_graphviz(outputDotFile, filteredGraph,
                                       boost::make_label_writer(get(&POLDAM::GraphVertex::outputFormat, filteredGraph)),

@@ -23,7 +23,6 @@ namespace POLDAM
             DataId  d =  parsedDataIds[log.dataId];
             const MethodsData m = parsedMethodsData[d.methodId];
             const ClassesData c = parsedClassesData[d.classId];
-            std::cout << d.raw_value << "\n";
 
             if (d.eventType == POLDAM::SELOGGER_EVENT_TYPE::METHOD_ENTRY)
             {

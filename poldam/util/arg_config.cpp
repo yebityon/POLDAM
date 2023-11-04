@@ -169,7 +169,6 @@ namespace POLDAM
 
     void printConfig(const poldamConfig &config)
     {
-        std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "POLDAM IS WORKING\n";
         std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "originDir: {" << config.originDir << "}\n";
         std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "targetDir: {" << config.targetDir << "}\n";
         std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "entryClass: {" << config.entryClassName << "}\n";

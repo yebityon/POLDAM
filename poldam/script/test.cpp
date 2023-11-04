@@ -48,20 +48,14 @@ int main(int argc, char *argv[])
     writer.writePoldamGraph("sample_origin.dot");
     if(config.hasEntryMethodName)
     {
-        // FIXME: getGraphCopy is not cost effective, 
-        // using filterd_graph_type = boost::filtered_graph<POLDAM::Graph, boost::keep_all, POLDAM::VertexPredicate>;
-        // const auto filter_proc = [&](POLDAM::Graph g) -> filterd_graph_type {
-        //     boost::filtered_graph<POLDAM::Graph, boost::keep_all, POLDAM::VertexPredicate> fg(
-        //         g, boost::keep_all(), POLDAM::VertexPredicate(&g));
-        //         return fg;
-        // };
-        // writer.writePoldamGraph<decltype(filter_proc)>("sample_filterd_output.dot", filter_proc);
-        auto gg = g.getGraphCopy();
-        boost::filtered_graph<POLDAM::Graph, boost::keep_all, POLDAM::VertexPredicate> fg(
-            gg, boost::keep_all(), POLDAM::VertexPredicate(&gg));
-        std::ofstream outputDotFile("sample_filted_output.dot");
-        boost::write_graphviz(outputDotFile, fg,
-                              boost::make_label_writer(get(&POLDAM::GraphVertex::outputFormat, fg)),
-                              boost::make_label_writer(get(&POLDAM::GraphEdge::outputFormat, fg)));
+        //FIXME: getGraphCopy is not cost effective, 
+        writer.writePoldamGraph<POLDAM::VertexPredicate>("sample_filterd_output.dot");
+        // auto gg = g.getGraphCopy();
+        // boost::filtered_graph<POLDAM::Graph, boost::keep_all, POLDAM::VertexPredicate> fg(
+        //     gg, boost::keep_all(), POLDAM::VertexPredicate(&gg));
+        // std::ofstream outputDotFile("sample_filted_output.dot");
+        // boost::write_graphviz(outputDotFile, fg,
+        //                       boost::make_label_writer(get(&POLDAM::GraphVertex::outputFormat, fg)),
+        //                       boost::make_label_writer(get(&POLDAM::GraphEdge::outputFormat, fg)));
     }    
 }

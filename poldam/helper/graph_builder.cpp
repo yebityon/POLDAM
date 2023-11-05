@@ -43,7 +43,7 @@ namespace POLDAM
             {
                 poldamGraph.computeHash(log.threadId);
                 poldamGraph.popStackVertex(log.threadId);
-            }
+           }
             else if (d.eventType == POLDAM::SELOGGER_EVENT_TYPE::CALL_PARAM)
             {
                 // Use these values to compute param hash.
@@ -83,6 +83,7 @@ namespace POLDAM
                         }
                         continue;
                     }
+                    // FIXME: 
                     const POLDAM::ObjectData o = parsedObjectData[argValueIdx];
                 }
             }

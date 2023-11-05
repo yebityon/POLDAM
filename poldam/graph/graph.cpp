@@ -158,14 +158,6 @@ namespace POLDAM
         this->g[crtVertex].controlParamHash = std::hash<size_t>()(
             this->g[crtVertex].childParamHash +
             this->g[crtVertex].paramHash);
-        if ((not config.hasFilterdRegex) or (g[crtVertex].isTargetVertex or g[crtVertex].isFilreViewRoot))
-        {
-            g[crtVertex].outputFormat += "\nCFH=" + std::to_string(g[crtVertex].controlFlowHash) + "\nCPH=" + std::to_string(g[crtVertex].controlParamHash);
-        }
-        else 
-        {
-            g[crtVertex].outputFormat += "\nCFH=N/A\nCPH=N/A";
-        }
 
         if (config.hasFilterdRegex)
         {
@@ -180,6 +172,16 @@ namespace POLDAM
                     break;
                 }
             }
+        }
+
+        // 内部ではハッシュ値を計算しておくが、outputFormatには出さない
+        if ((not config.hasFilterdRegex) or (g[crtVertex].isTargetVertex or g[crtVertex].isFilreViewRoot))
+        {
+            g[crtVertex].outputFormat += "\nCFH=" + std::to_string(g[crtVertex].controlFlowHash) + "\nCPH=" + std::to_string(g[crtVertex].controlParamHash);
+        }
+        else
+        {
+            g[crtVertex].outputFormat += "\nCFH=N/A\nCPH=N/A";
         }
 
         this->vStack[threadId].pop();

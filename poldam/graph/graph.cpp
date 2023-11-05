@@ -158,8 +158,14 @@ namespace POLDAM
         this->g[crtVertex].controlParamHash = std::hash<size_t>()(
             this->g[crtVertex].childParamHash +
             this->g[crtVertex].paramHash);
-
-        g[crtVertex].outputFormat += "\nCFH=" + std::to_string(g[crtVertex].controlFlowHash) + "\nCPH=" + std::to_string(g[crtVertex].controlParamHash);
+        if ((not config.hasFilterdRegex) or (g[crtVertex].isTargetVertex or g[crtVertex].isFilreViewRoot))
+        {
+            g[crtVertex].outputFormat += "\nCFH=" + std::to_string(g[crtVertex].controlFlowHash) + "\nCPH=" + std::to_string(g[crtVertex].controlParamHash);
+        }
+        else 
+        {
+            g[crtVertex].outputFormat += "\nCFH=N/A\nCPH=N/A";
+        }
 
         if (config.hasFilterdRegex)
         {
@@ -180,11 +186,16 @@ namespace POLDAM
         if (not isStackEmpty(threadId))
         {
             const auto &callerVertex = this->vStack[threadId].top();
-            this->g[callerVertex].childFlowHash = std::hash<size_t>()(
-                this->g[callerVertex].childFlowHash + g[crtVertex].controlFlowHash);
+            // FilteredRegexがfalseの場合はすべて計算
+            // FilteredRegexがtrueの場合は、callerがフィルタリング対象ではないまたは頂点かつ、crtVertexがtarget vertexの場合のみ計算
+            if ((not config.hasFilterdRegex) or ((g[callerVertex].isTargetVertex or g[callerVertex].isFilreViewRoot) && g[crtVertex].isTargetVertex))
+            {
+                this->g[callerVertex].childFlowHash = std::hash<size_t>()(
+                    this->g[callerVertex].childFlowHash + g[crtVertex].controlFlowHash);
 
-            this->g[callerVertex].childParamHash = std::hash<size_t>()(
-                this->g[callerVertex].childParamHash + g[crtVertex].controlParamHash);
+                this->g[callerVertex].childParamHash = std::hash<size_t>()(
+                    this->g[callerVertex].childParamHash + g[crtVertex].controlParamHash);
+            }
         }
 
         return true;

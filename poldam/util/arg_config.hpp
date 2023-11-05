@@ -15,8 +15,10 @@ namespace POLDAM
         std::string entryClassName{};
         std::string entryMethodName{};
         std::string filterdVertexRegexStr{};
+        std::string filterdhashRegexStr{};
 
         std::regex filterdVertexRegex{};
+        std::regex filterdhashRegex{};
 
         bool useFastIO = false;
         bool isDebugMode = false;
@@ -25,6 +27,7 @@ namespace POLDAM
         bool hasEntryClassName = false;
         bool hasEntryMethodName = false;
         bool hasFilterdRegex = false;
+        bool isFilterdHash = false;
 
         bool operator==(const poldamConfig &c)
         {
@@ -39,7 +42,9 @@ namespace POLDAM
                 c.useFlowHash == useFlowHash &&
                 c.useParamHash == useParamHash &&
                 c.hasEntryClassName == hasEntryClassName &&
-                c.hasEntryMethodName == hasEntryMethodName);
+                c.hasEntryMethodName == hasEntryMethodName &&
+                c.hasFilterdRegex == hasFilterdRegex
+                );
         }
 
         bool setFilterdRegExp(const std::string &regexStr)
@@ -54,6 +59,21 @@ namespace POLDAM
             }
             filterdVertexRegexStr = regexStr;
             hasFilterdRegex = true;
+            return true;
+        }
+
+        bool setFilterdHashRegExp(const std::string &regexStr)
+        {
+            try
+            {
+                filterdhashRegex = std::regex(regexStr);
+            }
+            catch (const std::regex &error)
+            {
+                return false;
+            }
+            filterdhashRegexStr = regexStr;
+            isFilterdHash = true;
             return true;
         }
     };

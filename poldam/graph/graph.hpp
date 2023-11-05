@@ -44,6 +44,7 @@ namespace POLDAM
          */
         bool isTargetVertex = false;
         bool isFilreViewRoot = false;
+        bool isComputeHashVertex = true;
 
         /*
          * context hash is the flow hash of the parent hash.

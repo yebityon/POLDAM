@@ -10,6 +10,7 @@ settings.json
 
 
 Boost/
+*boost*
 Data/java8/src/moshi/*
 Data/i49_bad_allocate/*
 Data/swan_selogger/*

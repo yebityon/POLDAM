@@ -177,7 +177,7 @@ namespace POLDAM
         // 内部ではハッシュ値を計算しておくが、outputFormatには出さない
         if ((not config.hasFilterdRegex) or (g[crtVertex].isTargetVertex or g[crtVertex].isFilreViewRoot))
         {
-            g[crtVertex].outputFormat += "\nCFH=" + std::to_string(g[crtVertex].controlFlowHash) + "\nCPH=" + std::to_string(g[crtVertex].controlParamHash);
+            g[crtVertex].outputFormat += "\nFH=" + std::to_string(g[crtVertex].flowHash) + "\nPH=" + std::to_string(g[crtVertex].paramHash) + "\nCFH=" + std::to_string(g[crtVertex].controlFlowHash) + "\nCPH=" + std::to_string(g[crtVertex].controlParamHash);
         }
         else
         {

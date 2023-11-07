@@ -96,7 +96,28 @@ namespace POLDAM
                     printHelp();
                     return poldamConfig{};
                 }
-                config.setFilterdRegExp(argv[i + 1]);
+                if(!config.setFilterdRegExp(argv[i + 1]))
+                {
+                    std::cout << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX << "Invalid Filterd Vertex Regexp:";
+                    std::cout << argv[i + 1]  << '\n';
+                    return poldamConfig{};
+                }
+                ++i;
+            }
+            else if(arg == "--compute_hash_target")
+            {
+                if (i + 1 > argc)
+                {
+                    std::cout << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX << "No compute_hash_target regexp is Given\n";
+                    printHelp();
+                    return poldamConfig{};
+                }
+                if(!config.setFilterdHashRegExp(argv[i + 1]))
+                {
+                    std::cout << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX << "Invalid compute_hash_target Regexp:";
+                    std::cout << argv[i + 1]  << '\n';
+                    return poldamConfig{};
+                };
                 ++i;
             }
             else if (arg == "--fastIO")

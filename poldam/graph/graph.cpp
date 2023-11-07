@@ -22,8 +22,9 @@ namespace POLDAM
             {
                 // EtntryPointを用意してproc{}を呼ぶよう変更する
                 this->Root = v;
-                this->g[v].isTargetVertex = true;
-                this->g[v].isFilreViewRoot = true;
+                this->g[v].isTargetVertex = config.hasEntryClassName;
+                this->g[v].isFilreViewRoot = config.hasEntryClassName;
+                this->g[v].isComputeHashVertex = config.isFilterdHash;
                 this->root[threadId] = v;
             }
             else if (this->root.find(threadId) != this->root.end() && config.hasFilterdRegex)
@@ -37,6 +38,11 @@ namespace POLDAM
             this->Root = v;
             this->g[v].isFilreViewRoot = true;
             this->root[threadId] = v;
+        }
+
+        if(config.isFilterdHash)
+        {
+            this->g[v].isComputeHashVertex = std::regex_match(this->g[v].classStr, config.filterdhashRegex);
         }
 
         this->path.push_back(v);
@@ -159,8 +165,6 @@ namespace POLDAM
             this->g[crtVertex].childParamHash +
             this->g[crtVertex].paramHash);
 
-        g[crtVertex].outputFormat += "\nCFH=" + std::to_string(g[crtVertex].controlFlowHash) + "\nCPH=" + std::to_string(g[crtVertex].controlParamHash);
-
         if (config.hasFilterdRegex)
         {
             // vertex をpopするときに、子孫の一つがtarget vertexなら、自分もtarget vertexにする
@@ -176,15 +180,30 @@ namespace POLDAM
             }
         }
 
+        // 内部ではハッシュ値を計算しておくが、outputFormatには出さない
+        if ((not config.hasFilterdRegex) or (g[crtVertex].isComputeHashVertex or g[crtVertex].isFilreViewRoot))
+        {
+            g[crtVertex].outputFormat += "\nCFH=" + std::to_string(g[crtVertex].controlFlowHash) + "\nCPH=" + std::to_string(g[crtVertex].controlParamHash);
+        }
+        else
+        {
+            g[crtVertex].outputFormat += "\nCFH=N/A\nCPH=N/A";
+        }
+
         this->vStack[threadId].pop();
         if (not isStackEmpty(threadId))
         {
             const auto &callerVertex = this->vStack[threadId].top();
-            this->g[callerVertex].childFlowHash = std::hash<size_t>()(
-                this->g[callerVertex].childFlowHash + g[crtVertex].controlFlowHash);
+            // FilteredRegexがfalseの場合はすべて計算
+            // FilteredRegexがtrueの場合は、callerがフィルタリング対象ではないまたは頂点かつ、crtVertexがtarget vertexの場合のみ計算
+            if ((not config.hasFilterdRegex) or ((g[callerVertex].isComputeHashVertex or g[callerVertex].isFilreViewRoot) && g[crtVertex].isComputeHashVertex))
+            {
+                this->g[callerVertex].childFlowHash = std::hash<size_t>()(
+                    this->g[callerVertex].childFlowHash + g[crtVertex].controlFlowHash);
 
-            this->g[callerVertex].childParamHash = std::hash<size_t>()(
-                this->g[callerVertex].childParamHash + g[crtVertex].controlParamHash);
+                this->g[callerVertex].childParamHash = std::hash<size_t>()(
+                    this->g[callerVertex].childParamHash + g[crtVertex].controlParamHash);
+            }
         }
 
         return true;

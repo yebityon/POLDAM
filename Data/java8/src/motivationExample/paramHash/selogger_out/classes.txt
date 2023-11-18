@@ -1,0 +1,3 @@
+ClassID,LoadedFrom,FileName,ClassName,LogLevel,ClassHash,ClassLoaderID
+0,file:/root/selogger/java8/src/motivationExample/paramHash/,Main,Main,Normal,f683fb24c0ee3dbc209d5fd3dc5d1d54072ed2c0,Loader@18b4aac2:Main
+1,file:/root/selogger/java8/src/motivationExample/paramHash/,customClass/myString,customClass/myString,Normal,d9d02cac1617ea8250f8db9c64f121a448a86442,Loader@18b4aac2:customClass/myString

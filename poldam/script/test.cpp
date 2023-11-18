@@ -12,7 +12,7 @@
 int main(int argc, char *argv[])
 {
     POLDAM::poldamConfig config = POLDAM::generateConfig(argc, argv);
-    
+
     if (config == POLDAM::poldamConfig{})
     {
         exit(1);
@@ -20,35 +20,35 @@ int main(int argc, char *argv[])
     std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "Configuration\n";
     POLDAM::printConfig(config);
 
-    POLDAM_UTIL::Timer t("main");
-    
-    std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "Reading Metafiles\n";
+    POLDAM_UTIL::Timer t("Total Time");
+
+    std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "Reading Metafiles...";
     POLDAM::metafileFactory factory(config.originDir);
     auto dataids = factory.createInstance<POLDAM::DataIdsParser>("dataids.txt", true);
     auto seloggerParser = factory.createInstance<POLDAM::SeloggerLogParser>("log-00001.txt", "^log-.*.txt");
     auto objectFileParser = factory.createInstance<POLDAM::ObjectfileParser>();
     auto methodParser = factory.createInstance<POLDAM::MethodDataParser>("methods.txt", true);
     auto classesParser = factory.createInstance<POLDAM::ClassesDataParser>("classes.txt", true);
-    std::cout<< POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "Successfully reading Metafiles\n";
-    
+    std::cout << "OK\n";
+
     std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "Constructing Builder...";
-    POLDAM::GraphBuilder builder(config, 
-    seloggerParser, dataids, objectFileParser, methodParser, classesParser);
-    std::cout <<  "OK\n";
-    
+    POLDAM::GraphBuilder builder(config,
+                                 seloggerParser, dataids, objectFileParser, methodParser, classesParser);
+    std::cout << "OK\n";
+
     std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "Parsing Logs...";
     builder.parseLogs();
     std::cout << "OK\n";
-    
+
     std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "Constructing Markle Tree...";
     auto g = builder.build();
     std::cout << "OK\n";
-    
+
     POLDAM::OmniWriter writer(g);
     writer.writePoldamGraph("sample_origin.dot");
-    if(config.hasEntryMethodName)
+    if (config.hasEntryMethodName)
     {
-        //FIXME: getGraphCopy is not cost effective, 
+        // FIXME: getGraphCopy is not cost effective,
         writer.writePoldamGraph<POLDAM::VertexPredicate>("sample_filterd_output.dot");
         // auto gg = g.getGraphCopy();
         // boost::filtered_graph<POLDAM::Graph, boost::keep_all, POLDAM::VertexPredicate> fg(
@@ -57,5 +57,5 @@ int main(int argc, char *argv[])
         // boost::write_graphviz(outputDotFile, fg,
         //                       boost::make_label_writer(get(&POLDAM::GraphVertex::outputFormat, fg)),
         //                       boost::make_label_writer(get(&POLDAM::GraphEdge::outputFormat, fg)));
-    }    
+    }
 }

@@ -1,6 +1,6 @@
 ClassID,MethodID,ClassName,MethodName,MethodDesc,Access,SourceFileName,MethodHash
 0,0,Main,<init>,()V,1,Main.java,204b3c4dea2bb90b4b56dff35c6c2a032351043c
-0,1,Main,main,([Ljava/lang/String;)V,9,Main.java,2585c2cd1ff56ad065cca70fcec625739b5afb0c
+0,1,Main,main,([Ljava/lang/String;)V,9,Main.java,5a694494eeadb9ee3557ab167ec3f2c9de8c5984
 1,2,customClass/myMath,<init>,()V,1,myMath.java,204b3c4dea2bb90b4b56dff35c6c2a032351043c
 1,3,customClass/myMath,computeMultiple,(II)I,1,myMath.java,24d76062c47d08d5bd154003ae553e876b983e08
 1,4,customClass/myMath,computeMultiple,(Ljava/lang/Integer;Ljava/lang/Integer;)Ljava/lang/Integer;,1,myMath.java,79a9d97e7bd0fef196fec4358da77575378900dd

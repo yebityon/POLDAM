@@ -14,7 +14,7 @@ Excluded by name filter: java/lang/invoke/MethodHandleStatics
 Excluded by name filter: java/lang/invoke/MethodHandleStatics$1
 Excluded by name filter: sun/launcher/LauncherHelper
 Excluded by name filter: sun/misc/URLClassPath$FileLoader$1
-Weaving executed: Class=Main, LoadedFrom=file:/root/selogger/java8/src/motivationExample/origin/, LogLevel=Normal, ClassHash=983022a4e15d5566d770dcd436a103e8fe395acf, ClassLoaderID=Loader@18b4aac2:Main
+Weaving executed: Class=Main, LoadedFrom=file:/root/selogger/java8/src/motivationExample/origin/, LogLevel=Normal, ClassHash=c71274953e783b3e4d96aa29ac6e87034c140ef0, ClassLoaderID=Loader@18b4aac2:Main
 Excluded by name filter: sun/launcher/LauncherHelper$FXHelper
 Excluded by name filter: java/lang/Class$MethodArray
 Excluded by name filter: selogger/logging/util/ThreadId
@@ -27,4 +27,4 @@ Excluded by name filter: java/util/IdentityHashMap$KeySet
 Excluded by name filter: java/util/IdentityHashMap$KeyIterator
 Excluded by name filter: java/util/IdentityHashMap$IdentityHashMapIterator
 Excluded by name filter: java/io/FileOutputStream$1
-Elapsed time: 1065ms
+Elapsed time: 840ms

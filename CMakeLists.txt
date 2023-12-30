@@ -11,7 +11,6 @@ set(BOOST_PATH /Users/prebell/Documents/boost_1_80_0)
 include_directories(${CMAKE_SOURCE_DIR})
 include_directories(${BOOST_PATH})
 
-
 file(GLOB_RECURSE POLDAM_GRAPH "poldam/graph/*.cpp")
 add_library(graph OBJECT  ${POLDAM_GRAPH})# Collect all cpp files in poldam directory
 
@@ -24,7 +23,6 @@ add_library(util OBJECT ${POLDAM_UTIL})
 file(GLOB_RECURSE POLDAM_HELPER "poldam/helper/*.cpp")
 add_library(helper OBJECT ${POLDAM_HELPER})
 
-
 # Collect all cpp files in poldam/script directory
 file(GLOB_RECURSE SCRIPT_SOURCES "poldam/script/*.cpp")
 
@@ -33,4 +31,6 @@ foreach(SOURCE ${SCRIPT_SOURCES})
     get_filename_component(EXECUTABLE ${SOURCE} NAME_WE)
     add_executable(${EXECUTABLE} ${SOURCE})
     target_link_libraries(${EXECUTABLE} util selogger_log_parser helper graph)
+    # MacOS sonomaでlinkerのエラーが出るため一時的に対処
+    set_target_properties(${EXECUTABLE} PROPERTIES LINK_FLAGS "-Xlinker -ld_classic")
 endforeach()

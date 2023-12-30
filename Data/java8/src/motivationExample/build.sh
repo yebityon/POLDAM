@@ -31,12 +31,17 @@ compile_and_run() {
 
 # create log dir for origin
 cd origin/
+echo "compile origin/Main"
 compile_and_run customClass myMath
 
-#======================== target ================================
 cd ../target
-if [ $# -eq 2 ]; then
-    compile_and_run customClass myMath
-else
-    compile_and_run customClass myMath myString
-fi
+echo "compile target/Main"
+compile_and_run customClass myMath myString
+
+cd ../paramHash
+echo "compile paramHash/Main"
+compile_and_run customClass myMath myString
+
+cd ../flowHash
+echo "compile flowHash/Main"
+compile_and_run customClass myMath myString

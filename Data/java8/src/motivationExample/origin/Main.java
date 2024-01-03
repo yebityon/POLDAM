@@ -22,5 +22,5 @@ public class Main {
         myString neko = new myString("Sample Program is end");
 
         str.print();
-    }
+   }
 }

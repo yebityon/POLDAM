@@ -27,4 +27,4 @@ Excluded by name filter: java/util/IdentityHashMap$KeySet
 Excluded by name filter: java/util/IdentityHashMap$KeyIterator
 Excluded by name filter: java/util/IdentityHashMap$IdentityHashMapIterator
 Excluded by name filter: java/io/FileOutputStream$1
-Elapsed time: 840ms
+Elapsed time: 408ms

@@ -4,14 +4,10 @@
 
 This script is a concrete implementation of the script used in [実行トレースのマークル木を用いたプログラム変更前後の差分検出法の提案](https://library.naist.jp/dspace/handle/10061/14739).
 
-Based on the execution trace obtained from [selogger](https://github.com/takashi-ishio/selogger), a Merkle tree is constructed, which is used to output the differences between before and after changes to the program as a `dot` file.
-
-It contains sample implementations of method calls and retrieval of various information about objects from a set of files in a directory output by `selogger`.
-
-The `dev` branch is the development branch. The `main` branch is the stable release.
+It takes execution traces obtained from [selogger](https://github.com/takashi-ishio/selogger), as input, constructs a Merkle tree, and can output it as a `dot` file.
 
 ## Repository Structure 
-The specific implementations are contained within the `poldam/ directory`. 
+The specific implementations are contained within the `poldam/` directory. 
 This includes the program `poldam/selogger_log_parser` for parsing selogger logs, the API `poldam/graph` for representing Merkle trees, and the helper program `poldam/helper` used in the implementation of the paper.
 
 The `poldam/script` directory is intended for creating scripts that utilize these libraries. Programs created under this directory can link the libraries and generate executable files during the build process using CMake.

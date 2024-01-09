@@ -11,11 +11,4 @@ RUN apt-get update \
 #   && tar xfz boost_1_80_0.tar.gz \
 #   && rm boost_1_80_0.tar.gz \
 #   && cd boost_1_80_0 
-
-# RUN cd /root && git clone https://github.com/doctest/doctest
-
-
-
-
-
   

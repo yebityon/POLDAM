@@ -10,6 +10,13 @@ It contains sample implementations of method calls and retrieval of various info
 
 The `dev` branch is the development branch. The `main` branch is the stable release.
 
+## Repository Structure 
+The specific implementations are contained within the `poldam/ directory`. 
+This includes the program `poldam/selogger_log_parser` for parsing selogger logs, the API `poldam/graph` for representing Merkle trees, and the helper program `poldam/helper` used in the implementation of the paper.
+
+The `poldam/script` directory is intended for creating scripts that utilize these libraries. Programs created under this directory can link the libraries and generate executable files during the build process using CMake.
+
+test.cpp is a sample implementation from the paper that uses `poldam/selogger_log_parser`, `poldam/helper`, and `poldam/graph`.
 ## tree
 
 ```bash
@@ -36,17 +43,17 @@ The `dev` branch is the development branch. The `main` branch is the stable rele
 └── poldam_sample.sh 
 ```
 
-### Description
+## Description
 - Data
   - This directory contains the selogger and Java Motivation Example. docker-compose mounts this directory in the Java container.
 - dockerfiles
   - Contains the Dockerfile for Java 8.
 - poldam/graph
-  - Provides an algorithm to build and compare a Merkle tree from information parsed by MetaFileParser.
+  - Provides a Definition, an algorithm to build and compare a Merkle tree.
 - poldam/helper
   - Provides a helper program to build a graph, i.e., an example program that combines selogger_log_parser and graph.
 - poldam/script
-  - CMake provided in this directory automatically compiles cpp files and links them with poldam/helper, poldam/graph, and poldam/util. To create your own script using the above libraries, place the program in this directory.
+  - With the default configuration, CMake builds the cpp files located in this directory and links them with poldam/helper, poldam/graph, and poldam/util. To create your own script using these libraries, place your program in this directory.
 - poldam/selogger_log_parser
   - Provides a parser that takes the log directory output by selogger as input, interprets the files in that directory, and outputs necessary information.
   - Contains definitions for selogger event types, among other things.
@@ -61,25 +68,18 @@ The `dev` branch is the development branch. The `main` branch is the stable rele
 - GNU Make 4.3 
 - cmake version 3.22.1
 
-## Tutorial
-Modify `set(BOOST_PATH)` in CMakeLists.txt to your path.
+## How to start?
+1. Please Modyfy `set(BOOST_PATH)` in CMakeLists.txt
 
 ```bash
 ❯ pwd
 /your/home/POLDAM
 ❯ cd build
+# Compile POLDAM
 ❯ cmake -D CMAKE_C_COMPILER=/opt/homebrew/bin/gcc-11 -D CMAKE_CXX_COMPILER=/opt/homebrew/bin/g++-11 .. && make
 ❯ ls
 CMakeCache.txt          CMakeFiles              Makefile                cmake_install.cmake     test
-❯ ./test
+❯ ./test -o "../Data/java8/src/motivationExample/origin/selogger_out" -t "../Data/java8/src/motivationExample/target/selogger_out"
 ```
-
-## Limitation
-
-- The -c option specifies the class of the method; it has no effect when not used with the -m option.
-- When the -m option is used, it must be used in conjunction with -c, otherwise core dumping may occur or the system may not function properly.
-- When specifying a class with the `-c` option, use `package name` + `class name`. In this case, `.` in the package name should be replaced by `/`.
-- This script have been fully rewritten, hence, it's slightly different from the one I used in thesis.
-- Multithread is not supported.
-- Only `-omni` option is supported.
-- Object write instruction tracking is not supported.
+## POLDAM Options
+TBD

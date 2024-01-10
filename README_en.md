@@ -74,8 +74,8 @@ test.cpp is a sample implementation from the paper that uses `poldam/selogger_lo
 # Compile POLDAM
 ❯ cmake -D CMAKE_C_COMPILER=/opt/homebrew/bin/gcc-11 -D CMAKE_CXX_COMPILER=/opt/homebrew/bin/g++-11 .. && make
 ❯ ls
-CMakeCache.txt          CMakeFiles              Makefile                cmake_install.cmake     test
-❯ ./test -o "../Data/java8/src/motivationExample/origin/selogger_out" -t "../Data/java8/src/motivationExample/target/selogger_out"
+CMakeCache.txt          CMakeFiles              Makefile                cmake_install.cmake     example
+❯ ./example -o "../Data/java8/src/motivationExample/origin/selogger_out" -t "../Data/java8/src/motivationExample/target/selogger_out"
 ```
 ## POLDAM Options
 TBD

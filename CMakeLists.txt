@@ -5,7 +5,9 @@ project(Poldam)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-set(BOOST_PATH /Users/prebell/Documents/boost_1_80_0)
+# MODIFY HERE
+# TODO:BOOST_PATH should be set from environment variable
+set(BOOST_PATH YOUR/BOOST_PATH)
 
 # Add include directories
 include_directories(${CMAKE_SOURCE_DIR})

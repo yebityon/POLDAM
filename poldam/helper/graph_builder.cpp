@@ -15,9 +15,10 @@ namespace POLDAM
     }
     PoldamGraph GraphBuilder::build()
     {
-        //Parserからデータを取得する
-        PoldamGraph poldamGraph{config};
 
+        PoldamGraph poldamGraph{config};
+        
+        // ログを一行ずつ舐めてグラフを構築する
         for(const SeloggerData log : selogger.getParserdData())
         {
             DataId  d =  parsedDataIds[log.dataId];

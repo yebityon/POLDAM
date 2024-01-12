@@ -11,8 +11,9 @@
 
 int main(int argc, char *argv[])
 {
+    // configに用意されたフラグによって、GraphBuilderの出力が変わる
     POLDAM::poldamConfig config = POLDAM::generateConfig(argc, argv);
-
+    
     if (config == POLDAM::poldamConfig{})
     {
         exit(1);
@@ -21,8 +22,9 @@ int main(int argc, char *argv[])
     POLDAM::printConfig(config);
 
     POLDAM_UTIL::Timer t("Total Time");
-
     std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "Reading Metafiles...";
+    
+    // SELoggerから作成されたファイルを読み込む
     POLDAM::metafileFactory factory(config.originDir);
     auto dataids = factory.createInstance<POLDAM::DataIdsParser>("dataids.txt", true);
     auto seloggerParser = factory.createInstance<POLDAM::SeloggerLogParser>("log-00001.txt", "^log-.*.txt");
@@ -31,6 +33,7 @@ int main(int argc, char *argv[])
     auto classesParser = factory.createInstance<POLDAM::ClassesDataParser>("classes.txt", true);
     std::cout << "OK\n";
 
+    // 実際にログからグラフを構築するBuilder, configと合わせてログを構築する
     std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "Constructing Builder...";
     POLDAM::GraphBuilder builder(config,
                                  seloggerParser, dataids, objectFileParser, methodParser, classesParser);
@@ -48,14 +51,6 @@ int main(int argc, char *argv[])
     writer.writePoldamGraph("sample_origin.dot");
     if (config.hasEntryMethodName)
     {
-        // FIXME: getGraphCopy is not cost effective,
         writer.writePoldamGraph<POLDAM::VertexPredicate>("sample_filterd_output.dot");
-        // auto gg = g.getGraphCopy();
-        // boost::filtered_graph<POLDAM::Graph, boost::keep_all, POLDAM::VertexPredicate> fg(
-        //     gg, boost::keep_all(), POLDAM::VertexPredicate(&gg));
-        // std::ofstream outputDotFile("sample_filted_output.dot");
-        // boost::write_graphviz(outputDotFile, fg,
-        //                       boost::make_label_writer(get(&POLDAM::GraphVertex::outputFormat, fg)),
-        //                       boost::make_label_writer(get(&POLDAM::GraphEdge::outputFormat, fg)));
     }
 }

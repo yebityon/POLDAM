@@ -120,13 +120,6 @@ namespace POLDAM
                 };
                 ++i;
             }
-            else if (arg == "--fastIO")
-            {
-                std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "Use fast IO\n"
-                          << std::endl;
-                std::cin.tie(nullptr);
-                std::ios_base::sync_with_stdio(false);
-            }
             else if (arg == "--debug")
             {
                 config.isDebugMode = true;

@@ -5,9 +5,12 @@ project(Poldam)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-# MODIFY HERE
-# TODO:BOOST_PATH should be set from environment variable
-set(BOOST_PATH YOUR/BOOST_PATH)
+if(NOT DEFINED ENV{POLDAM_BOOST_PATH})
+    message(FATAL_ERROR "BOOST_PATH environment variable is not defined")
+else()
+    message(STATUS "BOOST_PATH: $ENV{POLDAM_BOOST_PATH}")
+    set(BOOST_PATH $ENV{POLDAM_BOOST_PATH})
+endif()
 
 # Add include directories
 include_directories(${CMAKE_SOURCE_DIR})

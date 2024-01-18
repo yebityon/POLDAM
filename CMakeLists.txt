@@ -6,9 +6,9 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 if(NOT DEFINED ENV{POLDAM_BOOST_PATH})
-    message(FATAL_ERROR "BOOST_PATH environment variable is not defined")
+    message(FATAL_ERROR "POLDAM_BOOST_PATH environment variable is not defined")
 else()
-    message(STATUS "BOOST_PATH: $ENV{POLDAM_BOOST_PATH}")
+    message(STATUS "POLDAM_BOOST_PATH: $ENV{POLDAM_BOOST_PATH}")
     set(BOOST_PATH $ENV{POLDAM_BOOST_PATH})
 endif()
 

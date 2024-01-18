@@ -85,7 +85,8 @@ namespace POLDAM
          * @return true  return true if succedd to add vertex to graph.
          * @return false return false if failed to add vertex to graph.
          */
-        bool addOmniVertex(GraphVertex v, const size_t threadId);
+        template <typename T>
+        bool addOmniVertex(GraphVertex v, const size_t threadId, T& ProcessVertex);
 
         /**
          * @brief
@@ -209,4 +210,54 @@ namespace POLDAM
         // {key: threadId, value:stack<>}
         std::map<unsigned int, std::stack<std::map<std::string, std::string>>> callInstStack;
     };
+
+    template <typename F>
+    bool PoldamGraph::addOmniVertex(GraphVertex v_, const size_t threadId, F &processVertex)
+    {
+        // FIXME: it should be perfect forwarding
+        boost::graph_traits<Graph>::vertex_descriptor v = PoldamGraph::addOmniVertexDesc(v_, threadId);
+        if (not this->vStack[threadId].empty())
+        {
+            const auto &prev = PoldamGraph::getStackTopVertex(threadId);
+            PoldamGraph::addOmniEdge(prev, v, threadId);
+        }
+
+        PoldamGraph::pushStackVertex(v, threadId);
+
+        processVertex(v);
+        if (config.hasEntryMethodName)
+        {
+            if (this->g[v].classStr == config.entryClassName &&
+                this->g[v].methodStr == config.entryMethodName &&
+                this->root.find(threadId) == this->root.end())
+            {
+                // EtntryPointを用意してproc{}を呼ぶよう変更する
+                this->Root = v;
+                this->g[v].isTargetVertex = config.hasEntryClassName;
+                this->g[v].isFilreViewRoot = config.hasEntryClassName;
+                this->g[v].isComputeHashVertex = config.isFilterdHash;
+                this->root[threadId] = v;
+            }
+            else if (this->root.find(threadId) != this->root.end() && config.hasFilterdRegex)
+            {
+                this->g[v].isTargetVertex = std::regex_match(this->g[v].classStr, config.filterdVertexRegex);
+            }
+        }
+        else if (this->root.find(threadId) == this->root.end())
+        {
+            this->g[v].isTargetVertex = true;
+            this->Root = v;
+            this->g[v].isFilreViewRoot = true;
+            this->root[threadId] = v;
+        }
+
+        if (config.isFilterdHash)
+        {
+            this->g[v].isComputeHashVertex = std::regex_match(this->g[v].classStr, config.filterdhashRegex);
+        }
+
+        this->path.push_back(v);
+
+        return v;
+    }
 }

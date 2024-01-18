@@ -17,6 +17,10 @@ namespace POLDAM
     {
 
         PoldamGraph poldamGraph{config};
+        const auto& processVertex = [&poldamGraph, this](const auto& v)
+        {
+        };  
+        
         
         // ログを一行ずつ舐めてグラフを構築する
         for(const SeloggerData log : selogger.getParserdData())
@@ -34,7 +38,7 @@ namespace POLDAM
                 v.methodHash = std::to_string(std::hash<std::string>()(m.className + m.methodName));
                 v.outputFormat = m.className + ":" + m.methodName;
 
-                bool result = poldamGraph.addOmniVertex(v, log.threadId);
+                bool result = poldamGraph.addOmniVertex(v, log.threadId, processVertex);
             }
             else if (d.eventType == POLDAM::SELOGGER_EVENT_TYPE::METHOD_PARAM)
             {

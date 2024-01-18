@@ -31,7 +31,7 @@ namespace POLDAM
         for (unsigned int i = 1; i < argc; ++i)
         {
             const std::string arg = argv[i];
-            if (arg == "-o" or arg == "--originDir")
+            if (arg == "-o" or arg == "--origin_dir")
             {
                 if (i + 1 >= argc)
                 {
@@ -42,7 +42,7 @@ namespace POLDAM
                 config.originDir = argv[i + 1];
                 ++i;
             }
-            else if (arg == "-t" or arg == "--targetDir")
+            else if (arg == "-t" or arg == "--target_dir")
             {
                 if (i + 1 >= argc)
                 {
@@ -53,11 +53,11 @@ namespace POLDAM
                 config.targetDir = argv[i + 1];
                 ++i;
             }
-            else if (arg == "-c")
+            else if (arg == "-c" or arg == "--entry_class")
             {
                 if (i + 1 >= argc)
                 {
-                    std::cout << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX << "No targetMethod is Given\n";
+                    std::cout << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX << "No entryClass is Given\n";
                     printHelp();
                     return poldamConfig{};
                 }
@@ -65,11 +65,11 @@ namespace POLDAM
                 config.hasEntryClassName = true;
                 ++i;
             }
-            else if (arg == "-m" or arg == "--targetMethod")
+            else if (arg == "-m" or arg == "--entry_method")
             {
                 if (i + 1 >= argc)
                 {
-                    std::cout << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX << "No targetMethod is Given\n";
+                    std::cout << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX << "No entryMethod is Given\n";
                     printHelp();
                     return poldamConfig{};
                 }
@@ -77,7 +77,7 @@ namespace POLDAM
                 config.hasEntryMethodName = true;
                 ++i;
             }
-            else if (arg == "-d" or arg == "--difffilename")
+            else if (arg == "-d" or arg == "--diff_file_name")
             {
                 if (i + 1 > argc)
                 {
@@ -88,7 +88,7 @@ namespace POLDAM
                 config.outputFileName = argv[i + 1];
                 ++i;
             }
-            else if (arg == "-f" or arg == "--filterd_vertex")
+            else if (arg == "-f" or arg == "--filterd_regexp")
             {
                 if (i + 1 > argc)
                 {
@@ -122,14 +122,17 @@ namespace POLDAM
             }
             else if (arg == "--debug")
             {
+                // enalbe debug mode
                 config.isDebugMode = true;
             }
             else if (arg == "--flow")
             {
+                // compute flow hash
                 config.useFlowHash = true;
             }
             else if (arg == "--param")
             {
+                // ccompute param hash
                 config.useParamHash = true;
             }
             else
@@ -156,27 +159,18 @@ namespace POLDAM
             // -c は指定したけど-mは指定していない
             std::cout
                 << POLDAM_UTIL::POLDAM_WARNING_PRINT_SUFFIX
-                << "You have specified the class name but not the method name. "
+                << "You have specified the entryClass name but not the entyryMethod name. \n"
+                << "The root of Merkle tree will be \"" << config.entryClassName  << "/* \"" << "vertex"
                 << std::endl;
-            return poldamConfig{};
-        }
-        if (config.hasFilterdRegex && !config.hasEntryMethodName)
-        {
-            // -fは指定したけど、-m は指定してない
-            std::cout
-                << POLDAM_UTIL::POLDAM_WARNING_PRINT_SUFFIX
-                << "You have specified the filterd regex but not the method name. "
-                << std::endl;
-            return poldamConfig{};
         }
         if (config.hasEntryMethodName && !config.hasEntryClassName)
         {
             // -m は指定したけど-cは指定していない
             std::cout
-                << POLDAM_UTIL::POLDAM_ERROR_PRINT_SUFFIX
-                << "You have specified the method name but not the class name. "
+                << POLDAM_UTIL::POLDAM_WARNING_PRINT_SUFFIX
+                << "You have specified the method name but not the class name. \n"
+                << "The root of Merkle tree will be "<< "/* \"" << config.entryMethodName << "\" vertex."
                 << std::endl;
-            return poldamConfig{};
         }
         return config;
     }

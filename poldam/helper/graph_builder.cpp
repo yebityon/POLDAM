@@ -8,7 +8,7 @@ namespace POLDAM
         dataids.getData();
         parsedDataIds = dataids.getParsedData();
         method.getData();
-        parsedMethodsData = method.getParsedData();        
+        parsedMethodsData = method.getParsedData();
         classes.getData();
         parsedClassesData = classes.getParsedData();
         parsedObjectData = objectFile.getParsedData();
@@ -17,11 +17,52 @@ namespace POLDAM
     {
 
         PoldamGraph poldamGraph{config};
-        
-        // ログを一行ずつ舐めてグラフを構築する
-        for(const SeloggerData log : selogger.getParserdData())
+        auto processVertex = [this](
+                                 boost::graph_traits<Graph>::vertex_descriptor vDesc,
+                                 const size_t threadId,
+                                 POLDAM::PoldamGraph &G,
+                                 std::map<unsigned int, boost::graph_traits<Graph>::vertex_descriptor> &root)
         {
-            DataId  d =  parsedDataIds[log.dataId];
+            POLDAM::GraphVertex recRoot;
+            POLDAM::GraphVertex v = G.getVertex(vDesc);
+
+            if (config.hasEntryMethodName)
+            {
+                if (v.classStr == config.entryClassName &&
+                    v.methodStr == config.entryMethodName &&
+                    root.find(threadId) == root.end())
+                {
+                    G.setEntryPoint(vDesc);
+                    v.isTargetVertex = config.hasEntryClassName;
+                    v.isFilreViewRoot = config.hasEntryClassName;
+                    v.isComputeHashVertex = config.isFilterdHash;
+                    root[threadId] = vDesc;
+                }
+                else if (root.find(threadId) != root.end() && config.hasFilterdRegex)
+                {
+                    v.isTargetVertex = std::regex_match(v.classStr, config.filterdVertexRegex);
+                }
+            }
+            else if (root.find(threadId) == root.end())
+            {
+                v.isTargetVertex = true;
+                G.setEntryPoint(vDesc);
+                v.isFilreViewRoot = true;
+                root[threadId] = vDesc;
+            }
+
+            if (config.isFilterdHash)
+            {
+                v.isComputeHashVertex = std::regex_match(v.classStr, config.filterdhashRegex);
+            }
+            G.setVertex(vDesc, v);
+            
+        };
+
+        // ログを一行ずつ舐めてグラフを構築する
+        for (const SeloggerData log : selogger.getParserdData())
+        {
+            DataId d = parsedDataIds[log.dataId];
             const MethodsData m = parsedMethodsData[d.methodId];
             const ClassesData c = parsedClassesData[d.classId];
 
@@ -34,7 +75,7 @@ namespace POLDAM
                 v.methodHash = std::to_string(std::hash<std::string>()(m.className + m.methodName));
                 v.outputFormat = m.className + ":" + m.methodName;
 
-                bool result = poldamGraph.addOmniVertex(v, log.threadId);
+                bool result = poldamGraph.addOmniVertex(v, log.threadId, processVertex);
             }
             else if (d.eventType == POLDAM::SELOGGER_EVENT_TYPE::METHOD_PARAM)
             {
@@ -44,7 +85,7 @@ namespace POLDAM
             {
                 poldamGraph.computeHash(log.threadId);
                 poldamGraph.popStackVertex(log.threadId);
-           }
+            }
             else if (d.eventType == POLDAM::SELOGGER_EVENT_TYPE::CALL_PARAM)
             {
                 // Use these values to compute param hash.
@@ -84,7 +125,7 @@ namespace POLDAM
                         }
                         continue;
                     }
-                    // FIXME: 
+                    // FIXME:
                     const POLDAM::ObjectData o = parsedObjectData[argValueIdx];
                 }
             }

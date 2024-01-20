@@ -23,7 +23,6 @@ namespace POLDAM
                                                      objectFile(_objectFileParser),
                                                      method(_methodParser),
                                                      classes(_classesParser){};
-
         private:
             poldamConfig config;
             SeloggerLogParser selogger;

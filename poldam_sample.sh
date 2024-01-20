@@ -37,7 +37,7 @@ if [ "$answer" == "y" ]; then
 # ./example -o "../Data/java8/src/motivationExample/origin/selogger_out" -c "customClass/myMath" -m "primeFactors"
 
 # Run the program with filtering regexp
-./example -o "../Data/java8/src/motivationExample/origin/selogger_out" -g ".*myMath.*"
+./example -o "../Data/java8/src/motivationExample/origin/selogger_out" -g ".*myMath*" -c "Main" -m "main"
 
 
 

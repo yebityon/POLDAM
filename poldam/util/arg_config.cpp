@@ -12,7 +12,7 @@ namespace POLDAM
         std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "-t, The path to the target directory. This directory data  This parameter is mandatory and must point to a valid selogger output directory.\n";
         std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "-c, The Merkle tree will be constructed using the class specified by the -c option and -m option as the entry point.\n";
         std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "-m, The Merkle tree will be constructed using the method specified by the -m option as the entry point.\n";
-        std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "-f, Only outputs vertices that match the regular expression specified by the - f option.\n";
+        std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "-g, Only outputs vertices that match the regular expression specified by the - f option.\n";
         std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "-d, The file name of the diff file\n";
         std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "--debug, enalbe debug mode.\n";
         std::cout << POLDAM_UTIL::POLDAM_PRINT_SUFFIX << "--flow, --param : evaluate the equivalence of method execution using the given hash. \n";
@@ -88,7 +88,7 @@ namespace POLDAM
                 config.outputFileName = argv[i + 1];
                 ++i;
             }
-            else if (arg == "-f" or arg == "--filterd_regexp")
+            else if (arg == "-g" or arg == "--filterd_regexp")
             {
                 if (i + 1 > argc)
                 {
@@ -145,7 +145,7 @@ namespace POLDAM
         }
 
         // validate config
-        if (config.originDir.size() == 0 || config.targetDir.size() == 0)
+        if (config.originDir.size() == 0)
         {
             // validなパスかどうかもチェックしたい
             std::cout

@@ -43,6 +43,20 @@ namespace POLDAM
                     v.isTargetVertex = std::regex_match(v.classStr, config.filterdVertexRegex);
                 }
             }
+            else if (root.find(threadId) == root.end())
+            {
+                v.isTargetVertex = true;
+                G.setEntryPoint(vDesc);
+                v.isFilreViewRoot = true;
+                root[threadId] = vDesc;
+            }
+
+            if (config.isFilterdHash)
+            {
+                v.isComputeHashVertex = std::regex_match(v.classStr, config.filterdhashRegex);
+            }
+            G.setVertex(vDesc, v);
+            
         };
 
         // ログを一行ずつ舐めてグラフを構築する

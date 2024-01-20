@@ -112,6 +112,11 @@ namespace POLDAM
         {
             return this->g[vDesc];
         }
+        POLDAM::GraphVertex setVertex(const boost::graph_traits<Graph>::vertex_descriptor vDesc, const POLDAM::GraphVertex v)
+        {
+            this->g[vDesc] = v;
+            return this->g[vDesc];
+        }
 
         std::vector<boost::graph_traits<Graph>::vertex_descriptor> copyGraphPath()
         {

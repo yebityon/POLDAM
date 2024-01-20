@@ -8,7 +8,7 @@ namespace POLDAM
         dataids.getData();
         parsedDataIds = dataids.getParsedData();
         method.getData();
-        parsedMethodsData = method.getParsedData();        
+        parsedMethodsData = method.getParsedData();
         classes.getData();
         parsedClassesData = classes.getParsedData();
         parsedObjectData = objectFile.getParsedData();
@@ -17,39 +17,38 @@ namespace POLDAM
     {
 
         PoldamGraph poldamGraph{config};
-        const auto &processVertex = [this](
-            boost::graph_traits<Graph>::vertex_descriptor vDesc,
-            const unsigned int threadId, 
-            POLDAM::PoldamGraph* G,
-            std::map<unsigned int, boost::graph_traits<Graph>::vertex_descriptor>& root)
+        auto processVertex = [this](
+                                 boost::graph_traits<Graph>::vertex_descriptor vDesc,
+                                 const size_t threadId,
+                                 POLDAM::PoldamGraph &G,
+                                 std::map<unsigned int, boost::graph_traits<Graph>::vertex_descriptor> &root)
         {
             POLDAM::GraphVertex recRoot;
-            POLDAM::GraphVertex v = G->getVertex(vDesc);
-            
-            if(config.hasEntryMethodName)
+            POLDAM::GraphVertex v = G.getVertex(vDesc);
+
+            if (config.hasEntryMethodName)
             {
                 if (v.classStr == config.entryClassName &&
                     v.methodStr == config.entryMethodName &&
                     root.find(threadId) == root.end())
                 {
-                    // EtntryPointを用意してproc{}を呼ぶよう変更する
-                    G.Root = v;
+                    G.setEntryPoint(vDesc);
                     v.isTargetVertex = config.hasEntryClassName;
                     v.isFilreViewRoot = config.hasEntryClassName;
                     v.isComputeHashVertex = config.isFilterdHash;
-                    root[threadId] = v;
+                    root[threadId] = vDesc;
                 }
                 else if (root.find(threadId) != root.end() && config.hasFilterdRegex)
                 {
-                    G.g[v].isTargetVertex = std::regex_match(G.g[v].classStr, config.filterdVertexRegex);
+                    v.isTargetVertex = std::regex_match(v.classStr, config.filterdVertexRegex);
                 }
             }
         };
 
         // ログを一行ずつ舐めてグラフを構築する
-        for(const SeloggerData log : selogger.getParserdData())
+        for (const SeloggerData log : selogger.getParserdData())
         {
-            DataId  d =  parsedDataIds[log.dataId];
+            DataId d = parsedDataIds[log.dataId];
             const MethodsData m = parsedMethodsData[d.methodId];
             const ClassesData c = parsedClassesData[d.classId];
 
@@ -112,7 +111,7 @@ namespace POLDAM
                         }
                         continue;
                     }
-                    // FIXME: 
+                    // FIXME:
                     const POLDAM::ObjectData o = parsedObjectData[argValueIdx];
                 }
             }

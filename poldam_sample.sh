@@ -29,8 +29,7 @@ fi
 
 echo "Run the program? (y/n)"
 read answer
-if [ "$answer" == "y" ]; then
-  ./POLDAM -o "../Data/java8/src/motivationExample/origin/selogger_out" -t "../Data/java8/src/motivationExample/target/selogger_out"
+if [ "$answer" == "y" ]; th
 else 
     echo "Bye."
     exit 1

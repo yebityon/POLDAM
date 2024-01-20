@@ -18,7 +18,6 @@ namespace POLDAM
         std::string to;
         std::string outputFormat;
     };
-
     struct GraphVertex
     {
     public:
@@ -108,18 +107,36 @@ namespace POLDAM
         Graph getGraphCopy();
 
         boost::graph_traits<Graph>::vertex_descriptor getStackTopVertex(const unsigned int threadId);
+        
+        POLDAM::GraphVertex getVertex(const boost::graph_traits<Graph>::vertex_descriptor vDesc)
+        {
+            return this->g[vDesc];
+        }
 
         std::vector<boost::graph_traits<Graph>::vertex_descriptor> copyGraphPath()
         {
             return this->path;
         };
 
-        const boost::graph_traits<Graph>::vertex_descriptor getRoot()
+        boost::graph_traits<Graph>::vertex_descriptor getRoot()
         {
             // throw exception if Root has not been initialized.
             assert(this->root.size() > 0);
             return this->Root;
         }
+        
+        boost::graph_traits<Graph>::vertex_descriptor setRoot(boost::graph_traits<Graph>::vertex_descriptor vDesc)
+        {
+            this->Root = vDesc;
+            return this-> Root;
+        }
+        {
+            // throw exception if Root has not been initialized.
+            assert(this->root.size() > 0);
+            return this->root[threadId];
+        }
+
+        
 
         PoldamGraph computeDiffGraph(PoldamGraph &targetGraph);
         // need to move Graph
@@ -197,6 +214,7 @@ namespace POLDAM
         unsigned int counter = 0;
 
         boost::graph_traits<Graph>::vertex_descriptor Root;
+        boost::graph_traits<Graph>::vertex_descriptor entryVertex;
 
         std::map<unsigned int, boost::graph_traits<Graph>::vertex_descriptor> root{};
 
@@ -223,8 +241,9 @@ namespace POLDAM
         }
 
         PoldamGraph::pushStackVertex(v, threadId);
+        POLDAM::GraphVertex targetVertex = this->g[v];
 
-        processVertex(v);
+        processVertex(v,*this, threadId);
         if (config.hasEntryMethodName)
         {
             if (this->g[v].classStr == config.entryClassName &&

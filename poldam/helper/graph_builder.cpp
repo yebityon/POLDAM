@@ -17,11 +17,35 @@ namespace POLDAM
     {
 
         PoldamGraph poldamGraph{config};
-        const auto& processVertex = [&poldamGraph, this](const auto& v)
+        const auto &processVertex = [this](
+            boost::graph_traits<Graph>::vertex_descriptor vDesc,
+            const unsigned int threadId, 
+            POLDAM::PoldamGraph* G,
+            std::map<unsigned int, boost::graph_traits<Graph>::vertex_descriptor>& root)
         {
-        };  
-        
-        
+            POLDAM::GraphVertex recRoot;
+            POLDAM::GraphVertex v = G->getVertex(vDesc);
+            
+            if(config.hasEntryMethodName)
+            {
+                if (v.classStr == config.entryClassName &&
+                    v.methodStr == config.entryMethodName &&
+                    root.find(threadId) == root.end())
+                {
+                    // EtntryPointを用意してproc{}を呼ぶよう変更する
+                    G.Root = v;
+                    v.isTargetVertex = config.hasEntryClassName;
+                    v.isFilreViewRoot = config.hasEntryClassName;
+                    v.isComputeHashVertex = config.isFilterdHash;
+                    root[threadId] = v;
+                }
+                else if (root.find(threadId) != root.end() && config.hasFilterdRegex)
+                {
+                    G.g[v].isTargetVertex = std::regex_match(G.g[v].classStr, config.filterdVertexRegex);
+                }
+            }
+        };
+
         // ログを一行ずつ舐めてグラフを構築する
         for(const SeloggerData log : selogger.getParserdData())
         {
@@ -48,7 +72,7 @@ namespace POLDAM
             {
                 poldamGraph.computeHash(log.threadId);
                 poldamGraph.popStackVertex(log.threadId);
-           }
+            }
             else if (d.eventType == POLDAM::SELOGGER_EVENT_TYPE::CALL_PARAM)
             {
                 // Use these values to compute param hash.

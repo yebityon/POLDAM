@@ -19,7 +19,7 @@ cd "$TARGET_DIR"
 
 echo "Current directory: $PWD"
 echo "building..."
-cmake -D CMAKE_C_COMPILER=/usr/bin/gcc -D CMAKE_CXX_COMPILER=/opt/homebrew/bin/g++-11 .. && make
+cmake -D CMAKE_C_COMPILER=/opt/homebrew/bin/gcc-11 -D CMAKE_CXX_COMPILER=/opt/homebrew/bin/g++-11 .. && make
 
 echo "Done."
 
@@ -29,7 +29,18 @@ fi
 
 echo "Run the program? (y/n)"
 read answer
-if [ "$answer" == "y" ]; th
+if [ "$answer" == "y" ]; then
+# Run the program
+# ./example -o "../Data/java8/src/motivationExample/origin/selogger_out"
+
+# Run the program: entryPoint is customClass/myMath.primeFactors
+# ./example -o "../Data/java8/src/motivationExample/origin/selogger_out" -c "customClass/myMath" -m "primeFactors"
+
+# Run the program with filtering regexp
+./example -o "../Data/java8/src/motivationExample/origin/selogger_out" -g ".*myMath.*"
+
+
+
 else 
     echo "Bye."
     exit 1

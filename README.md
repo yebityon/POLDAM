@@ -2,7 +2,7 @@
 
 ## 概要
 
-このプログラムは、[実行トレースのマークル木を用いたプログラム変更前後の差分検出法の提案](https://library.naist.jp/dspace/handle/10061/14739) の論文内で使用したアルゴリズムの具体的な実装です。
+このプログラムは、[実行トレースのマークル木を用いたプログラム変更前後の差分検出法の提案](https://library.naist.jp/dspace/handle/10061/14739) の論文と[Comparing Execution Trace Using Merkle-Tree to Detect Backward Incompatibilities](https://octagonal-leo-66b.notion.site/Comparing-Execution-Trace-Using-Merkle-Tree-to-Detect-Backward-Incompatibilities-15a982ef8d8549db83a448e40300725e?pvs=4)で使用したアルゴリズムの具体的な実装です。
 [selogger](https://github.com/takashi-ishio/selogger)から取得した実行トレースを入力として、マークル木を構築し、`dot`ファイルとして出力することができます。
 
 ## レポジトリの構成

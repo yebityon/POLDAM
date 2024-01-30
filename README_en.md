@@ -2,7 +2,7 @@
 
 ## abstract
 
-This script is a concrete implementation of the script used in [実行トレースのマークル木を用いたプログラム変更前後の差分検出法の提案](https://library.naist.jp/dspace/handle/10061/14739).
+This script is a concrete implementation of the script used in [実行トレースのマークル木を用いたプログラム変更前後の差分検出法の提案](https://library.naist.jp/dspace/handle/10061/14739) and [Comparing Execution Trace Using Merkle-Tree to Detect Backward Incompatibilities](https://octagonal-leo-66b.notion.site/Comparing-Execution-Trace-Using-Merkle-Tree-to-Detect-Backward-Incompatibilities-15a982ef8d8549db83a448e40300725e?pvs=4).
 
 It takes execution traces obtained from [selogger](https://github.com/takashi-ishio/selogger), as input, constructs a Merkle tree, and can output it as a `dot` file.
 

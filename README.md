@@ -2,16 +2,24 @@
 
 ## 概要
 
-このプログラムは、[実行トレースのマークル木を用いたプログラム変更前後の差分検出法の提案](https://library.naist.jp/dspace/handle/10061/14739) の論文内で使用したアルゴリズムの具体的な実装です。
+このプログラムは、[実行トレースのマークル木を用いたプログラム変更前後の差分検出法の提案](https://ipsj.ixsq.nii.ac.jp/ej/index.php?active_action=repository_view_main_item_detail&page_id=13&block_id=8&item_id=217311&item_no=1)の論文と[Comparing Execution Trace Using Merkle-Tree to Detect Backward Incompatibilities](https://conf.researchr.org/details/saner-2024/saner-2024-early-research-achievement--era--track-/98/Comparing-Execution-Trace-Using-Merkle-Tree-to-Detect-Backward-Incompatibilities)[^1].の III.PROPOSED METHODの各ステップである 2) Merkle-Tree Constructionと 3) Calculate Hash Values で使用したアルゴリズムの具体的な実装です。
+
+[^1]: SANER2024 Early Research Achievement (ERA) Track
+
+最新の論文は[このフォルダー](./latest_papers/)から入手できます。
+補足資料は[こちら](./latest_papers/SupplementaryMaterials.md)から確認できます。
+
 [selogger](https://github.com/takashi-ishio/selogger)から取得した実行トレースを入力として、マークル木を構築し、`dot`ファイルとして出力することができます。
 
 ## レポジトリの構成
+
 具体的な実装は`poldam/`以下に含まれます。
 seloggerのログをparseするプログラム`poldam/selogger_log_parser`, 実際にマークル木を表現するためのAPIの`poldam/graph`,論文の実装で用いたヘルパープログラムである`poldam/helper`が含まれています。
 `poldam/script`ディレクトリは、これらのライブラリを用いたスクリプトを作成するためのディレクトリです。このディレクトリ以下で作成したプログラムは、CMakeを用いたビルド時にライブラリをリンクし、実行ファイルを生成することができます。
 `test.cpp`は、`poldam/selogger_log_parser`と``poldam/helpler`,`poldam/graph`を用いた論文内の実装のサンプルです。
 
 ## tree
+
 ```bash
 .
 ├── CMakeLists.txt
@@ -33,10 +41,11 @@ seloggerのログをparseするプログラム`poldam/selogger_log_parser`, 実�
 │   ├── c++
 │   └── java8
 ├── docs
-└── poldam_sample.sh 
+└── poldam_sample.sh
 ```
 
 ## Description
+
 - Data
   - seloggerとMotivation Exampleなどが含まれます。
 - dockerfiles
@@ -58,12 +67,14 @@ seloggerのログをparseするプログラム`poldam/selogger_log_parser`, 実�
 - boost 1.80
 - g++-11, gcc-11
 - selogger v0.5.0 (for logging)
-- GNU Make 4.3 
+- GNU Make 4.3
 - cmake version 3.22.1
 
 ## How to start
+
 `script/example.cpp`は論文内で用いた実装の再現です。
 オプションのヘルプは次のようになっています
+
 ```bash
 ❯ pwd
 /your/home/POLDAM
@@ -76,5 +87,7 @@ seloggerのログをparseするプログラム`poldam/selogger_log_parser`, 実�
 CMakeCache.txt          CMakeFiles              Makefile                cmake_install.cmake     example
 ❯ ./example -o "../Data/java8/src/motivationExample/origin/selogger_out" -t "../Data/java8/src/motivationExample/target/selogger_out"
 ```
+
 ## POLDAM Options
+
 TBD

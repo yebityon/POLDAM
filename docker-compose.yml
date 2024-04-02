@@ -5,12 +5,12 @@ services:
     build: ./dockerfiles/java8/
     image: 'poldam/java8'
     container_name: 'poldam_java8'
-    working_dir: '/root/'
+    working_dir: '/Data'
     tty: true
     volumes:
       - type: bind
         source: ./Data
-        target: /root/selogger       
+        target: /Data
 
   cpp:
     restart: always

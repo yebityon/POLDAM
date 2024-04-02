@@ -88,6 +88,10 @@ CMakeCache.txt          CMakeFiles              Makefile                cmake_in
 ❯ ./example -o "../Data/java8/src/motivationExample/origin/selogger_out" -t "../Data/java8/src/motivationExample/target/selogger_out"
 ```
 
+## seloggerのセットアップ
+`docker-compose.yml`を用いることで、seloggerとPOLDAMの実行環境を一度に用意できます。
+`/Data/java8`以下のディレクトリで`selogger`をcloneしてください。
+
 ## POLDAM Options
 
 TBD

@@ -26,7 +26,7 @@ compile_and_run() {
     javac -g Main.java
 
     echo "run selogger with omni"
-    java -javaagent:../../selogger/target/selogger-0.6.0.jar=output=selogger_out,format=omni,waverlog=hogehoeg_log.txt Main
+    java -javaagent:../../../selogger/target/selogger-0.6.0.jar=output=selogger_out,format=omni,waverlog=hogehoeg_log.txt Main
 }
 
 # create log dir for origin

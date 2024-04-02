@@ -10,7 +10,7 @@
 9,java.lang.Object,jar:file:/usr/local/openjdk-8/jre/lib/rt.jar!/java/lang/Object.class,-1,-1,Loader@0:java/lang/Object
 10,java.lang.String,jar:file:/usr/local/openjdk-8/jre/lib/rt.jar!/java/lang/String.class,9,-1,Loader@0:java/lang/String
 11,java.lang.String[],,9,10,Loader@0:[Ljava/lang/String;
-12,customClass.myMath,file:/root/selogger/java8/src/motivationExample/target/customClass/myMath.class,9,-1,Loader@18b4aac2:customClass/myMath
+12,customClass.myMath,file:/Data/java8/src/motivationExample/target/customClass/myMath.class,9,-1,Loader@18b4aac2:customClass/myMath
 13,boolean[],,9,1,Loader@0:[Z
 14,java.util.AbstractCollection,jar:file:/usr/local/openjdk-8/jre/lib/rt.jar!/java/util/AbstractCollection.class,9,-1,Loader@0:java/util/AbstractCollection
 15,java.util.AbstractList,jar:file:/usr/local/openjdk-8/jre/lib/rt.jar!/java/util/AbstractList.class,14,-1,Loader@0:java/util/AbstractList
@@ -18,7 +18,7 @@
 17,java.lang.Number,jar:file:/usr/local/openjdk-8/jre/lib/rt.jar!/java/lang/Number.class,9,-1,Loader@0:java/lang/Number
 18,java.lang.Integer,jar:file:/usr/local/openjdk-8/jre/lib/rt.jar!/java/lang/Integer.class,17,-1,Loader@0:java/lang/Integer
 19,java.lang.Boolean,jar:file:/usr/local/openjdk-8/jre/lib/rt.jar!/java/lang/Boolean.class,9,-1,Loader@0:java/lang/Boolean
-20,customClass.myString,file:/root/selogger/java8/src/motivationExample/target/customClass/myString.class,9,-1,Loader@18b4aac2:customClass/myString
+20,customClass.myString,file:/Data/java8/src/motivationExample/target/customClass/myString.class,9,-1,Loader@18b4aac2:customClass/myString
 21,java.io.OutputStream,jar:file:/usr/local/openjdk-8/jre/lib/rt.jar!/java/io/OutputStream.class,9,-1,Loader@0:java/io/OutputStream
 22,java.io.FilterOutputStream,jar:file:/usr/local/openjdk-8/jre/lib/rt.jar!/java/io/FilterOutputStream.class,21,-1,Loader@0:java/io/FilterOutputStream
 23,java.io.PrintStream,jar:file:/usr/local/openjdk-8/jre/lib/rt.jar!/java/io/PrintStream.class,22,-1,Loader@0:java/io/PrintStream

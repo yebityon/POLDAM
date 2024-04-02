@@ -10,7 +10,7 @@
 9,java.lang.Object,jar:file:/usr/local/openjdk-8/jre/lib/rt.jar!/java/lang/Object.class,-1,-1,Loader@0:java/lang/Object
 10,java.lang.String,jar:file:/usr/local/openjdk-8/jre/lib/rt.jar!/java/lang/String.class,9,-1,Loader@0:java/lang/String
 11,java.lang.String[],,9,10,Loader@0:[Ljava/lang/String;
-12,customClass.myString,file:/root/selogger/java8/src/motivationExample/paramHash/customClass/myString.class,9,-1,Loader@18b4aac2:customClass/myString
+12,customClass.myString,file:/Data/java8/src/motivationExample/paramHash/customClass/myString.class,9,-1,Loader@18b4aac2:customClass/myString
 13,java.io.OutputStream,jar:file:/usr/local/openjdk-8/jre/lib/rt.jar!/java/io/OutputStream.class,9,-1,Loader@0:java/io/OutputStream
 14,java.io.FilterOutputStream,jar:file:/usr/local/openjdk-8/jre/lib/rt.jar!/java/io/FilterOutputStream.class,13,-1,Loader@0:java/io/FilterOutputStream
 15,java.io.PrintStream,jar:file:/usr/local/openjdk-8/jre/lib/rt.jar!/java/io/PrintStream.class,14,-1,Loader@0:java/io/PrintStream

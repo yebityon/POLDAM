@@ -1,4 +1,6 @@
 Weaving configuration: EXEC,CALL,FIELD,ARRAY,SYNC,LABEL,PARAM,LOCAL,OBJECT,LINE
+Selected File Format: TextStream
+Excluded by name filter: jdk/jfr/internal/EventWriter
 Excluded by name filter: java/lang/invoke/MethodHandleImpl
 Excluded by name filter: java/lang/invoke/MethodHandleImpl$1
 Excluded by name filter: java/lang/invoke/MethodHandleImpl$2
@@ -14,18 +16,18 @@ Excluded by name filter: java/lang/invoke/MethodHandleStatics
 Excluded by name filter: java/lang/invoke/MethodHandleStatics$1
 Excluded by name filter: sun/launcher/LauncherHelper
 Excluded by name filter: sun/misc/URLClassPath$FileLoader$1
-Weaving executed: Class=Main, LoadedFrom=file:/root/selogger/java8/src/motivationExample/target/, LogLevel=Normal, ClassHash=983022a4e15d5566d770dcd436a103e8fe395acf, ClassLoaderID=Loader@18b4aac2:Main
+Weaving executed: Class=Main, LoadedFrom=file:/Data/java8/src/motivationExample/target/, LogLevel=Normal, ClassHash=983022a4e15d5566d770dcd436a103e8fe395acf, ClassLoaderID=Loader@18b4aac2:Main
 Excluded by name filter: sun/launcher/LauncherHelper$FXHelper
 Excluded by name filter: java/lang/Class$MethodArray
 Excluded by name filter: selogger/logging/util/ThreadId
 Excluded by name filter: selogger/logging/util/ThreadId$1
-Weaving executed: Class=customClass/myMath, LoadedFrom=file:/root/selogger/java8/src/motivationExample/target/, LogLevel=Normal, ClassHash=7e8a9642225915258b1f0e202fe46a2a04e2c2a4, ClassLoaderID=Loader@18b4aac2:customClass/myMath
-Weaving executed: Class=customClass/myString, LoadedFrom=file:/root/selogger/java8/src/motivationExample/target/, LogLevel=Normal, ClassHash=07e604bfc74855eba1119ac0069cdde12135f155, ClassLoaderID=Loader@18b4aac2:customClass/myString
+Weaving executed: Class=customClass/myMath, LoadedFrom=file:/Data/java8/src/motivationExample/target/, LogLevel=Normal, ClassHash=7e8a9642225915258b1f0e202fe46a2a04e2c2a4, ClassLoaderID=Loader@18b4aac2:customClass/myMath
+Weaving executed: Class=customClass/myString, LoadedFrom=file:/Data/java8/src/motivationExample/target/, LogLevel=Normal, ClassHash=07e604bfc74855eba1119ac0069cdde12135f155, ClassLoaderID=Loader@18b4aac2:customClass/myString
 Excluded by name filter: selogger/com/fasterxml/jackson/core/io/JsonStringEncoder
 Excluded by name filter: selogger/com/fasterxml/jackson/core/io/CharTypes
+Excluded by name filter: jdk/internal/misc/TerminatingThreadLocal$1
 Excluded by name filter: java/util/IdentityHashMap$KeySet
 Excluded by name filter: java/util/IdentityHashMap$KeyIterator
 Excluded by name filter: java/util/IdentityHashMap$IdentityHashMapIterator
 Excluded by name filter: java/io/FileOutputStream$1
-
-Elapsed time: 416ms
+Elapsed time: 474ms

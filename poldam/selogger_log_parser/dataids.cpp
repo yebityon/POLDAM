@@ -44,20 +44,22 @@ namespace POLDAM
     void DataIdsParser::parseLine(const std::string &line)
     {
         DataId dataid;
-
         const auto &&parsedline = POLDAM_UTIL::split(line, ',');
-
-        dataid.dataIdx = static_cast<unsigned int>(std::stoi(parsedline[0]));
-        dataid.classId = static_cast<unsigned int>(std::stoi(parsedline[1]));
-        dataid.methodId = static_cast<unsigned int>(std::stoi(parsedline[2]));
-        dataid.line = std::stoi(parsedline[3]);
-        dataid.instructionId = std::stoi(parsedline[4]);
-        dataid.eventType = POLDAM::getEventType(parsedline[5]);
-        dataid.valueDesc = parsedline[6];
+        int idx = 0;
+        dataid.dataIdx = static_cast<unsigned int>(std::stoi(parsedline[idx++]));
+        dataid.classId = static_cast<unsigned int>(std::stoi(parsedline[idx++]));
+        dataid.methodId = static_cast<unsigned int>(std::stoi(parsedline[idx++]));
+        dataid.className = parsedline[idx++];
+        dataid.methodName = parsedline[idx++];
+        dataid.line = std::stoi(parsedline[idx++]);
+        dataid.instructionId = std::stoi(parsedline[idx++]);
+        dataid.eventType = POLDAM::getEventType(parsedline[idx++]);
+        dataid.valueDesc = parsedline[idx++];
         // DEBUG use only
         dataid.raw_value = line;
 
-        for (int i = 7; i < parsedline.size(); ++i)
+        // attribute descrioptor
+        for (int i = idx - 1; i < parsedline.size(); ++i)
         {
             if (parsedline[i].find("=") == std::string::npos)
             {

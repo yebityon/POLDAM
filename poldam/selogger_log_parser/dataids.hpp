@@ -8,7 +8,8 @@ namespace POLDAM
         unsigned int dataIdx;
         unsigned int classId;
         unsigned int methodId;
-        // -1 is undefined or N/A
+        std::string className;
+        std::string methodName;
         int line;
         int instructionId;
         POLDAM::SELOGGER_EVENT_TYPE eventType;

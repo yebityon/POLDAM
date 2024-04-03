@@ -65,6 +65,7 @@ namespace POLDAM
 
         // TODO: string fileName should be disgnated from out of this file.
         const std::string fileName{};
+        bool hasHeaderData = true;
         std::string filePath;
         std::vector<std::string> filePaths;
         std::string filePattern;

@@ -56,6 +56,10 @@ namespace POLDAM
             }
             fileStream.close();
         }
+        if (this->hasHeaderData)
+        {
+            this->data.erase(this->data.begin());
+        }
     }
 
     void SeloggerLogParser::parseReadlines(std::vector<std::string> &data)
@@ -70,14 +74,12 @@ namespace POLDAM
     {
         SeloggerData rec{};
         const std::vector<std::string> parsedLog = POLDAM_UTIL::split(line, ',');
-
         assert(parsedLog.size() == 4);
 
         rec.eventId = static_cast<unsigned int>(std::stoi(parsedLog[0]));
         rec.dataId = static_cast<unsigned int>(std::stoi(parsedLog[1]));
         rec.threadId = static_cast<unsigned int>(std::stoi(parsedLog[2]));
         rec.value = parsedLog[3];
-
         this->parsedData.push_back(rec);
     }
     // TODO: move this fucntion to base class, all you need to do is just desginate fileName in base class.

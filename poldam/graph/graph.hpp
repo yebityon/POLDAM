@@ -18,7 +18,6 @@ namespace POLDAM
         std::string to;
         std::string outputFormat;
     };
-
     struct GraphVertex
     {
     public:
@@ -85,7 +84,8 @@ namespace POLDAM
          * @return true  return true if succedd to add vertex to graph.
          * @return false return false if failed to add vertex to graph.
          */
-        bool addOmniVertex(GraphVertex v, const size_t threadId);
+        template <typename T>
+        bool addOmniVertex(GraphVertex v, const size_t threadId, T& ProcessVertex);
 
         /**
          * @brief
@@ -107,18 +107,42 @@ namespace POLDAM
         Graph getGraphCopy();
 
         boost::graph_traits<Graph>::vertex_descriptor getStackTopVertex(const unsigned int threadId);
+        
+        POLDAM::GraphVertex getVertex(const boost::graph_traits<Graph>::vertex_descriptor vDesc)
+        {
+            return this->g[vDesc];
+        }
+        POLDAM::GraphVertex setVertex(const boost::graph_traits<Graph>::vertex_descriptor vDesc, const POLDAM::GraphVertex v)
+        {
+            this->g[vDesc] = v;
+            return this->g[vDesc];
+        }
 
         std::vector<boost::graph_traits<Graph>::vertex_descriptor> copyGraphPath()
         {
             return this->path;
         };
 
-        const boost::graph_traits<Graph>::vertex_descriptor getRoot()
+        boost::graph_traits<Graph>::vertex_descriptor getRoot()
         {
             // throw exception if Root has not been initialized.
             assert(this->root.size() > 0);
             return this->Root;
         }
+        
+        boost::graph_traits<Graph>::vertex_descriptor setEntryPoint(boost::graph_traits<Graph>::vertex_descriptor vDesc)
+        {
+            this->Root = vDesc;
+            return this-> Root;
+        }
+        boost:: graph_traits<Graph>::vertex_descriptor getRoot(const unsigned int threadId)
+        {
+            // throw exception if Root has not been initialized.
+            assert(this->root.size() > 0);
+            return this->root[threadId];
+        }
+
+        
 
         PoldamGraph computeDiffGraph(PoldamGraph &targetGraph);
         // need to move Graph
@@ -196,6 +220,7 @@ namespace POLDAM
         unsigned int counter = 0;
 
         boost::graph_traits<Graph>::vertex_descriptor Root;
+        boost::graph_traits<Graph>::vertex_descriptor entryVertex;
 
         std::map<unsigned int, boost::graph_traits<Graph>::vertex_descriptor> root{};
 
@@ -209,4 +234,24 @@ namespace POLDAM
         // {key: threadId, value:stack<>}
         std::map<unsigned int, std::stack<std::map<std::string, std::string>>> callInstStack;
     };
+
+    template <typename F>
+    bool PoldamGraph::addOmniVertex(GraphVertex v_, const size_t threadId, F &processVertex)
+    {
+        // FIXME: it should be perfect forwarding
+        boost::graph_traits<Graph>::vertex_descriptor v = PoldamGraph::addOmniVertexDesc(v_, threadId);
+        if (not this->vStack[threadId].empty())
+        {
+            const auto &prev = PoldamGraph::getStackTopVertex(threadId);
+            PoldamGraph::addOmniEdge(prev, v, threadId);
+        }
+
+        PoldamGraph::pushStackVertex(v, threadId);
+        POLDAM::GraphVertex targetVertex = this->g[v];
+
+        processVertex(v, threadId, *this,  this->root);
+        this->path.push_back(v);
+
+        return v;
+    }
 }
